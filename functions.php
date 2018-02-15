@@ -6,6 +6,8 @@ require get_template_directory() . '/inc/functions-customizer.php';
 
 require get_template_directory() . '/inc/functions-enqueue.php';
 
+require get_template_directory() . '/inc/functions-menus.php';
+
 require get_template_directory() . '/inc/functions-general.php';
 
 if ( defined( 'JETPACK__VERSION' ) ) {
