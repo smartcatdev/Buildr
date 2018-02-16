@@ -63,37 +63,127 @@ add_action( 'customize_preview_init', 'designr_customize_preview_js' );
 $acid = acid_instance();
 
 $data = array (
-    'panels' =>
-    // Navbar Panel
-    array (
-        'panel-navbar' =>
-        array (
+    
+    'panels' => array (
+        
+        // Panel: Navbar -------------------------------------------------------
+        'panel-navbar' => array ( 
+            
             'title' => __( 'Navbar', 'designr' ),
-            'desciption' => __( 'Customize the site top menu navbar. This includes settings to control how the navbar & logo behave', 'designr' ),
-            'sections' =>
-            array (
-                'section-nav-colors' =>
-                array (
-                    'title' => __( 'Navbar colors', 'designr' ),
-                    'options' =>
-                    array (
-                        'navbar-bg' =>
-                        array (
+            'desciption' => __( 'Customize the primary navbar on your site, including control over appearance & behaviour', 'designr' ),
+            'sections' => array (
+                
+                // Navbar Colors
+                'section-nav-colors' => array (
+                    
+                    'title' => __( 'Navbar Colors', 'designr' ),
+                    'options' => array (
+                        'navbar_background' => array (
                             'type' => 'select',
-                            'label' => __( 'Navbar background color', 'designr' ),
-                            'default' => '#414141',
+                            'label' => __( 'Background Color', 'designr' ),
+                            'default' => '#141414',
                             'choices' => array (
-                                '#414141' => __( 'Dark', 'designr' ),
-                                '#f0f0f0' => __( 'Light', 'designr' ),
+                                '#141414' => __( 'Dark', 'designr' ),
+                                '#ffffff' => __( 'Light', 'designr' ),
+                            )
+                        ),
+                        'navbar_foreground' => array (
+                            'type' => 'select',
+                            'label' => __( 'Background Color', 'designr' ),
+                            'default' => '#ffffff',
+                            'choices' => array (
+                                '#141414' => __( 'Dark', 'designr' ),
+                                '#ffffff' => __( 'Light', 'designr' ),
                             )
                         )
                     )
-                ),
-            ),
-        ),
-        // Footer Panel
-        'panel-footer' =>
-        array (
+                    
+                ), // End of Navbar Colors Section
+                
+            ), // End of Navbar Sections
+            
+        ), // End of Navbar Panel
+        
+        // Panel: Appearance ---------------------------------------------------
+        'panel-appearance' => array ( 
+            
+            'title' => __( 'Appearance', 'designr' ),
+            'description' => __( 'Customize your site colors, fonts, and more', 'designr' ),
+            'sections' => array (
+                
+                // Colors Section
+                'section-colors' => array ( 
+                    
+                    'title' => __( 'Colors', 'designr' ),
+                    'description' => __( 'Customize the colors in use on your site', 'designr' ),
+                    'options' => array (
+                        'skin_theme_primary' => array(
+                            'type' => 'select',
+                            'label' => __( 'Theme Color - Primary', 'designr' ),
+                            'default' => '#0000FF',
+                            'choices' => array(
+                                '#0000FF'       => __( 'Blue', 'designr' ),
+                                '#00FF00'       => __( 'Green', 'designr' ),
+                                '#FF0000'       => __( 'Red', 'designr' ),
+                            ),
+                        ),
+                        'skin_theme_secondary' => array(
+                            'type' => 'select',
+                            'label' => __( 'Theme Color - Secondary', 'designr' ),
+                            'default' => '#00FF00',
+                            'choices' => array(
+                                '#0000FF'       => __( 'Blue', 'designr' ),
+                                '#00FF00'       => __( 'Green', 'designr' ),
+                                '#FF0000'       => __( 'Red', 'designr' ),
+                            ),
+                        ),
+                    ),
+                    
+                ), // End of Color Section
+                
+                // Fonts Section
+                'fonts' => array ( 
+                    
+                    'title' => __( 'Fonts', 'designr' ),
+                    'description' => __( 'Customize the fonts in use on your site', 'designr' ),
+                    'options' => array (
+                        
+                        // Primary Font
+                        'primary_font' => array(
+                            'type' => 'select',
+                            'label' => __( 'Primary Font (Headings & Titles)', 'designr' ),
+                            'default' => 'Montserrat, sans-serif',
+                            'choices' => designr_fonts(),
+                        ),
+//                        'h1_font_size' => array(
+//                            'type' => 'number',
+//                            'label' => __( 'Font Size - h1', 'designr' ),
+//                            'default' => 16,
+//                        ),
+                        
+                        // Secondary Font
+                        'secondary_font' => array(
+                            'type' => 'select',
+                            'label' => __( 'Secondary Font (Body & Paragraph)', 'designr' ),
+                            'default' => 'Abel, sans-serif',
+                            'choices' => designr_fonts(),
+                        ),
+                        'body_font_size' => array(
+                            'type' => 'number',
+                            'label' => __( 'Font Size - Body & Paragraph', 'designr' ),
+                            'default' => 16,
+                        ),
+                        
+                    ),
+                    
+                ), // End of Fonts Section
+                
+            ), // End of Appearance Sections
+            
+        ), // End of Appearance Panel
+        
+        // Panel: Footer -------------------------------------------------------
+        'panel-footer' => array (
             'title' => __( 'Footer', 'designr' ),
             'desciption' => __( 'Customize the theme footer', 'designr' ),
             'sections' =>
@@ -117,158 +207,104 @@ $data = array (
                 ),
             ),
         ),
-        // Appearance Panel
-        'panel-appearance' =>
-        array (
-            'title' => __( 'Appearance', 'designr' ),
-            'description' => __( 'Colors, fonts and other global appearance settings', 'designr' ),
-            'sections' =>
-            array (
-                'section-skin-colors' =>
-                array (
-                    'title' => __( 'Skin colors', 'designr' ),
-                    'description' => __( 'Control the general skin colors of the theme', 'designr' ),
-                    'options' =>
-                    array (
-                        'primary-color' =>
-                        array (
-                            'type' => 'select',
-                            'label' => __( 'Primary Color', 'designr' ),
-                            'default' => '#333',
-                            'choices' => array (
-                                '#333' => __( 'Black', 'designr' ),
-                                '#cc0000' => __( 'Red', 'designr' ),
-                                '#44111' => __( 'Black 2', 'designr' ),
-                            ),
-                        ),
-                        'secondary-color' =>
-                        array (
-                            'type' => 'select',
-                            'label' => __( 'Secondary Color', 'designr' ),
-                            'default' => '#333',
-                            'choices' => array (
-                                '#333' => __( 'Black', 'designr' ),
-                                '#cc0000' => __( 'Red', 'designr' ),
-                                '#44111' => __( 'Black 2', 'designr' ),
-                            ),
-                        ),
-                    ),
-                ),
-                'section-fonts' =>
-                array (
-                    'title' => __( 'Fonts', 'designr' ),
-                    'description' => __( 'Customize fonts & font sizes', 'designr' ),
-                    'options' =>
-                    array (
-                        'primary-font' =>
-                        array (
-                            'type' => 'select',
-                            'label' => __( 'Primary Font', 'designr' ),
-                            'default' => 'Abel, sans-serif',
-                            'choices' => designr_fonts()
-                        ),
-                        'secondary-font' =>
-                        array (
-                            'type' => 'select',
-                            'label' => __( 'Secondary Font', 'designr' ),
-                            'default' => 'Voltaire, sans-serif',
-                            'choices' => designr_fonts()
-                        ),
-                        'h1-font-size' =>
-                        array (
-                            'type' => 'number',
-                            'label' => __( 'H1 Header font size', 'designr' ),
-                            'default' => 34
-                        ),
-                        'h2-font-size' =>
-                        array (
-                            'type' => 'number',
-                            'label' => __( 'H2 Header font size', 'designr' ),
-                            'default' => 30
-                        ),
-                        'body-font-size' =>
-                        array (
-                            'type' => 'number',
-                            'label' => __( 'Body font size', 'designr' ),
-                            'default' => 18
-                        ),
-                        'menu-font-size' =>
-                        array (
-                            'type' => 'number',
-                            'label' => __( 'Menu font size', 'designr' ),
-                            'default' => 16
-                        ),
-                    ),
-                ),
-            ),
-        ),
-    ),
+        
+    ), // End of Panels
+    
 );
 
-$acid->config( $data );
+//$data = array (
+//    'panels' =>
+//    // Navbar Panel
+//    array (
+//        'panel-navbar' =>
 
 
-//                        'text-4' =>
-//                        array (
-//                            'type' => 'number',
-//                            'label' => '',
-//                            'default' => 15,
-//                        ),
-//                        'select-1' =>
-//                        array (
-//                            'type' => 'date',
-//                            'label' => '',
-//                            'default' => 'Default value',
-//                        ),
-//                        'select-2' =>
-//                        array (
-//                            'type' => 'checkbox',
-//                            'label' => 'do you want things?',
-//                            'default' => true,
-//                        ),
-//                        'select-3' =>
-//                        array (
-//                            'type' => 'radio',
-//                            'label' => 'do you want things?',
-//                            'default' => 'red',
-//                            'choices' => array (
-//                                'red' => __( 'Red', 'themeslug' ),
-//                                'white' => __( 'white', 'themeslug' ),
-//                                'orange' => __( 'Orange', 'themeslug' ),
-//                            ),
-//                        ),
-//                        'select-4' =>
+//        // Appearance Panel
+//        'panel-appearance' =>
+//        array (
+//            'title' => __( 'Appearance', 'designr' ),
+//            'description' => __( 'Colors, fonts and other global appearance settings', 'designr' ),
+//            'sections' =>
+//            array (
+//                'section-skin-colors' =>
+//                array (
+//                    'title' => __( 'Skin colors', 'designr' ),
+//                    'description' => __( 'Control the general skin colors of the theme', 'designr' ),
+//                    'options' =>
+//                    array (
+//                        'primary-color' =>
 //                        array (
 //                            'type' => 'select',
-//                            'label' => 'Select dropdown',
-//                            'default' => 'white',
+//                            'label' => __( 'Primary Color', 'designr' ),
+//                            'default' => '#333',
 //                            'choices' => array (
-//                                'red' => __( 'Red', 'themeslug' ),
-//                                'white' => __( 'white', 'themeslug' ),
-//                                'orange' => __( 'Orange', 'themeslug' ),
+//                                '#333' => __( 'Black', 'designr' ),
+//                                '#cc0000' => __( 'Red', 'designr' ),
+//                                '#44111' => __( 'Black 2', 'designr' ),
 //                            ),
 //                        ),
-//                        'select-5' =>
+//                        'secondary-color' =>
 //                        array (
-//                            'type' => 'color',
-//                            'label' => 'text color',
+//                            'type' => 'select',
+//                            'label' => __( 'Secondary Color', 'designr' ),
 //                            'default' => '#333',
+//                            'choices' => array (
+//                                '#333' => __( 'Black', 'designr' ),
+//                                '#cc0000' => __( 'Red', 'designr' ),
+//                                '#44111' => __( 'Black 2', 'designr' ),
+//                            ),
 //                        ),
-//                        'select-6' =>
+//                    ),
+//                ),
+//                'section-fonts' =>
+//                array (
+//                    'title' => __( 'Fonts', 'designr' ),
+//                    'description' => __( 'Customize fonts & font sizes', 'designr' ),
+//                    'options' =>
+//                    array (
+//                        'primary-font' =>
 //                        array (
-//                            'type' => 'image',
-//                            'label' => 'bg image',
-//                            'default' => 'this',
+//                            'type' => 'select',
+//                            'label' => __( 'Primary Font', 'designr' ),
+//                            'default' => 'Abel, sans-serif',
+//                            'choices' => designr_fonts()
 //                        ),
-//                        'slider-image' =>
+//                        'secondary-font' =>
 //                        array (
-//                            'type' => 'image',
-//                            'label' => 'bg image',
-//                            'default' => 'this',
+//                            'type' => 'select',
+//                            'label' => __( 'Secondary Font', 'designr' ),
+//                            'default' => 'Voltaire, sans-serif',
+//                            'choices' => designr_fonts()
 //                        ),
-//                        'select-7' =>
+//                        'h1-font-size' =>
 //                        array (
-//                            'type' => 'dropdown-pages',
-//                            'label' => 'bg image',
-//                            'default' => 1,
+//                            'type' => 'number',
+//                            'label' => __( 'H1 Header font size', 'designr' ),
+//                            'default' => 34
 //                        ),
+//                        'h2-font-size' =>
+//                        array (
+//                            'type' => 'number',
+//                            'label' => __( 'H2 Header font size', 'designr' ),
+//                            'default' => 30
+//                        ),
+//                        'body-font-size' =>
+//                        array (
+//                            'type' => 'number',
+//                            'label' => __( 'Body font size', 'designr' ),
+//                            'default' => 18
+//                        ),
+//                        'menu-font-size' =>
+//                        array (
+//                            'type' => 'number',
+//                            'label' => __( 'Menu font size', 'designr' ),
+//                            'default' => 16
+//                        ),
+//                    ),
+//                ),
+//            ),
+//        ),
+//    ),
+//);
+
+$acid->config( $data );

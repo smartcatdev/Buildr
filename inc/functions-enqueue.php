@@ -7,6 +7,16 @@ function designr_scripts() {
     
     wp_enqueue_style( 'designr-style', get_stylesheet_uri() );
 
+    // Fonts
+    $fonts = designr_fonts();
+    if ( get_theme_mod( 'primary_font', 'Montserrat, sans-serif' ) == get_theme_mod( 'secondary_font', 'Abel, sans-serif' ) ) :
+        // Fonts are the same, enqueue once
+        wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=' . esc_attr( $fonts[ get_theme_mod( 'primary_font', 'Montserrat, sans-serif' ) ] ), array(), DESIGNR_VERSION ); 
+    else :
+        // Fonts are different, enqueue together
+        wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=' . esc_attr( $fonts[ get_theme_mod( 'primary_font', 'Montserrat, sans-serif' ) ] . '|' . $fonts[ get_theme_mod( 'secondary_font', 'Abel, sans-serif' ) ] ), array(), DESIGNR_VERSION ); 
+    endif;
+
     // Styles
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/lib/bootstrap/bootstrap.min.css', array(), DESIGNR_VERSION );
     wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/lib/font-awesome/fontawesome-all.min.css', array(), DESIGNR_VERSION );
