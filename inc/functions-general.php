@@ -56,6 +56,11 @@ if ( !function_exists( 'designr_setup' ) ) :
      * as indicating support for post thumbnails.
      */
     function designr_setup() {
+    
+        if( !defined( 'DESIGNR_VERSION' ) ) :
+            define( 'DESIGNR_VERSION', '1.0.0' );
+        endif;
+        
         /*
          * Make theme available for translation.
          * Translations can be filed in the /languages/ directory.
@@ -83,8 +88,11 @@ if ( !function_exists( 'designr_setup' ) ) :
         add_theme_support( 'post-thumbnails' );
 
         // This theme uses wp_nav_menu() in one location.
-        register_nav_menus( array (
-            'menu-1' => esc_html__( 'Primary', 'designr' ),
+        register_nav_menus( array(
+            'primary-menu'              => esc_html__( 'Primary', 'designr' ),
+            'split-primary-left'        => esc_html__( 'Split Primary - Left', 'designr' ),
+            'split-primary-right'       => esc_html__( 'Split Primary - Right', 'designr' ),
+            'mobile-menu'               => esc_html__( 'Mobile', 'designr' ),
         ) );
 
         /*
@@ -132,6 +140,6 @@ endif;
  * @global int $content_width
  */
 function designr_content_width() {
-    $GLOBALS[ 'content_width' ] = apply_filters( 'designr_content_width', 640 );
+    $GLOBALS[ 'content_width' ] = apply_filters( 'designr_content_width', 1170 );
 }
 

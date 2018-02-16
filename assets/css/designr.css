@@ -1,10 +1,468 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Feb 15, 2018, 11:24:54 AM
-    Author     : bilal
-*/
 
+/* ----------------------------------------------------------------------------- 
+ * WP Admin
+ * -------------------------------------------------------------------------- */
+@media (min-width:992px) {
+    body.admin-bar header#masthead #slim-header-wrap {
+        top: 32px;
+    }
+    body.admin-bar > div#page.site {
+/*        padding-top: 32px;*/
+    }
+}
+
+/* ----------------------------------------------------------------------------- 
+ * Header: Custom A
+ * -------------------------------------------------------------------------- */
+
+header#masthead {
+    z-index: 99999;
+}
+
+#slim-header-wrap {
+/*    position: fixed;*/
+    width: 100%;
+    top: 0;
+}
+
+div#slim-header {
+    background-color: #111319; /* TODO: Make dynamic Color */
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+div#slim-header .left-half ul.slim-header-menu {
+    text-align: right;    
+    float: right;
+}
+
+div#slim-header .left-half, 
+div#slim-header .right-half {
+    width: 40%;
+}
+div#slim-header .left-half {
+    float: right;
+} 
+div#slim-header .right-half {
+    float: left;
+} 
+div#custom-logo-wrap {
+    text-align: center;
+    width: 0;
+}
+div#custom-logo-wrap.expanded {
+    width: auto;
+}
+ul.slim-header-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: table;
+}
+
+ul.slim-header-menu > li {
+    line-height: 50px;
+    padding: 0 15px;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+a.custom-logo-link {
+    
+}
+
+img.custom-logo {
+    text-align: center;
+    height: 50px;
+    width: auto;
+    opacity: 0;
+    transform: scale(0);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition:  all 0.3s ease-in-out;
+    -o-transition:  all 0.3s ease-in-out;
+    transition:  all 0.3s ease-in-out;
+}
+
+img.custom-logo.visible-logo {
+    opacity: 1;
+    transform: none;
+}
+
+ul#mobile-menu li a,
+ul.slim-header-menu > li a {
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: .125em;
+    font-family: Montserrat; /* TODO: Make dynamic Font */
+    letter-spacing: .5em;
+    font-size: 10px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition:  all 0.3s ease-in-out;
+    -o-transition:  all 0.3s ease-in-out;
+    transition:  all 0.3s ease-in-out;
+}
+
+div.sticky-wrapper {
+    height: auto !important;
+}
+
+div#primary {
+/*    margin-top: 62px;*/
+}
+
+ul.slim-header-menu > li {
+    position: relative;
+}
+ul.slim-header-menu > li:not(.menu-item-has-children) > a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    opacity: 0;
+    top: 100%;
+    margin: -1px 0 0 0;
+    background-color: #e5f075; /* TODO: Make dynamic Color */
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+}
+ul.slim-header-menu > li:not(.menu-item-has-children) > a:hover:before {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: scaleX(.75);
+            transform: scaleX(.75);
+}
+
+div#slim-header ul#mobile-menu {
+    padding: 15px 0 0 0;
+    margin: 15px 0 0 0;
+    list-style: none;
+    overflow: hidden;
+    display: none;
+    position: relative;
+}
+
+div#slim-header ul#mobile-menu:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    margin: 0;
+    background-color: #e5f075; /* TODO: Make dynamic Color */
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+}
+
+div#slim-header ul#mobile-menu.expanded:before {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+div#slim-header ul#mobile-menu li {
+    opacity: 0;
+}
+
+ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu {
+    position: absolute;
+    background-color: #101319; /* TODO: Make dynamic Color */
+    list-style: none;
+    width: 200px;
+    top: 100%;
+    left: 0;
+    text-align: center;
+    z-index: 99999;
+    overflow: hidden;
+    height: 0;
+    padding: 0 30px;
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+ul.slim-header-menu > li.menu-item-has-children:hover > ul.sub-menu {
+    padding: 15px 30px;
+    height: auto;
+    opacity: 1;    
+    margin-top: -1px;
+}
+
+ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu li a {
+    letter-spacing: .25em;
+    line-height: 30px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu li a:hover {
+    color: #e5f075; /* TODO: Make dynamic Color */
+}
+
+ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    margin: 0;
+    background-color: #e5f075; /* TODO: Make dynamic Color */
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+}
+
+ul.slim-header-menu > li.menu-item-has-children:hover > ul.sub-menu:before {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+}
+
+ul.slim-header-menu > li > ul.sub-menu > li {
+    line-height: 18px;    
+}
+
+@media (min-width: 992px) {
+    div#slim-header div#mobile-menu-trigger,
+    div#slim-header ul#mobile-menu {
+        display: none !important;
+    }
+}
+
+@media (max-width: 991px) {
+    div#slim-header-wrap {
+        position: relative !important;
+        top: 0 !important;
+    }
+    div#slim-header {
+        display: block;
+        text-align: center;
+        padding: 0;
+    }
+    div#slim-header ul.slim-header-menu {
+        display: none;
+    }
+    div#custom-logo-wrap {
+        width: 100% !important;
+        padding: 15px 0 0;
+        line-height: 50px !important;
+    }
+    img.custom-logo {
+        opacity: 1;
+        height: 40px !important;
+        margin: 0 15px;
+        width: auto !important;
+        transform: none !important;
+    }
+    div#mobile-menu-wrap {
+        padding-bottom: 15px;
+    }
+}
+
+/* ----------------------------------------------------------------------------- 
+ * Hamburger Menu - Cross Animation
+ * -------------------------------------------------------------------------- */
+#mobile-menu-trigger {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 15px auto 0;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+#mobile-menu-trigger .bar,
+#mobile-menu-trigger .bar:after,
+#mobile-menu-trigger .bar:before {
+  width: 24px;
+  height: 2px;
+}
+
+#mobile-menu-trigger .bar {
+  position: relative;
+  transform: translateY(11px);
+  background: white;
+  transition: all 0ms 300ms;
+}
+#mobile-menu-trigger .bar.animate {
+  background: rgba(255, 255, 255, 0);
+}
+
+#mobile-menu-trigger .bar:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 8px;
+  background: white;
+  transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#mobile-menu-trigger .bar:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  background: white;
+  transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#mobile-menu-trigger .bar.animate:after {
+  top: 0;
+  transform: rotate(45deg);
+  transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#mobile-menu-trigger .bar.animate:before {
+  bottom: 0;
+  transform: rotate(-45deg);
+  transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* ----------------------------------------------------------------------------- 
+ * Blog: Masonry Cards
+ * -------------------------------------------------------------------------- */
+
+.masonry-card-blog .blog_item_wrap,
+.masonry-card-blog .grid_sizer {
+    width: 33.333333%;
+}
+
+@media (max-width:991px) {
+    .masonry-card-blog .blog_item_wrap,
+    .masonry-card-blog .grid_sizer {
+        width: 50%;
+    }
+}
+
+@media (max-width:767px) {
+    .masonry-card-blog .blog_item_wrap,
+    .masonry-card-blog .grid_sizer {
+        width: 100%;
+    }
+}
+
+.masonry-card-blog .blog_item_wrap {
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+.masonry-card-blog .blog_item_wrap .blog_item {
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+}
+
+.masonry-card-blog .blog_item_wrap img {
+    max-width: 100%;
+}
+
+.masonry-card-blog .blog_item_wrap .blog_item .excerpt {
+    color: #777;
+}
+
+.masonry-card-blog .blog_item_wrap .blog_item .inner {
+    padding: 30px 40px 30px;
+}
+
+.masonry-card-blog .blog_item_wrap .blog_item .entry-title {
+    font-family: "Montserrat"; /* TODO: Make dynamic Font */
+    font-size: 32px;
+    margin: 0;
+    font-weight: 800;
+}
+.masonry-card-blog .blog_item_wrap .blog_item .entry-title a {
+    color: #373737;
+}
+.masonry-card-blog .blog_item_wrap .blog_item .inner .blog-meta {
+    color: #666;
+    font-weight: 800;
+    font-family: Lato; /* TODO: Make dynamic Font */
+    margin-bottom: 15px;
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+.masonry-card-blog .blog_item_wrap .blog_item .footer-meta {
+    padding: 20px 40px 20px 40px;
+    border-top: thin solid #f0f0f0;
+    position: relative;
+    bottom: 0;
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+
+.masonry-card-blog .blog_item_wrap .blog_item .meta-stats {
+    border-radius: 20px 0 0 20px;
+    padding: 10px 20px;
+    background: #f6f6f6;
+    position: absolute;
+    top: -20px;
+    right: 0;
+    color: #777;
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    /* opacity: 0; */
+    /* transform: perspective(400px) rotate3d(1, 0, 0, -90deg); */
+}
+.masonry-card-blog .blog_item_wrap:hover .blog_item .meta-stats {
+    /* transform: perspective(400px); */
+    /* opacity: 1; */
+}
+.masonry-card-blog .blog_item_wrap .blog_item .inner-wrap {
+    background: #fff;
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    position: relative;
+    top: 0;
+}
+.masonry-card-blog .blog_item_wrap .blog_item .meta-stats span {
+    margin: 0 0px 0 10px;
+}
+.masonry-card-blog .blog_item_wrap .blog_item .meta-stats span:first-of-type {
+    margin: 0;
+}
+.masonry-card-blog .blog_item_wrap .blog_item .categories-bar {
+    text-transform: uppercase;
+    letter-spacing: .125em;
+    color: #888;
+    font-weight: 600;
+    font-family: Lato; /* TODO: Make dynamic Font */
+    font-size: 12px;
+    padding-right: 65px;
+}
+.masonry-card-blog .blog_item_wrap .blog_item .inner-wrap {
+    overflow: hidden;
+}
+.masonry-card-blog .blog_item_wrap:hover .blog_item .inner-wrap {
+    top: -15px;
+}
+.masonry-card-blog .blog_item_wrap:hover .blog_item .footer-meta {
+    bottom: -15px;
+}
