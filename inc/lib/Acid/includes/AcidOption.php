@@ -84,9 +84,27 @@ if( ! class_exists( 'AcidOption' ) ) {
         }
         
         private function has_choices() {
-            
             return $this->choices ? true : false;
-            
+        }
+        
+        private function has_min() {
+            return $this->min ? true : false;
+        }
+        
+        private function has_max() {
+            return $this->max ? true : false;
+        }
+        
+        private function has_step() {
+            return $this->step ? true : false;
+        }
+        
+        private function has_class() {
+            return $this->class ? true : false;
+        }
+        
+        private function has_style() {
+            return $this->style ? true : false;
         }
         
         public function render() {
@@ -111,7 +129,6 @@ if( ! class_exists( 'AcidOption' ) ) {
         }
         
         private function set_args() {
-            
             
             if( $this->has_sanitize_callback() ) {
                 $this->setting_args[ 'sanitize_callback' ] = $this->sanitize_callback;
@@ -139,6 +156,26 @@ if( ! class_exists( 'AcidOption' ) ) {
             
             if( $this->has_type() ) {
                 $this->control_args[ 'type' ] = $this->type;
+            }
+            
+            if( $this->has_min() ) {
+                $this->control_args[ 'input_attrs' ][ 'min' ] = $this->min;
+            }
+            
+            if( $this->has_max() ) {
+                $this->control_args[ 'input_attrs' ][ 'max' ] = $this->max;
+            }
+            
+            if( $this->has_step() ) {
+                $this->control_args[ 'input_attrs' ][ 'step' ] = $this->step;
+            }
+            
+            if( $this->has_class() ) {
+                $this->control_args[ 'input_attrs' ][ 'class' ] = $this->class;
+            }
+            
+            if( $this->has_style() ) {
+                $this->control_args[ 'input_attrs' ][ 'style' ] = $this->style;
             }
             
             $this->control_args[ 'section' ] = $this->section;
