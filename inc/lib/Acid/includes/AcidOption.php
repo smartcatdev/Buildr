@@ -198,7 +198,7 @@ if( ! class_exists( 'AcidOption' ) ) {
                     $callback = 'absint';
                     break;
                 case 'textarea' :
-                    $callback = 'sanitize_textarea';
+                    $callback = 'sanitize_textarea_field';
                     break;
                 case 'date' :
                     $callback = 'acid_sanitize_date';
