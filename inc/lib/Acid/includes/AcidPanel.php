@@ -9,8 +9,7 @@ if ( ! class_exists( 'AcidPanel' ) ) {
 
         public function __construct( $parent, $id, $panel ) {
             
-            
-            $this->panel = $panel[ $id ];
+            $this->panel = $panel;
             $this->id = $id;
             $this->render();
             

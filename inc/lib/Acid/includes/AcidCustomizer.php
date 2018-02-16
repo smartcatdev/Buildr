@@ -32,25 +32,17 @@ if ( ! class_exists( 'AcidCustomizer' ) ) {
                 return;
             }
             
-            foreach ( $this->options as $type => $node ) {
+            foreach ( $this->options['panels'] as $id => $panel ) {
 
-                if ( self::is_panel( $type ) ) {
-                    error_log( $type );                    
-                    
-                    $this->create_panel( $node );
-                    
-                } elseif ( self::is_section( $type ) ) {
-                    // TODO
-                    
-                }
+                
+                $this->create_panel( $id, $panel );
+                
                 
             }
             
         }
         
-        private function create_panel( $panel ) {
-            
-            $id = key( $panel );
+        private function create_panel( $id, $panel ) {
             
             $panel = new AcidPanel( null, $id, $panel );         
             
