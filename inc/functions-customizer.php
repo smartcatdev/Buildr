@@ -5,9 +5,7 @@
  *
  * @package Designr
  */
-
 include_once get_template_directory() . '/inc/lib/Acid/acid.php';
-
 
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
@@ -60,71 +58,66 @@ function designr_customize_preview_js() {
 
 add_action( 'customize_preview_init', 'designr_customize_preview_js' );
 
-$acid = acid_instance();
 
+
+$acid = acid_instance();
 
 $data = array (
     'panels' =>
     // Navbar Panel
     array (
         'panel-navbar' =>
-        array(
-            'title'         => __( 'Navbar', 'designr' ),
-            'desciption'    => __( 'Customize the site top menu navbar. This includes settings to control how the navbar & logo behave', 'designr' ),
-            'sections'      =>
-            array(
+        array (
+            'title' => __( 'Navbar', 'designr' ),
+            'desciption' => __( 'Customize the site top menu navbar. This includes settings to control how the navbar & logo behave', 'designr' ),
+            'sections' =>
+            array (
                 'section-nav-colors' =>
-                array(
-                    'title'     => __( 'Navbar colors', 'designr' ),
-                    'options'   =>
-                    array(
+                array (
+                    'title' => __( 'Navbar colors', 'designr' ),
+                    'options' =>
+                    array (
                         'navbar-bg' =>
-                        array(
-                            'type'      => 'select',
-                            'label'     => __( 'Navbar background color', 'designr' ),
-                            'default'   => '#414141',
-                            'choices'   => array(
-                                '#414141'       => __( 'Dark', 'designr' ),
-                                '#f0f0f0'       => __( 'Light', 'designr' ),
-                                
+                        array (
+                            'type' => 'select',
+                            'label' => __( 'Navbar background color', 'designr' ),
+                            'default' => '#414141',
+                            'choices' => array (
+                                '#414141' => __( 'Dark', 'designr' ),
+                                '#f0f0f0' => __( 'Light', 'designr' ),
                             )
                         )
                     )
                 ),
             ),
         ),
-    ),
-    // Footer Panel
-    array(
+        // Footer Panel
         'panel-footer' =>
-        array(
-            'title'         => __( 'Footer', 'designr' ),
-            'desciption'    => __( 'Customize the theme footer', 'designr' ),
-            'sections'      =>
-            array(
+        array (
+            'title' => __( 'Footer', 'designr' ),
+            'desciption' => __( 'Customize the theme footer', 'designr' ),
+            'sections' =>
+            array (
                 'section-footer-colors' =>
-                array(
-                    'title'     => __( 'Footer colors', 'designr' ),
-                    'options'   =>
-                    array(
+                array (
+                    'title' => __( 'Footer colors', 'designr' ),
+                    'options' =>
+                    array (
                         'footer-bg' =>
-                        array(
-                            'type'      => 'select',
-                            'label'     => __( 'Footer background color', 'designr' ),
-                            'default'   => '#414141',
-                            'choices'   => array(
-                                '#414141'       => __( 'Dark', 'designr' ),
-                                '#f0f0f0'       => __( 'Light', 'designr' ),
-                                
+                        array (
+                            'type' => 'select',
+                            'label' => __( 'Footer background color', 'designr' ),
+                            'default' => '#414141',
+                            'choices' => array (
+                                '#414141' => __( 'Dark', 'designr' ),
+                                '#f0f0f0' => __( 'Light', 'designr' ),
                             )
                         )
                     )
                 ),
             ),
         ),
-    ),
-    // Appearance Panel
-    array(
+        // Appearance Panel
         'panel-appearance' =>
         array (
             'title' => __( 'Appearance', 'designr' ),
@@ -139,76 +132,76 @@ $data = array (
                     array (
                         'primary-color' =>
                         array (
-                            'type'      => 'select',
-                            'label'     => __( 'Primary Color', 'designr' ),
-                            'default'   => '#333',
-                            'choices'   => array(
-                                '#333'          => __( 'Black', 'designr' ),
-                                '#cc0000'       => __( 'Red', 'designr' ),
-                                '#44111'        => __( 'Black 2', 'designr' ),
+                            'type' => 'select',
+                            'label' => __( 'Primary Color', 'designr' ),
+                            'default' => '#333',
+                            'choices' => array (
+                                '#333' => __( 'Black', 'designr' ),
+                                '#cc0000' => __( 'Red', 'designr' ),
+                                '#44111' => __( 'Black 2', 'designr' ),
                             ),
                         ),
                         'secondary-color' =>
                         array (
-                            'type'      => 'select',
-                            'label'     => __( 'Secondary Color', 'designr' ),
-                            'default'   => '#333',
-                            'choices'   => array(
-                                '#333'          => __( 'Black', 'designr' ),
-                                '#cc0000'       => __( 'Red', 'designr' ),
-                                '#44111'        => __( 'Black 2', 'designr' ),
+                            'type' => 'select',
+                            'label' => __( 'Secondary Color', 'designr' ),
+                            'default' => '#333',
+                            'choices' => array (
+                                '#333' => __( 'Black', 'designr' ),
+                                '#cc0000' => __( 'Red', 'designr' ),
+                                '#44111' => __( 'Black 2', 'designr' ),
                             ),
                         ),
                     ),
                 ),
                 'section-fonts' =>
-                array(
+                array (
                     'title' => __( 'Fonts', 'designr' ),
                     'description' => __( 'Customize fonts & font sizes', 'designr' ),
                     'options' =>
-                    array(
+                    array (
                         'primary-font' =>
                         array (
-                            'type'      => 'select',
-                            'label'     => __( 'Primary Font', 'designr' ),
-                            'default'   => 'Abel, sans-serif',
-                            'choices'   => designr_fonts()
+                            'type' => 'select',
+                            'label' => __( 'Primary Font', 'designr' ),
+                            'default' => 'Abel, sans-serif',
+                            'choices' => designr_fonts()
                         ),
                         'secondary-font' =>
                         array (
-                            'type'      => 'select',
-                            'label'     => __( 'Secondary Font', 'designr' ),
-                            'default'   => 'Voltaire, sans-serif',
-                            'choices'   => designr_fonts()
+                            'type' => 'select',
+                            'label' => __( 'Secondary Font', 'designr' ),
+                            'default' => 'Voltaire, sans-serif',
+                            'choices' => designr_fonts()
                         ),
-                        'h1-font-size' => 
-                        array(
-                            'type'      => 'number',
-                            'label'     => __( 'H1 Header font size', 'designr' ),
-                            'default'   => 34
+                        'h1-font-size' =>
+                        array (
+                            'type' => 'number',
+                            'label' => __( 'H1 Header font size', 'designr' ),
+                            'default' => 34
                         ),
-                        'h2-font-size' => 
-                        array(
-                            'type'      => 'number',
-                            'label'     => __( 'H2 Header font size', 'designr' ),
-                            'default'   => 30
+                        'h2-font-size' =>
+                        array (
+                            'type' => 'number',
+                            'label' => __( 'H2 Header font size', 'designr' ),
+                            'default' => 30
                         ),
-                        'body-font-size' => 
-                        array(
-                            'type'      => 'number',
-                            'label'     => __( 'Body font size', 'designr' ),
-                            'default'   => 18
+                        'body-font-size' =>
+                        array (
+                            'type' => 'number',
+                            'label' => __( 'Body font size', 'designr' ),
+                            'default' => 18
                         ),
-                        'menu-font-size' => 
-                        array(
-                            'type'      => 'number',
-                            'label'     => __( 'Menu font size', 'designr' ),
-                            'default'   => 16
+                        'menu-font-size' =>
+                        array (
+                            'type' => 'number',
+                            'label' => __( 'Menu font size', 'designr' ),
+                            'default' => 16
                         ),
                     ),
                 ),
             ),
-        ),  
+        ),
     ),
 );
 
