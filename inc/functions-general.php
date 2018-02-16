@@ -143,3 +143,25 @@ function designr_content_width() {
     $GLOBALS[ 'content_width' ] = apply_filters( 'designr_content_width', 1170 );
 }
 
+/**
+ * Retrieve all color theme mods in use and return them as an associative array
+ * 
+ * @since 1.0.0
+ * @return array of hex colors
+ */
+function designr_get_all_theme_colors() {
+    
+    $theme_colors = array();
+    
+    $theme_colors['navbar_bg']  = get_theme_mod( 'navbar_background', '#141414' );
+    $theme_colors['navbar_fg']  = get_theme_mod( 'navbar_foreground', '#ffffff' );
+    
+    $theme_colors['footer_bg']  = get_theme_mod( 'footer_background', '#141414' );
+    $theme_colors['footer_fg']  = get_theme_mod( 'footer_foreground', '#ffffff' );
+    
+    $theme_colors['primary']    = get_theme_mod( 'skin_theme_primary', '#0000FF' );
+    $theme_colors['secondary']  = get_theme_mod( 'skin_theme_secondary', '#00FF00' );
+ 
+    return $theme_colors;
+    
+}

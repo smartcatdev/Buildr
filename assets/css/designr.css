@@ -26,7 +26,7 @@ header#masthead {
 }
 
 div#slim-header {
-    background-color: #111319; /* TODO: Make dynamic Color */
+    /*    background-color: #111319;*/
     display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
     display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
     display: -ms-flexbox;      /* TWEENER - IE 10 */
@@ -128,7 +128,7 @@ ul.slim-header-menu > li:not(.menu-item-has-children) > a:before {
     opacity: 0;
     top: 100%;
     margin: -1px 0 0 0;
-    background-color: #e5f075; /* TODO: Make dynamic Color */
+/*    background-color: #e5f075;*/
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
@@ -160,7 +160,7 @@ div#slim-header ul#mobile-menu:before {
     top: 0;
     left: 0;
     margin: 0;
-    background-color: #e5f075; /* TODO: Make dynamic Color */
+/*    background-color: #e5f075;*/
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
@@ -181,7 +181,7 @@ div#slim-header ul#mobile-menu li {
 
 ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu {
     position: absolute;
-    background-color: #101319; /* TODO: Make dynamic Color */
+    /*background-color: #101319;*/
     list-style: none;
     width: 200px;
     top: 100%;
@@ -215,7 +215,7 @@ ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu li a {
 }
 
 ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu li a:hover {
-    color: #e5f075; /* TODO: Make dynamic Color */
+/*    color: #e5f075;*/
 }
 
 ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu:before {
@@ -227,7 +227,7 @@ ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu:before {
     top: 0;
     left: 0;
     margin: 0;
-    background-color: #e5f075; /* TODO: Make dynamic Color */
+/*    background-color: #e5f075;*/
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);

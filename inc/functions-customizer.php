@@ -67,14 +67,14 @@ $data = array (
     'panels' => array (
         
         // Panel: Navbar -------------------------------------------------------
-        'panel-navbar' => array ( 
+        'panel_navbar' => array ( 
             
             'title' => __( 'Navbar', 'designr' ),
             'desciption' => __( 'Customize the primary navbar on your site, including control over appearance & behaviour', 'designr' ),
             'sections' => array (
                 
                 // Section : Navbar Colors -------------------------------------
-                'section-nav-colors' => array (
+                'section_nav_colors' => array (
                     
                     'title' => __( 'Navbar Colors', 'designr' ),
                     'options' => array (
@@ -89,7 +89,7 @@ $data = array (
                         ),
                         'navbar_foreground' => array (
                             'type' => 'select',
-                            'label' => __( 'Background Color', 'designr' ),
+                            'label' => __( 'Foreground Color', 'designr' ),
                             'default' => '#ffffff',
                             'choices' => array (
                                 '#141414' => __( 'Dark', 'designr' ),
@@ -105,14 +105,14 @@ $data = array (
         ), // End of Navbar Panel
         
         // Panel: Appearance ---------------------------------------------------
-        'panel-appearance' => array ( 
+        'panel_appearance' => array ( 
             
             'title'         => __( 'Appearance', 'designr' ),
             'description'   => __( 'Customize your site colors, fonts, and more', 'designr' ),
             'sections' => array (
                 
                 // Section : Colors --------------------------------------------
-                'section-colors' => array ( 
+                'section_colors' => array ( 
                     
                     'title'         => __( 'Colors', 'designr' ),
                     'description'   => __( 'Customize the colors in use on your site', 'designr' ),
@@ -183,26 +183,37 @@ $data = array (
         ), // End of Appearance Panel
         
         // Panel: Footer -------------------------------------------------------
-        'panel-footer' => array (
+        'panel_footer' => array (
             
             'title'         => __( 'Footer', 'designr' ),
             'desciption'    => __( 'Customize the theme footer', 'designr' ),
             'sections'  => array (
                 
                 // Section : Footer Colors -------------------------------------
-                'section-footer-colors' => array (
+                'section_footer_colors' => array (
                     
                     'title'     => __( 'Footer Colors', 'designr' ),
                     'options'   => array (
                         
                         // Footer Background Color
-                        'footer-bg' => array (
-                            'type' => 'select',
-                            'label' => __( 'Footer background color', 'designr' ),
-                            'default' => '#414141',
-                            'choices' => array (
-                                '#414141' => __( 'Dark', 'designr' ),
-                                '#f0f0f0' => __( 'Light', 'designr' ),
+                        'footer_background' => array (
+                            'type'      => 'select',
+                            'label'     => __( 'Background Color', 'designr' ),
+                            'default'   => '#141414',
+                            'choices'   => array (
+                                '#141414'   => __( 'Dark', 'designr' ),
+                                '#ffffff'   => __( 'Light', 'designr' ),
+                            )
+                        ),
+                        
+                        // Footer Foreground Color
+                        'footer_foreground' => array (
+                            'type'      => 'select',
+                            'label'     => __( 'Foreground Color', 'designr' ),
+                            'default'   => '#ffffff',
+                            'choices'   => array (
+                                '#141414'   => __( 'Dark', 'designr' ),
+                                '#ffffff'   => __( 'Light', 'designr' ),
                             )
                         )
                         
