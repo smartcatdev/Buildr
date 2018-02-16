@@ -178,7 +178,10 @@ $data = array (
                         array (
                             'type' => 'number',
                             'label' => __( 'H1 Header font size', 'designr' ),
-                            'default' => 34
+                            'default' => 34,
+                            'min'     => 10,
+                            'max'     => 40,
+                            'step'    => 2,
                         ),
                         'h2-font-size' =>
                         array (
@@ -206,69 +209,3 @@ $data = array (
 );
 
 $acid->config( $data );
-
-
-//                        'text-4' =>
-//                        array (
-//                            'type' => 'number',
-//                            'label' => '',
-//                            'default' => 15,
-//                        ),
-//                        'select-1' =>
-//                        array (
-//                            'type' => 'date',
-//                            'label' => '',
-//                            'default' => 'Default value',
-//                        ),
-//                        'select-2' =>
-//                        array (
-//                            'type' => 'checkbox',
-//                            'label' => 'do you want things?',
-//                            'default' => true,
-//                        ),
-//                        'select-3' =>
-//                        array (
-//                            'type' => 'radio',
-//                            'label' => 'do you want things?',
-//                            'default' => 'red',
-//                            'choices' => array (
-//                                'red' => __( 'Red', 'themeslug' ),
-//                                'white' => __( 'white', 'themeslug' ),
-//                                'orange' => __( 'Orange', 'themeslug' ),
-//                            ),
-//                        ),
-//                        'select-4' =>
-//                        array (
-//                            'type' => 'select',
-//                            'label' => 'Select dropdown',
-//                            'default' => 'white',
-//                            'choices' => array (
-//                                'red' => __( 'Red', 'themeslug' ),
-//                                'white' => __( 'white', 'themeslug' ),
-//                                'orange' => __( 'Orange', 'themeslug' ),
-//                            ),
-//                        ),
-//                        'select-5' =>
-//                        array (
-//                            'type' => 'color',
-//                            'label' => 'text color',
-//                            'default' => '#333',
-//                        ),
-//                        'select-6' =>
-//                        array (
-//                            'type' => 'image',
-//                            'label' => 'bg image',
-//                            'default' => 'this',
-//                        ),
-//                        'slider-image' =>
-//                        array (
-//                            'type' => 'image',
-//                            'label' => 'bg image',
-//                            'default' => 'this',
-//                        ),
-//                        'select-7' =>
-//                        array (
-//                            'type' => 'dropdown-pages',
-//                            'label' => 'bg image',
-//                            'default' => 1,
-//                        ),
