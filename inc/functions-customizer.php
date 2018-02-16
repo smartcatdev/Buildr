@@ -6,7 +6,7 @@
  * @package Designr
  */
 
-include_once get_stylesheet_directory() . '/inc/lib/Acid/acid.php';
+include_once get_template_directory() . '/inc/lib/Acid/acid.php';
 
 
 /**

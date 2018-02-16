@@ -35,11 +35,13 @@ if ( ! class_exists( 'AcidCustomizer' ) ) {
             foreach ( $this->options as $type => $node ) {
 
                 if ( self::is_panel( $type ) ) {
+                    error_log( $type );                    
                     
                     $this->create_panel( $node );
                     
                 } elseif ( self::is_section( $type ) ) {
                     // TODO
+                    
                 }
                 
             }
