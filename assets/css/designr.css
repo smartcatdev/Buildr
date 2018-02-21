@@ -25,6 +25,24 @@ div#primary {
     padding: 50px 0;
 }
 
+ul#mobile-menu li a,
+ul.slim-header-menu > li a,
+img.custom-logo,
+.blog-meta .post-author a,
+ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu,
+ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu li a,
+ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu:before,
+ul.slim-header-menu > li:not(.menu-item-has-children) > a:before,
+div#slim-header ul#mobile-menu:before,
+.masonry-card-blog .blog_item_wrap .blog_item .footer-meta,
+.masonry-card-blog .blog_item_wrap .blog_item .meta-stats,
+.masonry-card-blog .blog_item_wrap .blog_item .inner-wrap {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition:  all 0.3s ease-in-out;
+    -o-transition:  all 0.3s ease-in-out;
+    transition:  all 0.3s ease-in-out;
+}
+
 /* ----------------------------------------------------------------------------- 
  * General Typography
  * -------------------------------------------------------------------------- */
@@ -109,12 +127,6 @@ a.custom-logo-link {
 img.custom-logo {
     text-align: center;
     width: auto;
-/*    opacity: 0;
-    transform: scale(0);*/
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition:  all 0.3s ease-in-out;
-    -o-transition:  all 0.3s ease-in-out;
-    transition:  all 0.3s ease-in-out;
     padding: 12.5px 0;
     transform: translate(0,-50%);
 }
@@ -131,10 +143,6 @@ ul.slim-header-menu > li a {
     letter-spacing: .125em;
     letter-spacing: .5em;
     font-size: 10px;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition:  all 0.3s ease-in-out;
-    -o-transition:  all 0.3s ease-in-out;
-    transition:  all 0.3s ease-in-out;
 }
 
 div.sticky-wrapper {
@@ -161,8 +169,6 @@ ul.slim-header-menu > li:not(.menu-item-has-children) > a:before {
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
-    -webkit-transition: all 0.4s ease-in-out 0s;
-    transition: all 0.4s ease-in-out 0s;
 }
 ul.slim-header-menu > li:not(.menu-item-has-children) > a:hover:before {
     visibility: visible;
@@ -194,8 +200,6 @@ div#slim-header ul#mobile-menu:before {
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
-    -webkit-transition: all 0.4s ease-in-out 0s;
-    transition: all 0.4s ease-in-out 0s;
 }
 
 div#slim-header ul#mobile-menu.expanded:before {
@@ -222,10 +226,6 @@ ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu {
     height: 0;
     padding: 0 30px;
     opacity: 0;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
 }
 
 ul.slim-header-menu > li.menu-item-has-children:hover > ul.sub-menu {
@@ -238,10 +238,6 @@ ul.slim-header-menu > li.menu-item-has-children:hover > ul.sub-menu {
 ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu li a {
     letter-spacing: .25em;
     line-height: 30px;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
 }
 
 ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu li a:hover {
@@ -261,8 +257,6 @@ ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu:before {
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
-    -webkit-transition: all 0.4s ease-in-out 0s;
-    transition: all 0.4s ease-in-out 0s;
 }
 
 ul.slim-header-menu > li.menu-item-has-children:hover > ul.sub-menu:before {
@@ -440,9 +434,6 @@ ul.slim-header-menu > li > ul.sub-menu > li {
     border-top: thin solid #f0f0f0;
     position: relative;
     bottom: 0;
-    transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
 }
 
 .masonry-card-blog .blog_item_wrap .blog_item .meta-stats {
@@ -453,9 +444,6 @@ ul.slim-header-menu > li > ul.sub-menu > li {
     top: -20px;
     right: 0;
     color: #777;
-    transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
     /* opacity: 0; */
     /* transform: perspective(400px) rotate3d(1, 0, 0, -90deg); */
 }
@@ -465,9 +453,6 @@ ul.slim-header-menu > li > ul.sub-menu > li {
 }
 .masonry-card-blog .blog_item_wrap .blog_item .inner-wrap {
     background: #fff;
-    transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
     position: relative;
     top: 0;
 }
@@ -480,10 +465,12 @@ ul.slim-header-menu > li > ul.sub-menu > li {
 .masonry-card-blog .blog_item_wrap .blog_item .categories-bar {
     text-transform: uppercase;
     letter-spacing: .125em;
-    color: #888;
     font-weight: 600;
     font-size: 12px;
     padding-right: 65px;
+}
+.masonry-card-blog .blog_item_wrap .blog_item .categories-bar a {
+    color: #888;
 }
 .masonry-card-blog .blog_item_wrap .blog_item .inner-wrap {
     overflow: hidden;
