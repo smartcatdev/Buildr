@@ -56,6 +56,11 @@ if ( !function_exists( 'designr_setup' ) ) :
      * as indicating support for post thumbnails.
      */
     function designr_setup() {
+    
+        if( !defined( 'DESIGNR_VERSION' ) ) :
+            define( 'DESIGNR_VERSION', '1.0.0' );
+        endif;
+        
         /*
          * Make theme available for translation.
          * Translations can be filed in the /languages/ directory.
@@ -83,8 +88,11 @@ if ( !function_exists( 'designr_setup' ) ) :
         add_theme_support( 'post-thumbnails' );
 
         // This theme uses wp_nav_menu() in one location.
-        register_nav_menus( array (
-            'menu-1' => esc_html__( 'Primary', 'designr' ),
+        register_nav_menus( array(
+            'primary-menu'              => esc_html__( 'Primary', 'designr' ),
+            'split-primary-left'        => esc_html__( 'Split Primary - Left', 'designr' ),
+            'split-primary-right'       => esc_html__( 'Split Primary - Right', 'designr' ),
+            'mobile-menu'               => esc_html__( 'Mobile', 'designr' ),
         ) );
 
         /*
@@ -132,6 +140,28 @@ endif;
  * @global int $content_width
  */
 function designr_content_width() {
-    $GLOBALS[ 'content_width' ] = apply_filters( 'designr_content_width', 640 );
+    $GLOBALS[ 'content_width' ] = apply_filters( 'designr_content_width', 1170 );
 }
 
+/**
+ * Retrieve all color theme mods in use and return them as an associative array
+ * 
+ * @since 1.0.0
+ * @return array of hex colors
+ */
+function designr_get_all_theme_colors() {
+    
+    $theme_colors = array();
+    
+    $theme_colors['navbar_bg']  = get_theme_mod( 'navbar_background', '#141414' );
+    $theme_colors['navbar_fg']  = get_theme_mod( 'navbar_foreground', '#ffffff' );
+    
+    $theme_colors['footer_bg']  = get_theme_mod( 'footer_background', '#141414' );
+    $theme_colors['footer_fg']  = get_theme_mod( 'footer_foreground', '#ffffff' );
+    
+    $theme_colors['primary']    = get_theme_mod( 'skin_theme_primary', '#0000FF' );
+    $theme_colors['secondary']  = get_theme_mod( 'skin_theme_secondary', '#00FF00' );
+ 
+    return $theme_colors;
+    
+}

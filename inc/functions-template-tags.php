@@ -140,3 +140,51 @@ if ( !function_exists( 'designr_post_thumbnail' ) ) :
 
 
 endif;
+
+/**
+ * Render the HTML that opens the wrap of the Masonry Blog
+ *
+ * @since 1.0.0
+ * @return void
+ */
+function designr_render_masonry_wrap_open() { ?>
+    
+    <div class="masonry-card-blog">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-12">
+
+                    <div class="masonry_card_blog">
+
+                        <div class="grid_sizer"></div>
+                        <div class="grid_spaced"></div>
+
+<?php }
+add_action( 'blog_masonry_wrap_open', 'designr_render_masonry_wrap_open');        
+    
+/**
+ * Render the HTML that closes the wrap of the Masonry Blog
+ *
+ * @since 1.0.0
+ * @return void
+ */
+function designr_render_masonry_wrap_close() { ?>
+                        
+                    </div>
+                    
+                    <?php the_posts_navigation(); ?>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<?php }
+add_action( 'blog_masonry_wrap_close', 'designr_render_masonry_wrap_close');        
+    
