@@ -69,9 +69,64 @@ $data = array (
         // Panel: Navbar -------------------------------------------------------
         'panel_navbar' => array ( 
             
-            'title' => __( 'Navbar', 'designr' ),
-            'desciption' => __( 'Customize the primary navbar on your site, including control over appearance & behaviour', 'designr' ),
-            'sections' => array (
+            'title'         => __( 'Navbar', 'designr' ),
+            'desciption'    => __( 'Customize the primary navbar on your site, including control over appearance & behaviour', 'designr' ),
+            'sections'      => array (
+                
+                // Section : Navbar General Settings ---------------------------
+                'section_nav_general' => array (
+                    
+                    'title' => __( 'Navbar Style', 'designr' ),
+                    'options' => array (
+                        'navbar_style' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Navbar Style', 'designr' ),
+                            'default'       => 'default',
+                            'choices'   => array (
+                                'default'   => __( 'Default', 'designr' ),
+                                'custom_a'  => __( 'Custom A', 'designr' ),
+                            )
+                        )
+                    )
+                    
+                ),
+
+                // Section : Custom A Style Settings ---------------------------
+                'section_nav_style_a' => array (
+                    
+                    'title' => __( 'Style: Custom A - Settings', 'designr' ),
+                    'options' => array (
+                        'style_a_always_show_logo' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Logo always visible?', 'designr' ),
+                            'description'   => __( 'When true, logo will be visible even when Navbar is collapsed / unstuck', 'designr' ),
+                            'default'       => 'no',
+                            'choices'   => array (
+                                'no'        => __( 'No', 'designr' ),
+                                'yes'       => __( 'Yes', 'designr' ),
+                            )
+                        ),
+                        'style_a_collapse_height' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Navbar Height (Collapsed)', 'designr' ),
+                            'description'   => __( 'When Navbar is collapsed / unstuck', 'designr' ),
+                            'default'       => 50
+                        ),
+                        'style_a_expand_height' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Navbar Height (Expanded)', 'designr' ),
+                            'description'   => __( 'When Navbar is expanded / sticky', 'designr' ),
+                            'default'       => 75
+                        ),
+                        'style_a_mobile_logo_height' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Logo Height (Mobile Only)', 'designr' ),
+                            'description'   => __( 'Set the height of the logo in the mobile Navbar', 'designr' ),
+                            'default'       => 50
+                        )
+                    )
+                    
+                ),
                 
                 // Section : Navbar Colors -------------------------------------
                 'section_nav_colors' => array (
@@ -79,21 +134,21 @@ $data = array (
                     'title' => __( 'Navbar Colors', 'designr' ),
                     'options' => array (
                         'navbar_background' => array (
-                            'type' => 'select',
-                            'label' => __( 'Background Color', 'designr' ),
-                            'default' => '#141414',
-                            'choices' => array (
-                                '#141414' => __( 'Dark', 'designr' ),
-                                '#ffffff' => __( 'Light', 'designr' ),
+                            'type'          => 'select',
+                            'label'         => __( 'Background Color', 'designr' ),
+                            'default'       => '141414',
+                            'choices'   => array (
+                                '141414'    => __( 'Dark', 'designr' ),
+                                'ffffff'    => __( 'Light', 'designr' ),
                             )
                         ),
                         'navbar_foreground' => array (
-                            'type' => 'select',
-                            'label' => __( 'Foreground Color', 'designr' ),
-                            'default' => '#ffffff',
-                            'choices' => array (
-                                '#141414' => __( 'Dark', 'designr' ),
-                                '#ffffff' => __( 'Light', 'designr' ),
+                            'type'          => 'select',
+                            'label'         => __( 'Foreground Color', 'designr' ),
+                            'default'       => 'ffffff',
+                            'choices'   => array (
+                                '141414'    => __( 'Dark', 'designr' ),
+                                'ffffff'    => __( 'Light', 'designr' ),
                             )
                         )
                     )
@@ -109,7 +164,7 @@ $data = array (
             
             'title'         => __( 'Appearance', 'designr' ),
             'description'   => __( 'Customize your site colors, fonts, and more', 'designr' ),
-            'sections' => array (
+            'sections'      => array (
                 
                 // Section : Colors --------------------------------------------
                 'section_colors' => array ( 
@@ -120,21 +175,21 @@ $data = array (
                         'skin_theme_primary' => array(
                             'type'          => 'select',
                             'label'         => __( 'Theme Color - Primary', 'designr' ),
-                            'default'       => '#0000FF',
+                            'default'       => '0000FF',
                             'choices'   => array(
-                                '#0000FF'       => __( 'Blue', 'designr' ),
-                                '#00FF00'       => __( 'Green', 'designr' ),
-                                '#FF0000'       => __( 'Red', 'designr' ),
+                                '0000FF'       => __( 'Blue', 'designr' ),
+                                '00FF00'       => __( 'Green', 'designr' ),
+                                'FF0000'       => __( 'Red', 'designr' ),
                             ),
                         ),
                         'skin_theme_secondary' => array(
                             'type'          => 'select',
                             'label'         => __( 'Theme Color - Secondary', 'designr' ),
-                            'default'       => '#00FF00',
+                            'default'       => '00FF00',
                             'choices'   => array(
-                                '#0000FF'       => __( 'Blue', 'designr' ),
-                                '#00FF00'       => __( 'Green', 'designr' ),
-                                '#FF0000'       => __( 'Red', 'designr' ),
+                                '0000FF'       => __( 'Blue', 'designr' ),
+                                '00FF00'       => __( 'Green', 'designr' ),
+                                'FF0000'       => __( 'Red', 'designr' ),
                             ),
                         ),
                     ),
@@ -187,7 +242,7 @@ $data = array (
             
             'title'         => __( 'Footer', 'designr' ),
             'desciption'    => __( 'Customize the theme footer', 'designr' ),
-            'sections'  => array (
+            'sections'      => array (
                 
                 // Section : Footer Colors -------------------------------------
                 'section_footer_colors' => array (
@@ -199,10 +254,10 @@ $data = array (
                         'footer_background' => array (
                             'type'      => 'select',
                             'label'     => __( 'Background Color', 'designr' ),
-                            'default'   => '#141414',
+                            'default'   => '141414',
                             'choices'   => array (
-                                '#141414'   => __( 'Dark', 'designr' ),
-                                '#ffffff'   => __( 'Light', 'designr' ),
+                                '141414'   => __( 'Dark', 'designr' ),
+                                'ffffff'   => __( 'Light', 'designr' ),
                             )
                         ),
                         
@@ -210,10 +265,10 @@ $data = array (
                         'footer_foreground' => array (
                             'type'      => 'select',
                             'label'     => __( 'Foreground Color', 'designr' ),
-                            'default'   => '#ffffff',
+                            'default'   => 'ffffff',
                             'choices'   => array (
-                                '#141414'   => __( 'Dark', 'designr' ),
-                                '#ffffff'   => __( 'Light', 'designr' ),
+                                '141414'   => __( 'Dark', 'designr' ),
+                                'ffffff'   => __( 'Light', 'designr' ),
                             )
                         )
                         

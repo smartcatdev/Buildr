@@ -20,34 +20,14 @@ jQuery(document).ready(function ($) {
         
         // Expand Nav Line Height
         $(this).find('#slim-header ul.slim-header-menu > li').stop().animate({
-            lineHeight: '75px',
+            lineHeight: designrLocalized.style_a_expand_height,
         }, 400 );
-        
-        // Expand Center Logo Wrap
-        $(this).find('#custom-logo-wrap').stop().animate({
-            width: '10%',
-//            paddingLeft: '1%',
-//            paddingRight: '1%',
-        }, 400 ).addClass('expanded');
-        
-        // Show Logo
-        $('header#masthead .custom-logo').addClass('visible-logo');
         
     }).on('sticky-end', function() { 
         
-        // Hide Logo 
-        $('header#masthead .custom-logo').removeClass('visible-logo');
-        
-        // Contract Center Logo Wrap
-        $(this).find('#custom-logo-wrap').stop().animate({
-            width: '0%',
-//            paddingLeft: '0%',
-//            paddingRight: '0%',
-        }, 400 ).removeClass('expanded');
-        
         // Contract Nav Line Height
         $(this).find('#slim-header ul.slim-header-menu > li').stop().animate({
-            lineHeight: '50px',
+            lineHeight: designrLocalized.style_a_collapse_height,
         }, 200 );
         
     });

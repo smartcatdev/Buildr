@@ -44,17 +44,22 @@ div#slim-header .left-half ul.slim-header-menu {
 
 div#slim-header .left-half, 
 div#slim-header .right-half {
-    width: 40%;
+    display: flex;
+    flex: 1 1;
 }
 div#slim-header .left-half {
-    float: right;
+    text-align: right;
+    justify-content: flex-end;
 } 
 div#slim-header .right-half {
-    float: left;
+    text-align: left;
+    justify-content: flex-start;
 } 
 div#custom-logo-wrap {
+    display: flex;
     text-align: center;
-    width: 0;
+    justify-content: center;
+    width: auto !important;
 }
 div#custom-logo-wrap.expanded {
     width: auto;
@@ -67,7 +72,6 @@ ul.slim-header-menu {
 }
 
 ul.slim-header-menu > li {
-    line-height: 50px;
     padding: 0 15px;
     vertical-align: middle;
     display: table-cell;
@@ -79,19 +83,18 @@ a.custom-logo-link {
 
 img.custom-logo {
     text-align: center;
-    height: 50px;
     width: auto;
-    opacity: 0;
-    transform: scale(0);
+/*    opacity: 0;
+    transform: scale(0);*/
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition:  all 0.3s ease-in-out;
     -o-transition:  all 0.3s ease-in-out;
     transition:  all 0.3s ease-in-out;
+    padding: 12.5px 0;
 }
 
-img.custom-logo.visible-logo {
+.is-sticky img.custom-logo {
     opacity: 1;
-    transform: none;
 }
 
 ul#mobile-menu li a,
@@ -269,11 +272,9 @@ ul.slim-header-menu > li > ul.sub-menu > li {
     div#custom-logo-wrap {
         width: 100% !important;
         padding: 15px 0 0;
-        line-height: 50px !important;
     }
     img.custom-logo {
-        opacity: 1;
-        height: 40px !important;
+        opacity: 1 !important;
         margin: 0 15px;
         width: auto !important;
         transform: none !important;
