@@ -12,6 +12,28 @@
 }
 
 /* ----------------------------------------------------------------------------- 
+ * General Settings
+ * -------------------------------------------------------------------------- */
+div#content {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition:  all 0.2s ease-in-out;
+    -o-transition:  all 0.2s ease-in-out;
+    transition:  all 0.2s ease-in-out;
+}
+
+div#primary {
+    padding: 50px 0;
+}
+
+/* ----------------------------------------------------------------------------- 
+ * General Typography
+ * -------------------------------------------------------------------------- */
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: bold;
+}
+
+/* ----------------------------------------------------------------------------- 
  * Header: Custom A
  * -------------------------------------------------------------------------- */
 
@@ -20,9 +42,10 @@ header#masthead {
 }
 
 #slim-header-wrap {
-/*    position: fixed;*/
+    position: fixed;
     width: 100%;
     top: 0;
+    z-index: 9999;
 }
 
 div#slim-header {
@@ -35,6 +58,8 @@ div#slim-header {
     width: 100%;
     justify-content: center;
     align-items: center;
+    background-size: cover;
+    background-position: 50%;
 }
 
 div#slim-header .left-half ul.slim-header-menu {
@@ -91,10 +116,12 @@ img.custom-logo {
     -o-transition:  all 0.3s ease-in-out;
     transition:  all 0.3s ease-in-out;
     padding: 12.5px 0;
+    transform: translate(0,-50%);
 }
 
 .is-sticky img.custom-logo {
     opacity: 1;
+    transform: none;
 }
 
 ul#mobile-menu li a,
@@ -102,7 +129,6 @@ ul.slim-header-menu > li a {
     color: #fff;
     text-transform: uppercase;
     letter-spacing: .125em;
-    font-family: Montserrat; /* TODO: Make dynamic Font */
     letter-spacing: .5em;
     font-size: 10px;
     -webkit-transition: all 0.3s ease-in-out;
@@ -147,11 +173,12 @@ ul.slim-header-menu > li:not(.menu-item-has-children) > a:hover:before {
 
 div#slim-header ul#mobile-menu {
     padding: 15px 0 0 0;
-    margin: 15px 0 0 0;
+    margin: 0;
     list-style: none;
     overflow: hidden;
     display: none;
     position: relative;
+    padding-bottom: 15px;
 }
 
 div#slim-header ul#mobile-menu:before {
@@ -280,7 +307,7 @@ ul.slim-header-menu > li > ul.sub-menu > li {
         transform: none !important;
     }
     div#mobile-menu-wrap {
-        padding-bottom: 15px;
+/*        padding-bottom: 15px;*/
     }
 }
 
@@ -295,8 +322,9 @@ ul.slim-header-menu > li > ul.sub-menu > li {
     bottom: 0;
     margin: 15px auto 0;
     width: 24px;
-    height: 24px;
+    height: 36px;
     cursor: pointer;
+    padding-bottom: 15px;
 }
 
 #mobile-menu-trigger .bar,
@@ -350,22 +378,24 @@ ul.slim-header-menu > li > ul.sub-menu > li {
  * Blog: Masonry Cards
  * -------------------------------------------------------------------------- */
 
-.masonry-card-blog .blog_item_wrap,
-.masonry-card-blog .grid_sizer {
-    width: 33.333333%;
+@media (max-width:1499px) {
+    .masonry-card-blog .blog_item_wrap,
+    .masonry-card-blog .grid_sizer {
+        width: 33.333333% !important;
+    }
 }
 
 @media (max-width:991px) {
     .masonry-card-blog .blog_item_wrap,
     .masonry-card-blog .grid_sizer {
-        width: 50%;
+        width: 50% !important;
     }
 }
 
 @media (max-width:767px) {
     .masonry-card-blog .blog_item_wrap,
     .masonry-card-blog .grid_sizer {
-        width: 100%;
+        width: 100% !important;
     }
 }
 
@@ -378,7 +408,7 @@ ul.slim-header-menu > li > ul.sub-menu > li {
 }
 
 .masonry-card-blog .blog_item_wrap img {
-    max-width: 100%;
+    width: 100%;
 }
 
 .masonry-card-blog .blog_item_wrap .blog_item .excerpt {
@@ -390,7 +420,6 @@ ul.slim-header-menu > li > ul.sub-menu > li {
 }
 
 .masonry-card-blog .blog_item_wrap .blog_item .entry-title {
-    font-family: "Montserrat"; /* TODO: Make dynamic Font */
     font-size: 32px;
     margin: 0;
     font-weight: 800;
@@ -401,7 +430,6 @@ ul.slim-header-menu > li > ul.sub-menu > li {
 .masonry-card-blog .blog_item_wrap .blog_item .inner .blog-meta {
     color: #666;
     font-weight: 800;
-    font-family: Lato; /* TODO: Make dynamic Font */
     margin-bottom: 15px;
     margin-top: 15px;
     font-size: 12px;
@@ -454,7 +482,6 @@ ul.slim-header-menu > li > ul.sub-menu > li {
     letter-spacing: .125em;
     color: #888;
     font-weight: 600;
-    font-family: Lato; /* TODO: Make dynamic Font */
     font-size: 12px;
     padding-right: 65px;
 }

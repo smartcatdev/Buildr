@@ -12,7 +12,7 @@ jQuery(document).ready(function ($) {
             $(this).find('ul.sub-menu').css('width', $(this).outerWidth() + 'px');    
         }
     });
-    
+  
     $("header#masthead #slim-header-wrap").sticky({
         topSpacing: $('#wpadminbar').length > 0 ? 32 : 0,
         zIndex:9999,
@@ -21,9 +21,15 @@ jQuery(document).ready(function ($) {
         // Expand Nav Line Height
         $(this).find('#slim-header ul.slim-header-menu > li').stop().animate({
             lineHeight: designrLocalized.style_a_expand_height,
-        }, 400 );
+        }, 200 );
+        
+        // Expand Padding Top on #content
+        $('div#content').addClass('sticky-header');
         
     }).on('sticky-end', function() { 
+        
+        // Contract Padding Top on #content
+        $('div#content').removeClass('sticky-header');
         
         // Contract Nav Line Height
         $(this).find('#slim-header ul.slim-header-menu > li').stop().animate({

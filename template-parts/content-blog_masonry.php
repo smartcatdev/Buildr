@@ -19,7 +19,25 @@
                 </h2>
 
                 <div class="blog-meta">
-                    <span class="date">September 24, 2010</span> | <span class="author">by smartcat</span>
+                    
+                    <?php if ( get_theme_mod( 'blog_layout_show_date_posted', 'yes' ) == 'yes' || get_theme_mod( 'blog_layout_show_author', 'yes' ) == 'yes' ) : ?>
+                    
+                        <?php if ( get_theme_mod( 'blog_layout_show_date_posted', 'yes' ) == 'yes' ) : ?>    
+                            <span class="post-date">
+                                <?php esc_html_e( get_the_date( get_option( 'date_format' ) ) ); ?>
+                            </span>
+                        <?php endif; ?>
+                    
+                        <?php echo get_theme_mod( 'blog_layout_show_date_posted', 'yes' ) == 'yes' && get_theme_mod( 'blog_layout_show_author', 'yes' ) == 'yes' ? ' | ' : ''; ?>
+                    
+                        <?php if ( get_theme_mod( 'blog_layout_show_author', 'yes' ) == 'yes' ) : ?>    
+                            <span class="post-author">
+                                <?php _e( 'by', 'designr' ); ?> <?php the_author_posts_link(); ?>
+                            </span>
+                        <?php endif; ?>
+                            
+                    <?php endif; ?>
+                    
                 </div>
 
                 <div class="excerpt">
@@ -32,8 +50,10 @@
 
                 <div class="meta-stats">
 
-                    <span class="fas fa-comment"></span> 2
-                    <span class="fas fa-eye"></span> 16
+                    <?php $comment_count = wp_count_comments( get_the_ID() ); ?>
+                    
+                    <span class="fas fa-comment"></span> <?php echo esc_attr_e( $comment_count->approved ); ?>
+                    <span class="fas fa-eye"></span> 10
 
                 </div>
 

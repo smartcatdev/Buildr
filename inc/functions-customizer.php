@@ -66,6 +66,74 @@ $data = array (
     
     'panels' => array (
         
+        // Panel: Blog ---------------------------------------------------------
+        'panel_blog' => array ( 
+            
+            'title'         => __( 'Blog', 'designr' ),
+            'desciption'    => __( 'Customize the blog and archive pages on your site', 'designr' ),
+            'sections'      => array (
+                
+                // Section : Blog Layout Settings ------------------------------
+                'section_blog_layout' => array (
+                    
+                    'title' => __( 'Blog Layout', 'designr' ),
+                    'options' => array (
+                        'blog_layout_style' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Blog Style', 'designr' ),
+                            'default'       => 'masonry_card',
+                            'choices'   => array (
+                                'masonry_card'   => __( 'Masonry - Cards', 'designr' ),
+                            )
+                        ),
+                        'blog_layout_num_columns' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Layout - Number of Columns', 'designr' ),
+                            'description'   => __( 'Mobile devices will automatically show fewer columns to maximaize space.', 'designr' ),
+                            'default'       => '3col',
+                            'choices'   => array (
+                                '1col'      => __( 'Single Column', 'designr' ),
+                                '2col'      => __( 'Two Columns', 'designr' ),
+                                '3col'      => __( 'Three Columns', 'designr' ),
+                                '4col'      => __( 'Four Columns', 'designr' ),
+                            )
+                        ),
+                        'blog_layout_show_date_posted' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Show Date Posted?', 'designr' ),
+                            'default'       => 'yes',
+                            'choices'   => array (
+                                'no'        => __( 'No', 'designr' ),
+                                'yes'       => __( 'Yes', 'designr' ),
+                            )
+                        ),
+                        'blog_layout_show_author' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Show Author?', 'designr' ),
+                            'default'       => 'yes',
+                            'choices'   => array (
+                                'no'        => __( 'No', 'designr' ),
+                                'yes'       => __( 'Yes', 'designr' ),
+                            )
+                        ),
+                        'blog_title_font_size_dsk' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Post Title - Font Size (Desktop)', 'designr' ),
+                            'default'       => 32,
+                        ),
+                        'blog_title_font_size_mbl' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Post Title - Font Size (Mobile)', 'designr' ),
+                            'default'       => 20,
+                        ),
+                    )
+                    
+                ),
+
+            ), // End of Blog Sections
+            
+        ), // End of Blog Panel
+        
         // Panel: Navbar -------------------------------------------------------
         'panel_navbar' => array ( 
             
@@ -85,6 +153,15 @@ $data = array (
                             'choices'   => array (
                                 'default'   => __( 'Default', 'designr' ),
                                 'custom_a'  => __( 'Custom A', 'designr' ),
+                            )
+                        ),
+                        'navbar_links_font' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Navbar Links - Font Family', 'designr' ),
+                            'default'       => 'primary',
+                            'choices'   => array (
+                                'primary'   => __( 'Use Primary Font', 'designr' ),
+                                'secondary' => __( 'Use Secondary Font', 'designr' ),
                             )
                         )
                     )
@@ -133,6 +210,15 @@ $data = array (
                     
                     'title' => __( 'Navbar Colors', 'designr' ),
                     'options' => array (
+                        'navbar_background_style' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Background Style', 'designr' ),
+                            'default'       => 'color',
+                            'choices'   => array (
+                                'color'     => __( 'Color', 'designr' ),
+                                'image'     => __( 'Background Image', 'designr' ),
+                            )
+                        ),
                         'navbar_background' => array (
                             'type'          => 'select',
                             'label'         => __( 'Background Color', 'designr' ),
@@ -150,7 +236,12 @@ $data = array (
                                 '141414'    => __( 'Dark', 'designr' ),
                                 'ffffff'    => __( 'Light', 'designr' ),
                             )
-                        )
+                        ),
+                        'navbar_bg_image' => array (
+                            'type'          => 'image',
+                            'label'         => __( 'Background Image', 'designr' ),
+                            'default'       => '',
+                        ),
                     )
                     
                 ),
@@ -210,9 +301,44 @@ $data = array (
                             'default'   => 'Montserrat, sans-serif',
                             'choices'   => designr_fonts(),
                         ),
+                        'headings_letter_spacing' => array(
+                            'type'          => 'select',
+                            'label'         => __( 'Letter Spacing for all Headings', 'designr' ),
+                            'description'   => __( 'Set the scaling "em" value. Can be positive or negative. 0 for normal spacing.', 'designr' ),
+                            'default'       => '0.0',
+                            'choices'   => array (
+                                '-.1'       => __( '-.100em (Narrowest)', 'designr' ),
+                                '-.075'     => __( '-.075em', 'designr' ),
+                                '-.050'     => __( '-.050em', 'designr' ),
+                                '-.025'     => __( '-.025em', 'designr' ),
+                                '0.0'         => __( '0.00em (Default)', 'designr' ),
+                                '.025'      => __( '.025em', 'designr' ),
+                                '.050'      => __( '.050em', 'designr' ),
+                                '.075'      => __( '.075em', 'designr' ),
+                                '.100'      => __( '.100em (Widest)', 'designr' ),
+                            )
+                        ),
+                        'headings_line_height' => array(
+                            'type'          => 'select',
+                            'label'         => __( 'Line Height for all Headings', 'designr' ),
+                            'description'   => __( 'Set the scaling "em" value. Can be positive or negative. 1 for normal spacing.', 'designr' ),
+                            'default'       => '1',
+                            'choices'   => array (
+                                '.80'       => __( '.80em (Shortest)', 'designr' ),
+                                '1'         => __( '1em (Default)', 'designr' ),
+                                '1.125'     => __( '1.125em', 'designr' ),
+                                '1.25'      => __( '1.25em', 'designr' ),
+                                '1.5'       => __( '1.5em (Tallest)', 'designr' ),
+                            )
+                        ),
                         'h1_font_size' => array(
                             'type'      => 'number',
                             'label'     => __( 'Font Size - h1', 'designr' ),
+                            'default'   => 16,
+                        ),
+                        'h1_font_size_mbl' => array(
+                            'type'      => 'number',
+                            'label'     => __( 'Font Size - h1 (Mobile)', 'designr' ),
                             'default'   => 16,
                         ),
                         
