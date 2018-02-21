@@ -62,3 +62,7 @@ function acid_sanitize_select( $input, $setting ){
     return ( array_key_exists( $input, $choices ) ? $input : $setting->default );                
 
 }
+
+function acid_sanitize_decimal( $input ) {
+    return filter_var( $input, FILTER_SANITIZE_NUMBER_FLOAT );
+}

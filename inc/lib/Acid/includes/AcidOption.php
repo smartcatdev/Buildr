@@ -46,6 +46,7 @@ if( ! class_exists( 'AcidOption' ) ) {
                 'email'             => 'Email',    
                 'url'               => 'URL',
                 'number'            => 'Number',
+                'decimal'           => 'Decimal',
                 'hidden'            => 'Hidden',
                 'date'              => 'Date',
                 'image'             => 'Image',
@@ -105,6 +106,10 @@ if( ! class_exists( 'AcidOption' ) ) {
         
         private function has_style() {
             return $this->style ? true : false;
+        }
+        
+        private function has_description() {
+            return $this->description ? true : false;
         }
         
         public function render() {
@@ -178,6 +183,10 @@ if( ! class_exists( 'AcidOption' ) ) {
                 $this->control_args[ 'input_attrs' ][ 'style' ] = $this->style;
             }
             
+            if( $this->has_description() ) {
+                $this->control_args[ 'description' ] = $this->description;
+            }
+            
             $this->control_args[ 'section' ] = $this->section;
             
         }
@@ -196,6 +205,9 @@ if( ! class_exists( 'AcidOption' ) ) {
                     break;
                 case 'number' :
                     $callback = 'absint';
+                    break;
+                case 'decimal' :
+                    $callback = 'acid_sanitize_decimal';
                     break;
                 case 'textarea' :
                     $callback = 'sanitize_textarea_field';
