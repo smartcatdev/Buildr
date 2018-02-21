@@ -116,6 +116,15 @@ $data = array (
                                 'yes'       => __( 'Yes', 'designr' ),
                             )
                         ),
+                        'blog_layout_show_categories' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Show Category Footer?', 'designr' ),
+                            'default'       => 'yes',
+                            'choices'   => array (
+                                'no'        => __( 'No', 'designr' ),
+                                'yes'       => __( 'Yes', 'designr' ),
+                            )
+                        ),
                         'blog_title_font_size_dsk' => array (
                             'type'          => 'number',
                             'label'         => __( 'Post Title - Font Size (Desktop)', 'designr' ),

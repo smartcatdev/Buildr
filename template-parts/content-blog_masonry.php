@@ -57,9 +57,20 @@
 
                 </div>
 
-                <div class="categories-bar">
-                    <span>Music</span>
-                </div>
+                <?php $categories = get_the_category(); ?>
+                <?php if ( get_theme_mod( 'blog_layout_show_categories', 'yes' ) == 'yes' && !empty( $categories ) && is_array( $categories ) ) : ?> 
+                    <div class="categories-bar">
+                        <?php $ctr = 0; ?>
+                        <?php foreach ( $categories as $cat ) : ?>
+                            <?php $ctr++; ?>
+                            <span>
+                                <a href="<?php echo esc_url( get_category_link( $cat ) ); ?>">
+                                    <?php esc_attr_e( $cat->name ); ?><?php echo $ctr != count( $categories ) ? ', ' : ''; ?>
+                                </a>
+                            </span>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
 
             </div>
 
