@@ -1,5 +1,5 @@
 /**
- * File customizer.js.
+ * File customizer-preview.js.
  *
  * Theme Customizer enhancements for a better user experience.
  *
@@ -39,4 +39,27 @@
             }
         });
     });
+    
+//    wp.customize( 'navbar_style', function( value ) {
+//        
+//        if( value === 'custom_a' ) {
+//            $( '#accordion-section-section_nav_style_a' ).addClass( 'hidden' )
+//        }
+//        
+//        console.log( wp.customize.instance( 'navbar_style' ).get() === 'custom_a' )
+//        
+//        if( wp.customize.instance( 'navbar_style' ).get() === 'custom_a' ) {
+//            console.log( 'here' )
+//            
+//            
+//            wp.customize.section( 'section_nav_style_a' ).toggle()
+//            
+//            $( '#accordion-section-section_nav_style_a' ).hide()
+//        }
+//        
+//    })
+    
+    
+
+    
 })(jQuery);
