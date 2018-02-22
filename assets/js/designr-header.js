@@ -13,6 +13,8 @@ jQuery(document).ready(function ($) {
         }
     });
   
+    $('img.custom-logo').addClass('animated');
+  
     $("header#masthead #slim-header-wrap").sticky({
         topSpacing: $('#wpadminbar').length > 0 ? 32 : 0,
         zIndex:9999,
@@ -23,10 +25,14 @@ jQuery(document).ready(function ($) {
             lineHeight: designrLocalized.style_a_expand_height,
         }, 200 );
         
+        $('#custom-logo-wrap.sometimes-hidden img.custom-logo').removeClass('fadeOut').addClass('bounceIn');
+        
         // Expand Padding Top on #content
         $('div#content').addClass('sticky-header');
         
     }).on('sticky-end', function() { 
+        
+        $('#custom-logo-wrap.sometimes-hidden img.custom-logo').removeClass('bounceIn').addClass('fadeOut');
         
         // Contract Padding Top on #content
         $('div#content').removeClass('sticky-header');
@@ -71,6 +77,15 @@ jQuery(document).ready(function ($) {
             mobile_nav_open = true;
             
         }
+        
+    });
+   
+    /* -------------------------------------------------------------------------
+     * Header: Slim Split Social Drawer
+     * ---------------------------------------------------------------------- */
+    $('#split-social-trigger').on( 'click', function() {
+        
+        $(this).stop().toggleClass('expanded').parent().parent().find('.navbar-social').stop().toggleClass('expanded');
         
     });
     

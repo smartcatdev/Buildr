@@ -1,4 +1,4 @@
-<header id="masthead" class="site-header">
+<header id="masthead" class="site-header header-style-split">
 
     <div id="slim-header-wrap">
 
@@ -38,15 +38,31 @@
 
             <?php if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) : ?>
 
-                <div id="custom-logo-wrap">
+                <div id="custom-logo-wrap" class="<?php echo get_theme_mod( 'style_a_always_show_logo', 'no' ) == 'no' ? 'sometimes-hidden' : ''; ?>">
             
                     <?php the_custom_logo(); ?>
 
                 </div>
                     
+            <?php else : ?> 
+            
+                <div id="custom-logo-wrap" class="<?php echo get_theme_mod( 'style_a_always_show_logo', 'no' ) == 'no' ? 'sometimes-hidden' : ''; ?>">
+            
+                    <div class="site-branding">
+                        <h1 class="site-title">
+                            <?php echo get_bloginfo('name'); ?>
+                        </h1>
+                        <?php if ( get_bloginfo( 'name' ) ) : ?>
+                            <p class="site-tagline">
+                                <?php echo get_bloginfo( 'description' ); ?>
+                            </p>
+                        <?php endif; ?>
+                    </div>
+
+                </div>
+            
             <?php endif; ?> 
             
-
             <div class="right-half">
 
                 <?php if ( has_nav_menu( 'split-primary-right' ) ) : ?>
@@ -79,6 +95,25 @@
 
             </div>
 
+            <div class="left-half split-social">
+                
+                <div class="navbar-social">
+                    <a id="split-social-trigger" class="navbar-icon">
+                        <span class="fas fa-plus"></span>
+                    </a>
+                    <?php for ( $ctr = 1; $ctr < 6; $ctr++ ) : ?>
+                        
+                        <?php if ( get_theme_mod( 'social_icon_' . $ctr . '_url', '' ) != '' ) : ?>
+                            <a class="navbar-icon" href="<?php esc_attr_e( get_theme_mod( 'social_icon_' . $ctr . '_url', '' ) ); ?>">
+                                <span class="fab <?php esc_attr_e( get_theme_mod( 'social_icon_' . $ctr . '_icon', '' ) ); ?>"></span>
+                            </a>
+                        <?php endif; ?>
+                    
+                    <?php endfor; ?>
+                </div>
+                
+            </div>
+            
             <div id="mobile-menu-wrap">
                 
                 <div id="mobile-menu-trigger">
