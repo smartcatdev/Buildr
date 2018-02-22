@@ -305,7 +305,7 @@ $data = array (
 
                 // Section : Slim Style Settings ---------------------------
                 'section_nav_style_a' => array (
-                    
+
                     'title' => __( 'Navbar Style - Slim', 'designr' ),
                     'options' => array (
                         'style_a_always_show_logo' => array (
