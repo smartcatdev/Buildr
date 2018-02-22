@@ -4,10 +4,14 @@
 
         var customize = this
         
+        // This is an option thats being loaded or customized
         customize( 'navbar_style', function ( value ) {
             
             
-            toggle( value.get() )
+            // Runs on initial load
+            toggle( value.get() ) 
+            
+            // Runs on value change
             value.bind( function ( to ) {    
                 toggle( to )
             })
