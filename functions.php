@@ -10,6 +10,8 @@ require get_template_directory() . '/inc/functions-menus.php';
 
 require get_template_directory() . '/inc/functions-general.php';
 
+require get_template_directory() . '/inc/functions-helpers.php';
+
 require get_template_directory() . '/inc/functions-template-tags.php';
 
 require get_template_directory() . '/inc/functions-widgets.php';

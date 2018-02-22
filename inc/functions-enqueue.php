@@ -20,11 +20,14 @@ function designr_scripts() {
     // Styles
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/lib/bootstrap/bootstrap.min.css', array(), DESIGNR_VERSION );
     wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/lib/font-awesome/fontawesome-all.min.css', array(), DESIGNR_VERSION );
+    wp_enqueue_style( 'animate', get_template_directory_uri() . '/assets/lib/animate/animate.css', array(), DESIGNR_VERSION );
     wp_enqueue_style( 'designr', get_template_directory_uri() . '/assets/css/designr.css', array(), DESIGNR_VERSION );
     
     // Scripts
     wp_enqueue_script( 'sticky', get_template_directory_uri() . '/assets/lib/sticky-js/jquery.sticky.js', array('jquery'), DESIGNR_VERSION, true );
     wp_enqueue_script( 'bootstrap-toolkit', get_template_directory_uri() . '/assets/lib/bootstrap-toolkit/bootstrap-toolkit.min.js', array('jquery'), DESIGNR_VERSION, true );
+    wp_enqueue_script( 'wow', get_template_directory_uri() . '/assets/lib/wow/wow.min.js', array('jquery'), DESIGNR_VERSION, true );
+    wp_enqueue_script( 'designr-general', get_template_directory_uri() . '/assets/js/designr-general.js', array('jquery'), DESIGNR_VERSION, true );
     wp_enqueue_script( 'designr-header', get_template_directory_uri() . '/assets/js/designr-header.js', array('jquery'), DESIGNR_VERSION, true );
     wp_enqueue_script( 'designr-resize', get_template_directory_uri() . '/assets/js/designr-resize.js', array('jquery','masonry'), DESIGNR_VERSION, true );
     
