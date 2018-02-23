@@ -90,8 +90,17 @@ function designr_wp_head_styles() { ?>
         
         div#slim-header,
         div#slim-header a,
-        ul.slim-header-menu > li.current-menu-item > a {
+        ul.slim-header-menu > li.current-menu-item > a,
+        header#masthead.header-style-split .navbar-social #split-social-trigger {
             color: #<?php esc_attr_e( $theme_colors['navbar_fg'] ); ?>;
+        }
+        
+        header#masthead.header-style-split .navbar-social {
+            background-color: <?php esc_attr_e( $theme_colors['social_bg'] ); ?>;
+        }
+        
+        header#masthead.header-style-split .navbar-social a.navbar-icon {
+            color: <?php esc_attr_e( $theme_colors['social_fg'] ); ?>;
         }
         
         /* --------------------------------------------------------------------- 
@@ -146,17 +155,7 @@ function designr_wp_head_styles() { ?>
         .is-sticky ul.slim-header-menu > li {
             line-height: <?php esc_attr_e( get_theme_mod( 'style_a_expand_height', 75 ) ) ?>px;
         }
-        
-        /* ----- Slim Headers: Split Social Height -------------------------- */
-        
-        header#masthead.header-style-split .navbar-social {
-            height: <?php esc_attr_e( get_theme_mod( 'style_a_collapse_height', 50 ) + 2 ) ?>px;
-        }
-        
-        header#masthead.header-style-split .is-sticky .navbar-social {
-            height: <?php esc_attr_e( get_theme_mod( 'style_a_expand_height', 75 ) + 2 ) ?>px;
-        }
-        
+
         /* ----- Slim Headers: Site Title ----------------------------------- */
         
         .site-branding .site-title {
@@ -186,7 +185,7 @@ function designr_wp_head_styles() { ?>
         
         <?php endif; ?>
         
-        <?php if ( get_theme_mod( 'navbar_hide_tagline', 'no' ) == 'yes' ) : ?>
+        <?php if ( get_theme_mod( 'navbar_hide_tagline', 'yes' ) == 'yes' ) : ?>
         
             .site-branding .site-tagline {
                 display: none !important;
@@ -211,9 +210,11 @@ function designr_wp_head_styles() { ?>
             header#masthead.header-style-slim div#slim-header .right-half {
                 justify-content: flex-end;
             }
-            header#masthead.header-style-slim div#slim-header .left-half {
-                display: none;
-            }            
+            @media (min-width:992px) {
+                header#masthead.header-style-slim div#slim-header .left-half {
+                    display: none;
+                }            
+            }
         <?php endif; ?>
         
         /* ----- Mobile Nav: Fixed Logo Height ------------------------------ */
@@ -251,9 +252,11 @@ function designr_wp_head_styles() { ?>
         endswitch; 
         ?>
         
-        .masonry-card-blog .blog_item_wrap,
-        .masonry-card-blog .grid_sizer {
-            width: <?php esc_attr_e( $col_width ); ?>;
+        @media (min-width:1200px) {
+            .masonry-card-blog .blog_item_wrap,
+            .masonry-card-blog .grid_sizer {
+                width: <?php esc_attr_e( $col_width ); ?> !important;
+            }    
         }
         
         /* ----- Masonry Blog Cards: Border Radius -------------------------- */

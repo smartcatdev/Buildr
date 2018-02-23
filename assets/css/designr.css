@@ -14,7 +14,9 @@
 /* ----------------------------------------------------------------------------- 
  * General Settings
  * -------------------------------------------------------------------------- */
-div#content {
+div#content,
+#slim-header-wrap,
+ul.slim-header-menu > li {
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition:  all 0.2s ease-in-out;
     -o-transition:  all 0.2s ease-in-out;
@@ -36,8 +38,8 @@ ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu li a,
 .masonry-card-blog .blog_item_wrap .blog_item .meta-stats,
 .masonry-card-blog .blog_item_wrap .blog_item .inner-wrap,
 .site-branding .site-tagline,
+header#masthead .navbar-social,
 a.navbar-icon,
-header#masthead.header-style-split .navbar-social,
 #split-social-trigger {
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition:  all 0.3s ease-in-out;
@@ -92,10 +94,11 @@ header#masthead {
 }
 
 #slim-header-wrap {
-    position: fixed;
+    position: fixed !important;
     width: 100% !important;
     top: 0;
     z-index: 9999;
+    bottom: unset !important;
 }
 
 div#slim-header {
@@ -332,6 +335,7 @@ ul.slim-header-menu > li > ul.sub-menu > li {
         margin: 0 15px;
         width: auto !important;
         transform: none !important;
+        animation: none;
     }
     div#mobile-menu-wrap {
 /*        padding-bottom: 15px;*/
@@ -346,6 +350,10 @@ header#masthead.header-style-slim img.custom-logo {
     margin-left: 0 !important;
 }
 
+header#masthead.header-style-slim #slim-header-wrap #slim-header {
+    position: relative;
+}
+
 @media (min-width:992px) {
     header#masthead.header-style-slim #slim-header-wrap #slim-header {
         padding: 0 15px;
@@ -358,6 +366,10 @@ header#masthead.header-style-slim img.custom-logo {
     }
     header#masthead.header-style-slim .is-sticky .site-branding .site-tagline {
         transform: none;
+    }
+    header#masthead.header-style-slim #slim-header-wrap .left-half {
+        position: absolute;
+        right: 15px;
     }
 }
 
@@ -390,6 +402,7 @@ a.navbar-icon {
 header#masthead.header-style-split div#slim-header .left-half.split-social {
     position: absolute;
     right: 0;
+    height: 100%;
 }
 
 #split-social-trigger {
@@ -408,7 +421,6 @@ header#masthead.header-style-split .navbar-social {
     padding: 0 15px;
     display: flex;
     align-items: center;
-    background: #3c3c3c;
 }
 
 header#masthead.header-style-split .navbar-social.expanded {
@@ -424,9 +436,25 @@ header#masthead.header-style-split .navbar-social.expanded .navbar-icon {
     opacity: 1;
 }
 
+header#masthead.header-style-split .navbar-social.expanded a.navbar-icon:hover {
+    opacity: .8;
+}
+
 @media (max-width:991px) {
     header#masthead.header-style-split div#slim-header .left-half.split-social {
-        display: none;
+        position: relative;
+        justify-content: center;
+        padding: 15px 0 0;
+    }
+    header#masthead.header-style-split div#slim-header .left-half.split-social .navbar-social {
+        border: none !important;
+        transform: none !important;
+    }
+    header#masthead.header-style-split .navbar-social {
+        background: none !important;
+    }
+    header#masthead.header-style-split .navbar-social .navbar-icon {
+        opacity: 1;
     }
 }
 
@@ -497,7 +525,7 @@ header#masthead.header-style-split .navbar-social.expanded .navbar-icon {
  * Blog: Masonry Cards
  * -------------------------------------------------------------------------- */
 
-@media (max-width:1499px) {
+@media (max-width:1199px) {
     .masonry-card-blog .blog_item_wrap,
     .masonry-card-blog .grid_sizer {
         width: 33.333333% !important;
