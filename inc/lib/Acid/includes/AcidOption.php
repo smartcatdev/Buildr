@@ -65,7 +65,7 @@ if( ! class_exists( 'AcidOption' ) ) {
         }
         
         private function has_default() {
-            return $this->default ? true : false;
+            return $this->default === 0 || $this->default ? true : false;
         }
         
         private function has_transport() {
