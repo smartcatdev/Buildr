@@ -53,14 +53,14 @@ function designr_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function designr_customize_preview_js() {
-    wp_enqueue_script( 'designr-customizer-preview', get_template_directory_uri() . '/assets/admin/js/customizer-preview.js', array ( 'customize-preview' ), DESIGNR_VERSION, true );
+    wp_enqueue_script( 'designr-customizer-preview', get_template_directory_uri() . '/assets/admin/js/customizer-preview.js', array ( 'jquery', 'customize-preview' ), DESIGNR_VERSION, true );
 }
 
 add_action( 'customize_preview_init', 'designr_customize_preview_js' );
 
 
 function designr_customize_controls_js() {
-    wp_enqueue_script( 'designr-customizer-control', get_template_directory_uri() . '/assets/admin/js/customizer-control.js', array ( 'customize-preview' ), DESIGNR_VERSION, true );
+    wp_enqueue_script( 'designr-customizer-control', get_template_directory_uri() . '/assets/admin/js/customizer-control.js', array ( 'jquery', 'customize-controls' ), DESIGNR_VERSION, true );
     wp_enqueue_style( 'designr-customizer-style', get_template_directory_uri() . '/assets/admin/css/customizer.css', DESIGNR_VERSION, null );
 }
 add_action( 'customize_controls_enqueue_scripts', 'designr_customize_controls_js' );
