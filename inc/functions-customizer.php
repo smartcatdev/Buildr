@@ -55,7 +55,6 @@ function designr_customize_partial_blogdescription() {
 function designr_customize_preview_js() {
     wp_enqueue_script( 'designr-customizer-preview', get_template_directory_uri() . '/assets/admin/js/customizer-preview.js', array ( 'customize-preview' ), DESIGNR_VERSION, true );
 }
-
 add_action( 'customize_preview_init', 'designr_customize_preview_js' );
 
 
@@ -217,7 +216,7 @@ $data = array (
                             'type'          => 'select',
                             'label'         => __( 'Hide Site Tagline?', 'designr' ),
                             'description'   => __( 'Both the Title & Tagline show by default when no logo is chosen', 'designr' ),
-                            'default'       => 'no',
+                            'default'       => 'yes',
                             'choices'   => array (
                                 'no'        => __( 'No', 'designr' ),
                                 'yes'       => __( 'Yes', 'designr' ),
