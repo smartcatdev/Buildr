@@ -402,6 +402,7 @@ a.navbar-icon {
 header#masthead.header-style-split div#slim-header .left-half.split-social {
     position: absolute;
     right: 0;
+    height: 100%;
 }
 
 #split-social-trigger {
@@ -420,7 +421,6 @@ header#masthead.header-style-split .navbar-social {
     padding: 0 15px;
     display: flex;
     align-items: center;
-    background: #3c3c3c;
 }
 
 header#masthead.header-style-split .navbar-social.expanded {
@@ -436,9 +436,25 @@ header#masthead.header-style-split .navbar-social.expanded .navbar-icon {
     opacity: 1;
 }
 
+header#masthead.header-style-split .navbar-social.expanded a.navbar-icon:hover {
+    opacity: .8;
+}
+
 @media (max-width:991px) {
     header#masthead.header-style-split div#slim-header .left-half.split-social {
-        display: none;
+        position: relative;
+        justify-content: center;
+        padding: 15px 0 0;
+    }
+    header#masthead.header-style-split div#slim-header .left-half.split-social .navbar-social {
+        border: none !important;
+        transform: none !important;
+    }
+    header#masthead.header-style-split .navbar-social {
+        background: none !important;
+    }
+    header#masthead.header-style-split .navbar-social .navbar-icon {
+        opacity: 1;
     }
 }
 

@@ -95,24 +95,28 @@
 
             </div>
 
-            <div class="left-half split-social">
-                
-                <div class="navbar-social">
-                    <a id="split-social-trigger" class="navbar-icon">
-                        <span class="fas fa-plus"></span>
-                    </a>
-                    <?php for ( $ctr = 1; $ctr < 6; $ctr++ ) : ?>
-                        
-                        <?php if ( get_theme_mod( 'social_icon_' . $ctr . '_url', '' ) != '' ) : ?>
-                            <a class="navbar-icon" href="<?php esc_attr_e( get_theme_mod( 'social_icon_' . $ctr . '_url', '' ) ); ?>">
-                                <span class="fab <?php esc_attr_e( get_theme_mod( 'social_icon_' . $ctr . '_icon', '' ) ); ?>"></span>
-                            </a>
-                        <?php endif; ?>
-                    
-                    <?php endfor; ?>
+            <?php if ( get_theme_mod( 'navbar_show_social', 'no' ) == 'yes' ) : ?>
+            
+                <div class="left-half split-social">
+
+                    <div class="navbar-social">
+                        <a id="split-social-trigger" class="navbar-icon">
+                            <span class="fas fa-plus"></span>
+                        </a>
+                        <?php for ( $ctr = 1; $ctr < 6; $ctr++ ) : ?>
+
+                            <?php if ( get_theme_mod( 'social_icon_' . $ctr . '_url', '' ) != '' ) : ?>
+                                <a class="navbar-icon" href="<?php esc_attr_e( get_theme_mod( 'social_icon_' . $ctr . '_url', '' ) ); ?>">
+                                    <span class="fab <?php esc_attr_e( get_theme_mod( 'social_icon_' . $ctr . '_icon', '' ) ); ?>"></span>
+                                </a>
+                            <?php endif; ?>
+
+                        <?php endfor; ?>
+                    </div>
+
                 </div>
-                
-            </div>
+            
+            <?php endif; ?>
             
             <div id="mobile-menu-wrap">
                 

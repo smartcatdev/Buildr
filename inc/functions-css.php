@@ -90,8 +90,17 @@ function designr_wp_head_styles() { ?>
         
         div#slim-header,
         div#slim-header a,
-        ul.slim-header-menu > li.current-menu-item > a {
+        ul.slim-header-menu > li.current-menu-item > a,
+        header#masthead.header-style-split .navbar-social #split-social-trigger {
             color: #<?php esc_attr_e( $theme_colors['navbar_fg'] ); ?>;
+        }
+        
+        header#masthead.header-style-split .navbar-social {
+            background-color: <?php esc_attr_e( $theme_colors['social_bg'] ); ?>;
+        }
+        
+        header#masthead.header-style-split .navbar-social a.navbar-icon {
+            color: <?php esc_attr_e( $theme_colors['social_fg'] ); ?>;
         }
         
         /* --------------------------------------------------------------------- 
@@ -146,17 +155,7 @@ function designr_wp_head_styles() { ?>
         .is-sticky ul.slim-header-menu > li {
             line-height: <?php esc_attr_e( get_theme_mod( 'style_a_expand_height', 75 ) ) ?>px;
         }
-        
-        /* ----- Slim Headers: Split Social Height -------------------------- */
-        
-        header#masthead.header-style-split .navbar-social {
-            height: <?php esc_attr_e( get_theme_mod( 'style_a_collapse_height', 50 ) + 2 ) ?>px;
-        }
-        
-        header#masthead.header-style-split .is-sticky .navbar-social {
-            height: <?php esc_attr_e( get_theme_mod( 'style_a_expand_height', 75 ) ) ?>px;
-        }
-        
+
         /* ----- Slim Headers: Site Title ----------------------------------- */
         
         .site-branding .site-title {
