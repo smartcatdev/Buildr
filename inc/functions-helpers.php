@@ -10,14 +10,27 @@ function designr_get_all_theme_colors() {
     
     $theme_colors = array();
     
-    $theme_colors['navbar_bg']  = get_theme_mod( 'navbar_background', '#141414' );
-    $theme_colors['navbar_fg']  = get_theme_mod( 'navbar_foreground', '#ffffff' );
+    /**
+     * The following colors are from dropdown SELECTs, and each one
+     * needs the # symbol prepended on the frontend.
+     */
     
-    $theme_colors['footer_bg']  = get_theme_mod( 'footer_background', '#141414' );
-    $theme_colors['footer_fg']  = get_theme_mod( 'footer_foreground', '#ffffff' );
+    $theme_colors['navbar_bg']  = get_theme_mod( 'navbar_background', '141414' );
+    $theme_colors['navbar_fg']  = get_theme_mod( 'navbar_foreground', 'ffffff' );
     
-    $theme_colors['primary']    = get_theme_mod( 'skin_theme_primary', '#0000FF' );
-    $theme_colors['secondary']  = get_theme_mod( 'skin_theme_secondary', '#00FF00' );
+    $theme_colors['footer_bg']  = get_theme_mod( 'footer_background', '141414' );
+    $theme_colors['footer_fg']  = get_theme_mod( 'footer_foreground', 'ffffff' );
+    
+    $theme_colors['primary']    = get_theme_mod( 'skin_theme_primary', '0000FF' );
+    $theme_colors['secondary']  = get_theme_mod( 'skin_theme_secondary', '00FF00' );
+    
+    /**
+     * The following colors are from color pickers, and each needs to have
+     * the # symbol included in the value. Do not prepend these with # on the frontend!
+     */
+    
+    $theme_colors['social_bg']  = get_theme_mod( 'navbar_social_drawer_background', '#141414' );
+    $theme_colors['social_fg']  = get_theme_mod( 'navbar_social_link_foreground', '#FFFFFF' );
  
     return $theme_colors;
     

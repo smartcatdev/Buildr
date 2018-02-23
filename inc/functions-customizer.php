@@ -55,7 +55,6 @@ function designr_customize_partial_blogdescription() {
 function designr_customize_preview_js() {
     wp_enqueue_script( 'designr-customizer-preview', get_template_directory_uri() . '/assets/admin/js/customizer-preview.js', array ( 'jquery', 'customize-preview' ), DESIGNR_VERSION, true );
 }
-
 add_action( 'customize_preview_init', 'designr_customize_preview_js' );
 
 
@@ -217,7 +216,7 @@ $data = array (
                             'type'          => 'select',
                             'label'         => __( 'Hide Site Tagline?', 'designr' ),
                             'description'   => __( 'Both the Title & Tagline show by default when no logo is chosen', 'designr' ),
-                            'default'       => 'no',
+                            'default'       => 'yes',
                             'choices'   => array (
                                 'no'        => __( 'No', 'designr' ),
                                 'yes'       => __( 'Yes', 'designr' ),
@@ -241,7 +240,7 @@ $data = array (
                             'type'          => 'select',
                             'label'         => __( 'Site Title - Letter Spacing', 'designr' ),
                             'description'   => __( 'Set the scaling "em" value. Can be positive or negative. 0 for normal spacing.', 'designr' ),
-                            'default'       => '0.0',
+                            'default'       => '0.25',
                             'choices'   => array (
                                 '-.1'       => __( '-.100em (Narrowest)', 'designr' ),
                                 '-.075'     => __( '-.075em', 'designr' ),
@@ -370,6 +369,16 @@ $data = array (
                     
                     'title' => __( 'Social Links', 'designr' ),
                     'options' => array (
+                        'navbar_show_social' => array ( 
+                            'type'          => 'select',
+                            'label'         => __( 'Include Social Link in Navbar if Present?', 'designr' ),
+                            'description'   => __( 'Different Navbar styles will display the icons in varying ways', 'designr' ),
+                            'default'       => 'no',
+                            'choices'   => array (
+                                'no'        => __( 'No', 'designr' ),
+                                'yes'       => __( 'Yes', 'designr' ),
+                            )
+                        ),
                         'social_icon_1_url' => array (
                             'type'          => 'url',
                             'label'         => __( 'Social Link #1 - URL', 'designr' ),
@@ -465,6 +474,16 @@ $data = array (
                             'type'          => 'image',
                             'label'         => __( 'Background Image', 'designr' ),
                             'default'       => '',
+                        ),
+                        'navbar_social_drawer_background' => array (
+                            'type'          => 'color',
+                            'label'         => __( 'Social Links - Drawer Background Color', 'designr' ),
+                            'default'       => '#141414'
+                        ),
+                        'navbar_social_link_foreground' => array (
+                            'type'          => 'color',
+                            'label'         => __( 'Social Links - Icon Color', 'designr' ),
+                            'default'       => '#FFFFFF'
                         ),
                     )
                     
