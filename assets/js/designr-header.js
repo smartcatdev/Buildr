@@ -20,11 +20,6 @@ jQuery(document).ready(function ($) {
         zIndex:9999,
     }).on('sticky-start', function() { 
         
-        // Expand Nav Line Height
-        $(this).find('#slim-header ul.slim-header-menu > li').stop().animate({
-            lineHeight: designrLocalized.style_a_expand_height,
-        }, 200 );
-        
         $('#custom-logo-wrap.sometimes-hidden img.custom-logo').removeClass('fadeOut').addClass('bounceIn');
         
         // Expand Padding Top on #content
@@ -36,11 +31,6 @@ jQuery(document).ready(function ($) {
         
         // Contract Padding Top on #content
         $('div#content').removeClass('sticky-header');
-        
-        // Contract Nav Line Height
-        $(this).find('#slim-header ul.slim-header-menu > li').stop().animate({
-            lineHeight: designrLocalized.style_a_collapse_height,
-        }, 200 );
         
     });
    
@@ -79,6 +69,17 @@ jQuery(document).ready(function ($) {
         }
         
     });
+    
+    /* -------------------------------------------------------------------------
+     * Header: Mobile Menu - Submenu Expansion / Contraction
+     * ---------------------------------------------------------------------- */
+
+    $( '#mobile-menu-wrap ul#mobile-menu > li.menu-item-has-children').prepend('<span style="font-family: Helvetica;">+</span>');
+    $( "#mobile-menu-wrap ul#mobile-menu > li.menu-item-has-children > span" ).on( 'click', function() {
+        
+        $(this).stop().toggleClass('expanded').parent().find('ul.sub-menu').stop().slideToggle();
+        
+    });
    
     /* -------------------------------------------------------------------------
      * Header: Slim Split Social Drawer
@@ -89,4 +90,51 @@ jQuery(document).ready(function ($) {
         
     });
     
+    /* -------------------------------------------------------------------------
+     * Custom Header: Layered Parallax Section
+     * ---------------------------------------------------------------------- */
+    if ( $('div#designr-custom-header.parallax_layers').length ) {
+        
+        $(window).resize( function(){
+            $( '.jparallax-layer' ).parallax({
+                // Global Options
+                mouseport: $('body')
+            },{
+                // Texture Layer Options
+                xparallax: '15%',
+                yparallax: '15%'
+            },{
+                // Background Layer Options
+                xparallax: '50%',
+                yparallax: '50%',
+                xorigin: 0,
+                yorigin: 0,
+            },{
+                // Logo Layer Options
+                xparallax: '5%',
+                yparallax: '5%',
+            });
+        });
+
+        $( '.jparallax-layer' ).parallax({
+            // Global Options
+            mouseport: $('body')
+        },{
+            // Texture Layer Options
+            xparallax: '15%',
+            yparallax: '15%'
+        },{
+            // Background Layer Options
+            xparallax: '50%',
+            yparallax: '50%',
+            xorigin: 0,
+            yorigin: 0,
+        },{
+            // Logo Layer Options
+            xparallax: '5%',
+            yparallax: '5%',
+        }).parent().find('.jparallax-layer.content-layer').fadeIn();
+        
+    }
+        
 });

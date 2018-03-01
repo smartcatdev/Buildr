@@ -71,6 +71,189 @@ $data = array (
     
     'panels' => array (
         
+        // Panel: Custom Header ------------------------------------------------
+        'panel_custom_header' => array ( 
+            
+            'title'         => __( 'Custom Header', 'designr' ),
+            'desciption'    => __( 'Customize the header banner on your site', 'designr' ),
+            'sections'      => array (
+                
+                // Section : Custom Header Settings ----------------------------
+                'section_custom_header' => array (
+                    
+                    'title' => __( 'General Settings', 'designr' ),
+                    'options' => array (
+                        
+                        // Style
+                        'custom_header_style_toggle' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Custom Header - Style', 'designr' ),
+                            'default'       => 'parallax_vertical',
+                            'choices'   => array (
+                                'parallax_vertical'     => __( 'Parallax - Vertical', 'designr' ),
+                                'parallax_layers'       => __( 'Parallax - Perspective Layers', 'designr' ),
+                            )
+                        ),
+                        
+                        // Main Heading
+                        'custom_header_show_heading' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Display the Main Heading?', 'designr' ),
+                            'description'   => __( 'If "Yes", the Custom Header menu will be displayed, if one is set', 'designr' ),
+                            'default'       => 'yes',
+                            'choices'   => array (
+                                'no'        => __( 'No', 'designr' ),
+                                'yes'       => __( 'Yes', 'designr' ),
+                            )
+                        ),
+                        'custom_header_title_content' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Main Heading - Content', 'designr' ),
+                            'default'       => 'site_title',
+                            'choices'   => array (
+                                'site_title'        => __( 'Site Title', 'designr' ),
+                                'site_description'  => __( 'Site Description', 'designr' ),
+                            )
+                        ),
+                        'custom_header_title_font_family' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Main Heading - Font Family', 'designr' ),
+                            'default'       => 'secondary',
+                            'choices'   => array (
+                                'primary'   => __( 'Use Primary Font', 'designr' ),
+                                'secondary' => __( 'Use Secondary Font', 'designr' ),
+                            )
+                        ),
+                        'custom_header_title_font_size' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Main Heading - Font Size', 'designr' ),
+                            'default'       => 48
+                        ),
+                        'custom_header_title_letter_spacing' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Main Heading - Letter Spacing', 'designr' ),
+                            'default'       => '.250',
+                            'choices'   => array (
+                                '-.1'       => __( '-.100em (Narrowest)', 'designr' ),
+                                '-.075'     => __( '-.075em', 'designr' ),
+                                '-.050'     => __( '-.050em', 'designr' ),
+                                '-.025'     => __( '-.025em', 'designr' ),
+                                '0.0'       => __( '0.00em', 'designr' ),
+                                '.025'      => __( '.025em', 'designr' ),
+                                '.050'      => __( '.050em', 'designr' ),
+                                '.075'      => __( '.075em', 'designr' ),
+                                '.100'      => __( '.100em', 'designr' ),
+                                '.250'      => __( '.250em (Default)', 'designr' ),
+                                '.500'      => __( '.500em (Widest)', 'designr' ),
+                            )
+                        ),
+                        'custom_header_title_color' => array (
+                            'type'          => 'color',
+                            'label'         => __( 'Main Heading - Color', 'designr' ),
+                            'default'       => '#FFFFFF'
+                        ),
+                        
+                        // Menu 
+                        'custom_header_show_menu' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Display the Menu?', 'designr' ),
+                            'description'   => __( 'If "Yes", the "Custom Header" menu will be displayed (if one is set)', 'designr' ),
+                            'default'       => 'yes',
+                            'choices'   => array (
+                                'no'        => __( 'No', 'designr' ),
+                                'yes'       => __( 'Yes', 'designr' ),
+                            )
+                        ),
+                        'custom_header_menu_font_family' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Menu - Font Family', 'designr' ),
+                            'default'       => 'primary',
+                            'choices'   => array (
+                                'primary'   => __( 'Use Primary Font', 'designr' ),
+                                'secondary' => __( 'Use Secondary Font', 'designr' ),
+                            )
+                        ),
+                        'custom_header_menu_font_size' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Menu - Link Font Size', 'designr' ),
+                            'default'       => 10
+                        ),
+                        'custom_header_menu_letter_spacing' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Menu - Link Letter Spacing', 'designr' ),
+                            'default'       => '.500',
+                            'choices'   => array (
+                                '-.1'       => __( '-.100em (Narrowest)', 'designr' ),
+                                '-.075'     => __( '-.075em', 'designr' ),
+                                '-.050'     => __( '-.050em', 'designr' ),
+                                '-.025'     => __( '-.025em', 'designr' ),
+                                '0.0'       => __( '0.00em', 'designr' ),
+                                '.025'      => __( '.025em', 'designr' ),
+                                '.050'      => __( '.050em', 'designr' ),
+                                '.075'      => __( '.075em', 'designr' ),
+                                '.100'      => __( '.100em', 'designr' ),
+                                '.250'      => __( '.250em', 'designr' ),
+                                '.500'      => __( '.500em (Default/Widest)', 'designr' ),
+                            )
+                        ),
+                        'custom_header_menu_color' => array (
+                            'type'          => 'color',
+                            'label'         => __( 'Menu - Link Color', 'designr' ),
+                            'default'       => '#FFFFFF'
+                        ),
+                        'custom_header_menu_link_spacing' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Menu - Link Spacing', 'designr' ),
+                            'description'   => __( 'Amount of space in px between each link in the menu', 'designr' ),
+                            'default'       => 16
+                        ),
+                        
+                    )
+                    
+                ),
+                
+                // Section : Custom Header Style - Parallax Layers -------------
+                'section_custom_header_plx_vertical' => array (
+
+                    'title' => __( 'Style: Parallax - Layers', 'designr' ),
+                    'options' => array (
+                        
+                        'parallax_layers_texture_pattern' => array (
+                            'type'          => 'image',
+                            'label'         => __( 'Transparent Texture / Pattern', 'designr' ),
+                            'description'   => __( 'https://www.transparenttextures.com', 'designr' ),
+                            'default'       => '',
+                        ),
+                        'parallax_layers_include_color_layer' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Include a colored overlay layer?', 'designr' ),
+                            'description'   => __( 'If "Yes", a semi-transparent colored layer will be added between the texture and content layers', 'designr' ),
+                            'default'       => 'no',
+                            'choices'   => array (
+                                'no'        => __( 'No Color', 'designr' ),
+                                'single'    => __( 'Single Color', 'designr' ),
+                                'gradient'  => __( 'Gradient', 'designr' ),
+                            )
+                        ),
+                        'parallax_layers_include_color_layer' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Include a colored overlay layer?', 'designr' ),
+                            'description'   => __( 'If "Yes", a colored layer will be added between the texture and content layers', 'designr' ),
+                            'default'       => 'no',
+                            'choices'   => array (
+                                'no'        => __( 'No', 'designr' ),
+                                'yes'       => __( 'Yes', 'designr' ),
+                            )
+                        ),
+                        
+                    )
+                    
+                ),
+
+            ), // End of Custom Header Sections
+            
+        ), // End of Custom Header Panel
+
         // Panel: Blog ---------------------------------------------------------
         'panel_blog' => array ( 
             
@@ -83,6 +266,7 @@ $data = array (
                     
                     'title' => __( 'Blog Layout', 'designr' ),
                     'options' => array (
+                        
                         'blog_layout_style' => array (
                             'type'          => 'select',
                             'label'         => __( 'Blog Style', 'designr' ),
@@ -145,15 +329,15 @@ $data = array (
                                 'yes'       => __( 'Yes', 'designr' ),
                             )
                         ),
-                        'blog_layout_show_view_count' => array (
-                            'type'          => 'select',
-                            'label'         => __( 'Show the View Count in the Meta Stats tab?', 'designr' ),
-                            'default'       => 'yes',
-                            'choices'   => array (
-                                'no'        => __( 'No', 'designr' ),
-                                'yes'       => __( 'Yes', 'designr' ),
-                            )
-                        ),
+                        //                        'blog_layout_show_view_count' => array (
+                        //                            'type'          => 'select',
+                        //                            'label'         => __( 'Show the View Count in the Meta Stats tab?', 'designr' ),
+                        //                            'default'       => 'no',
+                        //                            'choices'   => array (
+                        //                                'no'        => __( 'No', 'designr' ),
+                        //                                'yes'       => __( 'Yes', 'designr' ),
+                        //                            )
+                        //                        ),
                         'blog_layout_excerpt_trim_words' => array (
                             'type'          => 'number',
                             'label'         => __( 'Automatic Excerpt - Trim by Number of Words', 'designr' ),
@@ -202,6 +386,7 @@ $data = array (
                     
                     'title' => __( 'General Settings', 'designr' ),
                     'options' => array (
+                        
                         'navbar_style' => array (
                             'type'          => 'select',
                             'label'         => __( 'Navbar Style', 'designr' ),
@@ -298,6 +483,7 @@ $data = array (
                                 'yes'       => __( 'Yes', 'designr' ),
                             )
                         ),
+                        
                     )
                     
                 ),
@@ -305,12 +491,13 @@ $data = array (
                 // Section : Slim Style Settings ---------------------------
                 'section_nav_style_a' => array (
 
-                    'title' => __( 'Navbar Style - Slim', 'designr' ),
+                    'title' => __( 'Style: Slim', 'designr' ),
                     'options' => array (
+                        
                         'style_a_always_show_logo' => array (
                             'type'          => 'select',
                             'label'         => __( 'Logo - Always Visible?', 'designr' ),
-                            'description'   => __( 'When true, logo will be visible even when Navbar is collapsed / unstuck', 'designr' ),
+                            'description'   => __( 'When "Yes", the logo will be visible even when Navbar is collapsed / unstuck', 'designr' ),
                             'default'       => 'no',
                             'choices'   => array (
                                 'no'        => __( 'No', 'designr' ),
@@ -325,25 +512,25 @@ $data = array (
                         'style_a_mobile_logo_height' => array (
                             'type'          => 'number',
                             'label'         => __( 'Logo - Height (Mobile Only)', 'designr' ),
-                            'description'   => __( 'Set the height of the logo in the mobile Navbar', 'designr' ),
+                            'description'   => __( 'Set the logo height for the mobile Navbar', 'designr' ),
                             'default'       => 50
                         ),
                         'style_a_collapse_height' => array (
                             'type'          => 'number',
-                            'label'         => __( 'Navbar Height (Collapsed)', 'designr' ),
+                            'label'         => __( 'Navbar - Height (Collapsed)', 'designr' ),
                             'description'   => __( 'When Navbar is collapsed / unstuck', 'designr' ),
                             'default'       => 50
                         ),
                         'style_a_expand_height' => array (
                             'type'          => 'number',
-                            'label'         => __( 'Navbar Height (Expanded)', 'designr' ),
+                            'label'         => __( 'Navbar - Height (Expanded)', 'designr' ),
                             'description'   => __( 'When Navbar is expanded / sticky', 'designr' ),
                             'default'       => 75
                         ),
                         'style_a_right_align_menu' => array ( // TODO: Should Only show if Slim - Left Aligned is set for Navbar Style
                             'type'          => 'select',
-                            'label'         => __( 'Align Logo & Menu to Opposite Ends of Navbar?', 'designr' ),
-                            'description'   => __( 'This option is only available for the "Slim - Left Aligned" Navbar style, and the right-aligned menu will replace the Social Links section', 'designr' ),
+                            'label'         => __( 'Navbar - Bookend the Logo & Menu?', 'designr' ),
+                            'description'   => __( 'Selecting "Yes" will right-align the menu, instead of displaying the Social Links section', 'designr' ),
                             'default'       => 'no',
                             'choices'   => array (
                                 'no'        => __( 'No', 'designr' ),
@@ -352,14 +539,15 @@ $data = array (
                         ),
                         'style_a_boxed_navbar' => array ( // TODO: Should Only show if Slim - Left Aligned is set for Navbar Style
                             'type'          => 'select',
-                            'label'         => __( 'Make the Navbar Content Boxed?', 'designr' ),
-                            'description'   => __( 'The Navbar defaults to full-screen width. This option is only available for the "Slim - Left Aligned" Navbar style', 'designr' ),
+                            'label'         => __( 'Navbar - Boxed Content?', 'designr' ),
+                            'description'   => __( 'Selecting "Yes" will line up the Navbar with the main content instead of the left & right bounds of the window', 'designr' ),
                             'default'       => 'no',
                             'choices'   => array (
                                 'no'        => __( 'No', 'designr' ),
                                 'yes'       => __( 'Yes', 'designr' ),
                             )
                         ),
+                        
                     )
                     
                 ),
@@ -369,9 +557,10 @@ $data = array (
                     
                     'title' => __( 'Social Links', 'designr' ),
                     'options' => array (
+                        
                         'navbar_show_social' => array ( 
                             'type'          => 'select',
-                            'label'         => __( 'Include Social Link in Navbar if Present?', 'designr' ),
+                            'label'         => __( 'Show Social Links in Navbar?', 'designr' ),
                             'description'   => __( 'Different Navbar styles will display the icons in varying ways', 'designr' ),
                             'default'       => 'no',
                             'choices'   => array (
@@ -434,6 +623,7 @@ $data = array (
                             'default'       => '',
                             'choices'       => designr_get_icons( 'social' )
                         ),
+                        
                     )
                     
                 ),
@@ -443,6 +633,7 @@ $data = array (
                     
                     'title' => __( 'Colors', 'designr' ),
                     'options' => array (
+                        
                         'navbar_background_style' => array (
                             'type'          => 'select',
                             'label'         => __( 'Background Style', 'designr' ),
@@ -477,14 +668,20 @@ $data = array (
                         ),
                         'navbar_social_drawer_background' => array (
                             'type'          => 'color',
-                            'label'         => __( 'Social Links - Drawer Background Color', 'designr' ),
+                            'label'         => __( 'Social Links - Drawer Background', 'designr' ),
                             'default'       => '#141414'
                         ),
                         'navbar_social_link_foreground' => array (
                             'type'          => 'color',
-                            'label'         => __( 'Social Links - Icon Color', 'designr' ),
+                            'label'         => __( 'Social Links - Icons', 'designr' ),
                             'default'       => '#FFFFFF'
                         ),
+                        'navbar_social_link_foreground_hover' => array (
+                            'type'          => 'color',
+                            'label'         => __( 'Social Links - Icons (Hover)', 'designr' ),
+                            'default'       => '#0000FF'
+                        ),
+                        
                     )
                     
                 ),
@@ -506,6 +703,7 @@ $data = array (
                     'title'         => __( 'Colors', 'designr' ),
                     'description'   => __( 'Customize the colors in use on your site', 'designr' ),
                     'options' => array (
+                        
                         'skin_theme_primary' => array(
                             'type'          => 'select',
                             'label'         => __( 'Theme Color - Primary', 'designr' ),
@@ -528,6 +726,7 @@ $data = array (
                                 'c70546'       => __( 'Deep Magenta', 'designr' ),
                             ),
                         ),
+                        
                     ),
                     
                 ),

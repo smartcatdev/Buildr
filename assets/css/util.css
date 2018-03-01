@@ -1,0 +1,226 @@
+a {
+    text-decoration: none !important;
+}
+
+*:focus {
+    outline: none !important;
+}
+
+div.clear {
+    clear: both;
+}
+
+/* ----- TYPOGRAPHY ----- */
+
+h1 { font-size: 4em; }
+h2 { font-size: 3.25em; }
+h3 { font-size: 2em; }
+h4 { font-size: 1.68em; }
+h5 { font-size: 1.245em; }
+h6 { font-size: 1.125em; }
+
+/* ----- COLORS & GRADIENTS ----- */
+
+.primary-gradient {
+    background: -moz-linear-gradient(190deg, rgba(52, 138, 167, 1) 0%, hsla(242, 60%, 35%, .85) 100%);
+    background: -webkit-linear-gradient(190deg, rgba(52, 138, 167, 1) 0%, hsla(242, 60%, 35%, .85) 100%);
+    background: linear-gradient(190deg, rgba(52, 138, 167, 1) 0%, hsla(242, 60%, 35%, .85) 100%);
+    /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf0089a0', endColorstr='#00adad',GradientType=1 ); */
+}
+
+.solids-gradient {
+    background: -moz-linear-gradient(190deg, rgba(52, 138, 167, 1) 0%, hsla(242, 60%, 35%, .85) 100%);
+    background: -webkit-linear-gradient(190deg, rgba(52, 138, 167, 1) 0%, hsla(242, 60%, 35%, .85) 100%);
+    background: linear-gradient(190deg, #fd5f65 0%, #fd5f65 100%);
+    /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf0089a0', endColorstr='#00adad',GradientType=1 ); */
+}
+
+.dark-unsat-gradient {
+    background: -moz-linear-gradient(190deg, rgba(26, 26, 26, 0.75) 0%, hsl(0, 0%, 0%) 100%);
+    background: -webkit-linear-gradient(190deg, rgba(26, 26, 26, 0.75) 0%, hsl(0, 0%, 0%) 100%);
+    background: linear-gradient(190deg, rgba(26, 26, 26, 0.75) 0%, hsl(0, 0%, 0%) 100%);
+}
+
+.cascade-gradient {
+    background: -moz-linear-gradient(180deg, rgba(9,0,51,0.85) 0%, rgba(0,0,0,0.65) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(9,0,51,0.85) 0%, rgba(0,0,0,0.65) 100%);
+    background: linear-gradient(180deg, rgba(9,0,51,0.85) 0%, rgba(0,0,0,0.65) 100%);
+    /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf0089a0', endColorstr='#00adad',GradientType=1 ); */
+}
+
+/* ----- TABLES & VERTICAL ALIGNMENT ----- */
+
+.util-tbl-wrap {
+    display: table;
+    width: 100%;
+}
+.util-tbl-wrap > .util-tbl-inner {
+    display: table-cell;
+}
+.util-vert-mid {
+    vertical-align: middle;
+}
+.util-vert-top {
+    vertical-align: top;
+}
+.util-vert-btm {
+    vertical-align: bottom;
+}
+
+/* ----- ANIMATIONS ----- */
+
+/*.expandContract {
+    animation-name: expandContract;
+    animation-duration: .4s;
+    transform-origin: center bottom;
+}
+@keyframes expandContract {
+    0% {
+         animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060); 
+         transform: translate3d(-50%,0,0); 
+        border-width: 0 35px 30px 35px;
+    }
+    35% {
+        border-width: 0 25px 20px 25px;
+         transform: translate3d(-50%,25%,0); 
+    }
+    100% {
+        border-width: 0 35px 30px 35px;
+         animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060); 
+         transform: translate3d(-50%,0,0); 
+    }
+}*/
+
+/* ----- FORMS ----- */
+
+form {
+    padding-top: 30px;
+}
+
+form input[type="text"],
+form textarea {
+    width: 100% !important;
+    border-radius: 0;
+    border: none;
+    border-bottom: thin solid #e4e4e4;
+    font-size: 16px !important;
+    font-family: "Open Sans" !important;
+    font-weight: 400;
+    color: rgba(0,0,0,0.54);
+    background: none;
+    border-radius: 3px 3px 0 0;
+    position: relative;
+    z-index: 9;
+    padding: 5px;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+form .group {
+    position: relative;
+    margin: 30px 0 50px 0;
+}
+
+form .group > label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .125em;
+    z-index: 1;
+    font-family: Montserrat;
+    letter-spacing: .5em;
+    font-size: 10px;
+}
+
+form input[type="submit"] {
+    height: 40px;
+    line-height: 40px;
+    margin-top: 15px;
+    font-size: 18px;
+    margin: 15px 0 0 auto;
+    display: block;
+    padding: 0 40px;
+}
+
+form label.focused-material {
+    top: -20px;
+    left: 5px;
+    font-size: 8px;
+    line-height: normal;
+}
+
+form input.focused-material,
+form textarea.focused-material {
+    background: #f4f4f4;
+}
+
+form .mail-sent,
+form .mail-not-sent {
+    display: none;
+}
+
+/* ----- FLEXBOX ----- */
+
+.flxbx {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+}
+.flxbx.top {
+    align-content: flex-start;
+}
+.flxbx.mid {
+    align-content: center;
+}
+.flxbx.btm {
+    align-content: flex-end;
+}
+.flxbx.left {
+    justify-content: flex-start;
+}
+.flxbx.center {
+    justify-content: center;
+}
+.flxbx.right {
+    justify-content: flex-end;
+}
+
+/* ----- DESIGNR PARALLAX ----- */
+
+.designr_parallax {
+    width: 100%;
+    max-width: 100%;
+    background: none;
+    z-index: 1;
+    overflow: hidden;
+}
+.plx-img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 125%;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* ----- JQUERY PARALLAX ----- */
+
+.jparallax-viewport {
+    position: relative;     /* relative, absolute, fixed */
+    overflow: hidden;
+}
+.jparallax-layer {
+    position: absolute;
+}

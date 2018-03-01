@@ -12,7 +12,9 @@ function designr_wp_head_styles() { ?>
          * ------------------------------------------------------------------ */
         
         body,
-        .site-branding .site-title {
+        .site-branding .site-title,
+        div#custom-header-content .custom-header-title,
+        div#designr-custom-header.parallax_layers .custom-header-title {
             font-family: <?php esc_attr_e( get_theme_mod( 'secondary_font', 'Abel, sans-serif' ) ); ?>;
         }
         
@@ -33,6 +35,23 @@ function designr_wp_head_styles() { ?>
             ul#mobile-menu li a,
             ul.slim-header-menu > li a {
                 font-family: <?php esc_attr_e( get_theme_mod( 'secondary_font', 'Abel, sans-serif' ) ); ?>;
+            }
+        
+        <?php endif; ?>
+        
+        <?php if ( get_theme_mod( 'custom_header_menu_font_family', 'primary' ) == 'secondary' ) : ?>
+        
+            ul#custom-header-menu > li a {
+                font-family: <?php esc_attr_e( get_theme_mod( 'secondary_font', 'Abel, sans-serif' ) ); ?>;
+            }
+        
+        <?php endif; ?>
+        
+        <?php if ( get_theme_mod( 'custom_header_title_font_family', 'secondary' ) == 'primary' ) : ?>
+        
+            div#custom-header-content .custom-header-title,
+            div#designr-custom-header.parallax_layers .custom-header-title {
+                font-family: <?php esc_attr_e( get_theme_mod( 'primary_font', 'Montserrat, sans-serif' ) ); ?>;
             }
         
         <?php endif; ?>
@@ -95,12 +114,33 @@ function designr_wp_head_styles() { ?>
             color: #<?php esc_attr_e( $theme_colors['navbar_fg'] ); ?>;
         }
         
+        a#split-social-trigger path {
+            fill: #<?php esc_attr_e( $theme_colors['navbar_fg'] ); ?>;
+        }
+        
         header#masthead.header-style-split .navbar-social {
             background-color: <?php esc_attr_e( $theme_colors['social_bg'] ); ?>;
         }
         
+        header#masthead.header-style-slim .navbar-social a.navbar-icon,
         header#masthead.header-style-split .navbar-social a.navbar-icon {
             color: <?php esc_attr_e( $theme_colors['social_fg'] ); ?>;
+        }
+        
+        header#masthead.header-style-slim .navbar-social a.navbar-icon:hover,
+        header#masthead.header-style-split .navbar-social a.navbar-icon:hover {
+            color: <?php esc_attr_e( $theme_colors['social_fg_hov'] ); ?>;
+        }
+        
+        /* ----- Custom Header Colors --------------------------------------- */
+        
+        div#custom-header-content .custom-header-title,
+        div#designr-custom-header.parallax_layers .custom-header-title {
+            color: <?php esc_attr_e( $theme_colors['custom_header_title'] ); ?>;
+        }
+        
+        ul#custom-header-menu > li a {
+            color: <?php esc_attr_e( $theme_colors['custom_header_menu'] ); ?>;
         }
         
         /* --------------------------------------------------------------------- 
@@ -110,10 +150,12 @@ function designr_wp_head_styles() { ?>
         <?php if ( get_theme_mod( 'navbar_style', 'default' ) == 'slim_split' || get_theme_mod( 'navbar_style', 'default' ) == 'slim_left' ) : ?>
             @media (min-width: 992px) {
                 div#content {
-                    padding-top: <?php esc_attr_e( get_theme_mod( 'style_a_collapse_height', 50 ) + 2 ) ?>px;
+                    padding-top: <?php // esc_attr_e( get_theme_mod( 'style_a_collapse_height', 50 ) + 2 ) ?>px;
+                    padding-top: <?php esc_attr_e( get_theme_mod( 'style_a_collapse_height', 50 ) - 1 ) ?>px;
                 }
                 div#content.sticky-header {
-                    padding-top: <?php esc_attr_e( get_theme_mod( 'style_a_expand_height', 75 ) + 2 ) ?>px;
+                    padding-top: <?php // esc_attr_e( get_theme_mod( 'style_a_expand_height', 75 ) + 2 ) ?>px;
+                    padding-top: <?php esc_attr_e( get_theme_mod( 'style_a_expand_height', 75 ) - 1 ) ?>px;
                 }
             }
         <?php endif; ?>
@@ -146,12 +188,14 @@ function designr_wp_head_styles() { ?>
 
         /* ----- Slim Headers: Collapse ------------------------------------- */
         
+        ul.slim-header-menu > li a,
         ul.slim-header-menu > li {
             line-height: <?php esc_attr_e( get_theme_mod( 'style_a_collapse_height', 50 ) ) ?>px;
         }
         
         /* ----- Slim Headers: Expand --------------------------------------- */
         
+        .is-sticky ul.slim-header-menu > li a,
         .is-sticky ul.slim-header-menu > li {
             line-height: <?php esc_attr_e( get_theme_mod( 'style_a_expand_height', 75 ) ) ?>px;
         }
@@ -160,7 +204,7 @@ function designr_wp_head_styles() { ?>
         
         .site-branding .site-title {
             font-size: <?php esc_attr_e( get_theme_mod( 'navbar_site_title_font_size', 32 ) ) ?>px;
-            letter-spacing: <?php esc_attr_e( get_theme_mod( 'navbar_site_title_spacing', '0.0' ) ); ?>em;
+            letter-spacing: <?php esc_attr_e( get_theme_mod( 'navbar_site_title_spacing', '0.25' ) ); ?>em;
         }
         
         <?php if ( get_theme_mod( 'navbar_site_title_font', 'secondary' ) == 'primary' ) : ?>
@@ -312,6 +356,28 @@ function designr_wp_head_styles() { ?>
                 font-size: <?php esc_attr_e( get_theme_mod( 'blog_title_font_size_mbl', 20 ) ) ?>px;
             }
         }
+        
+        /* --------------------------------------------------------------------- 
+         * Custom Header
+         * ------------------------------------------------------------------ */
+
+        div#custom-header-content .custom-header-title,
+        div#designr-custom-header.parallax_layers .custom-header-title {
+            font-size: <?php esc_attr_e( get_theme_mod( 'custom_header_title_font_size', 48 ) ) ?>px;
+            letter-spacing: <?php esc_attr_e( get_theme_mod( 'custom_header_title_letter_spacing', '.250' ) ) ?>em;
+        }
+        
+        ul#custom-header-menu > li a {
+            font-size: <?php esc_attr_e( get_theme_mod( 'custom_header_menu_font_size', 10 ) ) ?>px;
+            letter-spacing: <?php esc_attr_e( get_theme_mod( 'custom_header_menu_letter_spacing', '.500' ) ) ?>em;
+        }
+        
+        ul#custom-header-menu > li {
+            margin: 2px <?php esc_attr_e( get_theme_mod( 'custom_header_menu_link_spacing', 16 ) / 2 ) ?>px;
+        }
+        
+         /* ----- Custom Header: Menu --------------------------------------- */
+        
         
     </style>
     

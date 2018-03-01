@@ -46,11 +46,11 @@
 
             </div>
 
-            <?php if ( ( get_theme_mod( 'blog_layout_show_comment_count', 'yes' ) == 'yes' || get_theme_mod( 'blog_layout_show_view_count', 'yes' ) == 'yes' ) || get_theme_mod( 'blog_layout_show_categories', 'yes' ) == 'yes' ) : ?>
+            <?php if ( ( get_theme_mod( 'blog_layout_show_comment_count', 'yes' ) == 'yes' || get_theme_mod( 'blog_layout_show_view_count', 'no' ) == 'yes' ) || get_theme_mod( 'blog_layout_show_categories', 'yes' ) == 'yes' ) : ?>
             
                 <div class="footer-meta">
 
-                    <?php if ( get_theme_mod( 'blog_layout_show_comment_count', 'yes' ) == 'yes' || get_theme_mod( 'blog_layout_show_view_count', 'yes' ) == 'yes' ) : ?>
+                    <?php if ( get_theme_mod( 'blog_layout_show_comment_count', 'yes' ) == 'yes' || get_theme_mod( 'blog_layout_show_view_count', 'no' ) == 'yes' ) : ?>
 
                         <div class="meta-stats">
 
@@ -59,10 +59,8 @@
                                 <span class="fas fa-comment"></span> <?php echo esc_attr_e( $comment_count->approved ); ?>
                             <?php endif; ?>
                             
-                            <?php if ( get_theme_mod( 'blog_layout_show_view_count', 'yes' ) == 'yes' ) : ?>
-                                <span class="fas fa-eye"></span> 10
-                            <?php endif; ?>
-
+                            <?php do_action('designr_get_blog_meta_view_counter'); ?>
+                                
                         </div>
 
                     <?php endif; ?>

@@ -6,7 +6,7 @@
 
             <?php if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) : ?>
 
-                <div id="custom-logo-wrap" class="<?php echo get_theme_mod( 'style_a_always_show_logo', 'no' ) == 'no' ? 'sometimes-hidden' : ''; ?>">
+                <div id="custom-logo-wrap" class="has-logo <?php echo get_theme_mod( 'style_a_always_show_logo', 'no' ) == 'no' ? 'sometimes-hidden' : ''; ?>">
             
                     <?php the_custom_logo(); ?>
 

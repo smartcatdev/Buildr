@@ -29,8 +29,11 @@ function designr_get_all_theme_colors() {
      * the # symbol included in the value. Do not prepend these with # on the frontend!
      */
     
-    $theme_colors['social_bg']  = get_theme_mod( 'navbar_social_drawer_background', '#141414' );
-    $theme_colors['social_fg']  = get_theme_mod( 'navbar_social_link_foreground', '#FFFFFF' );
+    $theme_colors['social_bg']              = get_theme_mod( 'navbar_social_drawer_background', '#141414' );
+    $theme_colors['social_fg']              = get_theme_mod( 'navbar_social_link_foreground', '#FFFFFF' );
+    $theme_colors['social_fg_hov']          = get_theme_mod( 'navbar_social_link_foreground_hover', '#0000FF' );
+    $theme_colors['custom_header_title']    = get_theme_mod( 'custom_header_title_color', '#FFFFFF' );
+    $theme_colors['custom_header_menu']     = get_theme_mod( 'custom_header_menu_color', '#FFFFFF' );
  
     return $theme_colors;
     

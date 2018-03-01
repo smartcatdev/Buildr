@@ -94,6 +94,7 @@ if ( !function_exists( 'designr_setup' ) ) :
             'split-primary-left'        => esc_html__( 'Split Primary - Left', 'designr' ),
             'split-primary-right'       => esc_html__( 'Split Primary - Right', 'designr' ),
             'mobile-menu'               => esc_html__( 'Mobile', 'designr' ),
+            'custom-header'             => esc_html__( 'Custom Header', 'designr' ),
         ) );
 
         /*
