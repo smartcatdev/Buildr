@@ -87,19 +87,120 @@ $data = array (
                         // Style
                         'custom_header_style_toggle' => array (
                             'type'          => 'select',
-                            'label'         => __( 'Custom Header - Style', 'designr' ),
+                            'label'         => __( 'Header Style', 'designr' ),
                             'default'       => 'parallax_vertical',
                             'choices'   => array (
                                 'parallax_vertical'     => __( 'Parallax - Vertical', 'designr' ),
                                 'parallax_layers'       => __( 'Parallax - Perspective Layers', 'designr' ),
                             )
                         ),
+                        'designr_custom_header_height_unit' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Height Calculation', 'designr' ),
+                            'description'   => __( 'This allows you to choose between using % values or fixed pixel values for setting the header height', 'designr' ),
+                            'default'       => 'percent',
+                            'choices'   => array (
+                                'percent'   => __( 'Use a percentage of browser height', 'designr' ),
+                                'fixed'     => __( 'Use a fixed pixel value', 'designr' ),
+                            )
+                        ),
+                        'designr_custom_header_height_percent' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Height (%)', 'designr' ),
+                            'default'       => 50,
+                            'min'           => 25,
+                            'max'           => 100,
+                        ),
+                        'designr_custom_header_height_percent_mbl' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Height for Mobile (%)', 'designr' ),
+                            'description'   => __( 'When viewed on screens less than 992px wide', 'designr' ),
+                            'default'       => 25,
+                            'max'           => 100,
+                        ),
+                        'designr_custom_header_height_pixels' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Height (px)', 'designr' ),
+                            'default'       => 500,
+                            'min'           => 250,
+                        ),
+                        'designr_custom_header_height_pixels_mbl' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Height for Mobile (px)', 'designr' ),
+                            'description'   => __( 'When viewed on screens less than 992px wide', 'designr' ),
+                            'default'       => 250,
+                        ),
+                        'parallax_layers_parallax_style' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Parallax Effect - Intensity', 'designr' ),
+                            'default'       => 'default',
+                            'choices'   => array (
+                                'subtle'            => __( 'Subtle', 'designr' ),
+                                'default'           => __( 'Medium (Default)', 'designr' ),
+                                'high'              => __( 'High', 'designr' ),
+                            )
+                        ),
+                        'parallax_layers_texture_pattern' => array (
+                            'type'          => 'image',
+                            'label'         => __( 'Perspective Layers - Transparent Pattern', 'designr' ),
+                            'description'   => __( 'https://www.transparenttextures.com', 'designr' ),
+                            'default'       => '',
+                        ),
+                        'parallax_layers_texture_layer_opacity' => array (   // TODO: Change to Overlay Decimal
+                            'type'          => 'decimal',
+                            'label'         => __( 'Perspective Layers - Pattern (Opacity)', 'designr' ),
+                            'description'   => __( '0.0 for transparent, up to 1.0 for solid/opaque', 'designr' ),
+                            'default'       => .75,
+                        ),
+                        
+                    )
+                    
+                ),
+                
+                // Section : Custom Header - Logo Settings ---------------------
+                'section_custom_header_logo' => array (
+                    
+                    'title' => __( 'Display: Logo', 'designr' ),
+                    'options' => array (
+                        
+                        // Logo
+                        'custom_header_show_logo' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Display the Site Logo?', 'designr' ),
+                            'description'   => __( 'If "Yes", the Custom Logo for the site will be displayed', 'designr' ),
+                            'default'       => 'yes',
+                            'choices'   => array (
+                                'no'        => __( 'No', 'designr' ),
+                                'yes'       => __( 'Yes', 'designr' ),
+                            )
+                        ),
+                        'designr_custom_header_logo_height' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Height of Logo (px)', 'designr' ),
+                            'default'       => 150,
+                        ),
+                        'designr_custom_header_logo_height_mbl' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Height of Logo for Mobile (px)', 'designr' ),
+                            'description'   => __( 'When viewed on screens less than 992px wide', 'designr' ),
+                            'default'       => 80,
+                        ),
+                        
+                    )
+                    
+                ),
+                
+                // Section : Custom Header - Main Heading Settings ---------------------
+                'section_custom_header_heading' => array (
+                    
+                    'title' => __( 'Display: Heading', 'designr' ),
+                    'options' => array (
                         
                         // Main Heading
                         'custom_header_show_heading' => array (
                             'type'          => 'select',
                             'label'         => __( 'Display the Main Heading?', 'designr' ),
-                            'description'   => __( 'If "Yes", the Custom Header menu will be displayed, if one is set', 'designr' ),
+                            'description'   => __( 'If "Yes", the primary content heading will be displayed', 'designr' ),
                             'default'       => 'yes',
                             'choices'   => array (
                                 'no'        => __( 'No', 'designr' ),
@@ -108,7 +209,7 @@ $data = array (
                         ),
                         'custom_header_title_content' => array (
                             'type'          => 'select',
-                            'label'         => __( 'Main Heading - Content', 'designr' ),
+                            'label'         => __( 'What to Display?', 'designr' ),
                             'default'       => 'site_title',
                             'choices'   => array (
                                 'site_title'        => __( 'Site Title', 'designr' ),
@@ -117,7 +218,7 @@ $data = array (
                         ),
                         'custom_header_title_font_family' => array (
                             'type'          => 'select',
-                            'label'         => __( 'Main Heading - Font Family', 'designr' ),
+                            'label'         => __( 'Font Family', 'designr' ),
                             'default'       => 'secondary',
                             'choices'   => array (
                                 'primary'   => __( 'Use Primary Font', 'designr' ),
@@ -126,12 +227,12 @@ $data = array (
                         ),
                         'custom_header_title_font_size' => array (
                             'type'          => 'number',
-                            'label'         => __( 'Main Heading - Font Size', 'designr' ),
+                            'label'         => __( 'Font Size', 'designr' ),
                             'default'       => 48
                         ),
                         'custom_header_title_letter_spacing' => array (
                             'type'          => 'select',
-                            'label'         => __( 'Main Heading - Letter Spacing', 'designr' ),
+                            'label'         => __( 'Letter Spacing', 'designr' ),
                             'default'       => '.250',
                             'choices'   => array (
                                 '-.1'       => __( '-.100em (Narrowest)', 'designr' ),
@@ -149,9 +250,19 @@ $data = array (
                         ),
                         'custom_header_title_color' => array (
                             'type'          => 'color',
-                            'label'         => __( 'Main Heading - Color', 'designr' ),
+                            'label'         => __( 'Text Color', 'designr' ),
                             'default'       => '#FFFFFF'
                         ),
+                        
+                    )
+                    
+                ),
+                
+                // Section : Custom Header - Menu Settings ---------------------
+                'section_custom_header_menu' => array (
+                    
+                    'title' => __( 'Display: Custom Menu', 'designr' ),
+                    'options' => array (
                         
                         // Menu 
                         'custom_header_show_menu' => array (
@@ -166,7 +277,7 @@ $data = array (
                         ),
                         'custom_header_menu_font_family' => array (
                             'type'          => 'select',
-                            'label'         => __( 'Menu - Font Family', 'designr' ),
+                            'label'         => __( 'Font Family', 'designr' ),
                             'default'       => 'primary',
                             'choices'   => array (
                                 'primary'   => __( 'Use Primary Font', 'designr' ),
@@ -175,7 +286,7 @@ $data = array (
                         ),
                         'custom_header_menu_font_size' => array (
                             'type'          => 'number',
-                            'label'         => __( 'Menu - Link Font Size', 'designr' ),
+                            'label'         => __( 'Font Size', 'designr' ),
                             'default'       => 10
                         ),
                         'custom_header_menu_letter_spacing' => array (
@@ -198,12 +309,12 @@ $data = array (
                         ),
                         'custom_header_menu_color' => array (
                             'type'          => 'color',
-                            'label'         => __( 'Menu - Link Color', 'designr' ),
+                            'label'         => __( 'Text Color', 'designr' ),
                             'default'       => '#FFFFFF'
                         ),
                         'custom_header_menu_link_spacing' => array (
                             'type'          => 'number',
-                            'label'         => __( 'Menu - Link Spacing', 'designr' ),
+                            'label'         => __( 'Link Spacing', 'designr' ),
                             'description'   => __( 'Amount of space in px between each link in the menu', 'designr' ),
                             'default'       => 16
                         ),
@@ -215,15 +326,9 @@ $data = array (
                 // Section : Custom Header Style - Parallax Layers -------------
                 'section_custom_header_plx_vertical' => array (
 
-                    'title' => __( 'Style: Parallax - Layers', 'designr' ),
+                    'title' => __( 'Color / Gradient Overlay', 'designr' ),
                     'options' => array (
                         
-                        'parallax_layers_texture_pattern' => array (
-                            'type'          => 'image',
-                            'label'         => __( 'Transparent Texture / Pattern', 'designr' ),
-                            'description'   => __( 'https://www.transparenttextures.com', 'designr' ),
-                            'default'       => '',
-                        ),
                         'parallax_layers_include_color_layer' => array (
                             'type'          => 'select',
                             'label'         => __( 'Include a colored overlay layer?', 'designr' ),
@@ -235,16 +340,72 @@ $data = array (
                                 'gradient'  => __( 'Gradient', 'designr' ),
                             )
                         ),
-                        'parallax_layers_include_color_layer' => array (
+                        
+                        // Overlay - Single Color
+                        'parallax_layers_single_color' => array (
+                            'type'          => 'color',
+                            'label'         => __( 'Color Overlay - Color', 'designr' ),
+                            'default'       => '#348aa7',
+                        ),
+                        'parallax_layers_single_color_opacity' => array ( // TODO: Change to Overlay Decimal
+                            'type'          => 'decimal',
+                            'label'         => __( 'Color Overlay - Color (Opacity)', 'designr' ),
+                            'description'   => __( '0.0 for transparent, up to 1.0 for solid/opaque', 'designr' ),
+                            'default'       => .75,
+                        ),
+                        
+                        // Overlay - Gradient
+                        'parallax_layers_gradient_style' => array (
                             'type'          => 'select',
-                            'label'         => __( 'Include a colored overlay layer?', 'designr' ),
-                            'description'   => __( 'If "Yes", a colored layer will be added between the texture and content layers', 'designr' ),
-                            'default'       => 'no',
+                            'label'         => __( 'Gradient - Style', 'designr' ),
+                            'description'   => __( 'Choose from linear or radial', 'designr' ),
+                            'default'       => 'linear',
                             'choices'   => array (
-                                'no'        => __( 'No', 'designr' ),
-                                'yes'       => __( 'Yes', 'designr' ),
+                                'linear'    => __( 'Linear', 'designr' ),
+                                'radial'    => __( 'Radial', 'designr' ),
                             )
                         ),
+                        'parallax_layers_gradient_overall_opacity' => array ( // TODO: Change to Overlay Decimal
+                            'type'          => 'decimal',
+                            'label'         => __( 'Gradient - Layer Opacity', 'designr' ),
+                            'description'   => __( 'This option can be used to set transparency for the entire gradient. Set 0.0 for transparent, up to 1.0 for solid/opaque', 'designr' ),
+                            'default'       => .75,
+                        ),
+                        'parallax_layers_gradient_linear_direction' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Linear Gradient - Direction', 'designr' ),
+                            'description'   => __( 'Set the linear gradient direction (Start to End)', 'designr' ),
+                            'default'       => 'up',
+                            'choices'   => array (
+                                'up'        => __( 'Up', 'designr' ),
+                                'down'      => __( 'Down', 'designr' ),
+                                'right'     => __( 'Right', 'designr' ),
+                                'left'      => __( 'Left', 'designr' ),
+                            )
+                        ),
+                        'parallax_layers_gradient_start_color' => array (
+                            'type'          => 'color',
+                            'label'         => __( 'Gradient Overlay - Start Color', 'designr' ),
+                            'default'       => '#348aa7',
+                        ),
+                        'parallax_layers_gradient_start_color_opacity' => array ( // TODO: Change to Overlay Decimal
+                            'type'          => 'decimal',
+                            'label'         => __( 'Gradient Overlay - Start Color (Opacity)', 'designr' ),
+                            'description'   => __( '0.0 for transparent, up to 1.0 for solid/opaque', 'designr' ),
+                            'default'       => .75,
+                        ),
+                        'parallax_layers_gradient_end_color' => array (
+                            'type'          => 'color',
+                            'label'         => __( 'Gradient Overlay - End Color', 'designr' ),
+                            'default'       => '#348aa7',
+                        ),
+                        'parallax_layers_gradient_end_color_opacity' => array ( // TODO: Change to Overlay Decimal
+                            'type'          => 'decimal',
+                            'label'         => __( 'Gradient Overlay - End Color (Opacity)', 'designr' ),
+                            'description'   => __( '0.0 for transparent, up to 1.0 for solid/opaque', 'designr' ),
+                            'default'       => .25,
+                        ),
+                        
                         
                     )
                     

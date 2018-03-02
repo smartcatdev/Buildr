@@ -1,8 +1,8 @@
 <?php $header_image = get_header_image(); ?>
-    
-<div id="designr-custom-header" class="designr_parallax" style="height: <?php echo get_theme_mod( 'designr_custom_header_height_unit', 'percent' ) == 'percent' ? esc_attr( get_theme_mod( 'designr_custom_header_height_percent', 50 ) . 'vh' ) : esc_attr( get_theme_mod( 'designr_custom_header_height_pixels', 500 ) . 'px' ); ?>;" data-plx-img="<?php echo esc_url($header_image); ?>">
 
-    <div id="custom-header-overlay" style="background: linear-gradient(0deg, rgba(0, 0, 0, .85) 0%, rgba(0, 0, 0, .33) 100%);">
+<div id="designr-custom-header" class="designr_parallax" data-plx-img="<?php echo esc_url($header_image); ?>">
+
+    <div id="custom-header-overlay" class="<?php echo get_theme_mod( 'parallax_layers_include_color_layer', 'no' ) == 'no' ? '' : esc_attr( get_theme_mod( 'parallax_layers_include_color_layer', 'no' ) ); ?>">
     </div>
 
     <div id="custom-header-content" data-stellar-offset-parent="true">
@@ -13,10 +13,16 @@
 
                 <div class="col-sm-8 col-sm-offset-2">
 
-                    <div class="util-tbl-wrap" style="height: <?php echo get_theme_mod( 'designr_custom_header_height_unit', 'percent' ) == 'percent' ? esc_attr( get_theme_mod( 'designr_custom_header_height_percent', 50 ) . 'vh' ) : esc_attr( get_theme_mod( 'designr_custom_header_height_pixels', 500 ) . 'px' ); ?>;">
+                    <div class="util-tbl-wrap" style="">
 
                         <div class="util-tbl-inner util-vert-mid text-center">
 
+                            <?php if ( get_theme_mod( 'custom_header_show_logo', 'yes' ) == 'yes' && function_exists( 'has_custom_logo' ) && has_custom_logo() ) : ?>
+
+                                <?php the_custom_logo(); ?>
+
+                            <?php endif; ?>
+                            
                             <?php if ( get_theme_mod( 'custom_header_show_heading', 'yes' ) == 'yes' ) : ?>
 
                                 <h2 class="custom-header-title textillate wow">

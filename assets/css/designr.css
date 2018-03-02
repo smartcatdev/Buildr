@@ -155,7 +155,7 @@ ul.slim-header-menu > li {
     display: table-cell;
 }
 
-img.custom-logo {
+header img.custom-logo {
     text-align: center;
     width: auto;
     padding: 12.5px 0;
@@ -349,7 +349,7 @@ div#mobile-menu-wrap ul.sub-menu li a {
         width: 100% !important;
         padding: 15px 0 0;
     }
-    img.custom-logo {
+    header img.custom-logo {
         opacity: 1 !important;
         margin: 0 15px;
         width: auto !important;
@@ -687,10 +687,9 @@ div#custom-header-content {
 
 div#custom-header-content .custom-header-title {
     color: #fff;
-    text-transform: uppercase;
-    letter-spacing: .25em;
+    text-transform: uppercase; /* TODO : toggle for this? */
     font-weight: normal;
-    font-size: 48px; /* TODO: Dynamic Font Size? */
+    margin-top: 0;
 }
 
 ul#custom-header-menu {
@@ -706,24 +705,11 @@ ul#custom-header-menu > li {
 
 ul#custom-header-menu > li a {
     display: inline-block;
-    color: #fff; /* TODO: Dynamic Color? */
-    text-transform: uppercase;
-    font-family: Montserrat; /* TODO: Dynamic Font Family? */
-    font-size: 10px; /* TODO: Dynamic Font Size? */
-    letter-spacing: .5em;
-}
-
-div#designr-custom-header.parallax_layers .jparallax-layer.bg-layer {
-    height: 600px;
-    width: 100%;
-    opacity: .75;
-    background-size: cover;
-    background-position: 50%;
+    text-transform: uppercase; /* TODO : toggle for this? */
 }
 
 div#designr-custom-header.parallax_layers .jparallax-layer.texture-layer {
-    height: 600px;
-    width: 150vw;
+    background-size: unset !important;
 }
 
 div#designr-custom-header.parallax_layers .jparallax-layer.content-layer {
@@ -732,7 +718,8 @@ div#designr-custom-header.parallax_layers .jparallax-layer.content-layer {
     display: none;
 }
 
+div#designr-custom-header.designr_parallax img.custom-logo,
 div#designr-custom-header.parallax_layers .jparallax-layer.content-layer img.custom-logo {
-    height: 120px;
-    width: auto; /* TODO: Dynamic Logo Size */
+    width: auto;
+    margin-bottom: 15px;
 }

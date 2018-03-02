@@ -1,13 +1,14 @@
 <?php $header_image = get_header_image(); ?>
     
-<div id="designr-custom-header" class="parallax_layers jparallax-viewport" style="background-image: url(<?php echo esc_url( get_template_directory_uri() . '/assets/images/sougwen.jpg' ); ?>); height: <?php echo get_theme_mod( 'designr_custom_header_height_unit', 'percent' ) == 'percent' ? esc_attr( get_theme_mod( 'designr_custom_header_height_percent', 50 ) . 'vh' ) : esc_attr( get_theme_mod( 'designr_custom_header_height_pixels', 500 ) . 'px' ); ?>;">
+<div id="designr-custom-header" class="parallax_layers jparallax-viewport">
 
-    <div class="jparallax-layer texture-layer" style="background-image: url(<?php echo esc_url( get_theme_mod( 'parallax_layers_texture_pattern', '' ) ); ?>)">
+    <div class="jparallax-layer image-layer" style="background-image: url(<?php echo esc_url( $header_image ); ?>);">
+    </div>
     
+    <div class="jparallax-layer texture-layer" style="background-image: url(<?php echo esc_url( get_theme_mod( 'parallax_layers_texture_pattern', '' ) ); ?>)">
     </div>
 
-    <div class="jparallax-layer bg-layer" style="background: linear-gradient(190deg, rgba(52, 138, 167, 1) 0%, hsla(242, 60%, 35%, .85) 100%);">
-    
+    <div class="jparallax-layer color-layer <?php echo get_theme_mod( 'parallax_layers_include_color_layer', 'no' ) == 'no' ? '' : esc_attr( get_theme_mod( 'parallax_layers_include_color_layer', 'no' ) ); ?>">
     </div>
     
     <div class="jparallax-layer content-layer">
@@ -18,9 +19,15 @@
 
                 <div class="col-sm-8 col-sm-offset-2 text-center">
         
+                    <?php if ( get_theme_mod( 'custom_header_show_logo', 'yes' ) == 'yes' && function_exists( 'has_custom_logo' ) && has_custom_logo() ) : ?>
+                    
+                        <?php the_custom_logo(); ?>
+
+                    <?php endif; ?>
+                    
                     <?php if ( get_theme_mod( 'custom_header_show_heading', 'yes' ) == 'yes' ) : ?>
 
-                        <h2 class="custom-header-title">
+                        <h2 class="custom-header-title textillate wow">
 
                             <?php 
                             switch ( get_theme_mod( 'custom_header_title_content', 'site_title' ) ) :

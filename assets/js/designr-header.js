@@ -93,6 +93,7 @@ jQuery(document).ready(function ($) {
     /* -------------------------------------------------------------------------
      * Custom Header: Layered Parallax Section
      * ---------------------------------------------------------------------- */
+    
     if ( $('div#designr-custom-header.parallax_layers').length ) {
         
         $(window).resize( function(){
@@ -100,19 +101,24 @@ jQuery(document).ready(function ($) {
                 // Global Options
                 mouseport: $('body')
             },{
+                // Image Layer
+                xparallax: designr_local.parallax_image_layer,
+                yparallax: designr_local.parallax_image_layer
+            },
+            {
                 // Texture Layer Options
-                xparallax: '15%',
-                yparallax: '15%'
+                xparallax: designr_local.parallax_texture_layer,
+                yparallax: designr_local.parallax_texture_layer
             },{
-                // Background Layer Options
-                xparallax: '50%',
-                yparallax: '50%',
+                // Color Layer Options
+                xparallax: designr_local.parallax_color_layer,
+                yparallax: designr_local.parallax_color_layer,
                 xorigin: 0,
                 yorigin: 0,
             },{
-                // Logo Layer Options
-                xparallax: '5%',
-                yparallax: '5%',
+                // Content Layer Options
+                xparallax: designr_local.parallax_content_layer,
+                yparallax: designr_local.parallax_content_layer
             });
         });
 
@@ -120,19 +126,24 @@ jQuery(document).ready(function ($) {
             // Global Options
             mouseport: $('body')
         },{
+            // Image Layer
+            xparallax: designr_local.parallax_image_layer,
+            yparallax: designr_local.parallax_image_layer
+        },
+        {
             // Texture Layer Options
-            xparallax: '15%',
-            yparallax: '15%'
+            xparallax: designr_local.parallax_texture_layer,
+            yparallax: designr_local.parallax_texture_layer
         },{
-            // Background Layer Options
-            xparallax: '50%',
-            yparallax: '50%',
+            // Color Layer Options
+            xparallax: designr_local.parallax_color_layer,
+            yparallax: designr_local.parallax_color_layer,
             xorigin: 0,
             yorigin: 0,
         },{
-            // Logo Layer Options
-            xparallax: '5%',
-            yparallax: '5%',
+            // Content Layer Options
+            xparallax: designr_local.parallax_content_layer,
+            yparallax: designr_local.parallax_content_layer
         }).parent().find('.jparallax-layer.content-layer').fadeIn();
         
     }

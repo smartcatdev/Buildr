@@ -24,9 +24,6 @@ jQuery(document).ready( function( $ ) {
             plxImg.style.backgroundImage = 'url('+ img +')';
             plx[i].insertBefore(plxImg, plx[i].firstChild);
         }
-//        $('.sc-slider-wrapper .parallax .plx-img').delay(50).animate({
-//            opacity: 1,
-//        }, 600 );
 
     }
     window.addEventListener('load', parallaxImages);
@@ -43,7 +40,7 @@ jQuery(document).ready( function( $ ) {
                 if (plxImg) {
                     var plxImgHeight = plxImg.clientHeight;
                     var singleScroll = (scrolled - offsetTop) - plxImgHeight/5;
-                    plxImg.style.top = (singleScroll / 5) + "px";
+                    plxImg.style.top = (singleScroll / designr_local_parallax.intensity_value) + "px";
                 }
             }
         }
