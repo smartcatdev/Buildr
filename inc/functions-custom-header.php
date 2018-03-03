@@ -37,6 +37,7 @@ if ( !function_exists( 'designr_header_style' ) ) :
      * @see designr_custom_header_setup().
      */
     function designr_header_style() {
+    
         $header_text_color = get_header_textcolor();
 
         /*
@@ -49,28 +50,43 @@ if ( !function_exists( 'designr_header_style' ) ) :
 
         // If we get this far, we have custom styles. Let's do this.
         ?>
+
         <style type="text/css">
-        <?php
-// Has the text been hidden?
-        if ( !display_header_text() ) :
-            ?>
+            <?php
+            // Has the text been hidden?
+            if ( !display_header_text() ) : ?>
                 .site-title,
                 .site-description {
                     position: absolute;
                     clip: rect(1px, 1px, 1px, 1px);
                 }
             <?php
-        // If the user has set a custom color for the text use that.
-        else :
-            ?>
+            // If the user has set a custom color for the text use that.
+            else : ?>
                 .site-title a,
                 .site-description {
                     color: #<?php echo esc_attr( $header_text_color ); ?>;
                 }
-        <?php endif; ?>
+            <?php endif; ?>
         </style>
+        
         <?php
+        
     }
 
-
 endif;
+
+/**
+ * Creates header using images from Custom Header
+ * @param string $details Extra info to print into header
+ */
+add_action( 'designr_custom_header', 'designr_render_custom_header' );
+function designr_render_custom_header() { 
+
+    if ( has_header_image() ) :
+
+        get_template_part( 'template-parts/custom-header', get_theme_mod( 'custom_header_style_toggle', 'parallax_vertical' ) );
+            
+    endif;
+    
+}
