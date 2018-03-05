@@ -68,22 +68,22 @@ add_action( 'customize_controls_enqueue_scripts', 'designr_customize_controls_js
 $acid = acid_instance();
 
 $data = array (
-    
+
     'panels' => array (
-        
+
         // Panel: Custom Header ------------------------------------------------
-        'panel_custom_header' => array ( 
-            
+        'panel_custom_header' => array (
+
             'title'         => __( 'Custom Header', 'designr' ),
             'desciption'    => __( 'Customize the header banner on your site', 'designr' ),
             'sections'      => array (
-                
+
                 // Section : Custom Header Settings ----------------------------
                 'section_custom_header' => array (
-                    
+
                     'title' => __( 'General Settings', 'designr' ),
                     'options' => array (
-                        
+
                         // Style
                         'custom_header_style_toggle' => array (
                             'type'          => 'select',
@@ -152,17 +152,17 @@ $data = array (
                             'description'   => __( '0.0 for transparent, up to 1.0 for solid/opaque', 'designr' ),
                             'default'       => .75,
                         ),
-                        
+
                     )
-                    
+
                 ),
-                
+
                 // Section : Custom Header - Logo Settings ---------------------
                 'section_custom_header_logo' => array (
-                    
+
                     'title' => __( 'Display: Logo', 'designr' ),
                     'options' => array (
-                        
+
                         // Logo
                         'custom_header_show_logo' => array (
                             'type'          => 'select',
@@ -185,17 +185,17 @@ $data = array (
                             'description'   => __( 'When viewed on screens less than 992px wide', 'designr' ),
                             'default'       => 80,
                         ),
-                        
+
                     )
-                    
+
                 ),
-                
+
                 // Section : Custom Header - Main Heading Settings ---------------------
                 'section_custom_header_heading' => array (
-                    
+
                     'title' => __( 'Display: Heading', 'designr' ),
                     'options' => array (
-                        
+
                         // Main Heading
                         'custom_header_show_heading' => array (
                             'type'          => 'select',
@@ -253,18 +253,18 @@ $data = array (
                             'label'         => __( 'Text Color', 'designr' ),
                             'default'       => '#FFFFFF'
                         ),
-                        
+
                     )
-                    
+
                 ),
-                
+
                 // Section : Custom Header - Menu Settings ---------------------
                 'section_custom_header_menu' => array (
-                    
+
                     'title' => __( 'Display: Custom Menu', 'designr' ),
                     'options' => array (
-                        
-                        // Menu 
+
+                        // Menu
                         'custom_header_show_menu' => array (
                             'type'          => 'select',
                             'label'         => __( 'Display the Menu?', 'designr' ),
@@ -318,17 +318,17 @@ $data = array (
                             'description'   => __( 'Amount of space in px between each link in the menu', 'designr' ),
                             'default'       => 16
                         ),
-                        
+
                     )
-                    
+
                 ),
-                
+
                 // Section : Custom Header Style - Parallax Layers -------------
                 'section_custom_header_plx_vertical' => array (
 
                     'title' => __( 'Color / Gradient Overlay', 'designr' ),
                     'options' => array (
-                        
+
                         'parallax_layers_include_color_layer' => array (
                             'type'          => 'select',
                             'label'         => __( 'Include a colored overlay layer?', 'designr' ),
@@ -340,7 +340,7 @@ $data = array (
                                 'gradient'  => __( 'Gradient', 'designr' ),
                             )
                         ),
-                        
+
                         // Overlay - Single Color
                         'parallax_layers_single_color' => array (
                             'type'          => 'color',
@@ -353,7 +353,7 @@ $data = array (
                             'description'   => __( '0.0 for transparent, up to 1.0 for solid/opaque', 'designr' ),
                             'default'       => .75,
                         ),
-                        
+
                         // Overlay - Gradient
                         'parallax_layers_gradient_style' => array (
                             'type'          => 'select',
@@ -405,29 +405,29 @@ $data = array (
                             'description'   => __( '0.0 for transparent, up to 1.0 for solid/opaque', 'designr' ),
                             'default'       => .25,
                         ),
-                        
-                        
+
+
                     )
-                    
+
                 ),
 
             ), // End of Custom Header Sections
-            
+
         ), // End of Custom Header Panel
 
         // Panel: Blog ---------------------------------------------------------
-        'panel_blog' => array ( 
-            
+        'panel_blog' => array (
+
             'title'         => __( 'Blog', 'designr' ),
             'desciption'    => __( 'Customize the blog and archive pages on your site', 'designr' ),
             'sections'      => array (
-                
+
                 // Section : Blog Layout Settings ------------------------------
                 'section_blog_layout' => array (
-                    
+
                     'title' => __( 'Blog Layout', 'designr' ),
                     'options' => array (
-                        
+
                         'blog_layout_style' => array (
                             'type'          => 'select',
                             'label'         => __( 'Blog Style', 'designr' ),
@@ -526,28 +526,28 @@ $data = array (
                             'label'         => __( 'Post Date & Author - Font Size', 'designr' ),
                             'default'       => 12,
                         ),
-                        
+
                     )
-                    
+
                 ),
 
             ), // End of Blog Sections
-            
+
         ), // End of Blog Panel
-        
+
         // Panel: Navbar -------------------------------------------------------
-        'panel_navbar' => array ( 
-            
+        'panel_navbar' => array (
+
             'title'         => __( 'Navbar', 'designr' ),
             'desciption'    => __( 'Customize the primary navbar on your site, including control over appearance & behaviour', 'designr' ),
             'sections'      => array (
-                
+
                 // Section : Navbar General Settings ---------------------------
                 'section_nav_general' => array (
-                    
+
                     'title' => __( 'General Settings', 'designr' ),
                     'options' => array (
-                        
+
                         'navbar_style' => array (
                             'type'          => 'select',
                             'label'         => __( 'Navbar Style', 'designr' ),
@@ -644,9 +644,9 @@ $data = array (
                                 'yes'       => __( 'Yes', 'designr' ),
                             )
                         ),
-                        
+
                     )
-                    
+
                 ),
 
                 // Section : Slim Style Settings ---------------------------
@@ -654,7 +654,7 @@ $data = array (
 
                     'title' => __( 'Style: Slim', 'designr' ),
                     'options' => array (
-                        
+
                         'style_a_always_show_logo' => array (
                             'type'          => 'select',
                             'label'         => __( 'Logo - Always Visible?', 'designr' ),
@@ -708,18 +708,18 @@ $data = array (
                                 'yes'       => __( 'Yes', 'designr' ),
                             )
                         ),
-                        
+
                     )
-                    
+
                 ),
-                
+
                 // Section : Social Links --------------------------------------
                 'section_nav_social_links' => array (
-                    
+
                     'title' => __( 'Social Links', 'designr' ),
                     'options' => array (
-                        
-                        'navbar_show_social' => array ( 
+
+                        'navbar_show_social' => array (
                             'type'          => 'select',
                             'label'         => __( 'Show Social Links in Navbar?', 'designr' ),
                             'description'   => __( 'Different Navbar styles will display the icons in varying ways', 'designr' ),
@@ -784,17 +784,17 @@ $data = array (
                             'default'       => '',
                             'choices'       => designr_get_icons( 'social' )
                         ),
-                        
+
                     )
-                    
+
                 ),
-                
+
                 // Section : Navbar Colors -------------------------------------
                 'section_nav_colors' => array (
-                    
+
                     'title' => __( 'Colors', 'designr' ),
                     'options' => array (
-                        
+
                         'navbar_background_style' => array (
                             'type'          => 'select',
                             'label'         => __( 'Background Style', 'designr' ),
@@ -842,29 +842,29 @@ $data = array (
                             'label'         => __( 'Social Links - Icons (Hover)', 'designr' ),
                             'default'       => '#0000FF'
                         ),
-                        
+
                     )
-                    
+
                 ),
-                
+
             ), // End of Navbar Sections
-            
+
         ), // End of Navbar Panel
-        
+
         // Panel: Appearance ---------------------------------------------------
-        'panel_appearance' => array ( 
-            
+        'panel_appearance' => array (
+
             'title'         => __( 'Appearance', 'designr' ),
             'description'   => __( 'Customize your site colors, fonts, and more', 'designr' ),
             'sections'      => array (
-                
+
                 // Section : Colors --------------------------------------------
-                'section_colors' => array ( 
-                    
+                'section_colors' => array (
+
                     'title'         => __( 'Colors', 'designr' ),
                     'description'   => __( 'Customize the colors in use on your site', 'designr' ),
                     'options' => array (
-                        
+
                         'skin_theme_primary' => array(
                             'type'          => 'select',
                             'label'         => __( 'Theme Color - Primary', 'designr' ),
@@ -887,18 +887,18 @@ $data = array (
                                 'c70546'       => __( 'Deep Magenta', 'designr' ),
                             ),
                         ),
-                        
+
                     ),
-                    
+
                 ),
-                
+
                 // Section : Fonts ---------------------------------------------
-                'fonts' => array ( 
-                    
+                'fonts' => array (
+
                     'title'         => __( 'Fonts', 'designr' ),
                     'description'   => __( 'Customize the fonts in use on your site', 'designr' ),
                     'options' => array (
-                        
+
                         // Primary Font
                         'primary_font' => array(
                             'type'      => 'select',
@@ -946,7 +946,7 @@ $data = array (
                             'label'     => __( 'Font Size - h1 (Mobile)', 'designr' ),
                             'default'   => 16,
                         ),
-                        
+
                         // Secondary Font
                         'secondary_font' => array(
                             'type'      => 'select',
@@ -959,60 +959,97 @@ $data = array (
                             'label'     => __( 'Font Size - Body & Paragraph', 'designr' ),
                             'default'   => 16,
                         ),
-                        
+
                     ),
-                    
+
                 ),
-                
+
             ), // End of Appearance Sections
-            
+
         ), // End of Appearance Panel
-        
+
         // Panel: Footer -------------------------------------------------------
         'panel_footer' => array (
-            
+
             'title'         => __( 'Footer', 'designr' ),
             'desciption'    => __( 'Customize the theme footer', 'designr' ),
             'sections'      => array (
-                
-                // Section : Footer Colors -------------------------------------
-                'section_footer_colors' => array (
-                    
-                    'title'     => __( 'Footer Colors', 'designr' ),
+
+                // Section : Footer General Settings  --------------------------
+                'section_footer_general' => array (
+
+                    'title'     => __( 'General Settings', 'designr' ),
                     'options'   => array (
-                        
-                        // Footer Background Color
-                        'footer_background' => array (
-                            'type'      => 'select',
-                            'label'     => __( 'Background Color', 'designr' ),
-                            'default'   => '141414',
+
+                        // Footer Style
+                        'footer_style' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Footer Style', 'designr' ),
+                            'default'       => 'default',
                             'choices'   => array (
-                                '141414'   => __( 'Dark', 'designr' ),
-                                'ffffff'   => __( 'Light', 'designr' ),
+                                'default'           => __( 'Default', 'designr' ),
+                                'slim'              => __( 'Slim', 'designr' ),
+                                'slim_centered'     => __( 'Slim - Centered', 'designr' ),
                             )
                         ),
-                        
-                        // Footer Foreground Color
-                        'footer_foreground' => array (
-                            'type'      => 'select',
-                            'label'     => __( 'Foreground Color', 'designr' ),
-                            'default'   => 'ffffff',
+                        'boxed_footer' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Footer - Boxed Content?', 'designr' ),
+                            'description'   => __( 'Selecting "Yes" will line up the Footer with the main content instead of the left & right bounds of the window', 'designr' ),
+                            'default'       => 'no',
                             'choices'   => array (
-                                '141414'   => __( 'Dark', 'designr' ),
-                                'ffffff'   => __( 'Light', 'designr' ),
+                                'no'        => __( 'No', 'designr' ),
+                                'yes'       => __( 'Yes', 'designr' ),
                             )
-                        )
-                        
+                        ),
+                        'footer_site_title_font_size' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Branding - Font Size', 'designr' ),
+                            'default'       => 18
+                        ),
+
                     )
-                    
+
                 ),
-                
+
+                // Section : Footer Colors -------------------------------------
+                'section_footer_colors' => array (
+
+                    'title'     => __( 'Colors', 'designr' ),
+                    'options'   => array (
+
+                        // Footer Background
+                        'footer_background' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Background Color', 'designr' ),
+                            'default'       => '141414',
+                            'choices'   => array (
+                                '141414'    => __( 'Dark', 'designr' ),
+                                'ffffff'    => __( 'Light', 'designr' ),
+                            )
+                        ),
+
+                        // Footer Foreground
+                        'footer_foreground' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Foreground Color', 'designr' ),
+                            'default'       => 'ffffff',
+                            'choices'   => array (
+                                '141414'    => __( 'Dark', 'designr' ),
+                                'ffffff'    => __( 'Light', 'designr' ),
+                            )
+                        ),
+
+                    )
+
+                ),
+
             ), // End of Footer Sections
-            
+
         ), // End of Footer Panel
-        
+
     ), // End of Panels
-    
+
 );
 
 $acid->config( $data );
