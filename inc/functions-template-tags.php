@@ -188,3 +188,20 @@ function designr_render_masonry_wrap_close() { ?>
 <?php }
 add_action( 'blog_masonry_wrap_close', 'designr_render_masonry_wrap_close');        
     
+/**
+ * Render the SC designer section.
+ * 
+ * @since 1.0.0
+ * @return void
+ */
+add_action( 'designr_designer', 'designr_render_designer', 10 );
+function designr_render_designer() { ?>
+    
+    <a href="https://smartcatdesign.net/" rel="designer" style="" class="rel">
+        <span>
+            <?php esc_html_e( 'Design by', 'designr' ); ?>
+        </span>
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/smartcat_logo_white.svg' ); ?>" alt="<?php echo get_bloginfo('name'); ?>">
+    </a>
+    
+<?php }

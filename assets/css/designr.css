@@ -375,7 +375,6 @@ header#masthead.header-style-slim #slim-header-wrap #slim-header {
 
 @media (min-width:992px) {
 
-    footer div#slim-footer-wrap,
     header#masthead.header-style-slim #slim-header-wrap #slim-header {
         padding: 0 15px;
     }
@@ -731,10 +730,45 @@ div#designr-custom-header.parallax_layers .jparallax-layer.content-layer img.cus
  * -------------------------------------------------------------------------- */
 
 footer div#slim-footer-wrap {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    background-color: #000000;
+}
+
+footer div#slim-footer {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+footer div#footer-branding-wrap {
+    display: flex;
+    flex: 1 1;
+    align-items: center;
 }
 
 footer div#footer-branding-wrap .site-title {
     margin: 0;
+}
+
+footer div#footer-branding-wrap img.custom-logo {
+    width: auto;
+}
+
+footer #designr_designer {
+/*    transform: scale(1.75);
+    margin-left: 25px;*/
+}
+
+footer .footer-copyright {
+    margin: 0 15px;
+}
+
+footer .footer-designer {
+    display: flex;
+    flex: 1 1;
+    align-items: center;
+    justify-content: flex-end;
 }

@@ -1002,6 +1002,60 @@ $data = array (
                                 'yes'       => __( 'Yes', 'designr' ),
                             )
                         ),
+                        'footer_show_social' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Footer - Show Social?', 'designr' ),
+                            'description'   => __( 'Selecting "Yes" will include the social icon links you have set', 'designr' ),
+                            'default'       => 'no',
+                            'choices'   => array (
+                                'no'        => __( 'No', 'designr' ),
+                                'yes'       => __( 'Yes', 'designr' ),
+                            )
+                        ),
+                        'footer_show_branding' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Footer - Show Branding?', 'designr' ),
+                            'description'   => __( 'Selecting "Yes" will include either an alternate custom logo or your site title in the footer', 'designr' ),
+                            'default'       => 'yes',
+                            'choices'   => array (
+                                'no'        => __( 'No', 'designr' ),
+                                'yes'       => __( 'Yes', 'designr' ),
+                            )
+                        ),
+                        'footer_show_copyright' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Footer - Show Copyright?', 'designr' ),
+                            'description'   => __( 'Selecting "Yes" will include the copyright tagline in the footer', 'designr' ),
+                            'default'       => 'yes',
+                            'choices'   => array (
+                                'no'        => __( 'No', 'designr' ),
+                                'yes'       => __( 'Yes', 'designr' ),
+                            )
+                        ),
+                        'footer_copyright_tagline' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Copyright - Tagline Text', 'designr' ),
+                            'default'       => __( '© 2018 Your Company', 'designr' ),
+                        ),
+                        'footer_branding' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Branding - What to Display?', 'designr' ),
+                            'default'       => 'site_title',
+                            'choices'   => array (
+                                'site_title'    => __( 'Show Site Title', 'designr' ),
+                                'alt_logo'      => __( 'Show Logo', 'designr' ),
+                            )
+                        ),
+                        'alternate_logo' => array (
+                            'type'          => 'image',
+                            'label'         => __( 'Branding - Logo', 'designr' ),
+                            'default'       => '',
+                        ),
+                        'designr_footer_logo_height' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Branding - Logo Height', 'designr' ),
+                            'default'       => 30,
+                        ),
                         'footer_site_title_font_size' => array (
                             'type'          => 'number',
                             'label'         => __( 'Branding - Font Size', 'designr' ),

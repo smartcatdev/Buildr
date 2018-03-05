@@ -79,6 +79,10 @@ function designr_wp_head_styles() { ?>
             color: #<?php esc_attr_e( $theme_colors['primary'] ); ?>;
         }
 
+        footer #designr_designer path {
+            fill: #<?php esc_attr_e($theme_colors['primary']); ?>;
+        }
+        
         /* ----- Secondary Color -------------------------------------------- */
 
         a:hover {
@@ -147,7 +151,7 @@ function designr_wp_head_styles() { ?>
 
         /* ----- Footer Colors ---------------------------------------------- */
 
-        div#slim-footer-wrap {
+        div#slim-footer-social {
             background-color: #<?php esc_attr_e( $theme_colors['footer_bg'] ); ?>;
         }
 
@@ -505,10 +509,14 @@ function designr_wp_head_styles() { ?>
          * Footer
          * ------------------------------------------------------------------ */
 
-         div#footer-branding-wrap .site-title {
-             font-size: <?php esc_attr_e( get_theme_mod( 'footer_site_title_font_size', 18 ) ) ?>px;
-             letter-spacing: <?php esc_attr_e( get_theme_mod( 'navbar_site_title_spacing', '0.25' ) ); ?>em;
-         }
+        footer div#footer-branding-wrap img.custom-logo {
+            height: <?php echo esc_attr( get_theme_mod( 'designr_footer_logo_height', 30 ) ); ?>px;
+        }
+        
+        div#footer-branding-wrap .site-title {
+            font-size: <?php esc_attr_e( get_theme_mod( 'footer_site_title_font_size', 18 ) ) ?>px;
+            letter-spacing: <?php esc_attr_e( get_theme_mod( 'navbar_site_title_spacing', '0.25' ) ); ?>em;
+        }
 
     </style>
 
