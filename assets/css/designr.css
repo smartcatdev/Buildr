@@ -1,4 +1,4 @@
-/* ----------------------------------------------------------------------------- 
+/* -----------------------------------------------------------------------------
  * WP Admin
  * -------------------------------------------------------------------------- */
 @media (min-width:992px) {
@@ -10,7 +10,7 @@
     }
 }
 
-/* ----------------------------------------------------------------------------- 
+/* -----------------------------------------------------------------------------
  * General Settings
  * -------------------------------------------------------------------------- */
 div#content,
@@ -56,7 +56,7 @@ div#mobile-menu-wrap li.menu-item-has-children > span {
     transition:  all 0.5s ease-in-out;
 }
 
-/* ----------------------------------------------------------------------------- 
+/* -----------------------------------------------------------------------------
  * General Typography
  * -------------------------------------------------------------------------- */
 
@@ -68,7 +68,7 @@ a.read-more {
     white-space: nowrap;
 }
 
-/* ----------------------------------------------------------------------------- 
+/* -----------------------------------------------------------------------------
  * Header: Split Header (Custom A)
  * -------------------------------------------------------------------------- */
 
@@ -116,11 +116,11 @@ div#slim-header {
 }
 
 div#slim-header .left-half ul.slim-header-menu {
-    text-align: right;    
+    text-align: right;
     float: right;
 }
 
-div#slim-header .left-half, 
+div#slim-header .left-half,
 div#slim-header .right-half {
     display: flex;
     flex: 1 1;
@@ -128,11 +128,11 @@ div#slim-header .right-half {
 div#slim-header .left-half {
     text-align: right;
     justify-content: flex-end;
-} 
+}
 div#slim-header .right-half {
     text-align: left;
     justify-content: flex-start;
-} 
+}
 div#custom-logo-wrap {
     display: flex;
     text-align: center;
@@ -260,7 +260,7 @@ ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu {
 ul.slim-header-menu > li.menu-item-has-children:hover > ul.sub-menu {
     padding: 15px 30px;
     height: auto;
-    opacity: 1;    
+    opacity: 1;
     margin-top: -1px;
 }
 
@@ -296,7 +296,7 @@ ul.slim-header-menu > li.menu-item-has-children:hover > ul.sub-menu:before {
 }
 
 ul.slim-header-menu > li > ul.sub-menu > li {
-    line-height: 18px;    
+    line-height: 18px;
 }
 
 div#mobile-menu-wrap li.menu-item-has-children > span {
@@ -361,7 +361,7 @@ div#mobile-menu-wrap ul.sub-menu li a {
     }
 }
 
-/* ----------------------------------------------------------------------------- 
+/* -----------------------------------------------------------------------------
  * Header: Slim Header (Custom B)
  * -------------------------------------------------------------------------- */
 
@@ -374,10 +374,12 @@ header#masthead.header-style-slim #slim-header-wrap #slim-header {
 }
 
 @media (min-width:992px) {
+
+    footer div#slim-footer-wrap,
     header#masthead.header-style-slim #slim-header-wrap #slim-header {
         padding: 0 15px;
-    }    
-    header#masthead.header-style-slim .site-branding, 
+    }
+    header#masthead.header-style-slim .site-branding,
     header#masthead.header-style-slim .site-title {
         text-align: left;
         padding: 0;
@@ -398,7 +400,7 @@ header#masthead.header-style-slim #slim-header-wrap #slim-header {
     }
 }
 
-/* ----------------------------------------------------------------------------- 
+/* -----------------------------------------------------------------------------
  * Header Social
  * -------------------------------------------------------------------------- */
 a.navbar-icon {
@@ -483,7 +485,7 @@ header#masthead.header-style-split .navbar-social.expanded .navbar-icon {
     }
 }
 
-/* ----------------------------------------------------------------------------- 
+/* -----------------------------------------------------------------------------
  * Hamburger Menu - Cross Animation
  * -------------------------------------------------------------------------- */
 #mobile-menu-trigger {
@@ -546,7 +548,7 @@ header#masthead.header-style-split .navbar-social.expanded .navbar-icon {
   transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* ----------------------------------------------------------------------------- 
+/* -----------------------------------------------------------------------------
  * Blog: Masonry Cards
  * -------------------------------------------------------------------------- */
 
@@ -658,7 +660,7 @@ header#masthead.header-style-split .navbar-social.expanded .navbar-icon {
     bottom: -15px;
 }
 
-/* ----------------------------------------------------------------------------- 
+/* -----------------------------------------------------------------------------
  * Custom Header
  * -------------------------------------------------------------------------- */
 #designr-custom-header {
@@ -722,4 +724,17 @@ div#designr-custom-header.designr_parallax img.custom-logo,
 div#designr-custom-header.parallax_layers .jparallax-layer.content-layer img.custom-logo {
     width: auto;
     margin-bottom: 15px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Footer
+ * -------------------------------------------------------------------------- */
+
+footer div#slim-footer-wrap {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+footer div#footer-branding-wrap .site-title {
+    margin: 0;
 }
