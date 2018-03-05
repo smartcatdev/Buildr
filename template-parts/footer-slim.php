@@ -22,9 +22,9 @@
     
     <div id="slim-footer-wrap">
 
-        <div id="slim-footer" class="<?php echo get_theme_mod( 'boxed_footer', 'no' ) == 'yes' ? 'container' : ''; ?>">
+        <div id="slim-footer" class="<?php echo get_theme_mod( 'boxed_footer', 'no' ) == 'yes' && get_theme_mod( 'centered_footer_branding', 'no' ) == 'no' ? 'container' : ''; ?>">
 
-            <div id="footer-branding-wrap">
+            <div id="footer-branding-wrap" class="<?php echo get_theme_mod( 'centered_footer_branding', 'no' ) == 'yes' ? 'centered' : ''; ?>">
 
                 <?php if ( get_theme_mod( 'footer_show_branding', 'yes' ) == 'yes' ) : ?>
                 
@@ -49,18 +49,20 @@
                 <?php if ( get_theme_mod( 'footer_show_copyright', 'yes' ) == 'yes' ) : ?>
 
                     <div class="footer-copyright">
-                        <?php esc_html_e( get_theme_mod( 'footer_copyright_tagline', __( '© 2018 Your Company', 'designr' ) ) ); ?>
+                        <?php esc_html_e( get_theme_mod( 'footer_copyright_tagline', __( 'Copyright © 2018 Your Company', 'designr' ) ) ); ?>
                     </div>
 
                 <?php endif; ?>
                 
+                <?php do_action('designr_designer'); ?>
+                            
             </div>
                             
-            <div class="footer-designer">
+<!--            <div class="footer-designer">
 
-                <?php do_action('designr_designer'); ?>
+                
 
-            </div>
+            </div>-->
 
         </div>
 

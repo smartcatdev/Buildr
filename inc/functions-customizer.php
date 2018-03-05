@@ -988,13 +988,22 @@ $data = array (
                             'choices'   => array (
                                 'default'           => __( 'Default', 'designr' ),
                                 'slim'              => __( 'Slim', 'designr' ),
-                                'slim_centered'     => __( 'Slim - Centered', 'designr' ),
                             )
                         ),
                         'boxed_footer' => array (
                             'type'          => 'select',
                             'label'         => __( 'Footer - Boxed Content?', 'designr' ),
                             'description'   => __( 'Selecting "Yes" will line up the Footer with the main content instead of the left & right bounds of the window', 'designr' ),
+                            'default'       => 'no',
+                            'choices'   => array (
+                                'no'        => __( 'No', 'designr' ),
+                                'yes'       => __( 'Yes', 'designr' ),
+                            )
+                        ),
+                        'centered_footer_branding' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Footer - Centered?', 'designr' ),
+                            'description'   => __( 'Selecting "Yes" will center the content in the footer', 'designr' ),
                             'default'       => 'no',
                             'choices'   => array (
                                 'no'        => __( 'No', 'designr' ),
@@ -1032,9 +1041,9 @@ $data = array (
                             )
                         ),
                         'footer_copyright_tagline' => array (
-                            'type'          => 'select',
+                            'type'          => 'text',
                             'label'         => __( 'Copyright - Tagline Text', 'designr' ),
-                            'default'       => __( '© 2018 Your Company', 'designr' ),
+                            'default'       => __( 'Copyright © 2018 Your Company', 'designr' ),
                         ),
                         'footer_branding' => array (
                             'type'          => 'select',
@@ -1059,6 +1068,11 @@ $data = array (
                             'type'          => 'number',
                             'label'         => __( 'Branding - Font Size', 'designr' ),
                             'default'       => 18
+                        ),
+                        'footer_copyright_font_size' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Copyright - Font Size', 'designr' ),
+                            'default'       => 12
                         ),
 
                     )

@@ -749,6 +749,10 @@ footer div#footer-branding-wrap {
     align-items: center;
 }
 
+footer div#footer-branding-wrap.centered {
+    justify-content: center;
+}
+
 footer div#footer-branding-wrap .site-title {
     margin: 0;
 }
@@ -766,9 +770,14 @@ footer .footer-copyright {
     margin: 0 15px;
 }
 
-footer .footer-designer {
-    display: flex;
-    flex: 1 1;
-    align-items: center;
-    justify-content: flex-end;
+footer span.designr_by {
+    border-left: thin solid white;
+    padding-left: 15px;
+}
+
+footer a.rel img {
+    height: 1.15em;
+    width: auto;
+    margin-top: -.175em;
+    margin-left: 0.3em;
 }

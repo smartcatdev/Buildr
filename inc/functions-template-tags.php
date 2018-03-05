@@ -196,11 +196,11 @@ add_action( 'blog_masonry_wrap_close', 'designr_render_masonry_wrap_close');
  */
 add_action( 'designr_designer', 'designr_render_designer', 10 );
 function designr_render_designer() { ?>
-    
-    <a href="https://smartcatdesign.net/" rel="designer" style="" class="rel">
-        <span>
-            <?php esc_html_e( 'Design by', 'designr' ); ?>
-        </span>
+          
+    <span class="designr_by">
+        <?php esc_html_e( 'Design by', 'designr' ); ?>
+    </span>
+    <a href="https://smartcatdesign.net/" rel="designer" class="rel">
         <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/smartcat_logo_white.svg' ); ?>" alt="<?php echo get_bloginfo('name'); ?>">
     </a>
     

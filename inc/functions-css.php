@@ -518,6 +518,10 @@ function designr_wp_head_styles() { ?>
             letter-spacing: <?php esc_attr_e( get_theme_mod( 'navbar_site_title_spacing', '0.25' ) ); ?>em;
         }
 
+        footer div#footer-branding-wrap {
+            font-size: <?php esc_attr_e( get_theme_mod( 'footer_copyright_font_size', 12 ) ) ?>px;
+        }
+
     </style>
 
 <?php
