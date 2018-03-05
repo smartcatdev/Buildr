@@ -84,45 +84,6 @@ $data = array (
                     'title' => __( 'General Settings', 'designr' ),
                     'options' => array (
                         
-                        // Radio image selector
-                        'radio-images' => array (
-                            'type'          => 'radio-image',
-                            'label'         => __( 'Radio Image', 'designr' ),
-                            'default'       => 'parallax_vertical',
-                            'choices'   => array (
-                                array(
-                                    'label' => __( 'First image', 'designr' ),
-                                    'url'   => get_template_directory_uri() . '/assets/images/sougwen.jpg'
-                                ),
-                                array(
-                                    'label' => __( 'First image', 'designr' ),
-                                    'url'   => get_template_directory_uri() . '/assets/images/sougwen.jpg'
-                                ),
-                                array(
-                                    'label' => __( 'First image', 'designr' ),
-                                    'url'   => get_template_directory_uri() . '/assets/images/sougwen.jpg'
-                                ),
-                            )
-                        ),
-                        
-                        // Range selector
-                        'cow-bell'  => array(
-                            'type'      => 'range',
-                            'label'     => __( 'how much cowbell ?', 'designr' ),
-                            'default'   => 10,
-                            'min'       => 0,
-                            'max'       => 10,
-                            'step'      => 1
-                            
-                        ),
-                        
-                        // Range selector
-                        'you-want-this'  => array(
-                            'type'      => 'toggle',
-                            'label'     => __( 'Turn on or off ?', 'designr' ),
-                            'default'   => 0,
-                            
-                        ),
                         
                         // Style
                         'custom_header_style_toggle' => array (
