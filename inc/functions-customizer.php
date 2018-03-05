@@ -65,7 +65,7 @@ function designr_customize_controls_js() {
 add_action( 'customize_controls_enqueue_scripts', 'designr_customize_controls_js' );
 
 
-$acid = acid_instance();
+$acid = acid_instance( get_template_directory_uri() . '/inc/lib/' );
 
 $data = array (
 
@@ -83,7 +83,6 @@ $data = array (
 
                     'title' => __( 'General Settings', 'designr' ),
                     'options' => array (
-
                         // Style
                         'custom_header_style_toggle' => array (
                             'type'          => 'select',
