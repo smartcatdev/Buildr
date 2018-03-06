@@ -544,6 +544,21 @@ function designr_wp_head_styles() { ?>
             font-size: <?php esc_attr_e( get_theme_mod( 'footer_copyright_font_size', 12 ) ) ?>px;
         }
 
+        <?php if ( ! get_theme_mod( 'footer_show_branding', true ) && ! get_theme_mod( 'footer_show_copyright', true ) ) : ?>
+            footer span.designr_by {
+                padding-left: 0;
+                border-left: none;
+            }
+        <?php endif; ?>
+        
+        <?php if ( get_theme_mod( 'footer_show_branding', true ) && ! get_theme_mod( 'footer_show_copyright', true ) ) : ?>
+        
+            footer span.designr_by {
+                margin-left: 15px;
+            }
+        
+        <?php endif; ?>
+            
     </style>
 
 <?php

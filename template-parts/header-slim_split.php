@@ -95,7 +95,7 @@
 
             </div>
 
-            <?php if ( get_theme_mod( 'navbar_show_social', 'no' ) == 'yes' ) : ?>
+            <?php if ( get_theme_mod( 'navbar_show_social', false ) ) : ?>
             
                 <div class="left-half split-social">
 

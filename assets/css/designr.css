@@ -835,12 +835,20 @@ footer a.rel img {
     color: #ffffff;
 }
 
+.mejs-container, 
+.mejs-container .mejs-controls, 
+.mejs-embed, 
+.mejs-embed body {
+    border-radius: 2px;
+}
+
 /* -----------------------------------------------------------------------------
  * Forms
  * -------------------------------------------------------------------------- */
 
 form label {
     width: 100%;
+    margin-bottom: 10px;
 }
 
 form input:not([type="submit"]), 
@@ -848,14 +856,33 @@ form textarea {
     width: 100% !important;
     border-radius: 0;
     border: none;
-    border-bottom: thin solid #e4e4e4;
-    color: rgba(0,0,0,0.54);
-    background: none;
-    padding: 5px 15px 5px 5px;
+    border-bottom: thin solid #333333;
+    padding: 10px 15px 10px 10px;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
     width: 100%;
     text-shadow: none;
     box-shadow: none;
+}
+
+#pre-footer form input:not([type="submit"]), 
+#pre-footer form textarea {
+    background: #333;
+    color: #fff;
+    border-radius: 2px;
+}
+
+button, input[type="submit"] {
+    background: none;
+    border: 2px solid;
+    color: #fff;
+    border-radius: 2px;
+    padding: 10px 30px;
+    border: 2px solid #f04263;
+    font-family: Montserrat;
+    background: #f04264;
+    text-transform: uppercase;
+    letter-spacing: .125em;
+    font-size: 12px;
 }

@@ -93,11 +93,11 @@ h6 { font-size: 1.125em; }
 
 /* ----- FORMS ----- */
 
-form {
+/*form {
     padding-top: 30px;
-}
+}*/
 
-form input[type="text"],
+/*form input[type="text"],
 form textarea {
     width: 100% !important;
     border-radius: 0;
@@ -163,7 +163,7 @@ form textarea.focused-material {
 form .mail-sent,
 form .mail-not-sent {
     display: none;
-}
+}*/
 
 /* ----- FLEXBOX ----- */
 

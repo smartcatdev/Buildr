@@ -22,11 +22,11 @@
     
     <div id="slim-footer-wrap">
 
-        <div id="slim-footer" class="<?php echo get_theme_mod( 'centered_footer_branding', 'no' ) == 'yes' ? 'centered' : ''; ?> <?php echo get_theme_mod( 'boxed_footer', 'no' ) == 'yes' && get_theme_mod( 'centered_footer_branding', 'no' ) == 'no' ? 'container' : ''; ?>">
+        <div id="slim-footer" class="<?php echo get_theme_mod( 'centered_footer_branding', false ) ? 'centered' : ''; ?> <?php echo get_theme_mod( 'boxed_footer', false ) && ! get_theme_mod( 'centered_footer_branding', false ) ? 'container' : ''; ?>">
 
             <div id="footer-branding-wrap">
 
-                <?php if ( get_theme_mod( 'footer_show_branding', 'yes' ) == 'yes' ) : ?>
+                <?php if ( get_theme_mod( 'footer_show_branding', true ) ) : ?>
                 
                     <?php if ( get_theme_mod( 'footer_branding', 'site_title' ) == 'alt_logo' ) : ?>
 
@@ -46,7 +46,7 @@
                         
                 <?php endif; ?>
 
-                <?php if ( get_theme_mod( 'footer_show_copyright', 'yes' ) == 'yes' ) : ?>
+                <?php if ( get_theme_mod( 'footer_show_copyright', true ) ) : ?>
 
                     <div class="footer-copyright">
                         <?php esc_html_e( get_theme_mod( 'footer_copyright_tagline', __( 'Copyright © 2018 Your Company', 'designr' ) ) ); ?>
@@ -60,7 +60,7 @@
             
             <div id="footer-social">
                             
-                <?php if ( get_theme_mod( 'footer_show_social', 'no' ) == 'yes' ) : ?>
+                <?php if ( get_theme_mod( 'footer_show_social', false ) ) : ?>
 
                     <div class="footer-social">
                         <?php for ( $ctr = 1; $ctr < 6; $ctr++ ) : ?>

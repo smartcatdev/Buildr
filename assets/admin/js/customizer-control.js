@@ -115,7 +115,7 @@
             
             function toggle( value ) {
                 
-                if ( 'yes' === value ) {
+                if ( value ) {
                     $('li#customize-control-navbar_social_drawer_background').removeClass('designr-hidden');
                     $('li#customize-control-navbar_social_link_foreground').removeClass('designr-hidden');
                     $('li#customize-control-navbar_social_link_foreground_hover').removeClass('designr-hidden');

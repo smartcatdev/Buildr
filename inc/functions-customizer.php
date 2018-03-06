@@ -617,7 +617,7 @@ $data = array (
                         'style_a_always_show_logo' => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Logo - Always Visible?', 'designr' ),
-                            'description'   => __( 'When "Yes", the logo will be visible even when Navbar is collapsed / unstuck', 'designr' ),
+                            'description'   => __( 'If on, the logo will be visible even when Navbar is collapsed / unstuck', 'designr' ),
                             'default'       => false,
                         ),
                         'style_a_logo_space' => array (
@@ -646,13 +646,13 @@ $data = array (
                         'style_a_right_align_menu' => array ( 
                             'type'          => 'toggle',
                             'label'         => __( 'Navbar - Bookend the Logo & Menu?', 'designr' ),
-                            'description'   => __( 'Selecting "Yes" will right-align the menu, instead of displaying the Social Links section', 'designr' ),
+                            'description'   => __( 'If on, the menu will be right-aligned, instead of displaying the Social Links section', 'designr' ),
                             'default'       => false,
                         ),
                         'style_a_boxed_navbar' => array ( 
                             'type'          => 'toggle',
                             'label'         => __( 'Navbar - Boxed Content?', 'designr' ),
-                            'description'   => __( 'Selecting "Yes" will line up the Navbar with the main content instead of the left & right bounds of the window', 'designr' ),
+                            'description'   => __( 'If on, the Navbar will be lined up with the main content instead of the left & right bounds of the window', 'designr' ),
                             'default'       => false,
                         ),
 
@@ -667,14 +667,10 @@ $data = array (
                     'options' => array (
 
                         'navbar_show_social' => array (
-                            'type'          => 'select',
+                            'type'          => 'toggle',
                             'label'         => __( 'Show Social Links in Navbar?', 'designr' ),
-                            'description'   => __( 'Different Navbar styles will display the icons in varying ways', 'designr' ),
-                            'default'       => 'no',
-                            'choices'   => array (
-                                'no'        => __( 'No', 'designr' ),
-                                'yes'       => __( 'Yes', 'designr' ),
-                            )
+                            'description'   => __( 'If on, social links will display in the Navbar. Navbar styles display these in different ways', 'designr' ),
+                            'default'       => false,
                         ),
                         'social_icon_1_url' => array (
                             'type'          => 'url',
@@ -995,54 +991,34 @@ $data = array (
                             )
                         ),
                         'boxed_footer' => array (
-                            'type'          => 'select',
+                            'type'          => 'toggle',
                             'label'         => __( 'Footer - Boxed Content?', 'designr' ),
-                            'description'   => __( 'Selecting "Yes" will line up the Footer with the main content instead of the left & right bounds of the window', 'designr' ),
-                            'default'       => 'no',
-                            'choices'   => array (
-                                'no'        => __( 'No', 'designr' ),
-                                'yes'       => __( 'Yes', 'designr' ),
-                            )
+                            'description'   => __( 'If on, the Footer will be lined up with the main content instead of the left & right bounds of the window', 'designr' ),
+                            'default'       => false,
                         ),
                         'centered_footer_branding' => array (
-                            'type'          => 'select',
+                            'type'          => 'toggle',
                             'label'         => __( 'Footer - Centered?', 'designr' ),
-                            'description'   => __( 'Selecting "Yes" will center the content in the footer', 'designr' ),
-                            'default'       => 'no',
-                            'choices'   => array (
-                                'no'        => __( 'No', 'designr' ),
-                                'yes'       => __( 'Yes', 'designr' ),
-                            )
+                            'description'   => __( 'If on, the Footer content will be centered', 'designr' ),
+                            'default'       => false,
                         ),
                         'footer_show_social' => array (
-                            'type'          => 'select',
+                            'type'          => 'toggle',
                             'label'         => __( 'Footer - Show Social?', 'designr' ),
-                            'description'   => __( 'Selecting "Yes" will include the social icon links you have set', 'designr' ),
-                            'default'       => 'no',
-                            'choices'   => array (
-                                'no'        => __( 'No', 'designr' ),
-                                'yes'       => __( 'Yes', 'designr' ),
-                            )
+                            'description'   => __( 'If on, the Footer will include the social icon links you have set', 'designr' ),
+                            'default'       => false,
                         ),
                         'footer_show_branding' => array (
-                            'type'          => 'select',
+                            'type'          => 'toggle',
                             'label'         => __( 'Footer - Show Branding?', 'designr' ),
-                            'description'   => __( 'Selecting "Yes" will include either an alternate custom logo or your site title in the footer', 'designr' ),
-                            'default'       => 'yes',
-                            'choices'   => array (
-                                'no'        => __( 'No', 'designr' ),
-                                'yes'       => __( 'Yes', 'designr' ),
-                            )
+                            'description'   => __( 'If on,  the Footer will include either an alternate custom logo or your site title', 'designr' ),
+                            'default'       => true,
                         ),
                         'footer_show_copyright' => array (
-                            'type'          => 'select',
+                            'type'          => 'toggle',
                             'label'         => __( 'Footer - Show Copyright?', 'designr' ),
-                            'description'   => __( 'Selecting "Yes" will include the copyright tagline in the footer', 'designr' ),
-                            'default'       => 'yes',
-                            'choices'   => array (
-                                'no'        => __( 'No', 'designr' ),
-                                'yes'       => __( 'Yes', 'designr' ),
-                            )
+                            'description'   => __( 'If on, the Footer will include the copyright tagline you set', 'designr' ),
+                            'default'       => true,
                         ),
                         'footer_copyright_tagline' => array (
                             'type'          => 'text',
