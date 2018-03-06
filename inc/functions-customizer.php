@@ -85,21 +85,21 @@ $data = array (
                     'options' => array (
                         // Style
                         'custom_header_style_toggle' => array (
-                            'type'          => 'select',
-                            'label'         => __( 'Header Style', 'designr' ),
+                            'type'          => 'radio-toggle',
+                            'label'         => __( 'Header - Parallax Style', 'designr' ),
                             'default'       => 'parallax_vertical',
                             'choices'   => array (
-                                'parallax_vertical'     => __( 'Parallax - Vertical', 'designr' ),
-                                'parallax_layers'       => __( 'Parallax - Perspective Layers', 'designr' ),
+                                'parallax_vertical'     => __( 'Vertical Scroll', 'designr' ),
+                                'parallax_layers'       => __( 'Perspective Layers', 'designr' ),
                             )
                         ),
                         'designr_custom_header_height_unit' => array (
-                            'type'          => 'select',
+                            'type'          => 'radio-toggle',
                             'label'         => __( 'Height Calculation', 'designr' ),
                             'description'   => __( 'This allows you to choose between using % values or fixed pixel values for setting the header height', 'designr' ),
                             'default'       => 'percent',
                             'choices'   => array (
-                                'percent'   => __( 'Use a percentage of browser height', 'designr' ),
+                                'percent'   => __( 'Use % of browser height', 'designr' ),
                                 'fixed'     => __( 'Use a fixed pixel value', 'designr' ),
                             )
                         ),
@@ -130,7 +130,7 @@ $data = array (
                             'default'       => 250,
                         ),
                         'parallax_layers_parallax_style' => array (
-                            'type'          => 'select',
+                            'type'          => 'radio-toggle',
                             'label'         => __( 'Parallax Effect - Intensity', 'designr' ),
                             'default'       => 'default',
                             'choices'   => array (
@@ -199,7 +199,7 @@ $data = array (
                             'default'       => true
                         ),
                         'custom_header_title_content' => array (
-                            'type'          => 'select',
+                            'type'          => 'radio-toggle',
                             'label'         => __( 'What to Display?', 'designr' ),
                             'default'       => 'site_title',
                             'choices'   => array (
@@ -208,7 +208,7 @@ $data = array (
                             )
                         ),
                         'custom_header_title_font_family' => array (
-                            'type'          => 'select',
+                            'type'          => 'radio-toggle',
                             'label'         => __( 'Font Family', 'designr' ),
                             'default'       => 'secondary',
                             'choices'   => array (
@@ -263,7 +263,7 @@ $data = array (
                             'default'       => true
                         ),
                         'custom_header_menu_font_family' => array (
-                            'type'          => 'select',
+                            'type'          => 'radio-toggle',
                             'label'         => __( 'Font Family', 'designr' ),
                             'default'       => 'primary',
                             'choices'   => array (
@@ -317,7 +317,7 @@ $data = array (
                     'options' => array (
 
                         'parallax_layers_include_color_layer' => array (
-                            'type'          => 'select',
+                            'type'          => 'radio-toggle',
                             'label'         => __( 'Include a colored overlay layer?', 'designr' ),
                             'description'   => __( 'If "Yes", a semi-transparent colored layer will be added between the texture and content layers', 'designr' ),
                             'default'       => 'no',
@@ -343,7 +343,7 @@ $data = array (
 
                         // Overlay - Gradient
                         'parallax_layers_gradient_style' => array (
-                            'type'          => 'select',
+                            'type'          => 'radio-toggle',
                             'label'         => __( 'Gradient - Style', 'designr' ),
                             'description'   => __( 'Choose from linear or radial', 'designr' ),
                             'default'       => 'linear',
@@ -516,7 +516,7 @@ $data = array (
                     'options' => array (
 
                         'navbar_style' => array (
-                            'type'          => 'select',
+                            'type'          => 'radio-toggle',
                             'label'         => __( 'Navbar Style', 'designr' ),
                             'default'       => 'default',
                             'choices'   => array (
@@ -532,7 +532,7 @@ $data = array (
                             'default'       => true,
                         ),
                         'navbar_site_title_font' => array (
-                            'type'          => 'select',
+                            'type'          => 'radio-toggle',
                             'label'         => __( 'Site Title - Font Family', 'designr' ),
                             'default'       => 'secondary',
                             'choices'   => array (
@@ -565,7 +565,7 @@ $data = array (
                             )
                         ),
                         'navbar_site_tagline_font' => array (
-                            'type'          => 'select',
+                            'type'          => 'radio-toggle',
                             'label'         => __( 'Site Tagline - Font Family', 'designr' ),
                             'default'       => 'secondary',
                             'choices'   => array (
@@ -579,7 +579,7 @@ $data = array (
                             'default'       => 12
                         ),
                         'navbar_links_font' => array (
-                            'type'          => 'select',
+                            'type'          => 'radio-toggle',
                             'label'         => __( 'Navbar Links - Font Family', 'designr' ),
                             'default'       => 'primary',
                             'choices'   => array (
@@ -739,7 +739,7 @@ $data = array (
                     'options' => array (
 
                         'navbar_background_style' => array (
-                            'type'          => 'select',
+                            'type'          => 'radio-toggle',
                             'label'         => __( 'Background Style', 'designr' ),
                             'default'       => 'color',
                             'choices'   => array (
@@ -933,7 +933,7 @@ $data = array (
                             'step'          => 1
                         ),
                         'prefooter_widget_title_font_family' => array (
-                            'type'          => 'select',
+                            'type'          => 'radio-toggle',
                             'label'         => __( 'Widget Titles - Font Family', 'designr' ),
                             'default'       => 'secondary',
                             'choices'   => array (
@@ -982,7 +982,7 @@ $data = array (
 
                         // Footer Style
                         'footer_style' => array (
-                            'type'          => 'select',
+                            'type'          => 'radio-toggle',
                             'label'         => __( 'Footer Style', 'designr' ),
                             'default'       => 'default',
                             'choices'   => array (
@@ -1026,7 +1026,7 @@ $data = array (
                             'default'       => __( 'Copyright © 2018 Your Company', 'designr' ),
                         ),
                         'footer_branding' => array (
-                            'type'          => 'select',
+                            'type'          => 'radio-toggle',
                             'label'         => __( 'Branding - What to Display?', 'designr' ),
                             'default'       => 'site_title',
                             'choices'   => array (
