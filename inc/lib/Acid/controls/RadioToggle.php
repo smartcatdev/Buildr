@@ -18,7 +18,7 @@ add_action( 'customize_register', function() {
                 <?php if ( !empty( $this->description ) ) : ?>
                     <div class="switch-title description customize-control-description"><?php echo $this->description; ?></div>
                 <?php endif; ?>
-
+                    
                 <?php
                 $ctr = 0;
                 foreach( $this->choices as $key => $val ) : $ctr++; ?>
@@ -30,7 +30,7 @@ add_action( 'customize_register', function() {
                         <div class="clear"></div>
                     <?php endif; ?>
                 <?php endforeach; ?>
-
+                        
             </div>
                     
                 <?php
@@ -130,7 +130,7 @@ add_action( 'customize_register', function() {
                     border-bottom: thin solid #b9b9b9;
                     border-radius: 0 0 4px 4px !important;
                 }
-                
+
                 .switch-field input + label:before, 
                 .switch-field input + label:after { 
                     content: "";
