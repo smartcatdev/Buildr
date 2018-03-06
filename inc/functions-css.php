@@ -194,7 +194,7 @@ function designr_wp_head_styles() { ?>
             }
         <?php endif; ?>
 
-        <?php if ( get_theme_mod( 'style_a_box_shadow', 'yes' ) == 'yes' ) : ?>
+        <?php if ( get_theme_mod( 'style_a_box_shadow', true ) ) : ?>
             div#slim-header-wrap {
                 box-shadow: 0px 0px 10px 0px rgba(0,0,0,.75);
             }
@@ -202,7 +202,7 @@ function designr_wp_head_styles() { ?>
 
         /* ----- Slim Headers: Logo Settings -------------------------------- */
 
-        <?php if ( get_theme_mod( 'style_a_always_show_logo', 'no' ) == 'yes' ) : ?>
+        <?php if ( get_theme_mod( 'style_a_always_show_logo', false ) ) : ?>
             header img.custom-logo {
                 height: <?php esc_attr_e( get_theme_mod( 'style_a_collapse_height', 50 ) ) ?>px;
                 margin: 0 <?php esc_attr_e( get_theme_mod( 'style_a_logo_space', 15 ) ) ?>px;
@@ -264,7 +264,7 @@ function designr_wp_head_styles() { ?>
 
         <?php endif; ?>
 
-        <?php if ( get_theme_mod( 'navbar_hide_tagline', 'yes' ) == 'yes' ) : ?>
+        <?php if ( get_theme_mod( 'navbar_hide_tagline', true ) ) : ?>
 
             .site-branding .site-tagline {
                 display: none !important;
@@ -285,7 +285,7 @@ function designr_wp_head_styles() { ?>
 
         /* ----- Slim Headers: Left Aligned Logo & Right Aligned Menu ------- */
 
-        <?php if ( get_theme_mod( 'style_a_right_align_menu', 'no' ) == 'yes' ) : ?>
+        <?php if ( get_theme_mod( 'style_a_right_align_menu', false ) ) : ?>
             header#masthead.header-style-slim div#slim-header .right-half {
                 justify-content: flex-end;
             }
@@ -355,7 +355,7 @@ function designr_wp_head_styles() { ?>
 
         /* ----- Masonry Blog Cards: Hidden Categories Bar ------------------ */
 
-        <?php if ( get_theme_mod( 'blog_layout_show_categories', 'yes' ) == 'no' ) : ?>
+        <?php if ( ! get_theme_mod( 'blog_layout_show_categories', true ) ) : ?>
             .masonry-card-blog .blog_item_wrap .blog_item .footer-meta {
                 padding-bottom: 0;
                 border: none;
@@ -370,7 +370,7 @@ function designr_wp_head_styles() { ?>
 
         /* ----- Masonry Blog Cards: Hidden Comment & View Counts ----------- */
 
-        <?php if ( get_theme_mod( 'blog_layout_show_comment_count', 'yes' ) == 'no' && get_theme_mod( 'blog_layout_show_view_count', 'yes' ) == 'no' ) : ?>
+        <?php if ( ! get_theme_mod( 'blog_layout_show_comment_count', true ) && ! get_theme_mod( 'blog_layout_show_view_count', false ) ) : ?>
             .masonry-card-blog .blog_item_wrap .blog_item .inner {
                 padding-bottom: 15px;
             }

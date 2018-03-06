@@ -442,49 +442,29 @@ $data = array (
                             'default'       => 0,
                         ),
                         'blog_layout_show_date_posted' => array (
-                            'type'          => 'select',
+                            'type'          => 'toggle',
                             'label'         => __( 'Show Date Posted?', 'designr' ),
-                            'default'       => 'yes',
-                            'choices'   => array (
-                                'no'        => __( 'No', 'designr' ),
-                                'yes'       => __( 'Yes', 'designr' ),
-                            )
+                            'default'       => true,
                         ),
                         'blog_layout_show_author' => array (
-                            'type'          => 'select',
+                            'type'          => 'toggle',
                             'label'         => __( 'Show Author?', 'designr' ),
-                            'default'       => 'yes',
-                            'choices'   => array (
-                                'no'        => __( 'No', 'designr' ),
-                                'yes'       => __( 'Yes', 'designr' ),
-                            )
+                            'default'       => true,
                         ),
                         'blog_layout_show_categories' => array (
-                            'type'          => 'select',
+                            'type'          => 'toggle',
                             'label'         => __( 'Show Category Footer?', 'designr' ),
-                            'default'       => 'yes',
-                            'choices'   => array (
-                                'no'        => __( 'No', 'designr' ),
-                                'yes'       => __( 'Yes', 'designr' ),
-                            )
+                            'default'       => true,
                         ),
                         'blog_layout_show_comment_count' => array (
-                            'type'          => 'select',
+                            'type'          => 'toggle',
                             'label'         => __( 'Show the Comment Count in the Meta Stats tab?', 'designr' ),
-                            'default'       => 'yes',
-                            'choices'   => array (
-                                'no'        => __( 'No', 'designr' ),
-                                'yes'       => __( 'Yes', 'designr' ),
-                            )
+                            'default'       => true,
                         ),
                         //                        'blog_layout_show_view_count' => array (
-                        //                            'type'          => 'select',
+                        //                            'type'          => 'toggle',
                         //                            'label'         => __( 'Show the View Count in the Meta Stats tab?', 'designr' ),
-                        //                            'default'       => 'no',
-                        //                            'choices'   => array (
-                        //                                'no'        => __( 'No', 'designr' ),
-                        //                                'yes'       => __( 'Yes', 'designr' ),
-                        //                            )
+                        //                            'default'       => false,
                         //                        ),
                         'blog_layout_excerpt_trim_words' => array (
                             'type'          => 'number',
@@ -546,14 +526,10 @@ $data = array (
                             )
                         ),
                         'navbar_hide_tagline' => array (
-                            'type'          => 'select',
+                            'type'          => 'toggle',
                             'label'         => __( 'Hide Site Tagline?', 'designr' ),
                             'description'   => __( 'Both the Title & Tagline show by default when no logo is chosen', 'designr' ),
-                            'default'       => 'yes',
-                            'choices'   => array (
-                                'no'        => __( 'No', 'designr' ),
-                                'yes'       => __( 'Yes', 'designr' ),
-                            )
+                            'default'       => true,
                         ),
                         'navbar_site_title_font' => array (
                             'type'          => 'select',
@@ -623,13 +599,9 @@ $data = array (
                             'default'       => 30
                         ),
                         'style_a_box_shadow' => array (
-                            'type'          => 'select',
+                            'type'          => 'toggle',
                             'label'         => __( 'Add a box shadow to the Navbar?', 'designr' ),
-                            'default'       => 'yes',
-                            'choices'   => array (
-                                'no'        => __( 'No', 'designr' ),
-                                'yes'       => __( 'Yes', 'designr' ),
-                            )
+                            'default'       => true,
                         ),
 
                     )
@@ -643,14 +615,10 @@ $data = array (
                     'options' => array (
 
                         'style_a_always_show_logo' => array (
-                            'type'          => 'select',
+                            'type'          => 'toggle',
                             'label'         => __( 'Logo - Always Visible?', 'designr' ),
                             'description'   => __( 'When "Yes", the logo will be visible even when Navbar is collapsed / unstuck', 'designr' ),
-                            'default'       => 'no',
-                            'choices'   => array (
-                                'no'        => __( 'No', 'designr' ),
-                                'yes'       => __( 'Yes', 'designr' ),
-                            )
+                            'default'       => false,
                         ),
                         'style_a_logo_space' => array (
                             'type'          => 'number',
@@ -675,25 +643,17 @@ $data = array (
                             'description'   => __( 'When Navbar is expanded / sticky', 'designr' ),
                             'default'       => 75
                         ),
-                        'style_a_right_align_menu' => array ( // TODO: Should Only show if Slim - Left Aligned is set for Navbar Style
-                            'type'          => 'select',
+                        'style_a_right_align_menu' => array ( 
+                            'type'          => 'toggle',
                             'label'         => __( 'Navbar - Bookend the Logo & Menu?', 'designr' ),
                             'description'   => __( 'Selecting "Yes" will right-align the menu, instead of displaying the Social Links section', 'designr' ),
-                            'default'       => 'no',
-                            'choices'   => array (
-                                'no'        => __( 'No', 'designr' ),
-                                'yes'       => __( 'Yes', 'designr' ),
-                            )
+                            'default'       => false,
                         ),
-                        'style_a_boxed_navbar' => array ( // TODO: Should Only show if Slim - Left Aligned is set for Navbar Style
-                            'type'          => 'select',
+                        'style_a_boxed_navbar' => array ( 
+                            'type'          => 'toggle',
                             'label'         => __( 'Navbar - Boxed Content?', 'designr' ),
                             'description'   => __( 'Selecting "Yes" will line up the Navbar with the main content instead of the left & right bounds of the window', 'designr' ),
-                            'default'       => 'no',
-                            'choices'   => array (
-                                'no'        => __( 'No', 'designr' ),
-                                'yes'       => __( 'Yes', 'designr' ),
-                            )
+                            'default'       => false,
                         ),
 
                     )
