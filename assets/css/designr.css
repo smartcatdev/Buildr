@@ -39,7 +39,8 @@ ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu li a,
 .site-branding .site-tagline,
 header#masthead .navbar-social,
 a.navbar-icon,
-#split-social-trigger {
+#split-social-trigger,
+#pre-footer aside.widget a {
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition:  all 0.3s ease-in-out;
     -o-transition:  all 0.3s ease-in-out;
@@ -729,6 +730,16 @@ div#designr-custom-header.parallax_layers .jparallax-layer.content-layer img.cus
  * Footer
  * -------------------------------------------------------------------------- */
 
+footer#colophon {
+    position: relative;
+    z-index: 999;
+}
+
+div#pre-footer-wrap {
+    background-color: #141414; /* TODO : Dynamin Color? */
+    padding: 60px 0 40px 0;
+}
+
 footer div#slim-footer-wrap {
     background-color: #000000;
 }
@@ -749,8 +760,17 @@ footer div#footer-branding-wrap {
     align-items: center;
 }
 
-footer div#footer-branding-wrap.centered {
+footer div#slim-footer.centered {
+    display: block;
+}
+
+footer div#slim-footer.centered div#footer-branding-wrap {
     justify-content: center;
+}
+
+footer div#slim-footer.centered #footer-social {
+    text-align: center;
+    margin-top: 5px;
 }
 
 footer div#footer-branding-wrap .site-title {
@@ -768,6 +788,7 @@ footer #designr_designer {
 
 footer .footer-copyright {
     margin: 0 15px;
+    display: inline-block;
 }
 
 footer span.designr_by {
@@ -780,4 +801,61 @@ footer a.rel img {
     width: auto;
     margin-top: -.175em;
     margin-left: 0.3em;
+}
+
+/* -----------------------------------------------------------------------------
+ * Pre-Footer Widgets
+ * -------------------------------------------------------------------------- */
+
+#pre-footer h2.widget-title {
+    text-transform: uppercase; /* TODO: Dynamic? */
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: thin solid #333333; /* TODO: Dynamic Settings? */
+}
+
+#pre-footer aside.widget table#wp-calendar {
+    width: 100%;
+}
+
+#pre-footer aside.widget {
+    margin-bottom: 30px;
+}
+
+#pre-footer aside.widget ul {
+    margin: 0;
+    padding: 0 0 0 17px;
+}
+
+#pre-footer aside.widget table#wp-calendar th, 
+#pre-footer aside.widget table#wp-calendar td {
+    text-align: center;
+    padding: 5px;
+    border: thin solid #333333; /* TODO: Dynamic Settings same as widget title border btm? */
+    color: #ffffff;
+}
+
+/* -----------------------------------------------------------------------------
+ * Forms
+ * -------------------------------------------------------------------------- */
+
+form label {
+    width: 100%;
+}
+
+form input:not([type="submit"]), 
+form textarea {
+    width: 100% !important;
+    border-radius: 0;
+    border: none;
+    border-bottom: thin solid #e4e4e4;
+    color: rgba(0,0,0,0.54);
+    background: none;
+    padding: 5px 15px 5px 5px;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    width: 100%;
+    text-shadow: none;
+    box-shadow: none;
 }

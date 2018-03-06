@@ -142,7 +142,7 @@
             
             function toggle( value ) {
                 
-                if ( 'yes' === value ) {
+                if ( value ) {
                     $('li#customize-control-designr_custom_header_logo_height').removeClass('designr-hidden');
                     $('li#customize-control-designr_custom_header_logo_height_mbl').removeClass('designr-hidden');
                 } else {
@@ -167,7 +167,7 @@
             
             function toggle( value ) {
                 
-                if ( 'yes' === value ) {
+                if ( value ) {
                     $('li#customize-control-custom_header_title_content').removeClass('designr-hidden');
                     $('li#customize-control-custom_header_title_font_family').removeClass('designr-hidden');
                     $('li#customize-control-custom_header_title_font_size').removeClass('designr-hidden');
@@ -198,7 +198,7 @@
             
             function toggle( value ) {
                 
-                if ( 'yes' === value ) {
+                if ( value ) {
                     $('li#customize-control-custom_header_menu_font_family').removeClass('designr-hidden');
                     $('li#customize-control-custom_header_menu_font_size').removeClass('designr-hidden');
                     $('li#customize-control-custom_header_menu_letter_spacing').removeClass('designr-hidden');

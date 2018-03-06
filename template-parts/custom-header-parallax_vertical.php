@@ -17,13 +17,13 @@
 
                         <div class="util-tbl-inner util-vert-mid text-center">
 
-                            <?php if ( get_theme_mod( 'custom_header_show_logo', 'yes' ) == 'yes' && function_exists( 'has_custom_logo' ) && has_custom_logo() ) : ?>
+                            <?php if ( get_theme_mod( 'custom_header_show_logo', true ) && function_exists( 'has_custom_logo' ) && has_custom_logo() ) : ?>
 
                                 <?php the_custom_logo(); ?>
 
                             <?php endif; ?>
                             
-                            <?php if ( get_theme_mod( 'custom_header_show_heading', 'yes' ) == 'yes' ) : ?>
+                            <?php if ( get_theme_mod( 'custom_header_show_heading', true ) ) : ?>
 
                                 <h2 class="custom-header-title textillate wow">
 
@@ -47,7 +47,7 @@
 
                             <?php endif; ?>
 
-                            <?php if ( get_theme_mod( 'custom_header_show_menu', 'yes' ) == 'yes' ) : ?>
+                            <?php if ( get_theme_mod( 'custom_header_show_menu', true ) ) : ?>
 
                                 <?php if ( has_nav_menu( 'custom-header' ) ) : ?>
 

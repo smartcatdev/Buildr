@@ -38,6 +38,8 @@ function designr_get_all_theme_colors() {
     $theme_colors['plx_overlay_single']     = get_theme_mod( 'parallax_layers_single_color', '#348aa7' );
     $theme_colors['plx_overlay_grad_start'] = get_theme_mod( 'parallax_layers_gradient_start_color', '#348aa7' );
     $theme_colors['plx_overlay_grad_end']   = get_theme_mod( 'parallax_layers_gradient_end_color', '#348aa7' );
+   
+    $theme_colors['footer_widget_title']    = get_theme_mod( 'prefooter_widget_title_color', '#FFFFFF' );
  
     return $theme_colors;
     

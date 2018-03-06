@@ -164,14 +164,10 @@ $data = array (
 
                         // Logo
                         'custom_header_show_logo' => array (
-                            'type'          => 'select',
+                            'type'          => 'toggle',
                             'label'         => __( 'Display the Site Logo?', 'designr' ),
-                            'description'   => __( 'If "Yes", the Custom Logo for the site will be displayed', 'designr' ),
-                            'default'       => 'yes',
-                            'choices'   => array (
-                                'no'        => __( 'No', 'designr' ),
-                                'yes'       => __( 'Yes', 'designr' ),
-                            )
+                            'description'   => __( 'If on, the Custom Logo for the site will be displayed', 'designr' ),
+                            'default'       => true,
                         ),
                         'designr_custom_header_logo_height' => array (
                             'type'          => 'number',
@@ -197,14 +193,10 @@ $data = array (
 
                         // Main Heading
                         'custom_header_show_heading' => array (
-                            'type'          => 'select',
+                            'type'          => 'toggle',
                             'label'         => __( 'Display the Main Heading?', 'designr' ),
-                            'description'   => __( 'If "Yes", the primary content heading will be displayed', 'designr' ),
-                            'default'       => 'yes',
-                            'choices'   => array (
-                                'no'        => __( 'No', 'designr' ),
-                                'yes'       => __( 'Yes', 'designr' ),
-                            )
+                            'description'   => __( 'If on, the primary content heading will be displayed', 'designr' ),
+                            'default'       => true
                         ),
                         'custom_header_title_content' => array (
                             'type'          => 'select',
@@ -265,14 +257,10 @@ $data = array (
 
                         // Menu
                         'custom_header_show_menu' => array (
-                            'type'          => 'select',
+                            'type'          => 'toggle',
                             'label'         => __( 'Display the Menu?', 'designr' ),
-                            'description'   => __( 'If "Yes", the "Custom Header" menu will be displayed (if one is set)', 'designr' ),
-                            'default'       => 'yes',
-                            'choices'   => array (
-                                'no'        => __( 'No', 'designr' ),
-                                'yes'       => __( 'Yes', 'designr' ),
-                            )
+                            'description'   => __( 'If on, the "Custom Header" menu will be displayed (if one is set)', 'designr' ),
+                            'default'       => true
                         ),
                         'custom_header_menu_font_family' => array (
                             'type'          => 'select',
@@ -585,7 +573,7 @@ $data = array (
                             'type'          => 'select',
                             'label'         => __( 'Site Title - Letter Spacing', 'designr' ),
                             'description'   => __( 'Set the scaling "em" value. Can be positive or negative. 0 for normal spacing.', 'designr' ),
-                            'default'       => '0.25',
+                            'default'       => '.250',
                             'choices'   => array (
                                 '-.1'       => __( '-.100em (Narrowest)', 'designr' ),
                                 '-.075'     => __( '-.075em', 'designr' ),
@@ -974,6 +962,62 @@ $data = array (
             'desciption'    => __( 'Customize the theme footer', 'designr' ),
             'sections'      => array (
 
+                // Section : Pre-Footer Widget Area Settings  ------------------
+                'section_pre_footer' => array (
+
+                    'title'     => __( 'Pre-Footer Sidebar', 'designr' ),
+                    'options'   => array (
+                        
+                        'footer_num_columns' => array (
+                            'type'          => 'range',
+                            'label'         => __( 'Number of Widget Columns' , 'designr' ),
+                            'default'       => 4,
+                            'min'           => 1,
+                            'max'           => 4,
+                            'step'          => 1
+                        ),
+                        'prefooter_widget_title_font_family' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Widget Titles - Font Family', 'designr' ),
+                            'default'       => 'secondary',
+                            'choices'   => array (
+                                'primary'   => __( 'Use Primary Font', 'designr' ),
+                                'secondary' => __( 'Use Secondary Font', 'designr' ),
+                            )
+                        ),
+                        'prefooter_widget_title_font_size' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Widget Titles - Font Size', 'designr' ),
+                            'default'       => 24
+                        ),
+                        'prefooter_widget_title_letter_spacing' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Widget Titles - Letter Spacing', 'designr' ),
+                            'default'       => '.250',
+                            'choices'   => array (
+                                '-.1'       => __( '-.100em (Narrowest)', 'designr' ),
+                                '-.075'     => __( '-.075em', 'designr' ),
+                                '-.050'     => __( '-.050em', 'designr' ),
+                                '-.025'     => __( '-.025em', 'designr' ),
+                                '0.0'       => __( '0.00em', 'designr' ),
+                                '.025'      => __( '.025em', 'designr' ),
+                                '.050'      => __( '.050em', 'designr' ),
+                                '.075'      => __( '.075em', 'designr' ),
+                                '.100'      => __( '.100em', 'designr' ),
+                                '.250'      => __( '.250em (Default)', 'designr' ),
+                                '.500'      => __( '.500em (Widest)', 'designr' ),
+                            )
+                        ),
+                        'prefooter_widget_title_color' => array (
+                            'type'          => 'color',
+                            'label'         => __( 'Widget Titles - Text Color', 'designr' ),
+                            'default'       => '#FFFFFF'
+                        ),
+                        
+                    )
+                    
+                ),
+                        
                 // Section : Footer General Settings  --------------------------
                 'section_footer_general' => array (
 

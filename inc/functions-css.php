@@ -15,7 +15,8 @@ function designr_wp_head_styles() { ?>
         .site-branding .site-title,
         div#footer-branding-wrap .site-title,
         div#custom-header-content .custom-header-title,
-        div#designr-custom-header.parallax_layers .custom-header-title {
+        div#designr-custom-header.parallax_layers .custom-header-title,
+        #pre-footer h2.widget-title {
             font-family: <?php esc_attr_e( get_theme_mod( 'secondary_font', 'Abel, sans-serif' ) ); ?>;
         }
 
@@ -53,6 +54,14 @@ function designr_wp_head_styles() { ?>
 
             div#custom-header-content .custom-header-title,
             div#designr-custom-header.parallax_layers .custom-header-title {
+                font-family: <?php esc_attr_e( get_theme_mod( 'primary_font', 'Montserrat, sans-serif' ) ); ?>;
+            }
+
+        <?php endif; ?>
+        
+        <?php if ( get_theme_mod( 'prefooter_widget_title_font_family', 'secondary' ) == 'primary' ) : ?>
+
+            #pre-footer h2.widget-title {
                 font-family: <?php esc_attr_e( get_theme_mod( 'primary_font', 'Montserrat, sans-serif' ) ); ?>;
             }
 
@@ -151,6 +160,14 @@ function designr_wp_head_styles() { ?>
 
         /* ----- Footer Colors ---------------------------------------------- */
 
+        div#pre-footer-wrap {
+            border-top: 10px solid #<?php esc_attr_e($theme_colors['primary']); ?>;
+        }
+        
+        #pre-footer h2.widget-title {
+            color: <?php esc_attr_e( $theme_colors['footer_widget_title'] ); ?>;
+        }
+        
         div#slim-footer-social {
             background-color: #<?php esc_attr_e( $theme_colors['footer_bg'] ); ?>;
         }
@@ -221,7 +238,7 @@ function designr_wp_head_styles() { ?>
 
         .site-branding .site-title {
             font-size: <?php esc_attr_e( get_theme_mod( 'navbar_site_title_font_size', 32 ) ) ?>px;
-            letter-spacing: <?php esc_attr_e( get_theme_mod( 'navbar_site_title_spacing', '0.25' ) ); ?>em;
+            letter-spacing: <?php esc_attr_e( get_theme_mod( 'navbar_site_title_spacing', '.250' ) ); ?>em;
         }
 
         <?php if ( get_theme_mod( 'navbar_site_title_font', 'secondary' ) == 'primary' ) : ?>
@@ -509,13 +526,18 @@ function designr_wp_head_styles() { ?>
          * Footer
          * ------------------------------------------------------------------ */
 
+        #pre-footer h2.widget-title {
+            font-size: <?php esc_attr_e( get_theme_mod( 'prefooter_widget_title_font_size', 24 ) ) ?>px;
+            letter-spacing: <?php esc_attr_e( get_theme_mod( 'prefooter_widget_title_letter_spacing', '.250' ) ); ?>em;
+        }
+        
         footer div#footer-branding-wrap img.custom-logo {
             height: <?php echo esc_attr( get_theme_mod( 'designr_footer_logo_height', 30 ) ); ?>px;
         }
         
         div#footer-branding-wrap .site-title {
             font-size: <?php esc_attr_e( get_theme_mod( 'footer_site_title_font_size', 18 ) ) ?>px;
-            letter-spacing: <?php esc_attr_e( get_theme_mod( 'navbar_site_title_spacing', '0.25' ) ); ?>em;
+            letter-spacing: <?php esc_attr_e( get_theme_mod( 'navbar_site_title_spacing', '.250' ) ); ?>em;
         }
 
         footer div#footer-branding-wrap {

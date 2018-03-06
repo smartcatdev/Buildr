@@ -1,30 +1,30 @@
 <footer id="colophon" class="site-footer footer-style-slim">
-
-    <?php if ( get_theme_mod( 'footer_show_social', 'no' ) == 'yes' ) : ?>
     
-        <div id="slim-footer-social">
-        
-            <div class="footer-social">
-                <?php for ( $ctr = 1; $ctr < 6; $ctr++ ) : ?>
+    <div id="pre-footer-wrap">
+    
+        <div id="pre-footer" class="container">
+    
+            <div class="row">
 
-                    <?php if ( get_theme_mod( 'social_icon_' . $ctr . '_url', '' ) != '' ) : ?>
-                        <a class="navbar-icon" href="<?php esc_attr_e( get_theme_mod( 'social_icon_' . $ctr . '_url', '' ) ); ?>">
-                            <span class="fab <?php esc_attr_e( get_theme_mod( 'social_icon_' . $ctr . '_icon', '' ) ); ?>"></span>
-                        </a>
-                    <?php endif; ?>
+                <?php if ( is_active_sidebar( 'sidebar-footer' ) ) : ?>
 
-                <?php endfor; ?>
+                    <?php dynamic_sidebar( 'footer' ); ?>
+
+                <?php endif; ?>
+
             </div>
-            
-        </div>
 
-    <?php endif; ?>
+            <div class="clear"></div>
+        
+        </div>
+        
+    </div>
     
     <div id="slim-footer-wrap">
 
-        <div id="slim-footer" class="<?php echo get_theme_mod( 'boxed_footer', 'no' ) == 'yes' && get_theme_mod( 'centered_footer_branding', 'no' ) == 'no' ? 'container' : ''; ?>">
+        <div id="slim-footer" class="<?php echo get_theme_mod( 'centered_footer_branding', 'no' ) == 'yes' ? 'centered' : ''; ?> <?php echo get_theme_mod( 'boxed_footer', 'no' ) == 'yes' && get_theme_mod( 'centered_footer_branding', 'no' ) == 'no' ? 'container' : ''; ?>">
 
-            <div id="footer-branding-wrap" class="<?php echo get_theme_mod( 'centered_footer_branding', 'no' ) == 'yes' ? 'centered' : ''; ?>">
+            <div id="footer-branding-wrap">
 
                 <?php if ( get_theme_mod( 'footer_show_branding', 'yes' ) == 'yes' ) : ?>
                 
@@ -57,13 +57,27 @@
                 <?php do_action('designr_designer'); ?>
                             
             </div>
+            
+            <div id="footer-social">
                             
-<!--            <div class="footer-designer">
+                <?php if ( get_theme_mod( 'footer_show_social', 'no' ) == 'yes' ) : ?>
 
+                    <div class="footer-social">
+                        <?php for ( $ctr = 1; $ctr < 6; $ctr++ ) : ?>
+
+                            <?php if ( get_theme_mod( 'social_icon_' . $ctr . '_url', '' ) != '' ) : ?>
+                                <a class="navbar-icon" href="<?php esc_attr_e( get_theme_mod( 'social_icon_' . $ctr . '_url', '' ) ); ?>">
+                                    <span class="fab <?php esc_attr_e( get_theme_mod( 'social_icon_' . $ctr . '_icon', '' ) ); ?>"></span>
+                                </a>
+                            <?php endif; ?>
+
+                        <?php endfor; ?>
+                    </div>
+
+                <?php endif; ?>
                 
-
-            </div>-->
-
+            </div>
+                            
         </div>
 
     </div>
