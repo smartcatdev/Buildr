@@ -21,8 +21,8 @@ function designr_get_all_theme_colors() {
     $theme_colors['footer_bg']  = get_theme_mod( 'footer_background', '141414' );
     $theme_colors['footer_fg']  = get_theme_mod( 'footer_foreground', 'ffffff' );
     
-    $theme_colors['primary']    = get_theme_mod( 'skin_theme_primary', '0000FF' );
-    $theme_colors['secondary']  = get_theme_mod( 'skin_theme_secondary', '00FF00' );
+    $theme_colors['primary']    = get_theme_mod( 'skin_theme_primary', '#f04265' );
+    $theme_colors['secondary']  = get_theme_mod( 'skin_theme_secondary', '#d60059' );
     
     /**
      * The following colors are from color pickers, and each needs to have

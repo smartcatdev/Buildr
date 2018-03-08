@@ -24,8 +24,17 @@ add_action( 'customize_register', function() {
                     $ctr = 0;
                     foreach( $this->choices as $key => $val ) : $ctr++; ?>
                         
-                        <input name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link() ?> type="radio" id="switch_<?php echo esc_attr( $key) ?>" value="<?php echo esc_attr( $key ); ?>" <?php checked( $this->value(), $key ); ?>/>
-                        <label for="switch_<?php echo esc_attr( $key) ?>" style="background-color: <?php echo esc_attr( $key ) ?>"><?php echo esc_attr( $val ); ?></label>
+                        <div class="choice-wrap">
+                            <input name="<?php echo esc_attr( $this->id ); ?>" <?php $this->link() ?> type="radio" id="switch_<?php echo esc_attr( $key . '_' . $this->id ) ?>" value="<?php echo esc_attr( $key ); ?>" <?php checked( $this->value(), $key ); ?>/>
+                            <label for="switch_<?php echo esc_attr( $key . '_' . $this->id ); ?>" style="background-color: <?php echo esc_attr( $key ); ?>;">
+                                <span class="color-name"><?php echo esc_attr( $val ); ?></span>
+                                <span class="selected dashicons dashicons-yes" style="color: <?php echo esc_attr( $key ); ?>;"></span>
+                            </label>
+                        </div>
+                        
+                        <?php if ( $ctr < count( $this->choices ) ) : ?>
+                            <div class="clear"></div>
+                        <?php endif; ?>
                         
                     <?php endforeach; ?>
                       
@@ -48,11 +57,11 @@ add_action( 'customize_register', function() {
             <style type="text/css" id="acid-toggle-css">
 
                 .colorpicker-field {
-                    overflow: hidden;
+                    padding: 0px 1px;
                 }
 
                 .switch-title {
-                  margin-bottom: 6px;
+                    margin-bottom: 6px;
                 }
 
                 .colorpicker-field input {
@@ -69,24 +78,25 @@ add_action( 'customize_register', function() {
                 }
 
                 .colorpicker-field label {
-                    opacity: 0.5;
-                    display: inline-block;
-                    width: 90%;
-                    background-color: #e4e4e4;
-                    color: rgba(0, 0, 0, 0.6);
+                    display: block;
+                    width: 100%;
+                    color: rgba(0, 0, 0, 0.5);
                     font-size: 14px;
                     font-weight: normal;
                     text-align: center;
                     text-shadow: none;
-                    padding: 6px 14px;
-                    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
-                    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
-                    -webkit-transition: all 0.1s ease-in-out;
-                    -moz-transition:    all 0.1s ease-in-out;
-                    -ms-transition:     all 0.1s ease-in-out;
-                    -o-transition:      all 0.1s ease-in-out;
-                    transition:         all 0.1s ease-in-out;
-                    border: 2px solid transparent;
+                    padding: 0;
+                    height: 24px;
+                    border: none;
+                    -webkit-box-shadow: none;
+                    box-shadow: none;
+                    -webkit-transition: all 0.3s ease-in-out;
+                    -moz-transition: all 0.3s ease-in-out;
+                    -ms-transition: all 0.3s ease-in-out;
+                    -o-transition: all 0.3s ease-in-out;
+                    transition: all 0.3s ease-in-out;
+                    position: relative;
+                    border-radius: 4px !important;
                 }
 
                 .colorpicker-field label:hover {
@@ -94,19 +104,84 @@ add_action( 'customize_register', function() {
                 }
 
                 .colorpicker-field input:checked + label {
-                  opacity: 1;
-                  border: 2px solid #2196F3;
-                  -webkit-box-shadow: none;
-                  box-shadow: none;
+                    background-color: #fdfdfd;
+                    color: #666;
+                    opacity: 1;
+                    height: 35px !important;
                 }
-
+                
                 .colorpicker-field label:first-of-type {
-                  border-radius: 4px 0 0 4px;
+                    border-radius: 4px 0 0 4px;
                 }
 
                 .colorpicker-field label:last-of-type {
-                  border-radius: 0 4px 4px 0;
+                    border-radius: 0 4px 4px 0;
                 }
+               
+                .colorpicker-field input:checked + label {
+                    background-color: #fafafa;
+                }
+                
+                .colorpicker-field label .color-name {
+                    position: absolute;
+                    color: #a8a8a8;
+                    left: 0;
+                    top: 0;
+                    height: 24px;
+                    line-height: 24px;
+                    background: #ffffff;
+                    padding: 0 10px;
+                    font-size: 12px;
+                    font-weight: 500;
+                    -webkit-transition: all 0.3s ease-in-out;
+                    -moz-transition: all 0.3s ease-in-out;
+                    -o-transition: all 0.3s ease-in-out;
+                    transition: all 0.3s ease-in-out;
+                    border-radius: 4px 0 0 4px;
+                }
+                
+                .colorpicker-field input:checked + label .color-name {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    color: #3c3c3c;
+                    font-size: 14px;
+                    height: 35px;
+                    line-height: 35px;
+                }
+                
+                .colorpicker-field .choice-wrap {
+                    margin-bottom: 5px;
+                    height: auto;
+                    overflow: hidden;
+                }
+                
+                .colorpicker-field input + label .selected {
+                    position: absolute;
+                    right: -20px;
+                    opacity: 0;
+                    top: 7px;
+                    line-height: 20px;
+                    height: 20px;
+                    width: 20px;
+                    background-color: white;
+                    border-radius: 50%;
+                    -webkit-transition: all 0.3s ease-in-out;
+                    -moz-transition: all 0.3s ease-in-out;
+                    -o-transition: all 0.3s ease-in-out;
+                    transition: all 0.3s ease-in-out;
+                }
+                
+                .colorpicker-field input:checked + label .selected {
+                    right: 5px;
+                    opacity: 1;
+                }
+                
+                .colorpicker-field input + label .selected:before {
+                    position: absolute;
+                    left: -6%;
+                    top: 4%;
+                }
+                
             </style>
 
         <?php

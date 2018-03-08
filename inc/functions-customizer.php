@@ -809,25 +809,25 @@ $data = array (
                     'options' => array (
 
                         'skin_theme_primary' => array(
-                            'type'          => 'select',
+                            'type'          => 'color-picker',
                             'label'         => __( 'Theme Color - Primary', 'designr' ),
-                            'default'       => '0000FF',
+                            'default'       => '#f04265',
                             'choices'   => array(
-                                '0000FF'       => __( 'Blue', 'designr' ),
-                                '00FF00'       => __( 'Green', 'designr' ),
-                                'FF0000'       => __( 'Red', 'designr' ),
-                                'f04265'       => __( 'Cherry Gloss', 'designr' ),
+                                '#f04265'       => __( 'Cherry Gloss', 'designr' ),
+                                '#13ecb6'       => __( 'Seafoam Coast', 'designr' ),
+                                '#7f66ff'       => __( 'Royal Lilac', 'designr' ),
+                                '#00d4ff'       => __( 'Sky Blue', 'designr' ),
                             ),
                         ),
                         'skin_theme_secondary' => array(
-                            'type'          => 'select',
+                            'type'          => 'color-picker',
                             'label'         => __( 'Theme Color - Secondary', 'designr' ),
-                            'default'       => '00FF00',
+                            'default'       => '#c70546',
                             'choices'   => array(
-                                '0000FF'       => __( 'Blue', 'designr' ),
-                                '00FF00'       => __( 'Green', 'designr' ),
-                                'FF0000'       => __( 'Red', 'designr' ),
-                                'c70546'       => __( 'Deep Magenta', 'designr' ),
+                                '#d60059'       => __( 'Magenta Rose', 'designr' ),
+                                '#04aeae'       => __( 'Tide Pool', 'designr' ),
+                                '#6e3399'       => __( 'Wildberry', 'designr' ),
+                                '#0b84da'       => __( 'Ocean Swell', 'designr' ),
                             ),
                         ),
 
