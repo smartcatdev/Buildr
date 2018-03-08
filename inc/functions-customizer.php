@@ -13,23 +13,65 @@ include_once get_template_directory() . '/inc/lib/Acid/acid.php';
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function designr_customize_register( $wp_customize ) {
+    
     $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
     $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
-    $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-
+    
+    
+    // Housekeeping ------------------------------------------------------------
+    $wp_customize->get_section( 'header_image' )->panel = 'panel_custom_header';
+    $wp_customize->get_section( 'title_tagline' )->title = __( 'Site Title & Logo', 'designr' );
+    // End Housekeeping --------------------------------------------------------
+    
+    
+    
+    // Priority ----------------------------------------------------------------
+    $wp_customize->get_section( 'title_tagline' )->priority = 1;
+    $wp_customize->get_panel( 'panel_navbar' )->priority = 2;
+    $wp_customize->get_panel( 'panel_custom_header' )->priority = 3;
+    $wp_customize->get_panel( 'panel_blog' )->priority = 4;
+    $wp_customize->get_panel( 'panel_appearance' )->priority = 5;
+    
+    // End Priority ------------------------------------------------------------
+    
+    
+    // Selective Refresh -------------------------------------------------------
     if ( isset( $wp_customize->selective_refresh ) ) {
+        
         $wp_customize->selective_refresh->add_partial( 'blogname', array (
             'selector' => '.site-title a',
             'render_callback' => 'designr_customize_partial_blogname',
         ) );
+        
         $wp_customize->selective_refresh->add_partial( 'blogdescription', array (
             'selector' => '.site-description',
             'render_callback' => 'designr_customize_partial_blogdescription',
         ) );
+        
+        $wp_customize->selective_refresh->add_partial( 'navbar_show_social', array(
+            'selector'  => '.navbar-social'
+        ) );
+        
+        $wp_customize->selective_refresh->add_partial( 'custom_header_style_toggle', array(
+            'selector'  => '#custom-header-content'
+        ) );
+        
+        $wp_customize->selective_refresh->add_partial( 'blog_layout_show_date_posted', array(
+            'selector'  => '.masonry_card_blog .post-date'
+        ) );
+        
+        $wp_customize->selective_refresh->add_partial( 'blog_title_font_size_dsk', array(
+            'selector'  => '.masonry_card_blog .entry-title'
+        ) );
+        
+        $wp_customize->selective_refresh->add_partial( 'blog_layout_show_comment_count', array(
+            'selector'  => '.masonry_card_blog .meta-stats'
+        ) );
     }
+    // End Selective Refresh ---------------------------------------------------
 }
 
-add_action( 'customize_register', 'designr_customize_register' );
+add_action( 'customize_register', 'designr_customize_register', 99 );
 
 /**
  * Render the site title for the selective refresh partial.
@@ -53,7 +95,8 @@ function designr_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function designr_customize_preview_js() {
-    wp_enqueue_script( 'designr-customizer-preview', get_template_directory_uri() . '/assets/admin/js/customizer-preview.js', array ( 'jquery', 'customize-preview' ), DESIGNR_VERSION, true );
+    wp_enqueue_style( 'designr-customizer-preview-style', get_template_directory_uri() . '/assets/admin/css/customizer-preview.css', DESIGNR_VERSION, null );
+    wp_enqueue_script( 'designr-customizer-preview-script', get_template_directory_uri() . '/assets/admin/js/customizer-preview.js', array ( 'jquery', 'customize-preview' ), DESIGNR_VERSION, true );
 }
 add_action( 'customize_preview_init', 'designr_customize_preview_js' );
 
@@ -74,7 +117,7 @@ $data = array (
         // Panel: Custom Header ------------------------------------------------
         'panel_custom_header' => array (
 
-            'title'         => __( 'Custom Header', 'designr' ),
+            'title'         => __( 'Header', 'designr' ),
             'desciption'    => __( 'Customize the header banner on your site', 'designr' ),
             'sections'      => array (
 
@@ -611,7 +654,7 @@ $data = array (
                 // Section : Slim Style Settings ---------------------------
                 'section_nav_style_a' => array (
 
-                    'title' => __( 'Style: Slim', 'designr' ),
+                    'title' => __( 'Advanced Settings', 'designr' ),
                     'options' => array (
 
                         'style_a_always_show_logo' => array (
