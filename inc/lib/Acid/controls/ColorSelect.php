@@ -2,9 +2,9 @@
 
 add_action( 'customize_register', function() {
 
-    class AcidColorPicker extends WP_Customize_Control {
+    class AcidColorSelect extends WP_Customize_Control {
 
-        public $type = 'color-picker';
+        public $type = 'color-select';
 
         public function render_content() { ?>
 

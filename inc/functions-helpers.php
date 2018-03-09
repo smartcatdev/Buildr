@@ -15,11 +15,11 @@ function designr_get_all_theme_colors() {
      * needs the # symbol prepended on the frontend.
      */
     
-    $theme_colors['navbar_bg']  = get_theme_mod( 'navbar_background', '141414' );
-    $theme_colors['navbar_fg']  = get_theme_mod( 'navbar_foreground', 'ffffff' );
+    $theme_colors['navbar_bg']  = get_theme_mod( 'navbar_background', '#141414' );
+    $theme_colors['navbar_fg']  = get_theme_mod( 'navbar_foreground', '#ffffff' );
     
-    $theme_colors['footer_bg']  = get_theme_mod( 'footer_background', '141414' );
-    $theme_colors['footer_fg']  = get_theme_mod( 'footer_foreground', 'ffffff' );
+    $theme_colors['footer_bg']  = get_theme_mod( 'footer_background', '#141414' );
+    $theme_colors['footer_fg']  = get_theme_mod( 'footer_foreground', '#ffffff' );
     
     $theme_colors['primary']    = get_theme_mod( 'skin_theme_primary', '#f04265' );
     $theme_colors['secondary']  = get_theme_mod( 'skin_theme_secondary', '#d60059' );

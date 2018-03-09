@@ -62,7 +62,7 @@ div#mobile-menu-wrap li.menu-item-has-children > span {
  * -------------------------------------------------------------------------- */
 
 h1,h2,h3,h4,h5,h6 {
-    font-weight: bold;
+/*    font-weight: bold;*/
 }
 
 a.read-more {
@@ -885,4 +885,20 @@ button, input[type="submit"] {
     text-transform: uppercase;
     letter-spacing: .125em;
     font-size: 12px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Single Page Template
+ * -------------------------------------------------------------------------- */
+header.entry-header .entry-title {
+    margin: 80px 0 40px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Gutenberg Blocks
+ * -------------------------------------------------------------------------- */
+
+.wp-block-cover-image:not(.has-parallax) {
+    background-size: cover;
+    background-position: 50%;
 }

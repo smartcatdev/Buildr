@@ -37,7 +37,7 @@
                         $(this).find('ul.sub-menu').css('width', $(this).outerWidth() + 'px');    
                     }
                 });
-
+                
                 /**
                  * Re-Call Masonry
                  */

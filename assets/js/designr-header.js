@@ -23,14 +23,14 @@ jQuery(document).ready(function ($) {
         $('#custom-logo-wrap.sometimes-hidden img.custom-logo').removeClass('fadeOut').addClass('bounceIn');
         
         // Expand Padding Top on #content
-        $('div#content').addClass('sticky-header');
+        $('div#content,div#designr-custom-header').addClass('sticky-header');
         
     }).on('sticky-end', function() { 
         
         $('#custom-logo-wrap.sometimes-hidden img.custom-logo').removeClass('bounceIn').addClass('fadeOut');
         
         // Contract Padding Top on #content
-        $('div#content').removeClass('sticky-header');
+        $('div#content,div#designr-custom-header').removeClass('sticky-header');
         
     });
    
