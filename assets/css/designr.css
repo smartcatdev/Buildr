@@ -77,9 +77,15 @@ header#masthead {
     z-index: 99999;
 }
 
-.site-branding .site-title {
+header#masthead.header-style-slim .site-branding .site-title,
+header#masthead.header-style-split .site-branding .site-title,
+header#masthead.header-style-slim .site-branding .site-tagline,
+header#masthead.header-style-split .site-branding .site-tagline {
     padding: 0 15px;
-    letter-spacing: .25em;
+}
+
+.site-branding .site-title {
+/*    letter-spacing: .25em;*/
     line-height: 1em;
     margin: 0;
 }
@@ -376,7 +382,8 @@ header#masthead.header-style-slim #slim-header-wrap #slim-header {
 
 @media (min-width:992px) {
 
-    header#masthead.header-style-slim #slim-header-wrap #slim-header {
+    header#masthead.header-style-slim #slim-header-wrap #slim-header,
+    header#masthead.header-style-banner #banner-header-wrap #banner-header #banner-header-menu-wrap {
         padding: 0 15px;
     }
     header#masthead.header-style-slim .site-branding,
@@ -398,6 +405,47 @@ header#masthead.header-style-slim #slim-header-wrap #slim-header {
     header#masthead.header-style-slim img.custom-logo {
         margin: 0 15px !important;
     }
+}
+
+/* -----------------------------------------------------------------------------
+ * Header: Banner (Custom C)
+ * -------------------------------------------------------------------------- */
+
+header#masthead.header-style-banner {
+    position: relative;
+}
+
+header#masthead.header-style-banner img.custom-logo {
+    padding: 0;
+    margin: 0;
+}
+
+div#banner-header-wrap {
+    background-size: cover;
+    background-position: 50%;
+}
+
+header#masthead.header-style-banner div#banner-header-wrap ul.slim-header-menu > li > a {
+    padding-top: 1.75em;
+    padding-bottom: 1.75em;
+    display: inline-block;
+}
+
+header#masthead.header-style-banner div#banner-header-wrap #custom-logo-wrap {
+    display: block;
+    text-align: left;
+    padding: 0 25px;
+}
+
+@media (max-width: 991px) {
+    header#masthead.header-style-banner div#banner-header-wrap #custom-logo-wrap {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+header#masthead.header-style-banner img.custom-logo {
+    padding: 0;
 }
 
 /* -----------------------------------------------------------------------------

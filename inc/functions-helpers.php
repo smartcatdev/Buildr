@@ -18,6 +18,9 @@ function designr_get_all_theme_colors() {
     $theme_colors['navbar_bg']  = get_theme_mod( 'navbar_background', '#141414' );
     $theme_colors['navbar_fg']  = get_theme_mod( 'navbar_foreground', '#ffffff' );
     
+    $theme_colors['navbar_menu_bg']  = get_theme_mod( 'navbar_banner_menu_background', '#141414' );
+    $theme_colors['navbar_menu_fg']  = get_theme_mod( 'navbar_banner_menu_foreground', '#ffffff' );
+    
     $theme_colors['footer_bg']  = get_theme_mod( 'footer_background', '#141414' );
     $theme_colors['footer_fg']  = get_theme_mod( 'footer_foreground', '#ffffff' );
     

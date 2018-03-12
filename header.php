@@ -28,7 +28,7 @@
             
             <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'designr' ); ?></a>
 
-            <?php get_template_part( 'template-parts/header', get_theme_mod( 'navbar_style', 'default' ) ); ?>
+            <?php get_template_part( 'template-parts/navbar', get_theme_mod( 'navbar_style', 'default' ) ); ?>
             
             <div id="content" class="site-content">
 

@@ -565,11 +565,11 @@ $data = array (
                         'navbar_style' => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'Navbar Style', 'designr' ),
-                            'default'       => 'default',
+                            'default'       => 'slim_left',
                             'choices'   => array (
-                                'default'       => __( 'Default', 'designr' ),
                                 'slim_split'    => __( 'Slim - Centered & Split', 'designr' ),
                                 'slim_left'     => __( 'Slim - Left Aligned', 'designr' ),
+                                'banner'        => __( 'Banner', 'designr' ),
                             )
                         ),
                         'navbar_hide_tagline' => array (
@@ -602,7 +602,7 @@ $data = array (
                                 '-.075'     => __( '-.075em', 'designr' ),
                                 '-.050'     => __( '-.050em', 'designr' ),
                                 '-.025'     => __( '-.025em', 'designr' ),
-                                '0.0'         => __( '0.00em (Default)', 'designr' ),
+                                '0.0'       => __( '0.00em (Default)', 'designr' ),
                                 '.025'      => __( '.025em', 'designr' ),
                                 '.050'      => __( '.050em', 'designr' ),
                                 '.075'      => __( '.075em', 'designr' ),
@@ -669,43 +669,100 @@ $data = array (
                         'style_a_always_show_logo' => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Logo - Always Visible?', 'designr' ),
-                            'description'   => __( 'If on, the logo will be visible even when Navbar is collapsed / unstuck', 'designr' ),
+                            'description'   => __( 'If on, the logo will be visible even when Slim Navbar is collapsed / unstuck', 'designr' ),
                             'default'       => false,
                         ),
                         'style_a_logo_space' => array (
                             'type'          => 'number',
                             'label'         => __( 'Logo - Horizontal Padding', 'designr' ),
+                            'description'   => __( 'Set the space (in pixels) between menu links and the logo', 'designr' ),
                             'default'       => 15
+                        ),
+                        'navbar_banner_logo_height' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Logo - Height (Desktop)', 'designr' ),
+                            'description'   => __( 'Set the logo height for the desktop Navbar', 'designr' ),
+                            'default'       => 60
                         ),
                         'style_a_mobile_logo_height' => array (
                             'type'          => 'number',
-                            'label'         => __( 'Logo - Height (Mobile Only)', 'designr' ),
+                            'label'         => __( 'Logo - Height (Mobile)', 'designr' ),
                             'description'   => __( 'Set the logo height for the mobile Navbar', 'designr' ),
                             'default'       => 50
                         ),
                         'style_a_collapse_height' => array (
                             'type'          => 'number',
                             'label'         => __( 'Navbar - Height (Collapsed)', 'designr' ),
-                            'description'   => __( 'When Navbar is collapsed / unstuck', 'designr' ),
+                            'description'   => __( 'When the Slim Navbar is collapsed / unstuck', 'designr' ),
                             'default'       => 50
                         ),
                         'style_a_expand_height' => array (
                             'type'          => 'number',
                             'label'         => __( 'Navbar - Height (Expanded)', 'designr' ),
-                            'description'   => __( 'When Navbar is expanded / sticky', 'designr' ),
+                            'description'   => __( 'When the Slim Navbar is expanded / sticky', 'designr' ),
                             'default'       => 75
                         ),
                         'style_a_right_align_menu' => array ( 
                             'type'          => 'toggle',
-                            'label'         => __( 'Navbar - Bookend the Logo & Menu?', 'designr' ),
-                            'description'   => __( 'If on, the menu will be right-aligned, instead of displaying the Social Links section', 'designr' ),
+                            'label'         => __( 'Right Aligned Menu?', 'designr' ),
+                            'description'   => __( 'If on, the menu will be right-aligned. For the "Slim - Left Aligned" style of Navbar, the menu will replace the Social Links section', 'designr' ),
                             'default'       => false,
                         ),
                         'style_a_boxed_navbar' => array ( 
                             'type'          => 'toggle',
-                            'label'         => __( 'Navbar - Boxed Content?', 'designr' ),
-                            'description'   => __( 'If on, the Navbar will be lined up with the main content instead of the left & right bounds of the window', 'designr' ),
+                            'label'         => __( 'Box the Content?', 'designr' ),
+                            'description'   => __( 'If on, the Navbar content will be lined up with the main content of the page instead of the left & right bounds of the window', 'designr' ),
                             'default'       => false,
+                        ),
+                        'navbar_banner_transparent_menu_toggle' => array ( 
+                            'type'          => 'toggle',
+                            'label'         => __( 'Transparent Menu?', 'designr' ),
+                            'description'   => __( 'If on, the menu will be transparent, allowing the Navbar background (color or image) to show through', 'designr' ),
+                            'default'       => true,
+                        ),
+                        'navbar_banner_logo_alignment' => array (
+                            'type'          => 'radio-toggle',
+                            'label'         => __( 'Branding - Alignment', 'designr' ),
+                            'default'       => 'left',
+                            'choices'   => array (
+                                'left'      => __( 'Left', 'designr' ),
+                                'center'    => __( 'Centered', 'designr' ),
+                                'right'     => __( 'Right', 'designr' ),
+                            )
+                        ),
+                        'navbar_banner_menu_alignment' => array (
+                            'type'          => 'radio-toggle',
+                            'label'         => __( 'Menu - Alignment', 'designr' ),
+                            'default'       => 'left',
+                            'choices'   => array (
+                                'left'      => __( 'Left', 'designr' ),
+                                'center'    => __( 'Centered', 'designr' ),
+                                'right'     => __( 'Right', 'designr' ),
+                            )
+                        ),
+                        'navbar_banner_logo_top_spacing' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Branding - Space Above', 'designr' ),
+                            'description'   => __( 'Set the amount of space (in pixels) above the branding (for the Banner style of Navbar)', 'designr' ),
+                            'default'       => 60
+                        ),
+                        'navbar_banner_logo_bottom_spacing' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Branding - Space Below', 'designr' ),
+                            'description'   => __( 'Set the amount of space (in pixels) below the branding (for the Banner style of Navbar)', 'designr' ),
+                            'default'       => 20
+                        ),
+                        'navbar_banner_logo_top_spacing_mbl' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Branding - Space Above (Mobile)', 'designr' ),
+                            'description'   => __( 'Set the amount of space (in pixels) above the branding on mobile devices (for the Banner style of Navbar)', 'designr' ),
+                            'default'       => 30
+                        ),
+                        'navbar_banner_logo_bottom_spacing_mbl' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Branding - Space Below (Mobile)', 'designr' ),
+                            'description'   => __( 'Set the amount of space (in pixels) below the branding on mobile devices (for the Banner style of Navbar)', 'designr' ),
+                            'default'       => 15
                         ),
 
                     )
@@ -811,6 +868,26 @@ $data = array (
                         'navbar_foreground' => array (
                             'type'          => 'color-select',
                             'label'         => __( 'Foreground Color', 'designr' ),
+                            'default'       => '#ffffff',
+                            'choices'   => array (
+                                '#141414'    => __( 'Dark', 'designr' ),
+                                '#ffffff'    => __( 'Light', 'designr' ),
+                            )
+                        ),
+                        'navbar_banner_menu_background' => array (
+                            'type'          => 'color-select',
+                            'label'         => __( 'Menu - Background Color', 'designr' ),
+                            'description'   => __( 'If the menu is not set to transparent (in Advanced Settings), you can set the background color for the menu bar', 'designr' ),
+                            'default'       => '#141414',
+                            'choices'   => array (
+                                '#141414'    => __( 'Dark', 'designr' ),
+                                '#ffffff'    => __( 'Light', 'designr' ),
+                            )
+                        ),
+                        'navbar_banner_menu_foreground' => array (
+                            'type'          => 'color-select',
+                            'label'         => __( 'Menu - Foreground Color', 'designr' ),
+                            'description'   => __( 'If the menu is not set to transparent (in Advanced Settings), you can set the foreground color for the menu bar', 'designr' ),
                             'default'       => '#ffffff',
                             'choices'   => array (
                                 '#141414'    => __( 'Dark', 'designr' ),
