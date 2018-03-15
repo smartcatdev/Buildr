@@ -30,23 +30,24 @@ add_action( 'after_setup_theme', 'designr_woocommerce_setup' );
  * @return void
  */
 function designr_woocommerce_scripts() {
+    
     wp_enqueue_style( 'designr-woocommerce-style', get_template_directory_uri() . '/woocommerce.css' );
 
     $font_path = WC()->plugin_url() . '/assets/fonts/';
     $inline_font = '@font-face {
-			font-family: "star";
-			src: url("' . $font_path . 'star.eot");
-			src: url("' . $font_path . 'star.eot?#iefix") format("embedded-opentype"),
-				url("' . $font_path . 'star.woff") format("woff"),
-				url("' . $font_path . 'star.ttf") format("truetype"),
-				url("' . $font_path . 'star.svg#star") format("svg");
-			font-weight: normal;
-			font-style: normal;
-		}';
+        font-family: "star";
+        src: url("' . $font_path . 'star.eot");
+        src: url("' . $font_path . 'star.eot?#iefix") format("embedded-opentype"),
+            url("' . $font_path . 'star.woff") format("woff"),
+            url("' . $font_path . 'star.ttf") format("truetype"),
+            url("' . $font_path . 'star.svg#star") format("svg");
+        font-weight: normal;
+        font-style: normal;
+    }';
 
     wp_add_inline_style( 'designr-woocommerce-style', $inline_font );
+    
 }
-
 add_action( 'wp_enqueue_scripts', 'designr_woocommerce_scripts' );
 
 /**
@@ -57,7 +58,14 @@ add_action( 'wp_enqueue_scripts', 'designr_woocommerce_scripts' );
  *
  * @link https://docs.woocommerce.com/document/disable-the-default-stylesheet/
  */
-add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+// add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+add_filter( 'woocommerce_enqueue_styles', 'designr_woocommerce_dequeue_styles' );
+function designr_woocommerce_dequeue_styles( $enqueue_styles ) {
+    unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
+    //  unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
+    //  unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
+    return $enqueue_styles;
+}
 
 /**
  * Add 'woocommerce-active' class to the body tag.
@@ -66,45 +74,12 @@ add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
  * @return array $classes modified to include 'woocommerce-active' class.
  */
 function designr_woocommerce_active_body_class( $classes ) {
+    
     $classes[] = 'woocommerce-active';
-
     return $classes;
+    
 }
-
 add_filter( 'body_class', 'designr_woocommerce_active_body_class' );
-
-/**
- * Products per page.
- *
- * @return integer number of products.
- */
-function designr_woocommerce_products_per_page() {
-    return 12;
-}
-
-add_filter( 'loop_shop_per_page', 'designr_woocommerce_products_per_page' );
-
-/**
- * Product gallery thumnbail columns.
- *
- * @return integer number of columns.
- */
-function designr_woocommerce_thumbnail_columns() {
-    return 4;
-}
-
-add_filter( 'woocommerce_product_thumbnails_columns', 'designr_woocommerce_thumbnail_columns' );
-
-/**
- * Default loop columns on product archives.
- *
- * @return integer products per row.
- */
-function designr_woocommerce_loop_columns() {
-    return 3;
-}
-
-add_filter( 'loop_shop_columns', 'designr_woocommerce_loop_columns' );
 
 /**
  * Related Products Args.
@@ -114,45 +89,15 @@ add_filter( 'loop_shop_columns', 'designr_woocommerce_loop_columns' );
  */
 function designr_woocommerce_related_products_args( $args ) {
     $defaults = array (
-        'posts_per_page' => 3,
-        'columns' => 3,
+        'posts_per_page'    => 3,
+        'columns'           => 3,
     );
 
     $args = wp_parse_args( $defaults, $args );
 
     return $args;
 }
-
 add_filter( 'woocommerce_output_related_products_args', 'designr_woocommerce_related_products_args' );
-
-if ( !function_exists( 'designr_woocommerce_product_columns_wrapper' ) ) {
-
-    /**
-     * Product columns wrapper.
-     *
-     * @return  void
-     */
-    function designr_woocommerce_product_columns_wrapper() {
-        $columns = designr_woocommerce_loop_columns();
-        echo '<div class="columns-' . absint( $columns ) . '">';
-    }
-
-}
-add_action( 'woocommerce_before_shop_loop', 'designr_woocommerce_product_columns_wrapper', 40 );
-
-if ( !function_exists( 'designr_woocommerce_product_columns_wrapper_close' ) ) {
-
-    /**
-     * Product columns wrapper close.
-     *
-     * @return  void
-     */
-    function designr_woocommerce_product_columns_wrapper_close() {
-        echo '</div>';
-    }
-
-}
-add_action( 'woocommerce_after_shop_loop', 'designr_woocommerce_product_columns_wrapper_close', 40 );
 
 /**
  * Remove default WooCommerce wrapper.
@@ -169,34 +114,57 @@ if ( !function_exists( 'designr_woocommerce_wrapper_before' ) ) {
      *
      * @return void
      */
-    function designr_woocommerce_wrapper_before() {
-        ?>
+    function designr_woocommerce_wrapper_before() { ?>
+        
         <div id="primary" class="content-area">
+            
             <main id="main" class="site-main" role="main">
-                <?php
-            }
-
-        }
-        add_action( 'woocommerce_before_main_content', 'designr_woocommerce_wrapper_before' );
-
-        if ( !function_exists( 'designr_woocommerce_wrapper_after' ) ) {
-
-            /**
-             * After Content.
-             *
-             * Closes the wrapping divs.
-             *
-             * @return void
-             */
-            function designr_woocommerce_wrapper_after() {
-                ?>
-            </main><!-- #main -->
-        </div><!-- #primary -->
+            
+                <div id="designr-woocommerce-wrap" class="shop-archive">
+                
+                    <div class="container">
+                    
+                        <div class="row">
+                    
+                            <div class="col-md-12">
+                
         <?php
+            
     }
 
 }
-add_action( 'woocommerce_after_main_content', 'designr_woocommerce_wrapper_after' );
+add_action( 'woocommerce_before_main_content', 'designr_woocommerce_wrapper_before', 5 );
+
+if ( !function_exists( 'designr_woocommerce_wrapper_after' ) ) {
+
+    /**
+     * After Content.
+     *
+     * Closes the wrapping divs.
+     *
+     * @return void
+     */
+    function designr_woocommerce_wrapper_after() { ?>
+        
+                        
+                            </div><!-- .col-md-12 -->
+                    
+                        </div><!-- .row -->
+                
+                    </div><!-- .container -->
+                    
+                </div><!-- #designr-woocommerce-wrap -->
+                                
+            </main><!-- #main -->
+            
+        </div><!-- #primary -->
+        
+        <?php
+        
+    }
+
+}
+add_action( 'woocommerce_after_main_content', 'designr_woocommerce_wrapper_after', 50 );
 
 /**
  * Sample implementation of the WooCommerce Mini Cart.
@@ -279,6 +247,149 @@ if ( !function_exists( 'designr_woocommerce_header_cart' ) ) {
             </li>
         </ul>
         <?php
+    }
+
+}
+
+/**
+ * Remove default WooCommerce wrapper.
+ */
+
+if ( !function_exists( 'designr_woocommerce_product_details_wrapper_before' ) ) {
+
+    /**
+     * Before the Title in WooCommerce Product content.
+     *
+     * @return void
+     */
+    function designr_woocommerce_product_details_wrapper_before() { ?>
+        
+        <div class="details-wrap">
+
+        <?php
+            
+    }
+
+}
+add_action( 'woocommerce_before_shop_loop_item_title', 'designr_woocommerce_product_details_wrapper_before', 50 );
+add_action( 'woocommerce_before_subcategory_title', 'designr_woocommerce_product_details_wrapper_before', 50 );
+
+if ( !function_exists( 'designr_woocommerce_product_details_wrapper_after' ) ) {
+
+    /**
+     * After the Title in WooCommerce Product content.
+     *
+     * Closes the wrapping divs.
+     *
+     * @return void
+     */
+    function designr_woocommerce_product_details_wrapper_after() { ?>
+                        
+            <div class="clear"></div>
+            
+        </div><!-- .product-details -->
+
+        <?php
+        
+    }
+
+}
+add_action( 'woocommerce_after_shop_loop_item', 'designr_woocommerce_product_details_wrapper_after', 50 );
+add_action( 'woocommerce_after_subcategory', 'designr_woocommerce_product_details_wrapper_after', 50 );
+
+if ( get_theme_mod( 'designr_woocommerce_loop_show_categories', true ) ) {
+
+    if ( !function_exists( 'designr_woocommerce_product_loop_category' ) ) {
+
+        /**
+         * Output the category for the product if toggled on.
+         */
+        function designr_woocommerce_product_loop_category() {
+
+            $product_cats = wp_get_post_terms( get_the_ID(), 'product_cat' );
+
+            if ( $product_cats && ! is_wp_error ( $product_cats ) ) {
+
+                $single_cat = array_shift( $product_cats ); ?>
+
+                <h4 class="product_category_title">
+                    <?php echo esc_html( $single_cat->name ); ?>
+                </h4>
+
+            <?php 
+
+            }
+
+        }
+        
+    }
+    
+}
+add_action( 'woocommerce_shop_loop_item_title', 'designr_woocommerce_product_loop_category', 5 );
+
+if ( get_theme_mod( 'designr_woocommerce_loop_show_excerpts', true ) ) {
+
+    if ( !function_exists( 'designr_woocommerce_product_loop_excerpt' ) ) {
+
+        /**
+         * Output the excerpt/content for the product if toggled on.
+         */
+        function designr_woocommerce_product_loop_excerpt() { ?>
+
+            <div class="product_category_excerpt">
+                <?php the_excerpt(); ?>
+            </div>
+
+        <?php 
+
+        }
+
+    }
+    add_action( 'woocommerce_shop_loop_item_title', 'designr_woocommerce_product_loop_excerpt', 20 );
+    
+}
+
+if ( !function_exists( 'designr_woocommerce_product_loop_cta' ) ) {
+
+    /**
+     * Output the excerpt/content for the product if toggled on.
+     */
+    function designr_woocommerce_product_loop_cta( $ctr = 0 ) { ?>
+
+        <?php if ( $ctr == get_option( 'woocommerce_catalog_columns', 4 ) ) : ?>
+
+            </ul>
+
+            <div class="woocommerce-cta" style="background-image: url(<?php echo esc_url( get_theme_mod( 'designr_woocommerce_loop_cta_bg_image', get_template_directory_uri() . '/assets/images/sougwen.jpg' ) ); ?>);">
+
+                <div class="woocommerce-cta-inner dark-unsat-gradient">
+
+                    <span class="pre-title wow fadeInLeftBig">
+                        About Us
+                    </span>
+
+                    <h2 class="hero-title wow fadeInLeft">
+                        We live where style meets substance.
+                    </h2>
+
+                    <p class="wow fadeInLeft">
+                        Every space has its own purpose. Our task is to understand, see and implement it. We speak the architectural language fluently.
+                    </p>
+
+                    <a class="button hollow wow fadeInUpBig" href="#">
+                        Discover
+                    </a>
+
+                </div>
+
+            </div>
+
+            <ul class="products columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>">
+
+        <?php endif; ?>
+
+    <?php 
+
     }
 
 }

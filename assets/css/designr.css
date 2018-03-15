@@ -48,6 +48,7 @@ a.navbar-icon,
 }
 
 div#slim-header ul#mobile-menu:before,
+div#banner-header ul#mobile-menu:before,
 ul.slim-header-menu > li:not(.menu-item-has-children) > a:before,
 ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu:before,
 div#mobile-menu-wrap li.menu-item-has-children > span {
@@ -180,7 +181,7 @@ ul.slim-header-menu > li a {
     text-transform: uppercase;
     letter-spacing: .125em;
     letter-spacing: .5em;
-    vertical-align: top;
+/*    vertical-align: top;*/
 }
 
 div.sticky-wrapper {
@@ -213,7 +214,8 @@ ul.slim-header-menu > li:not(.menu-item-has-children) > a:hover:before {
             transform: scaleX(.75);
 }
 
-div#slim-header ul#mobile-menu {
+div#slim-header ul#mobile-menu,
+div#banner-header ul#mobile-menu {
     padding: 15px 0 0 0;
     margin: 0;
     list-style: none;
@@ -223,7 +225,8 @@ div#slim-header ul#mobile-menu {
     padding-bottom: 15px;
 }
 
-div#slim-header ul#mobile-menu:before {
+div#slim-header ul#mobile-menu:before,
+div#banner-header ul#mobile-menu:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -238,14 +241,16 @@ div#slim-header ul#mobile-menu:before {
     transform: scaleX(0);
 }
 
-div#slim-header ul#mobile-menu.expanded:before {
+div#slim-header ul#mobile-menu.expanded:before,
+div#banner-header ul#mobile-menu.expanded:before {
     visibility: visible;
     opacity: 1;
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
 }
 
-div#slim-header ul#mobile-menu li {
+div#slim-header ul#mobile-menu li,
+div#banner-header ul#mobile-menu li {
     opacity: 0;
 }
 
@@ -334,7 +339,9 @@ div#mobile-menu-wrap ul.sub-menu li a {
 
 @media (min-width: 992px) {
     div#slim-header div#mobile-menu-trigger,
-    div#slim-header ul#mobile-menu {
+    div#slim-header ul#mobile-menu,
+    div#banner-header div#mobile-menu-trigger,
+    div#banner-header ul#mobile-menu {
         display: none !important;
     }
 }
@@ -442,10 +449,22 @@ header#masthead.header-style-banner div#banner-header-wrap #custom-logo-wrap {
         padding-left: 15px;
         padding-right: 15px;
     }
+    header#masthead.header-style-banner div#banner-header-menu-wrap {
+        display: none;
+    }
+}
+
+div#banner-header ul#mobile-menu {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 header#masthead.header-style-banner img.custom-logo {
     padding: 0;
+}
+
+header#masthead.header-style-banner #mobile-menu-trigger {
+    margin: 15px 15px 0;
 }
 
 /* -----------------------------------------------------------------------------
@@ -921,7 +940,9 @@ form textarea {
     border-radius: 2px;
 }
 
-button, input[type="submit"] {
+button, 
+input[type="submit"],
+a.button {
     background: none;
     border: 2px solid;
     color: #fff;

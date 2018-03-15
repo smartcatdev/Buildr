@@ -89,54 +89,6 @@
             
         });
         
-        // Navbar Style ( Left Align )
-        customize( 'navbar_style', function ( value ) {
-            
-            // Initial Load
-            toggle( value.get() ); 
-            
-            // Value Change
-            value.bind( function ( to ) {    
-                toggle( to );
-            });
-            
-            function toggle( value ) {
-                
-//                if ( 'slim_left' === value || 'banner' === value ) {
-//                    $('li#customize-control-style_a_right_align_menu').removeClass('designr-hidden');
-//                    $('li#customize-control-style_a_boxed_navbar').removeClass('designr-hidden');
-//                } else {
-//                    $('li#customize-control-style_a_right_align_menu').addClass('designr-hidden');
-//                    $('li#customize-control-style_a_boxed_navbar').addClass('designr-hidden');
-//                }
-                
-            }
-            
-        });
-
-        // Navbar Style ( Split )
-        customize( 'navbar_style', function ( value ) {
-            
-            // Initial Load
-            toggle( value.get() ); 
-            
-            // Value Change
-            value.bind( function ( to ) {    
-                toggle( to );
-            });
-            
-            function toggle( value ) {
-                
-//                if ( 'slim_split' === value ) {
-//                    $('li#customize-control-navbar_social_drawer_background').removeClass('designr-hidden');
-//                } else {
-//                    $('li#customize-control-navbar_social_drawer_background').addClass('designr-hidden');
-//                }
-                
-            }
-            
-        });
-
         // Custom Logo
         customize( 'custom_logo', function ( value ) {
             

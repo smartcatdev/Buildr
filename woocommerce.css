@@ -81,6 +81,7 @@ ul.products {
 	table-layout: fixed;
 	margin: 0;
 	padding: 0;
+        width: 100%;
 }
 
 ul.products li.product {
@@ -132,6 +133,7 @@ ul.products li.product .button {
 	.columns-6 ul.products li.product {
 		width: 13.4933333333%;
 	}
+        
 }
 
 /**

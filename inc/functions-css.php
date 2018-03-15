@@ -89,12 +89,14 @@ function designr_wp_head_styles() { ?>
         ul.slim-header-menu > li.current-menu-item > a:before,
         ul.slim-header-menu > li:not(.menu-item-has-children) > a:before,
         div#slim-header ul#mobile-menu:before,
+        div#banner-header ul#mobile-menu:before,
         ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu:before {
             background-color: <?php esc_attr_e( $theme_colors['primary'] ); ?>;
         }
 
         a,
         div#slim-header a:hover,
+        div#banner-header a:hover,
         ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu li a:hover {
             color: <?php esc_attr_e( $theme_colors['primary'] ); ?>;
         }
@@ -372,6 +374,14 @@ function designr_wp_head_styles() { ?>
                 header#masthead.header-style-banner ul#banner-header-primary {
                     float: right;
                 }
+                
+                header#masthead.header-style-banner #mobile-menu-trigger {
+                    margin: 15px 15px 0 auto;
+                }
+                
+                header#masthead.header-style-banner ul#mobile-menu {
+                    text-align: right;
+                }
             
             <?php else : ?>
         
@@ -380,6 +390,14 @@ function designr_wp_head_styles() { ?>
                     margin: 0 auto;
                 }
         
+                header#masthead.header-style-banner #mobile-menu-trigger {
+                    margin: 15px auto 0;
+                }
+                
+                header#masthead.header-style-banner ul#mobile-menu {
+                    text-align: center;
+                }
+                
             <?php endif; ?>
             
         <?php endif; ?>
