@@ -21,7 +21,10 @@ function designr_get_all_theme_colors() {
     $theme_colors['navbar_menu_bg']  = get_theme_mod( 'navbar_banner_menu_background', '#141414' );
     $theme_colors['navbar_menu_fg']  = get_theme_mod( 'navbar_banner_menu_foreground', '#ffffff' );
     
-    $theme_colors['footer_bg']  = get_theme_mod( 'footer_background', '#141414' );
+    $theme_colors['prefooter_bg']  = get_theme_mod( 'prefooter_background', '#141414' );
+    $theme_colors['prefooter_fg']  = get_theme_mod( 'prefooter_foreground', '#ffffff' );
+    
+    $theme_colors['footer_bg']  = get_theme_mod( 'footer_background', '#000000' );
     $theme_colors['footer_fg']  = get_theme_mod( 'footer_foreground', '#ffffff' );
     
     $theme_colors['primary']    = get_theme_mod( 'skin_theme_primary', '#f04265' );

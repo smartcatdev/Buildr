@@ -24,7 +24,8 @@ function designr_wp_head_styles() { ?>
         ul#mobile-menu li a,
         ul.slim-header-menu > li a,
         ul#custom-header-menu > li a,
-        .masonry-card-blog .blog_item_wrap .blog_item .inner .blog-meta {
+        .blog_item_wrap .blog_item .inner .blog-meta,
+        .standard-stacked-blog .blog_item_wrap .blog_item .blog-meta .posted-meta {
             font-family: <?php esc_attr_e( get_theme_mod( 'primary_font', 'Montserrat, sans-serif' ) ); ?>;
         }
 
@@ -33,6 +34,10 @@ function designr_wp_head_styles() { ?>
             line-height: <?php esc_attr_e( get_theme_mod( 'headings_line_height', '1' ) ); ?>em;
         }
 
+        body {
+            font-size: <?php esc_attr_e( get_theme_mod( 'body_font_size', 16 ) ) ?>px;
+        }
+        
         <?php if ( get_theme_mod( 'navbar_links_font', 'primary' ) == 'secondary' ) : ?>
 
             ul#mobile-menu li a,
@@ -77,7 +82,10 @@ function designr_wp_head_styles() { ?>
         footer div#footer-branding-wrap .site-title {
            text-transform: <?php echo get_theme_mod( 'footer_site_title_uppercase', true ) ? 'uppercase' : 'none'; ?>;
         }
-
+        #pre-footer h2.widget-title {
+            text-transform: <?php echo get_theme_mod( 'prefooter_widget_title_uppercase', true ) ? 'uppercase' : 'none'; ?>;
+        }
+        
         /* ---------------------------------------------------------------------
          * Colors
          * ------------------------------------------------------------------ */
@@ -191,14 +199,21 @@ function designr_wp_head_styles() { ?>
         /* ----- Footer Colors ---------------------------------------------- */
 
         div#pre-footer-wrap {
-            border-top: 10px solid <?php esc_attr_e($theme_colors['primary']); ?>;
+            border-top: <?php esc_attr_e( get_theme_mod( 'prefooter_top_border_thickness', 10 ) ) ?>px solid <?php esc_attr_e($theme_colors['primary']); ?>;
+            background-color: <?php esc_attr_e( $theme_colors['prefooter_bg'] ); ?>;
+            color: <?php esc_attr_e( $theme_colors['prefooter_fg'] ); ?>;
+        }
+        
+        #pre-footer aside.widget table#wp-calendar th, 
+        #pre-footer aside.widget table#wp-calendar td {
+            color: <?php esc_attr_e( $theme_colors['prefooter_fg'] ); ?>;
         }
         
         #pre-footer h2.widget-title {
             color: <?php esc_attr_e( $theme_colors['footer_widget_title'] ); ?>;
         }
         
-        div#slim-footer-social {
+        footer div#slim-footer-wrap {
             background-color: #<?php esc_attr_e( $theme_colors['footer_bg'] ); ?>;
         }
 
@@ -438,7 +453,11 @@ function designr_wp_head_styles() { ?>
         /* ----- Masonry Blog Cards: Border Radius -------------------------- */
 
         <?php $card_radius = get_theme_mod( 'blog_layout_border_radius', 0 ); ?>
-
+        
+        .mosaic-grid-blog .mosaic-grid > .blog_item_wrap {
+            padding: <?php echo esc_attr_e( get_theme_mod( 'mosaic_blog_gap_spacing', 0 ) ); ?>px;
+        }
+        
         .masonry-card-blog .blog_item_wrap img {
             border-radius: <?php esc_attr_e( $card_radius . 'px' . ' ' . $card_radius . 'px' ); ?> 0 0;
         }
@@ -449,11 +468,38 @@ function designr_wp_head_styles() { ?>
         .masonry-card-blog .blog_item_wrap .inner-wrap {
             border-radius: 0 0 <?php esc_attr_e( $card_radius . 'px' . ' ' . $card_radius . 'px' ); ?>;
         }
+        
+        .mosaic-grid-blog .mosaic-grid > .blog_item_wrap .blog_item {
+            border-radius: <?php esc_attr_e( $card_radius ); ?>px;
+        }
+        
+        .mosaic-grid-blog .mosaic-grid > .blog_item_wrap:nth-child(7n+1) > .blog_item > .inner-wrap,
+        .mosaic-grid-blog .mosaic-grid > .blog_item_wrap:nth-child(7n+6) > .blog_item > .inner-wrap {
+            border-top-right-radius: <?php esc_attr_e( $card_radius ); ?>px;
+            border-bottom-left-radius: <?php esc_attr_e( $card_radius ); ?>px;
+        }
+        
+        .mosaic-grid-blog .mosaic-grid > .blog_item_wrap:nth-child(7n+2) > .blog_item > .inner-wrap,
+        .mosaic-grid-blog .mosaic-grid > .blog_item_wrap:nth-child(7n+4) > .blog_item > .inner-wrap {
+            border-top-left-radius: <?php esc_attr_e( $card_radius ); ?>px;
+            border-bottom-right-radius: <?php esc_attr_e( $card_radius ); ?>px;
+        }
+        
+        .mosaic-grid-blog .mosaic-grid > .blog_item_wrap:nth-child(7n+3) > .blog_item > .inner-wrap,
+        .mosaic-grid-blog .mosaic-grid > .blog_item_wrap:nth-child(7n+7) > .blog_item > .inner-wrap {
+            border-top-right-radius: <?php esc_attr_e( $card_radius ); ?>px;
+            border-bottom-left-radius: <?php esc_attr_e( $card_radius ); ?>px;
+        }
+        
+        .mosaic-grid-blog .mosaic-grid > .blog_item_wrap:nth-child(7n+5) > .blog_item > .inner-wrap {
+            border-top-left-radius: <?php esc_attr_e( $card_radius ); ?>px;
+            border-bottom-right-radius: <?php esc_attr_e( $card_radius ); ?>px;
+        }
 
         /* ----- Masonry Blog Cards: Hidden Categories Bar ------------------ */
 
         <?php if ( ! get_theme_mod( 'blog_layout_show_categories', true ) ) : ?>
-            .masonry-card-blog .blog_item_wrap .blog_item .footer-meta {
+            .blog_item_wrap .blog_item .footer-meta {
                 padding-bottom: 0;
                 border: none;
             }
@@ -475,16 +521,17 @@ function designr_wp_head_styles() { ?>
 
         /* ----- Masonry Blog Cards: Typography ----------------------------- */
 
-        .masonry-card-blog .blog_item_wrap .blog_item .entry-title {
+        .blog_item_wrap .blog_item .entry-title {
             font-size: <?php esc_attr_e( get_theme_mod( 'blog_title_font_size_dsk', 32 ) ) ?>px;
         }
 
-        .masonry-card-blog .blog_item_wrap .blog_item .inner .blog-meta {
+        .blog_item_wrap .blog_item .inner .blog-meta,
+        .standard-stacked-blog .blog_item_wrap .blog_item .blog-meta .posted-meta {
             font-size: <?php esc_attr_e( get_theme_mod( 'blog_meta_font_size', 12 ) ) ?>px;
         }
 
         @media (max-width: 767px) {
-            .masonry-card-blog .blog_item_wrap .blog_item .entry-title {
+            .blog_item_wrap .blog_item .entry-title {
                 font-size: <?php esc_attr_e( get_theme_mod( 'blog_title_font_size_mbl', 20 ) ) ?>px;
             }
         }

@@ -456,37 +456,21 @@ $data = array (
             'desciption'    => __( 'Customize the blog and archive pages on your site', 'designr' ),
             'sections'      => array (
 
-                // Section : Blog Layout Settings ------------------------------
-                'section_blog_layout' => array (
+                // Section : Blog General Settings ------------------------------
+                'section_blog_general' => array (
 
-                    'title' => __( 'Blog Layout', 'designr' ),
+                    'title' => __( 'General Settings', 'designr' ),
                     'options' => array (
 
                         'blog_layout_style' => array (
-                            'type'          => 'select',
+                            'type'          => 'radio-toggle',
                             'label'         => __( 'Blog Style', 'designr' ),
-                            'default'       => 'masonry_card',
+                            'default'       => 'blog_standard',
                             'choices'   => array (
-                                'masonry_card'   => __( 'Masonry - Cards', 'designr' ),
+                                'blog_standard' => __( 'Standard', 'designr' ),
+                                'blog_masonry'  => __( 'Masonry - Cards', 'designr' ),
+                                'blog_mosaic'   => __( 'Mosaic - Grid', 'designr' ),
                             )
-                        ),
-                        'blog_layout_num_columns' => array (
-                            'type'          => 'select',
-                            'label'         => __( 'Layout - Number of Columns', 'designr' ),
-                            'description'   => __( 'Mobile devices will automatically show fewer columns to maximaize space.', 'designr' ),
-                            'default'       => '3col',
-                            'choices'   => array (
-                                '1col'      => __( 'Single Column', 'designr' ),
-                                '2col'      => __( 'Two Columns', 'designr' ),
-                                '3col'      => __( 'Three Columns', 'designr' ),
-                                '4col'      => __( 'Four Columns', 'designr' ),
-                            )
-                        ),
-                        'blog_layout_border_radius' => array (
-                            'type'          => 'number',
-                            'label'         => __( 'Round Corners on Posts in the Blog?', 'designr' ),
-                            'description'   => __( 'Set this to 0 for sharp corners, or set the rounding value in pixels.', 'designr' ),
-                            'default'       => 0,
                         ),
                         'blog_layout_show_date_posted' => array (
                             'type'          => 'toggle',
@@ -508,11 +492,6 @@ $data = array (
                             'label'         => __( 'Show the Comment Count in the Meta Stats tab?', 'designr' ),
                             'default'       => true,
                         ),
-                        //                        'blog_layout_show_view_count' => array (
-                        //                            'type'          => 'toggle',
-                        //                            'label'         => __( 'Show the View Count in the Meta Stats tab?', 'designr' ),
-                        //                            'default'       => false,
-                        //                        ),
                         'blog_layout_excerpt_trim_words' => array (
                             'type'          => 'number',
                             'label'         => __( 'Automatic Excerpt - Trim by Number of Words', 'designr' ),
@@ -524,6 +503,41 @@ $data = array (
                             'label'         => __( 'Automatic Excerpt - "Read more" Link Text', 'designr' ),
                             'description'   => __( 'This link only shows on posts with no manual excerpt, as a content preview will be used instead', 'designr' ),
                             'default'       => __( 'Read more', 'designr' ),
+                        ),
+                        
+                    )
+
+                ),
+                
+                // Section : Blog Layout Settings ------------------------------
+                'section_blog_advanced' => array (
+
+                    'title' => __( 'Advanced Settings', 'designr' ),
+                    'options' => array (
+
+                        'blog_layout_num_columns' => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Layout - Number of Columns', 'designr' ),
+                            'description'   => __( 'Mobile devices will automatically show fewer columns to maximaize space.', 'designr' ),
+                            'default'       => '3col',
+                            'choices'   => array (
+                                '1col'      => __( 'Single Column', 'designr' ),
+                                '2col'      => __( 'Two Columns', 'designr' ),
+                                '3col'      => __( 'Three Columns', 'designr' ),
+                                '4col'      => __( 'Four Columns', 'designr' ),
+                            )
+                        ),
+                        'blog_layout_border_radius' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Round Corners on Posts in the Blog?', 'designr' ),
+                            'description'   => __( 'Set this to 0 for sharp corners, or set the rounding value in pixels.', 'designr' ),
+                            'default'       => 0,
+                        ),
+                        'mosaic_blog_gap_spacing' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Space around each Mosaic tile?', 'designr' ),
+                            'description'   => __( 'This is the uncombined padding around each tile. For example, setting this to 5px per tile will equal a 10px wide gutter. Set to 0 for gapless tiles.', 'designr' ),
+                            'default'       => 0,
                         ),
                         'blog_title_font_size_dsk' => array (
                             'type'          => 'number',
@@ -1093,10 +1107,16 @@ $data = array (
                                 '.500'      => __( '.500em (Widest)', 'designr' ),
                             )
                         ),
-                        'prefooter_widget_title_color' => array (
-                            'type'          => 'color',
-                            'label'         => __( 'Widget Titles - Text Color', 'designr' ),
-                            'default'       => '#FFFFFF'
+                        'prefooter_widget_title_uppercase' => array (
+                            'type'          => 'toggle',
+                            'label'         => __( 'Widget Titles - All Uppercase?', 'designr' ),
+                            'default'       => true
+                        ),
+                        'prefooter_top_border_thickness' => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Colored Top Border - Thickness', 'designr' ),
+                            'description'   => __( 'If set to a value greater than 0, the Prefooter will include a primary color top border of this many pixels', 'designr' ),
+                            'default'       => 10,
                         ),
                         
                     )
@@ -1199,10 +1219,10 @@ $data = array (
                     'title'     => __( 'Colors', 'designr' ),
                     'options'   => array (
 
-                        // Footer Background
-                        'footer_background' => array (
+                        // Pre-Footer Background
+                        'prefooter_background' => array (
                             'type'          => 'color-select',
-                            'label'         => __( 'Background Color', 'designr' ),
+                            'label'         => __( 'Prefooter: Background Color', 'designr' ),
                             'default'       => '#141414',
                             'choices'   => array (
                                 '#141414'    => __( 'Dark', 'designr' ),
@@ -1210,10 +1230,39 @@ $data = array (
                             )
                         ),
 
+                        // Pre-Footer Foreground
+                        'prefooter_foreground' => array (
+                            'type'          => 'color-select',
+                            'label'         => __( 'Prefooter: Foreground Color', 'designr' ),
+                            'default'       => '#ffffff',
+                            'choices'   => array (
+                                '#141414'    => __( 'Dark', 'designr' ),
+                                '#ffffff'    => __( 'Light', 'designr' ),
+                            )
+                        ),
+                        
+                        // Pre-Footer Widget Titles
+                        'prefooter_widget_title_color' => array (
+                            'type'          => 'color',
+                            'label'         => __( 'Prefooter: Widgets Title Color', 'designr' ),
+                            'default'       => '#FFFFFF'
+                        ),
+                        
+                        // Footer Background
+                        'footer_background' => array (
+                            'type'          => 'color-select',
+                            'label'         => __( 'Footer: Background Color', 'designr' ),
+                            'default'       => '#000000',
+                            'choices'   => array (
+                                '#000000'    => __( 'Dark', 'designr' ),
+                                '#ffffff'    => __( 'Light', 'designr' ),
+                            )
+                        ),
+
                         // Footer Foreground
                         'footer_foreground' => array (
                             'type'          => 'color-select',
-                            'label'         => __( 'Foreground Color', 'designr' ),
+                            'label'         => __( 'Footer: Foreground Color', 'designr' ),
                             'default'       => '#ffffff',
                             'choices'   => array (
                                 '#141414'    => __( 'Dark', 'designr' ),

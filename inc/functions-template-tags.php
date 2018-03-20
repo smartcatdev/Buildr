@@ -142,6 +142,24 @@ if ( !function_exists( 'designr_post_thumbnail' ) ) :
 endif;
 
 /**
+ * Render the SC designer section.
+ * 
+ * @since 1.0.0
+ * @return void
+ */
+add_action( 'designr_designer', 'designr_render_designer', 10 );
+function designr_render_designer() { ?>
+          
+    <span class="designr_by">
+        <?php esc_html_e( 'Design by', 'designr' ); ?>
+    </span>
+    <a href="https://smartcatdesign.net/" rel="designer" class="rel">
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/smartcat_logo_white.svg' ); ?>" alt="<?php echo get_bloginfo('name'); ?>">
+    </a>
+    
+<?php }
+
+/**
  * Render the HTML that opens the wrap of the Masonry Blog
  *
  * @since 1.0.0
@@ -163,7 +181,7 @@ function designr_render_masonry_wrap_open() { ?>
                         <div class="grid_spaced"></div>
 
 <?php }
-add_action( 'blog_masonry_wrap_open', 'designr_render_masonry_wrap_open');        
+add_action( 'blog_masonry_wrap_open', 'designr_render_masonry_wrap_open');               
     
 /**
  * Render the HTML that closes the wrap of the Masonry Blog
@@ -187,21 +205,91 @@ function designr_render_masonry_wrap_close() { ?>
 
 <?php }
 add_action( 'blog_masonry_wrap_close', 'designr_render_masonry_wrap_close');        
-    
+
 /**
- * Render the SC designer section.
- * 
+ * Render the HTML that opens the wrap of the Mosaic Blog
+ *
  * @since 1.0.0
  * @return void
  */
-add_action( 'designr_designer', 'designr_render_designer', 10 );
-function designr_render_designer() { ?>
-          
-    <span class="designr_by">
-        <?php esc_html_e( 'Design by', 'designr' ); ?>
-    </span>
-    <a href="https://smartcatdesign.net/" rel="designer" class="rel">
-        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/smartcat_logo_white.svg' ); ?>" alt="<?php echo get_bloginfo('name'); ?>">
-    </a>
+function designr_render_mosaic_wrap_open() { ?>
     
+    <div class="mosaic-grid-blog">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-12">
+                    
+                    <div class="mosaic-grid">
+
 <?php }
+add_action( 'blog_mosaic_wrap_open', 'designr_render_mosaic_wrap_open'); 
+
+/**
+ * Render the HTML that closes the wrap of the Mosaic Blog
+ *
+ * @since 1.0.0
+ * @return void
+ */
+function designr_render_mosaic_wrap_close() { ?>
+                        
+                    </div>
+                        
+                    <?php the_posts_navigation(); ?>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<?php }
+add_action( 'blog_mosaic_wrap_close', 'designr_render_mosaic_wrap_close');        
+
+/**
+ * Render the HTML that opens the wrap of the Standard Blog
+ *
+ * @since 1.0.0
+ * @return void
+ */
+function designr_render_standard_wrap_open() { ?>
+    
+    <div class="standard-stacked-blog">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-12">
+                    
+                    <div class="standard-blog">
+
+<?php }
+add_action( 'blog_standard_wrap_open', 'designr_render_standard_wrap_open'); 
+
+/**
+ * Render the HTML that closes the wrap of the Standard Blog
+ *
+ * @since 1.0.0
+ * @return void
+ */
+function designr_render_standard_wrap_close() { ?>
+                        
+                    </div>
+                        
+                    <?php the_posts_navigation(); ?>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<?php }
+add_action( 'blog_standard_wrap_close', 'designr_render_standard_wrap_close');        
