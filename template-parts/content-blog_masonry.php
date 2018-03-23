@@ -41,7 +41,9 @@
                 </div>
 
                 <div class="excerpt">
-                    <?php the_excerpt(); ?>
+                    <?php if ( get_theme_mod( 'blog_layout_show_content_excerpt', true ) ) : ?>
+                        <?php the_excerpt(); ?>
+                    <?php endif; ?>
                 </div>
 
             </div>

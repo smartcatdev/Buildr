@@ -482,6 +482,11 @@ $data = array (
                             'label'         => __( 'Show Author?', 'designr' ),
                             'default'       => true,
                         ),
+                        'blog_layout_show_content_excerpt' => array (
+                            'type'          => 'toggle',
+                            'label'         => __( 'Show Content / Excerpt?', 'designr' ),
+                            'default'       => true,
+                        ),
                         'blog_layout_show_categories' => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Show Category Footer?', 'designr' ),
@@ -518,13 +523,23 @@ $data = array (
                         'blog_layout_num_columns' => array (
                             'type'          => 'select',
                             'label'         => __( 'Layout - Number of Columns', 'designr' ),
-                            'description'   => __( 'Mobile devices will automatically show fewer columns to maximaize space.', 'designr' ),
+                            'description'   => __( 'Mobile devices will automatically show fewer columns to maximize space.', 'designr' ),
                             'default'       => '3col',
                             'choices'   => array (
                                 '1col'      => __( 'Single Column', 'designr' ),
                                 '2col'      => __( 'Two Columns', 'designr' ),
                                 '3col'      => __( 'Three Columns', 'designr' ),
                                 '4col'      => __( 'Four Columns', 'designr' ),
+                            )
+                        ),
+                        'standard_blog_appearance_style' => array (
+                            'type'          => 'radio-toggle',
+                            'label'         => __( 'Blog Card Appearance', 'designr' ),
+                            'description'   => __( 'Select whether the Standard style blog cards should appear flat, or as raised cards with a shadow.', 'designr' ),
+                            'default'       => 'flat',
+                            'choices'   => array (
+                                'flat'      => __( 'Flat', 'designr' ),
+                                'raised'    => __( 'Raised', 'designr' ),
                             )
                         ),
                         'blog_layout_border_radius' => array (
@@ -1278,6 +1293,89 @@ $data = array (
 
         ), // End of Footer Panel
 
+        // Panel: WooCommerce --------------------------------------------------
+        'woocommerce' => array (
+
+            'title'         => __( 'WooCommerce', 'designr' ),
+            'sections'      => array (
+
+                // Section : WooCommerce Advanced  -----------------------------
+                'section_woocommerce_featured' => array (
+
+                    'title'     => __( 'Featured Products', 'designr' ),
+                    'options'   => array (
+                        
+                        'show_featured_products' => array (
+                            'type'          => 'toggle',
+                            'label'         => __( 'Show Featured Products at the top of the Shop page?' , 'designr' ),
+                            'description'   => __( 'To feature a product, click the corresponding star icon on the Products page.' , 'designr' ),
+                            'default'       => true,
+                        ),
+                        'show_featured_product_header' => array (
+                            'type'          => 'toggle',
+                            'label'         => __( 'Show "Featured" Header Banner?' , 'designr' ),
+                            'default'       => true,
+                        ),
+                        'featured_products_num_columns' => array (
+                            'type'          => 'radio-toggle',
+                            'label'         => __( 'Featured Products Per Row' , 'designr' ),
+                            'default'       => 'two',
+                            'choices'       => array (
+                                'two'   => __( 'Two', 'designr' ),
+                                'three' => __( 'Three', 'designr' ),
+                            )
+                        ),
+                        
+                    )
+                    
+                ),
+                
+                // Section : WooCommerce Advanced  -----------------------------
+                'section_woocommerce_slide_cart' => array (
+
+                    'title'     => __( 'Slide-In Cart', 'designr' ),
+                    'options'   => array (
+                        
+                        'cart_drawer_toggle' => array (
+                            'type'          => 'toggle',
+                            'label'         => __( 'Include the Slide-In Cart Drawer?' , 'designr' ),
+                            'description'   => __( 'If this is on, users can click a tab on the right side of the page to open a drawer displaying the items currently added to their cart.' , 'designr' ),
+                            'default'       => true,
+                        ),
+                        'cart_drawer_tab_color' => array (
+                            'type'          => 'color',
+                            'label'         => __( 'Tab: Color' , 'designr' ),
+                            'default'       => '#000000',
+                        ),
+                        'cart_drawer_tab_icon' => array (
+                            'type'          => 'radio-toggle',
+                            'label'         => __( 'Tab: Icon' , 'designr' ),
+                            'default'       => 'fa-shopping-cart',
+                            'choices'       => array (
+                                'fa-shopping-cart'      =>  __( 'Cart', 'designr' ),
+                                'fa-shopping-bag'       =>  __( 'Bag', 'designr' ),
+                                'fa-shopping-basket'    =>  __( 'Basket', 'designr' ),
+                            )
+                        ),
+                        'cart_drawer_tab_location' => array (
+                            'type'          => 'radio-toggle',
+                            'label'         => __( 'Tab: Location' , 'designr' ),
+                            'description'   => __( 'For readability, the tab will always appear at the bottom when viewing the site on mobile devices.' , 'designr' ),
+                            'default'       => 'bottom',
+                            'choices'       => array (
+                                'top'           =>  __( 'Top', 'designr' ),
+                                'bottom'        =>  __( 'Bottom', 'designr' ),
+                            )
+                        ),
+                        
+                    )
+                    
+                ),
+                
+            ), // End of Footer Sections
+
+        ), // End of WooCommerce Panel
+       
     ), // End of Panels
 
 );

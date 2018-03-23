@@ -32,6 +32,8 @@ function designr_scripts() {
     wp_enqueue_script( 'lettering', get_template_directory_uri() . '/assets/lib/lettering/jquery.lettering.js', array('jquery'), DESIGNR_VERSION, true );
     wp_enqueue_script( 'textillate', get_template_directory_uri() . '/assets/lib/textillate/jquery.textillate.js', array('jquery','lettering'), DESIGNR_VERSION, true );
     wp_enqueue_script( 'ease-scroll', get_template_directory_uri() . '/assets/lib/ease-scroll/jquery.easeScroll.js', array('jquery'), DESIGNR_VERSION, true );
+    wp_enqueue_script( 'big-slide', get_template_directory_uri() . '/assets/lib/big-slide/bigSlide.min.js', array('jquery'), DESIGNR_VERSION, true );
+    wp_enqueue_script( 'slim-scroll', get_template_directory_uri() . '/assets/lib/slim-scroll/jquery.slimscroll.min.js', array('jquery'), DESIGNR_VERSION, true );
     wp_enqueue_script( 'jquery-parallax', get_template_directory_uri() . '/assets/lib/jquery-parallax/jquery.parallax.js', array('jquery'), DESIGNR_VERSION, false );
     wp_enqueue_script( 'designr-parallax', get_template_directory_uri() . '/assets/lib/designr-parallax/parallax.js', array('jquery'), DESIGNR_VERSION, true );
     wp_enqueue_script( 'designr-general', get_template_directory_uri() . '/assets/js/designr-general.js', array('jquery'), DESIGNR_VERSION, true );

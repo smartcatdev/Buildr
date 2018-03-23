@@ -33,7 +33,7 @@ div#designr-woocommerce-wrap ul.products li .details-wrap {
 }
 
 div#designr-woocommerce-wrap ul.products li.product .woocommerce-loop-product__title {
-    font-size: 1.5em;
+    font-size: 1.15em;
     text-transform: uppercase;
     letter-spacing: .15em;
     font-weight: 600;
@@ -122,9 +122,13 @@ div.woocommerce-cta p {
 
 div#designr-woocommerce-wrap ul.products li.product span.onsale {
     position: absolute;
-    background-color: #f14263; /* TODO: Dynamic Color */ 
     padding: 5px 10px;
     top: 5px;
     right: 5px;
     color: #fff;
+    border-radius: 2px;
+}
+
+aside.widget_product_search button[type="submit"] {
+    margin-top: 15px;
 }

@@ -23,14 +23,14 @@ jQuery(document).ready(function ($) {
         $('#custom-logo-wrap.sometimes-hidden img.custom-logo').removeClass('fadeOut').addClass('bounceIn');
         
         // Expand Padding Top on #content
-        $('div#content,div#designr-custom-header').addClass('sticky-header');
+        $('div#content,div#designr-custom-header,div#cart-panel-trigger').addClass('sticky-header');
         
     }).on('sticky-end', function() { 
         
         $('#custom-logo-wrap.sometimes-hidden img.custom-logo').removeClass('bounceIn').addClass('fadeOut');
         
         // Contract Padding Top on #content
-        $('div#content,div#designr-custom-header').removeClass('sticky-header');
+        $('div#content,div#designr-custom-header,div#cart-panel-trigger').removeClass('sticky-header');
         
     });
    
@@ -147,5 +147,32 @@ jQuery(document).ready(function ($) {
         }).parent().find('.jparallax-layer.content-layer').fadeIn();
         
     }
+  
+    /* -------------------------------------------------------------------------
+     * Cart: Slide In Side-panel
+     * ---------------------------------------------------------------------- */
+  
+    $('#cart-panel-trigger, #cart-panel-close, #dark-cart-overlayer').bigSlide({
+        menu: '#cart-panel',
+        menuWidth: '280px',
+        side: 'right'
+    });
+
+    $('#cart-panel-trigger, #cart-panel-close, #dark-cart-overlayer').on( 'click touchstart', function(){
+        $('#cart-panel-close, #dark-cart-overlayer').fadeToggle(300);
+    });
+        
+    /*
+     * SlimScroll Cart
+     */
+    $('#cart-panel .inner').slimScroll({
+        height: 'auto',
+        size: '4px',
+        railVisible: true,
+        railColor: '#e6e6e6',
+        railOpacity: 1.0,
+        color: '#333333',
+        position: 'right'
+    });
         
 });

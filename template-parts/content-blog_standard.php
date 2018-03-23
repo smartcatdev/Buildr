@@ -63,7 +63,7 @@
                     
                     <?php if ( has_post_thumbnail() ) : ?>
                         <a href="<?php echo esc_url( get_the_permalink() ); ?>">
-                            <img src="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(), 'large' ) ); ?>" alt="<?php the_title(); ?>">
+                            <img class="featured-image" src="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(), 'large' ) ); ?>" alt="<?php the_title(); ?>">
                         </a>
                     <?php endif; ?>
                     
@@ -73,7 +73,9 @@
                         </a>
                     </h2>
                     
-                    <?php the_excerpt(); ?>
+                    <?php if ( get_theme_mod( 'blog_layout_show_content_excerpt', true ) ) : ?>
+                        <?php the_excerpt(); ?>
+                    <?php endif; ?>
                     
                 </div>
 

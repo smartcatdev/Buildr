@@ -100,10 +100,44 @@ function designr_woocommerce_related_products_args( $args ) {
 add_filter( 'woocommerce_output_related_products_args', 'designr_woocommerce_related_products_args' );
 
 /**
- * Remove default WooCommerce wrapper.
+ * Remove certain WooCommerce actions
  */
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+
+if ( !function_exists( 'designr_results_bar_wrapper_before' ) ) {
+
+    /**
+     * Wraps woocommerce_result_count and woocommerce_catalog_ordering in a <div>
+     *
+     * @return void
+     */
+    function designr_results_bar_wrapper_before() { ?>
+        
+        <div class="results-bar-wrap">
+          
+    <?php }
+
+}
+add_action( 'woocommerce_before_shop_loop', 'designr_results_bar_wrapper_before', 15 );
+
+if ( !function_exists( 'designr_results_bar_wrapper_after' ) ) {
+
+    /**
+     * Wraps woocommerce_result_count and woocommerce_catalog_ordering in a </div>
+     *
+     * @return void
+     */
+    function designr_results_bar_wrapper_after() { ?>
+        
+        </div>
+          
+    <?php }
+
+}
+add_action( 'woocommerce_before_shop_loop', 'designr_results_bar_wrapper_after', 35 );
 
 if ( !function_exists( 'designr_woocommerce_wrapper_before' ) ) {
 
@@ -116,17 +150,43 @@ if ( !function_exists( 'designr_woocommerce_wrapper_before' ) ) {
      */
     function designr_woocommerce_wrapper_before() { ?>
         
-        <div id="primary" class="content-area">
+        <div id="primary" class="content-area woo-shop">
             
             <main id="main" class="site-main" role="main">
             
-                <div id="designr-woocommerce-wrap" class="shop-archive">
+                <div id="designr-woocommerce-wrap" class="<?php echo is_shop() ? 'shop-archive' : 'single'; ?>">
                 
                     <div class="container">
                     
                         <div class="row">
-                    
-                            <div class="col-md-12">
+                            
+                            <?php if ( is_shop() ) : ?>
+                            
+                                <div class="col-sm-12">
+
+                                    <header class="woocommerce-products-header">
+
+                                        <?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+                                            <h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
+                                        <?php endif; ?>
+
+                                        <?php
+                                        /**
+                                         * Hook: woocommerce_archive_description.
+                                         *
+                                         * @hooked woocommerce_taxonomy_archive_description - 10
+                                         * @hooked woocommerce_product_archive_description - 10
+                                         */
+                                        do_action( 'woocommerce_archive_description' );
+                                        ?>
+
+                                    </header>
+
+                                </div>
+                            
+                            <?php endif; ?>
+                            
+                            <div class="col-md-<?php echo is_active_sidebar( 'sidebar-shop' ) ? '9' : '12'; ?>">
                 
         <?php
             
@@ -145,10 +205,21 @@ if ( !function_exists( 'designr_woocommerce_wrapper_after' ) ) {
      * @return void
      */
     function designr_woocommerce_wrapper_after() { ?>
-        
                         
-                            </div><!-- .col-md-12 -->
-                    
+                            </div><!-- .col-md-* -->
+
+                            <?php if ( is_active_sidebar('sidebar-shop') ) : ?>
+                            
+                                <div class="col-sm-3">
+                                    
+                                    <div class="designr-sidebar">
+                                        <?php woocommerce_get_sidebar(); ?>
+                                    </div>
+                                    
+                                </div>
+                            
+                            <?php endif; ?>
+                                
                         </div><!-- .row -->
                 
                     </div><!-- .container -->
@@ -171,11 +242,6 @@ add_action( 'woocommerce_after_main_content', 'designr_woocommerce_wrapper_after
  *
  * You can add the WooCommerce Mini Cart to header.php like so ...
  *
-  <?php
-  if ( function_exists( 'designr_woocommerce_header_cart' ) ) {
-  designr_woocommerce_header_cart();
-  }
-  ?>
  */
 if ( !function_exists( 'designr_woocommerce_cart_link_fragment' ) ) {
 
@@ -190,7 +256,7 @@ if ( !function_exists( 'designr_woocommerce_cart_link_fragment' ) ) {
     function designr_woocommerce_cart_link_fragment( $fragments ) {
         ob_start();
         designr_woocommerce_cart_link();
-        $fragments[ 'a.cart-contents' ] = ob_get_clean();
+        $fragments[ 'a.cart-contents' ] = ob_get_clean(); 
 
         return $fragments;
     }
@@ -207,13 +273,16 @@ if ( !function_exists( 'designr_woocommerce_cart_link' ) ) {
      *
      * @return void
      */
-    function designr_woocommerce_cart_link() {
-        ?>
+    function designr_woocommerce_cart_link() { ?>
+
         <a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'designr' ); ?>">
-            <?php /* translators: number of items in the mini cart. */ ?>
-            <span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'designr' ), WC()->cart->get_cart_contents_count() ) ); ?></span>
-        </a>
-        <?php
+            <?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'designr' ), WC()->cart->get_cart_contents_count() ) ); ?> 
+            - 
+            <?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?>
+        </a> 
+        
+    <?php 
+    
     }
 
 }
@@ -393,3 +462,60 @@ if ( !function_exists( 'designr_woocommerce_product_loop_cta' ) ) {
     }
 
 }
+
+if ( !function_exists( 'designr_render_featured_products' ) ) {
+
+    /**
+     * Output all Featured Products if they're toggled on in Customizer
+     */
+    function designr_render_featured_products() {
+
+        if ( get_theme_mod( 'show_featured_products', true ) ) : 
+
+            $args = array(
+                'post_type' => 'product',
+                'posts_per_page' => -1,
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'product_visibility',
+                        'field'    => 'name',
+                        'terms'    => 'featured',
+                    ),
+                ),
+            );
+            $featured_products_loop = new WP_Query( $args ); ?>
+
+            <?php if ( $featured_products_loop->have_posts() ) : ?>
+
+                <div id="designr-featured-woocommerce">
+
+                    <?php if ( get_theme_mod( 'show_featured_product_header', true ) ) : ?>
+                    
+                        <h3 class="shop-sub-heading">
+                            <?php _e( 'Featured', 'designr' ); ?>
+                        </h3>
+                    
+                    <?php endif; ?>
+
+                    <ul class="products columns-<?php echo get_theme_mod( 'featured_products_num_columns', 'two' ) == 'two' ? 2 : 3; ?>">
+
+                        <?php 
+                        while ( $featured_products_loop->have_posts() ) : $featured_products_loop->the_post();
+                            wc_get_template_part( 'content', 'product' );
+                        endwhile;
+                        ?>
+
+                        <?php wp_reset_postdata(); ?>
+
+                    </ul><!--/.products-->
+
+                </div>
+
+            <?php endif;
+
+        endif;
+
+    }
+
+}
+add_action( 'designr_featured_products', 'designr_render_featured_products', 10 );

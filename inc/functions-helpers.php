@@ -10,36 +10,28 @@ function designr_get_all_theme_colors() {
     
     $theme_colors = array();
     
-    /**
-     * The following colors are from dropdown SELECTs, and each one
-     * needs the # symbol prepended on the frontend.
-     */
+    $theme_colors['navbar_bg']              = get_theme_mod( 'navbar_background', '#141414' );
+    $theme_colors['navbar_fg']              = get_theme_mod( 'navbar_foreground', '#ffffff' );
     
-    $theme_colors['navbar_bg']  = get_theme_mod( 'navbar_background', '#141414' );
-    $theme_colors['navbar_fg']  = get_theme_mod( 'navbar_foreground', '#ffffff' );
+    $theme_colors['navbar_menu_bg']         = get_theme_mod( 'navbar_banner_menu_background', '#141414' );
+    $theme_colors['navbar_menu_fg']         = get_theme_mod( 'navbar_banner_menu_foreground', '#ffffff' );
     
-    $theme_colors['navbar_menu_bg']  = get_theme_mod( 'navbar_banner_menu_background', '#141414' );
-    $theme_colors['navbar_menu_fg']  = get_theme_mod( 'navbar_banner_menu_foreground', '#ffffff' );
+    $theme_colors['prefooter_bg']           = get_theme_mod( 'prefooter_background', '#141414' );
+    $theme_colors['prefooter_fg']           = get_theme_mod( 'prefooter_foreground', '#ffffff' );
     
-    $theme_colors['prefooter_bg']  = get_theme_mod( 'prefooter_background', '#141414' );
-    $theme_colors['prefooter_fg']  = get_theme_mod( 'prefooter_foreground', '#ffffff' );
+    $theme_colors['footer_bg']              = get_theme_mod( 'footer_background', '#000000' );
+    $theme_colors['footer_fg']              = get_theme_mod( 'footer_foreground', '#ffffff' );
     
-    $theme_colors['footer_bg']  = get_theme_mod( 'footer_background', '#000000' );
-    $theme_colors['footer_fg']  = get_theme_mod( 'footer_foreground', '#ffffff' );
-    
-    $theme_colors['primary']    = get_theme_mod( 'skin_theme_primary', '#f04265' );
-    $theme_colors['secondary']  = get_theme_mod( 'skin_theme_secondary', '#d60059' );
-    
-    /**
-     * The following colors are from color pickers, and each needs to have
-     * the # symbol included in the value. Do not prepend these with # on the frontend!
-     */
+    $theme_colors['primary']                = get_theme_mod( 'skin_theme_primary', '#f04265' );
+    $theme_colors['secondary']              = get_theme_mod( 'skin_theme_secondary', '#d60059' );
     
     $theme_colors['social_bg']              = get_theme_mod( 'navbar_social_drawer_background', '#141414' );
     $theme_colors['social_fg']              = get_theme_mod( 'navbar_social_link_foreground', '#FFFFFF' );
     $theme_colors['social_fg_hov']          = get_theme_mod( 'navbar_social_link_foreground_hover', '#0000FF' );
     $theme_colors['custom_header_title']    = get_theme_mod( 'custom_header_title_color', '#FFFFFF' );
     $theme_colors['custom_header_menu']     = get_theme_mod( 'custom_header_menu_color', '#FFFFFF' );
+    
+    $theme_colors['cart_tab']               = get_theme_mod( 'cart_drawer_tab_color', '#000000' );
     
     $theme_colors['plx_overlay_single']     = get_theme_mod( 'parallax_layers_single_color', '#348aa7' );
     $theme_colors['plx_overlay_grad_start'] = get_theme_mod( 'parallax_layers_gradient_start_color', '#348aa7' );
@@ -189,4 +181,37 @@ function designr_get_parallax_preset( $style = 'layers' ) {
     
     return $style == 'vertical' ? $parallax_value : $parallax_preset ;
 
+}
+
+/**
+ * Returns all posts as an array.
+ * Pass true to include Pages
+ * 
+ * @param array $types - post types to retrieve
+ * @return array of posts
+ */
+function designr_all_posts_array( $types = array( 'post' ) ) {
+    
+    $posts = get_posts( array(
+        'post_type'        => $types,
+        'posts_per_page'   => -1,
+        'post_status'      => 'publish',
+        'orderby'          => 'title',
+        'order'            => 'ASC',
+    ));
+
+    $posts_array = array(
+        'none'  => __( 'None', 'designr' ),
+    );
+    
+    foreach ( $posts as $post ) :
+        
+        if ( ! empty( $post->ID ) ) :
+            $posts_array[ $post->ID ] = $post->post_title;
+        endif;
+        
+    endforeach;
+    
+    return $posts_array;
+    
 }

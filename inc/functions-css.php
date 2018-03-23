@@ -16,7 +16,8 @@ function designr_wp_head_styles() { ?>
         div#footer-branding-wrap .site-title,
         div#custom-header-content .custom-header-title,
         div#designr-custom-header.parallax_layers .custom-header-title,
-        #pre-footer h2.widget-title {
+        h2.widget-title,
+        ul.product_list_widget .product-wrap .product-title .price-wrap {
             font-family: <?php esc_attr_e( get_theme_mod( 'secondary_font', 'Abel, sans-serif' ) ); ?>;
         }
 
@@ -25,7 +26,8 @@ function designr_wp_head_styles() { ?>
         ul.slim-header-menu > li a,
         ul#custom-header-menu > li a,
         .blog_item_wrap .blog_item .inner .blog-meta,
-        .standard-stacked-blog .blog_item_wrap .blog_item .blog-meta .posted-meta {
+        .standard-stacked-blog .blog_item_wrap .blog_item .blog-meta .posted-meta,
+        ul.product_list_widget .product-wrap .product-title {
             font-family: <?php esc_attr_e( get_theme_mod( 'primary_font', 'Montserrat, sans-serif' ) ); ?>;
         }
 
@@ -66,7 +68,7 @@ function designr_wp_head_styles() { ?>
         
         <?php if ( get_theme_mod( 'prefooter_widget_title_font_family', 'secondary' ) == 'primary' ) : ?>
 
-            #pre-footer h2.widget-title {
+            h2.widget-title {
                 font-family: <?php esc_attr_e( get_theme_mod( 'primary_font', 'Montserrat, sans-serif' ) ); ?>;
             }
 
@@ -82,7 +84,7 @@ function designr_wp_head_styles() { ?>
         footer div#footer-branding-wrap .site-title {
            text-transform: <?php echo get_theme_mod( 'footer_site_title_uppercase', true ) ? 'uppercase' : 'none'; ?>;
         }
-        #pre-footer h2.widget-title {
+        h2.widget-title {
             text-transform: <?php echo get_theme_mod( 'prefooter_widget_title_uppercase', true ) ? 'uppercase' : 'none'; ?>;
         }
         
@@ -98,7 +100,15 @@ function designr_wp_head_styles() { ?>
         ul.slim-header-menu > li:not(.menu-item-has-children) > a:before,
         div#slim-header ul#mobile-menu:before,
         div#banner-header ul#mobile-menu:before,
-        ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu:before {
+        ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu:before,
+        div#designr-woocommerce-wrap ul.products li.product span.onsale,
+        button, 
+        input[type="submit"],
+        a.button,
+        .widget_price_filter .ui-slider .ui-slider-range,
+        .widget_price_filter .ui-slider .ui-slider-handle,
+        h3.shop-sub-heading,
+        form.woocommerce-ordering > select {
             background-color: <?php esc_attr_e( $theme_colors['primary'] ); ?>;
         }
 
@@ -113,9 +123,15 @@ function designr_wp_head_styles() { ?>
             fill: <?php esc_attr_e($theme_colors['primary']); ?>;
         }
         
+        button, 
+        input[type="submit"],
+        a.button {
+            border-color: <?php esc_attr_e( $theme_colors['primary'] ); ?>;
+        }
+        
         /* ----- Secondary Color -------------------------------------------- */
 
-        a:hover {
+        a:not(.button):hover {
             color: <?php esc_attr_e( $theme_colors['secondary'] ); ?>;
         }
 
@@ -204,12 +220,12 @@ function designr_wp_head_styles() { ?>
             color: <?php esc_attr_e( $theme_colors['prefooter_fg'] ); ?>;
         }
         
-        #pre-footer aside.widget table#wp-calendar th, 
-        #pre-footer aside.widget table#wp-calendar td {
+        aside.widget table#wp-calendar th, 
+        aside.widget table#wp-calendar td {
             color: <?php esc_attr_e( $theme_colors['prefooter_fg'] ); ?>;
         }
         
-        #pre-footer h2.widget-title {
+        h2.widget-title {
             color: <?php esc_attr_e( $theme_colors['footer_widget_title'] ); ?>;
         }
         
@@ -221,7 +237,13 @@ function designr_wp_head_styles() { ?>
         div#slim-footer a {
             color: <?php esc_attr_e( $theme_colors['footer_fg'] ); ?>;
         }
-
+        
+        /* ----- Slide-in Cart Tab ------------------------------------------ */
+        
+        div#cart-panel-trigger {
+            background-color: <?php esc_attr_e( $theme_colors['cart_tab'] ); ?>;
+        }
+        
         /* ---------------------------------------------------------------------
          * Navbar
          * ------------------------------------------------------------------ */
@@ -469,7 +491,9 @@ function designr_wp_head_styles() { ?>
             border-radius: 0 0 <?php esc_attr_e( $card_radius . 'px' . ' ' . $card_radius . 'px' ); ?>;
         }
         
-        .mosaic-grid-blog .mosaic-grid > .blog_item_wrap .blog_item {
+        .mosaic-grid-blog .mosaic-grid > .blog_item_wrap .blog_item,
+        .standard-stacked-blog .blog_item_wrap,
+        .standard-stacked-blog .excerpt img.featured-image {
             border-radius: <?php esc_attr_e( $card_radius ); ?>px;
         }
         
@@ -526,7 +550,8 @@ function designr_wp_head_styles() { ?>
         }
 
         .blog_item_wrap .blog_item .inner .blog-meta,
-        .standard-stacked-blog .blog_item_wrap .blog_item .blog-meta .posted-meta {
+        .standard-stacked-blog .blog_item_wrap .blog_item .blog-meta .posted-meta,
+        .standard-stacked-blog .blog-meta div.category-meta .categories-bar {
             font-size: <?php esc_attr_e( get_theme_mod( 'blog_meta_font_size', 12 ) ) ?>px;
         }
 
@@ -535,7 +560,36 @@ function designr_wp_head_styles() { ?>
                 font-size: <?php esc_attr_e( get_theme_mod( 'blog_title_font_size_mbl', 20 ) ) ?>px;
             }
         }
-
+        
+        /* ----- Standard Blog Cards: Flat or Raised ------------------------ */
+        
+        <?php if ( get_theme_mod( 'standard_blog_appearance_style', 'flat' ) == 'raised' ) : ?>
+            
+            .standard-stacked-blog .blog_item_wrap {
+                box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+                border: none;
+            }
+            
+            .standard-stacked-blog .blog-meta div.category-meta, 
+            .standard-stacked-blog .blog-meta div.posted-meta {
+                border-bottom: thin solid #eeeeee;
+            }
+            
+            .standard-stacked-blog .blog_item_wrap .blog_item .blog-meta .posted-meta {
+                margin-bottom: 15px;
+            }
+            
+            @media (max-width:767px) {
+                .standard-stacked-blog .blog-meta div.posted-meta {
+                    border-bottom: thin solid #eee;
+                }
+                .standard-stacked-blog .blog-meta div.category-meta {
+                    border: none;
+                }
+            }
+        
+        <?php endif; ?>
+        
         /* ---------------------------------------------------------------------
          * Custom Header
          * ------------------------------------------------------------------ */
@@ -686,7 +740,7 @@ function designr_wp_head_styles() { ?>
          * Footer
          * ------------------------------------------------------------------ */
 
-        #pre-footer h2.widget-title {
+        h2.widget-title {
             font-size: <?php esc_attr_e( get_theme_mod( 'prefooter_widget_title_font_size', 24 ) ) ?>px;
             letter-spacing: <?php esc_attr_e( get_theme_mod( 'prefooter_widget_title_letter_spacing', '.250' ) ); ?>em;
         }
@@ -718,6 +772,27 @@ function designr_wp_head_styles() { ?>
             }
         
         <?php endif; ?>
+            
+        /* ---------------------------------------------------------------------
+         * Slide-In Cart
+         * ------------------------------------------------------------------ */
+            
+        <?php if ( get_theme_mod( 'cart_drawer_tab_location', 'bottom' ) == 'top' ) : ?>
+        
+            @media (min-width:992px) {
+        
+                div#cart-panel-trigger {
+                    top: <?php esc_attr_e( get_theme_mod( 'style_a_collapse_height', 50 ) + 12 ) ?>px;    
+                }
+
+                div#cart-panel-trigger.sticky-header {
+                    top: <?php esc_attr_e( get_theme_mod( 'style_a_expand_height', 75 ) + 12 ) ?>px;
+                }
+            
+            }
+        
+        <?php endif; ?>
+            
             
     </style>
 
