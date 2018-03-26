@@ -120,13 +120,16 @@ div.woocommerce-cta p {
     margin: 15px 0 30px;
 }
 
-div#designr-woocommerce-wrap ul.products li.product span.onsale {
-    position: absolute;
+div#designr-woocommerce-wrap span.onsale {
     padding: 5px 10px;
-    top: 5px;
-    right: 5px;
     color: #fff;
     border-radius: 2px;
+}
+
+div#designr-woocommerce-wrap ul.products li.product span.onsale {
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }
 
 aside.widget_product_search button[type="submit"] {

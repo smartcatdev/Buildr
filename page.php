@@ -18,6 +18,16 @@ get_header(); ?>
         
         <main id="main" class="site-main">
 
+            <?php if ( is_active_sidebar( 'sidebar-page-above') ) : ?>
+
+                <div class="sidebar-wrap page above">
+            
+                    <?php dynamic_sidebar('sidebar-page-above'); ?>
+            
+                </div>
+                    
+            <?php endif; ?>
+            
             <div class="container">
             
                 <div class="row">
@@ -29,11 +39,6 @@ get_header(); ?>
 
                             get_template_part( 'template-parts/content', 'page' );
 
-                            // If comments are open or we have at least one comment, load up the comment template.
-                            if ( comments_open() || get_comments_number() ) :
-                                comments_template();
-                            endif;
-
                         endwhile; // End of the loop.
                         ?>
             
@@ -42,6 +47,16 @@ get_header(); ?>
                 </div>
                 
             </div>
+            
+            <?php if ( is_active_sidebar( 'sidebar-page-below') ) : ?>
+
+                <div class="sidebar-wrap page below">
+            
+                    <?php dynamic_sidebar('sidebar-page-below'); ?>
+            
+                </div>
+                
+            <?php endif; ?>
 
         </main><!-- #main -->
             

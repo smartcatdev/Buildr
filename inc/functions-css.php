@@ -27,7 +27,10 @@ function designr_wp_head_styles() { ?>
         ul#custom-header-menu > li a,
         .blog_item_wrap .blog_item .inner .blog-meta,
         .standard-stacked-blog .blog_item_wrap .blog_item .blog-meta .posted-meta,
-        ul.product_list_widget .product-wrap .product-title {
+        ul.product_list_widget .product-wrap .product-title,
+        .woocommerce-tabs.wc-tabs-wrapper ul.tabs li,
+        .woocommerce table.variations .label,
+        table.shop_attributes th {
             font-family: <?php esc_attr_e( get_theme_mod( 'primary_font', 'Montserrat, sans-serif' ) ); ?>;
         }
 
@@ -101,21 +104,23 @@ function designr_wp_head_styles() { ?>
         div#slim-header ul#mobile-menu:before,
         div#banner-header ul#mobile-menu:before,
         ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu:before,
-        div#designr-woocommerce-wrap ul.products li.product span.onsale,
+        div#designr-woocommerce-wrap span.onsale,
         button, 
         input[type="submit"],
         a.button,
         .widget_price_filter .ui-slider .ui-slider-range,
         .widget_price_filter .ui-slider .ui-slider-handle,
         h3.shop-sub-heading,
-        form.woocommerce-ordering > select {
+        form.woocommerce-ordering > select,
+        .woocommerce select {
             background-color: <?php esc_attr_e( $theme_colors['primary'] ); ?>;
         }
 
         a,
         div#slim-header a:hover,
         div#banner-header a:hover,
-        ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu li a:hover {
+        ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu li a:hover,
+        .woocommerce p.stars:hover a:before {
             color: <?php esc_attr_e( $theme_colors['primary'] ); ?>;
         }
 

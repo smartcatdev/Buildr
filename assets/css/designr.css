@@ -26,6 +26,7 @@ body.admin-bar div#cart-panel-trigger {
         bottom: 56px;
     }
 }
+
 /* -----------------------------------------------------------------------------
  * General Settings
  * -------------------------------------------------------------------------- */
@@ -41,6 +42,12 @@ ul.slim-header-menu > li a {
 
 div#primary {
     padding: 30px 0 50px 0;
+}
+
+body.single div#primary,
+body.page div#primary {
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 a.read-more,
@@ -61,7 +68,8 @@ aside.widget a,
 .select-items div,
 div#cart-panel-trigger,
 div#cart-panel-trigger > span,
-div#cart-panel-trigger > svg {
+div#cart-panel-trigger > svg,
+.woocommerce-tabs.wc-tabs-wrapper ul.tabs li {
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition:  all 0.3s ease-in-out;
     -o-transition:  all 0.3s ease-in-out;
@@ -77,6 +85,17 @@ div#mobile-menu-wrap li.menu-item-has-children > span {
     -moz-transition:  all 0.5s ease-in-out;
     -o-transition:  all 0.5s ease-in-out;
     transition:  all 0.5s ease-in-out;
+}
+
+span.small-divider {
+    display: inline-block;
+    width: 100px;
+    border-top: 1px solid #fff;
+    margin: 10px 0 5px;
+}
+
+span.small-divider.dark {
+    border-color: #333;
 }
 
 /* -----------------------------------------------------------------------------
@@ -1248,9 +1267,8 @@ form label {
 form input:not([type="submit"]), 
 form textarea {
     width: 100% !important;
-    border-radius: 0;
-    border: none;
-    border-bottom: thin solid #333333;
+    border: thin solid #cacaca;
+    border-radius: 2px;
     padding: 10px 15px 10px 10px;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
@@ -1284,11 +1302,76 @@ a.button {
 }
 
 /* -----------------------------------------------------------------------------
- * Single Page Template
+ * Single Post / Page
  * -------------------------------------------------------------------------- */
-header.entry-header .entry-title {
-    margin: 80px 0 40px;
+
+main#main article.post,
+main#main article.page {
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
+
+article.page header.entry-header .entry-title {
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+article.post header.entry-header {
+    margin-bottom: 30px;
+}
+
+article.post header.entry-header .entry-title {
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Comments
+ * -------------------------------------------------------------------------- */
+
+/*
+
+#comments {
+    padding-top: 30px;
+    border-top: thin solid #eee;
+    margin-top: 50px;
+}
+
+#comments h2.comments-title {
+    margin: 0 0 0 0;
+    font-size: 24px;
+}
+
+#comments ol.comment-list {
+    margin: 0;
+    padding: 0;
+}
+
+#comments ol.comment-list li.comment {
+    border-left: 5px solid #E6E6E6;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+#comments ol.comment-list li.comment a {
+    color: #49B0D0;
+}
+
+#comments .comment-metadata {
+    padding: 5px 0 0 0;
+    font-size: 12px;
+}
+
+#comments ol.comment-list ol.children {
+    padding-left: 0;
+    margin-left: 45px;
+}
+
+#comments .comment-content {
+    padding: 15px;
+}
+
+*/
 
 /* -----------------------------------------------------------------------------
  * WooCommerce
@@ -1402,6 +1485,7 @@ div#designr-woocommerce-wrap {
 
 div#designr-woocommerce-wrap.single {
     margin-top: 50px;
+    margin-bottom: 0;
 }
 
 .price del {
@@ -1479,7 +1563,8 @@ div#designr-woocommerce-wrap div.results-bar-wrap {
     margin-top: 20px;
 }
 
-form.woocommerce-ordering > select {
+form.woocommerce-ordering > select,
+.woocommerce select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -1490,7 +1575,6 @@ form.woocommerce-ordering > select {
     line-height: 40px;
     margin: 0 0 30px 0;
     font-family: Montserrat;
-    text-transform: uppercase;
     letter-spacing: .125em;
     font-size: 12px;
     border: none !important;
@@ -1500,15 +1584,249 @@ form.woocommerce-ordering > select {
     background-position: calc(100% - 5px) 8px;
 }
 
-form.woocommerce-ordering > select::-ms-expand {
+form.woocommerce-ordering > select::-ms-expand,
+.woocommerce select::-ms-expand {
     display: none;
 }
 
 @media screen and (min-width:0\0) {
-    form.woocommerce-ordering > select {
+    form.woocommerce-ordering > select,
+    .woocommerce select {
         background:none\9;
         padding: 5px\9;
     }
+}
+
+form.woocommerce-ordering > select > option:first-child,
+.woocommerce select > option:first-child {
+    text-transform: uppercase;
+}
+
+#designr-woocommerce-wrap div.product h1.product_title.entry-title {
+    font-size: 48px;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+#designr-woocommerce-wrap div.product h2,
+div#related-products-wrap h2 {
+    margin: 0px 0 15px !important;
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+div#related-products-wrap h2 {
+    margin-bottom: 30px !important;
+}
+
+#designr-woocommerce-wrap div.product .summary .price {
+    font-size: 42px;
+    display: block;
+    margin-bottom: 30px;
+}
+
+#designr-woocommerce-wrap div.product .summary form, 
+#designr-woocommerce-wrap div.product .summary form input.qty {
+    text-align: center;
+}
+
+div#designr-woocommerce-wrap div.product input.qty {
+    margin-bottom: 10px;
+    padding-right: 10px;
+}
+
+div#designr-woocommerce-wrap div.product textarea, 
+div#designr-woocommerce-wrap div.product input[type="text"], 
+div#designr-woocommerce-wrap div.product input[type="number"], 
+div#designr-woocommerce-wrap div.product input[type="email"] {
+    border: thin solid #cacaca !important;
+    border-radius: 2px;
+}
+
+#designr-woocommerce-wrap div.product .summary form button {
+    width: 100%;
+}
+
+#designr-woocommerce-wrap div.product .summary form {
+    margin-top: 30px;
+}
+
+#designr-woocommerce-wrap div.product .summary .product-cat {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: .125em;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    display: block;
+}
+
+#designr-woocommerce-wrap div.product .summary .product-cat a {
+    color: #333;
+}
+
+.woocommerce-tabs.wc-tabs-wrapper {
+    padding-top: 50px;
+    border-top: thin solid #eee;
+    margin-top: 30px;
+}
+
+.woocommerce-tabs.wc-tabs-wrapper ul.tabs {
+/*    border-bottom: 2px solid #333;*/
+    margin-bottom: 30px;
+}
+
+.woocommerce-tabs.wc-tabs-wrapper ul.tabs li {
+    border: thin solid #333;
+    padding: 0 15px;
+    border-radius: 2px;
+    border-bottom: none;
+    opacity: .5;
+    background-color: #333;
+    font-size: 14px;
+    margin: 2px 0 !important;
+}
+
+.woocommerce-tabs.wc-tabs-wrapper ul.tabs li.active {
+    opacity: 1;
+}
+
+.woocommerce-tabs.wc-tabs-wrapper ul.tabs li a {
+    color: #fff;
+}
+
+.woocommerce-tabs.wc-tabs-wrapper > div.wc-tab {
+    margin-bottom: 50px;
+    border: none;
+    box-shadow: none;
+    padding-top: 30px;
+}
+
+div#related-products-wrap {
+    background: #fafafa;
+    padding: 100px 0 50px 0;
+    border-top: thin solid #eee;
+    margin-top: 50px;
+}
+
+div#reviews .woocommerce-noreviews {
+    background: none !important;
+}
+
+div#related-products-wrap h2 {
+    margin-bottom: 20px !important;
+}
+
+div#related-products-wrap span.small-divider {
+    margin: 0px 0 20px;
+}
+
+.woocommerce-tabs.wc-tabs-wrapper span.small-divider {
+    margin: 5px 0px 15px;
+}
+
+.single-product div.product .woocommerce-product-gallery {
+    margin-bottom: 30px;
+}
+
+.summary .woocommerce-product-details__short-description {
+    margin-bottom: 30px;
+}
+
+.single-product div#designr-woocommerce-wrap .product span.onsale {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 999;
+}
+
+div#related-products-wrap li.product span.onsale {
+    left: 10px !important;
+    right: unset !important;
+}
+
+.woocommerce table.variations {
+    margin-bottom: 30px;
+}
+
+.woocommerce table.variations .label,
+.woocommerce table.shop_attributes .label {
+    color: #333;
+    line-height: 40px;
+    text-align: left;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    font-weight: 600;
+}
+
+.woocommerce table.variations select {
+    margin-bottom: 0;
+}
+
+.woocommerce table.variations .value,
+.woocommerce table.shop_attributes td {
+    text-align: right;
+    padding: 0px 0 0 15px;
+}
+
+.woocommerce table.variations a.reset_variations {
+    display: block !important;
+    margin-top: 15px;
+    color: #333;
+}
+
+table.shop_attributes th, 
+table.shop_attributes td p {
+    line-height: 40px;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+table.shop_attributes th {
+    color: #333;
+    line-height: 40px;
+    text-align: left;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    font-weight: 600;
+} 
+
+@media (max-width: 991px) {
+    
+    div#designr-woocommerce-wrap.single {
+        margin-top: 15px;
+    }
+    
+    div#related-products-wrap {
+        margin-top: 0;
+        padding-top: 50px;
+    }
+    
+    #designr-woocommerce-wrap div.product h1.product_title.entry-title,
+    #designr-woocommerce-wrap div.product .summary .price {
+        font-size: 32px;
+    }
+    
+    #designr-woocommerce-wrap div.product h2, 
+    div#related-products-wrap h2 {
+        font-size: 20px;
+    }
+    
+    .woocommerce-tabs.wc-tabs-wrapper > div.wc-tab {
+        padding-top: 15px;
+    }
+    
 }
 
 /* -----------------------------------------------------------------------------
@@ -1649,3 +1967,18 @@ div#cart-panel ul.product_list_widget .product-wrap a.remove {
     opacity: .65 !important;
     background-color: #FFFFFF !important;
 }
+
+/* -----------------------------------------------------------------------------
+ * Sidebars : Above & Below 
+ * -------------------------------------------------------------------------- */
+.sidebar-wrap aside.widget {
+    margin: 0;
+}
+
+/*.sidebar-wrap.above {
+    margin-bottom: 50px;
+}
+
+.sidebar-wrap.below {
+    margin-top: 50px;
+}*/
