@@ -32,7 +32,6 @@ function designr_customize_register( $wp_customize ) {
     $wp_customize->get_panel( 'panel_appearance' )->priority = 5;
     // End Priority ------------------------------------------------------------
     
-    
     // Selective Refresh -------------------------------------------------------
     if ( isset( $wp_customize->selective_refresh ) ) {
         

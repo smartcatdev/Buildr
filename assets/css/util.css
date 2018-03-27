@@ -22,9 +22,12 @@ h6 { font-size: 1.125em; }
 /* ----- COLORS & GRADIENTS ----- */
 
 .primary-gradient {
-    background: -moz-linear-gradient(190deg, rgba(52, 138, 167, 1) 0%, hsla(242, 60%, 35%, .85) 100%);
+    /* background: -moz-linear-gradient(190deg, rgba(52, 138, 167, 1) 0%, hsla(242, 60%, 35%, .85) 100%);
     background: -webkit-linear-gradient(190deg, rgba(52, 138, 167, 1) 0%, hsla(242, 60%, 35%, .85) 100%);
-    background: linear-gradient(190deg, rgba(52, 138, 167, 1) 0%, hsla(242, 60%, 35%, .85) 100%);
+    background: linear-gradient(190deg, rgba(52, 138, 167, 1) 0%, hsla(242, 60%, 35%, .85) 100%); */
+    background: -moz-linear-gradient(190deg, rgba(52, 138, 167, 1) 0%, hsla(242, 60%, 35%, .65) 100%);
+    background: -webkit-linear-gradient(190deg, rgba(52, 138, 167, 1) 0%, hsla(242, 60%, 35%, .65) 100%);
+    background: linear-gradient(190deg, rgba(52, 138, 167, 1) 0%, hsla(242, 60%, 35%, .65) 100%);
     /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf0089a0', endColorstr='#00adad',GradientType=1 ); */
 }
 

@@ -1982,3 +1982,12 @@ div#cart-panel ul.product_list_widget .product-wrap a.remove {
 .sidebar-wrap.below {
     margin-top: 50px;
 }*/
+
+
+/* -----------------------------------------------------------------------------
+ * Template: Widget Shell
+ * -------------------------------------------------------------------------- */
+div#primary.widget-shell main#main > article {
+    padding: 0;
+    margin: 0;
+}

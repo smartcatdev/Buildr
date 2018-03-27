@@ -219,6 +219,16 @@ if ( !function_exists( 'woocommerce_output_content_wrapper' ) ) {
             
             <main id="main" class="site-main" role="main">
             
+                <?php if ( is_active_sidebar( 'sidebar-shop-above') ) : ?>
+
+                    <div class="sidebar-wrap shop above">
+
+                        <?php dynamic_sidebar('sidebar-shop-above'); ?>
+
+                    </div>
+
+                <?php endif; ?>
+                
                 <div id="designr-woocommerce-wrap" class="<?php echo is_shop() ? 'shop-archive' : 'single'; ?>">
                 
                     <div class="container">
@@ -295,7 +305,17 @@ if ( !function_exists( 'woocommerce_output_content_wrapper_end' ) ) {
                     <?php endif; ?>
                     
                 </div><!-- #designr-woocommerce-wrap -->
-                                
+                              
+                <?php if ( is_active_sidebar( 'sidebar-shop-below') ) : ?>
+
+                    <div class="sidebar-wrap shop below">
+
+                        <?php dynamic_sidebar('sidebar-shop-below'); ?>
+
+                    </div>
+
+                <?php endif; ?>
+                
             </main><!-- #main -->
             
         </div><!-- #primary -->
