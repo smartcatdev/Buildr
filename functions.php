@@ -1,5 +1,7 @@
 <?php
 
+require get_template_directory() . '/inc/constants.php';
+
 require get_template_directory() . '/inc/functions-custom-header.php';
 
 require get_template_directory() . '/inc/functions-fonts.php';

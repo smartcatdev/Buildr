@@ -125,10 +125,10 @@ $data = array (
                     'title' => __( 'General Settings', 'designr' ),
                     'options' => array (
                         // Style
-                        'custom_header_style_toggle' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_STYLE_TOGGLE => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'Header - Parallax Style', 'designr' ),
-                            'default'       => 'parallax_vertical',
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_STYLE_TOGGLE,
                             'choices'   => array (
                                 'parallax_vertical'     => __( 'Vertical Scroll', 'designr' ),
                                 'parallax_layers'       => __( 'Perspective Layers', 'designr' ),
