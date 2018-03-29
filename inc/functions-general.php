@@ -90,10 +90,12 @@ if ( !function_exists( 'designr_setup' ) ) :
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus( array(
             'primary-menu'              => esc_html__( 'Primary', 'designr' ),
-            'slim-primary'              => esc_html__( 'Slim Primary', 'designr' ),
-            'split-primary-left'        => esc_html__( 'Split Primary - Left', 'designr' ),
-            'split-primary-right'       => esc_html__( 'Split Primary - Right', 'designr' ),
+            'banner-primary'            => esc_html__( 'Navbar: Banner - Primary', 'designr' ),
+            'slim-primary'              => esc_html__( 'Navbar: Slim - Primary', 'designr' ),
+            'split-primary-left'        => esc_html__( 'Navbar: Split - Left', 'designr' ),
+            'split-primary-right'       => esc_html__( 'Navbar: Split - Right', 'designr' ),
             'mobile-menu'               => esc_html__( 'Mobile', 'designr' ),
+            'custom-header'             => esc_html__( 'Custom Header', 'designr' ),
         ) );
 
         /*
@@ -107,15 +109,6 @@ if ( !function_exists( 'designr_setup' ) ) :
             'gallery',
             'caption',
         ) );
-
-        // Set up the WordPress core custom background feature.
-        add_theme_support( 'custom-background', apply_filters( 'designr_custom_background_args', array (
-            'default-color' => 'ffffff',
-            'default-image' => '',
-        ) ) );
-
-        // Add theme support for selective refresh for widgets.
-        add_theme_support( 'customize-selective-refresh-widgets' );
 
         /**
          * Add support for core custom logo.

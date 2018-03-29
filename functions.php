@@ -24,8 +24,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
     require get_template_directory() . '/inc/functions-jetpack.php';
 }
 
-
-
 if ( class_exists( 'WooCommerce' ) ) {
     require get_template_directory() . '/inc/functions-woocommerce.php';   
 }

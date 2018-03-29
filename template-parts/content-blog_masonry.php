@@ -20,17 +20,17 @@
 
                 <div class="blog-meta">
                     
-                    <?php if ( get_theme_mod( 'blog_layout_show_date_posted', 'yes' ) == 'yes' || get_theme_mod( 'blog_layout_show_author', 'yes' ) == 'yes' ) : ?>
+                    <?php if ( get_theme_mod( 'blog_layout_show_date_posted', true ) || get_theme_mod( 'blog_layout_show_author', true ) ) : ?>
                     
-                        <?php if ( get_theme_mod( 'blog_layout_show_date_posted', 'yes' ) == 'yes' ) : ?>    
+                        <?php if ( get_theme_mod( 'blog_layout_show_date_posted', true ) ) : ?>    
                             <span class="post-date">
                                 <?php esc_html_e( get_the_date( get_option( 'date_format' ) ) ); ?>
                             </span>
                         <?php endif; ?>
                     
-                        <?php echo get_theme_mod( 'blog_layout_show_date_posted', 'yes' ) == 'yes' && get_theme_mod( 'blog_layout_show_author', 'yes' ) == 'yes' ? ' | ' : ''; ?>
+                        <?php echo get_theme_mod( 'blog_layout_show_date_posted', true ) && get_theme_mod( 'blog_layout_show_author', true ) ? ' | ' : ''; ?>
                     
-                        <?php if ( get_theme_mod( 'blog_layout_show_author', 'yes' ) == 'yes' ) : ?>    
+                        <?php if ( get_theme_mod( 'blog_layout_show_author', true ) ) : ?>    
                             <span class="post-author">
                                 <?php _e( 'by', 'designr' ); ?> <?php the_author_posts_link(); ?>
                             </span>
@@ -41,34 +41,34 @@
                 </div>
 
                 <div class="excerpt">
-                    <?php the_excerpt(); ?>
+                    <?php if ( get_theme_mod( 'blog_layout_show_content_excerpt', true ) ) : ?>
+                        <?php the_excerpt(); ?>
+                    <?php endif; ?>
                 </div>
 
             </div>
 
-            <?php if ( ( get_theme_mod( 'blog_layout_show_comment_count', 'yes' ) == 'yes' || get_theme_mod( 'blog_layout_show_view_count', 'yes' ) == 'yes' ) || get_theme_mod( 'blog_layout_show_categories', 'yes' ) == 'yes' ) : ?>
+            <?php if ( ( get_theme_mod( 'blog_layout_show_comment_count', true ) || get_theme_mod( 'blog_layout_show_view_count', false ) ) || get_theme_mod( 'blog_layout_show_categories', true ) ) : ?>
             
                 <div class="footer-meta">
 
-                    <?php if ( get_theme_mod( 'blog_layout_show_comment_count', 'yes' ) == 'yes' || get_theme_mod( 'blog_layout_show_view_count', 'yes' ) == 'yes' ) : ?>
+                    <?php if ( get_theme_mod( 'blog_layout_show_comment_count', true ) || get_theme_mod( 'blog_layout_show_view_count', false ) ) : ?>
 
                         <div class="meta-stats">
 
-                            <?php if ( get_theme_mod( 'blog_layout_show_comment_count', 'yes' ) == 'yes' ) : ?> 
+                            <?php if ( get_theme_mod( 'blog_layout_show_comment_count', true ) ) : ?> 
                                 <?php $comment_count = wp_count_comments( get_the_ID() ); ?>
                                 <span class="fas fa-comment"></span> <?php echo esc_attr_e( $comment_count->approved ); ?>
                             <?php endif; ?>
                             
-                            <?php if ( get_theme_mod( 'blog_layout_show_view_count', 'yes' ) == 'yes' ) : ?>
-                                <span class="fas fa-eye"></span> 10
-                            <?php endif; ?>
-
+                            <?php do_action('designr_get_blog_meta_view_counter'); ?>
+                                
                         </div>
 
                     <?php endif; ?>
 
                     <?php $categories = get_the_category(); ?>
-                    <?php if ( get_theme_mod( 'blog_layout_show_categories', 'yes' ) == 'yes' && !empty( $categories ) && is_array( $categories ) ) : ?> 
+                    <?php if ( get_theme_mod( 'blog_layout_show_categories', true ) && !empty( $categories ) && is_array( $categories ) ) : ?> 
                         <div class="categories-bar">
                             <?php $ctr = 0; ?>
                             <?php foreach ( $categories as $cat ) : ?>

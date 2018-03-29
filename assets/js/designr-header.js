@@ -5,7 +5,7 @@ jQuery(document).ready(function ($) {
      * ---------------------------------------------------------------------- */
     
     // Iterate through all <li> with submenus and match center the <ul> child
-    $('#slim-header ul.slim-header-menu > li.menu-item-has-children').each( function( index ) {
+    $('ul.slim-header-menu > li.menu-item-has-children').each( function( index ) {
         if ( ( ( 200 - $(this).outerWidth() ) / 2 ) > 0 ) {
             $(this).find('ul.sub-menu').css('transform','translate(-' + ( ( 200 - $(this).outerWidth() ) / 2 ) + 'px,0)');    
         } else {
@@ -20,27 +20,17 @@ jQuery(document).ready(function ($) {
         zIndex:9999,
     }).on('sticky-start', function() { 
         
-        // Expand Nav Line Height
-        $(this).find('#slim-header ul.slim-header-menu > li').stop().animate({
-            lineHeight: designrLocalized.style_a_expand_height,
-        }, 200 );
-        
         $('#custom-logo-wrap.sometimes-hidden img.custom-logo').removeClass('fadeOut').addClass('bounceIn');
         
         // Expand Padding Top on #content
-        $('div#content').addClass('sticky-header');
+        $('div#content,div#designr-custom-header,div#cart-panel-trigger').addClass('sticky-header');
         
     }).on('sticky-end', function() { 
         
         $('#custom-logo-wrap.sometimes-hidden img.custom-logo').removeClass('bounceIn').addClass('fadeOut');
         
         // Contract Padding Top on #content
-        $('div#content').removeClass('sticky-header');
-        
-        // Contract Nav Line Height
-        $(this).find('#slim-header ul.slim-header-menu > li').stop().animate({
-            lineHeight: designrLocalized.style_a_collapse_height,
-        }, 200 );
+        $('div#content,div#designr-custom-header,div#cart-panel-trigger').removeClass('sticky-header');
         
     });
    
@@ -79,6 +69,17 @@ jQuery(document).ready(function ($) {
         }
         
     });
+    
+    /* -------------------------------------------------------------------------
+     * Header: Mobile Menu - Submenu Expansion / Contraction
+     * ---------------------------------------------------------------------- */
+
+    $( '#mobile-menu-wrap ul#mobile-menu > li.menu-item-has-children').prepend('<span style="font-family: Helvetica;">+</span>');
+    $( "#mobile-menu-wrap ul#mobile-menu > li.menu-item-has-children > span" ).on( 'click', function() {
+        
+        $(this).stop().toggleClass('expanded').parent().find('ul.sub-menu').stop().slideToggle();
+        
+    });
    
     /* -------------------------------------------------------------------------
      * Header: Slim Split Social Drawer
@@ -89,4 +90,89 @@ jQuery(document).ready(function ($) {
         
     });
     
+    /* -------------------------------------------------------------------------
+     * Custom Header: Layered Parallax Section
+     * ---------------------------------------------------------------------- */
+    
+    if ( $('div#designr-custom-header.parallax_layers').length ) {
+        
+        $(window).resize( function(){
+            $( '.jparallax-layer' ).parallax({
+                // Global Options
+                mouseport: $('body')
+            },{
+                // Image Layer
+                xparallax: designr_local.parallax_image_layer,
+                yparallax: designr_local.parallax_image_layer
+            },
+            {
+                // Texture Layer Options
+                xparallax: designr_local.parallax_texture_layer,
+                yparallax: designr_local.parallax_texture_layer
+            },{
+                // Color Layer Options
+                xparallax: designr_local.parallax_color_layer,
+                yparallax: designr_local.parallax_color_layer,
+                xorigin: 0,
+                yorigin: 0,
+            },{
+                // Content Layer Options
+                xparallax: designr_local.parallax_content_layer,
+                yparallax: designr_local.parallax_content_layer
+            });
+        });
+
+        $( '.jparallax-layer' ).parallax({
+            // Global Options
+            mouseport: $('body')
+        },{
+            // Image Layer
+            xparallax: designr_local.parallax_image_layer,
+            yparallax: designr_local.parallax_image_layer
+        },
+        {
+            // Texture Layer Options
+            xparallax: designr_local.parallax_texture_layer,
+            yparallax: designr_local.parallax_texture_layer
+        },{
+            // Color Layer Options
+            xparallax: designr_local.parallax_color_layer,
+            yparallax: designr_local.parallax_color_layer,
+            xorigin: 0,
+            yorigin: 0,
+        },{
+            // Content Layer Options
+            xparallax: designr_local.parallax_content_layer,
+            yparallax: designr_local.parallax_content_layer
+        }).parent().find('.jparallax-layer.content-layer').fadeIn();
+        
+    }
+  
+    /* -------------------------------------------------------------------------
+     * Cart: Slide In Side-panel
+     * ---------------------------------------------------------------------- */
+  
+    $('#cart-panel-trigger, #cart-panel-close, #dark-cart-overlayer').bigSlide({
+        menu: '#cart-panel',
+        menuWidth: '280px',
+        side: 'right'
+    });
+
+    $('#cart-panel-trigger, #cart-panel-close, #dark-cart-overlayer').on( 'click touchstart', function(){
+        $('#cart-panel-close, #dark-cart-overlayer').fadeToggle(300);
+    });
+        
+    /*
+     * SlimScroll Cart
+     */
+    $('#cart-panel .inner').slimScroll({
+        height: 'auto',
+        size: '4px',
+        railVisible: true,
+        railColor: '#e6e6e6',
+        railOpacity: 1.0,
+        color: '#333333',
+        position: 'right'
+    });
+        
 });

@@ -15,6 +15,7 @@ get_header();
 ?>
 
 <div id="primary" class="content-area">
+    
     <main id="main" class="site-main">
 
         <?php
@@ -31,10 +32,24 @@ get_header();
             
             ?>
 
-            <?php do_action( 'blog_masonry_wrap_open'); ?>
-   
+            <?php 
+            switch ( get_theme_mod( 'blog_layout_style', 'blog_standard' ) ) :
+                
+                case 'blog_masonry' :
+                    do_action( 'blog_masonry_wrap_open');
+                    break;
+                
+                case 'blog_mosaic' :
+                    do_action( 'blog_mosaic_wrap_open');
+                    break;
+                
+                default :
+                    do_action( 'blog_standard_wrap_open');
+                
+            endswitch; 
+            ?>
+        
                 <?php
-
                 /* Start the Loop */
                 while ( have_posts() ) : the_post();
 
@@ -43,23 +58,38 @@ get_header();
                      * If you want to override this in a child theme, then include a file
                      * called content-___.php (where ___ is the Post Format name) and that will be used instead.
                      */
-                    // get_template_part( 'template-parts/content', get_post_format() );
-                    get_template_part( 'template-parts/content', 'blog_masonry' );
+                    get_template_part( 'template-parts/content', get_theme_mod( 'blog_layout_style', 'blog_standard' ) );
 
                 endwhile;
-
                 ?>
-                                    
-            <?php do_action( 'blog_masonry_wrap_close');
-            
-        else :
+   
+        
+            <?php 
+            switch ( get_theme_mod( 'blog_layout_style', 'blog_standard' ) ) :
+                
+                case 'blog_masonry' :
+                    do_action( 'blog_masonry_wrap_close');
+                    break;
+                
+                case 'blog_mosaic' :
+                    do_action( 'blog_mosaic_wrap_close');
+                    break;
+                
+                default :
+                    do_action( 'blog_standard_wrap_close');
+                
+            endswitch; 
+            ?>
+           
+        <?php else :
 
             get_template_part( 'template-parts/content', 'none' );
 
-        endif;
+        endif; 
         ?>
 
     </main><!-- #main -->
+    
 </div><!-- #primary -->
 
 <?php

@@ -30,14 +30,14 @@
                 /**
                  * Resize Navbar Submenu Widths
                  */
-                $('#slim-header ul.slim-header-menu > li.menu-item-has-children').each( function( index ) {
+                $('ul.slim-header-menu > li.menu-item-has-children').each( function( index ) {
                     if ( ( ( 200 - $(this).outerWidth() ) / 2 ) > 0 ) {
                         $(this).find('ul.sub-menu').css('transform','translate(-' + ( ( 200 - $(this).outerWidth() ) / 2 ) + 'px,0)');    
                     } else {
                         $(this).find('ul.sub-menu').css('width', $(this).outerWidth() + 'px');    
                     }
                 });
-
+                
                 /**
                  * Re-Call Masonry
                  */
