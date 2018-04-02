@@ -21,6 +21,9 @@ function designr_custom_header_setup() {
         'default-image' => '',
         'default-text-color' => '000000',
         'flex-height' => true,
+        'uploads'   => true,
+        'width'     => 1200,
+        'height'    => 700,
         'wp-head-callback' => 'designr_header_style',
     ) ) );
 }
