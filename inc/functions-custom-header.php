@@ -83,7 +83,7 @@ function designr_render_custom_header() {
 
     if ( has_header_image() ) :
 
-        get_template_part( 'template-parts/custom-header', get_theme_mod( 'custom_header_style_toggle', 'parallax_vertical' ) );
+        get_template_part( 'template-parts/custom-header', get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_STYLE_TOGGLE, DESIGNR_DEFAULTS::CUSTOM_HEADER_STYLE_TOGGLE ) );
             
     endif;
     

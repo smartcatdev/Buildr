@@ -2,14 +2,150 @@
 
 interface DESIGNR_OPTIONS {
     
-    const CUSTOM_HEADER_STYLE_TOGGLE = 'custom_header_style_toggle';
-    
-    
-    
+    const   CUSTOM_HEADER_STYLE_TOGGLE              = 'custom_header_style_toggle',
+            CUSTOM_HEADER_HEIGHT_CALC               = 'designr_custom_header_height_unit',
+            CUSTOM_HEADER_HEIGHT_PCT                = 'designr_custom_header_height_percent',
+            CUSTOM_HEADER_HEIGHT_PCT_MBL            = 'designr_custom_header_height_percent_mbl',
+            CUSTOM_HEADER_HEIGHT_PX                 = 'designr_custom_header_height_pixels',
+            CUSTOM_HEADER_HEIGHT_PX_MBL             = 'designr_custom_header_height_pixels_mbl',
+            CUSTOM_HEADER_PLX_INTENSITY             = 'parallax_layers_parallax_style',
+            CUSTOM_HEADER_TEXTURE_IMG               = 'parallax_layers_texture_pattern',
+            CUSTOM_HEADER_TEXTURE_OPAC              = 'parallax_layers_texture_layer_opacity',
+            
+            CUSTOM_HEADER_SHOW_LOGO                 = 'custom_header_show_logo',
+            CUSTOM_HEADER_LOGO_HEIGHT               = 'designr_custom_header_logo_height',
+            CUSTOM_HEADER_LOGO_HEIGHT_MBL           = 'designr_custom_header_logo_height_mbl',
+            
+            CUSTOM_HEADER_SHOW_TITLE                = 'custom_header_show_heading',
+            CUSTOM_HEADER_TITLE_CONTENT             = 'custom_header_title_content',
+            CUSTOM_HEADER_TITLE_FONT_FAMILY         = 'custom_header_title_font_family',
+            CUSTOM_HEADER_TITLE_FONT_SIZE           = 'custom_header_title_font_size',
+            CUSTOM_HEADER_TITLE_LETTER_GAP          = 'custom_header_title_letter_spacing',
+            CUSTOM_HEADER_TITLE_ALL_CAPS            = 'custom_header_title_uppercase',
+            CUSTOM_HEADER_TITLE_COLOR               = 'custom_header_title_color',
+            
+            CUSTOM_HEADER_SHOW_MENU                 = 'custom_header_show_menu',
+            CUSTOM_HEADER_MENU_FONT_FAMILY          = 'custom_header_menu_font_family',
+            CUSTOM_HEADER_MENU_FONT_SIZE            = 'custom_header_menu_font_size',
+            CUSTOM_HEADER_MENU_LETTER_GAP           = 'custom_header_menu_letter_spacing',
+            CUSTOM_HEADER_MENU_COLOR                = 'custom_header_menu_color',
+            CUSTOM_HEADER_MENU_LINKS_GAP            = 'custom_header_menu_link_spacing',
+                        
+            CUSTOM_HEADER_COLOR_LAYER_STYLE         = 'parallax_layers_include_color_layer',
+            CUSTOM_HEADER_COLOR_LAYER_COLOR         = 'parallax_layers_single_color',
+            CUSTOM_HEADER_COLOR_LAYER_OPACITY       = 'parallax_layers_single_color_opacity',
+            GRADIENT_STYLE                          = 'parallax_layers_gradient_style',
+            GRADIENT_OVERALL_OPACITY                = 'parallax_layers_gradient_overall_opacity',
+            GRADIENT_LINEAR_DIRECTION               = 'parallax_layers_gradient_linear_direction',
+            GRADIENT_START_COLOR                    = 'parallax_layers_gradient_start_color',
+            GRADIENT_START_COLOR_OPACITY            = 'parallax_layers_gradient_start_color_opacity',
+            GRADIENT_END_COLOR                      = 'parallax_layers_gradient_end_color',
+            GRADIENT_END_COLOR_OPACITY              = 'parallax_layers_gradient_end_color_opacity',
+            
+            BLOG_LAYOUT_STYLE                       = 'blog_layout_style',
+            BLOG_SHOW_DATE                          = 'blog_layout_show_date_posted',
+            BLOG_SHOW_AUTHOR                        = 'blog_layout_show_author',
+            BLOG_SHOW_CONTENT                       = 'blog_layout_show_content_excerpt',
+            BLOG_SHOW_CATEGORY                      = 'blog_layout_show_categories',
+            BLOG_SHOW_COMMENT_COUNT                 = 'blog_layout_show_comment_count',
+            BLOG_EXCERPT_TRIM_NUM                   = 'blog_layout_excerpt_trim_words',
+            BLOG_READ_MORE_TEXT                     = 'blog_layout_read_more_text',
+            
+            BLOG_LAYOUT_NUM_COLS                    = 'blog_layout_num_columns',
+            BLOG_CARD_APPEARANCE                    = 'standard_blog_appearance_style',
+            BLOG_CARD_BORDER_RADIUS                 = 'blog_layout_border_radius',
+            BLOG_CARD_MOSAIC_GAP                    = 'mosaic_blog_gap_spacing',
+            BLOG_CARD_FONT_SIZE_DSK                 = 'blog_title_font_size_dsk',
+            BLOG_CARD_FONT_SIZE_MBL                 = 'blog_title_font_size_mbl',
+            BLOG_META_FONT_SIZE                     = 'blog_meta_font_size',
+            
+            NAVBAR_STYLE                            = 'navbar_style',
+            NAVBAR_HIDE_TAGLINE                     = 'navbar_hide_tagline',
+            NAVBAR_SITE_TITLE_FONT_FAMILY           = 'navbar_site_title_font',
+            NAVBAR_SITE_TITLE_FONT_SIZE             = 'navbar_site_title_font_size',
+            NAVBAR_SITE_TITLE_LETTER_GAP            = 'navbar_site_title_spacing',
+            NAVBAR_SITE_TITLE_ALL_CAPS              = 'navbar_site_title_uppercase',
+            NAVBAR_TAGLINE_FONT_FAMILY              = 'navbar_site_tagline_font',
+            NAVBAR_TAGLINE_FONT_SIZE                = 'navbar_site_tagline_font_size',
+            NAVBAR_LINKS_FONT_FAMILY                = 'navbar_links_font',
+            NAVBAR_LINKS_FONT_SIZE                  = 'navbar_links_font_size',
+            NAVBAR_LINKS_GAP                        = 'navbar_links_gap_spacing',
+            NAVBAR_HAS_SHADOW                       = 'style_a_box_shadow';
+         
 }
 
 interface DESIGNR_DEFAULTS {
     
-    const CUSTOM_HEADER_STYLE_TOGGLE = 'parallax_vertical';
+    const   CUSTOM_HEADER_STYLE_TOGGLE              = 'parallax_vertical',
+            CUSTOM_HEADER_HEIGHT_CALC               = 'percent',
+            CUSTOM_HEADER_HEIGHT_PCT                = 50,
+            CUSTOM_HEADER_HEIGHT_PCT_MBL            = 25,
+            CUSTOM_HEADER_HEIGHT_PX                 = 500,
+            CUSTOM_HEADER_HEIGHT_PX_MBL             = 250,
+            CUSTOM_HEADER_PLX_INTENSITY             = 'default',
+            CUSTOM_HEADER_TEXTURE_IMG               = '',
+            CUSTOM_HEADER_TEXTURE_OPAC              = .75,
+            
+            CUSTOM_HEADER_SHOW_LOGO                 = true,
+            CUSTOM_HEADER_LOGO_HEIGHT               = 150,
+            CUSTOM_HEADER_LOGO_HEIGHT_MBL           = 80,
     
+            CUSTOM_HEADER_SHOW_TITLE                = true,
+            CUSTOM_HEADER_TITLE_CONTENT             = 'site_title',
+            CUSTOM_HEADER_TITLE_FONT_FAMILY         = 'secondary',
+            CUSTOM_HEADER_TITLE_FONT_SIZE           = 48,
+            CUSTOM_HEADER_TITLE_LETTER_GAP          = '.250',
+            CUSTOM_HEADER_TITLE_ALL_CAPS            = true,
+            CUSTOM_HEADER_TITLE_COLOR               = '#ffffff',
+            
+            CUSTOM_HEADER_SHOW_MENU                 = true,
+            CUSTOM_HEADER_MENU_FONT_FAMILY          = 'primary',
+            CUSTOM_HEADER_MENU_FONT_SIZE            = 10,
+            CUSTOM_HEADER_MENU_LETTER_GAP           = '.500',
+            CUSTOM_HEADER_MENU_COLOR                = '#ffffff',
+            CUSTOM_HEADER_MENU_LINKS_GAP            = 16,
+ 
+            CUSTOM_HEADER_COLOR_LAYER_STYLE         = 'no',
+            CUSTOM_HEADER_COLOR_LAYER_COLOR         = '#348aa7',
+            CUSTOM_HEADER_COLOR_LAYER_OPACITY       = .75,
+            GRADIENT_STYLE                          = 'linear',
+            GRADIENT_OVERALL_OPACITY                = .75,
+            GRADIENT_LINEAR_DIRECTION               = 'up',
+            GRADIENT_START_COLOR                    = '#348aa7',
+            GRADIENT_START_COLOR_OPACITY            = .75,
+            GRADIENT_END_COLOR                      = '#348aa7',
+            GRADIENT_END_COLOR_OPACITY              = .25,
+            
+            BLOG_LAYOUT_STYLE                       = 'blog_standard',
+            BLOG_SHOW_DATE                          = true,
+            BLOG_SHOW_AUTHOR                        = true,
+            BLOG_SHOW_CONTENT                       = true,
+            BLOG_SHOW_CATEGORY                      = true,
+            BLOG_SHOW_COMMENT_COUNT                 = true,
+            BLOG_EXCERPT_TRIM_NUM                   = 30,
+            BLOG_READ_MORE_TEXT                     = 'Read more',
+            
+            BLOG_LAYOUT_NUM_COLS                    = '3col',
+            BLOG_CARD_APPEARANCE                    = 'flat',
+            BLOG_CARD_BORDER_RADIUS                 = 0,
+            BLOG_CARD_MOSAIC_GAP                    = 0,
+            BLOG_CARD_FONT_SIZE_DSK                 = 32,
+            BLOG_CARD_FONT_SIZE_MBL                 = 20,
+            BLOG_META_FONT_SIZE                     = 12,
+            
+            NAVBAR_STYLE                            = 'slim_left',
+            NAVBAR_HIDE_TAGLINE                     = true,
+            NAVBAR_SITE_TITLE_FONT_FAMILY           = 'secondary',
+            NAVBAR_SITE_TITLE_FONT_SIZE             = 32,
+            NAVBAR_SITE_TITLE_LETTER_GAP            = '.250',
+            NAVBAR_SITE_TITLE_ALL_CAPS              = true,
+            NAVBAR_TAGLINE_FONT_FAMILY              = 'secondary',
+            NAVBAR_TAGLINE_FONT_SIZE                = 12,
+            NAVBAR_LINKS_FONT_FAMILY                = 'primary',
+            NAVBAR_LINKS_FONT_SIZE                  = 10,
+            NAVBAR_LINKS_GAP                        = 30,
+            NAVBAR_HAS_SHADOW                       = true;
+            
 }
+
+// get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_STYLE_TOGGLE, DESIGNR_DEFAULTS::CUSTOM_HEADER_STYLE_TOGGLE )

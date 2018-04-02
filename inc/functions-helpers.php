@@ -28,14 +28,14 @@ function designr_get_all_theme_colors() {
     $theme_colors['social_bg']              = get_theme_mod( 'navbar_social_drawer_background', '#141414' );
     $theme_colors['social_fg']              = get_theme_mod( 'navbar_social_link_foreground', '#FFFFFF' );
     $theme_colors['social_fg_hov']          = get_theme_mod( 'navbar_social_link_foreground_hover', '#0000FF' );
-    $theme_colors['custom_header_title']    = get_theme_mod( 'custom_header_title_color', '#FFFFFF' );
-    $theme_colors['custom_header_menu']     = get_theme_mod( 'custom_header_menu_color', '#FFFFFF' );
+    $theme_colors['custom_header_title']    = get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_TITLE_COLOR, DESIGNR_DEFAULTS::CUSTOM_HEADER_TITLE_COLOR );
+    $theme_colors['custom_header_menu']     = get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_MENU_COLOR, DESIGNR_DEFAULTS::CUSTOM_HEADER_MENU_COLOR );
     
     $theme_colors['cart_tab']               = get_theme_mod( 'cart_drawer_tab_color', '#000000' );
     
-    $theme_colors['plx_overlay_single']     = get_theme_mod( 'parallax_layers_single_color', '#348aa7' );
-    $theme_colors['plx_overlay_grad_start'] = get_theme_mod( 'parallax_layers_gradient_start_color', '#348aa7' );
-    $theme_colors['plx_overlay_grad_end']   = get_theme_mod( 'parallax_layers_gradient_end_color', '#348aa7' );
+    $theme_colors['plx_overlay_single']     = get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_COLOR_LAYER_COLOR, DESIGNR_DEFAULTS::CUSTOM_HEADER_COLOR_LAYER_COLOR );
+    $theme_colors['plx_overlay_grad_start'] = get_theme_mod( DESIGNR_OPTIONS::GRADIENT_START_COLOR, DESIGNR_DEFAULTS::GRADIENT_START_COLOR );
+    $theme_colors['plx_overlay_grad_end']   = get_theme_mod( DESIGNR_OPTIONS::GRADIENT_END_COLOR, DESIGNR_DEFAULTS::GRADIENT_END_COLOR );
    
     $theme_colors['footer_widget_title']    = get_theme_mod( 'prefooter_widget_title_color', '#FFFFFF' );
  
@@ -72,7 +72,7 @@ function designr_get_icons( $subset = null ) {
 function designr_add_excerpt_more_link( $more ) {
     return sprintf( '… <a class="read-more" href="%1$s">%2$s</a>',
         get_permalink( get_the_ID() ),
-        get_theme_mod( 'blog_layout_read_more_text', __( 'Read more', 'designr' ) )
+        __( get_theme_mod( DESIGNR_OPTIONS::BLOG_READ_MORE_TEXT, DESIGNR_DEFAULTS::BLOG_READ_MORE_TEXT ), 'designr' )
     );
 }
 add_filter( 'excerpt_more', 'designr_add_excerpt_more_link' );
@@ -85,7 +85,7 @@ add_filter( 'excerpt_more', 'designr_add_excerpt_more_link' );
  * @return int modified excerpt length.
  */
 function designr_custom_auto_excerpt_length( $length ) {
-    return get_theme_mod( 'blog_layout_excerpt_trim_words', 30 );
+    return get_theme_mod( DESIGNR_OPTIONS::BLOG_EXCERPT_TRIM_NUM, DESIGNR_DEFAULTS::BLOG_EXCERPT_TRIM_NUM );
 }
 add_filter( 'excerpt_length', 'designr_custom_auto_excerpt_length', 999 );
 
@@ -146,7 +146,7 @@ function designr_hex2rgba( $color, $opacity = false ) {
  */
 function designr_get_parallax_preset( $style = 'layers' ) {
 
-    switch ( get_theme_mod( 'parallax_layers_parallax_style', 'default' ) ) :
+    switch ( get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_PLX_INTENSITY, DESIGNR_DEFAULTS::CUSTOM_HEADER_PLX_INTENSITY ) ) :
         
         case 'subtle' :
             $parallax_preset = array(
