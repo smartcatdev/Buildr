@@ -2,11 +2,11 @@
 
     <div id="slim-header-wrap">
 
-        <div id="slim-header" class="<?php echo get_theme_mod( 'style_a_boxed_navbar', false ) ? 'container' : ''; ?>">
+        <div id="slim-header" class="<?php echo get_theme_mod( DESIGNR_OPTIONS::NAVBAR_BOXED_CONTENT, DESIGNR_DEFAULTS::NAVBAR_BOXED_CONTENT ) ? 'container' : ''; ?>">
 
             <?php if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) : ?>
 
-                <div id="custom-logo-wrap" class="has-logo <?php echo ! get_theme_mod( 'style_a_always_show_logo', false ) ? 'sometimes-hidden' : ''; ?>">
+                <div id="custom-logo-wrap" class="has-logo <?php echo ! get_theme_mod( DESIGNR_OPTIONS::NAVBAR_ALWAYS_SHOW_LOGO, DESIGNR_DEFAULTS::NAVBAR_ALWAYS_SHOW_LOGO ) ? 'sometimes-hidden' : ''; ?>">
             
                     <?php the_custom_logo(); ?>
 
@@ -14,7 +14,7 @@
                     
             <?php else : ?> 
             
-                <div id="custom-logo-wrap" class="<?php echo ! get_theme_mod( 'style_a_always_show_logo', false ) ? 'sometimes-hidden' : ''; ?>">
+                <div id="custom-logo-wrap" class="<?php echo ! get_theme_mod( DESIGNR_OPTIONS::NAVBAR_ALWAYS_SHOW_LOGO, DESIGNR_DEFAULTS::NAVBAR_ALWAYS_SHOW_LOGO ) ? 'sometimes-hidden' : ''; ?>">
             
                     <div class="site-branding">
                         <h1 class="site-title">
@@ -63,20 +63,42 @@
 
             </div>
             
-            <?php if ( get_theme_mod( 'navbar_show_social', false ) ) : ?>
+            <?php if ( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_SHOW_SOCIAL, DESIGNR_DEFAULTS::NAVBAR_SHOW_SOCIAL ) ) : ?>
             
                 <div class="left-half">
 
                     <div class="navbar-social">
-                        <?php for ( $ctr = 1; $ctr < 6; $ctr++ ) : ?>
 
-                            <?php if ( get_theme_mod( 'social_icon_' . $ctr . '_url', '' ) != '' ) : ?>
-                                <a class="navbar-icon" href="<?php esc_attr_e( get_theme_mod( 'social_icon_' . $ctr . '_url', '' ) ); ?>">
-                                    <span class="fab <?php esc_attr_e( get_theme_mod( 'social_icon_' . $ctr . '_icon', '' ) ); ?>"></span>
-                                </a>
-                            <?php endif; ?>
+                        <?php if ( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_1, DESIGNR_DEFAULTS::SOCIAL_ICON_1 ) != '' ) : ?>
+                            <a class="navbar-icon" href="<?php esc_url( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_URL_1, DESIGNR_DEFAULTS::SOCIAL_URL_1 ) ); ?>">
+                                <span class="fab <?php echo esc_attr( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_1, DESIGNR_DEFAULTS::SOCIAL_ICON_1 ) ); ?>"></span>
+                            </a>
+                        <?php endif; ?>
+                        
+                        <?php if ( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_2, DESIGNR_DEFAULTS::SOCIAL_ICON_2 ) != '' ) : ?>
+                            <a class="navbar-icon" href="<?php esc_url( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_URL_2, DESIGNR_DEFAULTS::SOCIAL_URL_2 ) ); ?>">
+                                <span class="fab <?php echo esc_attr( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_2, DESIGNR_DEFAULTS::SOCIAL_ICON_2 ) ); ?>"></span>
+                            </a>
+                        <?php endif; ?>
+                        
+                        <?php if ( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_3, DESIGNR_DEFAULTS::SOCIAL_ICON_3 ) != '' ) : ?>
+                            <a class="navbar-icon" href="<?php esc_url( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_URL_3, DESIGNR_DEFAULTS::SOCIAL_URL_3 ) ); ?>">
+                                <span class="fab <?php echo esc_attr( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_3, DESIGNR_DEFAULTS::SOCIAL_ICON_3 ) ); ?>"></span>
+                            </a>
+                        <?php endif; ?>
+                        
+                        <?php if ( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_4, DESIGNR_DEFAULTS::SOCIAL_ICON_4 ) != '' ) : ?>
+                            <a class="navbar-icon" href="<?php esc_url( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_URL_4, DESIGNR_DEFAULTS::SOCIAL_URL_4 ) ); ?>">
+                                <span class="fab <?php echo esc_attr( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_4, DESIGNR_DEFAULTS::SOCIAL_ICON_4 ) ); ?>"></span>
+                            </a>
+                        <?php endif; ?>
+                        
+                        <?php if ( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_5, DESIGNR_DEFAULTS::SOCIAL_ICON_5 ) != '' ) : ?>
+                            <a class="navbar-icon" href="<?php esc_url( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_URL_5, DESIGNR_DEFAULTS::SOCIAL_URL_5 ) ); ?>">
+                                <span class="fab <?php echo esc_attr( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_5, DESIGNR_DEFAULTS::SOCIAL_ICON_5 ) ); ?>"></span>
+                            </a>
+                        <?php endif; ?>
 
-                        <?php endfor; ?>
                     </div>
 
                 </div>

@@ -1,38 +1,38 @@
 <footer id="colophon" class="site-footer footer-style-slim">
     
-    <div id="pre-footer-wrap">
+    <?php if ( is_active_sidebar( 'sidebar-footer' ) ) : ?>
     
-        <div id="pre-footer" class="container">
-    
-            <div class="row">
+        <div id="pre-footer-wrap">
 
-                <?php if ( is_active_sidebar( 'sidebar-footer' ) ) : ?>
+            <div id="pre-footer" class="container">
+
+                <div class="row">
 
                     <?php dynamic_sidebar( 'footer' ); ?>
 
-                <?php endif; ?>
+                </div>
+
+                <div class="clear"></div>
 
             </div>
 
-            <div class="clear"></div>
-        
         </div>
-        
-    </div>
+    
+    <?php endif; ?>
     
     <div id="slim-footer-wrap">
 
-        <div id="slim-footer" class="<?php echo get_theme_mod( 'centered_footer_branding', false ) ? 'centered' : ''; ?> <?php echo get_theme_mod( 'boxed_footer', false ) && ! get_theme_mod( 'centered_footer_branding', false ) ? 'container' : ''; ?>">
+        <div id="slim-footer" class="<?php echo get_theme_mod( DESIGNR_OPTIONS::FOOTER_CENTER_BRANDING, DESIGNR_DEFAULTS::FOOTER_CENTER_BRANDING ) ? 'centered' : ''; ?> <?php echo get_theme_mod( DESIGNR_OPTIONS::FOOTER_BOXED_CONTENT, DESIGNR_DEFAULTS::FOOTER_BOXED_CONTENT ) && ! get_theme_mod( DESIGNR_OPTIONS::FOOTER_CENTER_BRANDING, DESIGNR_DEFAULTS::FOOTER_CENTER_BRANDING ) ? 'container' : ''; ?>">
 
             <div id="footer-branding-wrap">
 
-                <?php if ( get_theme_mod( 'footer_show_branding', true ) ) : ?>
+                <?php if ( get_theme_mod( DESIGNR_OPTIONS::FOOTER_SHOW_BRANDING, DESIGNR_DEFAULTS::FOOTER_SHOW_BRANDING ) ) : ?>
                 
-                    <?php if ( get_theme_mod( 'footer_branding', 'site_title' ) == 'alt_logo' ) : ?>
+                    <?php if ( get_theme_mod( DESIGNR_OPTIONS::FOOTER_BRANDING_TYPE, DESIGNR_DEFAULTS::FOOTER_BRANDING_TYPE ) == 'alt_logo' ) : ?>
 
-                        <?php if ( get_theme_mod( 'alternate_logo', '' ) && get_theme_mod( 'alternate_logo', '' ) != '' ) : ?>
+                        <?php if ( get_theme_mod( DESIGNR_OPTIONS::FOOTER_ALTERNATE_LOGO, DESIGNR_DEFAULTS::FOOTER_ALTERNATE_LOGO ) && get_theme_mod( DESIGNR_OPTIONS::FOOTER_ALTERNATE_LOGO, DESIGNR_DEFAULTS::FOOTER_ALTERNATE_LOGO ) != '' ) : ?>
 
-                            <img class="custom-logo alternate" src="<?php echo esc_url( get_theme_mod( 'alternate_logo', '' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo('name') ); ?>">
+                            <img class="custom-logo alternate" src="<?php echo esc_url( get_theme_mod( DESIGNR_OPTIONS::FOOTER_ALTERNATE_LOGO, DESIGNR_DEFAULTS::FOOTER_ALTERNATE_LOGO ) ); ?>" alt="<?php echo esc_attr( get_bloginfo('name') ); ?>">
 
                         <?php endif; ?>
 
@@ -46,10 +46,10 @@
                         
                 <?php endif; ?>
 
-                <?php if ( get_theme_mod( 'footer_show_copyright', true ) ) : ?>
+                <?php if ( get_theme_mod( DESIGNR_OPTIONS::FOOTER_SHOW_COPYRIGHT, DESIGNR_DEFAULTS::FOOTER_SHOW_COPYRIGHT ) ) : ?>
 
                     <div class="footer-copyright">
-                        <?php esc_html_e( get_theme_mod( 'footer_copyright_tagline', __( 'Copyright © 2018 Your Company', 'designr' ) ) ); ?>
+                        <?php esc_html_e( get_theme_mod( DESIGNR_OPTIONS::FOOTER_COPYRIGHT_TAGLINE, DESIGNR_DEFAULTS::FOOTER_COPYRIGHT_TAGLINE ), 'designr' ); ?>
                     </div>
 
                 <?php endif; ?>
@@ -60,18 +60,40 @@
             
             <div id="footer-social">
                             
-                <?php if ( get_theme_mod( 'footer_show_social', false ) ) : ?>
+                <?php if ( get_theme_mod( DESIGNR_OPTIONS::FOOTER_SHOW_SOCIAL, DESIGNR_DEFAULTS::FOOTER_SHOW_SOCIAL ) ) : ?>
 
                     <div class="footer-social">
-                        <?php for ( $ctr = 1; $ctr < 6; $ctr++ ) : ?>
-
-                            <?php if ( get_theme_mod( 'social_icon_' . $ctr . '_url', '' ) != '' ) : ?>
-                                <a class="navbar-icon" href="<?php esc_attr_e( get_theme_mod( 'social_icon_' . $ctr . '_url', '' ) ); ?>">
-                                    <span class="fab <?php esc_attr_e( get_theme_mod( 'social_icon_' . $ctr . '_icon', '' ) ); ?>"></span>
-                                </a>
-                            <?php endif; ?>
-
-                        <?php endfor; ?>
+                        
+                        <?php if ( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_1, DESIGNR_DEFAULTS::SOCIAL_ICON_1 ) != '' ) : ?>
+                            <a class="navbar-icon" href="<?php esc_url( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_URL_1, DESIGNR_DEFAULTS::SOCIAL_URL_1 ) ); ?>">
+                                <span class="fab <?php echo esc_attr( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_1, DESIGNR_DEFAULTS::SOCIAL_ICON_1 ) ); ?>"></span>
+                            </a>
+                        <?php endif; ?>
+                        
+                        <?php if ( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_2, DESIGNR_DEFAULTS::SOCIAL_ICON_2 ) != '' ) : ?>
+                            <a class="navbar-icon" href="<?php esc_url( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_URL_2, DESIGNR_DEFAULTS::SOCIAL_URL_2 ) ); ?>">
+                                <span class="fab <?php echo esc_attr( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_2, DESIGNR_DEFAULTS::SOCIAL_ICON_2 ) ); ?>"></span>
+                            </a>
+                        <?php endif; ?>
+                        
+                        <?php if ( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_3, DESIGNR_DEFAULTS::SOCIAL_ICON_3 ) != '' ) : ?>
+                            <a class="navbar-icon" href="<?php esc_url( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_URL_3, DESIGNR_DEFAULTS::SOCIAL_URL_3 ) ); ?>">
+                                <span class="fab <?php echo esc_attr( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_3, DESIGNR_DEFAULTS::SOCIAL_ICON_3 ) ); ?>"></span>
+                            </a>
+                        <?php endif; ?>
+                        
+                        <?php if ( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_4, DESIGNR_DEFAULTS::SOCIAL_ICON_4 ) != '' ) : ?>
+                            <a class="navbar-icon" href="<?php esc_url( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_URL_4, DESIGNR_DEFAULTS::SOCIAL_URL_4 ) ); ?>">
+                                <span class="fab <?php echo esc_attr( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_4, DESIGNR_DEFAULTS::SOCIAL_ICON_4 ) ); ?>"></span>
+                            </a>
+                        <?php endif; ?>
+                        
+                        <?php if ( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_5, DESIGNR_DEFAULTS::SOCIAL_ICON_5 ) != '' ) : ?>
+                            <a class="navbar-icon" href="<?php esc_url( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_URL_5, DESIGNR_DEFAULTS::SOCIAL_URL_5 ) ); ?>">
+                                <span class="fab <?php echo esc_attr( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_5, DESIGNR_DEFAULTS::SOCIAL_ICON_5 ) ); ?>"></span>
+                            </a>
+                        <?php endif; ?>
+                        
                     </div>
 
                 <?php endif; ?>

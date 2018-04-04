@@ -11,8 +11,7 @@
  *
  * @package Designr
  */
-get_header();
-?>
+get_header(); ?>
 
 <div id="primary" class="content-area">
     
@@ -92,6 +91,4 @@ get_header();
     
 </div><!-- #primary -->
 
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer();

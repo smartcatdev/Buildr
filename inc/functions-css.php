@@ -18,7 +18,7 @@ function designr_wp_head_styles() { ?>
         div#designr-custom-header.parallax_layers .custom-header-title,
         h2.widget-title,
         ul.product_list_widget .product-wrap .product-title .price-wrap {
-            font-family: <?php esc_attr_e( get_theme_mod( 'secondary_font', 'Abel, sans-serif' ) ); ?>;
+            font-family: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::FONT_SECONDARY, DESIGNR_DEFAULTS::FONT_SECONDARY ) ); ?>;
         }
 
         h1,h2,h3,h4,h5,h6,
@@ -31,23 +31,23 @@ function designr_wp_head_styles() { ?>
         .woocommerce-tabs.wc-tabs-wrapper ul.tabs li,
         .woocommerce table.variations .label,
         table.shop_attributes th {
-            font-family: <?php esc_attr_e( get_theme_mod( 'primary_font', 'Montserrat, sans-serif' ) ); ?>;
+            font-family: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::FONT_PRIMARY, DESIGNR_DEFAULTS::FONT_PRIMARY ) ); ?>;
         }
 
         h1,h2,h3,h4,h5,h6 {
-            letter-spacing: <?php esc_attr_e( get_theme_mod( 'headings_letter_spacing', '0.0' ) ); ?>em;
-            line-height: <?php esc_attr_e( get_theme_mod( 'headings_line_height', '1' ) ); ?>em;
+            letter-spacing: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::FONT_HEADINGS_LETTER_GAP, DESIGNR_DEFAULTS::FONT_HEADINGS_LETTER_GAP ) ); ?>em;
+            line-height: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::FONT_HEADINGS_LINE_HEIGHT, DESIGNR_DEFAULTS::FONT_HEADINGS_LINE_HEIGHT ) ); ?>em;
         }
 
         body {
-            font-size: <?php esc_attr_e( get_theme_mod( 'body_font_size', 16 ) ) ?>px;
+            font-size: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::FONT_BODY_SIZE, DESIGNR_DEFAULTS::FONT_BODY_SIZE ) ) ?>px;
         }
         
         <?php if ( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_LINKS_FONT_FAMILY, DESIGNR_DEFAULTS::NAVBAR_LINKS_FONT_FAMILY ) == 'secondary' ) : ?>
 
             ul#mobile-menu li a,
             ul.slim-header-menu > li a {
-                font-family: <?php esc_attr_e( get_theme_mod( 'secondary_font', 'Abel, sans-serif' ) ); ?>;
+                font-family: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::FONT_SECONDARY, DESIGNR_DEFAULTS::FONT_SECONDARY ) ); ?>;
             }
 
         <?php endif; ?>
@@ -55,7 +55,7 @@ function designr_wp_head_styles() { ?>
         <?php if ( get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_MENU_FONT_FAMILY, DESIGNR_DEFAULTS::CUSTOM_HEADER_MENU_FONT_FAMILY ) == 'secondary' ) : ?>
 
             ul#custom-header-menu > li a {
-                font-family: <?php esc_attr_e( get_theme_mod( 'secondary_font', 'Abel, sans-serif' ) ); ?>;
+                font-family: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::FONT_SECONDARY, DESIGNR_DEFAULTS::FONT_SECONDARY ) ); ?>;
             }
 
         <?php endif; ?>
@@ -64,15 +64,15 @@ function designr_wp_head_styles() { ?>
 
             div#custom-header-content .custom-header-title,
             div#designr-custom-header.parallax_layers .custom-header-title {
-                font-family: <?php esc_attr_e( get_theme_mod( 'primary_font', 'Montserrat, sans-serif' ) ); ?>;
+                font-family: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::FONT_PRIMARY, DESIGNR_DEFAULTS::FONT_PRIMARY ) ); ?>;
             }
 
         <?php endif; ?>
         
-        <?php if ( get_theme_mod( 'prefooter_widget_title_font_family', 'secondary' ) == 'primary' ) : ?>
+        <?php if ( get_theme_mod( DESIGNR_OPTIONS::WIDGETS_TITLE_FONT_FAMILY, DESIGNR_DEFAULTS::WIDGETS_TITLE_FONT_FAMILY ) == 'primary' ) : ?>
 
             h2.widget-title {
-                font-family: <?php esc_attr_e( get_theme_mod( 'primary_font', 'Montserrat, sans-serif' ) ); ?>;
+                font-family: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::FONT_PRIMARY, DESIGNR_DEFAULTS::FONT_PRIMARY ) ); ?>;
             }
 
         <?php endif; ?>
@@ -85,10 +85,10 @@ function designr_wp_head_styles() { ?>
            text-transform: <?php echo get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_TITLE_ALL_CAPS, DESIGNR_DEFAULTS::CUSTOM_HEADER_TITLE_ALL_CAPS ) ? 'uppercase' : 'none'; ?>;
         }
         footer div#footer-branding-wrap .site-title {
-           text-transform: <?php echo get_theme_mod( 'footer_site_title_uppercase', true ) ? 'uppercase' : 'none'; ?>;
+           text-transform: <?php echo get_theme_mod( DESIGNR_OPTIONS::FOOTER_SITE_TITLE_ALL_CAPS, DESIGNR_DEFAULTS::FOOTER_SITE_TITLE_ALL_CAPS ) ? 'uppercase' : 'none'; ?>;
         }
         h2.widget-title {
-            text-transform: <?php echo get_theme_mod( 'prefooter_widget_title_uppercase', true ) ? 'uppercase' : 'none'; ?>;
+            text-transform: <?php echo get_theme_mod( DESIGNR_OPTIONS::WIDGETS_TITLE_ALL_CAPS, DESIGNR_DEFAULTS::WIDGETS_TITLE_ALL_CAPS ) ? 'uppercase' : 'none'; ?>;
         }
         
         /* ---------------------------------------------------------------------
@@ -142,7 +142,7 @@ function designr_wp_head_styles() { ?>
 
         /* ----- Navbar Colors & Image -------------------------------------- */
 
-        <?php if ( get_theme_mod( 'navbar_background_style', 'color' ) == 'color' ) : ?>
+        <?php if ( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_BG_STYLE, DESIGNR_DEFAULTS::NAVBAR_BG_STYLE ) == 'color' ) : ?>
 
             div#slim-header-wrap,
             div#banner-header-wrap {
@@ -153,7 +153,7 @@ function designr_wp_head_styles() { ?>
 
             div#slim-header-wrap,
             div#banner-header-wrap {
-                background-image: url(<?php echo esc_url( get_theme_mod( 'navbar_bg_image', '' ) ); ?>);
+                background-image: url(<?php echo esc_url( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_BG_IMAGE, DESIGNR_DEFAULTS::NAVBAR_BG_IMAGE ) ); ?>);
             }
 
             div#slim-header ul#mobile-menu {
@@ -179,7 +179,7 @@ function designr_wp_head_styles() { ?>
             fill: <?php esc_attr_e( $theme_colors['navbar_fg'] ); ?>;
         }
 
-        <?php if ( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_STYLE, DESIGNR_DEFAULTS::NAVBAR_STYLE ) == 'banner' && ! get_theme_mod( 'navbar_banner_transparent_menu_toggle', true ) ) : ?>
+        <?php if ( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_STYLE, DESIGNR_DEFAULTS::NAVBAR_STYLE ) == 'banner' && ! get_theme_mod( DESIGNR_OPTIONS::NAVBAR_TRANSPARENT_MENU_BG, DESIGNR_DEFAULTS::NAVBAR_TRANSPARENT_MENU_BG ) ) : ?>
         
             header#masthead.header-style-banner #banner-header-wrap #banner-header-menu-wrap,
             ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu {
@@ -220,7 +220,7 @@ function designr_wp_head_styles() { ?>
         /* ----- Footer Colors ---------------------------------------------- */
 
         div#pre-footer-wrap {
-            border-top: <?php esc_attr_e( get_theme_mod( 'prefooter_top_border_thickness', 10 ) ) ?>px solid <?php esc_attr_e($theme_colors['primary']); ?>;
+            border-top: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::FOOTER_BORDER_TOP_THICKNESS, DESIGNR_DEFAULTS::FOOTER_BORDER_TOP_THICKNESS ) ) ?>px solid <?php esc_attr_e($theme_colors['primary']); ?>;
             background-color: <?php esc_attr_e( $theme_colors['prefooter_bg'] ); ?>;
             color: <?php esc_attr_e( $theme_colors['prefooter_fg'] ); ?>;
         }
@@ -256,12 +256,10 @@ function designr_wp_head_styles() { ?>
         <?php if ( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_STYLE, DESIGNR_DEFAULTS::NAVBAR_STYLE ) == 'slim_split' || get_theme_mod( DESIGNR_OPTIONS::NAVBAR_STYLE, DESIGNR_DEFAULTS::NAVBAR_STYLE ) == 'slim_left' ) : ?>
             @media (min-width: 992px) {
                 div#content {
-                    padding-top: <?php // esc_attr_e( get_theme_mod( 'style_a_collapse_height', 50 ) + 2 ) ?>px;
-                    padding-top: <?php esc_attr_e( get_theme_mod( 'style_a_collapse_height', 50 ) - 1 ) ?>px;
+                    padding-top: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_INITIAL_HEIGHT, DESIGNR_DEFAULTS::NAVBAR_INITIAL_HEIGHT ) - 1 ) ?>px;
                 }
                 div#content.sticky-header {
-                    padding-top: <?php // esc_attr_e( get_theme_mod( 'style_a_expand_height', 75 ) + 2 ) ?>px;
-                    padding-top: <?php esc_attr_e( get_theme_mod( 'style_a_expand_height', 75 ) - 1 ) ?>px;
+                    padding-top: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_STICKY_HEIGHT, DESIGNR_DEFAULTS::NAVBAR_STICKY_HEIGHT ) - 1 ) ?>px;
                 }
             }
         <?php endif; ?>
@@ -275,10 +273,10 @@ function designr_wp_head_styles() { ?>
 
         /* ----- Slim Navbars: Logo Settings -------------------------------- */
 
-        <?php if ( get_theme_mod( 'style_a_always_show_logo', false ) ) : ?>
+        <?php if ( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_ALWAYS_SHOW_LOGO, DESIGNR_DEFAULTS::NAVBAR_ALWAYS_SHOW_LOGO ) ) : ?>
             header img.custom-logo {
-                height: <?php esc_attr_e( get_theme_mod( 'style_a_collapse_height', 50 ) ) ?>px;
-                margin: 0 <?php esc_attr_e( get_theme_mod( 'style_a_logo_space', 15 ) ) ?>px;
+                height: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_INITIAL_HEIGHT, DESIGNR_DEFAULTS::NAVBAR_INITIAL_HEIGHT ) ) ?>px;
+                margin: 0 <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_LOGO_HORIZONTAL_PADDING, DESIGNR_DEFAULTS::NAVBAR_LOGO_HORIZONTAL_PADDING ) ) ?>px;
                 opacity: 1;
             }
         <?php else : ?>
@@ -289,22 +287,22 @@ function designr_wp_head_styles() { ?>
         <?php endif; ?>
 
         .is-sticky img.custom-logo {
-            height: <?php esc_attr_e( get_theme_mod( 'style_a_expand_height', 75 ) ) ?>px;
-            margin: 0 <?php esc_attr_e( get_theme_mod( 'style_a_logo_space', 15 ) ) ?>px;
+            height: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_STICKY_HEIGHT, DESIGNR_DEFAULTS::NAVBAR_STICKY_HEIGHT ) ) ?>px;
+            margin: 0 <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_LOGO_HORIZONTAL_PADDING, DESIGNR_DEFAULTS::NAVBAR_LOGO_HORIZONTAL_PADDING ) ) ?>px;
         }
 
         /* ----- Slim Navbars: Collapse ------------------------------------- */
 
         #slim-header-wrap ul.slim-header-menu > li > a,
         #slim-header-wrap ul.slim-header-menu > li {
-            line-height: <?php esc_attr_e( get_theme_mod( 'style_a_collapse_height', 50 ) ) ?>px;
+            line-height: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_INITIAL_HEIGHT, DESIGNR_DEFAULTS::NAVBAR_INITIAL_HEIGHT ) ) ?>px;
         }
 
         /* ----- Slim Navbars: Expand --------------------------------------- */
 
         .is-sticky #slim-header-wrap ul.slim-header-menu > li > a,
         .is-sticky #slim-header-wrap ul.slim-header-menu > li {
-            line-height: <?php esc_attr_e( get_theme_mod( 'style_a_expand_height', 75 ) ) ?>px;
+            line-height: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_STICKY_HEIGHT, DESIGNR_DEFAULTS::NAVBAR_STICKY_HEIGHT ) ) ?>px;
         }
 
         /* ----- Slim Navbars: Site Title ----------------------------------- */
@@ -318,7 +316,7 @@ function designr_wp_head_styles() { ?>
 
             .site-branding .site-title,
             div#footer-branding-wrap .site-title {
-                font-family: <?php esc_attr_e( get_theme_mod( 'primary_font', 'Montserrat, sans-serif' ) ); ?>;
+                font-family: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::FONT_PRIMARY, DESIGNR_DEFAULTS::FONT_PRIMARY ) ); ?>;
             }
 
         <?php endif; ?>
@@ -332,7 +330,7 @@ function designr_wp_head_styles() { ?>
         <?php if ( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_TAGLINE_FONT_FAMILY, DESIGNR_DEFAULTS::NAVBAR_TAGLINE_FONT_FAMILY ) == 'primary' ) : ?>
 
             .site-branding .site-tagline {
-                font-family: <?php esc_attr_e( get_theme_mod( 'primary_font', 'Montserrat, sans-serif' ) ); ?>;
+                font-family: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::FONT_PRIMARY, DESIGNR_DEFAULTS::FONT_PRIMARY ) ); ?>;
             }
 
         <?php endif; ?>
@@ -358,7 +356,7 @@ function designr_wp_head_styles() { ?>
 
         /* ----- Slim Navbars: Left Aligned Logo & Right Aligned Menu ------- */
 
-        <?php if ( get_theme_mod( 'style_a_right_align_menu', false ) ) : ?>
+        <?php if ( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_RIGHT_ALIGN_MENU, DESIGNR_DEFAULTS::NAVBAR_RIGHT_ALIGN_MENU ) ) : ?>
         
             header#masthead.header-style-slim div#slim-header .right-half {
                 justify-content: flex-end;
@@ -376,42 +374,42 @@ function designr_wp_head_styles() { ?>
         @media (max-width:991px) {
             header img.custom-logo {
                 padding: 0;
-                height: <?php esc_attr_e( get_theme_mod( 'style_a_mobile_logo_height', 50 ) ) ?>px !important;
+                height: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_LOGO_HEIGHT_MBL, DESIGNR_DEFAULTS::NAVBAR_LOGO_HEIGHT_MBL ) ) ?>px !important;
             }
         }
 
         /* ----- Banner Navbar: Logo Settings ------------------------------- */
         
         header#masthead.header-style-banner div#banner-header-wrap #custom-logo-wrap img.custom-logo {
-            height: <?php esc_attr_e( get_theme_mod( 'navbar_banner_logo_height', 60 ) ) ?>px;
+            height: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_LOGO_HEIGHT_DSK, DESIGNR_DEFAULTS::NAVBAR_LOGO_HEIGHT_DSK ) ) ?>px;
         }
         
         header#masthead.header-style-banner div#banner-header-wrap #custom-logo-wrap {
-            padding-top: <?php esc_attr_e( get_theme_mod( 'navbar_banner_logo_top_spacing', 60 ) ) ?>px;
-            padding-bottom: <?php esc_attr_e( get_theme_mod( 'navbar_banner_logo_bottom_spacing', 20 ) ) ?>px;
+            padding-top: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_BRANDING_SPACE_TOP_DSK, DESIGNR_DEFAULTS::NAVBAR_BRANDING_SPACE_TOP_DSK ) ) ?>px;
+            padding-bottom: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_BRANDING_SPACE_BOTTOM_DSK, DESIGNR_DEFAULTS::NAVBAR_BRANDING_SPACE_BOTTOM_DSK ) ) ?>px;
         }
         
         @media (max-width:991px) {
             header#masthead.header-style-banner div#banner-header-wrap #custom-logo-wrap img.custom-logo {
-                height: <?php esc_attr_e( get_theme_mod( 'style_a_mobile_logo_height', 50 ) ) ?>px !important;
+                height: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_LOGO_HEIGHT_MBL, DESIGNR_DEFAULTS::NAVBAR_LOGO_HEIGHT_MBL ) ) ?>px !important;
             }
             header#masthead.header-style-banner div#banner-header-wrap #custom-logo-wrap {
-                padding-top: <?php esc_attr_e( get_theme_mod( 'navbar_banner_logo_top_spacing_mbl', 30 ) ) ?>px;
-                padding-bottom: <?php esc_attr_e( get_theme_mod( 'navbar_banner_logo_bottom_spacing_mbl', 15 ) ) ?>px;
+                padding-top: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_BRANDING_SPACE_TOP_MBL, DESIGNR_DEFAULTS::NAVBAR_BRANDING_SPACE_TOP_MBL ) ) ?>px;
+                padding-bottom: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_BRANDING_SPACE_BOTTOM_MBL, DESIGNR_DEFAULTS::NAVBAR_BRANDING_SPACE_BOTTOM_MBL ) ) ?>px;
             }
         }
         
-        <?php if ( get_theme_mod( 'navbar_banner_logo_alignment', 'left' ) == 'right' || get_theme_mod( 'navbar_banner_logo_alignment', 'left' ) == 'center' ) : ?>
+        <?php if ( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_BRANDING_ALIGNMENT, DESIGNR_DEFAULTS::NAVBAR_BRANDING_ALIGNMENT ) == 'right' || get_theme_mod( DESIGNR_OPTIONS::NAVBAR_BRANDING_ALIGNMENT, DESIGNR_DEFAULTS::NAVBAR_BRANDING_ALIGNMENT ) == 'center' ) : ?>
         
             header#masthead.header-style-banner div#banner-header-wrap #custom-logo-wrap {
-                text-align: <?php esc_attr_e( get_theme_mod( 'navbar_banner_logo_alignment', 'left' ) ); ?>;
+                text-align: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_BRANDING_ALIGNMENT, DESIGNR_DEFAULTS::NAVBAR_BRANDING_ALIGNMENT ) ); ?>;
             }
         
         <?php endif; ?>
         
-        <?php if ( get_theme_mod( 'navbar_banner_menu_alignment', 'left' ) == 'right' || get_theme_mod( 'navbar_banner_menu_alignment', 'left' ) == 'center' ) : ?>
+        <?php if ( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_MENU_ALIGNMENT, DESIGNR_DEFAULTS::NAVBAR_MENU_ALIGNMENT ) == 'right' || get_theme_mod( DESIGNR_OPTIONS::NAVBAR_MENU_ALIGNMENT, DESIGNR_DEFAULTS::NAVBAR_MENU_ALIGNMENT ) == 'center' ) : ?>
         
-            <?php if ( get_theme_mod( 'navbar_banner_menu_alignment', 'left' ) == 'right' ) : ?>
+            <?php if ( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_MENU_ALIGNMENT, DESIGNR_DEFAULTS::NAVBAR_MENU_ALIGNMENT ) == 'right' ) : ?>
             
                 header#masthead.header-style-banner ul#banner-header-primary {
                     float: right;
@@ -678,12 +676,12 @@ function designr_wp_head_styles() { ?>
         
             div#designr-custom-header.designr_parallax,
             div#designr-custom-header.designr_parallax .util-tbl-wrap {
-                height: calc(100vh - <?php esc_attr_e( get_theme_mod( 'style_a_collapse_height', 50 ) - 1 ) ?>px);
+                height: calc(100vh - <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_INITIAL_HEIGHT, DESIGNR_DEFAULTS::NAVBAR_INITIAL_HEIGHT ) - 1 ) ?>px);
             }
             
             body.admin-bar div#designr-custom-header.designr_parallax,
             body.admin-bar div#designr-custom-header.designr_parallax .util-tbl-wrap {
-                height: calc(100vh - <?php esc_attr_e( get_theme_mod( 'style_a_collapse_height', 50 ) - 1 + 32 ) ?>px);
+                height: calc(100vh - <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_INITIAL_HEIGHT, DESIGNR_DEFAULTS::NAVBAR_INITIAL_HEIGHT ) - 1 + 32 ) ?>px);
             }
 
         <?php endif; ?>
@@ -746,31 +744,31 @@ function designr_wp_head_styles() { ?>
          * ------------------------------------------------------------------ */
 
         h2.widget-title {
-            font-size: <?php esc_attr_e( get_theme_mod( 'prefooter_widget_title_font_size', 24 ) ) ?>px;
-            letter-spacing: <?php esc_attr_e( get_theme_mod( 'prefooter_widget_title_letter_spacing', '.250' ) ); ?>em;
+            font-size: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::WIDGETS_TITLE_FONT_SIZE, DESIGNR_DEFAULTS::WIDGETS_TITLE_FONT_SIZE ) ) ?>px;
+            letter-spacing: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::WIDGETS_TITLE_FONT_LETTER_GAP, DESIGNR_DEFAULTS::WIDGETS_TITLE_FONT_LETTER_GAP ) ); ?>em;
         }
         
         footer div#footer-branding-wrap img.custom-logo {
-            height: <?php echo esc_attr( get_theme_mod( 'designr_footer_logo_height', 30 ) ); ?>px;
+            height: <?php echo esc_attr( get_theme_mod( DESIGNR_OPTIONS::FOOTER_ALTERNATE_LOGO_HEIGHT, DESIGNR_DEFAULTS::FOOTER_ALTERNATE_LOGO_HEIGHT ) ); ?>px;
         }
         
         div#footer-branding-wrap .site-title {
-            font-size: <?php esc_attr_e( get_theme_mod( 'footer_site_title_font_size', 18 ) ) ?>px;
+            font-size: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::FOOTER_SITE_TITLE_FONT_SIZE, DESIGNR_DEFAULTS::FOOTER_SITE_TITLE_FONT_SIZE ) ) ?>px;
             letter-spacing: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_SITE_TITLE_LETTER_GAP, DESIGNR_DEFAULTS::NAVBAR_SITE_TITLE_LETTER_GAP ) ); ?>em;
         }
 
         footer div#footer-branding-wrap {
-            font-size: <?php esc_attr_e( get_theme_mod( 'footer_copyright_font_size', 12 ) ) ?>px;
+            font-size: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::FOOTER_COPYRIGHT_TAGLINE_FONT_SIZE, DESIGNR_DEFAULTS::FOOTER_COPYRIGHT_TAGLINE_FONT_SIZE ) ) ?>px;
         }
 
-        <?php if ( ! get_theme_mod( 'footer_show_branding', true ) && ! get_theme_mod( 'footer_show_copyright', true ) ) : ?>
+        <?php if ( ! get_theme_mod( DESIGNR_OPTIONS::FOOTER_SHOW_BRANDING, DESIGNR_DEFAULTS::FOOTER_SHOW_BRANDING ) && ! get_theme_mod( DESIGNR_OPTIONS::FOOTER_SHOW_COPYRIGHT, DESIGNR_DEFAULTS::FOOTER_SHOW_COPYRIGHT ) ) : ?>
             footer span.designr_by {
                 padding-left: 0;
                 border-left: none;
             }
         <?php endif; ?>
         
-        <?php if ( get_theme_mod( 'footer_show_branding', true ) && ! get_theme_mod( 'footer_show_copyright', true ) ) : ?>
+        <?php if ( get_theme_mod( DESIGNR_OPTIONS::FOOTER_SHOW_BRANDING, DESIGNR_DEFAULTS::FOOTER_SHOW_BRANDING ) && ! get_theme_mod( DESIGNR_OPTIONS::FOOTER_SHOW_COPYRIGHT, DESIGNR_DEFAULTS::FOOTER_SHOW_COPYRIGHT ) ) : ?>
         
             footer span.designr_by {
                 margin-left: 15px;
@@ -782,16 +780,16 @@ function designr_wp_head_styles() { ?>
          * Slide-In Cart
          * ------------------------------------------------------------------ */
             
-        <?php if ( get_theme_mod( 'cart_drawer_tab_location', 'bottom' ) == 'top' ) : ?>
+        <?php if ( get_theme_mod( DESIGNR_OPTIONS::WOO_SLIDE_CART_TAB_POSITION, DESIGNR_DEFAULTS::WOO_SLIDE_CART_TAB_POSITION ) == 'top' ) : ?>
         
             @media (min-width:992px) {
         
                 div#cart-panel-trigger {
-                    top: <?php esc_attr_e( get_theme_mod( 'style_a_collapse_height', 50 ) + 12 ) ?>px;    
+                    top: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_INITIAL_HEIGHT, DESIGNR_DEFAULTS::NAVBAR_INITIAL_HEIGHT ) + 12 ) ?>px;    
                 }
 
                 div#cart-panel-trigger.sticky-header {
-                    top: <?php esc_attr_e( get_theme_mod( 'style_a_expand_height', 75 ) + 12 ) ?>px;
+                    top: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_STICKY_HEIGHT, DESIGNR_DEFAULTS::NAVBAR_STICKY_HEIGHT ) + 12 ) ?>px;
                 }
             
             }

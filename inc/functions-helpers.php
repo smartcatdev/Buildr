@@ -10,34 +10,34 @@ function designr_get_all_theme_colors() {
     
     $theme_colors = array();
     
-    $theme_colors['navbar_bg']              = get_theme_mod( 'navbar_background', '#141414' );
-    $theme_colors['navbar_fg']              = get_theme_mod( 'navbar_foreground', '#ffffff' );
+    $theme_colors['navbar_bg']              = get_theme_mod( DESIGNR_OPTIONS::NAVBAR_BG_COLOR, DESIGNR_DEFAULTS::NAVBAR_BG_COLOR );
+    $theme_colors['navbar_fg']              = get_theme_mod( DESIGNR_OPTIONS::NAVBAR_FG_COLOR, DESIGNR_DEFAULTS::NAVBAR_FG_COLOR );
     
-    $theme_colors['navbar_menu_bg']         = get_theme_mod( 'navbar_banner_menu_background', '#141414' );
-    $theme_colors['navbar_menu_fg']         = get_theme_mod( 'navbar_banner_menu_foreground', '#ffffff' );
+    $theme_colors['navbar_menu_bg']         = get_theme_mod( DESIGNR_OPTIONS::NAVBAR_MENU_BG_COLOR, DESIGNR_DEFAULTS::NAVBAR_MENU_BG_COLOR );
+    $theme_colors['navbar_menu_fg']         = get_theme_mod( DESIGNR_OPTIONS::NAVBAR_MENU_FG_COLOR, DESIGNR_DEFAULTS::NAVBAR_MENU_FG_COLOR );
     
-    $theme_colors['prefooter_bg']           = get_theme_mod( 'prefooter_background', '#141414' );
-    $theme_colors['prefooter_fg']           = get_theme_mod( 'prefooter_foreground', '#ffffff' );
+    $theme_colors['prefooter_bg']           = get_theme_mod( DESIGNR_OPTIONS::PRE_FOOTER_BG_COLOR, DESIGNR_DEFAULTS::PRE_FOOTER_BG_COLOR );
+    $theme_colors['prefooter_fg']           = get_theme_mod( DESIGNR_OPTIONS::PRE_FOOTER_FG_COLOR, DESIGNR_DEFAULTS::PRE_FOOTER_FG_COLOR );
     
-    $theme_colors['footer_bg']              = get_theme_mod( 'footer_background', '#000000' );
-    $theme_colors['footer_fg']              = get_theme_mod( 'footer_foreground', '#ffffff' );
+    $theme_colors['footer_bg']              = get_theme_mod( DESIGNR_OPTIONS::FOOTER_BG_COLOR, DESIGNR_DEFAULTS::FOOTER_BG_COLOR );
+    $theme_colors['footer_fg']              = get_theme_mod( DESIGNR_OPTIONS::FOOTER_FG_COLOR, DESIGNR_DEFAULTS::FOOTER_FG_COLOR );
     
-    $theme_colors['primary']                = get_theme_mod( 'skin_theme_primary', '#f04265' );
-    $theme_colors['secondary']              = get_theme_mod( 'skin_theme_secondary', '#d60059' );
+    $theme_colors['primary']                = get_theme_mod( DESIGNR_OPTIONS::COLOR_SKIN_PRIMARY, DESIGNR_DEFAULTS::COLOR_SKIN_PRIMARY );
+    $theme_colors['secondary']              = get_theme_mod( DESIGNR_OPTIONS::COLOR_SKIN_SECONDARY, DESIGNR_DEFAULTS::COLOR_SKIN_SECONDARY );
     
-    $theme_colors['social_bg']              = get_theme_mod( 'navbar_social_drawer_background', '#141414' );
-    $theme_colors['social_fg']              = get_theme_mod( 'navbar_social_link_foreground', '#FFFFFF' );
-    $theme_colors['social_fg_hov']          = get_theme_mod( 'navbar_social_link_foreground_hover', '#0000FF' );
+    $theme_colors['social_bg']              = get_theme_mod( DESIGNR_OPTIONS::NAVBAR_SOCIAL_BG_COLOR, DESIGNR_DEFAULTS::NAVBAR_SOCIAL_BG_COLOR );
+    $theme_colors['social_fg']              = get_theme_mod( DESIGNR_OPTIONS::NAVBAR_SOCIAL_FG_COLOR, DESIGNR_DEFAULTS::NAVBAR_SOCIAL_FG_COLOR );
+    $theme_colors['social_fg_hov']          = get_theme_mod( DESIGNR_OPTIONS::NAVBAR_SOCIAL_FG_COLOR_HOVER, DESIGNR_DEFAULTS::NAVBAR_SOCIAL_FG_COLOR_HOVER );
     $theme_colors['custom_header_title']    = get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_TITLE_COLOR, DESIGNR_DEFAULTS::CUSTOM_HEADER_TITLE_COLOR );
     $theme_colors['custom_header_menu']     = get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_MENU_COLOR, DESIGNR_DEFAULTS::CUSTOM_HEADER_MENU_COLOR );
     
-    $theme_colors['cart_tab']               = get_theme_mod( 'cart_drawer_tab_color', '#000000' );
+    $theme_colors['cart_tab']               = get_theme_mod( DESIGNR_OPTIONS::WOO_SLIDE_CART_TAB_COLOR, DESIGNR_DEFAULTS::WOO_SLIDE_CART_TAB_COLOR );
     
     $theme_colors['plx_overlay_single']     = get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_COLOR_LAYER_COLOR, DESIGNR_DEFAULTS::CUSTOM_HEADER_COLOR_LAYER_COLOR );
     $theme_colors['plx_overlay_grad_start'] = get_theme_mod( DESIGNR_OPTIONS::GRADIENT_START_COLOR, DESIGNR_DEFAULTS::GRADIENT_START_COLOR );
     $theme_colors['plx_overlay_grad_end']   = get_theme_mod( DESIGNR_OPTIONS::GRADIENT_END_COLOR, DESIGNR_DEFAULTS::GRADIENT_END_COLOR );
    
-    $theme_colors['footer_widget_title']    = get_theme_mod( 'prefooter_widget_title_color', '#FFFFFF' );
+    $theme_colors['footer_widget_title']    = get_theme_mod( DESIGNR_OPTIONS::PRE_FOOTER_WIDGET_TITLE_COLOR, DESIGNR_DEFAULTS::PRE_FOOTER_WIDGET_TITLE_COLOR );
  
     return $theme_colors;
     

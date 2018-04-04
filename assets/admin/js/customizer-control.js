@@ -189,12 +189,14 @@
                     $('li#customize-control-custom_header_title_font_size').removeClass('designr-hidden');
                     $('li#customize-control-custom_header_title_letter_spacing').removeClass('designr-hidden');
                     $('li#customize-control-custom_header_title_color').removeClass('designr-hidden');
+                    $('li#customize-control-custom_header_title_uppercase').removeClass('designr-hidden');
                 } else {
                     $('li#customize-control-custom_header_title_content').addClass('designr-hidden');
                     $('li#customize-control-custom_header_title_font_family').addClass('designr-hidden');
                     $('li#customize-control-custom_header_title_font_size').addClass('designr-hidden');
                     $('li#customize-control-custom_header_title_letter_spacing').addClass('designr-hidden');
                     $('li#customize-control-custom_header_title_color').addClass('designr-hidden');
+                    $('li#customize-control-custom_header_title_uppercase').addClass('designr-hidden');
                 }
                 
             }
