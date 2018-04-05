@@ -196,6 +196,52 @@ $data = array (
                     )
 
                 ),
+                
+                // Section : Custom Header Locations ----------------------------
+                'section_custom_header' => array (
+
+                    'title' => __( 'Display Locations', 'designr' ),
+                    'options' => array (
+                        
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_ON_POSTS => array (  
+                            'type'          => 'toggle',
+                            'label'         => __( 'Include on Posts?', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_POSTS,
+                        ),
+                        
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_ON_PAGES => array (  
+                            'type'          => 'toggle',
+                            'label'         => __( 'Include on Pages?', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_PAGES,
+                        ),
+                        
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_ON_FRONT => array (  
+                            'type'          => 'toggle',
+                            'label'         => __( 'Include on the Front Page?', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_FRONT,
+                        ),
+                        
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_ON_BLOG => array (   
+                            'type'          => 'toggle',
+                            'label'         => __( 'Include on the Blog?', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_BLOG,
+                        ),
+                        
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_ON_ARCHIVE => array (   
+                            'type'          => 'toggle',
+                            'label'         => __( 'Include on Archive Pages?', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_ARCHIVE,
+                        ),
+                        
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_ON_SHOP => array (   
+                            'type'          => 'toggle',
+                            'label'         => __( 'Include on the Shop Page?', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_SHOP,
+                        ),
+                        
+                    )
+
+                ),
 
                 // Section : Custom Header - Logo Settings ---------------------
                 'section_custom_header_logo' => array (
@@ -958,13 +1004,13 @@ $data = array (
                 // Section : Colors --------------------------------------------
                 'section_colors' => array (
 
-                    'title'         => __( 'Colors', 'designr' ),
-                    'description'   => __( 'Customize the colors in use on your site', 'designr' ),
+                    'title'         => __( 'Skin Colors', 'designr' ),
+                    'description'   => __( 'Customize the color theme in use on your site', 'designr' ),
                     'options' => array (
                         
                         DESIGNR_OPTIONS::COLOR_SKIN_PRIMARY => array(
                             'type'          => 'color-select',
-                            'label'         => __( 'Theme Color - Primary', 'designr' ),
+                            'label'         => __( 'Skin Color - Primary', 'designr' ),
                             'default'       => DESIGNR_DEFAULTS::COLOR_SKIN_PRIMARY,
                             'choices'   => array(
                                 '#f04265'       => __( 'Cherry Gloss', 'designr' ),
@@ -975,7 +1021,7 @@ $data = array (
                         ),
                         DESIGNR_OPTIONS::COLOR_SKIN_SECONDARY => array(
                             'type'          => 'color-select',
-                            'label'         => __( 'Theme Color - Secondary', 'designr' ),
+                            'label'         => __( 'Skin Color - Secondary', 'designr' ),
                             'default'       => DESIGNR_DEFAULTS::COLOR_SKIN_SECONDARY,
                             'choices'   => array(
                                 '#d60059'       => __( 'Magenta Rose', 'designr' ),

@@ -30,10 +30,17 @@ interface DESIGNR_OPTIONS {
             CUSTOM_HEADER_MENU_LETTER_GAP           = 'custom_header_menu_letter_spacing',
             CUSTOM_HEADER_MENU_COLOR                = 'custom_header_menu_color',
             CUSTOM_HEADER_MENU_LINKS_GAP            = 'custom_header_menu_link_spacing',
-                        
             CUSTOM_HEADER_COLOR_LAYER_STYLE         = 'parallax_layers_include_color_layer',
             CUSTOM_HEADER_COLOR_LAYER_COLOR         = 'parallax_layers_single_color',
             CUSTOM_HEADER_COLOR_LAYER_OPACITY       = 'parallax_layers_single_color_opacity',
+            
+            CUSTOM_HEADER_SHOW_ON_POSTS             = 'custom_header_show_on_posts',
+            CUSTOM_HEADER_SHOW_ON_PAGES             = 'custom_header_show_on_pages',
+            CUSTOM_HEADER_SHOW_ON_FRONT             = 'custom_header_show_on_front',
+            CUSTOM_HEADER_SHOW_ON_BLOG              = 'custom_header_show_on_blog',
+            CUSTOM_HEADER_SHOW_ON_ARCHIVE           = 'custom_header_show_on_archive',
+            CUSTOM_HEADER_SHOW_ON_SHOP              = 'custom_header_show_on_shop',
+            
             GRADIENT_STYLE                          = 'parallax_layers_gradient_style',
             GRADIENT_OVERALL_OPACITY                = 'parallax_layers_gradient_overall_opacity',
             GRADIENT_LINEAR_DIRECTION               = 'parallax_layers_gradient_linear_direction',
@@ -189,10 +196,17 @@ interface DESIGNR_DEFAULTS {
             CUSTOM_HEADER_MENU_LETTER_GAP           = '.500',
             CUSTOM_HEADER_MENU_COLOR                = '#ffffff',
             CUSTOM_HEADER_MENU_LINKS_GAP            = 16,
- 
             CUSTOM_HEADER_COLOR_LAYER_STYLE         = 'no',
             CUSTOM_HEADER_COLOR_LAYER_COLOR         = '#348aa7',
             CUSTOM_HEADER_COLOR_LAYER_OPACITY       = .75,
+            
+            CUSTOM_HEADER_SHOW_ON_POSTS             = false,
+            CUSTOM_HEADER_SHOW_ON_PAGES             = false,
+            CUSTOM_HEADER_SHOW_ON_FRONT             = true,
+            CUSTOM_HEADER_SHOW_ON_BLOG              = false,
+            CUSTOM_HEADER_SHOW_ON_ARCHIVE           = false,
+            CUSTOM_HEADER_SHOW_ON_SHOP              = false,
+            
             GRADIENT_STYLE                          = 'linear',
             GRADIENT_OVERALL_OPACITY                = .75,
             GRADIENT_LINEAR_DIRECTION               = 'up',

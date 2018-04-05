@@ -12,32 +12,36 @@ get_header(); ?>
         
         <main id="main" class="site-main">
             
-            <div class="container">
+            <div class="padded-content-wrap">
             
-                <div class="row">
-                
-                    <div class="col-sm-12">
+                <div class="container">
 
-                        <section class="error-404 not-found">
-                            
-                            <header class="page-header">
-                                <h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'designr' ); ?></h1>
-                            </header><!-- .page-header -->
+                    <div class="row">
 
-                            <div class="page-content">
-                                
-                                <p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'designr' ); ?></p>
+                        <div class="col-sm-12">
 
-                                <?php get_search_form(); ?>
+                            <section class="error-404 not-found">
 
-                            </div><!-- .page-content -->
-                            
-                        </section><!-- .error-404 -->
+                                <header class="page-header">
+                                    <h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'designr' ); ?></h1>
+                                </header><!-- .page-header -->
+
+                                <div class="page-content">
+
+                                    <p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'designr' ); ?></p>
+
+                                    <?php get_search_form(); ?>
+
+                                </div><!-- .page-content -->
+
+                            </section><!-- .error-404 -->
+
+                        </div>
 
                     </div>
 
                 </div>
-
+                
             </div>
 
         </main><!-- #main -->

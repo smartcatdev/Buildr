@@ -8,7 +8,7 @@
 
                 <div class="row">
 
-                    <?php dynamic_sidebar( 'footer' ); ?>
+                    <?php dynamic_sidebar( 'sidebar-footer' ); ?>
 
                 </div>
 

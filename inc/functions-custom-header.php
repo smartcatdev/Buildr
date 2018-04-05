@@ -36,9 +36,20 @@ add_action( 'designr_custom_header', 'designr_render_custom_header' );
 function designr_render_custom_header() { 
 
     if ( has_header_image() ) :
-
-        get_template_part( 'template-parts/custom-header', get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_STYLE_TOGGLE, DESIGNR_DEFAULTS::CUSTOM_HEADER_STYLE_TOGGLE ) );
+        
+        if ( 
+            ( is_single()       && get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_ON_POSTS, DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_POSTS ) ) ||
+            ( is_page()         && !is_front_page() && get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_ON_PAGES, DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_PAGES ) ) ||
+            ( is_front_page()   && !is_home() && get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_ON_FRONT, DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_FRONT ) ) ||
+            ( is_home()         && get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_ON_BLOG, DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_BLOG ) ) ||
+            ( is_archive()      && get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_ON_ARCHIVE, DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_ARCHIVE ) ) ||
+            ( is_shop()         && get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_ON_SHOP, DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_SHOP ) )
+        ) :
+        
+            get_template_part( 'template-parts/custom-header', get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_STYLE_TOGGLE, DESIGNR_DEFAULTS::CUSTOM_HEADER_STYLE_TOGGLE ) );
             
+        endif;
+        
     endif;
     
 }
