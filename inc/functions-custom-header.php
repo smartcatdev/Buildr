@@ -35,6 +35,10 @@ add_action( 'after_setup_theme', 'designr_custom_header_setup' );
 add_action( 'designr_custom_header', 'designr_render_custom_header' );
 function designr_render_custom_header() { 
 
+    if( is_page_template( 'templates/page-widget_shell.php' ) ) {
+        return;
+    }
+    
     if ( has_header_image() ) :
         
         if ( 

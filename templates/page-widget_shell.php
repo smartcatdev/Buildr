@@ -2,20 +2,32 @@
 /**
  * Template Name: Widget Shell
  */
-
 get_header(); ?>
 
-    <div id="primary" class="content-area widget-shell">
+    <div id="primary" class="content-area">
         
         <main id="main" class="site-main">
 
-            <?php
-            while ( have_posts() ) : the_post();
+            <?php if ( is_active_sidebar( 'sidebar-page-above') ) : ?>
 
-                get_template_part( 'template-parts/content', 'page' );
+                <div class="sidebar-wrap page above">
+            
+                    <?php dynamic_sidebar('sidebar-page-above'); ?>
+            
+                </div>
+                    
+            <?php endif; ?>
+            
+            
+            <?php if ( is_active_sidebar( 'sidebar-page-below') ) : ?>
 
-            endwhile; // End of the loop.
-            ?>
+                <div class="sidebar-wrap page below">
+            
+                    <?php dynamic_sidebar('sidebar-page-below'); ?>
+            
+                </div>
+                
+            <?php endif; ?>
 
         </main><!-- #main -->
             
