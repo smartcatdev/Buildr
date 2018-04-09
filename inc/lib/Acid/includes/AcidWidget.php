@@ -289,7 +289,7 @@ if ( !class_exists( 'AcidWidget' ) ) {
             foreach ( $this->widget_fields as $widget_field ) {
                 switch ( $widget_field[ 'type' ] ) {
                     case 'checkbox':
-                        $instance[ $widget_field[ 'id' ] ] = $_POST[ $this->get_field_id( $widget_field[ 'id' ] ) ];
+                        $instance[ $widget_field[ 'id' ] ] = isset( $_POST[ $this->get_field_id( $widget_field[ 'id' ] ) ] ) ? $_POST[ $this->get_field_id( $widget_field[ 'id' ] ) ] : '';
                         break;
                     case 'textarea':
                         $instance[ $widget_field[ 'id' ] ] = (!empty( $new_instance[ $widget_field[ 'id' ] ] ) ) ? htmlentities( $new_instance[ $widget_field[ 'id' ] ] ) : '';
