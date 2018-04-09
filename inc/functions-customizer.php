@@ -20,12 +20,14 @@ function designr_customize_register( $wp_customize ) {
     
     // Housekeeping ------------------------------------------------------------
     $wp_customize->get_section( 'header_image' )->panel = 'panel_custom_header';
-    $wp_customize->get_section( 'title_tagline' )->title = __( 'Site Title & Logo', 'designr' );
+    $wp_customize->get_section( 'title_tagline' )->title = __( 'General Settings', 'designr' );
+    $wp_customize->get_section( 'title_tagline' )->panel = 'panel_title_tagline';
     // End Housekeeping --------------------------------------------------------
     
     
     // Priority ----------------------------------------------------------------
     $wp_customize->get_section( 'title_tagline' )->priority = 1;
+    $wp_customize->get_panel( 'panel_title_tagline' )->priority = 1;
     $wp_customize->get_panel( 'panel_navbar' )->priority = 2;
     $wp_customize->get_panel( 'panel_custom_header' )->priority = 3;
     $wp_customize->get_panel( 'panel_blog' )->priority = 4;
@@ -112,6 +114,111 @@ $data = array (
 
     'panels' => array (
 
+        // Panel: Custom Header ------------------------------------------------
+        'panel_title_tagline' => array (
+
+            'title'         => __( 'Site Title & Logo', 'designr' ),
+//            'desciption'    => __( 'Customize the header banner on your site', 'designr' ),
+            'sections'      => array (
+                
+                // Section : Custom Header Locations ----------------------------
+                'section_title_tagline' => array (
+
+                    'title' => __( 'Advanced Settings', 'designr' ),
+                    'options' => array (
+                        
+                        DESIGNR_OPTIONS::NAVBAR_ALWAYS_SHOW_LOGO => array (
+                            'type'          => 'toggle',
+                            'label'         => __( 'Logo - Always Visible?', 'designr' ),
+                            'description'   => __( 'If on, the logo will be visible even when Slim Navbar is collapsed / unstuck', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_ALWAYS_SHOW_LOGO,
+                        ),
+                        DESIGNR_OPTIONS::NAVBAR_LOGO_HORIZONTAL_PADDING => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Logo - Horizontal Padding', 'designr' ),
+                            'description'   => __( 'Set the space (in pixels) between menu links and the logo', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_LOGO_HORIZONTAL_PADDING
+                        ),
+                        DESIGNR_OPTIONS::NAVBAR_LOGO_HEIGHT_DSK => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Logo - Height (Desktop)', 'designr' ),
+                            'description'   => __( 'Set the logo height for the desktop Navbar', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_LOGO_HEIGHT_DSK
+                        ),
+                        DESIGNR_OPTIONS::NAVBAR_LOGO_HEIGHT_MBL => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Logo - Height (Mobile)', 'designr' ),
+                            'description'   => __( 'Set the logo height for the mobile Navbar', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_LOGO_HEIGHT_MBL
+                        ),
+                        DESIGNR_OPTIONS::NAVBAR_SITE_TITLE_FONT_FAMILY => array (
+                            'type'          => 'radio-toggle',
+                            'label'         => __( 'Site Title - Font Family', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_SITE_TITLE_FONT_FAMILY,
+                            'choices'   => array (
+                                'primary'   => __( 'Use Primary Font', 'designr' ),
+                                'secondary' => __( 'Use Secondary Font', 'designr' ),
+                            )
+                        ),
+                        DESIGNR_OPTIONS::NAVBAR_SITE_TITLE_FONT_SIZE => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Site Title - Font Size', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_SITE_TITLE_FONT_SIZE
+                        ),
+                        DESIGNR_OPTIONS::NAVBAR_SITE_TITLE_LETTER_GAP => array(
+                            'type'          => 'select',
+                            'label'         => __( 'Site Title - Letter Spacing', 'designr' ),
+                            'description'   => __( 'Set the scaling "em" value. Can be positive or negative. 0 for normal spacing.', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_SITE_TITLE_LETTER_GAP,
+                            'choices'   => array (
+                                '-.1'       => __( '-.100em (Narrowest)', 'designr' ),
+                                '-.075'     => __( '-.075em', 'designr' ),
+                                '-.050'     => __( '-.050em', 'designr' ),
+                                '-.025'     => __( '-.025em', 'designr' ),
+                                '0.0'       => __( '0.00em (Default)', 'designr' ),
+                                '.025'      => __( '.025em', 'designr' ),
+                                '.050'      => __( '.050em', 'designr' ),
+                                '.075'      => __( '.075em', 'designr' ),
+                                '.100'      => __( '.100em', 'designr' ),
+                                '.250'      => __( '.250em', 'designr' ),
+                                '.500'      => __( '.500em (Widest)', 'designr' ),
+                            )
+                        ),
+                        DESIGNR_OPTIONS::NAVBAR_SITE_TITLE_ALL_CAPS => array(
+                            'type'          => 'toggle',
+                            'label'         => __( 'Site Title - All Uppercase?', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_SITE_TITLE_ALL_CAPS
+                        ),
+                        DESIGNR_OPTIONS::NAVBAR_HIDE_TAGLINE => array (
+                            'type'          => 'toggle',
+                            'label'         => __( 'Hide Site Tagline?', 'designr' ),
+                            'description'   => __( 'Both the Title & Tagline show by default when no logo is chosen', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_HIDE_TAGLINE,
+                        ),
+                        DESIGNR_OPTIONS::NAVBAR_TAGLINE_FONT_FAMILY => array (
+                            'type'          => 'radio-toggle',
+                            'label'         => __( 'Site Tagline - Font Family', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_TAGLINE_FONT_FAMILY,
+                            'choices'   => array (
+                                'primary'   => __( 'Use Primary Font', 'designr' ),
+                                'secondary' => __( 'Use Secondary Font', 'designr' ),
+                            )
+                        ),
+                        DESIGNR_OPTIONS::NAVBAR_TAGLINE_FONT_SIZE => array (
+                            'type'          => 'number',
+                            'label'         => __( 'Site Tagline - Font Size', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_TAGLINE_FONT_SIZE
+                        ),
+                        
+                    )
+
+                ),
+                
+            ), // End of Site Identity
+
+        ), // End of Site Identity Panel
+            
+            
         // Panel: Custom Header ------------------------------------------------
         'panel_custom_header' => array (
 
@@ -709,64 +816,6 @@ $data = array (
                                 'banner'        => __( 'Banner', 'designr' ),
                             )
                         ),
-                        DESIGNR_OPTIONS::NAVBAR_HIDE_TAGLINE => array (
-                            'type'          => 'toggle',
-                            'label'         => __( 'Hide Site Tagline?', 'designr' ),
-                            'description'   => __( 'Both the Title & Tagline show by default when no logo is chosen', 'designr' ),
-                            'default'       => DESIGNR_DEFAULTS::NAVBAR_HIDE_TAGLINE,
-                        ),
-                        DESIGNR_OPTIONS::NAVBAR_SITE_TITLE_FONT_FAMILY => array (
-                            'type'          => 'radio-toggle',
-                            'label'         => __( 'Site Title - Font Family', 'designr' ),
-                            'default'       => DESIGNR_DEFAULTS::NAVBAR_SITE_TITLE_FONT_FAMILY,
-                            'choices'   => array (
-                                'primary'   => __( 'Use Primary Font', 'designr' ),
-                                'secondary' => __( 'Use Secondary Font', 'designr' ),
-                            )
-                        ),
-                        DESIGNR_OPTIONS::NAVBAR_SITE_TITLE_FONT_SIZE => array (
-                            'type'          => 'number',
-                            'label'         => __( 'Site Title - Font Size', 'designr' ),
-                            'default'       => DESIGNR_DEFAULTS::NAVBAR_SITE_TITLE_FONT_SIZE
-                        ),
-                        DESIGNR_OPTIONS::NAVBAR_SITE_TITLE_LETTER_GAP => array(
-                            'type'          => 'select',
-                            'label'         => __( 'Site Title - Letter Spacing', 'designr' ),
-                            'description'   => __( 'Set the scaling "em" value. Can be positive or negative. 0 for normal spacing.', 'designr' ),
-                            'default'       => DESIGNR_DEFAULTS::NAVBAR_SITE_TITLE_LETTER_GAP,
-                            'choices'   => array (
-                                '-.1'       => __( '-.100em (Narrowest)', 'designr' ),
-                                '-.075'     => __( '-.075em', 'designr' ),
-                                '-.050'     => __( '-.050em', 'designr' ),
-                                '-.025'     => __( '-.025em', 'designr' ),
-                                '0.0'       => __( '0.00em (Default)', 'designr' ),
-                                '.025'      => __( '.025em', 'designr' ),
-                                '.050'      => __( '.050em', 'designr' ),
-                                '.075'      => __( '.075em', 'designr' ),
-                                '.100'      => __( '.100em', 'designr' ),
-                                '.250'      => __( '.250em', 'designr' ),
-                                '.500'      => __( '.500em (Widest)', 'designr' ),
-                            )
-                        ),
-                        DESIGNR_OPTIONS::NAVBAR_SITE_TITLE_ALL_CAPS => array(
-                            'type'          => 'toggle',
-                            'label'         => __( 'Site Title - All Uppercase?', 'designr' ),
-                            'default'       => DESIGNR_DEFAULTS::NAVBAR_SITE_TITLE_ALL_CAPS
-                        ),
-                        DESIGNR_OPTIONS::NAVBAR_TAGLINE_FONT_FAMILY => array (
-                            'type'          => 'radio-toggle',
-                            'label'         => __( 'Site Tagline - Font Family', 'designr' ),
-                            'default'       => DESIGNR_DEFAULTS::NAVBAR_TAGLINE_FONT_FAMILY,
-                            'choices'   => array (
-                                'primary'   => __( 'Use Primary Font', 'designr' ),
-                                'secondary' => __( 'Use Secondary Font', 'designr' ),
-                            )
-                        ),
-                        DESIGNR_OPTIONS::NAVBAR_TAGLINE_FONT_SIZE => array (
-                            'type'          => 'number',
-                            'label'         => __( 'Site Tagline - Font Size', 'designr' ),
-                            'default'       => DESIGNR_DEFAULTS::NAVBAR_TAGLINE_FONT_SIZE
-                        ),
                         DESIGNR_OPTIONS::NAVBAR_LINKS_FONT_FAMILY => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'Navbar Links - Font Family', 'designr' ),
@@ -809,30 +858,6 @@ $data = array (
                     'title' => __( 'Advanced Settings', 'designr' ),
                     'options' => array (
                         
-                        DESIGNR_OPTIONS::NAVBAR_ALWAYS_SHOW_LOGO => array (
-                            'type'          => 'toggle',
-                            'label'         => __( 'Logo - Always Visible?', 'designr' ),
-                            'description'   => __( 'If on, the logo will be visible even when Slim Navbar is collapsed / unstuck', 'designr' ),
-                            'default'       => DESIGNR_DEFAULTS::NAVBAR_ALWAYS_SHOW_LOGO,
-                        ),
-                        DESIGNR_OPTIONS::NAVBAR_LOGO_HORIZONTAL_PADDING => array (
-                            'type'          => 'number',
-                            'label'         => __( 'Logo - Horizontal Padding', 'designr' ),
-                            'description'   => __( 'Set the space (in pixels) between menu links and the logo', 'designr' ),
-                            'default'       => DESIGNR_DEFAULTS::NAVBAR_LOGO_HORIZONTAL_PADDING
-                        ),
-                        DESIGNR_OPTIONS::NAVBAR_LOGO_HEIGHT_DSK => array (
-                            'type'          => 'number',
-                            'label'         => __( 'Logo - Height (Desktop)', 'designr' ),
-                            'description'   => __( 'Set the logo height for the desktop Navbar', 'designr' ),
-                            'default'       => DESIGNR_DEFAULTS::NAVBAR_LOGO_HEIGHT_DSK
-                        ),
-                        DESIGNR_OPTIONS::NAVBAR_LOGO_HEIGHT_MBL => array (
-                            'type'          => 'number',
-                            'label'         => __( 'Logo - Height (Mobile)', 'designr' ),
-                            'description'   => __( 'Set the logo height for the mobile Navbar', 'designr' ),
-                            'default'       => DESIGNR_DEFAULTS::NAVBAR_LOGO_HEIGHT_MBL
-                        ),
                         DESIGNR_OPTIONS::NAVBAR_INITIAL_HEIGHT => array (
                             'type'          => 'number',
                             'label'         => __( 'Navbar - Height (Initial)', 'designr' ),
