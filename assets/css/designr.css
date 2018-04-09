@@ -1102,7 +1102,6 @@ div#custom-header-content {
 
 div#custom-header-content .custom-header-title {
     color: #fff;
-    text-transform: uppercase; /* TODO : toggle for this? */
     font-weight: normal;
     margin-top: 0;
 }
@@ -1149,7 +1148,6 @@ footer#colophon {
 }
 
 div#pre-footer-wrap {
-    background-color: #141414; /* TODO : Dynamin Color? */
     padding: 60px 0 40px 0;
 }
 
@@ -1302,11 +1300,27 @@ a.button {
     border-radius: 2px;
     padding: 10px 30px;
     border: 2px solid;
-    font-family: Montserrat; /* TODO: Dynamic Font */
     text-transform: uppercase;
     letter-spacing: .125em;
     font-size: 12px;
     line-height: normal;
+}
+
+a.button.hollow {
+    background: none;
+    border-color: inherit;
+}
+
+button.small, 
+a.button.small {
+    padding: 8px 15px;
+    font-size: 10px;
+}
+
+button.large, 
+a.button.large {
+    padding: 15px 40px;
+    font-size: 14px;
 }
 
 /* -----------------------------------------------------------------------------
@@ -1502,7 +1516,6 @@ div#designr-woocommerce-wrap {
     font-size: 12px;
     font-weight: 400;
     letter-spacing: .125em;
-    font-family: Abel; /* TODO : Dynamic Font */
     color: #333333;
     /*color: #ffffff;*/
 }
