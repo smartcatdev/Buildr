@@ -288,7 +288,7 @@ interface DESIGNR_DEFAULTS {
 
             FONT_PRIMARY                            = 'Montserrat, sans-serif',
             FONT_SECONDARY                          = 'Abel, sans-serif',
-            FONT_BODY_SIZE                          = 20,
+            FONT_BODY_SIZE                          = 16,
             FONT_HEADINGS_LETTER_GAP                = '0.0',
             FONT_HEADINGS_LINE_HEIGHT               = '1',
             FONT_H1_FONT_SIZE                       = 44,

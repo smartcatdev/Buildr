@@ -16,6 +16,16 @@ get_header(); ?>
 <div id="primary" class="content-area">
     
     <main id="main" class="site-main">
+        
+        <?php if ( is_active_sidebar( 'sidebar-blog-above') ) : ?>
+
+            <div class="sidebar-wrap blog above">
+
+                <?php dynamic_sidebar('sidebar-blog-above'); ?>
+
+            </div>
+
+        <?php endif; ?>
 
         <div class="padded-content-wrap">
         
@@ -95,6 +105,16 @@ get_header(); ?>
             <?php endif; ?>
 
         </div>
+        
+        <?php if ( is_active_sidebar( 'sidebar-blog-below') ) : ?>
+
+            <div class="sidebar-wrap blog below">
+
+                <?php dynamic_sidebar('sidebar-blog-below'); ?>
+
+            </div>
+
+        <?php endif; ?>
             
     </main><!-- #main -->
     
