@@ -23,7 +23,7 @@ get_header(); ?>
 
         <?php endif; ?>
         
-        <div class="padded-content-wrap">
+        <div id="front-page-content" class="padded-content-wrap">
         
             <?php if ( have_posts() ) : ?>
 
