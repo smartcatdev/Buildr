@@ -172,7 +172,7 @@ if( ! class_exists( 'AcidOption' ) ) {
             }
             
             if( $this->has_transport() ) {
-                $this->setting_args[ 'transport' ] = $this->transport;
+                $this->setting_args[ 'transport' ] = $this->default;
             }else {
                 $this->setting_args[ 'transport' ] = self::TRANSPORT;
             }
