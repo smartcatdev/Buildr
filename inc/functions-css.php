@@ -17,11 +17,15 @@ function designr_wp_head_styles() { ?>
         div#custom-header-content .custom-header-title,
         div#designr-custom-header.parallax_layers .custom-header-title,
         h2.widget-title,
-        ul.product_list_widget .product-wrap .product-title .price-wrap {
+        ul.product_list_widget .product-wrap .product-title .price-wrap,
+        #designr-featured-woocommerce h4.product_category_title {
             font-family: <?php esc_attr_e( get_theme_mod( DESIGNR_OPTIONS::FONT_SECONDARY, DESIGNR_DEFAULTS::FONT_SECONDARY ) ); ?>;
         }
 
         h1,h2,h3,h4,h5,h6,
+        button, 
+        input[type="submit"],
+        a.button,
         ul#mobile-menu li a,
         ul.slim-header-menu > li a,
         ul#custom-header-menu > li a,
@@ -138,6 +142,12 @@ function designr_wp_head_styles() { ?>
 
         a:not(.button):hover {
             color: <?php esc_attr_e( $theme_colors['secondary'] ); ?>;
+        }
+        
+        button.secondary, 
+        a.button.secondary {
+            border-color: <?php esc_attr_e( $theme_colors['secondary'] ); ?>;
+            background-color: <?php esc_attr_e( $theme_colors['secondary'] ); ?>;
         }
 
         /* ----- Navbar Colors & Image -------------------------------------- */
@@ -440,6 +450,16 @@ function designr_wp_head_styles() { ?>
                 
             <?php endif; ?>
             
+        <?php endif; ?>
+        
+        /* ---------------------------------------------------------------------
+         * Homepage
+         * ------------------------------------------------------------------ */
+                
+        <?php if ( ! get_theme_mod( DESIGNR_OPTIONS::HOMEPAGE_SHOW_CONTENT, DESIGNR_DEFAULTS::HOMEPAGE_SHOW_CONTENT ) ) : ?>
+            #front-page-content {
+                display: none;
+            }
         <?php endif; ?>
         
         /* ---------------------------------------------------------------------

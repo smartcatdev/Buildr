@@ -489,7 +489,7 @@ if ( !function_exists( 'designr_woocommerce_product_loop_cta' ) ) {
                         Every space has its own purpose. Our task is to understand, see and implement it. We speak the architectural language fluently.
                     </p>
 
-                    <a class="button hollow wow fadeInUpBig" href="#">
+                    <a class="button wow fadeInUpBig" href="#">
                         Discover
                     </a>
 

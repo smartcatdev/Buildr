@@ -162,7 +162,9 @@ interface DESIGNR_OPTIONS {
             WOO_SLIDE_CART_TOGGLE                   = 'cart_drawer_toggle',
             WOO_SLIDE_CART_TAB_COLOR                = 'cart_drawer_tab_color',
             WOO_SLIDE_CART_TAB_ICON                 = 'cart_drawer_tab_icon',
-            WOO_SLIDE_CART_TAB_POSITION             = 'cart_drawer_tab_location';
+            WOO_SLIDE_CART_TAB_POSITION             = 'cart_drawer_tab_location',
+            
+            HOMEPAGE_SHOW_CONTENT                   = 'homepage_show_content_toggle';
 
 }
 
@@ -288,7 +290,7 @@ interface DESIGNR_DEFAULTS {
 
             FONT_PRIMARY                            = 'Montserrat, sans-serif',
             FONT_SECONDARY                          = 'Abel, sans-serif',
-            FONT_BODY_SIZE                          = 16,
+            FONT_BODY_SIZE                          = 18,
             FONT_HEADINGS_LETTER_GAP                = '0.0',
             FONT_HEADINGS_LINE_HEIGHT               = '1',
             FONT_H1_FONT_SIZE                       = 44,
@@ -328,6 +330,8 @@ interface DESIGNR_DEFAULTS {
             WOO_SLIDE_CART_TOGGLE                   = true,
             WOO_SLIDE_CART_TAB_COLOR                = '#000000',
             WOO_SLIDE_CART_TAB_ICON                 = 'fa-shopping-cart',
-            WOO_SLIDE_CART_TAB_POSITION             = 'bottom';
+            WOO_SLIDE_CART_TAB_POSITION             = 'bottom',
+
+            HOMEPAGE_SHOW_CONTENT                   = true;
             
 }

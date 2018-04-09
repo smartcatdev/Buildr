@@ -111,6 +111,27 @@ add_action( 'customize_controls_enqueue_scripts', 'designr_customize_controls_js
 $acid = acid_instance( get_template_directory_uri() . '/inc/lib/' );
 
 $data = array (
+    
+    'sections'  => array(
+        
+        'static_front_page'  => array(
+            
+            'title'         => __( 'Homepage Settings', 'designr' ),
+            'desciption'    => __( 'You can choose what\'s displayed on the homepage of your site. It can be posts in reverse chronological order (classic blog), or a fixed/static page. To set a static homepage, you first need to create two Pages. One will become the homepage, and the other will be where your posts are displayed.', 'designr' ),
+            'options'       => array(
+                
+                DESIGNR_OPTIONS::HOMEPAGE_SHOW_CONTENT => array (
+                    'type'          => 'toggle',
+                    'label'         => __( 'Show the Frontpage Content?', 'designr' ),
+                    'description'   => __( 'While this is on, the content of the page set as the static Homepage will be visible', 'designr' ),
+                    'default'       => DESIGNR_DEFAULTS::HOMEPAGE_SHOW_CONTENT,
+                ),
+                
+            ),
+            
+        ),
+        
+    ),
 
     'panels' => array (
 
