@@ -134,65 +134,111 @@ $data = array (
                                 'parallax_layers'       => __( 'Perspective Layers', 'designr' ),
                             )
                         ),
-                        'designr_custom_header_height_unit' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_HEIGHT_CALC => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'Height Calculation', 'designr' ),
                             'description'   => __( 'This allows you to choose between using % values or fixed pixel values for setting the header height', 'designr' ),
-                            'default'       => 'percent',
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_HEIGHT_CALC,
                             'choices'   => array (
                                 'percent'   => __( 'Use % of browser height', 'designr' ),
                                 'fixed'     => __( 'Use a fixed pixel value', 'designr' ),
                             )
                         ),
-                        'designr_custom_header_height_percent' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_HEIGHT_PCT => array (
                             'type'          => 'number',
                             'label'         => __( 'Height (%)', 'designr' ),
-                            'default'       => 50,
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_HEIGHT_PCT,
                             'min'           => 25,
                             'max'           => 100,
                         ),
-                        'designr_custom_header_height_percent_mbl' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_HEIGHT_PCT_MBL => array (
                             'type'          => 'number',
                             'label'         => __( 'Height for Mobile (%)', 'designr' ),
                             'description'   => __( 'When viewed on screens less than 992px wide', 'designr' ),
-                            'default'       => 25,
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_HEIGHT_PCT_MBL,
                             'max'           => 100,
                         ),
-                        'designr_custom_header_height_pixels' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_HEIGHT_PX => array (
                             'type'          => 'number',
                             'label'         => __( 'Height (px)', 'designr' ),
-                            'default'       => 500,
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_HEIGHT_PX,
                             'min'           => 250,
                         ),
-                        'designr_custom_header_height_pixels_mbl' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_HEIGHT_PX_MBL => array (
                             'type'          => 'number',
                             'label'         => __( 'Height for Mobile (px)', 'designr' ),
                             'description'   => __( 'When viewed on screens less than 992px wide', 'designr' ),
-                            'default'       => 250,
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_HEIGHT_PX_MBL,
                         ),
-                        'parallax_layers_parallax_style' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_PLX_INTENSITY => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'Parallax Effect - Intensity', 'designr' ),
-                            'default'       => 'default',
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_PLX_INTENSITY,
                             'choices'   => array (
                                 'subtle'            => __( 'Subtle', 'designr' ),
                                 'default'           => __( 'Medium (Default)', 'designr' ),
                                 'high'              => __( 'High', 'designr' ),
                             )
                         ),
-                        'parallax_layers_texture_pattern' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_TEXTURE_IMG => array (
                             'type'          => 'image',
                             'label'         => __( 'Perspective Layers - Transparent Pattern', 'designr' ),
                             'description'   => __( 'https://www.transparenttextures.com', 'designr' ),
-                            'default'       => '',
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_TEXTURE_IMG,
                         ),
-                        'parallax_layers_texture_layer_opacity' => array (   // TODO: Change to Overlay Decimal
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_TEXTURE_OPAC => array (   // TODO: Change to Overlay Decimal
                             'type'          => 'decimal',
                             'label'         => __( 'Perspective Layers - Pattern (Opacity)', 'designr' ),
                             'description'   => __( '0.0 for transparent, up to 1.0 for solid/opaque', 'designr' ),
-                            'default'       => .75,
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_TEXTURE_OPAC,
                         ),
+                        
+                    )
 
+                ),
+                
+                // Section : Custom Header Locations ----------------------------
+                'section_custom_header' => array (
+
+                    'title' => __( 'Display Locations', 'designr' ),
+                    'options' => array (
+                        
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_ON_POSTS => array (  
+                            'type'          => 'toggle',
+                            'label'         => __( 'Include on Posts?', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_POSTS,
+                        ),
+                        
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_ON_PAGES => array (  
+                            'type'          => 'toggle',
+                            'label'         => __( 'Include on Pages?', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_PAGES,
+                        ),
+                        
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_ON_FRONT => array (  
+                            'type'          => 'toggle',
+                            'label'         => __( 'Include on the Front Page?', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_FRONT,
+                        ),
+                        
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_ON_BLOG => array (   
+                            'type'          => 'toggle',
+                            'label'         => __( 'Include on the Blog?', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_BLOG,
+                        ),
+                        
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_ON_ARCHIVE => array (   
+                            'type'          => 'toggle',
+                            'label'         => __( 'Include on Archive Pages?', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_ARCHIVE,
+                        ),
+                        
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_ON_SHOP => array (   
+                            'type'          => 'toggle',
+                            'label'         => __( 'Include on the Shop Page?', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_SHOP,
+                        ),
+                        
                     )
 
                 ),
@@ -200,72 +246,62 @@ $data = array (
                 // Section : Custom Header - Logo Settings ---------------------
                 'section_custom_header_logo' => array (
 
-                    'title' => __( 'Display: Logo', 'designr' ),
+                    'title' => __( 'Content', 'designr' ),
                     'options' => array (
 
                         // Logo
-                        'custom_header_show_logo' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_LOGO => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Display the Site Logo?', 'designr' ),
                             'description'   => __( 'If on, the Custom Logo for the site will be displayed', 'designr' ),
-                            'default'       => true,
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_LOGO,
                         ),
-                        'designr_custom_header_logo_height' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_LOGO_HEIGHT => array (
                             'type'          => 'number',
                             'label'         => __( 'Height of Logo (px)', 'designr' ),
-                            'default'       => 150,
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_LOGO_HEIGHT,
                         ),
-                        'designr_custom_header_logo_height_mbl' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_LOGO_HEIGHT_MBL => array (
                             'type'          => 'number',
                             'label'         => __( 'Height of Logo for Mobile (px)', 'designr' ),
                             'description'   => __( 'When viewed on screens less than 992px wide', 'designr' ),
-                            'default'       => 80,
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_LOGO_HEIGHT_MBL,
                         ),
-
-                    )
-
-                ),
-
-                // Section : Custom Header - Main Heading Settings ---------------------
-                'section_custom_header_heading' => array (
-
-                    'title' => __( 'Display: Heading', 'designr' ),
-                    'options' => array (
-
+                        
                         // Main Heading
-                        'custom_header_show_heading' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_TITLE => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Display the Main Heading?', 'designr' ),
                             'description'   => __( 'If on, the primary content heading will be displayed', 'designr' ),
-                            'default'       => true
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_TITLE
                         ),
-                        'custom_header_title_content' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_TITLE_CONTENT => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'What to Display?', 'designr' ),
-                            'default'       => 'site_title',
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_TITLE_CONTENT,
                             'choices'   => array (
                                 'site_title'        => __( 'Site Title', 'designr' ),
                                 'site_description'  => __( 'Site Description', 'designr' ),
                             )
                         ),
-                        'custom_header_title_font_family' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_TITLE_FONT_FAMILY => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'Font Family', 'designr' ),
-                            'default'       => 'secondary',
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_TITLE_FONT_FAMILY,
                             'choices'   => array (
                                 'primary'   => __( 'Use Primary Font', 'designr' ),
                                 'secondary' => __( 'Use Secondary Font', 'designr' ),
                             )
                         ),
-                        'custom_header_title_font_size' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_TITLE_FONT_SIZE => array (
                             'type'          => 'number',
                             'label'         => __( 'Font Size', 'designr' ),
-                            'default'       => 48
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_TITLE_FONT_SIZE
                         ),
-                        'custom_header_title_letter_spacing' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_TITLE_LETTER_GAP => array (
                             'type'          => 'select',
                             'label'         => __( 'Letter Spacing', 'designr' ),
-                            'default'       => '.250',
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_TITLE_LETTER_GAP,
                             'choices'   => array (
                                 '-.1'       => __( '-.100em (Narrowest)', 'designr' ),
                                 '-.075'     => __( '-.075em', 'designr' ),
@@ -280,15 +316,15 @@ $data = array (
                                 '.500'      => __( '.500em (Widest)', 'designr' ),
                             )
                         ),
-                        'custom_header_title_uppercase' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_TITLE_ALL_CAPS => array (
                             'type'          => 'toggle',
                             'label'         => __( 'All Uppercase?', 'designr' ),
-                            'default'       => true
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_TITLE_ALL_CAPS
                         ),
-                        'custom_header_title_color' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_TITLE_COLOR => array (
                             'type'          => 'color',
                             'label'         => __( 'Text Color', 'designr' ),
-                            'default'       => '#FFFFFF'
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_TITLE_COLOR
                         ),
 
                     )
@@ -298,34 +334,34 @@ $data = array (
                 // Section : Custom Header - Menu Settings ---------------------
                 'section_custom_header_menu' => array (
 
-                    'title' => __( 'Display: Custom Menu', 'designr' ),
+                    'title' => __( 'Custom Menu', 'designr' ),
                     'options' => array (
 
                         // Menu
-                        'custom_header_show_menu' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_MENU => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Display the Menu?', 'designr' ),
                             'description'   => __( 'If on, the "Custom Header" menu will be displayed (if one is set)', 'designr' ),
-                            'default'       => true
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_MENU
                         ),
-                        'custom_header_menu_font_family' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_MENU_FONT_FAMILY => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'Font Family', 'designr' ),
-                            'default'       => 'primary',
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_MENU_FONT_FAMILY,
                             'choices'   => array (
                                 'primary'   => __( 'Use Primary Font', 'designr' ),
                                 'secondary' => __( 'Use Secondary Font', 'designr' ),
                             )
                         ),
-                        'custom_header_menu_font_size' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_MENU_FONT_SIZE => array (
                             'type'          => 'number',
                             'label'         => __( 'Font Size', 'designr' ),
-                            'default'       => 10
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_MENU_FONT_SIZE
                         ),
-                        'custom_header_menu_letter_spacing' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_MENU_LETTER_GAP => array (
                             'type'          => 'select',
                             'label'         => __( 'Menu - Link Letter Spacing', 'designr' ),
-                            'default'       => '.500',
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_MENU_LETTER_GAP,
                             'choices'   => array (
                                 '-.1'       => __( '-.100em (Narrowest)', 'designr' ),
                                 '-.075'     => __( '-.075em', 'designr' ),
@@ -340,18 +376,18 @@ $data = array (
                                 '.500'      => __( '.500em (Default/Widest)', 'designr' ),
                             )
                         ),
-                        'custom_header_menu_color' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_MENU_COLOR => array (
                             'type'          => 'color',
                             'label'         => __( 'Text Color', 'designr' ),
-                            'default'       => '#FFFFFF'
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_MENU_COLOR
                         ),
-                        'custom_header_menu_link_spacing' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_MENU_LINKS_GAP => array (
                             'type'          => 'number',
                             'label'         => __( 'Link Spacing', 'designr' ),
                             'description'   => __( 'Amount of space in px between each link in the menu', 'designr' ),
-                            'default'       => 16
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_MENU_LINKS_GAP
                         ),
-
+                       
                     )
 
                 ),
@@ -362,11 +398,11 @@ $data = array (
                     'title' => __( 'Color / Gradient Overlay', 'designr' ),
                     'options' => array (
 
-                        'parallax_layers_include_color_layer' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_COLOR_LAYER_STYLE => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'Include a colored overlay layer?', 'designr' ),
                             'description'   => __( 'If "Yes", a semi-transparent colored layer will be added between the texture and content layers', 'designr' ),
-                            'default'       => 'no',
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_COLOR_LAYER_STYLE,
                             'choices'   => array (
                                 'no'        => __( 'No Color', 'designr' ),
                                 'single'    => __( 'Single Color', 'designr' ),
@@ -375,40 +411,40 @@ $data = array (
                         ),
 
                         // Overlay - Single Color
-                        'parallax_layers_single_color' => array (
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_COLOR_LAYER_COLOR => array (
                             'type'          => 'color',
                             'label'         => __( 'Color Overlay - Color', 'designr' ),
-                            'default'       => '#348aa7',
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_COLOR_LAYER_COLOR,
                         ),
-                        'parallax_layers_single_color_opacity' => array ( // TODO: Change to Overlay Decimal
+                        DESIGNR_OPTIONS::CUSTOM_HEADER_COLOR_LAYER_OPACITY => array ( // TODO: Change to Overlay Decimal
                             'type'          => 'decimal',
                             'label'         => __( 'Color Overlay - Color (Opacity)', 'designr' ),
                             'description'   => __( '0.0 for transparent, up to 1.0 for solid/opaque', 'designr' ),
-                            'default'       => .75,
+                            'default'       => DESIGNR_DEFAULTS::CUSTOM_HEADER_COLOR_LAYER_OPACITY,
                         ),
 
                         // Overlay - Gradient
-                        'parallax_layers_gradient_style' => array (
+                        DESIGNR_OPTIONS::GRADIENT_STYLE => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'Gradient - Style', 'designr' ),
                             'description'   => __( 'Choose from linear or radial', 'designr' ),
-                            'default'       => 'linear',
+                            'default'       => DESIGNR_DEFAULTS::GRADIENT_STYLE,
                             'choices'   => array (
                                 'linear'    => __( 'Linear', 'designr' ),
                                 'radial'    => __( 'Radial', 'designr' ),
                             )
                         ),
-                        'parallax_layers_gradient_overall_opacity' => array ( // TODO: Change to Overlay Decimal
+                        DESIGNR_OPTIONS::GRADIENT_OVERALL_OPACITY => array ( // TODO: Change to Overlay Decimal
                             'type'          => 'decimal',
                             'label'         => __( 'Gradient - Layer Opacity', 'designr' ),
                             'description'   => __( 'This option can be used to set transparency for the entire gradient. Set 0.0 for transparent, up to 1.0 for solid/opaque', 'designr' ),
-                            'default'       => .75,
+                            'default'       => DESIGNR_DEFAULTS::GRADIENT_OVERALL_OPACITY,
                         ),
-                        'parallax_layers_gradient_linear_direction' => array (
+                        DESIGNR_OPTIONS::GRADIENT_LINEAR_DIRECTION => array (
                             'type'          => 'select',
                             'label'         => __( 'Linear Gradient - Direction', 'designr' ),
                             'description'   => __( 'Set the linear gradient direction (Start to End)', 'designr' ),
-                            'default'       => 'up',
+                            'default'       => DESIGNR_DEFAULTS::GRADIENT_LINEAR_DIRECTION,
                             'choices'   => array (
                                 'up'        => __( 'Up', 'designr' ),
                                 'down'      => __( 'Down', 'designr' ),
@@ -416,30 +452,29 @@ $data = array (
                                 'left'      => __( 'Left', 'designr' ),
                             )
                         ),
-                        'parallax_layers_gradient_start_color' => array (
+                        DESIGNR_OPTIONS::GRADIENT_START_COLOR => array (
                             'type'          => 'color',
                             'label'         => __( 'Gradient Overlay - Start Color', 'designr' ),
-                            'default'       => '#348aa7',
+                            'default'       => DESIGNR_DEFAULTS::GRADIENT_START_COLOR,
                         ),
-                        'parallax_layers_gradient_start_color_opacity' => array ( // TODO: Change to Overlay Decimal
+                        DESIGNR_OPTIONS::GRADIENT_START_COLOR_OPACITY => array ( // TODO: Change to Overlay Decimal
                             'type'          => 'decimal',
                             'label'         => __( 'Gradient Overlay - Start Color (Opacity)', 'designr' ),
                             'description'   => __( '0.0 for transparent, up to 1.0 for solid/opaque', 'designr' ),
-                            'default'       => .75,
+                            'default'       => DESIGNR_DEFAULTS::GRADIENT_START_COLOR_OPACITY,
                         ),
-                        'parallax_layers_gradient_end_color' => array (
+                        DESIGNR_OPTIONS::GRADIENT_END_COLOR => array (
                             'type'          => 'color',
                             'label'         => __( 'Gradient Overlay - End Color', 'designr' ),
-                            'default'       => '#348aa7',
+                            'default'       => DESIGNR_DEFAULTS::GRADIENT_END_COLOR,
                         ),
-                        'parallax_layers_gradient_end_color_opacity' => array ( // TODO: Change to Overlay Decimal
+                        DESIGNR_OPTIONS::GRADIENT_END_COLOR_OPACITY => array ( // TODO: Change to Overlay Decimal
                             'type'          => 'decimal',
                             'label'         => __( 'Gradient Overlay - End Color (Opacity)', 'designr' ),
                             'description'   => __( '0.0 for transparent, up to 1.0 for solid/opaque', 'designr' ),
-                            'default'       => .25,
+                            'default'       => DESIGNR_DEFAULTS::GRADIENT_END_COLOR_OPACITY,
                         ),
-
-
+                        
                     )
 
                 ),
@@ -461,54 +496,54 @@ $data = array (
                     'title' => __( 'General Settings', 'designr' ),
                     'options' => array (
 
-                        'blog_layout_style' => array (
+                        DESIGNR_OPTIONS::BLOG_LAYOUT_STYLE => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'Blog Style', 'designr' ),
-                            'default'       => 'blog_standard',
+                            'default'       => DESIGNR_DEFAULTS::BLOG_LAYOUT_STYLE,
                             'choices'   => array (
                                 'blog_standard' => __( 'Standard', 'designr' ),
                                 'blog_masonry'  => __( 'Masonry - Cards', 'designr' ),
                                 'blog_mosaic'   => __( 'Mosaic - Grid', 'designr' ),
                             )
                         ),
-                        'blog_layout_show_date_posted' => array (
+                        DESIGNR_OPTIONS::BLOG_SHOW_DATE => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Show Date Posted?', 'designr' ),
-                            'default'       => true,
+                            'default'       => DESIGNR_DEFAULTS::BLOG_SHOW_DATE,
                         ),
-                        'blog_layout_show_author' => array (
+                        DESIGNR_OPTIONS::BLOG_SHOW_AUTHOR => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Show Author?', 'designr' ),
-                            'default'       => true,
+                            'default'       => DESIGNR_DEFAULTS::BLOG_SHOW_AUTHOR,
                         ),
-                        'blog_layout_show_content_excerpt' => array (
+                        DESIGNR_OPTIONS::BLOG_SHOW_CONTENT => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Show Content / Excerpt?', 'designr' ),
-                            'default'       => true,
+                            'default'       => DESIGNR_DEFAULTS::BLOG_SHOW_CONTENT,
                         ),
-                        'blog_layout_show_categories' => array (
+                        DESIGNR_OPTIONS::BLOG_SHOW_CATEGORY => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Show Category Footer?', 'designr' ),
-                            'default'       => true,
+                            'default'       => DESIGNR_DEFAULTS::BLOG_SHOW_CATEGORY,
                         ),
-                        'blog_layout_show_comment_count' => array (
+                        DESIGNR_OPTIONS::BLOG_SHOW_COMMENT_COUNT => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Show the Comment Count in the Meta Stats tab?', 'designr' ),
-                            'default'       => true,
+                            'default'       => DESIGNR_DEFAULTS::BLOG_SHOW_COMMENT_COUNT,
                         ),
-                        'blog_layout_excerpt_trim_words' => array (
+                        DESIGNR_OPTIONS::BLOG_EXCERPT_TRIM_NUM => array (
                             'type'          => 'number',
                             'label'         => __( 'Automatic Excerpt - Trim by Number of Words', 'designr' ),
                             'description'   => __( 'If no manual excerpt exists, a post will show this many words of preview content', 'designr' ),
-                            'default'       => 30,
+                            'default'       => DESIGNR_DEFAULTS::BLOG_EXCERPT_TRIM_NUM,
                         ),
-                        'blog_layout_read_more_text' => array (
+                        DESIGNR_OPTIONS::BLOG_READ_MORE_TEXT => array (
                             'type'          => 'text',
                             'label'         => __( 'Automatic Excerpt - "Read more" Link Text', 'designr' ),
                             'description'   => __( 'This link only shows on posts with no manual excerpt, as a content preview will be used instead', 'designr' ),
-                            'default'       => __( 'Read more', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::BLOG_READ_MORE_TEXT,
                         ),
-                        
+
                     )
 
                 ),
@@ -518,12 +553,12 @@ $data = array (
 
                     'title' => __( 'Advanced Settings', 'designr' ),
                     'options' => array (
-
-                        'blog_layout_num_columns' => array (
+                        
+                        DESIGNR_OPTIONS::BLOG_LAYOUT_NUM_COLS => array (
                             'type'          => 'select',
                             'label'         => __( 'Layout - Number of Columns', 'designr' ),
                             'description'   => __( 'Mobile devices will automatically show fewer columns to maximize space.', 'designr' ),
-                            'default'       => '3col',
+                            'default'       => DESIGNR_DEFAULTS::BLOG_LAYOUT_NUM_COLS,
                             'choices'   => array (
                                 '1col'      => __( 'Single Column', 'designr' ),
                                 '2col'      => __( 'Two Columns', 'designr' ),
@@ -531,42 +566,42 @@ $data = array (
                                 '4col'      => __( 'Four Columns', 'designr' ),
                             )
                         ),
-                        'standard_blog_appearance_style' => array (
+                        DESIGNR_OPTIONS::BLOG_CARD_APPEARANCE => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'Blog Card Appearance', 'designr' ),
                             'description'   => __( 'Select whether the Standard style blog cards should appear flat, or as raised cards with a shadow.', 'designr' ),
-                            'default'       => 'flat',
+                            'default'       => DESIGNR_DEFAULTS::BLOG_CARD_APPEARANCE,
                             'choices'   => array (
                                 'flat'      => __( 'Flat', 'designr' ),
                                 'raised'    => __( 'Raised', 'designr' ),
                             )
                         ),
-                        'blog_layout_border_radius' => array (
+                        DESIGNR_OPTIONS::BLOG_CARD_BORDER_RADIUS => array (
                             'type'          => 'number',
                             'label'         => __( 'Round Corners on Posts in the Blog?', 'designr' ),
                             'description'   => __( 'Set this to 0 for sharp corners, or set the rounding value in pixels.', 'designr' ),
-                            'default'       => 0,
+                            'default'       => DESIGNR_DEFAULTS::BLOG_CARD_BORDER_RADIUS,
                         ),
-                        'mosaic_blog_gap_spacing' => array (
+                        DESIGNR_OPTIONS::BLOG_CARD_MOSAIC_GAP => array (
                             'type'          => 'number',
                             'label'         => __( 'Space around each Mosaic tile?', 'designr' ),
                             'description'   => __( 'This is the uncombined padding around each tile. For example, setting this to 5px per tile will equal a 10px wide gutter. Set to 0 for gapless tiles.', 'designr' ),
-                            'default'       => 0,
+                            'default'       => DESIGNR_DEFAULTS::BLOG_CARD_MOSAIC_GAP,
                         ),
-                        'blog_title_font_size_dsk' => array (
+                        DESIGNR_OPTIONS::BLOG_CARD_FONT_SIZE_DSK => array (
                             'type'          => 'number',
                             'label'         => __( 'Post Title - Font Size (Desktop)', 'designr' ),
-                            'default'       => 32,
+                            'default'       => DESIGNR_DEFAULTS::BLOG_CARD_FONT_SIZE_DSK,
                         ),
-                        'blog_title_font_size_mbl' => array (
+                        DESIGNR_OPTIONS::BLOG_CARD_FONT_SIZE_MBL => array (
                             'type'          => 'number',
                             'label'         => __( 'Post Title - Font Size (Mobile)', 'designr' ),
-                            'default'       => 20,
+                            'default'       => DESIGNR_DEFAULTS::BLOG_CARD_FONT_SIZE_MBL,
                         ),
-                        'blog_meta_font_size' => array (
+                        DESIGNR_OPTIONS::BLOG_META_FONT_SIZE => array (
                             'type'          => 'number',
                             'label'         => __( 'Post Date & Author - Font Size', 'designr' ),
-                            'default'       => 12,
+                            'default'       => DESIGNR_DEFAULTS::BLOG_META_FONT_SIZE,
                         ),
 
                     )
@@ -576,6 +611,80 @@ $data = array (
             ), // End of Blog Sections
 
         ), // End of Blog Panel
+
+        // Panel: Navbar -------------------------------------------------------
+        null => array (
+
+            'sections'       => array (
+
+                'section_nav_social_links' => array (
+
+                    'title' => __( 'Social Links', 'designr' ),
+                    'options' => array (
+                        
+                        DESIGNR_OPTIONS::SOCIAL_URL_1 => array (
+                            'type'          => 'url',
+                            'label'         => __( 'Social Link #1 - URL', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::SOCIAL_URL_1
+                        ),
+                        DESIGNR_OPTIONS::SOCIAL_ICON_1 => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Social Link #1 - Icon', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::SOCIAL_ICON_1,
+                            'choices'       => designr_get_icons( 'social' )
+                        ),
+                        DESIGNR_OPTIONS::SOCIAL_URL_2 => array (
+                            'type'          => 'url',
+                            'label'         => __( 'Social Link #2 - URL', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::SOCIAL_URL_2
+                        ),
+                        DESIGNR_OPTIONS::SOCIAL_ICON_2 => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Social Link #2 - Icon', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::SOCIAL_ICON_2,
+                            'choices'       => designr_get_icons( 'social' )
+                        ),
+                        DESIGNR_OPTIONS::SOCIAL_URL_3 => array (
+                            'type'          => 'url',
+                            'label'         => __( 'Social Link #3 - URL', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::SOCIAL_URL_3
+                        ),
+                        DESIGNR_OPTIONS::SOCIAL_ICON_3 => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Social Link #3 - Icon', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::SOCIAL_ICON_3,
+                            'choices'       => designr_get_icons( 'social' )
+                        ),
+                        DESIGNR_OPTIONS::SOCIAL_URL_4 => array (
+                            'type'          => 'url',
+                            'label'         => __( 'Social Link #4 - URL', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::SOCIAL_URL_4
+                        ),
+                        DESIGNR_OPTIONS::SOCIAL_ICON_4 => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Social Link #4 - Icon', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::SOCIAL_ICON_4,
+                            'choices'       => designr_get_icons( 'social' )
+                        ),
+                        DESIGNR_OPTIONS::SOCIAL_URL_5 => array (
+                            'type'          => 'url',
+                            'label'         => __( 'Social Link #5 - URL', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::SOCIAL_URL_5
+                        ),
+                        DESIGNR_OPTIONS::SOCIAL_ICON_5 => array (
+                            'type'          => 'select',
+                            'label'         => __( 'Social Link #5 - Icon', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::SOCIAL_ICON_5,
+                            'choices'       => designr_get_icons( 'social' )
+                        ),
+
+                    )
+
+                ),
+                
+            ), // End of Social Section
+            
+        ), // End of Social Panel
 
         // Panel: Navbar -------------------------------------------------------
         'panel_navbar' => array (
@@ -590,41 +699,41 @@ $data = array (
                     'title' => __( 'General Settings', 'designr' ),
                     'options' => array (
 
-                        'navbar_style' => array (
+                        DESIGNR_OPTIONS::NAVBAR_STYLE => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'Navbar Style', 'designr' ),
-                            'default'       => 'slim_left',
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_STYLE,
                             'choices'   => array (
                                 'slim_split'    => __( 'Slim - Centered & Split', 'designr' ),
                                 'slim_left'     => __( 'Slim - Left Aligned', 'designr' ),
                                 'banner'        => __( 'Banner', 'designr' ),
                             )
                         ),
-                        'navbar_hide_tagline' => array (
+                        DESIGNR_OPTIONS::NAVBAR_HIDE_TAGLINE => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Hide Site Tagline?', 'designr' ),
                             'description'   => __( 'Both the Title & Tagline show by default when no logo is chosen', 'designr' ),
-                            'default'       => true,
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_HIDE_TAGLINE,
                         ),
-                        'navbar_site_title_font' => array (
+                        DESIGNR_OPTIONS::NAVBAR_SITE_TITLE_FONT_FAMILY => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'Site Title - Font Family', 'designr' ),
-                            'default'       => 'secondary',
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_SITE_TITLE_FONT_FAMILY,
                             'choices'   => array (
                                 'primary'   => __( 'Use Primary Font', 'designr' ),
                                 'secondary' => __( 'Use Secondary Font', 'designr' ),
                             )
                         ),
-                        'navbar_site_title_font_size' => array (
+                        DESIGNR_OPTIONS::NAVBAR_SITE_TITLE_FONT_SIZE => array (
                             'type'          => 'number',
                             'label'         => __( 'Site Title - Font Size', 'designr' ),
-                            'default'       => 32
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_SITE_TITLE_FONT_SIZE
                         ),
-                        'navbar_site_title_spacing' => array(
+                        DESIGNR_OPTIONS::NAVBAR_SITE_TITLE_LETTER_GAP => array(
                             'type'          => 'select',
                             'label'         => __( 'Site Title - Letter Spacing', 'designr' ),
                             'description'   => __( 'Set the scaling "em" value. Can be positive or negative. 0 for normal spacing.', 'designr' ),
-                            'default'       => '.250',
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_SITE_TITLE_LETTER_GAP,
                             'choices'   => array (
                                 '-.1'       => __( '-.100em (Narrowest)', 'designr' ),
                                 '-.075'     => __( '-.075em', 'designr' ),
@@ -639,51 +748,57 @@ $data = array (
                                 '.500'      => __( '.500em (Widest)', 'designr' ),
                             )
                         ),
-                        'navbar_site_title_uppercase' => array(
+                        DESIGNR_OPTIONS::NAVBAR_SITE_TITLE_ALL_CAPS => array(
                             'type'          => 'toggle',
                             'label'         => __( 'Site Title - All Uppercase?', 'designr' ),
-                            'default'       => true
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_SITE_TITLE_ALL_CAPS
                         ),
-                        'navbar_site_tagline_font' => array (
+                        DESIGNR_OPTIONS::NAVBAR_TAGLINE_FONT_FAMILY => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'Site Tagline - Font Family', 'designr' ),
-                            'default'       => 'secondary',
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_TAGLINE_FONT_FAMILY,
                             'choices'   => array (
                                 'primary'   => __( 'Use Primary Font', 'designr' ),
                                 'secondary' => __( 'Use Secondary Font', 'designr' ),
                             )
                         ),
-                        'navbar_site_tagline_font_size' => array (
+                        DESIGNR_OPTIONS::NAVBAR_TAGLINE_FONT_SIZE => array (
                             'type'          => 'number',
                             'label'         => __( 'Site Tagline - Font Size', 'designr' ),
-                            'default'       => 12
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_TAGLINE_FONT_SIZE
                         ),
-                        'navbar_links_font' => array (
+                        DESIGNR_OPTIONS::NAVBAR_LINKS_FONT_FAMILY => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'Navbar Links - Font Family', 'designr' ),
-                            'default'       => 'primary',
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_LINKS_FONT_FAMILY,
                             'choices'   => array (
                                 'primary'   => __( 'Use Primary Font', 'designr' ),
                                 'secondary' => __( 'Use Secondary Font', 'designr' ),
                             )
                         ),
-                        'navbar_links_font_size' => array (
+                        DESIGNR_OPTIONS::NAVBAR_LINKS_FONT_SIZE => array (
                             'type'          => 'number',
                             'label'         => __( 'Navbar Links - Font Size', 'designr' ),
-                            'default'       => 10
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_LINKS_FONT_SIZE
                         ),
-                        'navbar_links_gap_spacing' => array (
+                        DESIGNR_OPTIONS::NAVBAR_LINKS_GAP => array (
                             'type'          => 'number',
                             'label'         => __( 'Navbar Links - Gap Between Links', 'designr' ),
                             'label'         => __( 'Set the pixel value for the amount of space between links', 'designr' ),
-                            'default'       => 30
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_LINKS_GAP
                         ),
-                        'style_a_box_shadow' => array (
+                        DESIGNR_OPTIONS::NAVBAR_HAS_SHADOW => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Add a box shadow to the Navbar?', 'designr' ),
-                            'default'       => true,
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_HAS_SHADOW,
                         ),
-
+                        DESIGNR_OPTIONS::NAVBAR_SHOW_SOCIAL => array (
+                            'type'          => 'toggle',
+                            'label'         => __( 'Show Social Links in Navbar?', 'designr' ),
+                            'description'   => __( 'If on, social links will display in the Navbar. Navbar styles display these in different ways', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_SHOW_SOCIAL,
+                        ),
+                        
                     )
 
                 ),
@@ -693,176 +808,104 @@ $data = array (
 
                     'title' => __( 'Advanced Settings', 'designr' ),
                     'options' => array (
-
-                        'style_a_always_show_logo' => array (
+                        
+                        DESIGNR_OPTIONS::NAVBAR_ALWAYS_SHOW_LOGO => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Logo - Always Visible?', 'designr' ),
                             'description'   => __( 'If on, the logo will be visible even when Slim Navbar is collapsed / unstuck', 'designr' ),
-                            'default'       => false,
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_ALWAYS_SHOW_LOGO,
                         ),
-                        'style_a_logo_space' => array (
+                        DESIGNR_OPTIONS::NAVBAR_LOGO_HORIZONTAL_PADDING => array (
                             'type'          => 'number',
                             'label'         => __( 'Logo - Horizontal Padding', 'designr' ),
                             'description'   => __( 'Set the space (in pixels) between menu links and the logo', 'designr' ),
-                            'default'       => 15
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_LOGO_HORIZONTAL_PADDING
                         ),
-                        'navbar_banner_logo_height' => array (
+                        DESIGNR_OPTIONS::NAVBAR_LOGO_HEIGHT_DSK => array (
                             'type'          => 'number',
                             'label'         => __( 'Logo - Height (Desktop)', 'designr' ),
                             'description'   => __( 'Set the logo height for the desktop Navbar', 'designr' ),
-                            'default'       => 60
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_LOGO_HEIGHT_DSK
                         ),
-                        'style_a_mobile_logo_height' => array (
+                        DESIGNR_OPTIONS::NAVBAR_LOGO_HEIGHT_MBL => array (
                             'type'          => 'number',
                             'label'         => __( 'Logo - Height (Mobile)', 'designr' ),
                             'description'   => __( 'Set the logo height for the mobile Navbar', 'designr' ),
-                            'default'       => 50
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_LOGO_HEIGHT_MBL
                         ),
-                        'style_a_collapse_height' => array (
+                        DESIGNR_OPTIONS::NAVBAR_INITIAL_HEIGHT => array (
                             'type'          => 'number',
-                            'label'         => __( 'Navbar - Height (Collapsed)', 'designr' ),
-                            'description'   => __( 'When the Slim Navbar is collapsed / unstuck', 'designr' ),
-                            'default'       => 50
+                            'label'         => __( 'Navbar - Height (Initial)', 'designr' ),
+                            'description'   => __( 'When the Slim Navbar is at the very top of the page (unstuck)', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_INITIAL_HEIGHT
                         ),
-                        'style_a_expand_height' => array (
+                        DESIGNR_OPTIONS::NAVBAR_STICKY_HEIGHT => array (
                             'type'          => 'number',
-                            'label'         => __( 'Navbar - Height (Expanded)', 'designr' ),
-                            'description'   => __( 'When the Slim Navbar is expanded / sticky', 'designr' ),
-                            'default'       => 75
+                            'label'         => __( 'Navbar - Height (Sticky)', 'designr' ),
+                            'description'   => __( 'When the Slim Navbar is sticky, after the user scrolls down the page', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_STICKY_HEIGHT
                         ),
-                        'style_a_right_align_menu' => array ( 
+                        DESIGNR_OPTIONS::NAVBAR_RIGHT_ALIGN_MENU => array ( 
                             'type'          => 'toggle',
                             'label'         => __( 'Right Aligned Menu?', 'designr' ),
                             'description'   => __( 'If on, the menu will be right-aligned. For the "Slim - Left Aligned" style of Navbar, the menu will replace the Social Links section', 'designr' ),
-                            'default'       => false,
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_RIGHT_ALIGN_MENU,
                         ),
-                        'style_a_boxed_navbar' => array ( 
+                        DESIGNR_OPTIONS::NAVBAR_BOXED_CONTENT => array ( 
                             'type'          => 'toggle',
                             'label'         => __( 'Box the Content?', 'designr' ),
                             'description'   => __( 'If on, the Navbar content will be lined up with the main content of the page instead of the left & right bounds of the window', 'designr' ),
-                            'default'       => false,
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_BOXED_CONTENT,
                         ),
-                        'navbar_banner_transparent_menu_toggle' => array ( 
+                        DESIGNR_OPTIONS::NAVBAR_TRANSPARENT_MENU_BG => array ( 
                             'type'          => 'toggle',
                             'label'         => __( 'Transparent Menu?', 'designr' ),
                             'description'   => __( 'If on, the menu will be transparent, allowing the Navbar background (color or image) to show through', 'designr' ),
-                            'default'       => true,
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_TRANSPARENT_MENU_BG,
                         ),
-                        'navbar_banner_logo_alignment' => array (
+                        DESIGNR_OPTIONS::NAVBAR_BRANDING_ALIGNMENT => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'Branding - Alignment', 'designr' ),
-                            'default'       => 'left',
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_BRANDING_ALIGNMENT,
                             'choices'   => array (
                                 'left'      => __( 'Left', 'designr' ),
                                 'center'    => __( 'Centered', 'designr' ),
                                 'right'     => __( 'Right', 'designr' ),
                             )
                         ),
-                        'navbar_banner_menu_alignment' => array (
+                        DESIGNR_OPTIONS::NAVBAR_MENU_ALIGNMENT => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'Menu - Alignment', 'designr' ),
-                            'default'       => 'left',
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_MENU_ALIGNMENT,
                             'choices'   => array (
                                 'left'      => __( 'Left', 'designr' ),
                                 'center'    => __( 'Centered', 'designr' ),
                                 'right'     => __( 'Right', 'designr' ),
                             )
                         ),
-                        'navbar_banner_logo_top_spacing' => array (
+                        DESIGNR_OPTIONS::NAVBAR_BRANDING_SPACE_TOP_DSK => array (
                             'type'          => 'number',
                             'label'         => __( 'Branding - Space Above', 'designr' ),
                             'description'   => __( 'Set the amount of space (in pixels) above the branding (for the Banner style of Navbar)', 'designr' ),
-                            'default'       => 60
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_BRANDING_SPACE_TOP_DSK
                         ),
-                        'navbar_banner_logo_bottom_spacing' => array (
+                        DESIGNR_OPTIONS::NAVBAR_BRANDING_SPACE_BOTTOM_DSK => array (
                             'type'          => 'number',
                             'label'         => __( 'Branding - Space Below', 'designr' ),
                             'description'   => __( 'Set the amount of space (in pixels) below the branding (for the Banner style of Navbar)', 'designr' ),
-                            'default'       => 20
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_BRANDING_SPACE_BOTTOM_DSK
                         ),
-                        'navbar_banner_logo_top_spacing_mbl' => array (
+                        DESIGNR_OPTIONS::NAVBAR_BRANDING_SPACE_TOP_MBL => array (
                             'type'          => 'number',
                             'label'         => __( 'Branding - Space Above (Mobile)', 'designr' ),
                             'description'   => __( 'Set the amount of space (in pixels) above the branding on mobile devices (for the Banner style of Navbar)', 'designr' ),
-                            'default'       => 30
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_BRANDING_SPACE_TOP_MBL
                         ),
-                        'navbar_banner_logo_bottom_spacing_mbl' => array (
+                        DESIGNR_OPTIONS::NAVBAR_BRANDING_SPACE_BOTTOM_MBL => array (
                             'type'          => 'number',
                             'label'         => __( 'Branding - Space Below (Mobile)', 'designr' ),
                             'description'   => __( 'Set the amount of space (in pixels) below the branding on mobile devices (for the Banner style of Navbar)', 'designr' ),
-                            'default'       => 15
-                        ),
-
-                    )
-
-                ),
-
-                // Section : Social Links --------------------------------------
-                'section_nav_social_links' => array (
-
-                    'title' => __( 'Social Links', 'designr' ),
-                    'options' => array (
-
-                        'navbar_show_social' => array (
-                            'type'          => 'toggle',
-                            'label'         => __( 'Show Social Links in Navbar?', 'designr' ),
-                            'description'   => __( 'If on, social links will display in the Navbar. Navbar styles display these in different ways', 'designr' ),
-                            'default'       => false,
-                        ),
-                        'social_icon_1_url' => array (
-                            'type'          => 'url',
-                            'label'         => __( 'Social Link #1 - URL', 'designr' ),
-                            'default'       => ''
-                        ),
-                        'social_icon_1_icon' => array (
-                            'type'          => 'select',
-                            'label'         => __( 'Social Link #1 - Icon', 'designr' ),
-                            'default'       => '',
-                            'choices'       => designr_get_icons( 'social' )
-                        ),
-                        'social_icon_2_url' => array (
-                            'type'          => 'url',
-                            'label'         => __( 'Social Link #2 - URL', 'designr' ),
-                            'default'       => ''
-                        ),
-                        'social_icon_2_icon' => array (
-                            'type'          => 'select',
-                            'label'         => __( 'Social Link #2 - Icon', 'designr' ),
-                            'default'       => '',
-                            'choices'       => designr_get_icons( 'social' )
-                        ),
-                        'social_icon_3_url' => array (
-                            'type'          => 'url',
-                            'label'         => __( 'Social Link #3 - URL', 'designr' ),
-                            'default'       => ''
-                        ),
-                        'social_icon_3_icon' => array (
-                            'type'          => 'select',
-                            'label'         => __( 'Social Link #3 - Icon', 'designr' ),
-                            'default'       => '',
-                            'choices'       => designr_get_icons( 'social' )
-                        ),
-                        'social_icon_4_url' => array (
-                            'type'          => 'url',
-                            'label'         => __( 'Social Link #4 - URL', 'designr' ),
-                            'default'       => ''
-                        ),
-                        'social_icon_4_icon' => array (
-                            'type'          => 'select',
-                            'label'         => __( 'Social Link #4 - Icon', 'designr' ),
-                            'default'       => '',
-                            'choices'       => designr_get_icons( 'social' )
-                        ),
-                        'social_icon_5_url' => array (
-                            'type'          => 'url',
-                            'label'         => __( 'Social Link #5 - URL', 'designr' ),
-                            'default'       => ''
-                        ),
-                        'social_icon_5_icon' => array (
-                            'type'          => 'select',
-                            'label'         => __( 'Social Link #5 - Icon', 'designr' ),
-                            'default'       => '',
-                            'choices'       => designr_get_icons( 'social' )
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_BRANDING_SPACE_BOTTOM_MBL
                         ),
 
                     )
@@ -874,73 +917,73 @@ $data = array (
 
                     'title' => __( 'Colors', 'designr' ),
                     'options' => array (
-
-                        'navbar_background_style' => array (
+                        
+                        DESIGNR_OPTIONS::NAVBAR_BG_STYLE => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'Background Style', 'designr' ),
-                            'default'       => 'color',
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_BG_STYLE,
                             'choices'   => array (
                                 'color'     => __( 'Color', 'designr' ),
                                 'image'     => __( 'Background Image', 'designr' ),
                             )
                         ),
-                        'navbar_background' => array (
+                        DESIGNR_OPTIONS::NAVBAR_BG_COLOR => array (
                             'type'          => 'color-select',
                             'label'         => __( 'Background Color', 'designr' ),
-                            'default'       => '#141414',
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_BG_COLOR,
                             'choices'   => array (
                                 '#141414'    => __( 'Dark', 'designr' ),
                                 '#ffffff'    => __( 'Light', 'designr' ),
                             )
                         ),
-                        'navbar_foreground' => array (
+                        DESIGNR_OPTIONS::NAVBAR_FG_COLOR => array (
                             'type'          => 'color-select',
                             'label'         => __( 'Foreground Color', 'designr' ),
-                            'default'       => '#ffffff',
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_FG_COLOR,
                             'choices'   => array (
                                 '#141414'    => __( 'Dark', 'designr' ),
                                 '#ffffff'    => __( 'Light', 'designr' ),
                             )
                         ),
-                        'navbar_banner_menu_background' => array (
+                        DESIGNR_OPTIONS::NAVBAR_MENU_BG_COLOR => array (
                             'type'          => 'color-select',
                             'label'         => __( 'Menu - Background Color', 'designr' ),
                             'description'   => __( 'If the menu is not set to transparent (in Advanced Settings), you can set the background color for the menu bar', 'designr' ),
-                            'default'       => '#141414',
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_MENU_BG_COLOR,
                             'choices'   => array (
                                 '#141414'    => __( 'Dark', 'designr' ),
                                 '#ffffff'    => __( 'Light', 'designr' ),
                             )
                         ),
-                        'navbar_banner_menu_foreground' => array (
+                        DESIGNR_OPTIONS::NAVBAR_MENU_FG_COLOR => array (
                             'type'          => 'color-select',
                             'label'         => __( 'Menu - Foreground Color', 'designr' ),
                             'description'   => __( 'If the menu is not set to transparent (in Advanced Settings), you can set the foreground color for the menu bar', 'designr' ),
-                            'default'       => '#ffffff',
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_MENU_FG_COLOR,
                             'choices'   => array (
                                 '#141414'    => __( 'Dark', 'designr' ),
                                 '#ffffff'    => __( 'Light', 'designr' ),
                             )
                         ),
-                        'navbar_bg_image' => array (
+                        DESIGNR_OPTIONS::NAVBAR_BG_IMAGE => array (
                             'type'          => 'image',
                             'label'         => __( 'Background Image', 'designr' ),
-                            'default'       => '',
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_BG_IMAGE,
                         ),
-                        'navbar_social_drawer_background' => array (
+                        DESIGNR_OPTIONS::NAVBAR_SOCIAL_BG_COLOR => array (
                             'type'          => 'color',
                             'label'         => __( 'Social Links - Drawer Background', 'designr' ),
-                            'default'       => '#141414'
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_SOCIAL_BG_COLOR,
                         ),
-                        'navbar_social_link_foreground' => array (
+                        DESIGNR_OPTIONS::NAVBAR_SOCIAL_FG_COLOR => array (
                             'type'          => 'color',
                             'label'         => __( 'Social Links - Icons', 'designr' ),
-                            'default'       => '#FFFFFF'
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_SOCIAL_FG_COLOR,
                         ),
-                        'navbar_social_link_foreground_hover' => array (
+                        DESIGNR_OPTIONS::NAVBAR_SOCIAL_FG_COLOR_HOVER => array (
                             'type'          => 'color',
                             'label'         => __( 'Social Links - Icons (Hover)', 'designr' ),
-                            'default'       => '#0000FF'
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_SOCIAL_FG_COLOR_HOVER,
                         ),
 
                     )
@@ -961,14 +1004,14 @@ $data = array (
                 // Section : Colors --------------------------------------------
                 'section_colors' => array (
 
-                    'title'         => __( 'Colors', 'designr' ),
-                    'description'   => __( 'Customize the colors in use on your site', 'designr' ),
+                    'title'         => __( 'Skin Colors', 'designr' ),
+                    'description'   => __( 'Customize the color theme in use on your site', 'designr' ),
                     'options' => array (
-
-                        'skin_theme_primary' => array(
+                        
+                        DESIGNR_OPTIONS::COLOR_SKIN_PRIMARY => array(
                             'type'          => 'color-select',
-                            'label'         => __( 'Theme Color - Primary', 'designr' ),
-                            'default'       => '#f04265',
+                            'label'         => __( 'Skin Color - Primary', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::COLOR_SKIN_PRIMARY,
                             'choices'   => array(
                                 '#f04265'       => __( 'Cherry Gloss', 'designr' ),
                                 '#13ecb6'       => __( 'Seafoam Coast', 'designr' ),
@@ -976,10 +1019,10 @@ $data = array (
                                 '#00d4ff'       => __( 'Sky Blue', 'designr' ),
                             ),
                         ),
-                        'skin_theme_secondary' => array(
+                        DESIGNR_OPTIONS::COLOR_SKIN_SECONDARY => array(
                             'type'          => 'color-select',
-                            'label'         => __( 'Theme Color - Secondary', 'designr' ),
-                            'default'       => '#d60059',
+                            'label'         => __( 'Skin Color - Secondary', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::COLOR_SKIN_SECONDARY,
                             'choices'   => array(
                                 '#d60059'       => __( 'Magenta Rose', 'designr' ),
                                 '#04aeae'       => __( 'Tide Pool', 'designr' ),
@@ -998,19 +1041,19 @@ $data = array (
                     'title'         => __( 'Fonts', 'designr' ),
                     'description'   => __( 'Customize the fonts in use on your site', 'designr' ),
                     'options' => array (
-
+                        
                         // Primary Font
-                        'primary_font' => array(
+                        DESIGNR_OPTIONS::FONT_PRIMARY => array(
                             'type'      => 'select',
                             'label'     => __( 'Primary Font (Headings & Titles)', 'designr' ),
-                            'default'   => 'Montserrat, sans-serif',
+                            'default'   => DESIGNR_DEFAULTS::FONT_PRIMARY,
                             'choices'   => designr_fonts(),
                         ),
-                        'headings_letter_spacing' => array(
+                        DESIGNR_OPTIONS::FONT_HEADINGS_LETTER_GAP => array(
                             'type'          => 'select',
                             'label'         => __( 'Letter Spacing for all Headings', 'designr' ),
                             'description'   => __( 'Set the scaling "em" value. Can be positive or negative. 0 for normal spacing.', 'designr' ),
-                            'default'       => '0.0',
+                            'default'       => DESIGNR_DEFAULTS::FONT_HEADINGS_LETTER_GAP,
                             'choices'   => array (
                                 '-.1'       => __( '-.100em (Narrowest)', 'designr' ),
                                 '-.075'     => __( '-.075em', 'designr' ),
@@ -1023,11 +1066,11 @@ $data = array (
                                 '.100'      => __( '.100em (Widest)', 'designr' ),
                             )
                         ),
-                        'headings_line_height' => array(
+                        DESIGNR_OPTIONS::FONT_HEADINGS_LINE_HEIGHT => array(
                             'type'          => 'select',
                             'label'         => __( 'Line Height for all Headings', 'designr' ),
                             'description'   => __( 'Set the scaling "em" value. Can be positive or negative. 1 for normal spacing.', 'designr' ),
-                            'default'       => '1',
+                            'default'       => DESIGNR_DEFAULTS::FONT_HEADINGS_LINE_HEIGHT,
                             'choices'   => array (
                                 '.80'       => __( '.80em (Shortest)', 'designr' ),
                                 '1'         => __( '1em (Default)', 'designr' ),
@@ -1036,28 +1079,28 @@ $data = array (
                                 '1.5'       => __( '1.5em (Tallest)', 'designr' ),
                             )
                         ),
-                        'h1_font_size' => array(
+                        DESIGNR_OPTIONS::FONT_H1_FONT_SIZE => array(
                             'type'      => 'number',
                             'label'     => __( 'Font Size - h1', 'designr' ),
-                            'default'   => 16,
+                            'default'   => DESIGNR_DEFAULTS::FONT_H1_FONT_SIZE,
                         ),
-                        'h1_font_size_mbl' => array(
+                        DESIGNR_OPTIONS::FONT_H1_FONT_SIZE_MBL => array(
                             'type'      => 'number',
                             'label'     => __( 'Font Size - h1 (Mobile)', 'designr' ),
-                            'default'   => 16,
+                            'default'   => DESIGNR_DEFAULTS::FONT_H1_FONT_SIZE_MBL,
                         ),
 
                         // Secondary Font
-                        'secondary_font' => array(
+                        DESIGNR_OPTIONS::FONT_SECONDARY => array(
                             'type'      => 'select',
                             'label'     => __( 'Secondary Font (Body & Paragraph)', 'designr' ),
-                            'default'   => 'Abel, sans-serif',
+                            'default'   => DESIGNR_DEFAULTS::FONT_SECONDARY,
                             'choices'   => designr_fonts(),
                         ),
-                        'body_font_size' => array(
+                        DESIGNR_OPTIONS::FONT_BODY_SIZE => array(
                             'type'      => 'number',
                             'label'     => __( 'Font Size - Body & Paragraph', 'designr' ),
-                            'default'   => 16,
+                            'default'   => DESIGNR_DEFAULTS::FONT_BODY_SIZE,
                         ),
 
                     ),
@@ -1081,32 +1124,32 @@ $data = array (
                     'title'     => __( 'Pre-Footer Sidebar', 'designr' ),
                     'options'   => array (
                         
-                        'footer_num_columns' => array (
+                        DESIGNR_OPTIONS::FOOTER_NUM_WIDGET_COLS => array (
                             'type'          => 'range',
                             'label'         => __( 'Number of Widget Columns' , 'designr' ),
-                            'default'       => 4,
+                            'default'       => DESIGNR_DEFAULTS::FOOTER_NUM_WIDGET_COLS,
                             'min'           => 1,
                             'max'           => 4,
                             'step'          => 1
                         ),
-                        'prefooter_widget_title_font_family' => array (
+                        DESIGNR_OPTIONS::WIDGETS_TITLE_FONT_FAMILY => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'Widget Titles - Font Family', 'designr' ),
-                            'default'       => 'secondary',
+                            'default'       => DESIGNR_DEFAULTS::WIDGETS_TITLE_FONT_FAMILY,
                             'choices'   => array (
                                 'primary'   => __( 'Use Primary Font', 'designr' ),
                                 'secondary' => __( 'Use Secondary Font', 'designr' ),
                             )
                         ),
-                        'prefooter_widget_title_font_size' => array (
+                        DESIGNR_OPTIONS::WIDGETS_TITLE_FONT_SIZE => array (
                             'type'          => 'number',
                             'label'         => __( 'Widget Titles - Font Size', 'designr' ),
-                            'default'       => 24
+                            'default'       => DESIGNR_DEFAULTS::WIDGETS_TITLE_FONT_SIZE,
                         ),
-                        'prefooter_widget_title_letter_spacing' => array (
+                        DESIGNR_OPTIONS::WIDGETS_TITLE_FONT_LETTER_GAP => array (
                             'type'          => 'select',
                             'label'         => __( 'Widget Titles - Letter Spacing', 'designr' ),
-                            'default'       => '.250',
+                            'default'       => DESIGNR_DEFAULTS::WIDGETS_TITLE_FONT_LETTER_GAP,
                             'choices'   => array (
                                 '-.1'       => __( '-.100em (Narrowest)', 'designr' ),
                                 '-.075'     => __( '-.075em', 'designr' ),
@@ -1121,16 +1164,16 @@ $data = array (
                                 '.500'      => __( '.500em (Widest)', 'designr' ),
                             )
                         ),
-                        'prefooter_widget_title_uppercase' => array (
+                        DESIGNR_OPTIONS::WIDGETS_TITLE_ALL_CAPS => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Widget Titles - All Uppercase?', 'designr' ),
-                            'default'       => true
+                            'default'       => DESIGNR_DEFAULTS::WIDGETS_TITLE_ALL_CAPS,
                         ),
-                        'prefooter_top_border_thickness' => array (
+                        DESIGNR_OPTIONS::FOOTER_BORDER_TOP_THICKNESS => array (
                             'type'          => 'number',
                             'label'         => __( 'Colored Top Border - Thickness', 'designr' ),
                             'description'   => __( 'If set to a value greater than 0, the Prefooter will include a primary color top border of this many pixels', 'designr' ),
-                            'default'       => 10,
+                            'default'       => DESIGNR_DEFAULTS::FOOTER_BORDER_TOP_THICKNESS,
                         ),
                         
                     )
@@ -1144,83 +1187,83 @@ $data = array (
                     'options'   => array (
 
                         // Footer Style
-                        'footer_style' => array (
+                        DESIGNR_OPTIONS::FOOTER_STYLE => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'Footer Style', 'designr' ),
-                            'default'       => 'default',
+                            'default'       => DESIGNR_DEFAULTS::FOOTER_STYLE,
                             'choices'   => array (
                                 'default'           => __( 'Default', 'designr' ),
                                 'slim'              => __( 'Slim', 'designr' ),
                             )
                         ),
-                        'boxed_footer' => array (
+                        DESIGNR_OPTIONS::FOOTER_BOXED_CONTENT => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Footer - Boxed Content?', 'designr' ),
                             'description'   => __( 'If on, the Footer will be lined up with the main content instead of the left & right bounds of the window', 'designr' ),
-                            'default'       => false,
+                            'default'       => DESIGNR_DEFAULTS::FOOTER_BOXED_CONTENT,
                         ),
-                        'centered_footer_branding' => array (
+                        DESIGNR_OPTIONS::FOOTER_CENTER_BRANDING => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Footer - Centered?', 'designr' ),
                             'description'   => __( 'If on, the Footer content will be centered', 'designr' ),
-                            'default'       => false,
+                            'default'       => DESIGNR_DEFAULTS::FOOTER_CENTER_BRANDING,
                         ),
-                        'footer_show_social' => array (
+                        DESIGNR_OPTIONS::FOOTER_SHOW_SOCIAL => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Footer - Show Social?', 'designr' ),
                             'description'   => __( 'If on, the Footer will include the social icon links you have set', 'designr' ),
-                            'default'       => false,
+                            'default'       => DESIGNR_DEFAULTS::FOOTER_SHOW_SOCIAL,
                         ),
-                        'footer_show_branding' => array (
+                        DESIGNR_OPTIONS::FOOTER_SHOW_BRANDING => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Footer - Show Branding?', 'designr' ),
                             'description'   => __( 'If on,  the Footer will include either an alternate custom logo or your site title', 'designr' ),
-                            'default'       => true,
+                            'default'       => DESIGNR_DEFAULTS::FOOTER_SHOW_BRANDING,
                         ),
-                        'footer_show_copyright' => array (
+                        DESIGNR_OPTIONS::FOOTER_SHOW_COPYRIGHT => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Footer - Show Copyright?', 'designr' ),
                             'description'   => __( 'If on, the Footer will include the copyright tagline you set', 'designr' ),
-                            'default'       => true,
+                            'default'       => DESIGNR_DEFAULTS::FOOTER_SHOW_COPYRIGHT,
                         ),
-                        'footer_copyright_tagline' => array (
+                        DESIGNR_OPTIONS::FOOTER_COPYRIGHT_TAGLINE => array (
                             'type'          => 'text',
                             'label'         => __( 'Copyright - Tagline Text', 'designr' ),
-                            'default'       => __( 'Copyright © 2018 Your Company', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::FOOTER_COPYRIGHT_TAGLINE,
                         ),
-                        'footer_branding' => array (
+                        DESIGNR_OPTIONS::FOOTER_BRANDING_TYPE => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'Branding - What to Display?', 'designr' ),
-                            'default'       => 'site_title',
+                            'default'       => DESIGNR_DEFAULTS::FOOTER_BRANDING_TYPE,
                             'choices'   => array (
                                 'site_title'    => __( 'Show Site Title', 'designr' ),
                                 'alt_logo'      => __( 'Show Logo', 'designr' ),
                             )
                         ),
-                        'alternate_logo' => array (
+                        DESIGNR_OPTIONS::FOOTER_ALTERNATE_LOGO => array (
                             'type'          => 'image',
                             'label'         => __( 'Branding - Logo', 'designr' ),
-                            'default'       => '',
+                            'default'       => DESIGNR_DEFAULTS::FOOTER_ALTERNATE_LOGO,
                         ),
-                        'designr_footer_logo_height' => array (
+                        DESIGNR_OPTIONS::FOOTER_ALTERNATE_LOGO_HEIGHT => array (
                             'type'          => 'number',
                             'label'         => __( 'Branding - Logo Height', 'designr' ),
-                            'default'       => 30,
+                            'default'       => DESIGNR_DEFAULTS::FOOTER_ALTERNATE_LOGO_HEIGHT,
                         ),
-                        'footer_site_title_font_size' => array (
+                        DESIGNR_OPTIONS::FOOTER_SITE_TITLE_FONT_SIZE => array (
                             'type'          => 'number',
                             'label'         => __( 'Branding - Font Size', 'designr' ),
-                            'default'       => 18
+                            'default'       => DESIGNR_DEFAULTS::FOOTER_SITE_TITLE_FONT_SIZE
                         ),
-                        'footer_site_title_uppercase' => array (
+                        DESIGNR_OPTIONS::FOOTER_SITE_TITLE_ALL_CAPS => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Branding - All Uppercase?', 'designr' ),
-                            'default'       => true
+                            'default'       => DESIGNR_DEFAULTS::FOOTER_SITE_TITLE_ALL_CAPS
                         ),
-                        'footer_copyright_font_size' => array (
+                        DESIGNR_OPTIONS::FOOTER_COPYRIGHT_TAGLINE_FONT_SIZE => array (
                             'type'          => 'number',
                             'label'         => __( 'Copyright - Font Size', 'designr' ),
-                            'default'       => 12
+                            'default'       => DESIGNR_DEFAULTS::FOOTER_COPYRIGHT_TAGLINE_FONT_SIZE
                         ),
 
                     )
@@ -1232,12 +1275,12 @@ $data = array (
 
                     'title'     => __( 'Colors', 'designr' ),
                     'options'   => array (
-
+                        
                         // Pre-Footer Background
-                        'prefooter_background' => array (
+                        DESIGNR_OPTIONS::PRE_FOOTER_BG_COLOR => array (
                             'type'          => 'color-select',
                             'label'         => __( 'Prefooter: Background Color', 'designr' ),
-                            'default'       => '#141414',
+                            'default'       => DESIGNR_DEFAULTS::PRE_FOOTER_BG_COLOR,
                             'choices'   => array (
                                 '#141414'    => __( 'Dark', 'designr' ),
                                 '#ffffff'    => __( 'Light', 'designr' ),
@@ -1245,10 +1288,10 @@ $data = array (
                         ),
 
                         // Pre-Footer Foreground
-                        'prefooter_foreground' => array (
+                        DESIGNR_OPTIONS::PRE_FOOTER_FG_COLOR => array (
                             'type'          => 'color-select',
                             'label'         => __( 'Prefooter: Foreground Color', 'designr' ),
-                            'default'       => '#ffffff',
+                            'default'       => DESIGNR_DEFAULTS::PRE_FOOTER_FG_COLOR,
                             'choices'   => array (
                                 '#141414'    => __( 'Dark', 'designr' ),
                                 '#ffffff'    => __( 'Light', 'designr' ),
@@ -1256,17 +1299,17 @@ $data = array (
                         ),
                         
                         // Pre-Footer Widget Titles
-                        'prefooter_widget_title_color' => array (
+                        DESIGNR_OPTIONS::PRE_FOOTER_WIDGET_TITLE_COLOR => array (
                             'type'          => 'color',
                             'label'         => __( 'Prefooter: Widgets Title Color', 'designr' ),
-                            'default'       => '#FFFFFF'
+                            'default'       => DESIGNR_DEFAULTS::PRE_FOOTER_WIDGET_TITLE_COLOR,
                         ),
                         
                         // Footer Background
-                        'footer_background' => array (
+                        DESIGNR_OPTIONS::FOOTER_BG_COLOR => array (
                             'type'          => 'color-select',
                             'label'         => __( 'Footer: Background Color', 'designr' ),
-                            'default'       => '#000000',
+                            'default'       => DESIGNR_DEFAULTS::FOOTER_BG_COLOR,
                             'choices'   => array (
                                 '#000000'    => __( 'Dark', 'designr' ),
                                 '#ffffff'    => __( 'Light', 'designr' ),
@@ -1274,10 +1317,10 @@ $data = array (
                         ),
 
                         // Footer Foreground
-                        'footer_foreground' => array (
+                        DESIGNR_OPTIONS::FOOTER_FG_COLOR => array (
                             'type'          => 'color-select',
                             'label'         => __( 'Footer: Foreground Color', 'designr' ),
-                            'default'       => '#ffffff',
+                            'default'       => DESIGNR_DEFAULTS::FOOTER_FG_COLOR,
                             'choices'   => array (
                                 '#141414'    => __( 'Dark', 'designr' ),
                                 '#ffffff'    => __( 'Light', 'designr' ),
@@ -1304,21 +1347,21 @@ $data = array (
                     'title'     => __( 'Featured Products', 'designr' ),
                     'options'   => array (
                         
-                        'show_featured_products' => array (
+                        DESIGNR_OPTIONS::WOO_SHOW_FEATURED_PRODUCTS => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Show Featured Products at the top of the Shop page?' , 'designr' ),
                             'description'   => __( 'To feature a product, click the corresponding star icon on the Products page.' , 'designr' ),
-                            'default'       => true,
+                            'default'       => DESIGNR_DEFAULTS::WOO_SHOW_FEATURED_PRODUCTS,
                         ),
-                        'show_featured_product_header' => array (
+                        DESIGNR_OPTIONS::WOO_SHOW_FEATURED_PRODUCT_HEADING => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Show "Featured" Header Banner?' , 'designr' ),
-                            'default'       => true,
+                            'default'       => DESIGNR_DEFAULTS::WOO_SHOW_FEATURED_PRODUCT_HEADING,
                         ),
-                        'featured_products_num_columns' => array (
+                        DESIGNR_OPTIONS::WOO_FEATURED_PRODUCTS_NUM_COLS => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'Featured Products Per Row' , 'designr' ),
-                            'default'       => 'two',
+                            'default'       => DESIGNR_DEFAULTS::WOO_FEATURED_PRODUCTS_NUM_COLS,
                             'choices'       => array (
                                 'two'   => __( 'Two', 'designr' ),
                                 'three' => __( 'Three', 'designr' ),
@@ -1335,32 +1378,32 @@ $data = array (
                     'title'     => __( 'Slide-In Cart', 'designr' ),
                     'options'   => array (
                         
-                        'cart_drawer_toggle' => array (
+                        DESIGNR_OPTIONS::WOO_SLIDE_CART_TOGGLE => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Include the Slide-In Cart Drawer?' , 'designr' ),
                             'description'   => __( 'If this is on, users can click a tab on the right side of the page to open a drawer displaying the items currently added to their cart.' , 'designr' ),
-                            'default'       => true,
+                            'default'       => DESIGNR_DEFAULTS::WOO_SLIDE_CART_TOGGLE,
                         ),
-                        'cart_drawer_tab_color' => array (
+                        DESIGNR_OPTIONS::WOO_SLIDE_CART_TAB_COLOR => array (
                             'type'          => 'color',
                             'label'         => __( 'Tab: Color' , 'designr' ),
-                            'default'       => '#000000',
+                            'default'       => DESIGNR_DEFAULTS::WOO_SLIDE_CART_TAB_COLOR,
                         ),
-                        'cart_drawer_tab_icon' => array (
+                        DESIGNR_OPTIONS::WOO_SLIDE_CART_TAB_ICON => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'Tab: Icon' , 'designr' ),
-                            'default'       => 'fa-shopping-cart',
+                            'default'       => DESIGNR_DEFAULTS::WOO_SLIDE_CART_TAB_ICON,
                             'choices'       => array (
                                 'fa-shopping-cart'      =>  __( 'Cart', 'designr' ),
                                 'fa-shopping-bag'       =>  __( 'Bag', 'designr' ),
                                 'fa-shopping-basket'    =>  __( 'Basket', 'designr' ),
                             )
                         ),
-                        'cart_drawer_tab_location' => array (
+                        DESIGNR_OPTIONS::WOO_SLIDE_CART_TAB_POSITION => array (
                             'type'          => 'radio-toggle',
                             'label'         => __( 'Tab: Location' , 'designr' ),
                             'description'   => __( 'For readability, the tab will always appear at the bottom when viewing the site on mobile devices.' , 'designr' ),
-                            'default'       => 'bottom',
+                            'default'       => DESIGNR_DEFAULTS::WOO_SLIDE_CART_TAB_POSITION,
                             'choices'       => array (
                                 'top'           =>  __( 'Top', 'designr' ),
                                 'bottom'        =>  __( 'Bottom', 'designr' ),

@@ -9,12 +9,12 @@ function designr_scripts() {
 
     // Fonts
     $fonts = designr_fonts();
-    if ( get_theme_mod( 'primary_font', 'Montserrat, sans-serif' ) == get_theme_mod( 'secondary_font', 'Abel, sans-serif' ) ) :
+    if ( get_theme_mod( DESIGNR_OPTIONS::FONT_PRIMARY, DESIGNR_DEFAULTS::FONT_PRIMARY ) == get_theme_mod( DESIGNR_OPTIONS::FONT_SECONDARY, DESIGNR_DEFAULTS::FONT_SECONDARY ) ) :
         // Fonts are the same, enqueue once
-        wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=' . esc_attr( $fonts[ get_theme_mod( 'primary_font', 'Montserrat, sans-serif' ) ] ), array(), DESIGNR_VERSION ); 
+        wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=' . esc_attr( $fonts[ get_theme_mod( DESIGNR_OPTIONS::FONT_PRIMARY, DESIGNR_DEFAULTS::FONT_PRIMARY ) ] ), array(), DESIGNR_VERSION ); 
     else :
         // Fonts are different, enqueue together
-        wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=' . esc_attr( $fonts[ get_theme_mod( 'primary_font', 'Montserrat, sans-serif' ) ] . '|' . $fonts[ get_theme_mod( 'secondary_font', 'Abel, sans-serif' ) ] ), array(), DESIGNR_VERSION ); 
+        wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css?family=' . esc_attr( $fonts[ get_theme_mod( DESIGNR_OPTIONS::FONT_PRIMARY, DESIGNR_DEFAULTS::FONT_PRIMARY ) ] . '|' . $fonts[ get_theme_mod( DESIGNR_OPTIONS::FONT_SECONDARY, DESIGNR_DEFAULTS::FONT_SECONDARY ) ] ), array(), DESIGNR_VERSION ); 
     endif;
 
     // Styles

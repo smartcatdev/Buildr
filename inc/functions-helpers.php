@@ -10,34 +10,34 @@ function designr_get_all_theme_colors() {
     
     $theme_colors = array();
     
-    $theme_colors['navbar_bg']              = get_theme_mod( 'navbar_background', '#141414' );
-    $theme_colors['navbar_fg']              = get_theme_mod( 'navbar_foreground', '#ffffff' );
+    $theme_colors['navbar_bg']              = get_theme_mod( DESIGNR_OPTIONS::NAVBAR_BG_COLOR, DESIGNR_DEFAULTS::NAVBAR_BG_COLOR );
+    $theme_colors['navbar_fg']              = get_theme_mod( DESIGNR_OPTIONS::NAVBAR_FG_COLOR, DESIGNR_DEFAULTS::NAVBAR_FG_COLOR );
     
-    $theme_colors['navbar_menu_bg']         = get_theme_mod( 'navbar_banner_menu_background', '#141414' );
-    $theme_colors['navbar_menu_fg']         = get_theme_mod( 'navbar_banner_menu_foreground', '#ffffff' );
+    $theme_colors['navbar_menu_bg']         = get_theme_mod( DESIGNR_OPTIONS::NAVBAR_MENU_BG_COLOR, DESIGNR_DEFAULTS::NAVBAR_MENU_BG_COLOR );
+    $theme_colors['navbar_menu_fg']         = get_theme_mod( DESIGNR_OPTIONS::NAVBAR_MENU_FG_COLOR, DESIGNR_DEFAULTS::NAVBAR_MENU_FG_COLOR );
     
-    $theme_colors['prefooter_bg']           = get_theme_mod( 'prefooter_background', '#141414' );
-    $theme_colors['prefooter_fg']           = get_theme_mod( 'prefooter_foreground', '#ffffff' );
+    $theme_colors['prefooter_bg']           = get_theme_mod( DESIGNR_OPTIONS::PRE_FOOTER_BG_COLOR, DESIGNR_DEFAULTS::PRE_FOOTER_BG_COLOR );
+    $theme_colors['prefooter_fg']           = get_theme_mod( DESIGNR_OPTIONS::PRE_FOOTER_FG_COLOR, DESIGNR_DEFAULTS::PRE_FOOTER_FG_COLOR );
     
-    $theme_colors['footer_bg']              = get_theme_mod( 'footer_background', '#000000' );
-    $theme_colors['footer_fg']              = get_theme_mod( 'footer_foreground', '#ffffff' );
+    $theme_colors['footer_bg']              = get_theme_mod( DESIGNR_OPTIONS::FOOTER_BG_COLOR, DESIGNR_DEFAULTS::FOOTER_BG_COLOR );
+    $theme_colors['footer_fg']              = get_theme_mod( DESIGNR_OPTIONS::FOOTER_FG_COLOR, DESIGNR_DEFAULTS::FOOTER_FG_COLOR );
     
-    $theme_colors['primary']                = get_theme_mod( 'skin_theme_primary', '#f04265' );
-    $theme_colors['secondary']              = get_theme_mod( 'skin_theme_secondary', '#d60059' );
+    $theme_colors['primary']                = get_theme_mod( DESIGNR_OPTIONS::COLOR_SKIN_PRIMARY, DESIGNR_DEFAULTS::COLOR_SKIN_PRIMARY );
+    $theme_colors['secondary']              = get_theme_mod( DESIGNR_OPTIONS::COLOR_SKIN_SECONDARY, DESIGNR_DEFAULTS::COLOR_SKIN_SECONDARY );
     
-    $theme_colors['social_bg']              = get_theme_mod( 'navbar_social_drawer_background', '#141414' );
-    $theme_colors['social_fg']              = get_theme_mod( 'navbar_social_link_foreground', '#FFFFFF' );
-    $theme_colors['social_fg_hov']          = get_theme_mod( 'navbar_social_link_foreground_hover', '#0000FF' );
-    $theme_colors['custom_header_title']    = get_theme_mod( 'custom_header_title_color', '#FFFFFF' );
-    $theme_colors['custom_header_menu']     = get_theme_mod( 'custom_header_menu_color', '#FFFFFF' );
+    $theme_colors['social_bg']              = get_theme_mod( DESIGNR_OPTIONS::NAVBAR_SOCIAL_BG_COLOR, DESIGNR_DEFAULTS::NAVBAR_SOCIAL_BG_COLOR );
+    $theme_colors['social_fg']              = get_theme_mod( DESIGNR_OPTIONS::NAVBAR_SOCIAL_FG_COLOR, DESIGNR_DEFAULTS::NAVBAR_SOCIAL_FG_COLOR );
+    $theme_colors['social_fg_hov']          = get_theme_mod( DESIGNR_OPTIONS::NAVBAR_SOCIAL_FG_COLOR_HOVER, DESIGNR_DEFAULTS::NAVBAR_SOCIAL_FG_COLOR_HOVER );
+    $theme_colors['custom_header_title']    = get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_TITLE_COLOR, DESIGNR_DEFAULTS::CUSTOM_HEADER_TITLE_COLOR );
+    $theme_colors['custom_header_menu']     = get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_MENU_COLOR, DESIGNR_DEFAULTS::CUSTOM_HEADER_MENU_COLOR );
     
-    $theme_colors['cart_tab']               = get_theme_mod( 'cart_drawer_tab_color', '#000000' );
+    $theme_colors['cart_tab']               = get_theme_mod( DESIGNR_OPTIONS::WOO_SLIDE_CART_TAB_COLOR, DESIGNR_DEFAULTS::WOO_SLIDE_CART_TAB_COLOR );
     
-    $theme_colors['plx_overlay_single']     = get_theme_mod( 'parallax_layers_single_color', '#348aa7' );
-    $theme_colors['plx_overlay_grad_start'] = get_theme_mod( 'parallax_layers_gradient_start_color', '#348aa7' );
-    $theme_colors['plx_overlay_grad_end']   = get_theme_mod( 'parallax_layers_gradient_end_color', '#348aa7' );
+    $theme_colors['plx_overlay_single']     = get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_COLOR_LAYER_COLOR, DESIGNR_DEFAULTS::CUSTOM_HEADER_COLOR_LAYER_COLOR );
+    $theme_colors['plx_overlay_grad_start'] = get_theme_mod( DESIGNR_OPTIONS::GRADIENT_START_COLOR, DESIGNR_DEFAULTS::GRADIENT_START_COLOR );
+    $theme_colors['plx_overlay_grad_end']   = get_theme_mod( DESIGNR_OPTIONS::GRADIENT_END_COLOR, DESIGNR_DEFAULTS::GRADIENT_END_COLOR );
    
-    $theme_colors['footer_widget_title']    = get_theme_mod( 'prefooter_widget_title_color', '#FFFFFF' );
+    $theme_colors['footer_widget_title']    = get_theme_mod( DESIGNR_OPTIONS::PRE_FOOTER_WIDGET_TITLE_COLOR, DESIGNR_DEFAULTS::PRE_FOOTER_WIDGET_TITLE_COLOR );
  
     return $theme_colors;
     
@@ -52,10 +52,46 @@ function designr_get_all_theme_colors() {
 function designr_get_icons( $subset = null ) {
     
     $icons = array(
+        'fa-app-store'      => __( 'App Store', 'designr' ),
+        'fa-apple'          => __( 'Apple', 'designr' ),
+        'fa-bandcamp'       => __( 'Bandcamp', 'designr' ),
+        'fa-behance'        => __( 'Behance', 'designr' ),
+        'fa-codepen'        => __( 'CodePen', 'designr' ),
+        'fa-discord'        => __( 'Discord', 'designr' ),
+        'fa-dribbble'       => __( 'Dribbble', 'designr' ),
+        'fa-etsy'           => __( 'Etsy', 'designr' ),
         'fa-facebook-f'     => __( 'Facebook', 'designr' ),
-        'fa-twitter'        => __( 'Twitter', 'designr' ),
-        'fa-soundcloud'     => __( 'SoundCloud', 'designr' ),
+        'fa-git'            => __( 'Git', 'designr' ),
+        'fa-github'         => __( 'GitHub', 'designr' ),
+        'fa-google-play'    => __( 'Google Play', 'designr' ),
+        'fa-google-plus-g'  => __( 'Google+', 'designr' ),
+        'fa-imdb'           => __( 'IMDb', 'designr' ),
         'fa-instagram'      => __( 'Instagram', 'designr' ),
+        'fa-itunes-note'    => __( 'iTunes', 'designr' ),
+        'fa-kickstarter-k'  => __( 'Kickstarter', 'designr' ),
+        'fa-lastfm'         => __( 'Last.fm', 'designr' ),
+        'fa-linkedin-in'    => __( 'LinkedIn', 'designr' ),
+        'fa-medium-m'       => __( 'Medium', 'designr' ),
+        'fa-microsoft'      => __( 'Microsoft', 'designr' ),
+        'fa-mixcloud'       => __( 'Mixcloud', 'designr' ),
+        'fa-patreon'        => __( 'Patreon', 'designr' ),
+        'fa-pinterest-p'    => __( 'Pinterest', 'designr' ),
+        'fa-playstation'    => __( 'PlayStation', 'designr' ),
+        'fa-reddit-alien'   => __( 'Reddit', 'designr' ),
+        'fa-slack-hash'     => __( 'Slack', 'designr' ),
+        'fa-snapchat-ghost' => __( 'Snapchat', 'designr' ),
+        'fa-soundcloud'     => __( 'SoundCloud', 'designr' ),
+        'fa-spotify'        => __( 'Spotify', 'designr' ),
+        'fa-steam'          => __( 'Steam', 'designr' ),
+        'fa-stumbleupon'    => __( 'StumbleUpon', 'designr' ),
+        'fa-tumblr'         => __( 'Tumblr', 'designr' ),
+        'fa-twitch'         => __( 'Twitch', 'designr' ),
+        'fa-twitter'        => __( 'Twitter', 'designr' ),
+        'fa-vimeo'          => __( 'Vimeo', 'designr' ),
+        'fa-vimeo'          => __( 'Vimeo', 'designr' ),
+        'fa-xbox'           => __( 'Xbox', 'designr' ),
+        'fa-yelp'           => __( 'Yelp', 'designr' ),
+        'fa-youtube'        => __( 'YouTube', 'designr' ),
     );
     
     return $icons;
@@ -72,7 +108,7 @@ function designr_get_icons( $subset = null ) {
 function designr_add_excerpt_more_link( $more ) {
     return sprintf( '… <a class="read-more" href="%1$s">%2$s</a>',
         get_permalink( get_the_ID() ),
-        get_theme_mod( 'blog_layout_read_more_text', __( 'Read more', 'designr' ) )
+        __( get_theme_mod( DESIGNR_OPTIONS::BLOG_READ_MORE_TEXT, DESIGNR_DEFAULTS::BLOG_READ_MORE_TEXT ), 'designr' )
     );
 }
 add_filter( 'excerpt_more', 'designr_add_excerpt_more_link' );
@@ -85,7 +121,7 @@ add_filter( 'excerpt_more', 'designr_add_excerpt_more_link' );
  * @return int modified excerpt length.
  */
 function designr_custom_auto_excerpt_length( $length ) {
-    return get_theme_mod( 'blog_layout_excerpt_trim_words', 30 );
+    return get_theme_mod( DESIGNR_OPTIONS::BLOG_EXCERPT_TRIM_NUM, DESIGNR_DEFAULTS::BLOG_EXCERPT_TRIM_NUM );
 }
 add_filter( 'excerpt_length', 'designr_custom_auto_excerpt_length', 999 );
 
@@ -146,7 +182,7 @@ function designr_hex2rgba( $color, $opacity = false ) {
  */
 function designr_get_parallax_preset( $style = 'layers' ) {
 
-    switch ( get_theme_mod( 'parallax_layers_parallax_style', 'default' ) ) :
+    switch ( get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_PLX_INTENSITY, DESIGNR_DEFAULTS::CUSTOM_HEADER_PLX_INTENSITY ) ) :
         
         case 'subtle' :
             $parallax_preset = array(

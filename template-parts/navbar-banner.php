@@ -2,7 +2,7 @@
 
     <div id="banner-header-wrap">
 
-        <div id="banner-header" class="<?php echo get_theme_mod( 'style_a_boxed_navbar', false ) ? 'container' : ''; ?>">
+        <div id="banner-header" class="<?php echo get_theme_mod( DESIGNR_OPTIONS::NAVBAR_BOXED_CONTENT, DESIGNR_DEFAULTS::NAVBAR_BOXED_CONTENT ) ? 'container' : ''; ?>">
 
             <?php if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) : ?>
 

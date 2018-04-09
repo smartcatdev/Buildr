@@ -514,7 +514,7 @@ if ( !function_exists( 'designr_render_featured_products' ) ) {
      */
     function designr_render_featured_products() {
 
-        if ( get_theme_mod( 'show_featured_products', true ) ) : 
+        if ( get_theme_mod( DESIGNR_OPTIONS::WOO_SHOW_FEATURED_PRODUCTS, DESIGNR_DEFAULTS::WOO_SHOW_FEATURED_PRODUCTS ) ) : 
 
             $args = array(
                 'post_type' => 'product',
@@ -533,7 +533,7 @@ if ( !function_exists( 'designr_render_featured_products' ) ) {
 
                 <div id="designr-featured-woocommerce">
 
-                    <?php if ( get_theme_mod( 'show_featured_product_header', true ) ) : ?>
+                    <?php if ( get_theme_mod( DESIGNR_OPTIONS::WOO_SHOW_FEATURED_PRODUCT_HEADING, DESIGNR_DEFAULTS::WOO_SHOW_FEATURED_PRODUCT_HEADING ) ) : ?>
                     
                         <h3 class="shop-sub-heading">
                             <?php _e( 'Featured', 'designr' ); ?>
@@ -541,7 +541,7 @@ if ( !function_exists( 'designr_render_featured_products' ) ) {
                     
                     <?php endif; ?>
 
-                    <ul class="products columns-<?php echo get_theme_mod( 'featured_products_num_columns', 'two' ) == 'two' ? 2 : 3; ?>">
+                    <ul class="products columns-<?php echo get_theme_mod( DESIGNR_OPTIONS::WOO_FEATURED_PRODUCTS_NUM_COLS, DESIGNR_DEFAULTS::WOO_FEATURED_PRODUCTS_NUM_COLS ) == 'two' ? 2 : 3; ?>">
 
                         <?php 
                         while ( $featured_products_loop->have_posts() ) : $featured_products_loop->the_post();
