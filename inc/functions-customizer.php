@@ -45,23 +45,23 @@ function designr_customize_register( $wp_customize ) {
             'render_callback' => 'designr_customize_partial_blogdescription',
         ) );
         
-        $wp_customize->selective_refresh->add_partial( 'navbar_show_social', array(
+        $wp_customize->selective_refresh->add_partial( DESIGNR_OPTIONS::NAVBAR_SHOW_SOCIAL, array(
             'selector'  => '.navbar-social'
         ) );
         
-        $wp_customize->selective_refresh->add_partial( 'custom_header_style_toggle', array(
+        $wp_customize->selective_refresh->add_partial( DESIGNR_OPTIONS::CUSTOM_HEADER_STYLE_TOGGLE, array(
             'selector'  => '#custom-header-content'
         ) );
         
-        $wp_customize->selective_refresh->add_partial( 'blog_layout_show_date_posted', array(
+        $wp_customize->selective_refresh->add_partial( DESIGNR_OPTIONS::BLOG_SHOW_DATE, array(
             'selector'  => '.masonry_card_blog .post-date'
         ) );
         
-        $wp_customize->selective_refresh->add_partial( 'blog_title_font_size_dsk', array(
+        $wp_customize->selective_refresh->add_partial( DESIGNR_OPTIONS::BLOG_CARD_FONT_SIZE_DSK, array(
             'selector'  => '.masonry_card_blog .entry-title'
         ) );
         
-        $wp_customize->selective_refresh->add_partial( 'blog_layout_show_comment_count', array(
+        $wp_customize->selective_refresh->add_partial( DESIGNR_OPTIONS::BLOG_SHOW_COMMENT_COUNT, array(
             'selector'  => '.masonry_card_blog .meta-stats'
         ) );
         
