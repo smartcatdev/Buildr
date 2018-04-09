@@ -7,12 +7,19 @@ if ( !class_exists( 'AcidWidget' ) ) {
         private $file;
         private $title_bool;
         private $css = array();
+        private $styles;
+        private $scripts;
+        private $localize;
 
         const VERSION = 1;
 
-        function __construct( $args, $fields ) {
+        function __construct( $args, $fields, $styles = null, $scripts = null, $localize = null ) {
 
             $this->widget_fields = $fields;
+            $this->scripts = $scripts;
+            $this->styles = $styles;
+            $this->localize = $localize;
+            
             $this->title_bool = isset( $args['widget_title'] ) ? $args['widget_title'] : false;
 
             if ( file_exists( $args[ 'output_file' ] ) ) {
@@ -42,6 +49,7 @@ if ( !class_exists( 'AcidWidget' ) ) {
             
             
         }
+        
         
         public function dynamic_css() {
             
@@ -104,6 +112,21 @@ if ( !class_exists( 'AcidWidget' ) ) {
 
         public function widget( $args, $instance) {
             
+            // Enqueue styles from child class
+            if( $this->styles ) {
+                foreach( $this->styles as $id=>$file ) {
+                    wp_enqueue_style( $id, $file, null );
+                }
+            }
+            
+            // Enqueue scripts from child class
+            if( $this->scripts ) {
+                foreach( $this->scripts as $id=>$file ) {
+                    wp_enqueue_script( $id, $file, array( 'jquery' ) );
+                }
+            }
+            
+            
             $defaults = [];
 
             foreach( $this->widget_fields as $key => $val ) {
@@ -153,7 +176,14 @@ if ( !class_exists( 'AcidWidget' ) ) {
         public function field_generator( $instance ) {
             $output = '';
             foreach ( $this->widget_fields as $widget_field ) {
-                $widget_value = !empty( $instance[ $widget_field[ 'id' ] ] ) ? $instance[ $widget_field[ 'id' ] ] : esc_html__( $widget_field[ 'default' ], 'acid' );
+                
+                if( $widget_field[ 'type' ] == 'textarea' ) {
+                    $widget_value = !empty( $instance[ $widget_field[ 'id' ] ] ) ? $instance[ $widget_field[ 'id' ] ] : $widget_field[ 'default' ];
+                }else{
+                    $widget_value = !empty( $instance[ $widget_field[ 'id' ] ] ) ? $instance[ $widget_field[ 'id' ] ] : esc_html__( $widget_field[ 'default' ], 'acid' );
+                }
+                
+                
                 
                 switch ( $widget_field[ 'type' ] ) {
 
@@ -260,6 +290,9 @@ if ( !class_exists( 'AcidWidget' ) ) {
                 switch ( $widget_field[ 'type' ] ) {
                     case 'checkbox':
                         $instance[ $widget_field[ 'id' ] ] = $_POST[ $this->get_field_id( $widget_field[ 'id' ] ) ];
+                        break;
+                    case 'textarea':
+                        $instance[ $widget_field[ 'id' ] ] = (!empty( $new_instance[ $widget_field[ 'id' ] ] ) ) ? htmlentities( $new_instance[ $widget_field[ 'id' ] ] ) : '';
                         break;
                     default:
                         $instance[ $widget_field[ 'id' ] ] = (!empty( $new_instance[ $widget_field[ 'id' ] ] ) ) ? strip_tags( $new_instance[ $widget_field[ 'id' ] ] ) : '';
