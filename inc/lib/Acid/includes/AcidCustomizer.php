@@ -41,7 +41,7 @@ if ( ! class_exists( 'AcidCustomizer' ) ) {
             }
             
             // are there any top-level sections?
-            if( $this->options['sections'] ) {
+            if( isset( $this->options['sections'] ) ) {
                 foreach ( $this->options['sections'] as $id => $section ) {
 
                     $this->create_section( $id, $section );

@@ -9,16 +9,6 @@ add_action( 'widgets_init', 'designr_widgets_init' );
  *
  */
 function designr_widgets_init() {
-    
-//    register_sidebar( array (
-//        'name'              => esc_html__( 'Sidebar A', 'designr' ),
-//        'id'                => 'sidebar-a',
-//        'description'       => esc_html__( 'Add widgets here.', 'designr' ),
-//        'before_widget'     => '<section id="%1$s" class="widget %2$s">',
-//        'after_widget'      => '</section>',
-//        'before_title'      => '<h2 class="widget-title">',
-//        'after_title'       => '</h2>',
-//    ) );
 
     register_sidebar( array (
         'name'              => esc_html__( 'Frontpage - Above Content', 'designr' ),
@@ -99,6 +89,99 @@ function designr_widgets_init() {
         'before_title'      => '<h2 class="widget-title">',
         'after_title'       => '</h2>',
     ));
+    
+    
+    register_sidebar( array (
+        'name'              => esc_html__( 'Page Template A - Above Content', 'designr' ),
+        'id'                => 'sidebar-page-a-above',
+        'description'       => esc_html__( 'Add widgets here.', 'designr' ),
+        'before_widget'     => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'      => '</aside>',
+        'before_title'      => '<h2 class="widget-title">',
+        'after_title'       => '</h2>',
+    )); 
+    
+    register_sidebar( array (
+        'name'              => esc_html__( 'Page Template A - Below Content', 'designr' ),
+        'id'                => 'sidebar-page-a-below',
+        'description'       => esc_html__( 'Add widgets here.', 'designr' ),
+        'before_widget'     => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'      => '</aside>',
+        'before_title'      => '<h2 class="widget-title">',
+        'after_title'       => '</h2>',
+    ));
+    
+    register_sidebar( array (
+        'name'              => esc_html__( 'Page Template B - Above Content', 'designr' ),
+        'id'                => 'sidebar-page-b-above',
+        'description'       => esc_html__( 'Add widgets here.', 'designr' ),
+        'before_widget'     => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'      => '</aside>',
+        'before_title'      => '<h2 class="widget-title">',
+        'after_title'       => '</h2>',
+    )); 
+    
+    register_sidebar( array (
+        'name'              => esc_html__( 'Page Template B - Below Content', 'designr' ),
+        'id'                => 'sidebar-page-b-below',
+        'description'       => esc_html__( 'Add widgets here.', 'designr' ),
+        'before_widget'     => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'      => '</aside>',
+        'before_title'      => '<h2 class="widget-title">',
+        'after_title'       => '</h2>',
+    ));
+    
+    register_sidebar( array (
+        'name'              => esc_html__( 'Page Template C - Above Content', 'designr' ),
+        'id'                => 'sidebar-page-c-above',
+        'description'       => esc_html__( 'Add widgets here.', 'designr' ),
+        'before_widget'     => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'      => '</aside>',
+        'before_title'      => '<h2 class="widget-title">',
+        'after_title'       => '</h2>',
+    )); 
+    
+    register_sidebar( array (
+        'name'              => esc_html__( 'Page Template C - Below Content', 'designr' ),
+        'id'                => 'sidebar-page-c-below',
+        'description'       => esc_html__( 'Add widgets here.', 'designr' ),
+        'before_widget'     => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'      => '</aside>',
+        'before_title'      => '<h2 class="widget-title">',
+        'after_title'       => '</h2>',
+    ));
+    
+    register_sidebar( array (
+        'name'              => esc_html__( 'Landing Page A', 'designr' ),
+        'id'                => 'sidebar-page-landing-a',
+        'description'       => esc_html__( 'Add widgets here.', 'designr' ),
+        'before_widget'     => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'      => '</aside>',
+        'before_title'      => '<h2 class="widget-title">',
+        'after_title'       => '</h2>',
+    ));
+    
+    register_sidebar( array (
+        'name'              => esc_html__( 'Landing Page B', 'designr' ),
+        'id'                => 'sidebar-page-landing-b',
+        'description'       => esc_html__( 'Add widgets here.', 'designr' ),
+        'before_widget'     => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'      => '</aside>',
+        'before_title'      => '<h2 class="widget-title">',
+        'after_title'       => '</h2>',
+    ));
+    
+    register_sidebar( array (
+        'name'              => esc_html__( 'Landing Page C', 'designr' ),
+        'id'                => 'sidebar-page-landing-c',
+        'description'       => esc_html__( 'Add widgets here.', 'designr' ),
+        'before_widget'     => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'      => '</aside>',
+        'before_title'      => '<h2 class="widget-title">',
+        'after_title'       => '</h2>',
+    ));
+    
+    
     
     register_sidebar( array (
         'name'              => esc_html__( 'Shop - Above Content', 'designr' ),
