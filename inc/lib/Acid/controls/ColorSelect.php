@@ -1,6 +1,8 @@
 <?php
 
-add_action( 'customize_register', function() {
+add_action( 'customize_register', 'acid_register_color_select' );
+
+function acid_register_color_select() {
 
     class AcidColorSelect extends WP_Customize_Control {
 
@@ -188,5 +190,5 @@ add_action( 'customize_register', function() {
         }
 
     }
-
-} );
+    
+}

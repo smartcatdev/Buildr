@@ -1,8 +1,7 @@
 <?php
+add_action( 'customize_register', 'acid_register_sort' );
 
-
-add_action( 'customize_register', function() {
-
+function acid_register_sort() {
     class AcidSort extends WP_Customize_Control {
 
         public $type = 'sort';
@@ -54,4 +53,4 @@ add_action( 'customize_register', function() {
 
     }
 
-} );
+}

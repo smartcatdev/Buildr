@@ -1,7 +1,8 @@
 <?php
 
+add_action( 'customize_register', 'acid_register_range' );
 
-add_action( 'customize_register', function() {
+function acid_register_range() {
 
     class AcidRange extends WP_Customize_Control {
 
@@ -141,4 +142,4 @@ add_action( 'customize_register', function() {
 
     }
 
-} );
+}

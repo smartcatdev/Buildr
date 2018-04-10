@@ -1,6 +1,7 @@
 <?php
-add_action( 'customize_register', function() {
+add_action( 'customize_register', 'acid_register_sortable' );
 
+function acid_register_sortable() {
     /**
      * Sortable Repeater Custom Control
      *
@@ -111,4 +112,4 @@ add_action( 'customize_register', function() {
 
     }
 
-} );
+}
