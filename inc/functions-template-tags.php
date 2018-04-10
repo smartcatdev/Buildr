@@ -193,7 +193,9 @@ function designr_render_masonry_wrap_close() { ?>
                         
                     </div>
                     
-                    <?php the_posts_navigation(); ?>
+                    <div class="designr-pagination-links">
+                        <?php echo the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
+                    </div>
 
                 </div>
 
@@ -237,7 +239,9 @@ function designr_render_mosaic_wrap_close() { ?>
                         
                     </div>
                         
-                    <?php the_posts_navigation(); ?>
+                    <div class="designr-pagination-links">
+                        <?php echo the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
+                    </div>
 
                 </div>
 
@@ -281,7 +285,9 @@ function designr_render_standard_wrap_close() { ?>
                         
                     </div>
                         
-                    <?php the_posts_navigation(); ?>
+                    <div class="designr-pagination-links">
+                        <?php echo the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
+                    </div>
 
                 </div>
 

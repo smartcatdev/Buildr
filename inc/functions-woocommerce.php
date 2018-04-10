@@ -47,6 +47,7 @@ add_filter( 'woocommerce_enqueue_styles', 'designr_woocommerce_dequeue_styles' )
 add_filter( 'body_class', 'designr_woocommerce_active_body_class' );                                                    // Add active WooCommerce body class
 add_filter( 'woocommerce_output_related_products_args', 'designr_woocommerce_related_products_args' );                  // Set arguments for Related Products
 add_filter( 'woocommerce_add_to_cart_fragments', 'designr_woocommerce_cart_link_fragment' );                            // Code for AJAX-ed Cart subtotal updates
+add_filter( 'woocommerce_pagination_args', 'designr_filter_woocommerce_pagination_args', 10, 1 );                       // Filter the Pagination $args array
 
 /**
  * Hooked & Filtered Functions -------------------------------------------------
@@ -563,3 +564,18 @@ if ( !function_exists( 'designr_render_featured_products' ) ) {
     }
 
 }
+
+/**
+ * Modify the WoCommerce pagination $args array to use Previous / Next instead of arrows
+ * 
+ * @param type $array
+ * @return type
+ */
+function designr_filter_woocommerce_pagination_args( $array ) { 
+    
+    $array['prev_text'] = __( 'Previous', 'designr' );
+    $array['next_text'] = __( 'Next', 'designr' );
+    
+    return $array; 
+    
+} 

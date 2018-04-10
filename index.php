@@ -68,7 +68,6 @@ get_header(); ?>
                     endwhile;
                     ?>
 
-
                 <?php 
                 switch ( get_theme_mod( DESIGNR_OPTIONS::BLOG_LAYOUT_STYLE, DESIGNR_DEFAULTS::BLOG_LAYOUT_STYLE ) ) :
 

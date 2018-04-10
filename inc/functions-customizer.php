@@ -1237,16 +1237,6 @@ $data = array (
                     'title'     => __( 'General Settings', 'designr' ),
                     'options'   => array (
 
-                        // Footer Style
-                        DESIGNR_OPTIONS::FOOTER_STYLE => array (
-                            'type'          => 'radio-toggle',
-                            'label'         => __( 'Footer Style', 'designr' ),
-                            'default'       => DESIGNR_DEFAULTS::FOOTER_STYLE,
-                            'choices'   => array (
-                                'default'           => __( 'Default', 'designr' ),
-                                'slim'              => __( 'Slim', 'designr' ),
-                            )
-                        ),
                         DESIGNR_OPTIONS::FOOTER_BOXED_CONTENT => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Footer - Boxed Content?', 'designr' ),

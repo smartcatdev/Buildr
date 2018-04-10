@@ -25,7 +25,7 @@
         $(window).resize(
             viewport.changed(function() {
 
-                console.log('Current breakpoint: ', viewport.current());
+                // viewport.current() will output current breakpoint identifier
 
                 /**
                  * Resize Navbar Submenu Widths

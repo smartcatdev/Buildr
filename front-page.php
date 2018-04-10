@@ -54,10 +54,6 @@ get_header(); ?>
                         endwhile;
                         ?>
 
-                        <div class="pagination-links">
-                            <?php the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
-                        </div>
-
                     <?php 
                     switch ( get_theme_mod( DESIGNR_OPTIONS::BLOG_LAYOUT_STYLE, DESIGNR_DEFAULTS::BLOG_LAYOUT_STYLE ) ) :
 
