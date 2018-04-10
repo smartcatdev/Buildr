@@ -165,6 +165,7 @@ function designr_woocommerce_cart_link_fragment( $fragments ) {
 function designr_woocommerce_cart_link() { ?>
 
     <a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'designr' ); ?>">
+        <?php /* translators: count of the number of items or one item */ ?>
         <?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'designr' ), WC()->cart->get_cart_contents_count() ) ); ?> 
         - 
         <?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?>

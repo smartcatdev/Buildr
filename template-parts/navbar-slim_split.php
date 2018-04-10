@@ -50,11 +50,11 @@
             
                     <div class="site-branding">
                         <h1 class="site-title">
-                            <?php echo get_bloginfo('name'); ?>
+                            <?php echo esc_html( get_bloginfo('name') ); ?>
                         </h1>
                         <?php if ( get_bloginfo( 'name' ) ) : ?>
                             <p class="site-tagline">
-                                <?php echo get_bloginfo( 'description' ); ?>
+                                <?php echo esc_html( get_bloginfo( 'description' ) ); ?>
                             </p>
                         <?php endif; ?>
                     </div>

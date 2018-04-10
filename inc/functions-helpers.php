@@ -106,12 +106,13 @@ function designr_get_icons( $subset = null ) {
  * @return string (Maybe) modified "read more" excerpt string.
  */
 function designr_add_excerpt_more_link( $more ) {
-//    
+
 //    return sprintf( '… <a class="read-more" href="%1$s">%2$s</a>',
 //        get_permalink( get_the_ID() ),
 //        __( get_theme_mod( DESIGNR_OPTIONS::BLOG_READ_MORE_TEXT, DESIGNR_DEFAULTS::BLOG_READ_MORE_TEXT ), 'designr' )
 //    );
     
+    /* translators: permalink url, then Read More text theme mod */
     return sprintf( __( '… <a class="read-more" href="%1$s">%2$s</a>', 'designr' ), esc_url( get_the_permalink( get_the_ID() ) ), get_theme_mod( DESIGNR_OPTIONS::BLOG_READ_MORE_TEXT, DESIGNR_DEFAULTS::BLOG_READ_MORE_TEXT ) );
     
 }

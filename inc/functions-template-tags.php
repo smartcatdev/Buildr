@@ -154,7 +154,7 @@ function designr_render_designer() { ?>
         <?php esc_html_e( 'Design by', 'designr' ); ?>
     </span>
     <a href="https://smartcatdesign.net/" rel="designer" class="rel">
-        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/smartcat_logo_white.svg' ); ?>" alt="<?php echo get_bloginfo('name'); ?>">
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/smartcat_logo_white.svg' ); ?>" alt="<?php echo esc_attr( get_bloginfo('name') ); ?>">
     </a>
     
 <?php }
