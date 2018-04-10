@@ -280,6 +280,35 @@ function designr_wp_head_styles() { ?>
                 box-shadow: 0px 0px 10px 0px rgba(0,0,0,.75);
             }
         <?php endif; ?>
+        
+        <?php if ( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_FINAL_LINK_ACCENT, DESIGNR_DEFAULTS::NAVBAR_FINAL_LINK_ACCENT ) ) : ?>
+            
+            ul#slim-header-b > li:last-child,
+            ul#slim-header-primary > li:last-child,
+            ul#banner-header-primary > li:last-child {
+                padding-left: 5px;
+            }
+            
+            ul#slim-header-b > li:last-child > a,
+            ul#slim-header-primary > li:last-child > a,
+            ul#banner-header-primary > li:last-child > a {
+                border: 2px solid;
+                padding: 10px 20px !important;
+                border-radius: 30px;
+                padding-left: calc(20px + .5em) !important;
+            }
+            
+            ul#slim-header-b > li:not(.menu-item-has-children):last-child > a:hover:before,
+            ul#slim-header-primary > li:not(.menu-item-has-children):last-child > a:hover:before,
+            ul#banner-header-primary > li:not(.menu-item-has-children):last-child > a:hover:before {
+                visibility: hidden; 
+                opacity: 0; 
+                -webkit-transform: scaleX(0); 
+                transform: scaleX(0); 
+            }
+            
+            
+        <?php endif; ?>
 
         /* ----- Slim Navbars: Logo Settings -------------------------------- */
 
