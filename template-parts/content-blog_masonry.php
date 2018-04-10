@@ -24,7 +24,7 @@
                     
                         <?php if ( get_theme_mod( DESIGNR_OPTIONS::BLOG_SHOW_DATE, DESIGNR_DEFAULTS::BLOG_SHOW_DATE ) ) : ?>    
                             <span class="post-date">
-                                <?php esc_html_e( get_the_date( get_option( 'date_format' ) ) ); ?>
+                                <?php echo esc_html( get_the_date( get_option( 'date_format' ) ) ); ?>
                             </span>
                         <?php endif; ?>
                     
@@ -58,7 +58,7 @@
 
                             <?php if ( get_theme_mod( DESIGNR_OPTIONS::BLOG_SHOW_COMMENT_COUNT, DESIGNR_DEFAULTS::BLOG_SHOW_COMMENT_COUNT ) ) : ?> 
                                 <?php $comment_count = wp_count_comments( get_the_ID() ); ?>
-                                <span class="fas fa-comment"></span> <?php echo esc_attr_e( $comment_count->approved ); ?>
+                                <span class="fas fa-comment"></span> <?php echo intval( $comment_count->approved ); ?>
                             <?php endif; ?>
                             
                             <?php do_action('designr_get_blog_meta_view_counter'); ?>
@@ -75,7 +75,7 @@
                                 <?php $ctr++; ?>
                                 <span>
                                     <a href="<?php echo esc_url( get_category_link( $cat ) ); ?>">
-                                        <?php esc_attr_e( $cat->name ); ?><?php echo $ctr != count( $categories ) ? ', ' : ''; ?>
+                                        <?php echo esc_html( $cat->name ); ?><?php echo $ctr != count( $categories ) ? ', ' : ''; ?>
                                     </a>
                                 </span>
                             <?php endforeach; ?>

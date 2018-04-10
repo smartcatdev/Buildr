@@ -32,7 +32,10 @@ if ( !class_exists( 'AcidWidget' ) ) {
             parent::__construct(
                     $args[ 'id' ],
                     esc_html__( $args[ 'title' ], 'acid' ), 
-                    array ( 'description' => esc_html__( $args[ 'description' ], 'acid' ), )
+                    array ( 
+                        'description' => esc_html__( $args[ 'description' ], 'acid' ),
+                        'customize_selective_refresh' => true,
+                    )
             );
 
             add_action( 'admin_footer', array ( $this, 'media_fields' ) );
