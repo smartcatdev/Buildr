@@ -1,19 +1,19 @@
 === Designr ===
 
-Contributors: automattic
+Contributors: smartcat
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
-Requires at least: 4.0
-Tested up to: 4.8
+Requires at least: 4.9
+Tested up to: 4.9.5
 Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called Designr.
+Build your site using the drag & drop widgets. Click to install any of the pre-built presets. Tons of customization, 3 navbars to choose from, 3 blog styles, a unique header, and 6 advanced widgets bundled with the theme. Designr is a premium theme, but it's free!
 
 == Description ==
 
-Limitless possibilities
+Build your site using the drag & drop widgets. Click to install any of the pre-built presets. Tons of customization, 3 navbars to choose from, 3 blog styles, a unique header, and 6 advanced widgets bundled with the theme. Designr is a premium theme, but it's free!
 
 == Installation ==
 
@@ -29,7 +29,7 @@ Designr includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
+= 1.0 - April 20 2018 =
 * Initial release
 
 == Credits ==
