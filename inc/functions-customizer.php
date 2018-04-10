@@ -135,14 +135,13 @@ $data = array (
 
     'panels' => array (
 
-        // Panel: Custom Header ------------------------------------------------
+        // Panel: Site Title & Logo --------------------------------------------
         'panel_title_tagline' => array (
 
             'title'         => __( 'Site Title & Logo', 'designr' ),
-//            'desciption'    => __( 'Customize the header banner on your site', 'designr' ),
             'sections'      => array (
                 
-                // Section : Custom Header Locations ----------------------------
+                // Section : Site Title & Logo: Advanced -----------------------
                 'section_title_tagline' => array (
 
                     'title' => __( 'Advanced Settings', 'designr' ),
@@ -952,6 +951,12 @@ $data = array (
                             'label'         => __( 'Branding - Space Below (Mobile)', 'designr' ),
                             'description'   => __( 'Set the amount of space (in pixels) below the branding on mobile devices (for the Banner style of Navbar)', 'designr' ),
                             'default'       => DESIGNR_DEFAULTS::NAVBAR_BRANDING_SPACE_BOTTOM_MBL
+                        ),
+                        DESIGNR_OPTIONS::NAVBAR_FINAL_LINK_ACCENT => array (
+                            'type'          => 'toggle',
+                            'label'         => __( 'Style final Navbar link as a CTA?', 'designr' ),
+                            'description'   => __( 'When toggled on, the last (right-most) link in the Navbar will appear as a unique button callout', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_FINAL_LINK_ACCENT
                         ),
 
                     )
