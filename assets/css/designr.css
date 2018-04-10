@@ -2031,6 +2031,21 @@ div#cart-panel ul.product_list_widget .product-wrap a.remove {
     margin-top: 50px;
 }*/
 
+.sidebar-wrap > :not(.designr-module) {
+    color: #333333;
+    padding: 30px 15px;
+    max-width: 1170px;
+    margin: 0 auto !important;
+}
+
+.sidebar-wrap > :not(.designr-module) .widget-title {
+    color: #333;
+}
+
+.sidebar-wrap aside.widget table#wp-calendar th, 
+.sidebar-wrap aside.widget table#wp-calendar td {
+    color: #333;
+}
 
 /* -----------------------------------------------------------------------------
  * Template: Widget Shell
