@@ -58,9 +58,8 @@ if ( have_posts() ) { ?>
                         the_post();
                         
                         /**
-                         * 
+                         * Include "designr_woocommerce_product_loop_cta( $ctr )" before $ctr++ to inject loop CTA
                          */
-                        designr_woocommerce_product_loop_cta( $ctr );
                         $ctr++;
                         
 			/**

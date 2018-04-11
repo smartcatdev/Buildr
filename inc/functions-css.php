@@ -302,7 +302,7 @@ function designr_wp_head_styles() { ?>
             ul#slim-header-primary > li:last-child > a,
             ul#banner-header-primary > li:last-child > a {
                 border: 2px solid;
-                padding: 10px 20px !important;
+                padding: 8px 20px !important;
                 border-radius: 30px;
                 padding-left: calc(20px + .5em) !important;
             }

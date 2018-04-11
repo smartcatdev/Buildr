@@ -464,51 +464,6 @@ if ( !function_exists( 'designr_woocommerce_single_product_clear' ) ) {
 
 }
 
-if ( !function_exists( 'designr_woocommerce_product_loop_cta' ) ) {
-
-    /**
-     * Output a CTA in the middle of the Product Loop after the first row
-     */
-    function designr_woocommerce_product_loop_cta( $ctr = 0 ) { ?>
-
-        <?php if ( $ctr == get_option( 'woocommerce_catalog_columns', 4 ) ) : ?>
-
-            </ul>
-
-            <div class="woocommerce-cta" style="background-image: url(<?php echo esc_url( get_theme_mod( 'designr_woocommerce_loop_cta_bg_image', get_template_directory_uri() . '/assets/images/sougwen.jpg' ) ); ?>);">
-
-                <div class="woocommerce-cta-inner dark-unsat-gradient">
-
-                    <span class="pre-title wow fadeInLeftBig">
-                        About Us
-                    </span>
-
-                    <h2 class="hero-title wow fadeInLeft">
-                        We live where style meets substance.
-                    </h2>
-
-                    <p class="wow fadeInLeft">
-                        Every space has its own purpose. Our task is to understand, see and implement it. We speak the architectural language fluently.
-                    </p>
-
-                    <a class="button wow fadeInUpBig" href="#">
-                        Discover
-                    </a>
-
-                </div>
-
-            </div>
-
-            <ul class="products columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>">
-
-        <?php endif; ?>
-
-    <?php 
-
-    }
-
-}
-
 if ( !function_exists( 'designr_render_featured_products' ) ) {
 
     /**
