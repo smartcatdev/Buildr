@@ -122,7 +122,6 @@ if ( !function_exists( 'designr_setup' ) ) :
             'flex-height' => true,
         ) );
         
-        add_theme_support( 'customize-selective-refresh-widgets' );
     }
 
 endif;

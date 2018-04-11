@@ -164,7 +164,8 @@ interface DESIGNR_OPTIONS {
             WOO_SLIDE_CART_TAB_ICON                 = 'cart_drawer_tab_icon',
             WOO_SLIDE_CART_TAB_POSITION             = 'cart_drawer_tab_location',
             
-            HOMEPAGE_SHOW_CONTENT                   = 'homepage_show_content_toggle';
+            HOMEPAGE_SHOW_CONTENT                   = 'homepage_show_content_toggle',
+            SINGLE_POST_SHOW_NAVIGATION             = 'show_single_post_navigation';
 
 }
 
@@ -332,6 +333,7 @@ interface DESIGNR_DEFAULTS {
             WOO_SLIDE_CART_TAB_ICON                 = 'fa-shopping-cart',
             WOO_SLIDE_CART_TAB_POSITION             = 'bottom',
 
-            HOMEPAGE_SHOW_CONTENT                   = true;
-            
+            HOMEPAGE_SHOW_CONTENT                   = true,
+            SINGLE_POST_SHOW_NAVIGATION             = true;
+    
 }

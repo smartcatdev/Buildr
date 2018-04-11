@@ -40,10 +40,6 @@ ul.slim-header-menu > li a {
     transition:  all 0.2s ease-in-out;
 }
 
-/*div#primary {
-    padding: 30px 0 50px 0;
-}*/
-
 .padded-content-wrap {
     padding: 50px 0;
 }
@@ -1372,6 +1368,42 @@ body.archive .page-header {
 
 body.archive .page-header .page-title {
     margin: 0;
+}
+
+body.single-post .entry-footer {
+    margin-top: 30px;
+}
+
+nav.navigation.post-navigation .nav-links {
+    margin: 50px 0;
+}
+
+nav.navigation.post-navigation .nav-links .nav-next, 
+nav.navigation.post-navigation .nav-links .nav-previous {
+    width: 50%;
+    display: inline-block;
+}
+
+nav.navigation.post-navigation .nav-links .nav-next {
+    text-align: right;
+}
+
+nav.navigation.post-navigation .nav-links a {
+    padding: 10px 15px;
+    background: #f0f0f0;
+    color: #333333;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 5px 0;
+}
+
+@media (max-width:767px) {
+    nav.navigation.post-navigation .nav-links .nav-next, 
+    nav.navigation.post-navigation .nav-links .nav-previous {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
 }
 
 /* -----------------------------------------------------------------------------

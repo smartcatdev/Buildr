@@ -29,8 +29,6 @@
         ?>
     </header><!-- .entry-header -->
 
-    <?php designr_post_thumbnail(); ?>
-
     <div class="entry-content">
         <?php
         the_content( sprintf(
@@ -57,8 +55,12 @@
     
     <?php 
     
-    the_post_navigation();
-
+    if ( get_theme_mod( DESIGNR_OPTIONS::SINGLE_POST_SHOW_NAVIGATION, DESIGNR_DEFAULTS::SINGLE_POST_SHOW_NAVIGATION ) ) :
+    
+        the_post_navigation();
+        
+    endif;
+    
     // If comments are open or we have at least one comment, load up the comment template.
     if ( comments_open() || get_comments_number() ) :
         comments_template();
