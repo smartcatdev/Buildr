@@ -33,8 +33,7 @@ if ( !class_exists( 'AcidWidget' ) ) {
                     $args[ 'id' ],
                     esc_html__( $args[ 'title' ], 'acid' ), 
                     array ( 
-                        'description' => esc_html__( $args[ 'description' ], 'acid' ),
-                        'customize_selective_refresh' => true,
+                        'description' => esc_html__( $args[ 'description' ], 'acid' )
                     )
             );
 
