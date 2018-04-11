@@ -203,11 +203,11 @@ interface DESIGNR_DEFAULTS {
             CUSTOM_HEADER_COLOR_LAYER_COLOR         = '#348aa7',
             CUSTOM_HEADER_COLOR_LAYER_OPACITY       = .75,
             
-            CUSTOM_HEADER_SHOW_ON_POSTS             = false,
+            CUSTOM_HEADER_SHOW_ON_POSTS             = true,
             CUSTOM_HEADER_SHOW_ON_PAGES             = false,
             CUSTOM_HEADER_SHOW_ON_FRONT             = true,
-            CUSTOM_HEADER_SHOW_ON_BLOG              = false,
-            CUSTOM_HEADER_SHOW_ON_ARCHIVE           = false,
+            CUSTOM_HEADER_SHOW_ON_BLOG              = true,
+            CUSTOM_HEADER_SHOW_ON_ARCHIVE           = true,
             CUSTOM_HEADER_SHOW_ON_SHOP              = false,
             
             GRADIENT_STYLE                          = 'linear',
@@ -298,7 +298,7 @@ interface DESIGNR_DEFAULTS {
             FONT_H1_FONT_SIZE                       = 44,
             FONT_H1_FONT_SIZE_MBL                   = 26,
             
-            FOOTER_NUM_WIDGET_COLS                  = 4,
+            FOOTER_NUM_WIDGET_COLS                  = 3,
             FOOTER_BORDER_TOP_THICKNESS             = 10,
             WIDGETS_TITLE_FONT_FAMILY               = 'secondary',
             WIDGETS_TITLE_FONT_SIZE                 = 24,
