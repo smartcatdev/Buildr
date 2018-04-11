@@ -1395,6 +1395,13 @@ nav.navigation.post-navigation .nav-links a {
     border-radius: 5px;
     display: inline-block;
     margin: 5px 0;
+    transition: 0.3s all ease-out;
+    -moz-transition: 0.3s all ease-out;
+    -webkit-transition: 0.3s all ease-out;
+}
+
+nav.navigation.post-navigation .nav-links a:hover {
+    color: #ffffff;
 }
 
 @media (max-width:767px) {
@@ -1404,6 +1411,11 @@ nav.navigation.post-navigation .nav-links a {
         display: block;
         text-align: center;
     }
+
+    nav.navigation.post-navigation .nav-links a {
+        width: 100%;
+    }
+    
 }
 
 /* -----------------------------------------------------------------------------
