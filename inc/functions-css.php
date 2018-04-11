@@ -120,7 +120,8 @@ function designr_wp_head_styles() { ?>
         .pagination-links .page-numbers:hover,
         .woocommerce nav.woocommerce-pagination ul li:hover span,
         .woocommerce nav.woocommerce-pagination ul li:hover > a,
-        .designr-pagination-links .page-numbers:hover {
+        .designr-pagination-links .page-numbers:hover,
+        nav.navigation.post-navigation .nav-links a:hover {
             background-color: <?php echo esc_attr( $theme_colors['primary'] ); ?>;
         }
 
