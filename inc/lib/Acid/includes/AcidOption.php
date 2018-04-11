@@ -123,7 +123,7 @@ if( ! class_exists( 'AcidOption' ) ) {
             
             $wp_customize->add_setting( $this->id, array(
                 'default'               => $this->default,
-                'transport'             => $this->has_transport(),
+                'transport'             => self::TRANSPORT,
                 'sanitize_callback'     => $this->sanitize_callback,
             ) );
             

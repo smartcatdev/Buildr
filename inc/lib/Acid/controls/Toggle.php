@@ -1,5 +1,8 @@
 <?php
-add_action( 'customize_register', function() {
+
+add_action( 'customize_register', 'acid_register_toggle' );
+
+function acid_register_toggle() {
 
     class AcidToggle extends WP_Customize_Control {
 
@@ -133,4 +136,4 @@ add_action( 'customize_register', function() {
 
     }
 
-} );
+}
