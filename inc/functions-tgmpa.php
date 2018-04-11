@@ -58,8 +58,8 @@ function designr_register_required_plugins() {
             'page_title'        => __( 'Install the Designr plugin to unlock the full customizable features of the theme', 'designr' ),
               'notice_can_install_recommended'  => _n_noop(
               /* translators: 1: plugin name(s). */
-              'This theme highly recommends the following plugin - Install this plugin to unlock more free theme features: %1$s.',
-              'This theme highly recommends the following plugins - Install these plugins to unlock more free theme features: %1$s.',
+              'This theme recommends the following plugin - Install this free plugin to unlock additional theme features: %1$s.',
+              'This theme recommends the following plugins - Install these free plugins to unlock additional theme features: %1$s.',
               'designr'
               ),
         ),
