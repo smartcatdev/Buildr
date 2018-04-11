@@ -33,15 +33,15 @@
                             switch ( get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_TITLE_CONTENT, DESIGNR_DEFAULTS::CUSTOM_HEADER_TITLE_CONTENT ) ) :
 
                                 case 'site_title' :
-                                    echo get_bloginfo('name');
+                                    echo esc_html( get_bloginfo('name') );
                                     break;
 
                                 case 'site_description' :
-                                    echo get_bloginfo('description');
+                                    echo esc_html( get_bloginfo('description') );
                                     break;
 
                                 default :
-                                    echo get_bloginfo('name');
+                                    echo esc_html( get_bloginfo('name') );
 
                             endswitch; ?>
 

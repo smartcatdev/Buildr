@@ -49,6 +49,7 @@
                 <?php if ( get_theme_mod( DESIGNR_OPTIONS::FOOTER_SHOW_COPYRIGHT, DESIGNR_DEFAULTS::FOOTER_SHOW_COPYRIGHT ) ) : ?>
 
                     <div class="footer-copyright">
+                        <?php /* translators: copyright tagline THEME_MOD */ ?>
                         <?php printf( esc_html__( '%s', 'designr' ), get_theme_mod( DESIGNR_OPTIONS::FOOTER_COPYRIGHT_TAGLINE, DESIGNR_DEFAULTS::FOOTER_COPYRIGHT_TAGLINE ) ); ?>
                     </div>
 

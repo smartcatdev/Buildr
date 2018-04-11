@@ -136,7 +136,6 @@ interface DESIGNR_OPTIONS {
             WIDGETS_TITLE_FONT_LETTER_GAP           = 'prefooter_widget_title_letter_spacing',
             WIDGETS_TITLE_ALL_CAPS                  = 'prefooter_widget_title_uppercase',
             
-            FOOTER_STYLE                            = 'footer_style',
             FOOTER_BOXED_CONTENT                    = 'boxed_footer',
             FOOTER_CENTER_BRANDING                  = 'centered_footer_branding',
             FOOTER_SHOW_SOCIAL                      = 'footer_show_social',
@@ -305,7 +304,6 @@ interface DESIGNR_DEFAULTS {
             WIDGETS_TITLE_FONT_LETTER_GAP           = '.250',
             WIDGETS_TITLE_ALL_CAPS                  = true,
             
-            FOOTER_STYLE                            = 'default',
             FOOTER_BOXED_CONTENT                    = false,
             FOOTER_CENTER_BRANDING                  = false,
             FOOTER_SHOW_SOCIAL                      = false,

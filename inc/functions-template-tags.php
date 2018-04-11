@@ -154,7 +154,7 @@ function designr_render_designer() { ?>
         <?php esc_html_e( 'Design by', 'designr' ); ?>
     </span>
     <a href="https://smartcatdesign.net/" rel="designer" class="rel">
-        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/smartcat_logo_white.svg' ); ?>" alt="<?php echo get_bloginfo('name'); ?>">
+        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/smartcat_logo_white.svg' ); ?>" alt="<?php echo esc_attr( get_bloginfo('name') ); ?>">
     </a>
     
 <?php }
@@ -193,7 +193,9 @@ function designr_render_masonry_wrap_close() { ?>
                         
                     </div>
                     
-                    <?php the_posts_navigation(); ?>
+                    <div class="designr-pagination-links">
+                        <?php echo the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
+                    </div>
 
                 </div>
 
@@ -237,7 +239,9 @@ function designr_render_mosaic_wrap_close() { ?>
                         
                     </div>
                         
-                    <?php the_posts_navigation(); ?>
+                    <div class="designr-pagination-links">
+                        <?php echo the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
+                    </div>
 
                 </div>
 
@@ -281,7 +285,9 @@ function designr_render_standard_wrap_close() { ?>
                         
                     </div>
                         
-                    <?php the_posts_navigation(); ?>
+                    <div class="designr-pagination-links">
+                        <?php echo the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
+                    </div>
 
                 </div>
 

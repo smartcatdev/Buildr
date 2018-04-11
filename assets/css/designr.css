@@ -2054,3 +2054,51 @@ div#primary.widget-shell main#main > article {
     padding: 0;
     margin: 0;
 }
+
+/* -----------------------------------------------------------------------------
+ * Pagination Links
+ * -------------------------------------------------------------------------- */
+.designr-pagination-links {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.designr-pagination-links .page-numbers,
+.woocommerce nav.woocommerce-pagination ul li span,
+.woocommerce nav.woocommerce-pagination ul li > a {
+    padding: 4px 12px;
+    display: inline-block;
+    border-radius: 5px;
+    color: #333333;
+    transition: .3s all ease-in-out;
+    -moz-transition: .3s all ease-in-out;
+    -webkit-transition: .3s all ease-in-out;
+}
+
+.designr-pagination-links .page-numbers:hover,
+.woocommerce nav.woocommerce-pagination ul li:hover span,
+.woocommerce nav.woocommerce-pagination ul li:hover > a {
+    color: #ffffff;
+}
+
+.designr-pagination-links .page-numbers.current,
+.woocommerce nav.woocommerce-pagination ul li span.current {
+    background-color: #f0f0f0;
+}
+
+nav.woocommerce-pagination {
+    text-align: center;
+}
+
+nav.woocommerce-pagination > ul.page-numbers {
+    margin: 0;
+    padding: 0;
+}
+
+.pagination-links .page-numbers.current {
+    color: #ffffff;
+}
+
+.pagination-links .page-numbers.dots {
+    background: none;
+}

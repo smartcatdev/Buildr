@@ -116,7 +116,11 @@ function designr_wp_head_styles() { ?>
         .widget_price_filter .ui-slider .ui-slider-handle,
         h3.shop-sub-heading,
         form.woocommerce-ordering > select,
-        .woocommerce select {
+        .woocommerce select,
+        .pagination-links .page-numbers:hover,
+        .woocommerce nav.woocommerce-pagination ul li:hover span,
+        .woocommerce nav.woocommerce-pagination ul li:hover > a,
+        .designr-pagination-links .page-numbers:hover {
             background-color: <?php echo esc_attr( $theme_colors['primary'] ); ?>;
         }
 
