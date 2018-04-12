@@ -20,7 +20,11 @@ require get_template_directory() . '/inc/functions-widgets.php';
 
 require get_template_directory() . '/inc/functions-css.php';
 
-require get_template_directory() . '/inc/functions-tgmpa.php';
+
+
+if( is_admin() ) {
+    require get_template_directory() . '/admin/functions-admin.php';
+}
 
 if ( defined( 'JETPACK__VERSION' ) ) {
     require get_template_directory() . '/inc/functions-jetpack.php';
