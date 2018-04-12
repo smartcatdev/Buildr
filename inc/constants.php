@@ -263,7 +263,7 @@ interface DESIGNR_DEFAULTS {
             NAVBAR_BRANDING_SPACE_BOTTOM_DSK        = 20,
             NAVBAR_BRANDING_SPACE_TOP_MBL           = 30,
             NAVBAR_BRANDING_SPACE_BOTTOM_MBL        = 15,
-            NAVBAR_FINAL_LINK_ACCENT                = true,
+            NAVBAR_FINAL_LINK_ACCENT                = false,
             
             NAVBAR_SHOW_SOCIAL                      = false,
             SOCIAL_URL_1                            = '',
