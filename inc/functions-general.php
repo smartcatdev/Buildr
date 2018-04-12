@@ -146,3 +146,11 @@ function designr_create_theme_menu() {
         include_once get_template_directory() . '/admin/designr-menu.php';
     });
 }
+
+function designr_theme_path( $path = null ) {
+    return trailingslashit( get_template_directory() ) . $path;
+}
+
+function designr_theme_url( $url = null ) {
+    return trailingslashit( get_template_directory_uri() ) . $path;
+}

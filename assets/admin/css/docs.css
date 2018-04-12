@@ -1,3 +1,8 @@
-body{
-    background: red;
+#designr-docs-menu .parent-nav {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#designr-docs-menu .child-nav {
+    padding-left: 20px;
 }

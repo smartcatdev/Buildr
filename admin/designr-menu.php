@@ -1,10 +1,10 @@
-<div class="wrap designr-docs">
+<div class="wrap" id="designr-docs">
     
     <h2><?php _e( 'Designr Theme Guide & Documentation', 'designr' ); ?></h2>
     
-    <div class="designr-docs-menu">
+    <div id="designr-docs-menu">
         
-        <ul>
+        <ul class="parent-nav">
             
             <?php designr_docs_tab( '#welcome', __( 'Welcome', 'designr' ) ) ?>
             
@@ -23,16 +23,18 @@
         
     </div>
     
-    <div class="designr-docs-content">
+    <div id="designr-docs-content">
+        
+        <div id="welcome">
+            <?php require designr_docs_partial( 'welcome' ); ?>
+        </div>
+        
         
     </div>
     
     
 
     
-    <?php 
-    $query['autofocus[section]'] = 'title_tagline';
-    $section_link = add_query_arg( $query, admin_url( 'customize.php' ) );
-    ?><a href="<?php echo esc_url( $section_link ); ?>">Link to title section</a>
+
     
 </div>

@@ -11,7 +11,7 @@ add_action( 'admin_enqueue_scripts', 'designr_load_admin_css' );
 function designr_load_admin_css( $hook ) {
     
     if( 'appearance_page_designr-theme-info' == $hook ) {
-        wp_enqueue_style( 'designr-admin-css', get_template_directory_uri() . '/assets/admin/docs.css' );
+        wp_enqueue_style( 'designr-admin-css', get_template_directory_uri() . '/assets/admin/css/docs.css' );
     }
     
 }
@@ -25,7 +25,7 @@ function designr_docs_tab( $jump_link, $label, $children = null ) { ?>
     
     <?php if( is_array( $children ) ) : ?>
         
-    <ul>
+    <ul class="child-nav">
         
         <?php foreach( $children as $child_link => $child_label ) : ?>
 
@@ -46,3 +46,15 @@ function designr_docs_tab( $jump_link, $label, $children = null ) { ?>
 
 
 <?php }
+
+function designr_docs_partial( $file ) {
+    return trailingslashit( get_template_directory() ) . 'admin/doc-partials/' . $file . '.php';
+}
+
+function designr_render_doc( $filename ) {
+    
+    if( file_exists( designr_docs_partial( $filename ) ) ) {
+        require designr_docs_partial( $filename );
+    }
+    
+}
