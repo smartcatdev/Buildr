@@ -26,7 +26,11 @@
     <div id="designr-docs-content">
         
         <div id="welcome">
-            <?php require designr_docs_partial( 'welcome' ); ?>
+            <?php designr_render_doc( 'welcome' ); ?>
+        </div>
+        
+        <div id="setup">
+            <?php designr_render_doc( 'setup' ); ?>
         </div>
         
         
