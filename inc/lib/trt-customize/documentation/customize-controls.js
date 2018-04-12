@@ -1,7 +1,7 @@
 ( function( api ) {
 
-	// Extends our custom "example-1" section.
-	api.sectionConstructor['example-1'] = api.Section.extend( {
+	// Extends our custom "companion-plugin" section.
+	api.sectionConstructor['designr_docs'] = api.Section.extend( {
 
 		// No events for this type of section.
 		attachEvents: function () {},

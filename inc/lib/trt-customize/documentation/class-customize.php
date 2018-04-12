@@ -6,7 +6,7 @@
  * @since  1.0.0
  * @access public
  */
-final class Designr_Customize {
+final class Designr_Docs_Customize {
 
     /**
      * Returns the instance.
@@ -65,19 +65,19 @@ final class Designr_Customize {
     public function sections( $manager ) {
 
         // Load custom sections.
-        require_once( trailingslashit( get_template_directory() ) . 'inc/lib/trt-customize/example-1/section-pro.php' );
+        require_once( trailingslashit( get_template_directory() ) . 'inc/lib/trt-customize/documentation/section-pro.php' );
 
         // Register custom section types.
-        $manager->register_section_type( 'Designr_Customize_Section_Pro' );
+        $manager->register_section_type( 'Designr_Docs_Customize_Section_Pro' );
 
         // Register sections.
         $manager->add_section(
-            new Designr_Customize_Section_Pro(
-                $manager, 'designr_pro', array (
-                    'title' => esc_html__( 'Designr Pro', 'designr' ),
-                    'pro_text' => esc_html__( 'View Designr Pro', 'designr' ),
-                    'pro_url' => 'http://designr.smartcatdev.wpengine.com/?utm_source=Theme%20Customizer&utm_medium=CTA&utm_campaign=Free%20Version%20Users',
-                    'pro_details' => esc_html__( 'The pro version includes an advanced slider up to 6 slides, Events, FAQ, Gallery, News and Testimonials widgets and templates, Pricing Table, Contact Widgets, Alternate Blog Desings, 200+ Google fonts, unlimited skin colors and more!', 'designr' ),
+            new Designr_Docs_Customize_Section_Pro(
+                $manager, 'designr_docs', array (
+                    'title'         => esc_html__( 'Documentation', 'designr' ),
+                    'pro_text'      => esc_html__( 'View Docs', 'designr' ),
+                    'pro_url'       => admin_url( 'themes.php?page=tgmpa-install-plugins' ),
+                    'pro_details'   => esc_html__( 'It seems that you have not yet installed the Designr Pro plugin. It is highly recommended to install the plugin. It includes 3 header styles, 3 blog styles, over 140 customization options, one-click install theme-presets and 6 advanced widgets, all free!', 'designr' ),
                 )
             )
         );
@@ -92,12 +92,12 @@ final class Designr_Customize {
      */
     public function enqueue_control_scripts() {
 
-        wp_enqueue_script( 'designr-pro-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/example-1/customize-controls.js', array ( 'customize-controls' ) );
+        wp_enqueue_script( 'designr-docs-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/documentation/customize-controls.js', array ( 'customize-controls' ) );
 
-        wp_enqueue_style( 'designr-pro-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/example-1/customize-controls.css' );
+        wp_enqueue_style( 'designr-docs-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/documentation/customize-controls.css' );
     }
 
 }
 
 // Doing this customizer thang!
-Designr_Customize::get_instance();
+Designr_Docs_Customize::get_instance();
