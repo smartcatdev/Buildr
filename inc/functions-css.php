@@ -186,8 +186,13 @@ function designr_wp_head_styles() { ?>
         div#banner-header,
         div#banner-header a,
         ul.slim-header-menu > li.current-menu-item > a,
-        header#masthead.header-style-split .navbar-social #split-social-trigger {
+        header#masthead.header-style-split .navbar-social #split-social-trigger,
+        div.site-branding a {
             color: <?php echo esc_attr( $theme_colors['navbar_fg'] ); ?>;
+        }
+        
+        div.site-branding a:hover {
+            color: <?php echo esc_attr( $theme_colors['navbar_fg'] ); ?> !important;
         }
 
         a#split-social-trigger path {
@@ -321,10 +326,10 @@ function designr_wp_head_styles() { ?>
 
         /* ----- Slim Navbars: Logo Settings -------------------------------- */
 
-        <?php if ( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_ALWAYS_SHOW_LOGO, DESIGNR_DEFAULTS::NAVBAR_ALWAYS_SHOW_LOGO ) ) : ?>
+        <?php if ( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_ALWAYS_SHOW_LOGO, DESIGNR_DEFAULTS::NAVBAR_ALWAYS_SHOW_LOGO ) || get_theme_mod( DESIGNR_OPTIONS::NAVBAR_STYLE, DESIGNR_DEFAULTS::NAVBAR_STYLE ) == 'banner' ) : ?>
             header img.custom-logo {
-                height: <?php echo intval( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_INITIAL_HEIGHT, DESIGNR_DEFAULTS::NAVBAR_INITIAL_HEIGHT ) ) ?>px;
-                margin: 0 <?php echo intval( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_LOGO_HORIZONTAL_PADDING, DESIGNR_DEFAULTS::NAVBAR_LOGO_HORIZONTAL_PADDING ) ) ?>px;
+                height: <?php echo intval( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_INITIAL_HEIGHT, DESIGNR_DEFAULTS::NAVBAR_INITIAL_HEIGHT ) ); ?>px;
+                margin: 0 <?php echo intval( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_LOGO_HORIZONTAL_PADDING, DESIGNR_DEFAULTS::NAVBAR_LOGO_HORIZONTAL_PADDING ) ); ?>px;
                 opacity: 1;
             }
         <?php else : ?>
@@ -335,28 +340,40 @@ function designr_wp_head_styles() { ?>
         <?php endif; ?>
 
         .is-sticky img.custom-logo {
-            height: <?php echo intval( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_STICKY_HEIGHT, DESIGNR_DEFAULTS::NAVBAR_STICKY_HEIGHT ) ) ?>px;
-            margin: 0 <?php echo intval( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_LOGO_HORIZONTAL_PADDING, DESIGNR_DEFAULTS::NAVBAR_LOGO_HORIZONTAL_PADDING ) ) ?>px;
+            height: <?php echo intval( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_STICKY_HEIGHT, DESIGNR_DEFAULTS::NAVBAR_STICKY_HEIGHT ) ); ?>px;
+            margin: 0 <?php echo intval( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_LOGO_HORIZONTAL_PADDING, DESIGNR_DEFAULTS::NAVBAR_LOGO_HORIZONTAL_PADDING ) ); ?>px;
         }
 
         /* ----- Slim Navbars: Collapse ------------------------------------- */
 
+        @media (min-width:992px) {
+            div#slim-header .right-half {
+                min-height: <?php echo intval( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_INITIAL_HEIGHT, DESIGNR_DEFAULTS::NAVBAR_INITIAL_HEIGHT ) - 1 ); ?>px;
+            }
+        }
+        
         #slim-header-wrap ul.slim-header-menu > li > a,
         #slim-header-wrap ul.slim-header-menu > li {
-            line-height: <?php echo intval( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_INITIAL_HEIGHT, DESIGNR_DEFAULTS::NAVBAR_INITIAL_HEIGHT ) ) ?>px;
+            line-height: <?php echo intval( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_INITIAL_HEIGHT, DESIGNR_DEFAULTS::NAVBAR_INITIAL_HEIGHT ) ); ?>px;
         }
 
         /* ----- Slim Navbars: Expand --------------------------------------- */
 
+        @media (min-width:992px) {
+            .is-sticky div#slim-header .right-half {
+                min-height: <?php echo intval( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_STICKY_HEIGHT, DESIGNR_DEFAULTS::NAVBAR_STICKY_HEIGHT ) - 1 ); ?>px;
+            }
+        }
+        
         .is-sticky #slim-header-wrap ul.slim-header-menu > li > a,
         .is-sticky #slim-header-wrap ul.slim-header-menu > li {
-            line-height: <?php echo intval( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_STICKY_HEIGHT, DESIGNR_DEFAULTS::NAVBAR_STICKY_HEIGHT ) ) ?>px;
+            line-height: <?php echo intval( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_STICKY_HEIGHT, DESIGNR_DEFAULTS::NAVBAR_STICKY_HEIGHT ) ); ?>px;
         }
 
         /* ----- Slim Navbars: Site Title ----------------------------------- */
 
         .site-branding .site-title {
-            font-size: <?php echo intval( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_SITE_TITLE_FONT_SIZE, DESIGNR_DEFAULTS::NAVBAR_SITE_TITLE_FONT_SIZE ) ) ?>px;
+            font-size: <?php echo intval( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_SITE_TITLE_FONT_SIZE, DESIGNR_DEFAULTS::NAVBAR_SITE_TITLE_FONT_SIZE ) ); ?>px;
             letter-spacing: <?php echo esc_attr( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_SITE_TITLE_LETTER_GAP, DESIGNR_DEFAULTS::NAVBAR_SITE_TITLE_LETTER_GAP ) ); ?>em;
         }
 
@@ -372,7 +389,7 @@ function designr_wp_head_styles() { ?>
         /* ----- Slim Navbars: Site Description ----------------------------- */
 
         .site-branding .site-tagline {
-            font-size: <?php echo intval( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_TAGLINE_FONT_SIZE, DESIGNR_DEFAULTS::NAVBAR_TAGLINE_FONT_SIZE ) ) ?>px;
+            font-size: <?php echo intval( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_TAGLINE_FONT_SIZE, DESIGNR_DEFAULTS::NAVBAR_TAGLINE_FONT_SIZE ) ); ?>px;
         }
 
         <?php if ( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_TAGLINE_FONT_FAMILY, DESIGNR_DEFAULTS::NAVBAR_TAGLINE_FONT_FAMILY ) == 'primary' ) : ?>
