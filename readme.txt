@@ -1,7 +1,7 @@
 === Designr ===
 
 Contributors: smartcat
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, flexible-header, custom-background, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, blog, photography, portfolio
 
 Requires at least: 4.9
 Tested up to: 4.9.5
@@ -10,6 +10,9 @@ License: GNU General Public License v2 or later
 License URI: LICENSE
 
 Build your site using the drag & drop widgets. Click to install any of the pre-built presets. Tons of customization, 3 navbars to choose from, 3 blog styles, a unique header, and 6 advanced widgets bundled with the theme. Designr is a premium theme, but it's free!
+
+Designr theme, Copyright 2018 Smartcat Solutions Inc.
+This theme, like WordPress, is distributed under the terms of the GNU GPL.
 
 == Description ==
 
@@ -118,3 +121,8 @@ Designr includes support for Infinite Scroll in Jetpack.
     - URL                   
     - License               CC0
     - License URL           http://creativecommons.org/publicdomain/zero/1.0/deed.en
+
+17. TRT Customizer Pro
+    - URL                   https://github.com/justintadlock/trt-customizer-pro
+    - License               Licensed under GPLv2 or later
+    - License URL           http://www.gnu.org/licenses/gpl.html
