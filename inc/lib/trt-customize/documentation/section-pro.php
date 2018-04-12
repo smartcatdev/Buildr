@@ -15,7 +15,7 @@ class Designr_Docs_Customize_Section_Pro extends WP_Customize_Section {
      * @access public
      * @var    string
      */
-    public $type = 'companion-plugin';
+    public $type = 'designr_docs';
 
     /**
      * Custom button text to output.
@@ -74,9 +74,6 @@ class Designr_Docs_Customize_Section_Pro extends WP_Customize_Section {
                 <a href="{{ data.pro_url }}" class="button button-primary alignright">{{ data.pro_text }}</a>
                 <# } #>
             </h3>
-            <p class="accordion-section-details">
-                {{ data.pro_details }}
-            </p>
         </li>
     <?php
     }

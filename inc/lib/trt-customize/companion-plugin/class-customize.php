@@ -74,10 +74,10 @@ final class Designr_Customize {
         $manager->add_section(
             new Designr_Customize_Section_Pro(
                 $manager, 'designr_companion', array (
-                    'title'         => esc_html__( 'Designr Pro', 'designr' ),
+                    'title'         => esc_html__( 'Designr Features', 'designr' ),
                     'pro_text'      => esc_html__( 'Free Install', 'designr' ),
                     'pro_url'       => admin_url( 'themes.php?page=tgmpa-install-plugins' ),
-                    'pro_details'   => esc_html__( 'It seems that you have not yet installed the Designr Pro plugin. It is highly recommended to install the plugin. It includes 3 header styles, 3 blog styles, over 140 customization options, one-click install theme-presets and 6 advanced widgets, all free!', 'designr' ),
+                    'pro_details'   => esc_html__( 'It seems that you have not yet installed the Designr Features plugin. It is highly recommended to install the plugin. It includes 3 header styles, 3 blog styles, over 140 customization options, one-click install theme-presets and 6 advanced widgets, completely free!', 'designr' ),
                 )
             )
         );
