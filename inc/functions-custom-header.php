@@ -56,7 +56,7 @@ function designr_render_custom_header() {
             ( is_front_page()   && !is_home() && get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_ON_FRONT, DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_FRONT ) ) ||
             ( is_home()         && get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_ON_BLOG, DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_BLOG ) ) ||
             ( is_archive()      && get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_ON_ARCHIVE, DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_ARCHIVE ) ) ||
-            ( function_exists( 'is_shop' )         && get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_ON_SHOP, DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_SHOP ) )
+            ( class_exists( 'woocommerce' ) && is_shop() && get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_ON_SHOP, DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_SHOP ) )
         ) :
         
             get_template_part( 'template-parts/custom-header', get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_STYLE_TOGGLE, DESIGNR_DEFAULTS::CUSTOM_HEADER_STYLE_TOGGLE ) );

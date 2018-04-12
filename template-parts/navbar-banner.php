@@ -18,11 +18,15 @@
             
                     <div class="site-branding">
                         <h1 class="site-title">
-                            <?php echo esc_html( get_bloginfo('name') ); ?>
+                            <a href="<?php echo esc_url( home_url() ); ?>">
+                                <?php echo esc_html( get_bloginfo('name') ); ?>
+                            </a>
                         </h1>
                         <?php if ( get_bloginfo( 'name' ) ) : ?>
                             <p class="site-tagline">
-                                <?php echo esc_html( get_bloginfo( 'description' ) ); ?>
+                                <a href="<?php echo esc_url( home_url() ); ?>">
+                                    <?php echo esc_html( get_bloginfo( 'description' ) ); ?>
+                                </a>
                             </p>
                         <?php endif; ?>
                     </div>
@@ -33,7 +37,7 @@
             
             <div id="banner-header-menu-wrap">
 
-                <?php if ( has_nav_menu( 'slim-primary' ) ) : ?>
+                <?php if ( has_nav_menu( 'banner-primary' ) ) : ?>
 
                     <?php wp_nav_menu( array( 
                         'theme_location'    => 'banner-primary', 

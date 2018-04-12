@@ -23,7 +23,9 @@ function designr_scripts() {
     wp_enqueue_style( 'animate', get_template_directory_uri() . '/assets/lib/animate/animate.css', array(), DESIGNR_VERSION );
     wp_enqueue_style( 'designr-util', get_template_directory_uri() . '/assets/css/util.css', array(), DESIGNR_VERSION );
     wp_enqueue_style( 'designr', get_template_directory_uri() . '/assets/css/designr.css', array(), DESIGNR_VERSION );
-    wp_enqueue_style( 'designr-wc', get_template_directory_uri() . '/assets/css/designr-woocommerce.css', array(), DESIGNR_VERSION );
+    if ( class_exists( 'woocommerce' ) ) :
+        wp_enqueue_style( 'designr-wc', get_template_directory_uri() . '/assets/css/designr-woocommerce.css', array(), DESIGNR_VERSION );
+    endif;
     
     // Scripts
     wp_enqueue_script( 'sticky', get_template_directory_uri() . '/assets/lib/sticky-js/jquery.sticky.js', array('jquery'), DESIGNR_VERSION, true );
