@@ -171,13 +171,13 @@ interface DESIGNR_OPTIONS {
 
 interface DESIGNR_DEFAULTS {
     
-    const   CUSTOM_HEADER_STYLE_TOGGLE              = 'parallax_vertical',
+    const   CUSTOM_HEADER_STYLE_TOGGLE              = 'parallax_layers',
             CUSTOM_HEADER_HEIGHT_CALC               = 'percent',
             CUSTOM_HEADER_HEIGHT_PCT                = 55,
             CUSTOM_HEADER_HEIGHT_PCT_MBL            = 35,
             CUSTOM_HEADER_HEIGHT_PX                 = 500,
             CUSTOM_HEADER_HEIGHT_PX_MBL             = 250,
-            CUSTOM_HEADER_PLX_INTENSITY             = 'default',
+            CUSTOM_HEADER_PLX_INTENSITY             = 'subtle',
             CUSTOM_HEADER_TEXTURE_IMG               = '',
             CUSTOM_HEADER_TEXTURE_OPAC              = .75,
             
@@ -199,9 +199,9 @@ interface DESIGNR_DEFAULTS {
             CUSTOM_HEADER_MENU_LETTER_GAP           = '.500',
             CUSTOM_HEADER_MENU_COLOR                = '#ffffff',
             CUSTOM_HEADER_MENU_LINKS_GAP            = 16,
-            CUSTOM_HEADER_COLOR_LAYER_STYLE         = 'gradient',
-            CUSTOM_HEADER_COLOR_LAYER_COLOR         = '#348aa7',
-            CUSTOM_HEADER_COLOR_LAYER_OPACITY       = .75,
+            CUSTOM_HEADER_COLOR_LAYER_STYLE         = 'single',
+            CUSTOM_HEADER_COLOR_LAYER_COLOR         = '#000000',
+            CUSTOM_HEADER_COLOR_LAYER_OPACITY       = .5,
             
             CUSTOM_HEADER_SHOW_ON_POSTS             = true,
             CUSTOM_HEADER_SHOW_ON_PAGES             = false,
@@ -211,12 +211,12 @@ interface DESIGNR_DEFAULTS {
             CUSTOM_HEADER_SHOW_ON_SHOP              = false,
             
             GRADIENT_STYLE                          = 'linear',
-            GRADIENT_OVERALL_OPACITY                = .85,
+            GRADIENT_OVERALL_OPACITY                = 1,
             GRADIENT_LINEAR_DIRECTION               = 'up',
             GRADIENT_START_COLOR                    = '#136986',
-            GRADIENT_START_COLOR_OPACITY            = 1,
+            GRADIENT_START_COLOR_OPACITY            = .85,
             GRADIENT_END_COLOR                      = '#348aa7',
-            GRADIENT_END_COLOR_OPACITY              = .5,
+            GRADIENT_END_COLOR_OPACITY              = .25,
             
             BLOG_LAYOUT_STYLE                       = 'blog_masonry',
             BLOG_SHOW_DATE                          = true,
@@ -310,7 +310,7 @@ interface DESIGNR_DEFAULTS {
             FOOTER_SHOW_SOCIAL                      = false,
             FOOTER_SHOW_BRANDING                    = true,
             FOOTER_SHOW_COPYRIGHT                   = true,
-            FOOTER_COPYRIGHT_TAGLINE                = 'Copyright © 2018 Your Company',
+            FOOTER_COPYRIGHT_TAGLINE                = '2018 Your Company',
             FOOTER_BRANDING_TYPE                    = 'site_title',
             FOOTER_ALTERNATE_LOGO                   = '',
             FOOTER_ALTERNATE_LOGO_HEIGHT            = 30,
