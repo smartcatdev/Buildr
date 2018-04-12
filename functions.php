@@ -20,6 +20,7 @@ require get_template_directory() . '/inc/functions-widgets.php';
 
 require get_template_directory() . '/inc/functions-css.php';
 
+require get_template_directory() . '/inc/lib/trt-customize/example-1/class-customize.php';
 
 
 if( is_admin() ) {

@@ -6,7 +6,7 @@
  * @since  1.0.0
  * @access public
  */
-final class Tyros_Customize {
+final class Designr_Customize {
 
     /**
      * Returns the instance.
@@ -65,19 +65,19 @@ final class Tyros_Customize {
     public function sections( $manager ) {
 
         // Load custom sections.
-        require_once( trailingslashit( get_template_directory() ) . 'trt-customize-pro/example-1/section-pro.php' );
+        require_once( trailingslashit( get_template_directory() ) . 'inc/lib/trt-customize/example-1/section-pro.php' );
 
         // Register custom section types.
-        $manager->register_section_type( 'Tyros_Customize_Section_Pro' );
+        $manager->register_section_type( 'Designr_Customize_Section_Pro' );
 
         // Register sections.
         $manager->add_section(
-            new Tyros_Customize_Section_Pro(
-                $manager, 'tyros_pro', array (
-                    'title' => esc_html__( 'Tyros Pro', 'tyros' ),
-                    'pro_text' => esc_html__( 'View Tyros Pro', 'tyros' ),
-                    'pro_url' => 'http://tyros.smartcatdev.wpengine.com/?utm_source=Theme%20Customizer&utm_medium=CTA&utm_campaign=Free%20Version%20Users',
-                    'pro_details' => esc_html__( 'The pro version includes an advanced slider up to 6 slides, Events, FAQ, Gallery, News and Testimonials widgets and templates, Pricing Table, Contact Widgets, Alternate Blog Desings, 200+ Google fonts, unlimited skin colors and more!', 'tyros' ),
+            new Designr_Customize_Section_Pro(
+                $manager, 'designr_pro', array (
+                    'title' => esc_html__( 'Designr Pro', 'designr' ),
+                    'pro_text' => esc_html__( 'View Designr Pro', 'designr' ),
+                    'pro_url' => 'http://designr.smartcatdev.wpengine.com/?utm_source=Theme%20Customizer&utm_medium=CTA&utm_campaign=Free%20Version%20Users',
+                    'pro_details' => esc_html__( 'The pro version includes an advanced slider up to 6 slides, Events, FAQ, Gallery, News and Testimonials widgets and templates, Pricing Table, Contact Widgets, Alternate Blog Desings, 200+ Google fonts, unlimited skin colors and more!', 'designr' ),
                 )
             )
         );
@@ -92,12 +92,12 @@ final class Tyros_Customize {
      */
     public function enqueue_control_scripts() {
 
-        wp_enqueue_script( 'tyros-pro-customize-controls', trailingslashit( get_template_directory_uri() ) . 'trt-customize-pro/example-1/customize-controls.js', array ( 'customize-controls' ) );
+        wp_enqueue_script( 'designr-pro-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/example-1/customize-controls.js', array ( 'customize-controls' ) );
 
-        wp_enqueue_style( 'tyros-pro-customize-controls', trailingslashit( get_template_directory_uri() ) . 'trt-customize-pro/example-1/customize-controls.css' );
+        wp_enqueue_style( 'designr-pro-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/example-1/customize-controls.css' );
     }
 
 }
 
 // Doing this customizer thang!
-Tyros_Customize::get_instance();
+Designr_Customize::get_instance();
