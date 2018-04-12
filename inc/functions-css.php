@@ -44,7 +44,7 @@ function designr_wp_head_styles() { ?>
         }
 
         body {
-            font-size: <?php echo intval( get_theme_mod( DESIGNR_OPTIONS::FONT_BODY_SIZE, DESIGNR_DEFAULTS::FONT_BODY_SIZE ) ) ?>px;
+            font-size: <?php echo intval( get_theme_mod( DESIGNR_OPTIONS::FONT_BODY_SIZE, DESIGNR_DEFAULTS::FONT_BODY_SIZE ) ); ?>px;
         }
         
         <?php if ( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_LINKS_FONT_FAMILY, DESIGNR_DEFAULTS::NAVBAR_LINKS_FONT_FAMILY ) == 'secondary' ) : ?>
@@ -255,7 +255,7 @@ function designr_wp_head_styles() { ?>
         }
         
         footer div#slim-footer-wrap {
-            background-color: #<?php echo esc_attr( $theme_colors['footer_bg'] ); ?>;
+            background-color: <?php echo esc_attr( $theme_colors['footer_bg'] ); ?>;
         }
 
         div#slim-footer,

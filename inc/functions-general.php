@@ -10,9 +10,6 @@ add_action( 'wp_head', 'designr_pingback_header' );
 // Set up theme defaults and register various theme support
 add_action( 'after_setup_theme', 'designr_setup' );
 
-// Define content width
-add_action( 'after_setup_theme', 'designr_content_width', 0 );
-
 // Create theme page in dashboard
 add_action('admin_menu', 'designr_create_theme_menu' );
 
@@ -133,16 +130,14 @@ endif;
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
- * Priority 0 to make it available to lower priority callbacks.
- *
  * @global int $content_width
  */
-function designr_content_width() {
-    $GLOBALS[ 'content_width' ] = apply_filters( 'designr_content_width', 1170 );
+if ( ! isset( $content_width ) ) {
+    $content_width = 1170;
 }
 
 function designr_create_theme_menu() {
-    add_theme_page( __( 'Theme Info'), __( 'Theme Info'), 'edit_theme_options', 'designr-theme-info', function() {
+    add_theme_page( __( 'Theme Info', 'designr' ), __( 'Theme Info', 'designr' ), 'edit_theme_options', 'designr-theme-info', function() {
         include_once get_template_directory() . '/admin/designr-menu.php';
     });
 }

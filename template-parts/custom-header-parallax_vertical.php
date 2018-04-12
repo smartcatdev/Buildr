@@ -1,6 +1,6 @@
 <?php $header_image = get_header_image(); ?>
 
-<div id="designr-custom-header" class="designr_parallax" data-plx-img="<?php echo esc_url($header_image); ?>">
+<div id="designr-custom-header" class="designr_parallax" data-plx-img="<?php echo esc_url( $header_image ); ?>">
 
     <div id="custom-header-overlay" class="<?php echo get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_COLOR_LAYER_STYLE, DESIGNR_DEFAULTS::CUSTOM_HEADER_COLOR_LAYER_STYLE ) == 'no' ? '' : esc_attr( get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_COLOR_LAYER_STYLE, DESIGNR_DEFAULTS::CUSTOM_HEADER_COLOR_LAYER_STYLE ) ); ?>">
     </div>

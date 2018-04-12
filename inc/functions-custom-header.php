@@ -19,20 +19,27 @@
 function designr_custom_header_setup() {
 
     add_theme_support( 'custom-header', apply_filters( 'designr_custom_header_args', array (
-        'default-image' => get_template_directory_uri() . '/assets/images/sougwen.jpg',
-        'header-text'  => false,
-        'flex-height' => true,
-        'uploads'   => true,
-        'width'     => 1200,
-        'height'    => 700,
+        'default-image'     => get_template_directory_uri() . '/assets/images/header-demo_1.jpg',
+        'header-text'       => false,
+        'flex-height'       => true,
+        'uploads'           => true,
+        'width'             => 1200,
+        'height'            => 700,
+        'random-default'    => true,
     ) ) );
     
     register_default_headers( array(
-        'mountains' => array(
-            'url'           => get_template_directory_uri() . '/assets/images/sougwen.jpg',
-            'thumbnail_url' => get_template_directory_uri() . '/assets/images/sougwen.jpg',
-            'description'   => __( 'Mountains', 'designr' )
-    ) ) );
+        'office' => array(
+            'url'           => get_template_directory_uri() . '/assets/images/header-demo_1.jpg',
+            'thumbnail_url' => get_template_directory_uri() . '/assets/images/header-demo_1.jpg',
+            'description'   => __( 'Office Interior', 'designr' )
+        ), 
+        'architecture' => array(
+            'url'           => get_template_directory_uri() . '/assets/images/header-demo_2.jpg',
+            'thumbnail_url' => get_template_directory_uri() . '/assets/images/header-demo_2.jpg',
+            'description'   => __( 'Architecture', 'designr' )
+        ), 
+    ) );
     
 }
 add_action( 'after_setup_theme', 'designr_custom_header_setup' );
