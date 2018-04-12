@@ -16,6 +16,18 @@ function designr_load_admin_css( $hook ) {
     
 }
 
+function designr_docs_partial( $file ) {
+    return trailingslashit( get_template_directory() ) . 'admin/doc-partials/' . $file . '.php';
+}
+
+function designr_render_doc( $filename ) {
+    
+    if( file_exists( designr_docs_partial( $filename ) ) ) {
+        require designr_docs_partial( $filename );
+    }
+    
+}
+
 function designr_docs_tab( $jump_link, $label, $children = null ) { ?>
     
 <li>
@@ -46,15 +58,3 @@ function designr_docs_tab( $jump_link, $label, $children = null ) { ?>
 
 
 <?php }
-
-function designr_docs_partial( $file ) {
-    return trailingslashit( get_template_directory() ) . 'admin/doc-partials/' . $file . '.php';
-}
-
-function designr_render_doc( $filename ) {
-    
-    if( file_exists( designr_docs_partial( $filename ) ) ) {
-        require designr_docs_partial( $filename );
-    }
-    
-}
