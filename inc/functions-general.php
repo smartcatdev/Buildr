@@ -137,7 +137,7 @@ if ( ! isset( $content_width ) ) {
 }
 
 function designr_create_theme_menu() {
-    add_theme_page( __( 'Theme Info', 'designr' ), __( 'Theme Info', 'designr' ), 'edit_theme_options', 'designr-theme-info', function() {
+    add_theme_page( __( 'Theme Docs', 'designr' ), __( 'Theme Docs', 'designr' ), 'edit_theme_options', 'designr-theme-info', function() {
         include_once get_template_directory() . '/admin/designr-menu.php';
     });
 }
