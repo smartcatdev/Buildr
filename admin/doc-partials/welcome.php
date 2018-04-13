@@ -1,10 +1,80 @@
-<h2><?php _e( 'Welcome', 'designr' ); ?></h2>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare ante convallis porta imperdiet. Praesent sed ligula ut mauris finibus dignissim et dictum magna. Phasellus vitae libero nec felis convallis dignissim. Pellentesque id maximus quam, quis lacinia massa. Nulla in ipsum nec magna tempus consectetur convallis in nulla. Duis non est diam. Nam dictum nibh vel ante hendrerit tincidunt. Proin arcu tortor, mollis consectetur nisi ac, gravida hendrerit mauris. Phasellus auctor vulputate lacus, commodo egestas velit posuere sit amet. Morbi mollis molestie elit, quis faucibus urna aliquam aliquet. Integer et aliquet magna. Mauris tempor commodo eros, eu aliquet nulla pellentesque sed. Nulla vestibulum eget enim eget commodo. Quisque sit amet felis nec nibh imperdiet tristique. Nam accumsan ultricies nisl, nec cursus felis ultricies nec.
+<h2 class="section-heading">
+    <?php _e( 'Welcome', 'designr' ); ?>
+</h2>
 
-Nunc accumsan auctor risus ut suscipit. Donec ultricies, magna at porttitor vehicula, mauris turpis malesuada erat, mattis pulvinar est nulla ac urna. Quisque molestie urna ex, vitae viverra enim ullamcorper non. Sed augue nulla, ultricies ac lobortis non, sodales vel ligula. Vivamus malesuada, sapien non sodales volutpat, leo sapien faucibus diam, sit amet iaculis magna tortor quis risus. Mauris interdum pulvinar ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut arcu sem, laoreet et justo quis, eleifend faucibus nunc. Etiam sed dolor scelerisque, dapibus orci porta, semper diam. Donec vitae semper mi. In hac habitasse platea dictumst. Nulla facilisi. Fusce non velit magna. Nullam ullamcorper cursus felis, sit amet ornare risus. Integer tristique, neque vitae gravida sollicitudin, sapien mauris porta libero, pulvinar pellentesque massa est vitae ex. Donec elementum elementum lorem et elementum.
+<?php 
 
-Fusce congue tortor et diam venenatis ultrices. Mauris a congue orci. Ut pellentesque mauris eget ornare consectetur. Mauris risus nisi, pulvinar luctus velit quis, varius vulputate mi. Nam egestas, leo a volutpat tempus, eros odio posuere quam, quis imperdiet massa elit sed magna. Donec ullamcorper commodo dolor, quis aliquam nisl bibendum id. Vivamus imperdiet varius turpis, lacinia semper lectus finibus et. Suspendisse iaculis eget purus ac eleifend. Cras id lobortis sem, vitae pharetra sem. Integer eleifend porttitor justo at consequat. Pellentesque placerat mollis ligula ut ultricies. Phasellus vehicula ultricies ultricies. Integer mollis dolor scelerisque, pulvinar risus at, ornare tortor. Morbi turpis ligula, feugiat vel condimentum vitae, malesuada ut enim. Cras suscipit imperdiet nunc, non faucibus odio suscipit sit amet.
-    <?php 
-    $query['autofocus[section]'] = 'title_tagline';
-    $section_link = add_query_arg( $query, admin_url( 'customize.php' ) );
-    ?><a href="<?php echo esc_url( $section_link ); ?>">Link to title section</a>
+$section_vars = array(
+    'default' => array(
+        'id'        => 'default',
+        'title'     => __( 'Default Quickstart Item', 'designr' ),
+    ),
+    'get-designr' => array(
+        'id'        => 'get-designr',
+        'title'     => __( 'Designr Features', 'designr' ),
+    ),
+    'choose-navbar' => array(
+        'id'        => 'choose-navbar',
+        'title'     => __( 'Choose Your Navbar Style', 'designr' ),
+    ),
+    'setup-blog' => array(
+        'id'        => 'setup-blog',
+        'title'     => __( 'Setting Up Your Blog', 'designr' ),
+    ),
+    'customize-header' => array(
+        'id'        => 'customize-header',
+        'title'     => __( 'Set up Your Custom Header', 'designr' ),
+    ),
+    'page-builder' => array(
+        'id'        => 'page-builder',
+        'title'     => __( 'Drag & Drop Page Builder', 'designr' ),
+    ),
+    'page-templates' => array(
+        'id'        => 'page-templates',
+        'title'     => __( 'Page Templates', 'designr' ),
+    ),
+);
+
+?>
+
+<?php designr_docs_quickstart_cta( $section_vars['get-designr']['id'], 'fa-star', $section_vars['get-designr']['title'] ); ?>
+<?php designr_docs_quickstart_cta( $section_vars['choose-navbar']['id'], 'fa-list-alt', $section_vars['choose-navbar']['title'] ); ?>
+<?php designr_docs_quickstart_cta( $section_vars['setup-blog']['id'], 'fa-newspaper', $section_vars['setup-blog']['title'] ); ?>
+<div class="clear"></div>
+<?php designr_docs_quickstart_cta( $section_vars['customize-header']['id'], 'fa-star', $section_vars['customize-header']['title'] ); ?>
+<?php designr_docs_quickstart_cta( $section_vars['page-builder']['id'], 'fa-star', $section_vars['page-builder']['title'] ); ?>
+<?php designr_docs_quickstart_cta( $section_vars['page-templates']['id'], 'fa-file', $section_vars['page-templates']['title'] ); ?>
+
+<div class="clear"></div>
+<hr>
+
+<?php designr_docs_subsection( $section_vars['get-designr']['id'], $section_vars['get-designr']['title'], array(
+    __( 'Describe the additional benefits of installing the free Designr Features plugin, why every Designr user should download it, and where and how to do so.', 'designr' ),
+) ); ?>
+
+<?php designr_docs_subsection( $section_vars['choose-navbar']['id'], $section_vars['choose-navbar']['title'], array(
+    __( 'Explain that a good starting point when setting up the theme is to decide which style of Navbar, then list and describe the appearance and features of the 3 styles.', 'designr' ),
+    __( 'Describe the various places a menu can be set and which menu locations are used for each of the Navbar styles.', 'designr' ),
+) ); ?>
+
+<?php designr_docs_subsection( $section_vars['setup-blog']['id'], $section_vars['setup-blog']['title'], array(
+    __( 'Describe the 3 styles of Blog layout and summarize the settings that can be used to customize their appearance and the content displayed in each post.', 'designr' ),
+) ); ?>
+
+<?php designr_docs_subsection( $section_vars['customize-header']['id'], $section_vars['customize-header']['title'], array(
+    __( 'Describe the ways you can customize the Custom Header, including the parallax styles, height settings, and content displayed within it.', 'designr' ),
+) ); ?>
+
+<?php designr_docs_subsection( $section_vars['page-builder']['id'], $section_vars['page-builder']['title'], array(
+    __( 'Describe how easy it is to drag and drop widgets into any page or post to build complex and beautiful layouts. They can use the drag/drop page builder to design unique Frontpage, Posts, and Blog pages and also use the custom page templates to create unique content pages. At the end, mention the custom page templates and jumplink to the Page Templates docs section.', 'designr' ),
+) ); ?>
+
+<?php designr_docs_subsection( $section_vars['page-templates']['id'], $section_vars['page-templates']['title'], array(
+    __( 'Describe the two types of Page Templates (Landing Pages with no content output and one sidebar area, and the regular Page Templates with content and above/below sidebars). Explain how there are 3 of each type (A,B,C) and list the sidebar areas that are available.', 'designr' ),
+    __( '.', 'designr' ),
+) ); ?>
+
+<?php 
+$query['autofocus[section]'] = 'title_tagline';
+$section_link = add_query_arg( $query, admin_url( 'customize.php' ) ); ?>
+<a href="<?php echo esc_url( $section_link ); ?>">Link to title section</a>

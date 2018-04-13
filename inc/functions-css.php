@@ -321,6 +321,14 @@ function designr_wp_head_styles() { ?>
                 transform: scaleX(0); 
             }
             
+            ul#slim-header-b > li.current-menu-item:last-child > a:before,
+            ul#slim-header-primary > li.current-menu-item:last-child > a:before,
+            ul#banner-header-primary > li.current-menu-item:last-child > a:before {
+                visibility: hidden; 
+                opacity: 0; 
+                -webkit-transform: scaleX(0); 
+                transform: scaleX(0); 
+            }
             
         <?php endif; ?>
 
