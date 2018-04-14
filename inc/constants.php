@@ -90,6 +90,7 @@ interface DESIGNR_OPTIONS {
             NAVBAR_TRANSPARENT_MENU_BG              = 'navbar_banner_transparent_menu_toggle',
             NAVBAR_BRANDING_ALIGNMENT               = 'navbar_banner_logo_alignment',
             NAVBAR_MENU_ALIGNMENT                   = 'navbar_banner_menu_alignment',
+            NAVBAR_BRANDING_WHAT_TO_SHOW            = 'navbar_branding_what_to_show',
             NAVBAR_BRANDING_SPACE_TOP_DSK           = 'navbar_banner_logo_top_spacing',
             NAVBAR_BRANDING_SPACE_BOTTOM_DSK        = 'navbar_banner_logo_bottom_spacing',
             NAVBAR_BRANDING_SPACE_TOP_MBL           = 'navbar_banner_logo_top_spacing_mbl',
@@ -171,13 +172,13 @@ interface DESIGNR_OPTIONS {
 
 interface DESIGNR_DEFAULTS {
     
-    const   CUSTOM_HEADER_STYLE_TOGGLE              = 'parallax_layers',
+    const   CUSTOM_HEADER_STYLE_TOGGLE              = 'parallax_vertical',
             CUSTOM_HEADER_HEIGHT_CALC               = 'percent',
             CUSTOM_HEADER_HEIGHT_PCT                = 55,
             CUSTOM_HEADER_HEIGHT_PCT_MBL            = 35,
             CUSTOM_HEADER_HEIGHT_PX                 = 500,
             CUSTOM_HEADER_HEIGHT_PX_MBL             = 250,
-            CUSTOM_HEADER_PLX_INTENSITY             = 'subtle',
+            CUSTOM_HEADER_PLX_INTENSITY             = 'default',
             CUSTOM_HEADER_TEXTURE_IMG               = '',
             CUSTOM_HEADER_TEXTURE_OPAC              = .75,
             
@@ -259,6 +260,7 @@ interface DESIGNR_DEFAULTS {
             NAVBAR_TRANSPARENT_MENU_BG              = true,
             NAVBAR_BRANDING_ALIGNMENT               = 'left',
             NAVBAR_MENU_ALIGNMENT                   = 'left',
+            NAVBAR_BRANDING_WHAT_TO_SHOW            = 'title_tagline',
             NAVBAR_BRANDING_SPACE_TOP_DSK           = 60,
             NAVBAR_BRANDING_SPACE_BOTTOM_DSK        = 20,
             NAVBAR_BRANDING_SPACE_TOP_MBL           = 30,

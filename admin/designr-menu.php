@@ -4,6 +4,12 @@
         <?php _e( 'Designr Theme Guide & Documentation', 'designr' ); ?>
     </h2>
     
+    <div id="designr-features-notice">
+        
+        bah blah blah
+        
+    </div>
+    
     <div id="designr-flex-wrap">
     
         <div id="designr-docs-menu">

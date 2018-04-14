@@ -4,7 +4,7 @@
 
         <div id="slim-header" class="<?php echo get_theme_mod( DESIGNR_OPTIONS::NAVBAR_BOXED_CONTENT, DESIGNR_DEFAULTS::NAVBAR_BOXED_CONTENT ) ? 'container' : ''; ?>">
 
-            <?php if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) : ?>
+            <?php if ( function_exists( 'has_custom_logo' ) && has_custom_logo() && get_theme_mod( DESIGNR_OPTIONS::NAVBAR_BRANDING_WHAT_TO_SHOW, DESIGNR_DEFAULTS::NAVBAR_BRANDING_WHAT_TO_SHOW ) == 'logo' ) : ?>
 
                 <div id="custom-logo-wrap" class="has-logo <?php echo ! get_theme_mod( DESIGNR_OPTIONS::NAVBAR_ALWAYS_SHOW_LOGO, DESIGNR_DEFAULTS::NAVBAR_ALWAYS_SHOW_LOGO ) ? 'sometimes-hidden' : ''; ?>">
             
