@@ -69,29 +69,17 @@ $section_vars = array(
 
 <?php designr_render_doc( 'navbar' ); ?>
 
-<?php designr_docs_subsection( $section_vars['add-menu']['id'], $section_vars['add-menu']['title'], array(
-    __( 'Describe the various places a menu can be set and which menu locations are used for each of the Navbar styles.', 'designr' ),
-) ); ?>
+<?php designr_render_doc( 'menus' ); ?>
 
 <?php designr_render_doc( 'blog' ); ?>
 
 <?php designr_render_doc( 'custom_header' ); ?>
 
-<?php designr_docs_subsection( $section_vars['customize-header']['id'], $section_vars['customize-header']['title'], array(
-    __( 'Describe the ways you can customize the Custom Header, including the parallax styles, height settings, and content displayed within it.', 'designr' ),
-) ); ?>
+<?php designr_render_doc( 'page_builder' ); ?>
 
-<?php designr_docs_subsection( $section_vars['page-builder']['id'], $section_vars['page-builder']['title'], array(
-    __( 'Describe how easy it is to drag and drop widgets into any page or post to build complex and beautiful layouts. They can use the drag/drop page builder to design unique Frontpage, Posts, and Blog pages and also use the custom page templates to create unique content pages. At the end, mention the custom page templates and jumplink to the Page Templates docs section.', 'designr' ),
-) ); ?>
+<?php designr_render_doc( 'page_templates' ); ?>
 
-<?php designr_docs_subsection( $section_vars['page-templates']['id'], $section_vars['page-templates']['title'], array(
-    __( 'Describe the two types of Page Templates (Landing Pages with no content output and one sidebar area, and the regular Page Templates with content and above/below sidebars). Explain how there are 3 of each type (A,B,C) and list the sidebar areas that are available.', 'designr' ),
-) ); ?>
-
-<?php designr_docs_subsection( $section_vars['theme-presets']['id'], $section_vars['theme-presets']['title'], array(
-    __( 'Describe what a theme preset is and how easy it is to start from one, then go into detail about where to find them and how to load one into your site.', 'designr' ),
-) ); ?>
+<?php designr_render_doc( 'theme_presets' ); ?>
 
 <?php 
 $query['autofocus[section]'] = 'title_tagline';
