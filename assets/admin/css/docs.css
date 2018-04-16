@@ -1,8 +1,8 @@
-#designr-docs {
+#buildr-docs {
     font-family: Lato;
 }
 
-#designr-docs > h2 {
+#buildr-docs > h2 {
     margin-bottom: 30px;
 }
 
@@ -64,7 +64,7 @@ section.sub-section > .sub-heading:first-child {
     padding-top: 60px;
 }
 
-#designr-flex-wrap {
+#buildr-flex-wrap {
     display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
     display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
     display: -ms-flexbox;      /* TWEENER - IE 10 */
@@ -72,14 +72,14 @@ section.sub-section > .sub-heading:first-child {
     display: flex;
 }
 
-#designr-docs-menu {
+#buildr-docs-menu {
     background: white;
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
     padding: 5px;
     min-width: 220px;
 }
 
-div#designr-docs-content {
+div#buildr-docs-content {
     background: white;
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
     padding: 15px 30px;
@@ -89,7 +89,7 @@ div#designr-docs-content {
     padding-bottom: 100px;
 }
 
-div#designr-docs-content p {
+div#buildr-docs-content p {
     font-weight: 300;
     line-height: normal;
     font-size: 18px;

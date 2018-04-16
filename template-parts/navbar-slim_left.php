@@ -2,11 +2,11 @@
 
     <div id="slim-header-wrap">
 
-        <div id="slim-header" class="<?php echo get_theme_mod( DESIGNR_OPTIONS::NAVBAR_BOXED_CONTENT, DESIGNR_DEFAULTS::NAVBAR_BOXED_CONTENT ) ? 'container' : ''; ?>">
+        <div id="slim-header" class="<?php echo get_theme_mod( BUILDR_OPTIONS::NAVBAR_BOXED_CONTENT, BUILDR_DEFAULTS::NAVBAR_BOXED_CONTENT ) ? 'container' : ''; ?>">
 
-            <?php if ( function_exists( 'has_custom_logo' ) && has_custom_logo() && get_theme_mod( DESIGNR_OPTIONS::NAVBAR_BRANDING_WHAT_TO_SHOW, DESIGNR_DEFAULTS::NAVBAR_BRANDING_WHAT_TO_SHOW ) == 'logo' ) : ?>
+            <?php if ( function_exists( 'has_custom_logo' ) && has_custom_logo() && get_theme_mod( BUILDR_OPTIONS::NAVBAR_BRANDING_WHAT_TO_SHOW, BUILDR_DEFAULTS::NAVBAR_BRANDING_WHAT_TO_SHOW ) == 'logo' ) : ?>
 
-                <div id="custom-logo-wrap" class="has-logo <?php echo ! get_theme_mod( DESIGNR_OPTIONS::NAVBAR_ALWAYS_SHOW_LOGO, DESIGNR_DEFAULTS::NAVBAR_ALWAYS_SHOW_LOGO ) ? 'sometimes-hidden' : ''; ?>">
+                <div id="custom-logo-wrap" class="has-logo <?php echo ! get_theme_mod( BUILDR_OPTIONS::NAVBAR_ALWAYS_SHOW_LOGO, BUILDR_DEFAULTS::NAVBAR_ALWAYS_SHOW_LOGO ) ? 'sometimes-hidden' : ''; ?>">
             
                     <?php the_custom_logo(); ?>
 
@@ -14,7 +14,7 @@
                     
             <?php else : ?> 
             
-                <div id="custom-logo-wrap" class="<?php echo ! get_theme_mod( DESIGNR_OPTIONS::NAVBAR_ALWAYS_SHOW_LOGO, DESIGNR_DEFAULTS::NAVBAR_ALWAYS_SHOW_LOGO ) ? 'sometimes-hidden' : ''; ?>">
+                <div id="custom-logo-wrap" class="<?php echo ! get_theme_mod( BUILDR_OPTIONS::NAVBAR_ALWAYS_SHOW_LOGO, BUILDR_DEFAULTS::NAVBAR_ALWAYS_SHOW_LOGO ) ? 'sometimes-hidden' : ''; ?>">
             
                     <div class="site-branding">
                         <h1 class="site-title">
@@ -54,7 +54,7 @@
                             <li class="menu-item menu-item-type-custom menu-item-object-custom">
 
                                 <a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>">
-                                   <?php _e( 'Add a Primary Menu?', 'designr' ); ?>
+                                   <?php _e( 'Add a Primary Menu?', 'buildr' ); ?>
                                 </a>
 
                             </li>
@@ -67,39 +67,39 @@
 
             </div>
             
-            <?php if ( get_theme_mod( DESIGNR_OPTIONS::NAVBAR_SHOW_SOCIAL, DESIGNR_DEFAULTS::NAVBAR_SHOW_SOCIAL ) ) : ?>
+            <?php if ( get_theme_mod( BUILDR_OPTIONS::NAVBAR_SHOW_SOCIAL, BUILDR_DEFAULTS::NAVBAR_SHOW_SOCIAL ) ) : ?>
             
                 <div class="left-half">
 
                     <div class="navbar-social">
 
-                        <?php if ( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_1, DESIGNR_DEFAULTS::SOCIAL_ICON_1 ) != '' ) : ?>
-                            <a class="navbar-icon" href="<?php esc_url( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_URL_1, DESIGNR_DEFAULTS::SOCIAL_URL_1 ) ); ?>">
-                                <span class="fab <?php echo esc_attr( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_1, DESIGNR_DEFAULTS::SOCIAL_ICON_1 ) ); ?>"></span>
+                        <?php if ( get_theme_mod( BUILDR_OPTIONS::SOCIAL_ICON_1, BUILDR_DEFAULTS::SOCIAL_ICON_1 ) != '' ) : ?>
+                            <a class="navbar-icon" href="<?php esc_url( get_theme_mod( BUILDR_OPTIONS::SOCIAL_URL_1, BUILDR_DEFAULTS::SOCIAL_URL_1 ) ); ?>">
+                                <span class="fab <?php echo esc_attr( get_theme_mod( BUILDR_OPTIONS::SOCIAL_ICON_1, BUILDR_DEFAULTS::SOCIAL_ICON_1 ) ); ?>"></span>
                             </a>
                         <?php endif; ?>
                         
-                        <?php if ( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_2, DESIGNR_DEFAULTS::SOCIAL_ICON_2 ) != '' ) : ?>
-                            <a class="navbar-icon" href="<?php esc_url( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_URL_2, DESIGNR_DEFAULTS::SOCIAL_URL_2 ) ); ?>">
-                                <span class="fab <?php echo esc_attr( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_2, DESIGNR_DEFAULTS::SOCIAL_ICON_2 ) ); ?>"></span>
+                        <?php if ( get_theme_mod( BUILDR_OPTIONS::SOCIAL_ICON_2, BUILDR_DEFAULTS::SOCIAL_ICON_2 ) != '' ) : ?>
+                            <a class="navbar-icon" href="<?php esc_url( get_theme_mod( BUILDR_OPTIONS::SOCIAL_URL_2, BUILDR_DEFAULTS::SOCIAL_URL_2 ) ); ?>">
+                                <span class="fab <?php echo esc_attr( get_theme_mod( BUILDR_OPTIONS::SOCIAL_ICON_2, BUILDR_DEFAULTS::SOCIAL_ICON_2 ) ); ?>"></span>
                             </a>
                         <?php endif; ?>
                         
-                        <?php if ( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_3, DESIGNR_DEFAULTS::SOCIAL_ICON_3 ) != '' ) : ?>
-                            <a class="navbar-icon" href="<?php esc_url( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_URL_3, DESIGNR_DEFAULTS::SOCIAL_URL_3 ) ); ?>">
-                                <span class="fab <?php echo esc_attr( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_3, DESIGNR_DEFAULTS::SOCIAL_ICON_3 ) ); ?>"></span>
+                        <?php if ( get_theme_mod( BUILDR_OPTIONS::SOCIAL_ICON_3, BUILDR_DEFAULTS::SOCIAL_ICON_3 ) != '' ) : ?>
+                            <a class="navbar-icon" href="<?php esc_url( get_theme_mod( BUILDR_OPTIONS::SOCIAL_URL_3, BUILDR_DEFAULTS::SOCIAL_URL_3 ) ); ?>">
+                                <span class="fab <?php echo esc_attr( get_theme_mod( BUILDR_OPTIONS::SOCIAL_ICON_3, BUILDR_DEFAULTS::SOCIAL_ICON_3 ) ); ?>"></span>
                             </a>
                         <?php endif; ?>
                         
-                        <?php if ( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_4, DESIGNR_DEFAULTS::SOCIAL_ICON_4 ) != '' ) : ?>
-                            <a class="navbar-icon" href="<?php esc_url( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_URL_4, DESIGNR_DEFAULTS::SOCIAL_URL_4 ) ); ?>">
-                                <span class="fab <?php echo esc_attr( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_4, DESIGNR_DEFAULTS::SOCIAL_ICON_4 ) ); ?>"></span>
+                        <?php if ( get_theme_mod( BUILDR_OPTIONS::SOCIAL_ICON_4, BUILDR_DEFAULTS::SOCIAL_ICON_4 ) != '' ) : ?>
+                            <a class="navbar-icon" href="<?php esc_url( get_theme_mod( BUILDR_OPTIONS::SOCIAL_URL_4, BUILDR_DEFAULTS::SOCIAL_URL_4 ) ); ?>">
+                                <span class="fab <?php echo esc_attr( get_theme_mod( BUILDR_OPTIONS::SOCIAL_ICON_4, BUILDR_DEFAULTS::SOCIAL_ICON_4 ) ); ?>"></span>
                             </a>
                         <?php endif; ?>
                         
-                        <?php if ( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_5, DESIGNR_DEFAULTS::SOCIAL_ICON_5 ) != '' ) : ?>
-                            <a class="navbar-icon" href="<?php esc_url( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_URL_5, DESIGNR_DEFAULTS::SOCIAL_URL_5 ) ); ?>">
-                                <span class="fab <?php echo esc_attr( get_theme_mod( DESIGNR_OPTIONS::SOCIAL_ICON_5, DESIGNR_DEFAULTS::SOCIAL_ICON_5 ) ); ?>"></span>
+                        <?php if ( get_theme_mod( BUILDR_OPTIONS::SOCIAL_ICON_5, BUILDR_DEFAULTS::SOCIAL_ICON_5 ) != '' ) : ?>
+                            <a class="navbar-icon" href="<?php esc_url( get_theme_mod( BUILDR_OPTIONS::SOCIAL_URL_5, BUILDR_DEFAULTS::SOCIAL_URL_5 ) ); ?>">
+                                <span class="fab <?php echo esc_attr( get_theme_mod( BUILDR_OPTIONS::SOCIAL_ICON_5, BUILDR_DEFAULTS::SOCIAL_ICON_5 ) ); ?>"></span>
                             </a>
                         <?php endif; ?>
 
@@ -131,7 +131,7 @@
                             <li class="menu-item menu-item-type-custom menu-item-object-custom">
 
                                 <a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>">
-                                   <?php _e( 'Add a Mobile Menu?', 'designr' ); ?>
+                                   <?php _e( 'Add a Mobile Menu?', 'buildr' ); ?>
                                 </a>
 
                             </li>

@@ -1,8 +1,8 @@
 <?php
 
-if( !function_exists( 'designr_fonts' ) ) {
+if( !function_exists( 'buildr_fonts' ) ) {
 
-    function designr_fonts(){
+    function buildr_fonts(){
 
         $font_family_array = array(
 
@@ -45,7 +45,7 @@ if( !function_exists( 'designr_fonts' ) ) {
 
         );
 
-        return apply_filters( 'designr_fonts', $font_family_array );
+        return apply_filters( 'buildr_fonts', $font_family_array );
 
     }
     

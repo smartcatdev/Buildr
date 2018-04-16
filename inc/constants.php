@@ -1,20 +1,20 @@
 <?php
 
-interface DESIGNR_OPTIONS {
+interface BUILDR_OPTIONS {
     
     const   CUSTOM_HEADER_STYLE_TOGGLE              = 'custom_header_style_toggle',
-            CUSTOM_HEADER_HEIGHT_CALC               = 'designr_custom_header_height_unit',
-            CUSTOM_HEADER_HEIGHT_PCT                = 'designr_custom_header_height_percent',
-            CUSTOM_HEADER_HEIGHT_PCT_MBL            = 'designr_custom_header_height_percent_mbl',
-            CUSTOM_HEADER_HEIGHT_PX                 = 'designr_custom_header_height_pixels',
-            CUSTOM_HEADER_HEIGHT_PX_MBL             = 'designr_custom_header_height_pixels_mbl',
+            CUSTOM_HEADER_HEIGHT_CALC               = 'buildr_custom_header_height_unit',
+            CUSTOM_HEADER_HEIGHT_PCT                = 'buildr_custom_header_height_percent',
+            CUSTOM_HEADER_HEIGHT_PCT_MBL            = 'buildr_custom_header_height_percent_mbl',
+            CUSTOM_HEADER_HEIGHT_PX                 = 'buildr_custom_header_height_pixels',
+            CUSTOM_HEADER_HEIGHT_PX_MBL             = 'buildr_custom_header_height_pixels_mbl',
             CUSTOM_HEADER_PLX_INTENSITY             = 'parallax_layers_parallax_style',
             CUSTOM_HEADER_TEXTURE_IMG               = 'parallax_layers_texture_pattern',
             CUSTOM_HEADER_TEXTURE_OPAC              = 'parallax_layers_texture_layer_opacity',
             
             CUSTOM_HEADER_SHOW_LOGO                 = 'custom_header_show_logo',
-            CUSTOM_HEADER_LOGO_HEIGHT               = 'designr_custom_header_logo_height',
-            CUSTOM_HEADER_LOGO_HEIGHT_MBL           = 'designr_custom_header_logo_height_mbl',
+            CUSTOM_HEADER_LOGO_HEIGHT               = 'buildr_custom_header_logo_height',
+            CUSTOM_HEADER_LOGO_HEIGHT_MBL           = 'buildr_custom_header_logo_height_mbl',
             
             CUSTOM_HEADER_SHOW_TITLE                = 'custom_header_show_heading',
             CUSTOM_HEADER_TITLE_CONTENT             = 'custom_header_title_content',
@@ -145,7 +145,7 @@ interface DESIGNR_OPTIONS {
             FOOTER_COPYRIGHT_TAGLINE                = 'footer_copyright_tagline',
             FOOTER_BRANDING_TYPE                    = 'footer_branding',
             FOOTER_ALTERNATE_LOGO                   = 'alternate_logo',
-            FOOTER_ALTERNATE_LOGO_HEIGHT            = 'designr_footer_logo_height',
+            FOOTER_ALTERNATE_LOGO_HEIGHT            = 'buildr_footer_logo_height',
             FOOTER_SITE_TITLE_FONT_SIZE             = 'footer_site_title_font_size',
             FOOTER_SITE_TITLE_ALL_CAPS              = 'footer_site_title_uppercase',
             FOOTER_COPYRIGHT_TAGLINE_FONT_SIZE      = 'footer_copyright_font_size',
@@ -170,7 +170,7 @@ interface DESIGNR_OPTIONS {
 
 }
 
-interface DESIGNR_DEFAULTS {
+interface BUILDR_DEFAULTS {
     
     const   CUSTOM_HEADER_STYLE_TOGGLE              = 'parallax_vertical',
             CUSTOM_HEADER_HEIGHT_CALC               = 'percent',

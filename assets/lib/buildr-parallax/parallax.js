@@ -14,7 +14,7 @@ jQuery(document).ready( function( $ ) {
     }
     function parallaxImages() {
         // Set the scroll for each parallax individually
-        var plx = document.getElementsByClassName('designr_parallax');
+        var plx = document.getElementsByClassName('buildr_parallax');
         for(i=0;i<plx.length;i++){
             var height = plx[i].clientHeight;
             var img = plx[i].getAttribute('data-plx-img');
@@ -31,7 +31,7 @@ jQuery(document).ready( function( $ ) {
         var scrolled = window.scrollY;
         var win_height_padded = window.innerHeight * 1.25;
         // Set the scroll for each parallax individually
-        var plx = document.getElementsByClassName('designr_parallax');
+        var plx = document.getElementsByClassName('buildr_parallax');
         for(i=0;i<plx.length;i++){
             var offsetTop = getTop(plx[i]);
             //var orientation = plx[i].getAttribute('data-plx-o');
@@ -40,7 +40,7 @@ jQuery(document).ready( function( $ ) {
                 if (plxImg) {
                     var plxImgHeight = plxImg.clientHeight;
                     var singleScroll = (scrolled - offsetTop) - plxImgHeight/5;
-                    plxImg.style.top = (singleScroll / designr_local_parallax.intensity_value) + "px";
+                    plxImg.style.top = (singleScroll / buildr_local_parallax.intensity_value) + "px";
                 }
             }
         }

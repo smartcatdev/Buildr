@@ -6,7 +6,7 @@
  * @since  1.0.0
  * @access public
  */
-final class Designr_Docs_Customize {
+final class Buildr_Docs_Customize {
 
     /**
      * Returns the instance.
@@ -68,15 +68,15 @@ final class Designr_Docs_Customize {
         require_once( trailingslashit( get_template_directory() ) . 'inc/lib/trt-customize/documentation/section-pro.php' );
 
         // Register custom section types.
-        $manager->register_section_type( 'Designr_Docs_Customize_Section_Pro' );
+        $manager->register_section_type( 'Buildr_Docs_Customize_Section_Pro' );
 
         // Register sections.
         $manager->add_section(
-            new Designr_Docs_Customize_Section_Pro(
-                $manager, 'designr_docs', array (
-                    'title'         => esc_html__( 'Documentation', 'designr' ),
-                    'pro_text'      => esc_html__( 'View Docs', 'designr' ),
-                    'pro_url'       => admin_url( 'themes.php?page=designr-theme-info' )
+            new Buildr_Docs_Customize_Section_Pro(
+                $manager, 'buildr_docs', array (
+                    'title'         => esc_html__( 'Documentation', 'buildr' ),
+                    'pro_text'      => esc_html__( 'View Docs', 'buildr' ),
+                    'pro_url'       => admin_url( 'themes.php?page=buildr-theme-info' )
                 )
             )
         );
@@ -91,12 +91,12 @@ final class Designr_Docs_Customize {
      */
     public function enqueue_control_scripts() {
 
-        wp_enqueue_script( 'designr-docs-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/documentation/customize-controls.js', array ( 'customize-controls' ) );
+        wp_enqueue_script( 'buildr-docs-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/documentation/customize-controls.js', array ( 'customize-controls' ) );
 
-        wp_enqueue_style( 'designr-docs-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/documentation/customize-controls.css' );
+        wp_enqueue_style( 'buildr-docs-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/documentation/customize-controls.css' );
     }
 
 }
 
 // Doing this customizer thang!
-Designr_Docs_Customize::get_instance();
+Buildr_Docs_Customize::get_instance();

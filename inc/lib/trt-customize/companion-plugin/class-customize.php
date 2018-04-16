@@ -6,7 +6,7 @@
  * @since  1.0.0
  * @access public
  */
-final class Designr_Customize {
+final class Buildr_Customize {
 
     /**
      * Returns the instance.
@@ -68,16 +68,16 @@ final class Designr_Customize {
         require_once( trailingslashit( get_template_directory() ) . 'inc/lib/trt-customize/companion-plugin/section-pro.php' );
 
         // Register custom section types.
-        $manager->register_section_type( 'Designr_Customize_Section_Pro' );
+        $manager->register_section_type( 'Buildr_Customize_Section_Pro' );
 
         // Register sections.
         $manager->add_section(
-            new Designr_Customize_Section_Pro(
-                $manager, 'designr_companion', array (
-                    'title'         => esc_html__( 'Designr Features', 'designr' ),
-                    'pro_text'      => esc_html__( 'Free Install', 'designr' ),
+            new Buildr_Customize_Section_Pro(
+                $manager, 'buildr_companion', array (
+                    'title'         => esc_html__( 'Buildr Features', 'buildr' ),
+                    'pro_text'      => esc_html__( 'Free Install', 'buildr' ),
                     'pro_url'       => admin_url( 'themes.php?page=tgmpa-install-plugins' ),
-                    'pro_details'   => esc_html__( 'It seems that you have not yet installed the Designr Features plugin. It is highly recommended to install the plugin. It includes 3 header styles, 3 blog styles, over 140 customization options, one-click install theme-presets and 6 advanced widgets, completely free!', 'designr' ),
+                    'pro_details'   => esc_html__( 'It seems that you have not yet installed the Buildr Features plugin. It is highly recommended to install the plugin. It includes 3 header styles, 3 blog styles, over 140 customization options, one-click install theme-presets and 6 advanced widgets, completely free!', 'buildr' ),
                 )
             )
         );
@@ -92,12 +92,12 @@ final class Designr_Customize {
      */
     public function enqueue_control_scripts() {
 
-        wp_enqueue_script( 'designr-pro-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/companion-plugin/customize-controls.js', array ( 'customize-controls' ) );
+        wp_enqueue_script( 'buildr-pro-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/companion-plugin/customize-controls.js', array ( 'customize-controls' ) );
 
-        wp_enqueue_style( 'designr-pro-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/companion-plugin/customize-controls.css' );
+        wp_enqueue_style( 'buildr-pro-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/companion-plugin/customize-controls.css' );
     }
 
 }
 
 // Doing this customizer thang!
-Designr_Customize::get_instance();
+Buildr_Customize::get_instance();

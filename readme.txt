@@ -1,4 +1,4 @@
-=== Designr ===
+=== Buildr ===
 
 Contributors: smartcat
 Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, flexible-header, custom-background, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, blog, photography, portfolio
@@ -9,14 +9,14 @@ Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-Build your site using the drag & drop widgets. Click to install any of the pre-built presets. Tons of customization, 3 navbars to choose from, 3 blog styles, a unique header, and 6 advanced widgets bundled with the theme. Designr is a premium theme, but it's free!
+Build your site using the drag & drop widgets. Click to install any of the pre-built presets. Tons of customization, 3 navbars to choose from, 3 blog styles, a unique header, and 6 advanced widgets bundled with the theme. Buildr is a premium theme, but it's free!
 
-Designr theme, Copyright 2018 Smartcat Solutions Inc.
+Buildr theme, Copyright 2018 Smartcat Solutions Inc.
 This theme, like WordPress, is distributed under the terms of the GNU GPL.
 
 == Description ==
 
-Build your site using the drag & drop widgets. Click to install any of the pre-built presets. Tons of customization, 3 navbars to choose from, 3 blog styles, a unique header, and 6 advanced widgets bundled with the theme. Designr is a premium theme, but it's free!
+Build your site using the drag & drop widgets. Click to install any of the pre-built presets. Tons of customization, 3 navbars to choose from, 3 blog styles, a unique header, and 6 advanced widgets bundled with the theme. Buildr is a premium theme, but it's free!
 
 == Installation ==
 
@@ -28,7 +28,7 @@ Build your site using the drag & drop widgets. Click to install any of the pre-b
 
 = Does this theme support any plugins? =
 
-Designr includes support for Infinite Scroll in Jetpack.
+Buildr includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 

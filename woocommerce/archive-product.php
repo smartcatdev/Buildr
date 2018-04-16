@@ -32,7 +32,7 @@ get_header( 'shop' );
  */
 do_action( 'woocommerce_before_main_content' );
 
-do_action( 'designr_featured_products' ); 
+do_action( 'buildr_featured_products' ); 
 
 if ( have_posts() ) { ?>
 
@@ -58,7 +58,7 @@ if ( have_posts() ) { ?>
                         the_post();
                         
                         /**
-                         * Include "designr_woocommerce_product_loop_cta( $ctr )" before $ctr++ to inject loop CTA
+                         * Include "buildr_woocommerce_product_loop_cta( $ctr )" before $ctr++ to inject loop CTA
                          */
                         $ctr++;
                         

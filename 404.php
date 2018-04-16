@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package Designr
+ * @package Buildr
  */
 get_header(); ?>
 
@@ -23,12 +23,12 @@ get_header(); ?>
                             <section class="error-404 not-found">
 
                                 <header class="page-header">
-                                    <h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'designr' ); ?></h1>
+                                    <h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'buildr' ); ?></h1>
                                 </header><!-- .page-header -->
 
                                 <div class="page-content">
 
-                                    <p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'designr' ); ?></p>
+                                    <p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'buildr' ); ?></p>
 
                                     <?php get_search_form(); ?>
 
