@@ -12,6 +12,7 @@ function designr_load_admin_css( $hook ) {
     
     if( 'appearance_page_designr-theme-info' == $hook ) {
         wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/lib/font-awesome/fontawesome-all.min.css' );
+        wp_enqueue_style( 'designr-admin-fonts', '//fonts.googleapis.com/css?family=Lato:300,700,900' );
         wp_enqueue_style( 'designr-admin-css', get_template_directory_uri() . '/assets/admin/css/docs.css' );
     }
     
