@@ -5,7 +5,7 @@ Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, flexibl
 
 Requires at least: 4.9
 Tested up to: 4.9.5
-Stable tag: 1.0.0
+Stable tag: 1.0.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -32,8 +32,12 @@ Buildr includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.0 - April 20 2018 =
+= 1.0.1 - April 16 2018 =
+* Code cleanup
+
+= 1.0.0 - April 16 2018 =
 * Initial release
+
 
 == Credits ==
 
