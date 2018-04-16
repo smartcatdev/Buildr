@@ -4,7 +4,7 @@
  *
  * @link https://woocommerce.com/
  *
- * @package Designr
+ * @package Buildr
  */
 
 /**
@@ -165,9 +165,9 @@ function designr_woocommerce_cart_link_fragment( $fragments ) {
  */
 function designr_woocommerce_cart_link() { ?>
 
-    <a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'designr' ); ?>">
+    <a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'buildr' ); ?>">
         <?php /* translators: count of the number of items or one item */ ?>
-        <?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'designr' ), WC()->cart->get_cart_contents_count() ) ); ?> 
+        <?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'buildr' ), WC()->cart->get_cart_contents_count() ) ); ?> 
         - 
         <?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?>
     </a> 
@@ -471,7 +471,7 @@ if ( !function_exists( 'designr_render_featured_products' ) ) {
      */
     function designr_render_featured_products() {
 
-        if ( get_theme_mod( DESIGNR_OPTIONS::WOO_SHOW_FEATURED_PRODUCTS, DESIGNR_DEFAULTS::WOO_SHOW_FEATURED_PRODUCTS ) ) : 
+        if ( get_theme_mod( BUILDR_OPTIONS::WOO_SHOW_FEATURED_PRODUCTS, BUILDR_DEFAULTS::WOO_SHOW_FEATURED_PRODUCTS ) ) : 
 
             $args = array(
                 'post_type' => 'product',
@@ -490,15 +490,15 @@ if ( !function_exists( 'designr_render_featured_products' ) ) {
 
                 <div id="designr-featured-woocommerce">
 
-                    <?php if ( get_theme_mod( DESIGNR_OPTIONS::WOO_SHOW_FEATURED_PRODUCT_HEADING, DESIGNR_DEFAULTS::WOO_SHOW_FEATURED_PRODUCT_HEADING ) ) : ?>
+                    <?php if ( get_theme_mod( BUILDR_OPTIONS::WOO_SHOW_FEATURED_PRODUCT_HEADING, BUILDR_DEFAULTS::WOO_SHOW_FEATURED_PRODUCT_HEADING ) ) : ?>
                     
                         <h3 class="shop-sub-heading">
-                            <?php _e( 'Featured', 'designr' ); ?>
+                            <?php _e( 'Featured', 'buildr' ); ?>
                         </h3>
                     
                     <?php endif; ?>
 
-                    <ul class="products columns-<?php echo get_theme_mod( DESIGNR_OPTIONS::WOO_FEATURED_PRODUCTS_NUM_COLS, DESIGNR_DEFAULTS::WOO_FEATURED_PRODUCTS_NUM_COLS ) == 'two' ? 2 : 3; ?>">
+                    <ul class="products columns-<?php echo get_theme_mod( BUILDR_OPTIONS::WOO_FEATURED_PRODUCTS_NUM_COLS, BUILDR_DEFAULTS::WOO_FEATURED_PRODUCTS_NUM_COLS ) == 'two' ? 2 : 3; ?>">
 
                         <?php 
                         while ( $featured_products_loop->have_posts() ) : $featured_products_loop->the_post();
@@ -528,8 +528,8 @@ if ( !function_exists( 'designr_render_featured_products' ) ) {
  */
 function designr_filter_woocommerce_pagination_args( $array ) { 
     
-    $array['prev_text'] = __( 'Previous', 'designr' );
-    $array['next_text'] = __( 'Next', 'designr' );
+    $array['prev_text'] = __( 'Previous', 'buildr' );
+    $array['next_text'] = __( 'Next', 'buildr' );
     
     return $array; 
     

@@ -10,34 +10,34 @@ function designr_get_all_theme_colors() {
     
     $theme_colors = array();
     
-    $theme_colors['navbar_bg']              = get_theme_mod( DESIGNR_OPTIONS::NAVBAR_BG_COLOR, DESIGNR_DEFAULTS::NAVBAR_BG_COLOR );
-    $theme_colors['navbar_fg']              = get_theme_mod( DESIGNR_OPTIONS::NAVBAR_FG_COLOR, DESIGNR_DEFAULTS::NAVBAR_FG_COLOR );
+    $theme_colors['navbar_bg']              = get_theme_mod( BUILDR_OPTIONS::NAVBAR_BG_COLOR, BUILDR_DEFAULTS::NAVBAR_BG_COLOR );
+    $theme_colors['navbar_fg']              = get_theme_mod( BUILDR_OPTIONS::NAVBAR_FG_COLOR, BUILDR_DEFAULTS::NAVBAR_FG_COLOR );
     
-    $theme_colors['navbar_menu_bg']         = get_theme_mod( DESIGNR_OPTIONS::NAVBAR_MENU_BG_COLOR, DESIGNR_DEFAULTS::NAVBAR_MENU_BG_COLOR );
-    $theme_colors['navbar_menu_fg']         = get_theme_mod( DESIGNR_OPTIONS::NAVBAR_MENU_FG_COLOR, DESIGNR_DEFAULTS::NAVBAR_MENU_FG_COLOR );
+    $theme_colors['navbar_menu_bg']         = get_theme_mod( BUILDR_OPTIONS::NAVBAR_MENU_BG_COLOR, BUILDR_DEFAULTS::NAVBAR_MENU_BG_COLOR );
+    $theme_colors['navbar_menu_fg']         = get_theme_mod( BUILDR_OPTIONS::NAVBAR_MENU_FG_COLOR, BUILDR_DEFAULTS::NAVBAR_MENU_FG_COLOR );
     
-    $theme_colors['prefooter_bg']           = get_theme_mod( DESIGNR_OPTIONS::PRE_FOOTER_BG_COLOR, DESIGNR_DEFAULTS::PRE_FOOTER_BG_COLOR );
-    $theme_colors['prefooter_fg']           = get_theme_mod( DESIGNR_OPTIONS::PRE_FOOTER_FG_COLOR, DESIGNR_DEFAULTS::PRE_FOOTER_FG_COLOR );
+    $theme_colors['prefooter_bg']           = get_theme_mod( BUILDR_OPTIONS::PRE_FOOTER_BG_COLOR, BUILDR_DEFAULTS::PRE_FOOTER_BG_COLOR );
+    $theme_colors['prefooter_fg']           = get_theme_mod( BUILDR_OPTIONS::PRE_FOOTER_FG_COLOR, BUILDR_DEFAULTS::PRE_FOOTER_FG_COLOR );
     
-    $theme_colors['footer_bg']              = get_theme_mod( DESIGNR_OPTIONS::FOOTER_BG_COLOR, DESIGNR_DEFAULTS::FOOTER_BG_COLOR );
-    $theme_colors['footer_fg']              = get_theme_mod( DESIGNR_OPTIONS::FOOTER_FG_COLOR, DESIGNR_DEFAULTS::FOOTER_FG_COLOR );
+    $theme_colors['footer_bg']              = get_theme_mod( BUILDR_OPTIONS::FOOTER_BG_COLOR, BUILDR_DEFAULTS::FOOTER_BG_COLOR );
+    $theme_colors['footer_fg']              = get_theme_mod( BUILDR_OPTIONS::FOOTER_FG_COLOR, BUILDR_DEFAULTS::FOOTER_FG_COLOR );
     
-    $theme_colors['primary']                = get_theme_mod( DESIGNR_OPTIONS::COLOR_SKIN_PRIMARY, DESIGNR_DEFAULTS::COLOR_SKIN_PRIMARY );
-    $theme_colors['secondary']              = get_theme_mod( DESIGNR_OPTIONS::COLOR_SKIN_SECONDARY, DESIGNR_DEFAULTS::COLOR_SKIN_SECONDARY );
+    $theme_colors['primary']                = get_theme_mod( BUILDR_OPTIONS::COLOR_SKIN_PRIMARY, BUILDR_DEFAULTS::COLOR_SKIN_PRIMARY );
+    $theme_colors['secondary']              = get_theme_mod( BUILDR_OPTIONS::COLOR_SKIN_SECONDARY, BUILDR_DEFAULTS::COLOR_SKIN_SECONDARY );
     
-    $theme_colors['social_bg']              = get_theme_mod( DESIGNR_OPTIONS::NAVBAR_SOCIAL_BG_COLOR, DESIGNR_DEFAULTS::NAVBAR_SOCIAL_BG_COLOR );
-    $theme_colors['social_fg']              = get_theme_mod( DESIGNR_OPTIONS::NAVBAR_SOCIAL_FG_COLOR, DESIGNR_DEFAULTS::NAVBAR_SOCIAL_FG_COLOR );
-    $theme_colors['social_fg_hov']          = get_theme_mod( DESIGNR_OPTIONS::NAVBAR_SOCIAL_FG_COLOR_HOVER, DESIGNR_DEFAULTS::NAVBAR_SOCIAL_FG_COLOR_HOVER );
-    $theme_colors['custom_header_title']    = get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_TITLE_COLOR, DESIGNR_DEFAULTS::CUSTOM_HEADER_TITLE_COLOR );
-    $theme_colors['custom_header_menu']     = get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_MENU_COLOR, DESIGNR_DEFAULTS::CUSTOM_HEADER_MENU_COLOR );
+    $theme_colors['social_bg']              = get_theme_mod( BUILDR_OPTIONS::NAVBAR_SOCIAL_BG_COLOR, BUILDR_DEFAULTS::NAVBAR_SOCIAL_BG_COLOR );
+    $theme_colors['social_fg']              = get_theme_mod( BUILDR_OPTIONS::NAVBAR_SOCIAL_FG_COLOR, BUILDR_DEFAULTS::NAVBAR_SOCIAL_FG_COLOR );
+    $theme_colors['social_fg_hov']          = get_theme_mod( BUILDR_OPTIONS::NAVBAR_SOCIAL_FG_COLOR_HOVER, BUILDR_DEFAULTS::NAVBAR_SOCIAL_FG_COLOR_HOVER );
+    $theme_colors['custom_header_title']    = get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_TITLE_COLOR, BUILDR_DEFAULTS::CUSTOM_HEADER_TITLE_COLOR );
+    $theme_colors['custom_header_menu']     = get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_MENU_COLOR, BUILDR_DEFAULTS::CUSTOM_HEADER_MENU_COLOR );
     
-    $theme_colors['cart_tab']               = get_theme_mod( DESIGNR_OPTIONS::WOO_SLIDE_CART_TAB_COLOR, DESIGNR_DEFAULTS::WOO_SLIDE_CART_TAB_COLOR );
+    $theme_colors['cart_tab']               = get_theme_mod( BUILDR_OPTIONS::WOO_SLIDE_CART_TAB_COLOR, BUILDR_DEFAULTS::WOO_SLIDE_CART_TAB_COLOR );
     
-    $theme_colors['plx_overlay_single']     = get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_COLOR_LAYER_COLOR, DESIGNR_DEFAULTS::CUSTOM_HEADER_COLOR_LAYER_COLOR );
-    $theme_colors['plx_overlay_grad_start'] = get_theme_mod( DESIGNR_OPTIONS::GRADIENT_START_COLOR, DESIGNR_DEFAULTS::GRADIENT_START_COLOR );
-    $theme_colors['plx_overlay_grad_end']   = get_theme_mod( DESIGNR_OPTIONS::GRADIENT_END_COLOR, DESIGNR_DEFAULTS::GRADIENT_END_COLOR );
+    $theme_colors['plx_overlay_single']     = get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_COLOR_LAYER_COLOR, BUILDR_DEFAULTS::CUSTOM_HEADER_COLOR_LAYER_COLOR );
+    $theme_colors['plx_overlay_grad_start'] = get_theme_mod( BUILDR_OPTIONS::GRADIENT_START_COLOR, BUILDR_DEFAULTS::GRADIENT_START_COLOR );
+    $theme_colors['plx_overlay_grad_end']   = get_theme_mod( BUILDR_OPTIONS::GRADIENT_END_COLOR, BUILDR_DEFAULTS::GRADIENT_END_COLOR );
    
-    $theme_colors['footer_widget_title']    = get_theme_mod( DESIGNR_OPTIONS::PRE_FOOTER_WIDGET_TITLE_COLOR, DESIGNR_DEFAULTS::PRE_FOOTER_WIDGET_TITLE_COLOR );
+    $theme_colors['footer_widget_title']    = get_theme_mod( BUILDR_OPTIONS::PRE_FOOTER_WIDGET_TITLE_COLOR, BUILDR_DEFAULTS::PRE_FOOTER_WIDGET_TITLE_COLOR );
  
     return $theme_colors;
     
@@ -52,46 +52,46 @@ function designr_get_all_theme_colors() {
 function designr_get_icons( $subset = null ) {
     
     $icons = array(
-        'fa-app-store'      => __( 'App Store', 'designr' ),
-        'fa-apple'          => __( 'Apple', 'designr' ),
-        'fa-bandcamp'       => __( 'Bandcamp', 'designr' ),
-        'fa-behance'        => __( 'Behance', 'designr' ),
-        'fa-codepen'        => __( 'CodePen', 'designr' ),
-        'fa-discord'        => __( 'Discord', 'designr' ),
-        'fa-dribbble'       => __( 'Dribbble', 'designr' ),
-        'fa-etsy'           => __( 'Etsy', 'designr' ),
-        'fa-facebook-f'     => __( 'Facebook', 'designr' ),
-        'fa-git'            => __( 'Git', 'designr' ),
-        'fa-github'         => __( 'GitHub', 'designr' ),
-        'fa-google-play'    => __( 'Google Play', 'designr' ),
-        'fa-google-plus-g'  => __( 'Google+', 'designr' ),
-        'fa-imdb'           => __( 'IMDb', 'designr' ),
-        'fa-instagram'      => __( 'Instagram', 'designr' ),
-        'fa-itunes-note'    => __( 'iTunes', 'designr' ),
-        'fa-kickstarter-k'  => __( 'Kickstarter', 'designr' ),
-        'fa-lastfm'         => __( 'Last.fm', 'designr' ),
-        'fa-linkedin-in'    => __( 'LinkedIn', 'designr' ),
-        'fa-medium-m'       => __( 'Medium', 'designr' ),
-        'fa-microsoft'      => __( 'Microsoft', 'designr' ),
-        'fa-mixcloud'       => __( 'Mixcloud', 'designr' ),
-        'fa-patreon'        => __( 'Patreon', 'designr' ),
-        'fa-pinterest-p'    => __( 'Pinterest', 'designr' ),
-        'fa-playstation'    => __( 'PlayStation', 'designr' ),
-        'fa-reddit-alien'   => __( 'Reddit', 'designr' ),
-        'fa-slack-hash'     => __( 'Slack', 'designr' ),
-        'fa-snapchat-ghost' => __( 'Snapchat', 'designr' ),
-        'fa-soundcloud'     => __( 'SoundCloud', 'designr' ),
-        'fa-spotify'        => __( 'Spotify', 'designr' ),
-        'fa-steam'          => __( 'Steam', 'designr' ),
-        'fa-stumbleupon'    => __( 'StumbleUpon', 'designr' ),
-        'fa-tumblr'         => __( 'Tumblr', 'designr' ),
-        'fa-twitch'         => __( 'Twitch', 'designr' ),
-        'fa-twitter'        => __( 'Twitter', 'designr' ),
-        'fa-vimeo'          => __( 'Vimeo', 'designr' ),
-        'fa-vimeo'          => __( 'Vimeo', 'designr' ),
-        'fa-xbox'           => __( 'Xbox', 'designr' ),
-        'fa-yelp'           => __( 'Yelp', 'designr' ),
-        'fa-youtube'        => __( 'YouTube', 'designr' ),
+        'fa-app-store'      => __( 'App Store', 'buildr' ),
+        'fa-apple'          => __( 'Apple', 'buildr' ),
+        'fa-bandcamp'       => __( 'Bandcamp', 'buildr' ),
+        'fa-behance'        => __( 'Behance', 'buildr' ),
+        'fa-codepen'        => __( 'CodePen', 'buildr' ),
+        'fa-discord'        => __( 'Discord', 'buildr' ),
+        'fa-dribbble'       => __( 'Dribbble', 'buildr' ),
+        'fa-etsy'           => __( 'Etsy', 'buildr' ),
+        'fa-facebook-f'     => __( 'Facebook', 'buildr' ),
+        'fa-git'            => __( 'Git', 'buildr' ),
+        'fa-github'         => __( 'GitHub', 'buildr' ),
+        'fa-google-play'    => __( 'Google Play', 'buildr' ),
+        'fa-google-plus-g'  => __( 'Google+', 'buildr' ),
+        'fa-imdb'           => __( 'IMDb', 'buildr' ),
+        'fa-instagram'      => __( 'Instagram', 'buildr' ),
+        'fa-itunes-note'    => __( 'iTunes', 'buildr' ),
+        'fa-kickstarter-k'  => __( 'Kickstarter', 'buildr' ),
+        'fa-lastfm'         => __( 'Last.fm', 'buildr' ),
+        'fa-linkedin-in'    => __( 'LinkedIn', 'buildr' ),
+        'fa-medium-m'       => __( 'Medium', 'buildr' ),
+        'fa-microsoft'      => __( 'Microsoft', 'buildr' ),
+        'fa-mixcloud'       => __( 'Mixcloud', 'buildr' ),
+        'fa-patreon'        => __( 'Patreon', 'buildr' ),
+        'fa-pinterest-p'    => __( 'Pinterest', 'buildr' ),
+        'fa-playstation'    => __( 'PlayStation', 'buildr' ),
+        'fa-reddit-alien'   => __( 'Reddit', 'buildr' ),
+        'fa-slack-hash'     => __( 'Slack', 'buildr' ),
+        'fa-snapchat-ghost' => __( 'Snapchat', 'buildr' ),
+        'fa-soundcloud'     => __( 'SoundCloud', 'buildr' ),
+        'fa-spotify'        => __( 'Spotify', 'buildr' ),
+        'fa-steam'          => __( 'Steam', 'buildr' ),
+        'fa-stumbleupon'    => __( 'StumbleUpon', 'buildr' ),
+        'fa-tumblr'         => __( 'Tumblr', 'buildr' ),
+        'fa-twitch'         => __( 'Twitch', 'buildr' ),
+        'fa-twitter'        => __( 'Twitter', 'buildr' ),
+        'fa-vimeo'          => __( 'Vimeo', 'buildr' ),
+        'fa-vimeo'          => __( 'Vimeo', 'buildr' ),
+        'fa-xbox'           => __( 'Xbox', 'buildr' ),
+        'fa-yelp'           => __( 'Yelp', 'buildr' ),
+        'fa-youtube'        => __( 'YouTube', 'buildr' ),
     );
     
     return $icons;
@@ -109,11 +109,11 @@ function designr_add_excerpt_more_link( $more ) {
 
 //    return sprintf( '… <a class="read-more" href="%1$s">%2$s</a>',
 //        get_permalink( get_the_ID() ),
-//        __( get_theme_mod( DESIGNR_OPTIONS::BLOG_READ_MORE_TEXT, DESIGNR_DEFAULTS::BLOG_READ_MORE_TEXT ), 'designr' )
+//        __( get_theme_mod( BUILDR_OPTIONS::BLOG_READ_MORE_TEXT, BUILDR_DEFAULTS::BLOG_READ_MORE_TEXT ), 'buildr' )
 //    );
     
     /* translators: permalink url, then Read More text theme mod */
-    return sprintf( __( '... <a class="read-more" href="%1$s">%2$s</a>', 'designr' ), esc_url( get_the_permalink( get_the_ID() ) ), get_theme_mod( DESIGNR_OPTIONS::BLOG_READ_MORE_TEXT, DESIGNR_DEFAULTS::BLOG_READ_MORE_TEXT ) );
+    return sprintf( __( '... <a class="read-more" href="%1$s">%2$s</a>', 'buildr' ), esc_url( get_the_permalink( get_the_ID() ) ), get_theme_mod( BUILDR_OPTIONS::BLOG_READ_MORE_TEXT, BUILDR_DEFAULTS::BLOG_READ_MORE_TEXT ) );
     
 }
 add_filter( 'excerpt_more', 'designr_add_excerpt_more_link' );
@@ -126,7 +126,7 @@ add_filter( 'excerpt_more', 'designr_add_excerpt_more_link' );
  * @return int modified excerpt length.
  */
 function designr_custom_auto_excerpt_length( $length ) {
-    return get_theme_mod( DESIGNR_OPTIONS::BLOG_EXCERPT_TRIM_NUM, DESIGNR_DEFAULTS::BLOG_EXCERPT_TRIM_NUM );
+    return get_theme_mod( BUILDR_OPTIONS::BLOG_EXCERPT_TRIM_NUM, BUILDR_DEFAULTS::BLOG_EXCERPT_TRIM_NUM );
 }
 add_filter( 'excerpt_length', 'designr_custom_auto_excerpt_length', 999 );
 
@@ -187,7 +187,7 @@ function designr_hex2rgba( $color, $opacity = false ) {
  */
 function designr_get_parallax_preset( $style = 'layers' ) {
 
-    switch ( get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_PLX_INTENSITY, DESIGNR_DEFAULTS::CUSTOM_HEADER_PLX_INTENSITY ) ) :
+    switch ( get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_PLX_INTENSITY, BUILDR_DEFAULTS::CUSTOM_HEADER_PLX_INTENSITY ) ) :
         
         case 'subtle' :
             $parallax_preset = array(
@@ -242,7 +242,7 @@ function designr_all_posts_array( $types = array( 'post' ) ) {
     ));
 
     $posts_array = array(
-        'none'  => __( 'None', 'designr' ),
+        'none'  => __( 'None', 'buildr' ),
     );
     
     foreach ( $posts as $post ) :

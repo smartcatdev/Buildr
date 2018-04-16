@@ -5,10 +5,10 @@
     <div class="jparallax-layer image-layer" style="background-image: url(<?php echo esc_url( $header_image ); ?>);">
     </div>
     
-    <div class="jparallax-layer texture-layer" style="background-image: url(<?php echo esc_url( get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_TEXTURE_IMG, DESIGNR_DEFAULTS::CUSTOM_HEADER_TEXTURE_IMG ) ); ?>)">
+    <div class="jparallax-layer texture-layer" style="background-image: url(<?php echo esc_url( get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_TEXTURE_IMG, BUILDR_DEFAULTS::CUSTOM_HEADER_TEXTURE_IMG ) ); ?>)">
     </div>
 
-    <div class="jparallax-layer color-layer <?php echo get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_COLOR_LAYER_STYLE, DESIGNR_DEFAULTS::CUSTOM_HEADER_COLOR_LAYER_STYLE ) == 'no' ? '' : esc_attr( get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_COLOR_LAYER_STYLE, DESIGNR_DEFAULTS::CUSTOM_HEADER_COLOR_LAYER_STYLE ) ); ?>">
+    <div class="jparallax-layer color-layer <?php echo get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_COLOR_LAYER_STYLE, BUILDR_DEFAULTS::CUSTOM_HEADER_COLOR_LAYER_STYLE ) == 'no' ? '' : esc_attr( get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_COLOR_LAYER_STYLE, BUILDR_DEFAULTS::CUSTOM_HEADER_COLOR_LAYER_STYLE ) ); ?>">
     </div>
     
     <div class="jparallax-layer content-layer">
@@ -19,18 +19,18 @@
 
                 <div class="col-sm-8 col-sm-offset-2 text-center">
         
-                    <?php if ( get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_LOGO, DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_LOGO ) && function_exists( 'has_custom_logo' ) && has_custom_logo() ) : ?>
+                    <?php if ( get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_SHOW_LOGO, BUILDR_DEFAULTS::CUSTOM_HEADER_SHOW_LOGO ) && function_exists( 'has_custom_logo' ) && has_custom_logo() ) : ?>
                     
                         <?php the_custom_logo(); ?>
 
                     <?php endif; ?>
                     
-                    <?php if ( get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_TITLE, DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_TITLE ) ) : ?>
+                    <?php if ( get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_SHOW_TITLE, BUILDR_DEFAULTS::CUSTOM_HEADER_SHOW_TITLE ) ) : ?>
 
                         <h2 class="custom-header-title textillate wow">
 
                             <?php 
-                            switch ( get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_TITLE_CONTENT, DESIGNR_DEFAULTS::CUSTOM_HEADER_TITLE_CONTENT ) ) :
+                            switch ( get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_TITLE_CONTENT, BUILDR_DEFAULTS::CUSTOM_HEADER_TITLE_CONTENT ) ) :
 
                                 case 'site_title' :
                                     echo esc_html( get_bloginfo('name') );
@@ -49,7 +49,7 @@
 
                     <?php endif; ?>
 
-                    <?php if ( get_theme_mod( DESIGNR_OPTIONS::CUSTOM_HEADER_SHOW_MENU, DESIGNR_DEFAULTS::CUSTOM_HEADER_SHOW_MENU ) ) : ?>
+                    <?php if ( get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_SHOW_MENU, BUILDR_DEFAULTS::CUSTOM_HEADER_SHOW_MENU ) ) : ?>
 
                         <?php if ( has_nav_menu( 'custom-header' ) ) : ?>
 
@@ -68,7 +68,7 @@
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom">
 
                                         <a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>">
-                                           <?php _e( 'Add a Custom Header Menu?', 'designr' ); ?>
+                                           <?php _e( 'Add a Custom Header Menu?', 'buildr' ); ?>
                                         </a>
 
                                     </li>

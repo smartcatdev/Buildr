@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Designr
+ * @package Buildr
  */
 ?>
 
@@ -34,7 +34,7 @@
         the_content( sprintf(
                         wp_kses(
                                 /* translators: %s: Name of current post. Only visible to screen readers */
-                                __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'designr' ), array (
+                                __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'buildr' ), array (
             'span' => array (
                 'class' => array (),
             ),
@@ -43,7 +43,7 @@
         ) );
 
         wp_link_pages( array (
-            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'designr' ),
+            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'buildr' ),
             'after' => '</div>',
         ) );
         ?>
@@ -55,7 +55,7 @@
     
     <?php 
     
-    if ( get_theme_mod( DESIGNR_OPTIONS::SINGLE_POST_SHOW_NAVIGATION, DESIGNR_DEFAULTS::SINGLE_POST_SHOW_NAVIGATION ) ) :
+    if ( get_theme_mod( BUILDR_OPTIONS::SINGLE_POST_SHOW_NAVIGATION, BUILDR_DEFAULTS::SINGLE_POST_SHOW_NAVIGATION ) ) :
     
         the_post_navigation();
         

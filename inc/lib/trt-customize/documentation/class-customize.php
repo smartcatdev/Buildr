@@ -6,7 +6,7 @@
  * @since  1.0.0
  * @access public
  */
-final class Designr_Docs_Customize {
+final class Buildr_Docs_Customize {
 
     /**
      * Returns the instance.
@@ -68,14 +68,14 @@ final class Designr_Docs_Customize {
         require_once( trailingslashit( get_template_directory() ) . 'inc/lib/trt-customize/documentation/section-pro.php' );
 
         // Register custom section types.
-        $manager->register_section_type( 'Designr_Docs_Customize_Section_Pro' );
+        $manager->register_section_type( 'Buildr_Docs_Customize_Section_Pro' );
 
         // Register sections.
         $manager->add_section(
-            new Designr_Docs_Customize_Section_Pro(
+            new Buildr_Docs_Customize_Section_Pro(
                 $manager, 'designr_docs', array (
-                    'title'         => esc_html__( 'Documentation', 'designr' ),
-                    'pro_text'      => esc_html__( 'View Docs', 'designr' ),
+                    'title'         => esc_html__( 'Documentation', 'buildr' ),
+                    'pro_text'      => esc_html__( 'View Docs', 'buildr' ),
                     'pro_url'       => admin_url( 'themes.php?page=designr-theme-info' )
                 )
             )
@@ -99,4 +99,4 @@ final class Designr_Docs_Customize {
 }
 
 // Doing this customizer thang!
-Designr_Docs_Customize::get_instance();
+Buildr_Docs_Customize::get_instance();

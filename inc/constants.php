@@ -1,6 +1,6 @@
 <?php
 
-interface DESIGNR_OPTIONS {
+interface BUILDR_OPTIONS {
     
     const   CUSTOM_HEADER_STYLE_TOGGLE              = 'custom_header_style_toggle',
             CUSTOM_HEADER_HEIGHT_CALC               = 'designr_custom_header_height_unit',
@@ -170,7 +170,7 @@ interface DESIGNR_OPTIONS {
 
 }
 
-interface DESIGNR_DEFAULTS {
+interface BUILDR_DEFAULTS {
     
     const   CUSTOM_HEADER_STYLE_TOGGLE              = 'parallax_vertical',
             CUSTOM_HEADER_HEIGHT_CALC               = 'percent',

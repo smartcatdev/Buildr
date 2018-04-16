@@ -40,11 +40,11 @@ function designr_pingback_header() {
 
 
 /**
- * Designr functions and definitions
+ * Buildr functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Designr
+ * @package Buildr
  */
 if ( !function_exists( 'designr_setup' ) ) :
 
@@ -57,17 +57,17 @@ if ( !function_exists( 'designr_setup' ) ) :
      */
     function designr_setup() {
     
-        if( !defined( 'DESIGNR_VERSION' ) ) :
-            define( 'DESIGNR_VERSION', '1.0.0' );
+        if( !defined( 'BUILDR_VERSION' ) ) :
+            define( 'BUILDR_VERSION', '1.0.0' );
         endif;
         
         /*
          * Make theme available for translation.
          * Translations can be filed in the /languages/ directory.
-         * If you're building a theme based on Designr, use a find and replace
-         * to change 'designr' to the name of your theme in all the template files.
+         * If you're building a theme based on Buildr, use a find and replace
+         * to change 'buildr' to the name of your theme in all the template files.
          */
-        load_theme_textdomain( 'designr', get_template_directory() . '/languages' );
+        load_theme_textdomain( 'buildr', get_template_directory() . '/languages' );
 
         // Add default posts and comments RSS feed links to head.
         add_theme_support( 'automatic-feed-links' );
@@ -89,13 +89,13 @@ if ( !function_exists( 'designr_setup' ) ) :
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus( array(
-            'primary-menu'              => esc_html__( 'Primary', 'designr' ),
-            'banner-primary'            => esc_html__( 'Navbar: Banner - Primary', 'designr' ),
-            'slim-primary'              => esc_html__( 'Navbar: Slim - Primary', 'designr' ),
-            'split-primary-left'        => esc_html__( 'Navbar: Split - Left', 'designr' ),
-            'split-primary-right'       => esc_html__( 'Navbar: Split - Right', 'designr' ),
-            'mobile-menu'               => esc_html__( 'Mobile', 'designr' ),
-            'custom-header'             => esc_html__( 'Custom Header', 'designr' ),
+            'primary-menu'              => esc_html__( 'Primary', 'buildr' ),
+            'banner-primary'            => esc_html__( 'Navbar: Banner - Primary', 'buildr' ),
+            'slim-primary'              => esc_html__( 'Navbar: Slim - Primary', 'buildr' ),
+            'split-primary-left'        => esc_html__( 'Navbar: Split - Left', 'buildr' ),
+            'split-primary-right'       => esc_html__( 'Navbar: Split - Right', 'buildr' ),
+            'mobile-menu'               => esc_html__( 'Mobile', 'buildr' ),
+            'custom-header'             => esc_html__( 'Custom Header', 'buildr' ),
         ) );
 
         /*
@@ -137,7 +137,7 @@ if ( ! isset( $content_width ) ) {
 }
 
 function designr_create_theme_menu() {
-    add_theme_page( __( 'Theme Docs', 'designr' ), __( 'Theme Docs', 'designr' ), 'edit_theme_options', 'designr-theme-info', function() {
+    add_theme_page( __( 'Theme Docs', 'buildr' ), __( 'Theme Docs', 'buildr' ), 'edit_theme_options', 'designr-theme-info', function() {
         include_once get_template_directory() . '/admin/designr-menu.php';
     });
 }

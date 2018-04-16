@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Designr
+ * @package Buildr
  */
 ?>
 <!doctype html>
@@ -26,11 +26,11 @@
         
         <div id="page" class="site">
             
-            <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'designr' ); ?></a>
+            <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'buildr' ); ?></a>
 
-            <?php get_template_part( 'template-parts/navbar', get_theme_mod( DESIGNR_OPTIONS::NAVBAR_STYLE, DESIGNR_DEFAULTS::NAVBAR_STYLE ) ); ?>
+            <?php get_template_part( 'template-parts/navbar', get_theme_mod( BUILDR_OPTIONS::NAVBAR_STYLE, BUILDR_DEFAULTS::NAVBAR_STYLE ) ); ?>
             
-            <?php if ( class_exists('WooCommerce') && get_theme_mod( DESIGNR_OPTIONS::WOO_SLIDE_CART_TOGGLE, DESIGNR_DEFAULTS::WOO_SLIDE_CART_TOGGLE ) ) { get_template_part( 'template-parts/cart-slide_in' ); } ?>
+            <?php if ( class_exists('WooCommerce') && get_theme_mod( BUILDR_OPTIONS::WOO_SLIDE_CART_TOGGLE, BUILDR_DEFAULTS::WOO_SLIDE_CART_TOGGLE ) ) { get_template_part( 'template-parts/cart-slide_in' ); } ?>
             
             <div id="content" class="site-content">
 
