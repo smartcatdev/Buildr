@@ -54,7 +54,7 @@
 
                 <?php endif; ?>
                 
-                <?php do_action('designr_designer'); ?>
+                <?php do_action('buildr_designer'); ?>
                             
             </div>
             

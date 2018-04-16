@@ -1,14 +1,14 @@
 <?php
 
 // Register sidebars
-add_action( 'widgets_init', 'designr_widgets_init' );
+add_action( 'widgets_init', 'buildr_widgets_init' );
 
 
 /**
  * Register widget area.
  *
  */
-function designr_widgets_init() {
+function buildr_widgets_init() {
 
     register_sidebar( array (
         'name'              => esc_html__( 'Footer', 'buildr' ),

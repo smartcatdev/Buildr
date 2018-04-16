@@ -73,7 +73,7 @@ final class Buildr_Customize {
         // Register sections.
         $manager->add_section(
             new Buildr_Customize_Section_Pro(
-                $manager, 'designr_companion', array (
+                $manager, 'buildr_companion', array (
                     'title'         => esc_html__( 'Buildr Features', 'buildr' ),
                     'pro_text'      => esc_html__( 'Free Install', 'buildr' ),
                     'pro_url'       => admin_url( 'themes.php?page=tgmpa-install-plugins' ),
@@ -92,9 +92,9 @@ final class Buildr_Customize {
      */
     public function enqueue_control_scripts() {
 
-        wp_enqueue_script( 'designr-pro-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/companion-plugin/customize-controls.js', array ( 'customize-controls' ) );
+        wp_enqueue_script( 'buildr-pro-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/companion-plugin/customize-controls.js', array ( 'customize-controls' ) );
 
-        wp_enqueue_style( 'designr-pro-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/companion-plugin/customize-controls.css' );
+        wp_enqueue_style( 'buildr-pro-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/companion-plugin/customize-controls.css' );
     }
 
 }

@@ -6,7 +6,7 @@
  * @since 1.0.0
  * @return array of hex colors
  */
-function designr_get_all_theme_colors() {
+function buildr_get_all_theme_colors() {
     
     $theme_colors = array();
     
@@ -49,7 +49,7 @@ function designr_get_all_theme_colors() {
  * @since 1.0.0
  * @return array of Font Awesome 5 icons
  */
-function designr_get_icons( $subset = null ) {
+function buildr_get_icons( $subset = null ) {
     
     $icons = array(
         'fa-app-store'      => __( 'App Store', 'buildr' ),
@@ -105,7 +105,7 @@ function designr_get_icons( $subset = null ) {
  * @param string $more "Read more" excerpt string.
  * @return string (Maybe) modified "read more" excerpt string.
  */
-function designr_add_excerpt_more_link( $more ) {
+function buildr_add_excerpt_more_link( $more ) {
 
 //    return sprintf( '… <a class="read-more" href="%1$s">%2$s</a>',
 //        get_permalink( get_the_ID() ),
@@ -116,7 +116,7 @@ function designr_add_excerpt_more_link( $more ) {
     return sprintf( __( '... <a class="read-more" href="%1$s">%2$s</a>', 'buildr' ), esc_url( get_the_permalink( get_the_ID() ) ), get_theme_mod( BUILDR_OPTIONS::BLOG_READ_MORE_TEXT, BUILDR_DEFAULTS::BLOG_READ_MORE_TEXT ) );
     
 }
-add_filter( 'excerpt_more', 'designr_add_excerpt_more_link' );
+add_filter( 'excerpt_more', 'buildr_add_excerpt_more_link' );
 
 /**
  * Filter the excerpt length to a user-defined number words.
@@ -125,10 +125,10 @@ add_filter( 'excerpt_more', 'designr_add_excerpt_more_link' );
  * @param int $length Excerpt length.
  * @return int modified excerpt length.
  */
-function designr_custom_auto_excerpt_length( $length ) {
+function buildr_custom_auto_excerpt_length( $length ) {
     return get_theme_mod( BUILDR_OPTIONS::BLOG_EXCERPT_TRIM_NUM, BUILDR_DEFAULTS::BLOG_EXCERPT_TRIM_NUM );
 }
-add_filter( 'excerpt_length', 'designr_custom_auto_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'buildr_custom_auto_excerpt_length', 999 );
 
 /**
  * Hex to rgb(a) converter function.
@@ -138,7 +138,7 @@ add_filter( 'excerpt_length', 'designr_custom_auto_excerpt_length', 999 );
  * @param decimal $opacity optional opacity decimal.
  * @return string rgba(a) value
  */
-function designr_hex2rgba( $color, $opacity = false ) {
+function buildr_hex2rgba( $color, $opacity = false ) {
 
     $default = 'rgb(0,0,0)';
 
@@ -185,7 +185,7 @@ function designr_hex2rgba( $color, $opacity = false ) {
  * @param string $style key to identify what to return.
  * @return either an associative array of percentages (Layers) or a single integer value (Vertical)
  */
-function designr_get_parallax_preset( $style = 'layers' ) {
+function buildr_get_parallax_preset( $style = 'layers' ) {
 
     switch ( get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_PLX_INTENSITY, BUILDR_DEFAULTS::CUSTOM_HEADER_PLX_INTENSITY ) ) :
         
@@ -231,7 +231,7 @@ function designr_get_parallax_preset( $style = 'layers' ) {
  * @param array $types - post types to retrieve
  * @return array of posts
  */
-function designr_all_posts_array( $types = array( 'post' ) ) {
+function buildr_all_posts_array( $types = array( 'post' ) ) {
     
     $posts = get_posts( array(
         'post_type'        => $types,

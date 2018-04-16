@@ -1,39 +1,39 @@
 <?php
 /**
  * 
- * Functions available for the designr admin menu
+ * Functions available for the buildr admin menu
  * 
  */
 
-add_action( 'admin_enqueue_scripts', 'designr_load_admin_css' );
+add_action( 'admin_enqueue_scripts', 'buildr_load_admin_css' );
 
 
-function designr_load_admin_css( $hook ) {
+function buildr_load_admin_css( $hook ) {
     
-    if( 'appearance_page_designr-theme-info' == $hook ) {
+    if( 'appearance_page_buildr-theme-info' == $hook ) {
         wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/lib/font-awesome/fontawesome-all.min.css' );
-        wp_enqueue_style( 'designr-admin-fonts', '//fonts.googleapis.com/css?family=Lato:300,700,900' );
-        wp_enqueue_style( 'designr-admin-css', get_template_directory_uri() . '/assets/admin/css/docs.css' );
+        wp_enqueue_style( 'buildr-admin-fonts', '//fonts.googleapis.com/css?family=Lato:300,700,900' );
+        wp_enqueue_style( 'buildr-admin-css', get_template_directory_uri() . '/assets/admin/css/docs.css' );
     }
     
 }
 
-function designr_docs_partial( $file ) {
+function buildr_docs_partial( $file ) {
     return trailingslashit( get_template_directory() ) . 'admin/doc-partials/' . $file . '.php';
 }
 
-function designr_render_doc( $filename ) {
+function buildr_render_doc( $filename ) {
     
-    if( file_exists( designr_docs_partial( $filename ) ) ) {
-        require designr_docs_partial( $filename );
+    if( file_exists( buildr_docs_partial( $filename ) ) ) {
+        require buildr_docs_partial( $filename );
     }
     
 }
 
-function designr_docs_tab( $jump_link, $label, $children = null ) { ?>
+function buildr_docs_tab( $jump_link, $label, $children = null ) { ?>
     
 <li>
-    <a href="<?php echo esc_url( admin_url( 'themes.php?page=designr-theme-info' . $jump_link ) ); ?>">
+    <a href="<?php echo esc_url( admin_url( 'themes.php?page=buildr-theme-info' . $jump_link ) ); ?>">
         <?php echo esc_html( $label ); ?>
     </a>
     
@@ -44,7 +44,7 @@ function designr_docs_tab( $jump_link, $label, $children = null ) { ?>
         <?php foreach( $children as $child_link => $child_label ) : ?>
 
         <li>
-            <a href="<?php echo esc_url( admin_url( 'themes.php?page=designr-theme-info' . $child_link ) ); ?>">
+            <a href="<?php echo esc_url( admin_url( 'themes.php?page=buildr-theme-info' . $child_link ) ); ?>">
                 <?php echo esc_html( $child_label ); ?>
             </a>
 
@@ -61,7 +61,7 @@ function designr_docs_tab( $jump_link, $label, $children = null ) { ?>
 
 <?php }
 
-function designr_docs_subsection( $jump_id, $heading, $paragraphs ) { ?>
+function buildr_docs_subsection( $jump_id, $heading, $paragraphs ) { ?>
 
     <section class="sub-section">
 
@@ -86,11 +86,11 @@ function designr_docs_subsection( $jump_id, $heading, $paragraphs ) { ?>
 <?php 
 }
 
-function designr_docs_quickstart_cta( $jump_link, $font_icon, $label ) { ?>
+function buildr_docs_quickstart_cta( $jump_link, $font_icon, $label ) { ?>
 
     <div class="quickstart-cta">
 
-        <a href="<?php echo esc_url( admin_url( 'themes.php?page=designr-theme-info#' . $jump_link ) ); ?>">
+        <a href="<?php echo esc_url( admin_url( 'themes.php?page=buildr-theme-info#' . $jump_link ) ); ?>">
 
             <span class="fas <?php echo esc_attr( $font_icon ); ?>"></span>
 

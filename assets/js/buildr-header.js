@@ -23,14 +23,14 @@ jQuery(document).ready(function ($) {
         $('#custom-logo-wrap.sometimes-hidden img.custom-logo').removeClass('fadeOut').addClass('bounceIn');
         
         // Expand Padding Top on #content
-        $('div#content,div#designr-custom-header,div#cart-panel-trigger').addClass('sticky-header');
+        $('div#content,div#buildr-custom-header,div#cart-panel-trigger').addClass('sticky-header');
         
     }).on('sticky-end', function() { 
         
         $('#custom-logo-wrap.sometimes-hidden img.custom-logo').removeClass('bounceIn').addClass('fadeOut');
         
         // Contract Padding Top on #content
-        $('div#content,div#designr-custom-header,div#cart-panel-trigger').removeClass('sticky-header');
+        $('div#content,div#buildr-custom-header,div#cart-panel-trigger').removeClass('sticky-header');
         
     });
    
@@ -94,7 +94,7 @@ jQuery(document).ready(function ($) {
      * Custom Header: Layered Parallax Section
      * ---------------------------------------------------------------------- */
     
-    if ( $('div#designr-custom-header.parallax_layers').length ) {
+    if ( $('div#buildr-custom-header.parallax_layers').length ) {
         
         $(window).resize( function(){
             $( '.jparallax-layer' ).parallax({
@@ -102,23 +102,23 @@ jQuery(document).ready(function ($) {
                 mouseport: $('body')
             },{
                 // Image Layer
-                xparallax: designr_local.parallax_image_layer,
-                yparallax: designr_local.parallax_image_layer
+                xparallax: buildr_local.parallax_image_layer,
+                yparallax: buildr_local.parallax_image_layer
             },
             {
                 // Texture Layer Options
-                xparallax: designr_local.parallax_texture_layer,
-                yparallax: designr_local.parallax_texture_layer
+                xparallax: buildr_local.parallax_texture_layer,
+                yparallax: buildr_local.parallax_texture_layer
             },{
                 // Color Layer Options
-                xparallax: designr_local.parallax_color_layer,
-                yparallax: designr_local.parallax_color_layer,
+                xparallax: buildr_local.parallax_color_layer,
+                yparallax: buildr_local.parallax_color_layer,
                 xorigin: 0,
                 yorigin: 0,
             },{
                 // Content Layer Options
-                xparallax: designr_local.parallax_content_layer,
-                yparallax: designr_local.parallax_content_layer
+                xparallax: buildr_local.parallax_content_layer,
+                yparallax: buildr_local.parallax_content_layer
             });
         });
 
@@ -127,23 +127,23 @@ jQuery(document).ready(function ($) {
             mouseport: $('body')
         },{
             // Image Layer
-            xparallax: designr_local.parallax_image_layer,
-            yparallax: designr_local.parallax_image_layer
+            xparallax: buildr_local.parallax_image_layer,
+            yparallax: buildr_local.parallax_image_layer
         },
         {
             // Texture Layer Options
-            xparallax: designr_local.parallax_texture_layer,
-            yparallax: designr_local.parallax_texture_layer
+            xparallax: buildr_local.parallax_texture_layer,
+            yparallax: buildr_local.parallax_texture_layer
         },{
             // Color Layer Options
-            xparallax: designr_local.parallax_color_layer,
-            yparallax: designr_local.parallax_color_layer,
+            xparallax: buildr_local.parallax_color_layer,
+            yparallax: buildr_local.parallax_color_layer,
             xorigin: 0,
             yorigin: 0,
         },{
             // Content Layer Options
-            xparallax: designr_local.parallax_content_layer,
-            yparallax: designr_local.parallax_content_layer
+            xparallax: buildr_local.parallax_content_layer,
+            yparallax: buildr_local.parallax_content_layer
         }).parent().find('.jparallax-layer.content-layer').fadeIn();
         
     }

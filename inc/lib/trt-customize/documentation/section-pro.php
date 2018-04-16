@@ -15,7 +15,7 @@ class Buildr_Docs_Customize_Section_Pro extends WP_Customize_Section {
      * @access public
      * @var    string
      */
-    public $type = 'designr_docs';
+    public $type = 'buildr_docs';
 
     /**
      * Custom button text to output.

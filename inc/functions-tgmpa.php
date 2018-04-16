@@ -20,10 +20,10 @@
 
 require get_template_directory() . '/inc/lib/tgmpa/class-tgm-plugin-activation.php';
 
-add_action( 'tgmpa_register', 'designr_register_required_plugins' );
+add_action( 'tgmpa_register', 'buildr_register_required_plugins' );
 
 
-function designr_register_required_plugins() {
+function buildr_register_required_plugins() {
     
     $plugins = array (
         

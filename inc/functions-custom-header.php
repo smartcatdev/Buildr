@@ -14,11 +14,11 @@
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses designr_header_style()
+ * @uses buildr_header_style()
  */
-function designr_custom_header_setup() {
+function buildr_custom_header_setup() {
 
-    add_theme_support( 'custom-header', apply_filters( 'designr_custom_header_args', array (
+    add_theme_support( 'custom-header', apply_filters( 'buildr_custom_header_args', array (
         'default-image'     => get_template_directory_uri() . '/assets/images/header-demo_1.jpg',
         'header-text'       => false,
         'flex-height'       => true,
@@ -42,14 +42,14 @@ function designr_custom_header_setup() {
     ) );
     
 }
-add_action( 'after_setup_theme', 'designr_custom_header_setup' );
+add_action( 'after_setup_theme', 'buildr_custom_header_setup' );
 
 /**
  * Creates header using images from Custom Header
  * @param string $details Extra info to print into header
  */
-add_action( 'designr_custom_header', 'designr_render_custom_header' );
-function designr_render_custom_header() { 
+add_action( 'buildr_custom_header', 'buildr_render_custom_header' );
+function buildr_render_custom_header() { 
 
     if( is_page_template( 'templates/page-widget_shell.php' ) ) {
         return;

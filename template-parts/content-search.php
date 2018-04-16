@@ -15,20 +15,20 @@
         <?php if ( 'post' === get_post_type() ) : ?>
             <div class="entry-meta">
                 <?php
-                designr_posted_on();
-                designr_posted_by();
+                buildr_posted_on();
+                buildr_posted_by();
                 ?>
             </div><!-- .entry-meta -->
         <?php endif; ?>
     </header><!-- .entry-header -->
 
-    <?php designr_post_thumbnail(); ?>
+    <?php buildr_post_thumbnail(); ?>
 
     <div class="entry-summary">
         <?php the_excerpt(); ?>
     </div><!-- .entry-summary -->
 
     <footer class="entry-footer">
-        <?php designr_entry_footer(); ?>
+        <?php buildr_entry_footer(); ?>
     </footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

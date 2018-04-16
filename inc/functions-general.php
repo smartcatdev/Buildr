@@ -2,16 +2,16 @@
 
 
 // Adds custom classes to the array of body classes.
-add_filter( 'body_class', 'designr_body_classes' );
+add_filter( 'body_class', 'buildr_body_classes' );
 
 // Add a pingback url auto-discovery header for singularly identifiable articles.
-add_action( 'wp_head', 'designr_pingback_header' );
+add_action( 'wp_head', 'buildr_pingback_header' );
 
 // Set up theme defaults and register various theme support
-add_action( 'after_setup_theme', 'designr_setup' );
+add_action( 'after_setup_theme', 'buildr_setup' );
 
 // Create theme page in dashboard
-add_action('admin_menu', 'designr_create_theme_menu' );
+add_action('admin_menu', 'buildr_create_theme_menu' );
 
 /**
  * Adds custom classes to the array of body classes.
@@ -19,7 +19,7 @@ add_action('admin_menu', 'designr_create_theme_menu' );
  * @param array $classes Classes for the body element.
  * @return array
  */
-function designr_body_classes( $classes ) {
+function buildr_body_classes( $classes ) {
     // Adds a class of hfeed to non-singular pages.
     if ( !is_singular() ) {
         $classes[] = 'hfeed';
@@ -32,7 +32,7 @@ function designr_body_classes( $classes ) {
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
-function designr_pingback_header() {
+function buildr_pingback_header() {
     if ( is_singular() && pings_open() ) {
         echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
     }
@@ -46,7 +46,7 @@ function designr_pingback_header() {
  *
  * @package Buildr
  */
-if ( !function_exists( 'designr_setup' ) ) :
+if ( !function_exists( 'buildr_setup' ) ) :
 
     /**
      * Sets up theme defaults and registers support for various WordPress features.
@@ -55,7 +55,7 @@ if ( !function_exists( 'designr_setup' ) ) :
      * runs before the init hook. The init hook is too late for some features, such
      * as indicating support for post thumbnails.
      */
-    function designr_setup() {
+    function buildr_setup() {
     
         if( !defined( 'BUILDR_VERSION' ) ) :
             define( 'BUILDR_VERSION', '1.0.0' );
@@ -136,16 +136,16 @@ if ( ! isset( $content_width ) ) {
     $content_width = 1170;
 }
 
-function designr_create_theme_menu() {
-    add_theme_page( __( 'Theme Docs', 'buildr' ), __( 'Theme Docs', 'buildr' ), 'edit_theme_options', 'designr-theme-info', function() {
-        include_once get_template_directory() . '/admin/designr-menu.php';
+function buildr_create_theme_menu() {
+    add_theme_page( __( 'Theme Docs', 'buildr' ), __( 'Theme Docs', 'buildr' ), 'edit_theme_options', 'buildr-theme-info', function() {
+        include_once get_template_directory() . '/admin/buildr-menu.php';
     });
 }
 
-function designr_theme_path( $path = null ) {
+function buildr_theme_path( $path = null ) {
     return trailingslashit( get_template_directory() ) . $path;
 }
 
-function designr_theme_url( $url = null ) {
+function buildr_theme_url( $url = null ) {
     return trailingslashit( get_template_directory_uri() ) . $path;
 }

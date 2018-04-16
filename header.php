@@ -34,4 +34,4 @@
             
             <div id="content" class="site-content">
 
-                <?php do_action( 'designr_custom_header' ); ?>
+                <?php do_action( 'buildr_custom_header' ); ?>

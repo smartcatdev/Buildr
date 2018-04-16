@@ -88,7 +88,7 @@
                             <span class="fas fa-comment"></span> <?php echo intval( $comment_count->approved ); ?>
                         <?php endif; ?>
 
-                        <?php do_action('designr_get_blog_meta_view_counter'); ?>
+                        <?php do_action('buildr_get_blog_meta_view_counter'); ?>
 
                     </div>
 

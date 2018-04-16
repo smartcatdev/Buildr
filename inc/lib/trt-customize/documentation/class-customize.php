@@ -73,10 +73,10 @@ final class Buildr_Docs_Customize {
         // Register sections.
         $manager->add_section(
             new Buildr_Docs_Customize_Section_Pro(
-                $manager, 'designr_docs', array (
+                $manager, 'buildr_docs', array (
                     'title'         => esc_html__( 'Documentation', 'buildr' ),
                     'pro_text'      => esc_html__( 'View Docs', 'buildr' ),
-                    'pro_url'       => admin_url( 'themes.php?page=designr-theme-info' )
+                    'pro_url'       => admin_url( 'themes.php?page=buildr-theme-info' )
                 )
             )
         );
@@ -91,9 +91,9 @@ final class Buildr_Docs_Customize {
      */
     public function enqueue_control_scripts() {
 
-        wp_enqueue_script( 'designr-docs-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/documentation/customize-controls.js', array ( 'customize-controls' ) );
+        wp_enqueue_script( 'buildr-docs-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/documentation/customize-controls.js', array ( 'customize-controls' ) );
 
-        wp_enqueue_style( 'designr-docs-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/documentation/customize-controls.css' );
+        wp_enqueue_style( 'buildr-docs-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/documentation/customize-controls.css' );
     }
 
 }

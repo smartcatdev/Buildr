@@ -22,20 +22,20 @@ remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_r
  * 
  */
 
-add_action( 'woocommerce_before_shop_loop', 'designr_results_bar_wrapper_before', 15 );                                 // Wrap the Results Count and Filter Select in a <div> for styling
-add_action( 'woocommerce_before_shop_loop', 'designr_results_bar_wrapper_after', 35 );                                  // Wrap the Results Count and Filter Select in a </div> for styling
-add_action( 'woocommerce_before_shop_loop_item_title', 'designr_woocommerce_product_details_wrapper_before', 50 );      // Wrap the Shop loop Product content in <div class="details-wrap"> for styling
-add_action( 'woocommerce_after_shop_loop_item', 'designr_woocommerce_product_details_wrapper_after', 50 );              // Wrap the Shop loop Product content in <div class="details-wrap"> for styling
-add_action( 'woocommerce_before_subcategory_title', 'designr_woocommerce_product_details_wrapper_before', 50 );         // Wrap the Shop loop Category content in <div class="details-wrap"> for styling
-add_action( 'woocommerce_after_subcategory', 'designr_woocommerce_product_details_wrapper_after', 50 );                 // Wrap the Shop loop Category content in <div class="details-wrap"> for styling
-add_action( 'woocommerce_shop_loop_item_title', 'designr_woocommerce_product_loop_category', 5 );                       // Inject the Category in the Product details
-add_action( 'woocommerce_shop_loop_item_title', 'designr_woocommerce_product_loop_excerpt', 20 );                       // Inject the Excerpt in the Product details
-add_action( 'designr_featured_products', 'designr_render_featured_products', 10 );                                      // Output the Featured Products section
-add_action( 'after_setup_theme', 'designr_woocommerce_setup' );                                                         // Add WooCommerce theme support
-add_action( 'wp_enqueue_scripts', 'designr_woocommerce_scripts' );                                                      // Enqueue WooCommerce scripts
-add_action( 'woocommerce_single_product_summary', 'designr_woocommerce_product_underline', 7 );                         // Inject an underline <span> after the product title
-add_action( 'woocommerce_single_product_summary', 'designr_woocommerce_single_product_category', 3 );                   // Inject the category before the product title
-add_action( 'woocommerce_after_single_product_summary', 'designr_woocommerce_single_product_clear', 5 );                // Inject a float clear after the product summary section
+add_action( 'woocommerce_before_shop_loop', 'buildr_results_bar_wrapper_before', 15 );                                 // Wrap the Results Count and Filter Select in a <div> for styling
+add_action( 'woocommerce_before_shop_loop', 'buildr_results_bar_wrapper_after', 35 );                                  // Wrap the Results Count and Filter Select in a </div> for styling
+add_action( 'woocommerce_before_shop_loop_item_title', 'buildr_woocommerce_product_details_wrapper_before', 50 );      // Wrap the Shop loop Product content in <div class="details-wrap"> for styling
+add_action( 'woocommerce_after_shop_loop_item', 'buildr_woocommerce_product_details_wrapper_after', 50 );              // Wrap the Shop loop Product content in <div class="details-wrap"> for styling
+add_action( 'woocommerce_before_subcategory_title', 'buildr_woocommerce_product_details_wrapper_before', 50 );         // Wrap the Shop loop Category content in <div class="details-wrap"> for styling
+add_action( 'woocommerce_after_subcategory', 'buildr_woocommerce_product_details_wrapper_after', 50 );                 // Wrap the Shop loop Category content in <div class="details-wrap"> for styling
+add_action( 'woocommerce_shop_loop_item_title', 'buildr_woocommerce_product_loop_category', 5 );                       // Inject the Category in the Product details
+add_action( 'woocommerce_shop_loop_item_title', 'buildr_woocommerce_product_loop_excerpt', 20 );                       // Inject the Excerpt in the Product details
+add_action( 'buildr_featured_products', 'buildr_render_featured_products', 10 );                                      // Output the Featured Products section
+add_action( 'after_setup_theme', 'buildr_woocommerce_setup' );                                                         // Add WooCommerce theme support
+add_action( 'wp_enqueue_scripts', 'buildr_woocommerce_scripts' );                                                      // Enqueue WooCommerce scripts
+add_action( 'woocommerce_single_product_summary', 'buildr_woocommerce_product_underline', 7 );                         // Inject an underline <span> after the product title
+add_action( 'woocommerce_single_product_summary', 'buildr_woocommerce_single_product_category', 3 );                   // Inject the category before the product title
+add_action( 'woocommerce_after_single_product_summary', 'buildr_woocommerce_single_product_clear', 5 );                // Inject a float clear after the product summary section
 
 
 /**
@@ -43,11 +43,11 @@ add_action( 'woocommerce_after_single_product_summary', 'designr_woocommerce_sin
  * 
  */
 
-add_filter( 'woocommerce_enqueue_styles', 'designr_woocommerce_dequeue_styles' );                                       // Dequeue select WooCommerce default styles
-add_filter( 'body_class', 'designr_woocommerce_active_body_class' );                                                    // Add active WooCommerce body class
-add_filter( 'woocommerce_output_related_products_args', 'designr_woocommerce_related_products_args' );                  // Set arguments for Related Products
-add_filter( 'woocommerce_add_to_cart_fragments', 'designr_woocommerce_cart_link_fragment' );                            // Code for AJAX-ed Cart subtotal updates
-add_filter( 'woocommerce_pagination_args', 'designr_filter_woocommerce_pagination_args', 10, 1 );                       // Filter the Pagination $args array
+add_filter( 'woocommerce_enqueue_styles', 'buildr_woocommerce_dequeue_styles' );                                       // Dequeue select WooCommerce default styles
+add_filter( 'body_class', 'buildr_woocommerce_active_body_class' );                                                    // Add active WooCommerce body class
+add_filter( 'woocommerce_output_related_products_args', 'buildr_woocommerce_related_products_args' );                  // Set arguments for Related Products
+add_filter( 'woocommerce_add_to_cart_fragments', 'buildr_woocommerce_cart_link_fragment' );                            // Code for AJAX-ed Cart subtotal updates
+add_filter( 'woocommerce_pagination_args', 'buildr_filter_woocommerce_pagination_args', 10, 1 );                       // Filter the Pagination $args array
 
 /**
  * Hooked & Filtered Functions -------------------------------------------------
@@ -62,7 +62,7 @@ add_filter( 'woocommerce_pagination_args', 'designr_filter_woocommerce_paginatio
  *
  * @return void
  */
-function designr_woocommerce_setup() {
+function buildr_woocommerce_setup() {
     add_theme_support( 'woocommerce' );
     add_theme_support( 'wc-product-gallery-zoom' );
     add_theme_support( 'wc-product-gallery-lightbox' );
@@ -74,9 +74,9 @@ function designr_woocommerce_setup() {
  *
  * @return void
  */
-function designr_woocommerce_scripts() {
+function buildr_woocommerce_scripts() {
     
-    wp_enqueue_style( 'designr-woocommerce-style', get_template_directory_uri() . '/woocommerce.css' );
+    wp_enqueue_style( 'buildr-woocommerce-style', get_template_directory_uri() . '/woocommerce.css' );
 
     $font_path = WC()->plugin_url() . '/assets/fonts/';
     $inline_font = '@font-face {
@@ -90,7 +90,7 @@ function designr_woocommerce_scripts() {
         font-style: normal;
     }';
 
-    wp_add_inline_style( 'designr-woocommerce-style', $inline_font );
+    wp_add_inline_style( 'buildr-woocommerce-style', $inline_font );
     
 }
 
@@ -103,7 +103,7 @@ function designr_woocommerce_scripts() {
  * @link https://docs.woocommerce.com/document/disable-the-default-stylesheet/
  */
 
-function designr_woocommerce_dequeue_styles( $enqueue_styles ) {
+function buildr_woocommerce_dequeue_styles( $enqueue_styles ) {
     unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
     //  unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
     //  unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
@@ -116,7 +116,7 @@ function designr_woocommerce_dequeue_styles( $enqueue_styles ) {
  * @param  array $classes CSS classes applied to the body tag.
  * @return array $classes modified to include 'woocommerce-active' class.
  */
-function designr_woocommerce_active_body_class( $classes ) {
+function buildr_woocommerce_active_body_class( $classes ) {
     $classes[] = 'woocommerce-active';
     return $classes;
 }
@@ -127,7 +127,7 @@ function designr_woocommerce_active_body_class( $classes ) {
  * @param array $args related products args.
  * @return array $args related products args.
  */
-function designr_woocommerce_related_products_args( $args ) {
+function buildr_woocommerce_related_products_args( $args ) {
 
     $defaults = array (
         'posts_per_page'    => 3,
@@ -148,9 +148,9 @@ function designr_woocommerce_related_products_args( $args ) {
  * @param array $fragments Fragments to refresh via AJAX.
  * @return array Fragments to refresh via AJAX.
  */
-function designr_woocommerce_cart_link_fragment( $fragments ) {
+function buildr_woocommerce_cart_link_fragment( $fragments ) {
     ob_start();
-    designr_woocommerce_cart_link();
+    buildr_woocommerce_cart_link();
     $fragments[ 'a.cart-contents' ] = ob_get_clean(); 
 
     return $fragments;
@@ -163,7 +163,7 @@ function designr_woocommerce_cart_link_fragment( $fragments ) {
  *
  * @return void
  */
-function designr_woocommerce_cart_link() { ?>
+function buildr_woocommerce_cart_link() { ?>
 
     <a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'buildr' ); ?>">
         <?php /* translators: count of the number of items or one item */ ?>
@@ -176,14 +176,14 @@ function designr_woocommerce_cart_link() { ?>
 
 }
 
-if ( !function_exists( 'designr_results_bar_wrapper_before' ) ) {
+if ( !function_exists( 'buildr_results_bar_wrapper_before' ) ) {
 
     /**
      * Wraps woocommerce_result_count and woocommerce_catalog_ordering in a <div>
      *
      * @return void
      */
-    function designr_results_bar_wrapper_before() { ?>
+    function buildr_results_bar_wrapper_before() { ?>
         
         <div class="results-bar-wrap">
           
@@ -191,14 +191,14 @@ if ( !function_exists( 'designr_results_bar_wrapper_before' ) ) {
 
 }
 
-if ( !function_exists( 'designr_results_bar_wrapper_after' ) ) {
+if ( !function_exists( 'buildr_results_bar_wrapper_after' ) ) {
 
     /**
      * Wraps woocommerce_result_count and woocommerce_catalog_ordering in a </div>
      *
      * @return void
      */
-    function designr_results_bar_wrapper_after() { ?>
+    function buildr_results_bar_wrapper_after() { ?>
         
         </div>
           
@@ -231,7 +231,7 @@ if ( !function_exists( 'woocommerce_output_content_wrapper' ) ) {
 
                 <?php endif; ?>
                 
-                <div id="designr-woocommerce-wrap" class="<?php echo is_shop() ? 'shop-archive' : 'single'; ?>">
+                <div id="buildr-woocommerce-wrap" class="<?php echo is_shop() ? 'shop-archive' : 'single'; ?>">
                 
                     <div class="container">
                     
@@ -288,7 +288,7 @@ if ( !function_exists( 'woocommerce_output_content_wrapper_end' ) ) {
                             
                                 <div class="col-sm-3">
                                     
-                                    <div class="designr-sidebar">
+                                    <div class="buildr-sidebar">
                                         <?php woocommerce_get_sidebar(); ?>
                                     </div>
                                     
@@ -306,7 +306,7 @@ if ( !function_exists( 'woocommerce_output_content_wrapper_end' ) ) {
 
                     <?php endif; ?>
                     
-                </div><!-- #designr-woocommerce-wrap -->
+                </div><!-- #buildr-woocommerce-wrap -->
                               
                 <?php if ( is_active_sidebar( 'sidebar-shop-below') ) : ?>
 
@@ -328,7 +328,7 @@ if ( !function_exists( 'woocommerce_output_content_wrapper_end' ) ) {
 
 }
 
-if ( !function_exists( 'designr_woocommerce_product_details_wrapper_before' ) ) {
+if ( !function_exists( 'buildr_woocommerce_product_details_wrapper_before' ) ) {
 
     /**
      * Before the Title in WooCommerce Product content.
@@ -337,7 +337,7 @@ if ( !function_exists( 'designr_woocommerce_product_details_wrapper_before' ) ) 
      *
      * @return void
      */
-    function designr_woocommerce_product_details_wrapper_before() { ?>
+    function buildr_woocommerce_product_details_wrapper_before() { ?>
         
         <div class="details-wrap">
 
@@ -347,7 +347,7 @@ if ( !function_exists( 'designr_woocommerce_product_details_wrapper_before' ) ) 
 
 }
 
-if ( !function_exists( 'designr_woocommerce_product_details_wrapper_after' ) ) {
+if ( !function_exists( 'buildr_woocommerce_product_details_wrapper_after' ) ) {
 
     /**
      * After the Title in WooCommerce Product content.
@@ -356,7 +356,7 @@ if ( !function_exists( 'designr_woocommerce_product_details_wrapper_after' ) ) {
      *
      * @return void
      */
-    function designr_woocommerce_product_details_wrapper_after() { ?>
+    function buildr_woocommerce_product_details_wrapper_after() { ?>
                         
             <div class="clear"></div>
             
@@ -368,14 +368,14 @@ if ( !function_exists( 'designr_woocommerce_product_details_wrapper_after' ) ) {
 
 }
 
-if ( !function_exists( 'designr_woocommerce_product_loop_category' ) ) {
+if ( !function_exists( 'buildr_woocommerce_product_loop_category' ) ) {
 
-    if ( get_theme_mod( 'designr_woocommerce_loop_show_categories', true ) ) {
+    if ( get_theme_mod( 'buildr_woocommerce_loop_show_categories', true ) ) {
         
         /**
          * Output the category for the product if toggled on.
          */
-        function designr_woocommerce_product_loop_category() {
+        function buildr_woocommerce_product_loop_category() {
 
             $product_cats = wp_get_post_terms( get_the_ID(), 'product_cat' );
 
@@ -397,14 +397,14 @@ if ( !function_exists( 'designr_woocommerce_product_loop_category' ) ) {
     
 }
 
-if ( !function_exists( 'designr_woocommerce_product_loop_excerpt' ) ) {
+if ( !function_exists( 'buildr_woocommerce_product_loop_excerpt' ) ) {
 
-    if ( get_theme_mod( 'designr_woocommerce_loop_show_excerpts', true ) ) {
+    if ( get_theme_mod( 'buildr_woocommerce_loop_show_excerpts', true ) ) {
 
         /**
          * Output the excerpt/content for the product if toggled on.
          */
-        function designr_woocommerce_product_loop_excerpt() { ?>
+        function buildr_woocommerce_product_loop_excerpt() { ?>
 
             <div class="product_category_excerpt">
                 <?php the_excerpt(); ?>
@@ -418,12 +418,12 @@ if ( !function_exists( 'designr_woocommerce_product_loop_excerpt' ) ) {
 
 }
 
-if ( !function_exists( 'designr_woocommerce_product_underline' ) ) {
+if ( !function_exists( 'buildr_woocommerce_product_underline' ) ) {
 
     /**
      * Output an underline span
      */
-    function designr_woocommerce_product_underline() { ?>
+    function buildr_woocommerce_product_underline() { ?>
 
         <span class="small-divider dark"></span>
 
@@ -433,12 +433,12 @@ if ( !function_exists( 'designr_woocommerce_product_underline' ) ) {
 
 }
 
-if ( !function_exists( 'designr_woocommerce_single_product_category' ) ) {
+if ( !function_exists( 'buildr_woocommerce_single_product_category' ) ) {
 
     /**
      * Output the single product category
      */
-    function designr_woocommerce_single_product_category() { ?>
+    function buildr_woocommerce_single_product_category() { ?>
 
         <?php global $product; ?>
         <?php echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in product-cat">', '</span>' ); ?>
@@ -449,12 +449,12 @@ if ( !function_exists( 'designr_woocommerce_single_product_category' ) ) {
 
 }
 
-if ( !function_exists( 'designr_woocommerce_single_product_clear' ) ) {
+if ( !function_exists( 'buildr_woocommerce_single_product_clear' ) ) {
 
     /**
      * Output a clear div at the end of the product summary and image gallery wrapper
      */
-    function designr_woocommerce_single_product_clear() { ?>
+    function buildr_woocommerce_single_product_clear() { ?>
 
         <div class="clear"></div>
 
@@ -464,12 +464,12 @@ if ( !function_exists( 'designr_woocommerce_single_product_clear' ) ) {
 
 }
 
-if ( !function_exists( 'designr_render_featured_products' ) ) {
+if ( !function_exists( 'buildr_render_featured_products' ) ) {
 
     /**
      * Output all Featured Products if they're toggled on in Customizer
      */
-    function designr_render_featured_products() {
+    function buildr_render_featured_products() {
 
         if ( get_theme_mod( BUILDR_OPTIONS::WOO_SHOW_FEATURED_PRODUCTS, BUILDR_DEFAULTS::WOO_SHOW_FEATURED_PRODUCTS ) ) : 
 
@@ -488,7 +488,7 @@ if ( !function_exists( 'designr_render_featured_products' ) ) {
 
             <?php if ( $featured_products_loop->have_posts() ) : ?>
 
-                <div id="designr-featured-woocommerce">
+                <div id="buildr-featured-woocommerce">
 
                     <?php if ( get_theme_mod( BUILDR_OPTIONS::WOO_SHOW_FEATURED_PRODUCT_HEADING, BUILDR_DEFAULTS::WOO_SHOW_FEATURED_PRODUCT_HEADING ) ) : ?>
                     
@@ -526,7 +526,7 @@ if ( !function_exists( 'designr_render_featured_products' ) ) {
  * @param type $array
  * @return type
  */
-function designr_filter_woocommerce_pagination_args( $array ) { 
+function buildr_filter_woocommerce_pagination_args( $array ) { 
     
     $array['prev_text'] = __( 'Previous', 'buildr' );
     $array['next_text'] = __( 'Next', 'buildr' );

@@ -3,7 +3,7 @@
 /**
  * Enqueue scripts and styles.
  */
-function designr_wp_head_styles() { ?>
+function buildr_wp_head_styles() { ?>
 
     <style type="text/css">
 
@@ -15,10 +15,10 @@ function designr_wp_head_styles() { ?>
         .site-branding .site-title,
         div#footer-branding-wrap .site-title,
         div#custom-header-content .custom-header-title,
-        div#designr-custom-header.parallax_layers .custom-header-title,
+        div#buildr-custom-header.parallax_layers .custom-header-title,
         h2.widget-title,
         ul.product_list_widget .product-wrap .product-title .price-wrap,
-        #designr-featured-woocommerce h4.product_category_title {
+        #buildr-featured-woocommerce h4.product_category_title {
             font-family: <?php echo esc_attr( get_theme_mod( BUILDR_OPTIONS::FONT_SECONDARY, BUILDR_DEFAULTS::FONT_SECONDARY ) ); ?>;
         }
 
@@ -67,7 +67,7 @@ function designr_wp_head_styles() { ?>
         <?php if ( get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_TITLE_FONT_FAMILY, BUILDR_DEFAULTS::CUSTOM_HEADER_TITLE_FONT_FAMILY ) == 'primary' ) : ?>
 
             div#custom-header-content .custom-header-title,
-            div#designr-custom-header.parallax_layers .custom-header-title {
+            div#buildr-custom-header.parallax_layers .custom-header-title {
                 font-family: <?php echo esc_attr( get_theme_mod( BUILDR_OPTIONS::FONT_PRIMARY, BUILDR_DEFAULTS::FONT_PRIMARY ) ); ?>;
             }
 
@@ -85,7 +85,7 @@ function designr_wp_head_styles() { ?>
            text-transform: <?php echo get_theme_mod( BUILDR_OPTIONS::NAVBAR_SITE_TITLE_ALL_CAPS, BUILDR_DEFAULTS::NAVBAR_SITE_TITLE_ALL_CAPS ) ? 'uppercase' : 'none'; ?>;
         }
         div#custom-header-content .custom-header-title, 
-        div#designr-custom-header.parallax_layers .custom-header-title {
+        div#buildr-custom-header.parallax_layers .custom-header-title {
            text-transform: <?php echo get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_TITLE_ALL_CAPS, BUILDR_DEFAULTS::CUSTOM_HEADER_TITLE_ALL_CAPS ) ? 'uppercase' : 'none'; ?>;
         }
         footer div#footer-branding-wrap .site-title {
@@ -99,7 +99,7 @@ function designr_wp_head_styles() { ?>
          * Colors
          * ------------------------------------------------------------------ */
 
-        <?php $theme_colors = designr_get_all_theme_colors(); ?>
+        <?php $theme_colors = buildr_get_all_theme_colors(); ?>
 
         /* ----- Primary Color ---------------------------------------------- */
 
@@ -108,7 +108,7 @@ function designr_wp_head_styles() { ?>
         div#slim-header ul#mobile-menu:before,
         div#banner-header ul#mobile-menu:before,
         ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu:before,
-        div#designr-woocommerce-wrap span.onsale,
+        div#buildr-woocommerce-wrap span.onsale,
         button, 
         input[type="submit"],
         a.button,
@@ -120,7 +120,7 @@ function designr_wp_head_styles() { ?>
         .pagination-links .page-numbers:hover,
         .woocommerce nav.woocommerce-pagination ul li:hover span,
         .woocommerce nav.woocommerce-pagination ul li:hover > a,
-        .designr-pagination-links .page-numbers:hover,
+        .buildr-pagination-links .page-numbers:hover,
         nav.navigation.post-navigation .nav-links a:hover {
             background-color: <?php echo esc_attr( $theme_colors['primary'] ); ?>;
         }
@@ -133,7 +133,7 @@ function designr_wp_head_styles() { ?>
             color: <?php echo esc_attr( $theme_colors['primary'] ); ?>;
         }
 
-        footer #designr_designer path {
+        footer #buildr_designer path {
             fill: <?php echo esc_attr($theme_colors['primary']); ?>;
         }
         
@@ -229,7 +229,7 @@ function designr_wp_head_styles() { ?>
         /* ----- Custom Header Colors --------------------------------------- */
 
         div#custom-header-content .custom-header-title,
-        div#designr-custom-header.parallax_layers .custom-header-title {
+        div#buildr-custom-header.parallax_layers .custom-header-title {
             color: <?php echo esc_attr( $theme_colors['custom_header_title'] ); ?>;
         }
 
@@ -681,7 +681,7 @@ function designr_wp_head_styles() { ?>
          * ------------------------------------------------------------------ */
 
         div#custom-header-content .custom-header-title,
-        div#designr-custom-header.parallax_layers .custom-header-title {
+        div#buildr-custom-header.parallax_layers .custom-header-title {
             font-size: <?php echo intval( get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_TITLE_FONT_SIZE, BUILDR_DEFAULTS::CUSTOM_HEADER_TITLE_FONT_SIZE ) ); ?>px;
             letter-spacing: <?php echo esc_attr( get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_TITLE_LETTER_GAP, BUILDR_DEFAULTS::CUSTOM_HEADER_TITLE_LETTER_GAP ) ); ?>em;
         }
@@ -695,38 +695,38 @@ function designr_wp_head_styles() { ?>
             margin: 2px <?php echo intval( get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_MENU_LINKS_GAP, BUILDR_DEFAULTS::CUSTOM_HEADER_MENU_LINKS_GAP ) / 2 ); ?>px;
         }
 
-        div#designr-custom-header.designr_parallax,
-        div#designr-custom-header.designr_parallax .util-tbl-wrap,
-        div#designr-custom-header.parallax_layers {
+        div#buildr-custom-header.buildr_parallax,
+        div#buildr-custom-header.buildr_parallax .util-tbl-wrap,
+        div#buildr-custom-header.parallax_layers {
             height: <?php echo get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_HEIGHT_CALC, BUILDR_DEFAULTS::CUSTOM_HEADER_HEIGHT_CALC ) == 'percent' ? intval( get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_HEIGHT_PCT, BUILDR_DEFAULTS::CUSTOM_HEADER_HEIGHT_PCT ) ) . 'vh' : intval( get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_HEIGHT_PX, BUILDR_DEFAULTS::CUSTOM_HEADER_HEIGHT_PX ) ) . 'px'; ?>;
         }
 
         /* ----- Perspective Layer ------------------------------------------ */
 
-        div#designr-custom-header.parallax_layers .jparallax-layer.texture-layer,
-        div#designr-custom-header.parallax_layers .jparallax-layer.color-layer,
-        div#designr-custom-header.parallax_layers .jparallax-layer.image-layer {
+        div#buildr-custom-header.parallax_layers .jparallax-layer.texture-layer,
+        div#buildr-custom-header.parallax_layers .jparallax-layer.color-layer,
+        div#buildr-custom-header.parallax_layers .jparallax-layer.image-layer {
             width: 115vw;
             height: <?php echo get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_HEIGHT_CALC, BUILDR_DEFAULTS::CUSTOM_HEADER_HEIGHT_CALC ) == 'percent' ? intval( get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_HEIGHT_PCT, BUILDR_DEFAULTS::CUSTOM_HEADER_HEIGHT_PCT ) + 15 ) . 'vh' : intval( get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_HEIGHT_PX, BUILDR_DEFAULTS::CUSTOM_HEADER_HEIGHT_PX ) * 1.15 ) . 'px'; ?>;
             background-size: cover;
             background-position: 50%;
         }
 
-        div#designr-custom-header.parallax_layers .jparallax-layer.texture-layer {
+        div#buildr-custom-header.parallax_layers .jparallax-layer.texture-layer {
             opacity: <?php echo esc_attr( get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_TEXTURE_OPAC, BUILDR_DEFAULTS::CUSTOM_HEADER_TEXTURE_OPAC ) ); ?>;
         }
 
-        div#designr-custom-header.parallax_layers .jparallax-layer.color-layer {
+        div#buildr-custom-header.parallax_layers .jparallax-layer.color-layer {
             opacity: <?php echo esc_attr( get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_COLOR_LAYER_OPACITY, BUILDR_DEFAULTS::CUSTOM_HEADER_COLOR_LAYER_OPACITY ) ); ?>;
         }
 
-        div#designr-custom-header.designr_parallax div#custom-header-overlay.single,
-        div#designr-custom-header.parallax_layers .jparallax-layer.color-layer.single {
-            background: <?php echo esc_attr( designr_hex2rgba( $theme_colors['plx_overlay_single'], get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_COLOR_LAYER_OPACITY, BUILDR_DEFAULTS::CUSTOM_HEADER_COLOR_LAYER_OPACITY ) ) ); ?>;
+        div#buildr-custom-header.buildr_parallax div#custom-header-overlay.single,
+        div#buildr-custom-header.parallax_layers .jparallax-layer.color-layer.single {
+            background: <?php echo esc_attr( buildr_hex2rgba( $theme_colors['plx_overlay_single'], get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_COLOR_LAYER_OPACITY, BUILDR_DEFAULTS::CUSTOM_HEADER_COLOR_LAYER_OPACITY ) ) ); ?>;
         }
 
-        div#designr-custom-header.designr_parallax img.custom-logo,
-        div#designr-custom-header.parallax_layers .jparallax-layer.content-layer img.custom-logo {
+        div#buildr-custom-header.buildr_parallax img.custom-logo,
+        div#buildr-custom-header.parallax_layers .jparallax-layer.content-layer img.custom-logo {
             height: <?php echo intval( get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_LOGO_HEIGHT, BUILDR_DEFAULTS::CUSTOM_HEADER_LOGO_HEIGHT ) ); ?>px;
         }
 
@@ -734,20 +734,20 @@ function designr_wp_head_styles() { ?>
 
         @media (max-width: 991px) {
 
-            div#designr-custom-header.designr_parallax,
-            div#designr-custom-header.designr_parallax .util-tbl-wrap,
-            div#designr-custom-header.parallax_layers {
+            div#buildr-custom-header.buildr_parallax,
+            div#buildr-custom-header.buildr_parallax .util-tbl-wrap,
+            div#buildr-custom-header.parallax_layers {
                 height: <?php echo get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_HEIGHT_CALC, BUILDR_DEFAULTS::CUSTOM_HEADER_HEIGHT_CALC ) == 'percent' ? intval( get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_HEIGHT_PCT_MBL, BUILDR_DEFAULTS::CUSTOM_HEADER_HEIGHT_PCT_MBL ) ) . 'vh' : intval( get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_HEIGHT_PX_MBL, BUILDR_DEFAULTS::CUSTOM_HEADER_HEIGHT_PX_MBL ) ) . 'px'; ?>;
             }
 
-            div#designr-custom-header.parallax_layers .jparallax-layer.texture-layer,
-            div#designr-custom-header.parallax_layers .jparallax-layer.color-layer,
-            div#designr-custom-header.parallax_layers .jparallax-layer.image-layer {
+            div#buildr-custom-header.parallax_layers .jparallax-layer.texture-layer,
+            div#buildr-custom-header.parallax_layers .jparallax-layer.color-layer,
+            div#buildr-custom-header.parallax_layers .jparallax-layer.image-layer {
                 height: <?php echo get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_HEIGHT_CALC, BUILDR_DEFAULTS::CUSTOM_HEADER_HEIGHT_CALC ) == 'percent' ? intval( get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_HEIGHT_PCT_MBL, BUILDR_DEFAULTS::CUSTOM_HEADER_HEIGHT_PCT_MBL ) + 15 ) . 'vh' : intval( ( get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_HEIGHT_PX_MBL, BUILDR_DEFAULTS::CUSTOM_HEADER_HEIGHT_PX_MBL ) * 1.15 ) ) . 'px'; ?>;
             }
 
-            div#designr-custom-header.designr_parallax img.custom-logo,
-            div#designr-custom-header.parallax_layers .jparallax-layer.content-layer img.custom-logo {
+            div#buildr-custom-header.buildr_parallax img.custom-logo,
+            div#buildr-custom-header.parallax_layers .jparallax-layer.content-layer img.custom-logo {
                 height: <?php echo intval( get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_LOGO_HEIGHT_MBL, BUILDR_DEFAULTS::CUSTOM_HEADER_LOGO_HEIGHT_MBL ) ); ?>px;
             }
 
@@ -757,13 +757,13 @@ function designr_wp_head_styles() { ?>
         
         <?php if ( get_theme_mod( BUILDR_OPTIONS::NAVBAR_STYLE, BUILDR_DEFAULTS::NAVBAR_STYLE ) != 'banner' && get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_HEIGHT_CALC, BUILDR_DEFAULTS::CUSTOM_HEADER_HEIGHT_CALC ) == 'percent' && get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_HEIGHT_PCT, BUILDR_DEFAULTS::CUSTOM_HEADER_HEIGHT_PCT ) == 100 && get_theme_mod( 'custom_header_style_toggle', 'parallax_vertical' ) == 'parallax_vertical' ) : ?>
         
-            div#designr-custom-header.designr_parallax,
-            div#designr-custom-header.designr_parallax .util-tbl-wrap {
+            div#buildr-custom-header.buildr_parallax,
+            div#buildr-custom-header.buildr_parallax .util-tbl-wrap {
                 height: calc(100vh - <?php echo intval( get_theme_mod( BUILDR_OPTIONS::NAVBAR_INITIAL_HEIGHT, BUILDR_DEFAULTS::NAVBAR_INITIAL_HEIGHT ) - 1 ); ?>px);
             }
             
-            body.admin-bar div#designr-custom-header.designr_parallax,
-            body.admin-bar div#designr-custom-header.designr_parallax .util-tbl-wrap {
+            body.admin-bar div#buildr-custom-header.buildr_parallax,
+            body.admin-bar div#buildr-custom-header.buildr_parallax .util-tbl-wrap {
                 height: calc(100vh - <?php echo intval( get_theme_mod( BUILDR_OPTIONS::NAVBAR_INITIAL_HEIGHT, BUILDR_DEFAULTS::NAVBAR_INITIAL_HEIGHT ) - 1 + 32 ); ?>px);
             }
 
@@ -792,31 +792,31 @@ function designr_wp_head_styles() { ?>
 
         endswitch; ?>
 
-        div#designr-custom-header.designr_parallax div#custom-header-overlay.gradient,
-        div#designr-custom-header.parallax_layers .jparallax-layer.color-layer.gradient {
+        div#buildr-custom-header.buildr_parallax div#custom-header-overlay.gradient,
+        div#buildr-custom-header.parallax_layers .jparallax-layer.color-layer.gradient {
             <?php if ( get_theme_mod( BUILDR_OPTIONS::GRADIENT_STYLE, BUILDR_DEFAULTS::GRADIENT_STYLE ) == 'linear' ) : ?>
 
                 background: -moz-linear-gradient(<?php echo esc_attr( $linear_degrees ); ?>,
-                    <?php echo esc_attr( designr_hex2rgba( $theme_colors['plx_overlay_grad_start'], get_theme_mod( BUILDR_OPTIONS::GRADIENT_START_COLOR_OPACITY, BUILDR_DEFAULTS::GRADIENT_START_COLOR_OPACITY ) ) ); ?> 0%,
-                    <?php echo esc_attr( designr_hex2rgba( $theme_colors['plx_overlay_grad_end'], get_theme_mod( BUILDR_OPTIONS::GRADIENT_END_COLOR_OPACITY, BUILDR_DEFAULTS::GRADIENT_END_COLOR_OPACITY ) ) ); ?> 100%);
+                    <?php echo esc_attr( buildr_hex2rgba( $theme_colors['plx_overlay_grad_start'], get_theme_mod( BUILDR_OPTIONS::GRADIENT_START_COLOR_OPACITY, BUILDR_DEFAULTS::GRADIENT_START_COLOR_OPACITY ) ) ); ?> 0%,
+                    <?php echo esc_attr( buildr_hex2rgba( $theme_colors['plx_overlay_grad_end'], get_theme_mod( BUILDR_OPTIONS::GRADIENT_END_COLOR_OPACITY, BUILDR_DEFAULTS::GRADIENT_END_COLOR_OPACITY ) ) ); ?> 100%);
                 background: -webkit-linear-gradient(<?php echo esc_attr( $linear_degrees ); ?>,
-                    <?php echo esc_attr( designr_hex2rgba( $theme_colors['plx_overlay_grad_start'], get_theme_mod( BUILDR_OPTIONS::GRADIENT_START_COLOR_OPACITY, BUILDR_DEFAULTS::GRADIENT_START_COLOR_OPACITY ) ) ); ?> 0%,
-                    <?php echo esc_attr( designr_hex2rgba( $theme_colors['plx_overlay_grad_end'], get_theme_mod( BUILDR_OPTIONS::GRADIENT_END_COLOR_OPACITY, BUILDR_DEFAULTS::GRADIENT_END_COLOR_OPACITY ) ) ); ?> 100%);
+                    <?php echo esc_attr( buildr_hex2rgba( $theme_colors['plx_overlay_grad_start'], get_theme_mod( BUILDR_OPTIONS::GRADIENT_START_COLOR_OPACITY, BUILDR_DEFAULTS::GRADIENT_START_COLOR_OPACITY ) ) ); ?> 0%,
+                    <?php echo esc_attr( buildr_hex2rgba( $theme_colors['plx_overlay_grad_end'], get_theme_mod( BUILDR_OPTIONS::GRADIENT_END_COLOR_OPACITY, BUILDR_DEFAULTS::GRADIENT_END_COLOR_OPACITY ) ) ); ?> 100%);
                 background: linear-gradient(<?php echo esc_attr( $linear_degrees ); ?>,
-                    <?php echo esc_attr( designr_hex2rgba( $theme_colors['plx_overlay_grad_start'], get_theme_mod( BUILDR_OPTIONS::GRADIENT_START_COLOR_OPACITY, BUILDR_DEFAULTS::GRADIENT_START_COLOR_OPACITY ) ) ); ?> 0%,
-                    <?php echo esc_attr( designr_hex2rgba( $theme_colors['plx_overlay_grad_end'], get_theme_mod( BUILDR_OPTIONS::GRADIENT_END_COLOR_OPACITY, BUILDR_DEFAULTS::GRADIENT_END_COLOR_OPACITY ) ) ); ?> 100%);
+                    <?php echo esc_attr( buildr_hex2rgba( $theme_colors['plx_overlay_grad_start'], get_theme_mod( BUILDR_OPTIONS::GRADIENT_START_COLOR_OPACITY, BUILDR_DEFAULTS::GRADIENT_START_COLOR_OPACITY ) ) ); ?> 0%,
+                    <?php echo esc_attr( buildr_hex2rgba( $theme_colors['plx_overlay_grad_end'], get_theme_mod( BUILDR_OPTIONS::GRADIENT_END_COLOR_OPACITY, BUILDR_DEFAULTS::GRADIENT_END_COLOR_OPACITY ) ) ); ?> 100%);
 
             <?php else : ?>
 
                 background: -moz-radial-gradient(center, ellipse cover,
-                    <?php echo esc_attr( designr_hex2rgba( $theme_colors['plx_overlay_grad_start'], get_theme_mod( BUILDR_OPTIONS::GRADIENT_START_COLOR_OPACITY, BUILDR_DEFAULTS::GRADIENT_START_COLOR_OPACITY ) ) ); ?> 0%,
-                    <?php echo esc_attr( designr_hex2rgba( $theme_colors['plx_overlay_grad_end'], get_theme_mod( BUILDR_OPTIONS::GRADIENT_END_COLOR_OPACITY, BUILDR_DEFAULTS::GRADIENT_END_COLOR_OPACITY ) ) ); ?> 100%);
+                    <?php echo esc_attr( buildr_hex2rgba( $theme_colors['plx_overlay_grad_start'], get_theme_mod( BUILDR_OPTIONS::GRADIENT_START_COLOR_OPACITY, BUILDR_DEFAULTS::GRADIENT_START_COLOR_OPACITY ) ) ); ?> 0%,
+                    <?php echo esc_attr( buildr_hex2rgba( $theme_colors['plx_overlay_grad_end'], get_theme_mod( BUILDR_OPTIONS::GRADIENT_END_COLOR_OPACITY, BUILDR_DEFAULTS::GRADIENT_END_COLOR_OPACITY ) ) ); ?> 100%);
                 background: -webkit-radial-gradient(center, ellipse cover,
-                    <?php echo esc_attr( designr_hex2rgba( $theme_colors['plx_overlay_grad_start'], get_theme_mod( BUILDR_OPTIONS::GRADIENT_START_COLOR_OPACITY, BUILDR_DEFAULTS::GRADIENT_START_COLOR_OPACITY ) ) ); ?> 0%,
-                    <?php echo esc_attr( designr_hex2rgba( $theme_colors['plx_overlay_grad_end'], get_theme_mod( BUILDR_OPTIONS::GRADIENT_END_COLOR_OPACITY, BUILDR_DEFAULTS::GRADIENT_END_COLOR_OPACITY ) ) ); ?> 100%);
+                    <?php echo esc_attr( buildr_hex2rgba( $theme_colors['plx_overlay_grad_start'], get_theme_mod( BUILDR_OPTIONS::GRADIENT_START_COLOR_OPACITY, BUILDR_DEFAULTS::GRADIENT_START_COLOR_OPACITY ) ) ); ?> 0%,
+                    <?php echo esc_attr( buildr_hex2rgba( $theme_colors['plx_overlay_grad_end'], get_theme_mod( BUILDR_OPTIONS::GRADIENT_END_COLOR_OPACITY, BUILDR_DEFAULTS::GRADIENT_END_COLOR_OPACITY ) ) ); ?> 100%);
                 background: radial-gradient(center, ellipse cover,
-                    <?php echo esc_attr( designr_hex2rgba( $theme_colors['plx_overlay_grad_start'], get_theme_mod( BUILDR_OPTIONS::GRADIENT_START_COLOR_OPACITY, BUILDR_DEFAULTS::GRADIENT_START_COLOR_OPACITY ) ) ); ?> 0%,
-                    <?php echo esc_attr( designr_hex2rgba( $theme_colors['plx_overlay_grad_end'], get_theme_mod( BUILDR_OPTIONS::GRADIENT_END_COLOR_OPACITY, BUILDR_DEFAULTS::GRADIENT_END_COLOR_OPACITY ) ) ); ?> 100%);
+                    <?php echo esc_attr( buildr_hex2rgba( $theme_colors['plx_overlay_grad_start'], get_theme_mod( BUILDR_OPTIONS::GRADIENT_START_COLOR_OPACITY, BUILDR_DEFAULTS::GRADIENT_START_COLOR_OPACITY ) ) ); ?> 0%,
+                    <?php echo esc_attr( buildr_hex2rgba( $theme_colors['plx_overlay_grad_end'], get_theme_mod( BUILDR_OPTIONS::GRADIENT_END_COLOR_OPACITY, BUILDR_DEFAULTS::GRADIENT_END_COLOR_OPACITY ) ) ); ?> 100%);
 
             <?php endif; ?>
             opacity: <?php echo esc_attr( get_theme_mod( BUILDR_OPTIONS::GRADIENT_OVERALL_OPACITY, BUILDR_DEFAULTS::GRADIENT_OVERALL_OPACITY ) ); ?>;
@@ -845,7 +845,7 @@ function designr_wp_head_styles() { ?>
         }
 
         <?php if ( ! get_theme_mod( BUILDR_OPTIONS::FOOTER_SHOW_BRANDING, BUILDR_DEFAULTS::FOOTER_SHOW_BRANDING ) && ! get_theme_mod( BUILDR_OPTIONS::FOOTER_SHOW_COPYRIGHT, BUILDR_DEFAULTS::FOOTER_SHOW_COPYRIGHT ) ) : ?>
-            footer span.designr_by {
+            footer span.buildr_by {
                 padding-left: 0;
                 border-left: none;
             }
@@ -853,7 +853,7 @@ function designr_wp_head_styles() { ?>
         
         <?php if ( get_theme_mod( BUILDR_OPTIONS::FOOTER_SHOW_BRANDING, BUILDR_DEFAULTS::FOOTER_SHOW_BRANDING ) && ! get_theme_mod( BUILDR_OPTIONS::FOOTER_SHOW_COPYRIGHT, BUILDR_DEFAULTS::FOOTER_SHOW_COPYRIGHT ) ) : ?>
         
-            footer span.designr_by {
+            footer span.buildr_by {
                 margin-left: 15px;
             }
         
@@ -884,4 +884,4 @@ function designr_wp_head_styles() { ?>
 
 <?php
 }
-add_action( 'wp_head', 'designr_wp_head_styles' );
+add_action( 'wp_head', 'buildr_wp_head_styles' );

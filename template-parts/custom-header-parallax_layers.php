@@ -1,6 +1,6 @@
 <?php $header_image = get_header_image(); ?>
     
-<div id="designr-custom-header" class="parallax_layers jparallax-viewport">
+<div id="buildr-custom-header" class="parallax_layers jparallax-viewport">
 
     <div class="jparallax-layer image-layer" style="background-image: url(<?php echo esc_url( $header_image ); ?>);">
     </div>

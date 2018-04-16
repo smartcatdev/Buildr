@@ -21,8 +21,8 @@
             ?>
             <div class="entry-meta">
                 <?php
-                designr_posted_on();
-                designr_posted_by();
+                buildr_posted_on();
+                buildr_posted_by();
                 ?>
             </div><!-- .entry-meta -->
         <?php endif;
@@ -50,7 +50,7 @@
     </div><!-- .entry-content -->
 
     <footer class="entry-footer">
-        <?php designr_entry_footer(); ?>
+        <?php buildr_entry_footer(); ?>
     </footer><!-- .entry-footer -->
     
     <?php 
