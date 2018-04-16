@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Designr
+ * @package Buildr
  */
 get_header(); ?>
 
@@ -38,7 +38,7 @@ get_header(); ?>
                 <?php endif; ?>
 
                 <?php 
-                switch ( get_theme_mod( DESIGNR_OPTIONS::BLOG_LAYOUT_STYLE, DESIGNR_DEFAULTS::BLOG_LAYOUT_STYLE ) ) :
+                switch ( get_theme_mod( BUILDR_OPTIONS::BLOG_LAYOUT_STYLE, BUILDR_DEFAULTS::BLOG_LAYOUT_STYLE ) ) :
 
                     case 'blog_masonry' :
                         do_action( 'blog_masonry_wrap_open');
@@ -63,14 +63,13 @@ get_header(); ?>
                          * If you want to override this in a child theme, then include a file
                          * called content-___.php (where ___ is the Post Format name) and that will be used instead.
                          */
-                        get_template_part( 'template-parts/content', get_theme_mod( DESIGNR_OPTIONS::BLOG_LAYOUT_STYLE, DESIGNR_DEFAULTS::BLOG_LAYOUT_STYLE ) );
+                        get_template_part( 'template-parts/content', get_theme_mod( BUILDR_OPTIONS::BLOG_LAYOUT_STYLE, BUILDR_DEFAULTS::BLOG_LAYOUT_STYLE ) );
 
                     endwhile;
                     ?>
 
-
                 <?php 
-                switch ( get_theme_mod( DESIGNR_OPTIONS::BLOG_LAYOUT_STYLE, DESIGNR_DEFAULTS::BLOG_LAYOUT_STYLE ) ) :
+                switch ( get_theme_mod( BUILDR_OPTIONS::BLOG_LAYOUT_STYLE, BUILDR_DEFAULTS::BLOG_LAYOUT_STYLE ) ) :
 
                     case 'blog_masonry' :
                         do_action( 'blog_masonry_wrap_close');

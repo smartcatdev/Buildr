@@ -1,20 +1,20 @@
 <?php
 
-interface DESIGNR_OPTIONS {
+interface BUILDR_OPTIONS {
     
     const   CUSTOM_HEADER_STYLE_TOGGLE              = 'custom_header_style_toggle',
-            CUSTOM_HEADER_HEIGHT_CALC               = 'designr_custom_header_height_unit',
-            CUSTOM_HEADER_HEIGHT_PCT                = 'designr_custom_header_height_percent',
-            CUSTOM_HEADER_HEIGHT_PCT_MBL            = 'designr_custom_header_height_percent_mbl',
-            CUSTOM_HEADER_HEIGHT_PX                 = 'designr_custom_header_height_pixels',
-            CUSTOM_HEADER_HEIGHT_PX_MBL             = 'designr_custom_header_height_pixels_mbl',
+            CUSTOM_HEADER_HEIGHT_CALC               = 'buildr_custom_header_height_unit',
+            CUSTOM_HEADER_HEIGHT_PCT                = 'buildr_custom_header_height_percent',
+            CUSTOM_HEADER_HEIGHT_PCT_MBL            = 'buildr_custom_header_height_percent_mbl',
+            CUSTOM_HEADER_HEIGHT_PX                 = 'buildr_custom_header_height_pixels',
+            CUSTOM_HEADER_HEIGHT_PX_MBL             = 'buildr_custom_header_height_pixels_mbl',
             CUSTOM_HEADER_PLX_INTENSITY             = 'parallax_layers_parallax_style',
             CUSTOM_HEADER_TEXTURE_IMG               = 'parallax_layers_texture_pattern',
             CUSTOM_HEADER_TEXTURE_OPAC              = 'parallax_layers_texture_layer_opacity',
             
             CUSTOM_HEADER_SHOW_LOGO                 = 'custom_header_show_logo',
-            CUSTOM_HEADER_LOGO_HEIGHT               = 'designr_custom_header_logo_height',
-            CUSTOM_HEADER_LOGO_HEIGHT_MBL           = 'designr_custom_header_logo_height_mbl',
+            CUSTOM_HEADER_LOGO_HEIGHT               = 'buildr_custom_header_logo_height',
+            CUSTOM_HEADER_LOGO_HEIGHT_MBL           = 'buildr_custom_header_logo_height_mbl',
             
             CUSTOM_HEADER_SHOW_TITLE                = 'custom_header_show_heading',
             CUSTOM_HEADER_TITLE_CONTENT             = 'custom_header_title_content',
@@ -90,6 +90,7 @@ interface DESIGNR_OPTIONS {
             NAVBAR_TRANSPARENT_MENU_BG              = 'navbar_banner_transparent_menu_toggle',
             NAVBAR_BRANDING_ALIGNMENT               = 'navbar_banner_logo_alignment',
             NAVBAR_MENU_ALIGNMENT                   = 'navbar_banner_menu_alignment',
+            NAVBAR_BRANDING_WHAT_TO_SHOW            = 'navbar_branding_what_to_show',
             NAVBAR_BRANDING_SPACE_TOP_DSK           = 'navbar_banner_logo_top_spacing',
             NAVBAR_BRANDING_SPACE_BOTTOM_DSK        = 'navbar_banner_logo_bottom_spacing',
             NAVBAR_BRANDING_SPACE_TOP_MBL           = 'navbar_banner_logo_top_spacing_mbl',
@@ -136,7 +137,6 @@ interface DESIGNR_OPTIONS {
             WIDGETS_TITLE_FONT_LETTER_GAP           = 'prefooter_widget_title_letter_spacing',
             WIDGETS_TITLE_ALL_CAPS                  = 'prefooter_widget_title_uppercase',
             
-            FOOTER_STYLE                            = 'footer_style',
             FOOTER_BOXED_CONTENT                    = 'boxed_footer',
             FOOTER_CENTER_BRANDING                  = 'centered_footer_branding',
             FOOTER_SHOW_SOCIAL                      = 'footer_show_social',
@@ -145,7 +145,7 @@ interface DESIGNR_OPTIONS {
             FOOTER_COPYRIGHT_TAGLINE                = 'footer_copyright_tagline',
             FOOTER_BRANDING_TYPE                    = 'footer_branding',
             FOOTER_ALTERNATE_LOGO                   = 'alternate_logo',
-            FOOTER_ALTERNATE_LOGO_HEIGHT            = 'designr_footer_logo_height',
+            FOOTER_ALTERNATE_LOGO_HEIGHT            = 'buildr_footer_logo_height',
             FOOTER_SITE_TITLE_FONT_SIZE             = 'footer_site_title_font_size',
             FOOTER_SITE_TITLE_ALL_CAPS              = 'footer_site_title_uppercase',
             FOOTER_COPYRIGHT_TAGLINE_FONT_SIZE      = 'footer_copyright_font_size',
@@ -165,16 +165,17 @@ interface DESIGNR_OPTIONS {
             WOO_SLIDE_CART_TAB_ICON                 = 'cart_drawer_tab_icon',
             WOO_SLIDE_CART_TAB_POSITION             = 'cart_drawer_tab_location',
             
-            HOMEPAGE_SHOW_CONTENT                   = 'homepage_show_content_toggle';
+            HOMEPAGE_SHOW_CONTENT                   = 'homepage_show_content_toggle',
+            SINGLE_POST_SHOW_NAVIGATION             = 'show_single_post_navigation';
 
 }
 
-interface DESIGNR_DEFAULTS {
+interface BUILDR_DEFAULTS {
     
     const   CUSTOM_HEADER_STYLE_TOGGLE              = 'parallax_vertical',
             CUSTOM_HEADER_HEIGHT_CALC               = 'percent',
-            CUSTOM_HEADER_HEIGHT_PCT                = 50,
-            CUSTOM_HEADER_HEIGHT_PCT_MBL            = 25,
+            CUSTOM_HEADER_HEIGHT_PCT                = 55,
+            CUSTOM_HEADER_HEIGHT_PCT_MBL            = 35,
             CUSTOM_HEADER_HEIGHT_PX                 = 500,
             CUSTOM_HEADER_HEIGHT_PX_MBL             = 250,
             CUSTOM_HEADER_PLX_INTENSITY             = 'default',
@@ -199,26 +200,26 @@ interface DESIGNR_DEFAULTS {
             CUSTOM_HEADER_MENU_LETTER_GAP           = '.500',
             CUSTOM_HEADER_MENU_COLOR                = '#ffffff',
             CUSTOM_HEADER_MENU_LINKS_GAP            = 16,
-            CUSTOM_HEADER_COLOR_LAYER_STYLE         = 'no',
-            CUSTOM_HEADER_COLOR_LAYER_COLOR         = '#348aa7',
-            CUSTOM_HEADER_COLOR_LAYER_OPACITY       = .75,
+            CUSTOM_HEADER_COLOR_LAYER_STYLE         = 'single',
+            CUSTOM_HEADER_COLOR_LAYER_COLOR         = '#000000',
+            CUSTOM_HEADER_COLOR_LAYER_OPACITY       = .5,
             
-            CUSTOM_HEADER_SHOW_ON_POSTS             = false,
+            CUSTOM_HEADER_SHOW_ON_POSTS             = true,
             CUSTOM_HEADER_SHOW_ON_PAGES             = false,
             CUSTOM_HEADER_SHOW_ON_FRONT             = true,
-            CUSTOM_HEADER_SHOW_ON_BLOG              = false,
-            CUSTOM_HEADER_SHOW_ON_ARCHIVE           = false,
+            CUSTOM_HEADER_SHOW_ON_BLOG              = true,
+            CUSTOM_HEADER_SHOW_ON_ARCHIVE           = true,
             CUSTOM_HEADER_SHOW_ON_SHOP              = false,
             
             GRADIENT_STYLE                          = 'linear',
-            GRADIENT_OVERALL_OPACITY                = .75,
+            GRADIENT_OVERALL_OPACITY                = 1,
             GRADIENT_LINEAR_DIRECTION               = 'up',
-            GRADIENT_START_COLOR                    = '#348aa7',
-            GRADIENT_START_COLOR_OPACITY            = .75,
+            GRADIENT_START_COLOR                    = '#136986',
+            GRADIENT_START_COLOR_OPACITY            = .85,
             GRADIENT_END_COLOR                      = '#348aa7',
             GRADIENT_END_COLOR_OPACITY              = .25,
             
-            BLOG_LAYOUT_STYLE                       = 'blog_standard',
+            BLOG_LAYOUT_STYLE                       = 'blog_masonry',
             BLOG_SHOW_DATE                          = true,
             BLOG_SHOW_AUTHOR                        = true,
             BLOG_SHOW_CONTENT                       = true,
@@ -252,18 +253,19 @@ interface DESIGNR_DEFAULTS {
             NAVBAR_LOGO_HORIZONTAL_PADDING          = 15,
             NAVBAR_LOGO_HEIGHT_DSK                  = 60,
             NAVBAR_LOGO_HEIGHT_MBL                  = 50,
-            NAVBAR_INITIAL_HEIGHT                   = 50,
-            NAVBAR_STICKY_HEIGHT                    = 75,
+            NAVBAR_INITIAL_HEIGHT                   = 75,
+            NAVBAR_STICKY_HEIGHT                    = 50,
             NAVBAR_RIGHT_ALIGN_MENU                 = false,
             NAVBAR_BOXED_CONTENT                    = false,
             NAVBAR_TRANSPARENT_MENU_BG              = true,
             NAVBAR_BRANDING_ALIGNMENT               = 'left',
             NAVBAR_MENU_ALIGNMENT                   = 'left',
+            NAVBAR_BRANDING_WHAT_TO_SHOW            = 'title_tagline',
             NAVBAR_BRANDING_SPACE_TOP_DSK           = 60,
             NAVBAR_BRANDING_SPACE_BOTTOM_DSK        = 20,
             NAVBAR_BRANDING_SPACE_TOP_MBL           = 30,
             NAVBAR_BRANDING_SPACE_BOTTOM_MBL        = 15,
-            NAVBAR_FINAL_LINK_ACCENT                = true,
+            NAVBAR_FINAL_LINK_ACCENT                = false,
             
             NAVBAR_SHOW_SOCIAL                      = false,
             SOCIAL_URL_1                            = '',
@@ -298,20 +300,19 @@ interface DESIGNR_DEFAULTS {
             FONT_H1_FONT_SIZE                       = 44,
             FONT_H1_FONT_SIZE_MBL                   = 26,
             
-            FOOTER_NUM_WIDGET_COLS                  = 4,
+            FOOTER_NUM_WIDGET_COLS                  = 3,
             FOOTER_BORDER_TOP_THICKNESS             = 10,
             WIDGETS_TITLE_FONT_FAMILY               = 'secondary',
             WIDGETS_TITLE_FONT_SIZE                 = 24,
             WIDGETS_TITLE_FONT_LETTER_GAP           = '.250',
             WIDGETS_TITLE_ALL_CAPS                  = true,
             
-            FOOTER_STYLE                            = 'default',
             FOOTER_BOXED_CONTENT                    = false,
             FOOTER_CENTER_BRANDING                  = false,
             FOOTER_SHOW_SOCIAL                      = false,
             FOOTER_SHOW_BRANDING                    = true,
             FOOTER_SHOW_COPYRIGHT                   = true,
-            FOOTER_COPYRIGHT_TAGLINE                = 'Copyright © 2018 Your Company',
+            FOOTER_COPYRIGHT_TAGLINE                = '2018 Your Company',
             FOOTER_BRANDING_TYPE                    = 'site_title',
             FOOTER_ALTERNATE_LOGO                   = '',
             FOOTER_ALTERNATE_LOGO_HEIGHT            = 30,
@@ -334,6 +335,7 @@ interface DESIGNR_DEFAULTS {
             WOO_SLIDE_CART_TAB_ICON                 = 'fa-shopping-cart',
             WOO_SLIDE_CART_TAB_POSITION             = 'bottom',
 
-            HOMEPAGE_SHOW_CONTENT                   = true;
-            
+            HOMEPAGE_SHOW_CONTENT                   = true,
+            SINGLE_POST_SHOW_NAVIGATION             = true;
+    
 }

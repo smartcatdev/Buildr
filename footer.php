@@ -6,14 +6,14 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Designr
+ * @package Buildr
  */
 
 ?>
 
 	</div><!-- #content -->
 
-	<?php get_template_part( 'template-parts/footer', get_theme_mod( DESIGNR_OPTIONS::FOOTER_STYLE, DESIGNR_DEFAULTS::FOOTER_STYLE ) ); ?>
+	<?php get_template_part( 'template-parts/footer', 'slim' ); ?>
 
 </div><!-- #page -->
 

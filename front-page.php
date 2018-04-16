@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Designr
+ * @package Buildr
  */
 
 get_header(); ?>
@@ -30,7 +30,7 @@ get_header(); ?>
                 <?php if ( get_option( 'show_on_front' ) == 'posts' ) : ?>
 
                     <?php 
-                    switch ( get_theme_mod( DESIGNR_OPTIONS::BLOG_LAYOUT_STYLE, DESIGNR_DEFAULTS::BLOG_LAYOUT_STYLE ) ) :
+                    switch ( get_theme_mod( BUILDR_OPTIONS::BLOG_LAYOUT_STYLE, BUILDR_DEFAULTS::BLOG_LAYOUT_STYLE ) ) :
 
                         case 'blog_masonry' :
                             do_action( 'blog_masonry_wrap_open');
@@ -49,17 +49,13 @@ get_header(); ?>
                         <?php
                         while ( have_posts() ) : the_post();
 
-                            get_template_part( 'template-parts/content', get_theme_mod( DESIGNR_OPTIONS::BLOG_LAYOUT_STYLE, DESIGNR_DEFAULTS::BLOG_LAYOUT_STYLE ) );
+                            get_template_part( 'template-parts/content', get_theme_mod( BUILDR_OPTIONS::BLOG_LAYOUT_STYLE, BUILDR_DEFAULTS::BLOG_LAYOUT_STYLE ) );
 
                         endwhile;
                         ?>
 
-                        <div class="pagination-links">
-                            <?php echo the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
-                        </div>
-
                     <?php 
-                    switch ( get_theme_mod( DESIGNR_OPTIONS::BLOG_LAYOUT_STYLE, DESIGNR_DEFAULTS::BLOG_LAYOUT_STYLE ) ) :
+                    switch ( get_theme_mod( BUILDR_OPTIONS::BLOG_LAYOUT_STYLE, BUILDR_DEFAULTS::BLOG_LAYOUT_STYLE ) ) :
 
                         case 'blog_masonry' :
                             do_action( 'blog_masonry_wrap_close');

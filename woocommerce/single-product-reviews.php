@@ -31,9 +31,9 @@ if ( ! comments_open() ) {
 		<h2 class="woocommerce-Reviews-title"><?php
 			if ( get_option( 'woocommerce_enable_review_rating' ) === 'yes' && ( $count = $product->get_review_count() ) ) {
 				/* translators: 1: reviews count 2: product name */
-				printf( esc_html( _n( '%1$s review for %2$s', '%1$s reviews for %2$s', $count, 'designr' ) ), esc_html( $count ), '<span>' . get_the_title() . '</span>' );
+				printf( esc_html( _n( '%1$s review for %2$s', '%1$s reviews for %2$s', $count, 'buildr' ) ), esc_html( $count ), '<span>' . get_the_title() . '</span>' );
 			} else {
-				_e( 'Reviews', 'designr' );
+				_e( 'Reviews', 'buildr' );
 			}
 		?></h2>
 
@@ -57,7 +57,7 @@ if ( ! comments_open() ) {
 
 		<?php else : ?>
 
-			<p class="woocommerce-noreviews"><?php _e( 'There are no reviews yet.', 'designr' ); ?></p>
+			<p class="woocommerce-noreviews"><?php _e( 'There are no reviews yet.', 'buildr' ); ?></p>
 
 		<?php endif; ?>
 	</div>
@@ -70,38 +70,38 @@ if ( ! comments_open() ) {
 					$commenter = wp_get_current_commenter();
 
 					$comment_form = array(
-						'title_reply'          => have_comments() ? __( 'Add a review', 'designr' ) : sprintf( __( 'Be the first to review &ldquo;%s&rdquo;', 'designr' ), get_the_title() ),
-						'title_reply_to'       => __( 'Leave a Reply to %s', 'designr' ),
+						'title_reply'          => have_comments() ? __( 'Add a review', 'buildr' ) : sprintf( __( 'Be the first to review &ldquo;%s&rdquo;', 'buildr' ), get_the_title() ),
+						'title_reply_to'       => __( 'Leave a Reply to %s', 'buildr' ),
 						'title_reply_before'   => '<span id="reply-title" class="comment-reply-title">',
 						'title_reply_after'    => '</span>',
 						'comment_notes_after'  => '',
 						'fields'               => array(
-							'author' => '<p class="comment-form-author">' . '<label for="author">' . esc_html__( 'Name', 'designr' ) . ' <span class="required">*</span></label> ' .
+							'author' => '<p class="comment-form-author">' . '<label for="author">' . esc_html__( 'Name', 'buildr' ) . ' <span class="required">*</span></label> ' .
 										'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" aria-required="true" required /></p>',
-							'email'  => '<p class="comment-form-email"><label for="email">' . esc_html__( 'Email', 'designr' ) . ' <span class="required">*</span></label> ' .
+							'email'  => '<p class="comment-form-email"><label for="email">' . esc_html__( 'Email', 'buildr' ) . ' <span class="required">*</span></label> ' .
 										'<input id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" aria-required="true" required /></p>',
 						),
-						'label_submit'  => __( 'Submit', 'designr' ),
+						'label_submit'  => __( 'Submit', 'buildr' ),
 						'logged_in_as'  => '',
 						'comment_field' => '',
 					);
 
 					if ( $account_page_url = wc_get_page_permalink( 'myaccount' ) ) {
-						$comment_form['must_log_in'] = '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a review.', 'designr' ), esc_url( $account_page_url ) ) . '</p>';
+						$comment_form['must_log_in'] = '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a review.', 'buildr' ), esc_url( $account_page_url ) ) . '</p>';
 					}
 
 					if ( get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
-						$comment_form['comment_field'] = '<div class="comment-form-rating"><label for="rating">' . esc_html__( 'Your rating', 'designr' ) . '</label><select name="rating" id="rating" aria-required="true" required>
-							<option value="">' . esc_html__( 'Rate&hellip;', 'designr' ) . '</option>
-							<option value="5">' . esc_html__( 'Perfect', 'designr' ) . '</option>
-							<option value="4">' . esc_html__( 'Good', 'designr' ) . '</option>
-							<option value="3">' . esc_html__( 'Average', 'designr' ) . '</option>
-							<option value="2">' . esc_html__( 'Not that bad', 'designr' ) . '</option>
-							<option value="1">' . esc_html__( 'Very poor', 'designr' ) . '</option>
+						$comment_form['comment_field'] = '<div class="comment-form-rating"><label for="rating">' . esc_html__( 'Your rating', 'buildr' ) . '</label><select name="rating" id="rating" aria-required="true" required>
+							<option value="">' . esc_html__( 'Rate&hellip;', 'buildr' ) . '</option>
+							<option value="5">' . esc_html__( 'Perfect', 'buildr' ) . '</option>
+							<option value="4">' . esc_html__( 'Good', 'buildr' ) . '</option>
+							<option value="3">' . esc_html__( 'Average', 'buildr' ) . '</option>
+							<option value="2">' . esc_html__( 'Not that bad', 'buildr' ) . '</option>
+							<option value="1">' . esc_html__( 'Very poor', 'buildr' ) . '</option>
 						</select></div>';
 					}
 
-					$comment_form['comment_field'] .= '<p class="comment-form-comment"><label for="comment">' . esc_html__( 'Your review', 'designr' ) . ' <span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required></textarea></p>';
+					$comment_form['comment_field'] .= '<p class="comment-form-comment"><label for="comment">' . esc_html__( 'Your review', 'buildr' ) . ' <span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required></textarea></p>';
 
 					comment_form( apply_filters( 'woocommerce_product_review_comment_form_args', $comment_form ) );
 				?>
@@ -110,7 +110,7 @@ if ( ! comments_open() ) {
 
 	<?php else : ?>
 
-		<p class="woocommerce-verification-required"><?php _e( 'Only logged in customers who have purchased this product may leave a review.', 'designr' ); ?></p>
+		<p class="woocommerce-verification-required"><?php _e( 'Only logged in customers who have purchased this product may leave a review.', 'buildr' ); ?></p>
 
 	<?php endif; ?>
 

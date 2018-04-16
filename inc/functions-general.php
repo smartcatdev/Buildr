@@ -2,16 +2,16 @@
 
 
 // Adds custom classes to the array of body classes.
-add_filter( 'body_class', 'designr_body_classes' );
+add_filter( 'body_class', 'buildr_body_classes' );
 
 // Add a pingback url auto-discovery header for singularly identifiable articles.
-add_action( 'wp_head', 'designr_pingback_header' );
+add_action( 'wp_head', 'buildr_pingback_header' );
 
 // Set up theme defaults and register various theme support
-add_action( 'after_setup_theme', 'designr_setup' );
+add_action( 'after_setup_theme', 'buildr_setup' );
 
-// Define content width
-add_action( 'after_setup_theme', 'designr_content_width', 0 );
+// Create theme page in dashboard
+add_action('admin_menu', 'buildr_create_theme_menu' );
 
 /**
  * Adds custom classes to the array of body classes.
@@ -19,7 +19,7 @@ add_action( 'after_setup_theme', 'designr_content_width', 0 );
  * @param array $classes Classes for the body element.
  * @return array
  */
-function designr_body_classes( $classes ) {
+function buildr_body_classes( $classes ) {
     // Adds a class of hfeed to non-singular pages.
     if ( !is_singular() ) {
         $classes[] = 'hfeed';
@@ -32,7 +32,7 @@ function designr_body_classes( $classes ) {
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
-function designr_pingback_header() {
+function buildr_pingback_header() {
     if ( is_singular() && pings_open() ) {
         echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
     }
@@ -40,13 +40,13 @@ function designr_pingback_header() {
 
 
 /**
- * Designr functions and definitions
+ * Buildr functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Designr
+ * @package Buildr
  */
-if ( !function_exists( 'designr_setup' ) ) :
+if ( !function_exists( 'buildr_setup' ) ) :
 
     /**
      * Sets up theme defaults and registers support for various WordPress features.
@@ -55,19 +55,19 @@ if ( !function_exists( 'designr_setup' ) ) :
      * runs before the init hook. The init hook is too late for some features, such
      * as indicating support for post thumbnails.
      */
-    function designr_setup() {
+    function buildr_setup() {
     
-        if( !defined( 'DESIGNR_VERSION' ) ) :
-            define( 'DESIGNR_VERSION', '1.0.0' );
+        if( !defined( 'BUILDR_VERSION' ) ) :
+            define( 'BUILDR_VERSION', '1.0.0' );
         endif;
         
         /*
          * Make theme available for translation.
          * Translations can be filed in the /languages/ directory.
-         * If you're building a theme based on Designr, use a find and replace
-         * to change 'designr' to the name of your theme in all the template files.
+         * If you're building a theme based on Buildr, use a find and replace
+         * to change 'buildr' to the name of your theme in all the template files.
          */
-        load_theme_textdomain( 'designr', get_template_directory() . '/languages' );
+        load_theme_textdomain( 'buildr', get_template_directory() . '/languages' );
 
         // Add default posts and comments RSS feed links to head.
         add_theme_support( 'automatic-feed-links' );
@@ -89,13 +89,13 @@ if ( !function_exists( 'designr_setup' ) ) :
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus( array(
-            'primary-menu'              => esc_html__( 'Primary', 'designr' ),
-            'banner-primary'            => esc_html__( 'Navbar: Banner - Primary', 'designr' ),
-            'slim-primary'              => esc_html__( 'Navbar: Slim - Primary', 'designr' ),
-            'split-primary-left'        => esc_html__( 'Navbar: Split - Left', 'designr' ),
-            'split-primary-right'       => esc_html__( 'Navbar: Split - Right', 'designr' ),
-            'mobile-menu'               => esc_html__( 'Mobile', 'designr' ),
-            'custom-header'             => esc_html__( 'Custom Header', 'designr' ),
+            'primary-menu'              => esc_html__( 'Primary', 'buildr' ),
+            'banner-primary'            => esc_html__( 'Navbar: Banner - Primary', 'buildr' ),
+            'slim-primary'              => esc_html__( 'Navbar: Slim - Primary', 'buildr' ),
+            'split-primary-left'        => esc_html__( 'Navbar: Split - Left', 'buildr' ),
+            'split-primary-right'       => esc_html__( 'Navbar: Split - Right', 'buildr' ),
+            'mobile-menu'               => esc_html__( 'Mobile', 'buildr' ),
+            'custom-header'             => esc_html__( 'Custom Header', 'buildr' ),
         ) );
 
         /*
@@ -122,7 +122,6 @@ if ( !function_exists( 'designr_setup' ) ) :
             'flex-height' => true,
         ) );
         
-        add_theme_support( 'customize-selective-refresh-widgets' );
     }
 
 endif;
@@ -131,10 +130,22 @@ endif;
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
- * Priority 0 to make it available to lower priority callbacks.
- *
  * @global int $content_width
  */
-function designr_content_width() {
-    $GLOBALS[ 'content_width' ] = apply_filters( 'designr_content_width', 1170 );
+if ( ! isset( $content_width ) ) {
+    $content_width = 1170;
+}
+
+function buildr_create_theme_menu() {
+    add_theme_page( __( 'Theme Docs', 'buildr' ), __( 'Theme Docs', 'buildr' ), 'edit_theme_options', 'buildr-theme-info', function() {
+        include_once get_template_directory() . '/admin/buildr-menu.php';
+    });
+}
+
+function buildr_theme_path( $path = null ) {
+    return trailingslashit( get_template_directory() ) . $path;
+}
+
+function buildr_theme_url( $url = null ) {
+    return trailingslashit( get_template_directory_uri() ) . $path;
 }

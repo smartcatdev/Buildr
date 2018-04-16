@@ -32,7 +32,7 @@ if ( $related_products ) : ?>
     
                     <section class="related products">
 
-                        <h2><?php esc_html_e( 'Related products', 'designr' ); ?></h2>
+                        <h2><?php esc_html_e( 'Related products', 'buildr' ); ?></h2>
 
                         <span class="small-divider dark"></span>
 

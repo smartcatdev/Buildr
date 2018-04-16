@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package Designr
+ * @package Buildr
  */
 get_header(); ?>
 
@@ -26,7 +26,7 @@ get_header(); ?>
             
                 <div class="row">
                 
-                    <div class="col-sm-12">
+                    <div class="col-sm-10 col-md-10 col-lg-9">
             
                         <?php
                         while ( have_posts() ) : the_post();
