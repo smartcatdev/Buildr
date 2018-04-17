@@ -54,12 +54,16 @@ function buildr_scripts() {
         'parallax_color_layer'          => $parallax_preset['color_layer'],
         'parallax_content_layer'        => $parallax_preset['content_layer'],
     );
+    $buildr_general_JS = array(
+        'ease_scroll_toggle'            => get_theme_mod( BUILDR_OPTIONS::EASE_SCROLL_TOGGLE, BUILDR_DEFAULTS::EASE_SCROLL_TOGGLE ) ? 'yes' : 'no',
+    );
     $buildr_parallax_JS = array(
         'intensity_value'   => buildr_get_parallax_preset('vertical')
     );
     
     // Localizations
     wp_localize_script( 'buildr-header', 'buildr_local', $buildr_header_JS );
+    wp_localize_script( 'buildr-general', 'buildr_local_general', $buildr_general_JS );
     wp_localize_script( 'buildr-parallax', 'buildr_local_parallax', $buildr_parallax_JS );
     
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

@@ -166,7 +166,8 @@ interface BUILDR_OPTIONS {
             WOO_SLIDE_CART_TAB_POSITION             = 'cart_drawer_tab_location',
             
             HOMEPAGE_SHOW_CONTENT                   = 'homepage_show_content_toggle',
-            SINGLE_POST_SHOW_NAVIGATION             = 'show_single_post_navigation';
+            SINGLE_POST_SHOW_NAVIGATION             = 'show_single_post_navigation',
+            EASE_SCROLL_TOGGLE                      = 'ease_scroll_toggle';
 
 }
 
@@ -336,6 +337,7 @@ interface BUILDR_DEFAULTS {
             WOO_SLIDE_CART_TAB_POSITION             = 'bottom',
 
             HOMEPAGE_SHOW_CONTENT                   = true,
-            SINGLE_POST_SHOW_NAVIGATION             = true;
+            SINGLE_POST_SHOW_NAVIGATION             = true,
+            EASE_SCROLL_TOGGLE                      = true;
     
 }
