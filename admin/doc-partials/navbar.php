@@ -1,7 +1,7 @@
 <section class="sub-section">
 
     <h3 id="choose-navbar" class="sub-heading">
-        <?php _e( 'Choose Your Navbar Style', 'buildr' ); ?>
+        <?php _e( 'Navbar', 'buildr' ); ?>
     </h3>
     
     <p>

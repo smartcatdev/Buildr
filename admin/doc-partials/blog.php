@@ -1,7 +1,7 @@
 <section class="sub-section">
 
     <h3 id="setup-blog" class="sub-heading">
-        <?php _e( 'Setting Up Your Blog', 'buildr' ); ?>
+        <?php _e( 'Blog', 'buildr' ); ?>
     </h3>
     
     <p>

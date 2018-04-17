@@ -4,12 +4,6 @@
         <?php _e( 'Buildr Theme Guide & Documentation', 'buildr' ); ?>
     </h2>
     
-    <div id="buildr-features-notice">
-        
-        bah blah blah
-        
-    </div>
-    
     <div id="buildr-flex-wrap">
     
         <div id="buildr-docs-menu">
@@ -39,6 +33,18 @@
         </div>
 
         <div id="buildr-docs-content">
+            
+            <div id="buildr-features-notice">
+
+                <h3>
+                    <span class="fas fa-lightbulb"></span>
+                    <?php _e( 'Buildr Features', 'buildr' ); ?>
+                </h3>
+                <p>
+                    <?php _e( 'It seems that you have not yet installed the Buildr Features plugin. It is highly recommended to install the plugin. It includes 3 header styles, 3 blog styles, over 140 customization options, one-click install theme-presets and 6 advanced widgets, completely free!', 'buildr' ); ?>
+                </p>
+
+            </div>
 
             <div id="welcome">
                 <?php buildr_render_doc( 'welcome' ); ?>

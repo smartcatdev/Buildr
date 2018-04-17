@@ -1,7 +1,7 @@
 <section class="sub-section">
 
     <h3 id="customize-header" class="sub-heading">
-        <?php _e( 'Set Up Your Custom Header', 'buildr' ); ?>
+        <?php _e( 'Header', 'buildr' ); ?>
     </h3>
     
     <p>

@@ -1,20 +1,97 @@
+
+<?php 
+
+$section_vars = array(
+    
+    'default' => array(
+        'id'        => 'default',
+        'title'     => __( 'Default Quickstart Item', 'buildr' ),
+    ),
+    
+    'get-buildr' => array(
+        'id'        => 'get-buildr',
+        'title'     => __( 'Buildr Features', 'buildr' ),
+    ),
+    'choose-navbar' => array(
+        'id'        => 'choose-navbar',
+        'title'     => __( 'Choose Your Navbar Style', 'buildr' ),
+    ),
+    'add-menu' => array(
+        'id'        => 'add-menu',
+        'title'     => __( 'Add Your Menus', 'buildr' ),
+    ),
+    'setup-blog' => array(
+        'id'        => 'setup-blog',
+        'title'     => __( 'Setting Up Your Blog', 'buildr' ),
+    ),
+    'customize-header' => array(
+        'id'        => 'customize-header',
+        'title'     => __( 'Set up Your Custom Header', 'buildr' ),
+    ),
+    'page-builder' => array(
+        'id'        => 'page-builder',
+        'title'     => __( 'Drag & Drop Page Builder', 'buildr' ),
+    ),
+    'page-templates' => array(
+        'id'        => 'page-templates',
+        'title'     => __( 'Page Templates', 'buildr' ),
+    ),
+    'theme-presets' => array(
+        'id'        => 'theme-presets',
+        'title'     => __( 'Theme Presets', 'buildr' ),
+    ),
+    
+);
+?>
+
 <h2 class="section-heading">
-    <?php _e( 'Setup & Installation', 'buildr' ); ?>
+    <?php _e( 'Quick-Start Guide', 'buildr' ); ?>
 </h2>
 
-<h3 id="theme-setup" class="sub-heading">
-    <?php _e( 'Theme Setup', 'buildr' ); ?>
-</h3>
+<div class="quickstart-cta">
+    <a href="<?php echo esc_url( admin_url( 'themes.php?page=buildr-theme-info#choose-navbar' ) ); ?>">
+        <img alt="<?php _e( 'Select a Navbar', 'buildr' ); ?>" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/docs/quick_start/buildr_qs_navbar.jpg' ); ?>">
+    </a>
+</div>
+<div class="quickstart-cta">
+    <a href="<?php echo esc_url( admin_url( 'themes.php?page=buildr-theme-info#add-menu' ) ); ?>">
+        <img alt="<?php _e( 'Adding Your Menus', 'buildr' ); ?>" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/docs/quick_start/buildr_qs_menus.jpg' ); ?>">
+    </a>
+</div>
+<div class="quickstart-cta">
+    <a href="<?php echo esc_url( admin_url( 'themes.php?page=buildr-theme-info#setup-blog' ) ); ?>">
+        <img alt="<?php _e( 'Select a Blog Layout', 'buildr' ); ?>" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/docs/quick_start/buildr_qs_blog.jpg' ); ?>">
+    </a>
+</div>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare ante convallis porta imperdiet. Praesent sed ligula ut mauris finibus dignissim et dictum magna. Phasellus vitae libero nec felis convallis dignissim. Pellentesque id maximus quam, quis lacinia massa. Nulla in ipsum nec magna tempus consectetur convallis in nulla. Duis non est diam. Nam dictum nibh vel ante hendrerit tincidunt. Proin arcu tortor, mollis consectetur nisi ac, gravida hendrerit mauris. Phasellus auctor vulputate lacus, commodo egestas velit posuere sit amet. Morbi mollis molestie elit, quis faucibus urna aliquam aliquet. Integer et aliquet magna. Mauris tempor commodo eros, eu aliquet nulla pellentesque sed. Nulla vestibulum eget enim eget commodo. Quisque sit amet felis nec nibh imperdiet tristique. Nam accumsan ultricies nisl, nec cursus felis ultricies nec.
+<div class="clear"></div>
 
-<h3 id="companion-plugin" class="sub-heading">
-    <?php _e( 'Companion Plugin', 'buildr' ); ?>
-</h3>
+<div class="quickstart-cta">
+    <a href="<?php echo esc_url( admin_url( 'themes.php?page=buildr-theme-info#customize-header' ) ); ?>">
+        <img alt="<?php _e( 'Setting Up Your Header', 'buildr' ); ?>" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/docs/quick_start/buildr_qs_header.jpg' ); ?>">
+    </a>
+</div>
+<div class="quickstart-cta">
+    <a href="<?php echo esc_url( admin_url( 'themes.php?page=buildr-theme-info#page-templates' ) ); ?>">
+        <img alt="<?php _e( 'Using Page Templates', 'buildr' ); ?>" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/docs/quick_start/buildr_qs_templates.jpg' ); ?>">
+    </a>
+</div>
+<div class="quickstart-cta">
+    <a href="<?php echo esc_url( admin_url( 'themes.php?page=buildr-theme-info#theme-presets' ) ); ?>">
+        <img alt="<?php _e( 'Using Theme Presets', 'buildr' ); ?>" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/docs/quick_start/buildr_qs_presets.jpg' ); ?>">
+    </a>
+</div>
 
-Nunc accumsan auctor risus ut suscipit. Donec ultricies, magna at porttitor vehicula, mauris turpis malesuada erat, mattis pulvinar est nulla ac urna. Quisque molestie urna ex, vitae viverra enim ullamcorper non. Sed augue nulla, ultricies ac lobortis non, sodales vel ligula. Vivamus malesuada, sapien non sodales volutpat, leo sapien faucibus diam, sit amet iaculis magna tortor quis risus. Mauris interdum pulvinar ligula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut arcu sem, laoreet et justo quis, eleifend faucibus nunc. Etiam sed dolor scelerisque, dapibus orci porta, semper diam. Donec vitae semper mi. In hac habitasse platea dictumst. Nulla facilisi. Fusce non velit magna. Nullam ullamcorper cursus felis, sit amet ornare risus. Integer tristique, neque vitae gravida sollicitudin, sapien mauris porta libero, pulvinar pellentesque massa est vitae ex. Donec elementum elementum lorem et elementum.
+<div class="clear"></div>
 
-<?php
-$query['autofocus[section]'] = 'title_tagline';
-$section_link = add_query_arg( $query, admin_url( 'customize.php' ) ); ?>
-<a href="<?php echo esc_url( $section_link ); ?>">Link to title section</a>
+<?php buildr_render_doc( 'navbar' ); ?>
+
+<?php buildr_render_doc( 'menus' ); ?>
+
+<?php buildr_render_doc( 'blog' ); ?>
+
+<?php buildr_render_doc( 'custom_header' ); ?>
+
+<?php buildr_render_doc( 'page_templates' ); ?>
+
+<?php buildr_render_doc( 'theme_presets' ); ?>
