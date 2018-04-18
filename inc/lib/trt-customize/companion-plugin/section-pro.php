@@ -36,6 +36,8 @@ class Buildr_Customize_Section_Pro extends WP_Customize_Section {
     public $install_url = '';
     
     public $dismiss_text = '';
+    public $confirm_text = '';
+    public $confirm_button = '';
     
     public $description = '';
 
@@ -53,6 +55,8 @@ class Buildr_Customize_Section_Pro extends WP_Customize_Section {
         $json[ 'install_url' ] = esc_url( $this->install_url );
         $json[ 'description' ] = $this->description;
         $json[ 'dismiss_text' ] = $this->dismiss_text;
+        $json[ 'confirm_text' ] = $this->confirm_text;
+        $json[ 'confirm_button' ] = $this->confirm_button;
 
         return $json;
     }
@@ -83,9 +87,16 @@ class Buildr_Customize_Section_Pro extends WP_Customize_Section {
                     {{ data.install_text }}
                 </a>
                 
-                <a href="#" class="button button-default buildr-dismiss-companion">{{ data.dismiss_text }}</a>
+                <a href="#" class="button button-default buildr-initiate-dismiss">{{ data.dismiss_text }}</a>
                 
                 <# } #>
+                
+            </div>
+            
+            <div class="accordion-section-buttons buildr-dismiss-confirm">
+                <p>{{ data.confirm_text }}</p>
+                <a href="#" class="button button-primary buildr-dismiss-companion">{{data.confirm_button}}</a>
+                
                 
             </div>
             
