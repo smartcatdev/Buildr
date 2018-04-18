@@ -16,7 +16,7 @@ final class Buildr_Customize {
      * @return object
      */
     public static function get_instance() {
-
+        
         static $instance = null;
 
         if ( is_null( $instance ) ) {
@@ -102,9 +102,11 @@ final class Buildr_Customize {
 
 }
 
+// remove this when pushing live
+set_theme_mod( BUILDR_OPTIONS::COMPANION_NOTICE_DISMISSED, false );
 // If user has dismissed the notice, do not display it
-//set_theme_mod( BUILDR_OPTIONS::COMPANION_NOTICE_DISMISSED, false );
-if( ! get_theme_mod( BUILDR_OPTIONS::COMPANION_NOTICE_DISMISSED, BUILDR_DEFAULTS::COMPANION_NOTICE_DISMISSED ) ) {
+if( ! get_theme_mod( BUILDR_OPTIONS::COMPANION_NOTICE_DISMISSED, BUILDR_DEFAULTS::COMPANION_NOTICE_DISMISSED ) 
+        && !function_exists( 'buildr\init' )) {
     Buildr_Customize::get_instance();
 }
 
