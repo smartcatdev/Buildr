@@ -35,6 +35,7 @@ class Buildr_Customize_Section_Pro extends WP_Customize_Section {
      */
     public $install_url = '';
     
+    public $dismiss_text = '';
     
     public $description = '';
 
@@ -51,6 +52,7 @@ class Buildr_Customize_Section_Pro extends WP_Customize_Section {
         $json[ 'install_text' ] = $this->install_text;
         $json[ 'install_url' ] = esc_url( $this->install_url );
         $json[ 'description' ] = $this->description;
+        $json[ 'dismiss_text' ] = $this->dismiss_text;
 
         return $json;
     }
@@ -81,7 +83,7 @@ class Buildr_Customize_Section_Pro extends WP_Customize_Section {
                     {{ data.install_text }}
                 </a>
                 
-                <a href="<?php echo esc_url( admin_url( 'customize.php' ) ); ?>" class="button button-default buildr-dismiss-companion">Dismiss</a>
+                <a href="#" class="button button-default buildr-dismiss-companion">{{ data.dismiss_text }}</a>
                 
                 <# } #>
                 

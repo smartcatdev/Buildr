@@ -146,5 +146,5 @@ function buildr_theme_path( $path = null ) {
 }
 
 function buildr_theme_url( $url = null ) {
-    return trailingslashit( get_template_directory_uri() ) . $path;
+    return trailingslashit( get_template_directory_uri() ) . $url;
 }

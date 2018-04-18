@@ -76,6 +76,7 @@ final class Buildr_Customize {
                 $manager, 'buildr_companion', array (
                     'title'             => esc_html__( 'Buildr Theme Options & Widgets', 'buildr' ),
                     'install_text'      => esc_html__( 'Activate Options', 'buildr' ),
+                    'dismiss_text'      => esc_html__( 'Dismiss', 'buildr' ),
                     'install_url'       => esc_url( buildr_features_install_url() ),
                     'description'       => esc_html__( 'It seems that you have not yet installed the Buildr Features plugin. It is highly recommended to install the plugin. It includes 3 header styles, 3 blog styles, over 140 customization options, one-click install theme-presets and 6 advanced widgets, completely free!', 'buildr' ),
                 )
