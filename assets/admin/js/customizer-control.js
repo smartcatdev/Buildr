@@ -1,4 +1,10 @@
 (function ($) {
+    
+    $('.buildr-dismiss-companion').click( function(e) {
+        alert(1)
+        e.preventDefault();
+    })
+    
 
     wp.customize.bind('ready', function () {
 

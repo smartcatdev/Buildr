@@ -256,3 +256,18 @@ function buildr_all_posts_array( $types = array( 'post' ) ) {
     return $posts_array;
     
 }
+
+function buildr_features_install_url() {
+    
+    $plugin = 'our-team-enhanced';
+    $nonce_key = 'install-plugin_' . $plugin;
+    
+    $install_url = add_query_arg( array(
+        'action'    => 'install-plugin',
+        'plugin'    => $plugin,
+        '_wpnonce'  => wp_create_nonce( $nonce_key )
+    ), admin_url( 'update.php' ) );
+    
+    return esc_url( $install_url );
+    
+}
