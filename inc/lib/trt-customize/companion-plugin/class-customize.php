@@ -103,7 +103,7 @@ final class Buildr_Customize {
 }
 
 // remove this when pushing live
-set_theme_mod( BUILDR_OPTIONS::COMPANION_NOTICE_DISMISSED, false );
+//set_theme_mod( BUILDR_OPTIONS::COMPANION_NOTICE_DISMISSED, false );
 // If user has dismissed the notice, do not display it
 if( ! get_theme_mod( BUILDR_OPTIONS::COMPANION_NOTICE_DISMISSED, BUILDR_DEFAULTS::COMPANION_NOTICE_DISMISSED ) 
         && !function_exists( 'buildr\init' )) {
