@@ -1,7 +1,7 @@
 === Buildr ===
 
 Contributors: smartcat
-Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, flexible-header, custom-background, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, theme-options, threaded-comments, translation-ready, blog, photography, portfolio
+Tags: two-columns, three-columns, four-columns, right-sidebar, grid-layout, flexible-header, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, e-commerce, blog, entertainment
 
 Requires at least: 4.9
 Tested up to: 4.9.5
@@ -125,7 +125,8 @@ Buildr includes support for Infinite Scroll in Jetpack.
     - License URL           http://www.gnu.org/licenses/gpl.html
 
 16. Images
-    - URL                   
+    - URL                   https://pixabay.com/en/decor-design-creative-business-2618511/          
+                            https://pixabay.com/en/reichstag-berlin-building-bundestag-1615165/ 
     - License               CC0
     - License URL           http://creativecommons.org/publicdomain/zero/1.0/deed.en
 

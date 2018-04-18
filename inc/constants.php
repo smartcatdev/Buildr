@@ -40,6 +40,7 @@ interface BUILDR_OPTIONS {
             CUSTOM_HEADER_SHOW_ON_BLOG              = 'custom_header_show_on_blog',
             CUSTOM_HEADER_SHOW_ON_ARCHIVE           = 'custom_header_show_on_archive',
             CUSTOM_HEADER_SHOW_ON_SHOP              = 'custom_header_show_on_shop',
+            CUSTOM_HEADER_MENU_BUTTONS              = 'custom_Header_menu_buttons',
             
             GRADIENT_STYLE                          = 'parallax_layers_gradient_style',
             GRADIENT_OVERALL_OPACITY                = 'parallax_layers_gradient_overall_opacity',
@@ -127,8 +128,6 @@ interface BUILDR_OPTIONS {
             FONT_BODY_SIZE                          = 'body_font_size',
             FONT_HEADINGS_LETTER_GAP                = 'headings_letter_spacing',
             FONT_HEADINGS_LINE_HEIGHT               = 'headings_line_height',
-            FONT_H1_FONT_SIZE                       = 'h1_font_size',
-            FONT_H1_FONT_SIZE_MBL                   = 'h1_font_size_mbl',
             
             FOOTER_NUM_WIDGET_COLS                  = 'footer_num_columns',
             FOOTER_BORDER_TOP_THICKNESS             = 'prefooter_top_border_thickness',
@@ -213,6 +212,7 @@ interface BUILDR_DEFAULTS {
             CUSTOM_HEADER_SHOW_ON_BLOG              = true,
             CUSTOM_HEADER_SHOW_ON_ARCHIVE           = true,
             CUSTOM_HEADER_SHOW_ON_SHOP              = false,
+            CUSTOM_HEADER_MENU_BUTTONS              = true,
             
             GRADIENT_STYLE                          = 'linear',
             GRADIENT_OVERALL_OPACITY                = 1,
@@ -300,8 +300,6 @@ interface BUILDR_DEFAULTS {
             FONT_BODY_SIZE                          = 18,
             FONT_HEADINGS_LETTER_GAP                = '0.0',
             FONT_HEADINGS_LINE_HEIGHT               = '1',
-            FONT_H1_FONT_SIZE                       = 44,
-            FONT_H1_FONT_SIZE_MBL                   = 26,
             
             FOOTER_NUM_WIDGET_COLS                  = 3,
             FOOTER_BORDER_TOP_THICKNESS             = 10,

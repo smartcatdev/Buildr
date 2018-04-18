@@ -12,12 +12,12 @@ div.clear {
 
 /* ----- TYPOGRAPHY ----- */
 
-h1 { font-size: 4em; }
-h2 { font-size: 3.25em; }
-h3 { font-size: 2em; }
-h4 { font-size: 1.68em; }
-h5 { font-size: 1.245em; }
-h6 { font-size: 1.125em; }
+h1 { font-size: 2.75em; }
+h2 { font-size: 2.25em; }
+h3 { font-size: 1.75em; }
+h4 { font-size: 1.5em; }
+h5 { font-size: 1.25em; }
+h6 { font-size: 1em; }
 
 /* ----- COLORS & GRADIENTS ----- */
 
@@ -69,30 +69,6 @@ h6 { font-size: 1.125em; }
 .util-vert-btm {
     vertical-align: bottom;
 }
-
-/* ----- ANIMATIONS ----- */
-
-/*.expandContract {
-    animation-name: expandContract;
-    animation-duration: .4s;
-    transform-origin: center bottom;
-}
-@keyframes expandContract {
-    0% {
-         animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060); 
-         transform: translate3d(-50%,0,0); 
-        border-width: 0 35px 30px 35px;
-    }
-    35% {
-        border-width: 0 25px 20px 25px;
-         transform: translate3d(-50%,25%,0); 
-    }
-    100% {
-        border-width: 0 35px 30px 35px;
-         animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060); 
-         transform: translate3d(-50%,0,0); 
-    }
-}*/
 
 /* ----- FORMS ----- */
 

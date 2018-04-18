@@ -390,6 +390,11 @@ div#mobile-menu-wrap ul.sub-menu li a {
     font-size: 10px;
 }
 
+div#mobile-menu-wrap ul#mobile-menu > li > ul.sub-menu > li > ul.sub-menu {
+    margin: 0;
+    padding: 0;
+}
+
 @media (min-width: 992px) {
     div#slim-header div#mobile-menu-trigger,
     div#slim-header ul#mobile-menu,
@@ -747,12 +752,7 @@ header#masthead.header-style-split .navbar-social.expanded .navbar-icon {
     top: -20px;
     right: 0;
     color: #777;
-    /* opacity: 0; */
-    /* transform: perspective(400px) rotate3d(1, 0, 0, -90deg); */
-}
-.masonry-card-blog .blog_item_wrap:hover .blog_item .meta-stats {
-    /* transform: perspective(400px); */
-    /* opacity: 1; */
+    font-size: 16px;
 }
 .masonry-card-blog .blog_item_wrap .blog_item .inner-wrap {
     background: #fff;
@@ -1111,12 +1111,19 @@ ul#custom-header-menu {
 
 ul#custom-header-menu > li {
     display: inline-block;
-    margin: 0 8px;
 }
 
 ul#custom-header-menu > li a {
     display: inline-block;
-    text-transform: uppercase; /* TODO : toggle for this? */
+    text-transform: uppercase;
+}
+
+ul#custom-header-menu > li ul.sub-menu, 
+ul#custom-header-menu > li ul.sub-menu li {
+    display: inline-block;
+    float: none;
+    margin: 0;
+    padding: 0;
 }
 
 div#buildr-custom-header.parallax_layers .jparallax-layer.texture-layer {
@@ -1222,7 +1229,7 @@ footer a.rel img {
 h2.widget-title {
     margin-bottom: 15px;
     padding-bottom: 10px;
-    border-bottom: thin solid #333333; /* TODO: Dynamic Settings? */
+    border-bottom: thin solid #333333;
 }
 
 aside.widget table#wp-calendar {
@@ -1242,7 +1249,7 @@ aside.widget table#wp-calendar th,
 aside.widget table#wp-calendar td {
     text-align: center;
     padding: 5px;
-    border: thin solid #333333; /* TODO: Dynamic Settings same as widget title border btm? */
+    border: thin solid #333333;
     color: #ffffff;
 }
 
@@ -1376,17 +1383,15 @@ body.single-post .entry-footer {
 }
 
 nav.navigation.post-navigation .nav-links {
-    margin: 50px 0;
+    margin: 30px 0 0;
 }
 
 nav.navigation.post-navigation .nav-links .nav-next, 
 nav.navigation.post-navigation .nav-links .nav-previous {
     width: 50%;
-    display: inline-block;
-}
-
-nav.navigation.post-navigation .nav-links .nav-next {
-    text-align: right;
+    display: block;
+    float: left;    
+    padding: 5px;
 }
 
 nav.navigation.post-navigation .nav-links a {
@@ -1400,6 +1405,13 @@ nav.navigation.post-navigation .nav-links a {
     -moz-transition: 0.3s all ease-out;
     -webkit-transition: 0.3s all ease-out;
 }
+
+nav.navigation.post-navigation .nav-links .nav-next a, 
+nav.navigation.post-navigation .nav-links .nav-previous a {
+    width: 100%;
+    text-align: center;
+}
+
 
 nav.navigation.post-navigation .nav-links a:hover {
     color: #ffffff;
@@ -1415,8 +1427,9 @@ nav.navigation.post-navigation .nav-links a:hover {
 
     nav.navigation.post-navigation .nav-links a {
         width: 100%;
+        margin: 0;
     }
-    
+   
 }
 
 /* -----------------------------------------------------------------------------
@@ -1426,12 +1439,13 @@ nav.navigation.post-navigation .nav-links a:hover {
 #comments.comments-area {
     padding-top: 30px;
     border-top: thin solid #eee;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
-#comments.comments-area h2.comments-title {
+#comments.comments-area h2.comments-title, 
+h3#reply-title {
     margin: 0 0 15px 0;
-    font-size: 1.25em;
+    font-size: 22px;
 }
 
 #comments.comments-area ol.comment-list {
@@ -1494,6 +1508,19 @@ div#cart-panel-trigger.active > span {
 div#cart-panel-trigger.active > svg {
     opacity: 1;
     width: auto;
+}
+
+div#cart-panel-trigger .fa-shopping-cart {
+    margin-left: -2px;
+    line-height: 40px;
+}
+
+div#cart-panel-trigger:hover span.fas {
+    font-size: 21px;
+}
+
+div#cart-panel-trigger:hover > svg {
+    transform: translate(-50%,-50%) scale(1.2);
 }
 
 #cart-panel {
