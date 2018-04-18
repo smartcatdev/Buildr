@@ -57,7 +57,11 @@
     
     if ( get_theme_mod( BUILDR_OPTIONS::SINGLE_POST_SHOW_NAVIGATION, BUILDR_DEFAULTS::SINGLE_POST_SHOW_NAVIGATION ) ) :
     
-        the_post_navigation();
+        the_post_navigation(); ?>
+    
+        <div class="clear"></div>
+    
+        <?php 
         
     endif;
     

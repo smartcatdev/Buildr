@@ -2,86 +2,74 @@
     <?php _e( 'Welcome', 'buildr' ); ?>
 </h2>
 
-<?php 
+<p>
+    <?php _e( 'Describe the additional benefits of installing the free Buildr Features plugin, why every Buildr user should download it, and where and how to do so.', 'buildr' ); ?>
+</p>
 
-$section_vars = array(
-    
-    'default' => array(
-        'id'        => 'default',
-        'title'     => __( 'Default Quickstart Item', 'buildr' ),
-    ),
-    
-    'get-buildr' => array(
-        'id'        => 'get-buildr',
-        'title'     => __( 'Buildr Features', 'buildr' ),
-    ),
-    'choose-navbar' => array(
-        'id'        => 'choose-navbar',
-        'title'     => __( 'Choose Your Navbar Style', 'buildr' ),
-    ),
-    'add-menu' => array(
-        'id'        => 'add-menu',
-        'title'     => __( 'Add Your Menus', 'buildr' ),
-    ),
-    'setup-blog' => array(
-        'id'        => 'setup-blog',
-        'title'     => __( 'Setting Up Your Blog', 'buildr' ),
-    ),
-    'customize-header' => array(
-        'id'        => 'customize-header',
-        'title'     => __( 'Set up Your Custom Header', 'buildr' ),
-    ),
-    'page-builder' => array(
-        'id'        => 'page-builder',
-        'title'     => __( 'Drag & Drop Page Builder', 'buildr' ),
-    ),
-    'page-templates' => array(
-        'id'        => 'page-templates',
-        'title'     => __( 'Page Templates', 'buildr' ),
-    ),
-    'theme-presets' => array(
-        'id'        => 'theme-presets',
-        'title'     => __( 'Theme Presets', 'buildr' ),
-    ),
-    
-);
+<section class="welcome-feature">
 
-?>
+    <h3>
+        <?php _e( 'Drag & Drop Page Builder', 'buildr' ); ?>
+    </h3>
+    
+    <div class="feature-img-wrap">
+        <img alt="<?php _e( 'Drag & Drop Page Builder', 'buildr' ); ?>" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/docs/reorder.jpg' ); ?>">
+    </div>
+    
+    <p>
+        <?php _e( 'Buildr makes it extremely easy to build unique, complex, and professional pages. Included in the free Buildr Features plugin are numerous custom-designed widgets that can be dragged and dropped into any of Buildr\'s many separate widget areas. You can use these to create beautiful Frontpages and Blogs, as well as detailed content pages. Buildr even includes several custom Page Templates with additional unique widget areas for when you need several specific pages to stand out.', 'buildr' ); ?>
+    </p>
+    
+</section>
 
-<?php buildr_docs_quickstart_cta( $section_vars['get-buildr']['id'], 'fa-star', $section_vars['get-buildr']['title'] ); ?>
-<?php buildr_docs_quickstart_cta( $section_vars['choose-navbar']['id'], 'fa-list-alt', $section_vars['choose-navbar']['title'] ); ?>
-<?php buildr_docs_quickstart_cta( $section_vars['add-menu']['id'], 'fa-list', $section_vars['add-menu']['title'] ); ?>
-<div class="clear"></div>
-<?php buildr_docs_quickstart_cta( $section_vars['setup-blog']['id'], 'fa-newspaper', $section_vars['setup-blog']['title'] ); ?>
-<?php buildr_docs_quickstart_cta( $section_vars['customize-header']['id'], 'fa-star', $section_vars['customize-header']['title'] ); ?>
-<?php buildr_docs_quickstart_cta( $section_vars['page-builder']['id'], 'fa-star', $section_vars['page-builder']['title'] ); ?>
-<div class="clear"></div>
-<?php buildr_docs_quickstart_cta( $section_vars['page-templates']['id'], 'fa-file', $section_vars['page-templates']['title'] ); ?>
-<?php buildr_docs_quickstart_cta( $section_vars['theme-presets']['id'], 'fa-file', $section_vars['theme-presets']['title'] ); ?>
+<section class="welcome-feature">
+
+    <h3>
+        <?php _e( 'One-Click Demo Import', 'buildr' ); ?>
+    </h3>
+    
+    <div class="feature-img-wrap">
+        <img alt="<?php _e( 'One-Click Demo Import', 'buildr' ); ?>" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/docs/drag_drop_builder.jpg' ); ?>">
+    </div>
+    
+    <p>
+        <?php _e( 'Buildr provides you with all of the tools and options you need to build the site of your dreams, but we understand that starting from scratch with a new theme can sometimes be overwhelming. Thankfully, Buildr has numerous theme Presets that you can choose from to use as a starting point.', 'buildr' ); ?>
+    </p>
+    
+</section>
 
 <div class="clear"></div>
 
-<hr>
+<section class="welcome-feature">
 
-<?php buildr_docs_subsection( $section_vars['get-buildr']['id'], $section_vars['get-buildr']['title'], array(
-    __( 'Describe the additional benefits of installing the free Buildr Features plugin, why every Buildr user should download it, and where and how to do so.', 'buildr' ),
-) ); ?>
+    <h3>
+        <?php _e( 'Versatile and Easy to Use', 'buildr' ); ?>
+    </h3>
+    
+    <div class="feature-img-wrap">
+        <img alt="<?php _e( 'Versatile and Easy to Use', 'buildr' ); ?>" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/docs/reorder.jpg' ); ?>">
+    </div>
+    
+    <p>
+        <?php _e( 'Buildr is incredibly customizable. With all of the interesting ways that the options can change the appearance of the theme, Buildr is the perfect fit for web developers looking to learn one theme that\'s versatile enough to suit all kinds of clients and designs.' , 'buildr' ); ?>
+    </p>
+    
+</section>
 
-<?php buildr_render_doc( 'navbar' ); ?>
+<section class="welcome-feature">
 
-<?php buildr_render_doc( 'menus' ); ?>
+    <h3>
+        <?php _e( 'To Be Determined', 'buildr' ); ?>
+    </h3>
+    
+    <div class="feature-img-wrap">
+        <img alt="<?php _e( 'To be determined...', 'buildr' ); ?>" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/docs/drag_drop_builder.jpg' ); ?>">
+    </div>
+    
+    <p>
+        <?php _e( 'To be determined...', 'buildr' ); ?>
+    </p>
+    
+</section>
 
-<?php buildr_render_doc( 'blog' ); ?>
-
-<?php buildr_render_doc( 'custom_header' ); ?>
-
-<?php buildr_render_doc( 'page_builder' ); ?>
-
-<?php buildr_render_doc( 'page_templates' ); ?>
-
-<?php buildr_render_doc( 'theme_presets' ); ?>
-
-<?php 
-$query['autofocus[section]'] = 'title_tagline';
-$section_link = add_query_arg( $query, admin_url( 'customize.php' ) ); ?>
-<a href="<?php echo esc_url( $section_link ); ?>">Link to title section</a>
+<div class="clear"></div>

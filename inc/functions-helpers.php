@@ -256,3 +256,34 @@ function buildr_all_posts_array( $types = array( 'post' ) ) {
     return $posts_array;
     
 }
+
+function buildr_features_install_url() {
+    
+    $plugin = 'our-team-enhanced';
+    $nonce_key = 'install-plugin_' . $plugin;
+    
+    $install_url = add_query_arg( array(
+        'action'    => 'install-plugin',
+        'plugin'    => $plugin,
+        '_wpnonce'  => wp_create_nonce( $nonce_key )
+    ), admin_url( 'update.php' ) );
+    
+    return esc_url( $install_url );
+    
+}
+
+function buildr_dismiss_companion() {
+    
+    
+    if( ! isset( $_POST['buildr_dismiss_nonce'] ) || ! wp_verify_nonce( $_POST['buildr_dismiss_nonce'], 'buildr_dismiss_nonce' ) ) {
+        die( esc_html__( 'Invalid nonce', 'buildr' ) );
+        return;
+    }
+    
+    if( current_user_can( 'edit_theme_options' ) ) {
+        set_theme_mod( BUILDR_OPTIONS::COMPANION_NOTICE_DISMISSED, true );
+    }
+    
+    exit();   
+}
+add_action( 'wp_ajax_buildr_dismiss_companion', 'buildr_dismiss_companion' );

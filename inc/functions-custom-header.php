@@ -62,7 +62,7 @@ function buildr_render_custom_header() {
             ( is_page()         && !is_front_page() && get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_SHOW_ON_PAGES, BUILDR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_PAGES ) ) ||
             ( is_front_page()   && !is_home() && get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_SHOW_ON_FRONT, BUILDR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_FRONT ) ) ||
             ( is_home()         && get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_SHOW_ON_BLOG, BUILDR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_BLOG ) ) ||
-            ( is_archive()      && get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_SHOW_ON_ARCHIVE, BUILDR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_ARCHIVE ) ) ||
+            ( is_archive()      && !is_shop() && get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_SHOW_ON_ARCHIVE, BUILDR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_ARCHIVE ) ) ||
             ( class_exists( 'woocommerce' ) && is_shop() && get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_SHOW_ON_SHOP, BUILDR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_SHOP ) )
         ) :
         

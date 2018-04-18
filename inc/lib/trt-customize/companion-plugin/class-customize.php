@@ -74,10 +74,11 @@ final class Buildr_Customize {
         $manager->add_section(
             new Buildr_Customize_Section_Pro(
                 $manager, 'buildr_companion', array (
-                    'title'         => esc_html__( 'Buildr Features', 'buildr' ),
-                    'pro_text'      => esc_html__( 'Free Install', 'buildr' ),
-                    'pro_url'       => admin_url( 'themes.php?page=tgmpa-install-plugins' ),
-                    'pro_details'   => esc_html__( 'It seems that you have not yet installed the Buildr Features plugin. It is highly recommended to install the plugin. It includes 3 header styles, 3 blog styles, over 140 customization options, one-click install theme-presets and 6 advanced widgets, completely free!', 'buildr' ),
+                    'title'             => esc_html__( 'Buildr Theme Options & Widgets', 'buildr' ),
+                    'install_text'      => esc_html__( 'Activate Options', 'buildr' ),
+                    'dismiss_text'      => esc_html__( 'Dismiss', 'buildr' ),
+                    'install_url'       => esc_url( buildr_features_install_url() ),
+                    'description'       => esc_html__( 'It seems that you have not yet installed the Buildr Features plugin. It is highly recommended to install the plugin. It includes 3 header styles, 3 blog styles, over 140 customization options, one-click install theme-presets and 6 advanced widgets, completely free!', 'buildr' ),
                 )
             )
         );
@@ -93,11 +94,14 @@ final class Buildr_Customize {
     public function enqueue_control_scripts() {
 
         wp_enqueue_script( 'buildr-pro-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/companion-plugin/customize-controls.js', array ( 'customize-controls' ) );
-
         wp_enqueue_style( 'buildr-pro-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/companion-plugin/customize-controls.css' );
+        
     }
 
 }
 
-// Doing this customizer thang!
-Buildr_Customize::get_instance();
+// If user has dismissed the notice, do not display it
+if( ! get_theme_mod( BUILDR_OPTIONS::COMPANION_NOTICE_DISMISSED, BUILDR_DEFAULTS::COMPANION_NOTICE_DISMISSED ) ) {
+    Buildr_Customize::get_instance();
+}
+

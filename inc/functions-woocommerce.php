@@ -30,7 +30,7 @@ add_action( 'woocommerce_before_subcategory_title', 'buildr_woocommerce_product_
 add_action( 'woocommerce_after_subcategory', 'buildr_woocommerce_product_details_wrapper_after', 50 );                 // Wrap the Shop loop Category content in <div class="details-wrap"> for styling
 add_action( 'woocommerce_shop_loop_item_title', 'buildr_woocommerce_product_loop_category', 5 );                       // Inject the Category in the Product details
 add_action( 'woocommerce_shop_loop_item_title', 'buildr_woocommerce_product_loop_excerpt', 20 );                       // Inject the Excerpt in the Product details
-add_action( 'buildr_featured_products', 'buildr_render_featured_products', 10 );                                      // Output the Featured Products section
+add_action( 'buildr_featured_products', 'buildr_render_featured_products', 10 );                                       // Output the Featured Products section
 add_action( 'after_setup_theme', 'buildr_woocommerce_setup' );                                                         // Add WooCommerce theme support
 add_action( 'wp_enqueue_scripts', 'buildr_woocommerce_scripts' );                                                      // Enqueue WooCommerce scripts
 add_action( 'woocommerce_single_product_summary', 'buildr_woocommerce_product_underline', 7 );                         // Inject an underline <span> after the product title
@@ -104,9 +104,9 @@ function buildr_woocommerce_scripts() {
  */
 
 function buildr_woocommerce_dequeue_styles( $enqueue_styles ) {
-    unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
+    unset( $enqueue_styles['woocommerce-general'] );            // Remove the gloss
+    unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
     //  unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
-    //  unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
     return $enqueue_styles;
 }
 
@@ -263,7 +263,7 @@ if ( !function_exists( 'woocommerce_output_content_wrapper' ) ) {
                             
                             <?php endif; ?>
                             
-                            <div class="col-md-<?php echo is_shop() && is_active_sidebar( 'sidebar-shop' ) ? '9' : '12'; ?>">
+                            <div class="col-sm-<?php echo is_shop() && is_active_sidebar( 'sidebar-shop' ) ? '9' : '12'; ?>">
                 
         <?php
             

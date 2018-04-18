@@ -89,7 +89,6 @@ if ( !function_exists( 'buildr_setup' ) ) :
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus( array(
-            'primary-menu'              => esc_html__( 'Primary', 'buildr' ),
             'banner-primary'            => esc_html__( 'Navbar: Banner - Primary', 'buildr' ),
             'slim-primary'              => esc_html__( 'Navbar: Slim - Primary', 'buildr' ),
             'split-primary-left'        => esc_html__( 'Navbar: Split - Left', 'buildr' ),
@@ -147,5 +146,5 @@ function buildr_theme_path( $path = null ) {
 }
 
 function buildr_theme_url( $url = null ) {
-    return trailingslashit( get_template_directory_uri() ) . $path;
+    return trailingslashit( get_template_directory_uri() ) . $url;
 }

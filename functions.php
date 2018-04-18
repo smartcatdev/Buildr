@@ -20,9 +20,7 @@ require get_template_directory() . '/inc/functions-widgets.php';
 
 require get_template_directory() . '/inc/functions-css.php';
 
-require get_template_directory() . '/inc/lib/trt-customize/companion-plugin/class-customize.php';
-
-require get_template_directory() . '/inc/lib/trt-customize/documentation/class-customize.php';
+require get_template_directory() . '/inc/functions-customizer.php';
 
 require get_template_directory() . '/inc/functions-tgmpa.php';
 
@@ -37,3 +35,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
     require get_template_directory() . '/inc/functions-woocommerce.php';   
 }
+
+
+require get_template_directory() . '/inc/lib/trt-customize/companion-plugin/class-customize.php';
+
+// Adds custom section to Customizr linking 
+// to the theme admin & docs page
+require get_template_directory() . '/inc/lib/trt-customize/documentation/class-customize.php';
