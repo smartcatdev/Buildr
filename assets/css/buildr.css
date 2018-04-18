@@ -752,12 +752,7 @@ header#masthead.header-style-split .navbar-social.expanded .navbar-icon {
     top: -20px;
     right: 0;
     color: #777;
-    /* opacity: 0; */
-    /* transform: perspective(400px) rotate3d(1, 0, 0, -90deg); */
-}
-.masonry-card-blog .blog_item_wrap:hover .blog_item .meta-stats {
-    /* transform: perspective(400px); */
-    /* opacity: 1; */
+    font-size: 16px;
 }
 .masonry-card-blog .blog_item_wrap .blog_item .inner-wrap {
     background: #fff;
@@ -1440,9 +1435,10 @@ nav.navigation.post-navigation .nav-links a:hover {
     margin-top: 15px;
 }
 
-#comments.comments-area h2.comments-title {
+#comments.comments-area h2.comments-title, 
+h3#reply-title {
     margin: 0 0 15px 0;
-    font-size: 1.25em;
+    font-size: 22px;
 }
 
 #comments.comments-area ol.comment-list {

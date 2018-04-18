@@ -127,8 +127,6 @@ interface BUILDR_OPTIONS {
             FONT_BODY_SIZE                          = 'body_font_size',
             FONT_HEADINGS_LETTER_GAP                = 'headings_letter_spacing',
             FONT_HEADINGS_LINE_HEIGHT               = 'headings_line_height',
-            FONT_H1_FONT_SIZE                       = 'h1_font_size',
-            FONT_H1_FONT_SIZE_MBL                   = 'h1_font_size_mbl',
             
             FOOTER_NUM_WIDGET_COLS                  = 'footer_num_columns',
             FOOTER_BORDER_TOP_THICKNESS             = 'prefooter_top_border_thickness',
@@ -298,8 +296,6 @@ interface BUILDR_DEFAULTS {
             FONT_BODY_SIZE                          = 18,
             FONT_HEADINGS_LETTER_GAP                = '0.0',
             FONT_HEADINGS_LINE_HEIGHT               = '1',
-            FONT_H1_FONT_SIZE                       = 44,
-            FONT_H1_FONT_SIZE_MBL                   = 26,
             
             FOOTER_NUM_WIDGET_COLS                  = 3,
             FOOTER_BORDER_TOP_THICKNESS             = 10,

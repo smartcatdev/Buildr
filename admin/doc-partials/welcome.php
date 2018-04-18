@@ -2,7 +2,9 @@
     <?php _e( 'Welcome', 'buildr' ); ?>
 </h2>
 
-<?php _e( 'Describe the additional benefits of installing the free Buildr Features plugin, why every Buildr user should download it, and where and how to do so.', 'buildr' ); ?>
+<p>
+    <?php _e( 'Describe the additional benefits of installing the free Buildr Features plugin, why every Buildr user should download it, and where and how to do so.', 'buildr' ); ?>
+</p>
 
 <section class="welcome-feature">
 

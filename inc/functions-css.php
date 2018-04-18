@@ -42,7 +42,6 @@ function buildr_wp_head_styles() { ?>
 
         h1,h2,h3,h4,h5,h6 {
             letter-spacing: <?php echo esc_attr( get_theme_mod( BUILDR_OPTIONS::FONT_HEADINGS_LETTER_GAP, BUILDR_DEFAULTS::FONT_HEADINGS_LETTER_GAP ) ); ?>em;
-            line-height: <?php echo esc_attr( get_theme_mod( BUILDR_OPTIONS::FONT_HEADINGS_LINE_HEIGHT, BUILDR_DEFAULTS::FONT_HEADINGS_LINE_HEIGHT ) ); ?>em;
         }
 
         body {
