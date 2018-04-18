@@ -165,7 +165,9 @@ interface BUILDR_OPTIONS {
             
             HOMEPAGE_SHOW_CONTENT                   = 'homepage_show_content_toggle',
             SINGLE_POST_SHOW_NAVIGATION             = 'show_single_post_navigation',
-            EASE_SCROLL_TOGGLE                      = 'ease_scroll_toggle';
+            EASE_SCROLL_TOGGLE                      = 'ease_scroll_toggle',
+    
+            COMPANION_NOTICE_DISMISSED              = 'show_companion_notice';
 
 }
 
@@ -334,6 +336,8 @@ interface BUILDR_DEFAULTS {
 
             HOMEPAGE_SHOW_CONTENT                   = true,
             SINGLE_POST_SHOW_NAVIGATION             = true,
-            EASE_SCROLL_TOGGLE                      = true;
+            EASE_SCROLL_TOGGLE                      = true,
+    
+            COMPANION_NOTICE_DISMISSED              = false;
     
 }

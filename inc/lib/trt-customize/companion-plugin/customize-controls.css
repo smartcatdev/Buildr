@@ -17,6 +17,18 @@
     background-color: #f1f1f1;
 }
 
+#accordion-section-buildr_companion .accordion-section-buttons {
+    background-color: #fff;
+    margin: 0;
+    padding: 10px 10px 11px 14px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f1f1f1;
+}
+
+.buildr-companion-icon {
+    line-height: 26px;
+}
+
 .control-section-companion-plugin .accordion-section-title .button {
     margin-top:  -4px;
     font-weight: 400;

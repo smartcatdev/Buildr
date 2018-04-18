@@ -24,7 +24,7 @@ class Buildr_Customize_Section_Pro extends WP_Customize_Section {
      * @access public
      * @var    string
      */
-    public $pro_text = '';
+    public $install_text = '';
 
     /**
      * Custom pro button URL.
@@ -33,10 +33,11 @@ class Buildr_Customize_Section_Pro extends WP_Customize_Section {
      * @access public
      * @var    string
      */
-    public $pro_url = '';
+    public $install_url = '';
     
+    public $dismiss_text = '';
     
-    public $pro_details = '';
+    public $description = '';
 
     /**
      * Add custom parameters to pass to the JS via JSON.
@@ -48,9 +49,10 @@ class Buildr_Customize_Section_Pro extends WP_Customize_Section {
     public function json() {
         $json = parent::json();
 
-        $json[ 'pro_text' ] = $this->pro_text;
-        $json[ 'pro_url' ] = esc_url( $this->pro_url );
-        $json[ 'pro_details' ] = $this->pro_details;
+        $json[ 'install_text' ] = $this->install_text;
+        $json[ 'install_url' ] = esc_url( $this->install_url );
+        $json[ 'description' ] = $this->description;
+        $json[ 'dismiss_text' ] = $this->dismiss_text;
 
         return $json;
     }
@@ -67,16 +69,26 @@ class Buildr_Customize_Section_Pro extends WP_Customize_Section {
 
         <li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }} cannot-expand">
 
-            <h3 class="accordion-section-title">
-                {{ data.title }}
-
-                <# if ( data.pro_text && data.pro_url ) { #>
-                <a href="{{ data.pro_url }}" class="button button-primary alignright">{{ data.pro_text }}</a>
-                <# } #>
-            </h3>
+            <h3 class="accordion-section-title">{{ data.title }}</h3>
+            
             <p class="accordion-section-details">
-                {{ data.pro_details }}
+                {{ data.description }}
             </p>
+            
+            <div class="accordion-section-buttons">
+                
+                <# if ( data.install_text && data.install_url ) { #>
+                <a href="{{{ data.install_url }}}" class="button button-primary">
+                    <span class="dashicons dashicons-admin-appearance buildr-companion-icon"></span>
+                    {{ data.install_text }}
+                </a>
+                
+                <a href="#" class="button button-default buildr-dismiss-companion">{{ data.dismiss_text }}</a>
+                
+                <# } #>
+                
+            </div>
+            
         </li>
     <?php
     }
