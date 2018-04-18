@@ -1111,12 +1111,19 @@ ul#custom-header-menu {
 
 ul#custom-header-menu > li {
     display: inline-block;
-    margin: 0 8px;
 }
 
 ul#custom-header-menu > li a {
     display: inline-block;
     text-transform: uppercase;
+}
+
+ul#custom-header-menu > li ul.sub-menu, 
+ul#custom-header-menu > li ul.sub-menu li {
+    display: inline-block;
+    float: none;
+    margin: 0;
+    padding: 0;
 }
 
 div#buildr-custom-header.parallax_layers .jparallax-layer.texture-layer {

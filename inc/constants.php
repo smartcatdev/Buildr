@@ -40,6 +40,7 @@ interface BUILDR_OPTIONS {
             CUSTOM_HEADER_SHOW_ON_BLOG              = 'custom_header_show_on_blog',
             CUSTOM_HEADER_SHOW_ON_ARCHIVE           = 'custom_header_show_on_archive',
             CUSTOM_HEADER_SHOW_ON_SHOP              = 'custom_header_show_on_shop',
+            CUSTOM_HEADER_MENU_BUTTONS              = 'custom_Header_menu_buttons',
             
             GRADIENT_STYLE                          = 'parallax_layers_gradient_style',
             GRADIENT_OVERALL_OPACITY                = 'parallax_layers_gradient_overall_opacity',
@@ -211,6 +212,7 @@ interface BUILDR_DEFAULTS {
             CUSTOM_HEADER_SHOW_ON_BLOG              = true,
             CUSTOM_HEADER_SHOW_ON_ARCHIVE           = true,
             CUSTOM_HEADER_SHOW_ON_SHOP              = false,
+            CUSTOM_HEADER_MENU_BUTTONS              = true,
             
             GRADIENT_STYLE                          = 'linear',
             GRADIENT_OVERALL_OPACITY                = 1,
