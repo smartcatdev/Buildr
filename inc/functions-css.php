@@ -187,7 +187,8 @@ function buildr_wp_head_styles() { ?>
         div#banner-header a,
         ul.slim-header-menu > li.current-menu-item > a,
         header#masthead.header-style-split .navbar-social #split-social-trigger,
-        div.site-branding a {
+        div.site-branding a,
+        ul#mobile-menu li a {
             color: <?php echo esc_attr( $theme_colors['navbar_fg'] ); ?>;
         }
         
@@ -199,6 +200,12 @@ function buildr_wp_head_styles() { ?>
             fill: <?php echo esc_attr( $theme_colors['navbar_fg'] ); ?>;
         }
 
+        #mobile-menu-trigger .bar,
+        #mobile-menu-trigger .bar:before,
+        #mobile-menu-trigger .bar:after {
+            background: <?php echo esc_attr( $theme_colors['navbar_fg'] ); ?>;
+        }
+        
         <?php if ( get_theme_mod( BUILDR_OPTIONS::NAVBAR_STYLE, BUILDR_DEFAULTS::NAVBAR_STYLE ) == 'banner' && ! get_theme_mod( BUILDR_OPTIONS::NAVBAR_TRANSPARENT_MENU_BG, BUILDR_DEFAULTS::NAVBAR_TRANSPARENT_MENU_BG ) ) : ?>
         
             header#masthead.header-style-banner #banner-header-wrap #banner-header-menu-wrap,

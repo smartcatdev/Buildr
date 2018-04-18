@@ -595,3 +595,44 @@ a.added_to_cart {
     padding: 15px 0 0;
     display: inline-block;
 }
+
+.woocommerce ul.products.columns-3 li.product, 
+.woocommerce-page ul.products.columns-3 li.product {
+    width: 30.75%;
+    margin-right: 3.875%;
+}
+
+.woocommerce ul.products.columns-3 li.product:nth-of-type(3n+3), 
+.woocommerce-page ul.products.columns-3 li.product:nth-of-type(3n+3) {
+    margin-right: 0 !important;
+}
+
+div#buildr-featured-woocommerce ul.products.columns-3 li.product.last {
+    margin-right: 3.875%;
+}
+
+div#buildr-featured-woocommerce ul.products.columns-3 li.product.first {
+    clear: none;
+}
+
+div#buildr-featured-woocommerce .woocommerce ul.products.columns-3 li.product:nth-of-type(3n+3), 
+div#buildr-featured-woocommerce .woocommerce-page ul.products.columns-3 li.product:nth-of-type(3n+3) {
+    clear: both;
+}
+
+.woocommerce-message, 
+.woocommerce-info, 
+.woocommerce-error, 
+.woocommerce-noreviews, 
+p.no-comments {
+    background: #fafafa !important;
+    display: block !important;
+    padding: 20px;
+    vertical-align: middle;
+    margin-bottom: 30px;
+}
+
+.woocommerce-message > a.button {
+    float: none !important;
+    margin-right: 20px;
+}
