@@ -1,6 +1,5 @@
 (function ($) {
     
-    
     $(document).on( 'click', '.buildr-dismiss-companion', function(e) {
        
         e.preventDefault();
@@ -16,11 +15,9 @@
         })
         
         .done( function( data) {
-            wp.customize.section('companion-plugin').deactivate();
+            wp.customize.section('buildr_companion').deactivate()
         })
        
     })
-    
-
     
 })(jQuery);

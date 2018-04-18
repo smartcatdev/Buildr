@@ -274,7 +274,6 @@ function buildr_features_install_url() {
 
 function buildr_dismiss_companion() {
     
-    
     if( ! isset( $_POST['buildr_dismiss_nonce'] ) || ! wp_verify_nonce( $_POST['buildr_dismiss_nonce'], 'buildr_dismiss_nonce' ) ) {
         die( esc_html__( 'Invalid nonce', 'buildr' ) );
         return;

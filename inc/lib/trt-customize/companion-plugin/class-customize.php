@@ -101,6 +101,7 @@ final class Buildr_Customize {
 }
 
 // If user has dismissed the notice, do not display it
+//set_theme_mod( BUILDR_OPTIONS::COMPANION_NOTICE_DISMISSED, false );
 if( ! get_theme_mod( BUILDR_OPTIONS::COMPANION_NOTICE_DISMISSED, BUILDR_DEFAULTS::COMPANION_NOTICE_DISMISSED ) ) {
     Buildr_Customize::get_instance();
 }
