@@ -1,5 +1,6 @@
 (function ($) {
     
+    // Clicker so that theme editor can dismiss notice to install plugin
     $(document).on( 'click', '.buildr-dismiss-companion', function(e) {
        
         e.preventDefault();
@@ -19,5 +20,11 @@
         })
        
     })
+    
+    $(document).on( 'click', '.buildr-initiate-dismiss', function(e) {
+        $(this).hide()
+        $('.buildr-dismiss-confirm').slideDown(300)
+        
+    });
     
 })(jQuery);
