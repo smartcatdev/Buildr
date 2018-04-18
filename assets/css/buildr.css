@@ -1121,7 +1121,7 @@ ul#custom-header-menu > li {
 
 ul#custom-header-menu > li a {
     display: inline-block;
-    text-transform: uppercase; /* TODO : toggle for this? */
+    text-transform: uppercase;
 }
 
 div#buildr-custom-header.parallax_layers .jparallax-layer.texture-layer {
@@ -1227,7 +1227,7 @@ footer a.rel img {
 h2.widget-title {
     margin-bottom: 15px;
     padding-bottom: 10px;
-    border-bottom: thin solid #333333; /* TODO: Dynamic Settings? */
+    border-bottom: thin solid #333333;
 }
 
 aside.widget table#wp-calendar {
@@ -1247,7 +1247,7 @@ aside.widget table#wp-calendar th,
 aside.widget table#wp-calendar td {
     text-align: center;
     padding: 5px;
-    border: thin solid #333333; /* TODO: Dynamic Settings same as widget title border btm? */
+    border: thin solid #333333;
     color: #ffffff;
 }
 

@@ -104,9 +104,9 @@ function buildr_woocommerce_scripts() {
  */
 
 function buildr_woocommerce_dequeue_styles( $enqueue_styles ) {
-    unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
+    unset( $enqueue_styles['woocommerce-general'] );            // Remove the gloss
+    unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
     //  unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
-    //  unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
     return $enqueue_styles;
 }
 

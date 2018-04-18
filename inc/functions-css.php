@@ -18,7 +18,8 @@ function buildr_wp_head_styles() { ?>
         div#buildr-custom-header.parallax_layers .custom-header-title,
         h2.widget-title,
         ul.product_list_widget .product-wrap .product-title .price-wrap,
-        #buildr-featured-woocommerce h4.product_category_title {
+        #buildr-featured-woocommerce h4.product_category_title,
+        div#buildr-woocommerce-wrap ul.products li.product .product_category_title {
             font-family: <?php echo esc_attr( get_theme_mod( BUILDR_OPTIONS::FONT_SECONDARY, BUILDR_DEFAULTS::FONT_SECONDARY ) ); ?>;
         }
 
