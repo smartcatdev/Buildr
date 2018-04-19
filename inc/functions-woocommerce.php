@@ -258,6 +258,8 @@ if ( !function_exists( 'woocommerce_output_content_wrapper' ) ) {
                                         ?>
 
                                     </header>
+                                    
+                                    <?php do_action( 'buildr_featured_products' ); ?>
 
                                 </div>
                             

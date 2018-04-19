@@ -782,7 +782,7 @@ function buildr_wp_head_styles() { ?>
             body.admin-bar div#buildr-custom-header.buildr_parallax .util-tbl-wrap {
                 height: calc(100vh - <?php echo intval( get_theme_mod( BUILDR_OPTIONS::NAVBAR_INITIAL_HEIGHT, BUILDR_DEFAULTS::NAVBAR_INITIAL_HEIGHT ) - 1 + 32 ); ?>px);
             }
-
+            
         <?php endif; ?>
         
         /* ----- Perspective Layer - Gradient Overlay ----------------------- */

@@ -181,7 +181,7 @@ function buildr_render_masonry_wrap_open() { ?>
                         <div class="grid_spaced"></div>
 
 <?php }
-add_action( 'blog_masonry_wrap_open', 'buildr_render_masonry_wrap_open');               
+add_action( 'buildr_blog_masonry_wrap_open', 'buildr_render_masonry_wrap_open');               
     
 /**
  * Render the HTML that closes the wrap of the Masonry Blog
@@ -206,7 +206,7 @@ function buildr_render_masonry_wrap_close() { ?>
     </div>
 
 <?php }
-add_action( 'blog_masonry_wrap_close', 'buildr_render_masonry_wrap_close');        
+add_action( 'buildr_blog_masonry_wrap_close', 'buildr_render_masonry_wrap_close');        
 
 /**
  * Render the HTML that opens the wrap of the Mosaic Blog
@@ -227,7 +227,7 @@ function buildr_render_mosaic_wrap_open() { ?>
                     <div class="mosaic-grid">
 
 <?php }
-add_action( 'blog_mosaic_wrap_open', 'buildr_render_mosaic_wrap_open'); 
+add_action( 'buildr_blog_mosaic_wrap_open', 'buildr_render_mosaic_wrap_open'); 
 
 /**
  * Render the HTML that closes the wrap of the Mosaic Blog
@@ -252,7 +252,7 @@ function buildr_render_mosaic_wrap_close() { ?>
     </div>
 
 <?php }
-add_action( 'blog_mosaic_wrap_close', 'buildr_render_mosaic_wrap_close');        
+add_action( 'buildr_blog_mosaic_wrap_close', 'buildr_render_mosaic_wrap_close');        
 
 /**
  * Render the HTML that opens the wrap of the Standard Blog
@@ -273,7 +273,7 @@ function buildr_render_standard_wrap_open() { ?>
                     <div class="standard-blog">
 
 <?php }
-add_action( 'blog_standard_wrap_open', 'buildr_render_standard_wrap_open'); 
+add_action( 'buildr_blog_standard_wrap_open', 'buildr_render_standard_wrap_open'); 
 
 /**
  * Render the HTML that closes the wrap of the Standard Blog
@@ -298,4 +298,4 @@ function buildr_render_standard_wrap_close() { ?>
     </div>
 
 <?php }
-add_action( 'blog_standard_wrap_close', 'buildr_render_standard_wrap_close');        
+add_action( 'buildr_blog_standard_wrap_close', 'buildr_render_standard_wrap_close');        

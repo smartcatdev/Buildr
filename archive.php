@@ -40,15 +40,15 @@ get_header();
                 switch ( get_theme_mod( BUILDR_OPTIONS::BLOG_LAYOUT_STYLE, BUILDR_DEFAULTS::BLOG_LAYOUT_STYLE ) ) :
 
                     case 'blog_masonry' :
-                        do_action( 'blog_masonry_wrap_open');
+                        do_action( 'buildr_blog_masonry_wrap_open');
                         break;
 
                     case 'blog_mosaic' :
-                        do_action( 'blog_mosaic_wrap_open');
+                        do_action( 'buildr_blog_mosaic_wrap_open');
                         break;
 
                     default :
-                        do_action( 'blog_standard_wrap_open');
+                        do_action( 'buildr_blog_standard_wrap_open');
 
                 endswitch; 
                 ?>
@@ -71,15 +71,15 @@ get_header();
                 switch ( get_theme_mod( BUILDR_OPTIONS::BLOG_LAYOUT_STYLE, BUILDR_DEFAULTS::BLOG_LAYOUT_STYLE ) ) :
 
                     case 'blog_masonry' :
-                        do_action( 'blog_masonry_wrap_close');
+                        do_action( 'buildr_blog_masonry_wrap_close');
                         break;
 
                     case 'blog_mosaic' :
-                        do_action( 'blog_mosaic_wrap_close');
+                        do_action( 'buildr_blog_mosaic_wrap_close');
                         break;
 
                     default :
-                        do_action( 'blog_standard_wrap_close');
+                        do_action( 'buildr_blog_standard_wrap_close');
 
                 endswitch; 
                 ?>
