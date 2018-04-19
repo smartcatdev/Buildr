@@ -33,6 +33,8 @@ function buildr_wp_head_styles() { ?>
         ul#custom-header-menu > li a,
         .blog_item_wrap .blog_item .inner .blog-meta,
         .standard-stacked-blog .blog_item_wrap .blog_item .blog-meta .posted-meta,
+        .buildr-module.featured-posts .featured-inner .blog-meta,
+        .buildr-module.featured-posts .featured-inner .blog-meta .posted-meta,
         ul.product_list_widget .product-wrap .product-title,
         .woocommerce-tabs.wc-tabs-wrapper ul.tabs li,
         .woocommerce table.variations .label,
