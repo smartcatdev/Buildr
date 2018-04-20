@@ -20,7 +20,8 @@ function buildr_wp_head_styles() { ?>
         ul.product_list_widget .product-wrap .product-title .price-wrap,
         #buildr-featured-woocommerce h4.product_category_title,
         div#buildr-woocommerce-wrap ul.products li.product .product_category_title,
-        div#buildr-woocommerce-wrap ul.products li.product .woocommerce-loop-category__title mark {
+        div#buildr-woocommerce-wrap ul.products li.product .woocommerce-loop-category__title mark,
+        .buildr-module.pricing-table h3.card-price .subline {
             font-family: <?php echo esc_attr( get_theme_mod( BUILDR_OPTIONS::FONT_SECONDARY, BUILDR_DEFAULTS::FONT_SECONDARY ) ); ?>;
         }
 
