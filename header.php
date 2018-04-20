@@ -24,6 +24,8 @@
 
     <body <?php body_class(); ?>>
         
+        <?php do_action( 'buildr_body_start' ); ?>
+        
         <div id="page" class="site">
             
             <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'buildr' ); ?></a>

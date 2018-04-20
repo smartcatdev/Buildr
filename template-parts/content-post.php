@@ -26,6 +26,9 @@
                 ?>
             </div><!-- .entry-meta -->
         <?php endif;
+        
+        do_action( 'buildr_social_icons' );
+        
         ?>
     </header><!-- .entry-header -->
 
