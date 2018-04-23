@@ -26,11 +26,12 @@ add_action( 'tgmpa_register', 'buildr_register_required_plugins' );
 function buildr_register_required_plugins() {
     
     $plugins = array (
-        
+
         array(
-            'name'      => 'Team Showcase',
-            'slug'      => 'our-team-enhanced',
-            'required'  => false,
+            'name'          => 'Buildr Features',
+            'slug'          => 'buildr-features',
+            'required'      => false,
+            'is_automatic'  => true,
         ),
 
     );

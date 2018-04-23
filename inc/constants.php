@@ -176,7 +176,7 @@ interface BUILDR_DEFAULTS {
     
     const   CUSTOM_HEADER_STYLE_TOGGLE              = 'parallax_vertical',
             CUSTOM_HEADER_HEIGHT_CALC               = 'percent',
-            CUSTOM_HEADER_HEIGHT_PCT                = 55,
+            CUSTOM_HEADER_HEIGHT_PCT                = 100,
             CUSTOM_HEADER_HEIGHT_PCT_MBL            = 35,
             CUSTOM_HEADER_HEIGHT_PX                 = 500,
             CUSTOM_HEADER_HEIGHT_PX_MBL             = 250,
@@ -202,7 +202,7 @@ interface BUILDR_DEFAULTS {
             CUSTOM_HEADER_MENU_LETTER_GAP           = '.500',
             CUSTOM_HEADER_MENU_COLOR                = '#ffffff',
             CUSTOM_HEADER_MENU_LINKS_GAP            = 16,
-            CUSTOM_HEADER_COLOR_LAYER_STYLE         = 'single',
+            CUSTOM_HEADER_COLOR_LAYER_STYLE         = 'gradient',
             CUSTOM_HEADER_COLOR_LAYER_COLOR         = '#000000',
             CUSTOM_HEADER_COLOR_LAYER_OPACITY       = .5,
             
@@ -215,12 +215,12 @@ interface BUILDR_DEFAULTS {
             CUSTOM_HEADER_MENU_BUTTONS              = true,
             
             GRADIENT_STYLE                          = 'linear',
-            GRADIENT_OVERALL_OPACITY                = 1,
+            GRADIENT_OVERALL_OPACITY                = .9,
             GRADIENT_LINEAR_DIRECTION               = 'up',
             GRADIENT_START_COLOR                    = '#136986',
-            GRADIENT_START_COLOR_OPACITY            = .85,
+            GRADIENT_START_COLOR_OPACITY            = 1,
             GRADIENT_END_COLOR                      = '#348aa7',
-            GRADIENT_END_COLOR_OPACITY              = .25,
+            GRADIENT_END_COLOR_OPACITY              = .2,
             
             BLOG_LAYOUT_STYLE                       = 'blog_masonry',
             BLOG_SHOW_DATE                          = true,
