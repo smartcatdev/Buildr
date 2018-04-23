@@ -1297,7 +1297,8 @@ form textarea {
 
 button, 
 input[type="submit"],
-a.button {
+a.button,
+.buildr-module.featured-pages .featured-inner a.read-more {
     background: none;
     border: 2px solid;
     color: #fff;

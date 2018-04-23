@@ -20,8 +20,7 @@ function buildr_wp_head_styles() { ?>
         ul.product_list_widget .product-wrap .product-title .price-wrap,
         #buildr-featured-woocommerce h4.product_category_title,
         div#buildr-woocommerce-wrap ul.products li.product .product_category_title,
-        div#buildr-woocommerce-wrap ul.products li.product .woocommerce-loop-category__title mark,
-        .buildr-module.pricing-table h3.card-price .subline {
+        div#buildr-woocommerce-wrap ul.products li.product .woocommerce-loop-category__title mark {
             font-family: <?php echo esc_attr( get_theme_mod( BUILDR_OPTIONS::FONT_SECONDARY, BUILDR_DEFAULTS::FONT_SECONDARY ) ); ?>;
         }
 
@@ -34,8 +33,6 @@ function buildr_wp_head_styles() { ?>
         ul#custom-header-menu > li a,
         .blog_item_wrap .blog_item .inner .blog-meta,
         .standard-stacked-blog .blog_item_wrap .blog_item .blog-meta .posted-meta,
-        .buildr-module.featured-posts .featured-inner .blog-meta,
-        .buildr-module.featured-posts .featured-inner .blog-meta .posted-meta,
         ul.product_list_widget .product-wrap .product-title,
         .woocommerce-tabs.wc-tabs-wrapper ul.tabs li,
         .woocommerce table.variations .label,
