@@ -1366,12 +1366,14 @@ section.error-404 {
 }
 
 .error-404 .page-header,
-body.archive .page-header {
+body.archive .page-header,
+body.search .page-header {
     margin: 0;
     border: none;
 }
 
-body.archive .page-header {
+body.archive .page-header,
+body.search .page-header {
     margin: 50px 0 30px;
 }
 
