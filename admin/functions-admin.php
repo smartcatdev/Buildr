@@ -10,6 +10,7 @@ add_action( 'admin_enqueue_scripts', 'buildr_load_admin_css' );
 
 function buildr_load_admin_css( $hook ) {
     
+    // Enqueue fonts and css only on this page
     if( 'appearance_page_buildr-theme-info' == $hook ) {
         wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/lib/font-awesome/fontawesome-all.min.css' );
         wp_enqueue_style( 'buildr-admin-fonts', '//fonts.googleapis.com/css?family=Lato:300,700,900' );

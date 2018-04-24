@@ -259,21 +259,41 @@ function buildr_all_posts_array( $types = array( 'post' ) ) {
 
 function buildr_features_install_url() {
     
-    $plugin = 'our-team-enhanced';
-    $nonce_key = 'install-plugin_' . $plugin;
+    $slug = 'buildr-features';
+    $nonce_key = 'install-plugin_' . $slug;
     
-    $install_url = add_query_arg( array(
-        'action'    => 'install-plugin',
-        'plugin'    => $plugin,
-        '_wpnonce'  => wp_create_nonce( $nonce_key )
-    ), admin_url( 'update.php' ) );
+    
+    // check if plugin is installed
+    if ( ! function_exists( 'get_plugins' ) ) {
+        require_once ABSPATH . 'wp-admin/includes/plugin.php';
+    }
+    
+    $plugins = get_plugins();
+    $installed = false;
+    
+    foreach( $plugins as $plugin ) {
+        
+        if( 'Builder Features' == $plugin['Name'] ) {
+            $installed = true;
+        }
+        
+    }
+    
+    if( $installed ) {
+        $install_url = self_admin_url( 'themes.php?page=tgmpa-install-plugins' );
+    }else{
+        $install_url = add_query_arg( array(
+            'action'    => 'install-plugin',
+            'plugin'    => $slug,
+            '_wpnonce'  => wp_create_nonce( $nonce_key )
+        ), self_admin_url( 'update.php' ) );
+    }
     
     return esc_url( $install_url );
     
 }
 
 function buildr_dismiss_companion() {
-    
     
     if( ! isset( $_POST['buildr_dismiss_nonce'] ) || ! wp_verify_nonce( $_POST['buildr_dismiss_nonce'], 'buildr_dismiss_nonce' ) ) {
         die( esc_html__( 'Invalid nonce', 'buildr' ) );

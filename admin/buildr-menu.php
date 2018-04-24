@@ -27,6 +27,7 @@
 
         <div id="buildr-docs-content">
             
+            <?php if( !function_exists( 'buildr\init' ) ) : ?>
             <div id="buildr-features-notice">
 
                 <h3>
@@ -38,6 +39,7 @@
                 </p>
 
             </div>
+            <?php endif; ?>
 
             <div id="welcome">
                 <?php buildr_render_doc( 'welcome' ); ?>

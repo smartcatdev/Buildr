@@ -16,7 +16,7 @@ final class Buildr_Customize {
      * @return object
      */
     public static function get_instance() {
-
+        
         static $instance = null;
 
         if ( is_null( $instance ) ) {
@@ -79,6 +79,8 @@ final class Buildr_Customize {
                     'dismiss_text'      => esc_html__( 'Dismiss', 'buildr' ),
                     'install_url'       => esc_url( buildr_features_install_url() ),
                     'description'       => esc_html__( 'It seems that you have not yet installed the Buildr Features plugin. It is highly recommended to install the plugin. It includes 3 header styles, 3 blog styles, over 140 customization options, one-click install theme-presets and 6 advanced widgets, completely free!', 'buildr' ),
+                    'confirm_text'      => esc_html__( 'Are you sure? The theme features & widgets will provide you with tons of customization options', 'buildr' ),
+                    'confirm_button'    => esc_html__( 'Confirm', 'buildr' ),
                 )
             )
         );
@@ -100,8 +102,11 @@ final class Buildr_Customize {
 
 }
 
+// remove this when pushing live
+//set_theme_mod( BUILDR_OPTIONS::COMPANION_NOTICE_DISMISSED, false );
 // If user has dismissed the notice, do not display it
-if( ! get_theme_mod( BUILDR_OPTIONS::COMPANION_NOTICE_DISMISSED, BUILDR_DEFAULTS::COMPANION_NOTICE_DISMISSED ) ) {
+if( ! get_theme_mod( BUILDR_OPTIONS::COMPANION_NOTICE_DISMISSED, BUILDR_DEFAULTS::COMPANION_NOTICE_DISMISSED ) 
+        && !function_exists( 'buildr\init' )) {
     Buildr_Customize::get_instance();
 }
 
