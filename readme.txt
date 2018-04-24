@@ -130,6 +130,12 @@ Buildr includes support for Infinite Scroll in Jetpack.
 16. Images
     - URL                   https://pixabay.com/en/decor-design-creative-business-2618511/          
                             https://pixabay.com/en/reichstag-berlin-building-bundestag-1615165/ 
+                            https://pixabay.com/en/poster-mockup-interior-wall-desk-2857423/
+                            https://pixabay.com/en/architecture-perspective-modern-828596/
+                            https://pixabay.com/en/woodtype-wood-blocks-wood-type-type-846089/
+                            https://pixabay.com/en/office-paper-business-accounting-3309862/
+                            https://pixabay.com/en/workplace-team-business-meeting-1245776/
+
     - License               CC0
     - License URL           http://creativecommons.org/publicdomain/zero/1.0/deed.en
 
