@@ -6,6 +6,7 @@ Tags: two-columns, three-columns, four-columns, right-sidebar, grid-layout, flex
 Requires at least: 4.9
 Tested up to: 4.9.5
 Stable tag: 1.0.4
+Requires PHP: 5.3
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -31,6 +32,10 @@ Build your site using the drag & drop widgets. Click to install any of the pre-b
 Buildr includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+
+= 1.0.4 April 24 2018
+* Updated docs & readme
+* Re-check NS Theme Sniffer and Theme Check plugin
 
 = 1.0.3 - April 23 2018
 * Code cleanup
