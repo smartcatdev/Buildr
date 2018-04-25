@@ -61,7 +61,8 @@ ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu li a,
 .masonry-card-blog .blog_item_wrap .blog_item .meta-stats,
 .masonry-card-blog .blog_item_wrap .blog_item .inner-wrap,
 .site-branding .site-tagline,
-header#masthead .navbar-social,
+header#masthead:not(.header-style-split) .navbar-social,
+div#split-social-slide-in,
 a.navbar-icon,
 #split-social-trigger,
 aside.widget a,
@@ -551,12 +552,28 @@ header#masthead.header-style-split div#slim-header .left-half.split-social {
     height: 100%;
 }
 
+div#split-social-slide-in {
+    position: absolute;
+    top: 100%;
+    right: 0%;
+    width: 70px;
+    text-align: center;
+    padding: 15px;
+    transform: translate(100%,0%);
+    border-bottom-left-radius: 8px;
+    box-shadow: -3px 3px 10px -5px rgba(0,0,0,.75);
+}
+
+div#split-social-slide-in.slid-in {
+    transform: translate(0%,0%);
+}
+
 #split-social-trigger {
     display: inline-block !important;
     opacity: 1 !important;
     position: absolute;
     left: -45px;
-    transform: rotate(-135deg);
+    transform: rotate(135deg);
 }
 
 header#masthead.header-style-split .navbar-social #split-social-trigger {
@@ -566,6 +583,7 @@ header#masthead.header-style-split .navbar-social #split-social-trigger {
 
 a#split-social-trigger.expanded {
     transform: none;
+    margin-top: -1px;
 }
 
 header#masthead.header-style-split .navbar-social {
@@ -611,6 +629,9 @@ header#masthead.header-style-split .navbar-social.expanded .navbar-icon {
     }
     header#masthead.header-style-split .navbar-social .navbar-icon {
         opacity: 1;
+    }
+    header#masthead.header-style-split div#split-social-slide-in {
+        display: none;
     }
 }
 

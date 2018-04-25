@@ -89,8 +89,7 @@ if ( !function_exists( 'buildr_setup' ) ) :
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus( array(
-            'banner-primary'            => esc_html__( 'Navbar: Banner - Primary', 'buildr' ),
-            'slim-primary'              => esc_html__( 'Navbar: Slim - Primary', 'buildr' ),
+            'primary-menu'              => esc_html__( 'Navbar: Primary Menu', 'buildr' ),
             'split-primary-left'        => esc_html__( 'Navbar: Split - Left', 'buildr' ),
             'split-primary-right'       => esc_html__( 'Navbar: Split - Right', 'buildr' ),
             'mobile-menu'               => esc_html__( 'Mobile', 'buildr' ),

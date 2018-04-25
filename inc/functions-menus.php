@@ -23,17 +23,10 @@ function buildr_render_mobile_menu() { ?>
 
         <?php else : ?>
         
-            <?php if ( has_nav_menu( 'slim-primary' ) ) : ?>
+            <?php if ( has_nav_menu( 'primary-menu' ) ) : ?>
             
                 <?php wp_nav_menu( array( 
-                    'theme_location'    => 'slim-primary', 
-                    'menu_id'           => 'mobile-menu',
-                ) ); ?>
-            
-            <?php elseif ( has_nav_menu( 'banner-primary' ) ) : ?>
-            
-                <?php wp_nav_menu( array( 
-                    'theme_location'    => 'banner-primary', 
+                    'theme_location'    => 'primary-menu', 
                     'menu_id'           => 'mobile-menu',
                 ) ); ?>
             
