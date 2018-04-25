@@ -122,7 +122,9 @@ function buildr_wp_head_styles() { ?>
         .woocommerce nav.woocommerce-pagination ul li:hover span,
         .woocommerce nav.woocommerce-pagination ul li:hover > a,
         .buildr-pagination-links .page-numbers:hover,
-        nav.navigation.post-navigation .nav-links a:hover {
+        nav.navigation.post-navigation .nav-links a:hover,
+        #wpadminbar .buildr-toolbar-link a.ab-item,
+        #wpadminbar .buildr-toolbar-link a.ab-item:hover{
             background-color: <?php echo esc_attr( $theme_colors['primary'] ); ?>;
         }
 
