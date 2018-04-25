@@ -37,10 +37,10 @@
             
             <div id="banner-header-menu-wrap">
 
-                <?php if ( has_nav_menu( 'banner-primary' ) ) : ?>
+                <?php if ( has_nav_menu( 'primary-menu' ) ) : ?>
 
                     <?php wp_nav_menu( array( 
-                        'theme_location'    => 'banner-primary', 
+                        'theme_location'    => 'primary-menu', 
                         'menu_id'           => 'banner-header-primary',
                         'menu_class'        => 'slim-header-menu' 
                     ) ); ?>

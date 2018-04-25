@@ -37,10 +37,10 @@
             
             <div class="right-half">
 
-                <?php if ( has_nav_menu( 'slim-primary' ) ) : ?>
+                <?php if ( has_nav_menu( 'primary-menu' ) ) : ?>
 
                     <?php wp_nav_menu( array( 
-                        'theme_location'    => 'slim-primary', 
+                        'theme_location'    => 'primary-menu', 
                         'menu_id'           => 'slim-header-primary',
                         'menu_class'        => 'slim-header-menu' 
                     ) ); ?>
