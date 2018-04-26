@@ -32,8 +32,6 @@ get_header( 'shop' );
  */
 do_action( 'woocommerce_before_main_content' );
 
-do_action( 'buildr_featured_products' ); 
-
 if ( have_posts() ) { ?>
 
     <?php

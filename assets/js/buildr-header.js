@@ -86,7 +86,7 @@ jQuery(document).ready(function ($) {
      * ---------------------------------------------------------------------- */
     $('#split-social-trigger').on( 'click', function() {
         
-        $(this).stop().toggleClass('expanded').parent().parent().find('.navbar-social').stop().toggleClass('expanded');
+        $(this).stop().toggleClass('expanded').parentsUntil('header#masthead').find('#split-social-slide-in').stop().toggleClass('slid-in');
         
     });
     

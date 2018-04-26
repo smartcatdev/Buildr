@@ -222,20 +222,20 @@ function buildr_wp_head_styles() { ?>
         
         <?php endif; ?>
         
-        header#masthead.header-style-split .navbar-social {
+        header#masthead.header-style-split div#split-social-slide-in {
             background-color: <?php echo esc_attr( $theme_colors['social_bg'] ); ?>;
         }
 
         header#masthead.header-style-slim .navbar-social a.navbar-icon,
-        header#masthead.header-style-split .navbar-social a.navbar-icon {
+        header#masthead.header-style-split div#split-social-slide-in a.navbar-icon {
             color: <?php echo esc_attr( $theme_colors['social_fg'] ); ?>;
         }
 
         header#masthead.header-style-slim .navbar-social a.navbar-icon:hover,
-        header#masthead.header-style-split .navbar-social a.navbar-icon:hover {
+        header#masthead.header-style-split div#split-social-slide-in a.navbar-icon:hover {
             color: <?php echo esc_attr( $theme_colors['social_fg_hov'] ); ?>;
         }
-
+       
         /* ----- Custom Header Colors --------------------------------------- */
 
         div#custom-header-content .custom-header-title,
@@ -784,7 +784,7 @@ function buildr_wp_head_styles() { ?>
             body.admin-bar div#buildr-custom-header.buildr_parallax .util-tbl-wrap {
                 height: calc(100vh - <?php echo intval( get_theme_mod( BUILDR_OPTIONS::NAVBAR_INITIAL_HEIGHT, BUILDR_DEFAULTS::NAVBAR_INITIAL_HEIGHT ) - 1 + 32 ); ?>px);
             }
-
+            
         <?php endif; ?>
         
         /* ----- Perspective Layer - Gradient Overlay ----------------------- */
