@@ -10,14 +10,14 @@ Requires PHP: 5.3
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-Build your site using the drag & drop widgets. Click to install any of the pre-built presets. Tons of customization, 3 navbars to choose from, 3 blog styles, a unique header, and 6 advanced widgets bundled with the theme. Buildr is a premium theme, but it's free!
+Build a professional site for yourself, for one client, or for all your clients using Buildr. A highly customizable theme which packs tons of premium features in a free theme. 3 navbar menu styles, custom header, 3 blog styles, customizable colors, fonts and so much more! Buildr comes with a free companion plugin which includes many drag & drop widgets that you can use to build your pages any way you like, as well as 3 pre-designed presets that you can install with one click, saving you time, and providing you with a professionally desined site to start from.
 
 Buildr theme, Copyright 2018 Smartcat Solutions Inc.
 This theme, like WordPress, is distributed under the terms of the GNU GPL.
 
 == Description ==
 
-Build your site using the drag & drop widgets. Click to install any of the pre-built presets. Tons of customization, 3 navbars to choose from, 3 blog styles, a unique header, and 6 advanced widgets bundled with the theme. Buildr is a premium theme, but it's free!
+Build a professional site for yourself, for one client, or for all your clients using Buildr. A highly customizable theme which packs tons of premium features in a free theme. 3 navbar menu styles, custom header, 3 blog styles, customizable colors, fonts and so much more! Buildr comes with a free companion plugin which includes many drag & drop widgets that you can use to build your pages any way you like, as well as 3 pre-designed presets that you can install with one click, saving you time, and providing you with a professionally desined site to start from.
 
 == Installation ==
 
