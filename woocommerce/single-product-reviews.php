@@ -33,7 +33,7 @@ if ( ! comments_open() ) {
 				/* translators: 1: reviews count 2: product name */
 				printf( esc_html( _n( '%1$s review for %2$s', '%1$s reviews for %2$s', $count, 'buildr' ) ), esc_html( $count ), '<span>' . get_the_title() . '</span>' );
 			} else {
-				_e( 'Reviews', 'buildr' );
+				esc_html_e( 'Reviews', 'buildr' );
 			}
 		?></h2>
 
@@ -57,7 +57,7 @@ if ( ! comments_open() ) {
 
 		<?php else : ?>
 
-			<p class="woocommerce-noreviews"><?php _e( 'There are no reviews yet.', 'buildr' ); ?></p>
+			<p class="woocommerce-noreviews"><?php esc_html_e( 'There are no reviews yet.', 'buildr' ); ?></p>
 
 		<?php endif; ?>
 	</div>
@@ -110,7 +110,7 @@ if ( ! comments_open() ) {
 
 	<?php else : ?>
 
-		<p class="woocommerce-verification-required"><?php _e( 'Only logged in customers who have purchased this product may leave a review.', 'buildr' ); ?></p>
+		<p class="woocommerce-verification-required"><?php esc_html_e( 'Only logged in customers who have purchased this product may leave a review.', 'buildr' ); ?></p>
 
 	<?php endif; ?>
 

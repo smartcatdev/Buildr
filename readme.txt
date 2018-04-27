@@ -5,7 +5,7 @@ Tags: two-columns, three-columns, four-columns, right-sidebar, grid-layout, flex
 
 Requires at least: 4.9
 Tested up to: 4.9.5
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 Requires PHP: 5.3
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -33,12 +33,15 @@ Buildr includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.0.4 April 26 2018
+= 1.0.5 - April 27 2018 =
+* Theme code review / QA changes
+
+= 1.0.4 - April 26 2018 =
 * Updated docs & readme
 * Re-check NS Theme Sniffer and Theme Check plugin
 * minor tweaks to template parts
 
-= 1.0.3 - April 23 2018
+= 1.0.3 - April 23 2018 =
 * Code cleanup
 
 = 1.0.2 - April 18 2018 =

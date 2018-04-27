@@ -12,7 +12,7 @@
     <div class="inner">
 
         <div id="go-to-cart" href="/cart">
-            <?php _e( 'Cart', 'buildr' ); ?>
+            <?php esc_html_e( 'Cart', 'buildr' ); ?>
             <span id="cart-sidebar-quantity">
                 <a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'buildr' ); ?>">
                     <?php /* translators: count of the number of items or one item */ ?>
