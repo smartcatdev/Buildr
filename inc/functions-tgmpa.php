@@ -31,7 +31,6 @@ function buildr_register_required_plugins() {
             'name'          => 'Buildr Features',
             'slug'          => 'buildr-features',
             'required'      => false,
-            'is_automatic'  => true,
         ),
 
     );
