@@ -1,7 +1,7 @@
 <div class="wrap" id="buildr-docs">
     
     <h2>
-        <?php _e( 'Buildr Theme Guide & Documentation', 'buildr' ); ?>
+        <?php esc_html_e( 'Buildr Theme Guide & Documentation', 'buildr' ); ?>
     </h2>
     
     <div id="buildr-flex-wrap">
@@ -32,10 +32,10 @@
 
                 <h3>
                     <span class="fas fa-lightbulb icon-rotate"></span>
-                    <?php _e( 'Buildr Features', 'buildr' ); ?>
+                    <?php esc_html_e( 'Buildr Features', 'buildr' ); ?>
                 </h3>
                 <p>
-                    <?php _e( 'It seems that you have not yet installed the Buildr Features plugin. It is highly recommended to install the plugin. It includes 3 header styles, 3 blog styles, over 140 customization options, one-click install theme-presets and 6 advanced widgets, completely free!', 'buildr' ); ?>
+                    <?php esc_html_e( 'It seems that you have not yet installed the Buildr Features plugin. It is highly recommended to install the plugin. It includes 3 header styles, 3 blog styles, over 140 customization options, one-click install theme-presets and 6 advanced widgets, completely free!', 'buildr' ); ?>
                 </p>
 
             </div>

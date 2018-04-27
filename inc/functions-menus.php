@@ -46,7 +46,7 @@ function buildr_render_mobile_menu() { ?>
                         <li class="menu-item menu-item-type-custom menu-item-object-custom">
 
                             <a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>">
-                               <?php _e( 'Add a Mobile Menu?', 'buildr' ); ?>
+                               <?php esc_html_e( 'Add a Mobile Menu?', 'buildr' ); ?>
                             </a>
 
                         </li>
