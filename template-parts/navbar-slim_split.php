@@ -23,7 +23,7 @@
                             <li class="menu-item menu-item-type-custom menu-item-object-custom">
 
                                 <a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>">
-                                   <?php _e( 'Add a Left Menu?', 'buildr' ); ?>
+                                   <?php esc_html_e( 'Add a Left Menu?', 'buildr' ); ?>
                                 </a>
 
                             </li>
@@ -86,7 +86,7 @@
                             <li class="menu-item menu-item-type-custom menu-item-object-custom">
 
                                 <a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>">
-                                   <?php _e( 'Add a Right Menu?', 'buildr' ); ?>
+                                   <?php esc_html_e( 'Add a Right Menu?', 'buildr' ); ?>
                                 </a>
 
                             </li>

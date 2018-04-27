@@ -495,7 +495,7 @@ if ( !function_exists( 'buildr_render_featured_products' ) ) {
                     <?php if ( get_theme_mod( BUILDR_OPTIONS::WOO_SHOW_FEATURED_PRODUCT_HEADING, BUILDR_DEFAULTS::WOO_SHOW_FEATURED_PRODUCT_HEADING ) ) : ?>
                     
                         <h3 class="shop-sub-heading">
-                            <?php _e( 'Featured', 'buildr' ); ?>
+                            <?php esc_html_e( 'Featured', 'buildr' ); ?>
                         </h3>
                     
                     <?php endif; ?>

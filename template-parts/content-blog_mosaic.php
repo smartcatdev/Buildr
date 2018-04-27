@@ -34,7 +34,7 @@
                     
                         <?php if ( get_theme_mod( BUILDR_OPTIONS::BLOG_SHOW_AUTHOR, BUILDR_DEFAULTS::BLOG_SHOW_AUTHOR ) ) : ?>    
                             <span class="post-author">
-                                <?php _e( 'by', 'buildr' ); ?> <?php the_author_posts_link(); ?>
+                                <?php esc_html_e( 'by', 'buildr' ); ?> <?php the_author_posts_link(); ?>
                             </span>
                         <?php endif; ?>
                             
