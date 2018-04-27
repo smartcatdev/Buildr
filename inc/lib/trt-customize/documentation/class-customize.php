@@ -76,7 +76,7 @@ final class Buildr_Docs_Customize {
                 $manager, 'buildr_docs', array (
                     'title'         => esc_html__( 'Documentation', 'buildr' ),
                     'pro_text'      => esc_html__( 'View Docs', 'buildr' ),
-                    'pro_url'       => admin_url( 'themes.php?page=buildr-theme-info' )
+                    'pro_url'       => esc_url( admin_url( 'themes.php?page=buildr-theme-info' ) )
                 )
             )
         );
