@@ -113,7 +113,7 @@ function buildr_add_excerpt_more_link( $more ) {
 //    );
     
     /* translators: permalink url, then Read More text theme mod */
-    return sprintf( __( '... <a class="read-more" href="%1$s">%2$s</a>', 'buildr' ), esc_url( get_the_permalink( get_the_ID() ) ), get_theme_mod( BUILDR_OPTIONS::BLOG_READ_MORE_TEXT, BUILDR_DEFAULTS::BLOG_READ_MORE_TEXT ) );
+    return sprintf( __( '... <a class="read-more" href="%1$s">%2$s</a>', 'buildr' ), esc_url( get_the_permalink( get_the_ID() ) ), esc_html( get_theme_mod( BUILDR_OPTIONS::BLOG_READ_MORE_TEXT, BUILDR_DEFAULTS::BLOG_READ_MORE_TEXT ) ) );
     
 }
 add_filter( 'excerpt_more', 'buildr_add_excerpt_more_link' );
@@ -126,7 +126,7 @@ add_filter( 'excerpt_more', 'buildr_add_excerpt_more_link' );
  * @return int modified excerpt length.
  */
 function buildr_custom_auto_excerpt_length( $length ) {
-    return get_theme_mod( BUILDR_OPTIONS::BLOG_EXCERPT_TRIM_NUM, BUILDR_DEFAULTS::BLOG_EXCERPT_TRIM_NUM );
+    return intval( get_theme_mod( BUILDR_OPTIONS::BLOG_EXCERPT_TRIM_NUM, BUILDR_DEFAULTS::BLOG_EXCERPT_TRIM_NUM ) );
 }
 add_filter( 'excerpt_length', 'buildr_custom_auto_excerpt_length', 999 );
 
