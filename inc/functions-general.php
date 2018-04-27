@@ -58,7 +58,7 @@ if ( !function_exists( 'buildr_setup' ) ) :
     function buildr_setup() {
     
         if( !defined( 'BUILDR_VERSION' ) ) :
-            define( 'BUILDR_VERSION', '1.0.2' );
+            define( 'BUILDR_VERSION', '1.0.4' );
         endif;
         
         /*

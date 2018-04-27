@@ -5,7 +5,7 @@
     </h3>
     
     <p>
-        <?php _e( 'Describe the ways you can customize the Custom Header, including the parallax styles, height settings, and content displayed within it.', 'buildr' ); ?>
+        <?php _e( 'The custom header is a full-screen section that you can optionally display everywhere on your site, or on specific templates only. You can select an image, set the size, and turn enable one of 2 parallax styles. Additionally, you can place a logo, site title, site desctipion and a menu.', 'buildr' ); ?>
     </p>
     
     <img alt="<?php _e( 'Header', 'buildr' ); ?>" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/docs/header.jpg' ); ?>">

@@ -5,7 +5,7 @@
     </h3>
     
     <p>
-        <?php _e( 'Describe the 3 styles of Blog layout and summarize the settings that can be used to customize their appearance and the content displayed in each post.', 'buildr' ); ?>
+        <?php _e( 'Buildr includes 3 optional blog styles that you can choose from using the theme customizer.', 'buildr' ); ?>
         <?php _e( 'The three Blog layout styles are: "Standard", "Masonry - Cards", and "Mosaic - Grid".', 'buildr' ); ?>
     </p>
     

@@ -5,18 +5,19 @@ Tags: two-columns, three-columns, four-columns, right-sidebar, grid-layout, flex
 
 Requires at least: 4.9
 Tested up to: 4.9.5
-Stable tag: 1.0.2
+Stable tag: 1.0.4
+Requires PHP: 5.3
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-Build your site using the drag & drop widgets. Click to install any of the pre-built presets. Tons of customization, 3 navbars to choose from, 3 blog styles, a unique header, and 6 advanced widgets bundled with the theme. Buildr is a premium theme, but it's free!
+Build a professional site for yourself, for one client, or for all your clients using Buildr. A highly customizable theme which packs tons of premium features in a free theme. 3 navbar menu styles, custom header, 3 blog styles, customizable colors, fonts and so much more! Buildr comes with a free companion plugin which includes many drag & drop widgets that you can use to build your pages any way you like, as well as 3 pre-designed presets that you can install with one click, saving you time, and providing you with a professionally desined site to start from.
 
 Buildr theme, Copyright 2018 Smartcat Solutions Inc.
 This theme, like WordPress, is distributed under the terms of the GNU GPL.
 
 == Description ==
 
-Build your site using the drag & drop widgets. Click to install any of the pre-built presets. Tons of customization, 3 navbars to choose from, 3 blog styles, a unique header, and 6 advanced widgets bundled with the theme. Buildr is a premium theme, but it's free!
+Build a professional site for yourself, for one client, or for all your clients using Buildr. A highly customizable theme which packs tons of premium features in a free theme. 3 navbar menu styles, custom header, 3 blog styles, customizable colors, fonts and so much more! Buildr comes with a free companion plugin which includes many drag & drop widgets that you can use to build your pages any way you like, as well as 3 pre-designed presets that you can install with one click, saving you time, and providing you with a professionally desined site to start from.
 
 == Installation ==
 
@@ -31,6 +32,14 @@ Build your site using the drag & drop widgets. Click to install any of the pre-b
 Buildr includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+
+= 1.0.4 April 26 2018
+* Updated docs & readme
+* Re-check NS Theme Sniffer and Theme Check plugin
+* minor tweaks to template parts
+
+= 1.0.3 - April 23 2018
+* Code cleanup
 
 = 1.0.2 - April 18 2018 =
 * Code cleanup
@@ -127,6 +136,12 @@ Buildr includes support for Infinite Scroll in Jetpack.
 16. Images
     - URL                   https://pixabay.com/en/decor-design-creative-business-2618511/          
                             https://pixabay.com/en/reichstag-berlin-building-bundestag-1615165/ 
+                            https://pixabay.com/en/poster-mockup-interior-wall-desk-2857423/
+                            https://pixabay.com/en/architecture-perspective-modern-828596/
+                            https://pixabay.com/en/woodtype-wood-blocks-wood-type-type-846089/
+                            https://pixabay.com/en/office-paper-business-accounting-3309862/
+                            https://pixabay.com/en/workplace-team-business-meeting-1245776/
+
     - License               CC0
     - License URL           http://creativecommons.org/publicdomain/zero/1.0/deed.en
 

@@ -31,7 +31,7 @@
             <div id="buildr-features-notice">
 
                 <h3>
-                    <span class="fas fa-lightbulb"></span>
+                    <span class="fas fa-lightbulb icon-rotate"></span>
                     <?php _e( 'Buildr Features', 'buildr' ); ?>
                 </h3>
                 <p>

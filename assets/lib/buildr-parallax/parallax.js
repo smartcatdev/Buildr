@@ -1,6 +1,8 @@
 jQuery(document).ready( function( $ ) {
 
     /**
+     * Custom Parallax Library for Buildr
+     * 
      * Proper Parallax
      */
     function getTop(elem) {

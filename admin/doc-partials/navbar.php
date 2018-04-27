@@ -11,7 +11,7 @@
     
     <div class="nested-subsection">
     
-        <?php $query['autofocus[section]'] = 'section_nav_style_a';
+        <?php $query['autofocus[section]'] = 'section_nav_general';
         $section_link = add_query_arg( $query, admin_url( 'customize.php' ) ); ?>
         
         <h4>
