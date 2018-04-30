@@ -20,8 +20,6 @@ require get_template_directory() . '/inc/functions-widgets.php';
 
 require get_template_directory() . '/inc/functions-css.php';
 
-require get_template_directory() . '/inc/functions-customizer.php';
-
 require get_template_directory() . '/inc/functions-tgmpa.php';
 
 if( is_admin() ) {

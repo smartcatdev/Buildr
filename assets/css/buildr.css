@@ -324,10 +324,19 @@ ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu {
 }
 
 ul.slim-header-menu > li.menu-item-has-children:hover > ul.sub-menu {
-    padding: 15px 30px;
+    padding: 15px 20px;
     height: auto;
     opacity: 1;
     margin-top: -1px;
+}
+
+ul.slim-header-menu > li.menu-item-has-children:hover > ul.sub-menu ul.sub-menu {
+    padding: 0;
+    margin: 0;
+    float: none;
+    position: relative;
+    transform: none !important;
+    list-style: none !important;
 }
 
 ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu li a {
@@ -391,7 +400,8 @@ div#mobile-menu-wrap ul.sub-menu li a {
     font-size: 10px;
 }
 
-div#mobile-menu-wrap ul#mobile-menu > li > ul.sub-menu > li > ul.sub-menu {
+div#mobile-menu-wrap ul#mobile-menu > li > ul.sub-menu > li > ul.sub-menu,
+div#mobile-menu-wrap ul#mobile-menu > li > ul.sub-menu > li > ul.sub-menu > li > ul.sub-menu {
     margin: 0;
     padding: 0;
 }
@@ -1331,6 +1341,7 @@ a.button,
     font-size: 12px;
     line-height: normal;
     display: inline-block;
+    white-space: nowrap;
 }
 
 a.button.hollow {

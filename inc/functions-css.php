@@ -209,6 +209,16 @@ function buildr_wp_head_styles() { ?>
             background: <?php echo esc_attr( $theme_colors['navbar_fg'] ); ?>;
         }
         
+        ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu > li > ul.sub-menu > li a,
+        ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu > li > ul.sub-menu > li > ul.sub-menu > li > a {
+            color: <?php echo esc_attr( buildr_hex2rgba( $theme_colors['navbar_fg'], .6 ) ); ?> !important;
+        }
+        
+        ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu > li > ul.sub-menu > li > a:hover,
+        ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu > li > ul.sub-menu > li > ul.sub-menu > li > a:hover {
+            color: <?php echo esc_attr( buildr_hex2rgba( $theme_colors['primary'], 1 ) ); ?> !important;
+        }
+        
         <?php if ( get_theme_mod( BUILDR_OPTIONS::NAVBAR_STYLE, BUILDR_DEFAULTS::NAVBAR_STYLE ) == 'banner' && ! get_theme_mod( BUILDR_OPTIONS::NAVBAR_TRANSPARENT_MENU_BG, BUILDR_DEFAULTS::NAVBAR_TRANSPARENT_MENU_BG ) ) : ?>
         
             header#masthead.header-style-banner #banner-header-wrap #banner-header-menu-wrap,
