@@ -34,7 +34,8 @@ Buildr includes support for Infinite Scroll in Jetpack.
 == Changelog ==
 
 = 1.0.7 - April 30 2018 =
-
+* Minor menu style fix
+* Theme code review / QA changes
 
 = 1.0.6 - April 27 2018 =
 * Added Theme URI
