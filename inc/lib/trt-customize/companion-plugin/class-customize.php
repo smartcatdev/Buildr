@@ -98,6 +98,11 @@ final class Buildr_Customize {
         wp_enqueue_script( 'buildr-pro-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/companion-plugin/customize-controls.js', array ( 'customize-controls' ) );
         wp_enqueue_style( 'buildr-pro-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/lib/trt-customize/companion-plugin/customize-controls.css' );
         
+        wp_localize_script( 'buildr-pro-customize-controls', 'buildr_customize', array(
+            'ajax_url'                  => admin_url( 'admin-ajax.php' ),
+            'buildr_dismiss_nonce'      => wp_create_nonce( 'buildr_dismiss_nonce' )
+        ) );
+        
     }
 
 }
