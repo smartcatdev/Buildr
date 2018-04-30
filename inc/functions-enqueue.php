@@ -30,7 +30,7 @@ function buildr_scripts() {
     // Scripts
     wp_enqueue_script( 'jquery-sticky', get_template_directory_uri() . '/assets/lib/sticky-js/jquery.sticky.js', array('jquery'), BUILDR_VERSION, true );
     wp_enqueue_script( 'bootstrap-toolkit', get_template_directory_uri() . '/assets/lib/bootstrap-toolkit/bootstrap-toolkit.min.js', array('jquery'), BUILDR_VERSION, true );
-    wp_enqueue_script( 'wow', get_template_directory_uri() . '/assets/lib/wow/wow.min.js', array('jquery'), BUILDR_VERSION, true );
+    wp_enqueue_script( 'wow', get_template_directory_uri() . '/assets/lib/wow/wow.min.js', array( 'jquery' ), BUILDR_VERSION, true );
     wp_enqueue_script( 'jquery-lettering', get_template_directory_uri() . '/assets/lib/lettering/jquery.lettering.js', array('jquery'), BUILDR_VERSION, true );
     wp_enqueue_script( 'jquery-textillate', get_template_directory_uri() . '/assets/lib/textillate/jquery.textillate.js', array('jquery','lettering'), BUILDR_VERSION, true );
     wp_enqueue_script( 'jquery-easeScroll', get_template_directory_uri() . '/assets/lib/ease-scroll/jquery.easeScroll.js', array('jquery'), BUILDR_VERSION, true );
@@ -38,7 +38,7 @@ function buildr_scripts() {
     wp_enqueue_script( 'jquery-slimScroll', get_template_directory_uri() . '/assets/lib/slim-scroll/jquery.slimscroll.min.js', array('jquery'), BUILDR_VERSION, true );
     wp_enqueue_script( 'jquery-parallax', get_template_directory_uri() . '/assets/lib/jquery-parallax/jquery.parallax.js', array('jquery'), BUILDR_VERSION, false );
     wp_enqueue_script( 'buildr-parallax', get_template_directory_uri() . '/assets/lib/buildr-parallax/parallax.js', array('jquery'), BUILDR_VERSION, true );
-    wp_enqueue_script( 'buildr-general', get_template_directory_uri() . '/assets/js/buildr-general.js', array('jquery'), BUILDR_VERSION, true );
+    wp_enqueue_script( 'buildr-general', get_template_directory_uri() . '/assets/js/buildr-general.js', array('jquery', 'wow', 'jquery-textillate'), BUILDR_VERSION, true );
     wp_enqueue_script( 'buildr-header', get_template_directory_uri() . '/assets/js/buildr-header.js', array('jquery'), BUILDR_VERSION, false );
     wp_enqueue_script( 'buildr-resize', get_template_directory_uri() . '/assets/js/buildr-resize.js', array('jquery','masonry'), BUILDR_VERSION, true );
     
