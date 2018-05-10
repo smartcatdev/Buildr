@@ -274,6 +274,7 @@ function buildr_wp_head_styles() { ?>
             color: <?php echo esc_attr( $theme_colors['footer_widget_title'] ); ?>;
         }
         
+        html,
         footer div#slim-footer-wrap {
             background-color: <?php echo esc_attr( $theme_colors['footer_bg'] ); ?>;
         }

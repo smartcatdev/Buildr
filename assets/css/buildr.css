@@ -1361,6 +1361,15 @@ a.button.large {
     font-size: 14px;
 }
 
+body .gform_wrapper .gform_footer input.button, 
+body .gform_wrapper .gform_footer input[type=submit] {
+    font-size: 12px !important;
+}
+
+body .gform_wrapper h3.gform_title {
+    font-weight: normal !important;
+}
+
 /* -----------------------------------------------------------------------------
  * Single Post / Page
  * -------------------------------------------------------------------------- */
@@ -1384,7 +1393,8 @@ body.archive .page-header .page-title {
     margin-bottom: 30px;
 }
 
-article.post header.entry-header {
+article.post header.entry-header,
+article.page header.entry-header {
     margin-bottom: 30px;
 }
 
