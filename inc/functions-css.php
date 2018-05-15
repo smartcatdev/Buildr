@@ -265,6 +265,8 @@ function buildr_wp_head_styles() { ?>
             color: <?php echo esc_attr( $theme_colors['prefooter_fg'] ); ?>;
         }
         
+        footer#colophon #pre-footer,
+        footer#colophon #pre-footer h2.widget-title,
         aside.widget table#wp-calendar th, 
         aside.widget table#wp-calendar td {
             color: <?php echo esc_attr( $theme_colors['prefooter_fg'] ); ?>;
