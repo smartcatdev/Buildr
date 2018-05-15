@@ -162,6 +162,7 @@ interface BUILDR_OPTIONS {
             WOO_SLIDE_CART_TOGGLE                   = 'cart_drawer_toggle',
             WOO_SLIDE_CART_TAB_COLOR                = 'cart_drawer_tab_color',
             WOO_SLIDE_CART_TAB_ICON                 = 'cart_drawer_tab_icon',
+            WOO_SLIDE_CART_TAB_POSITION             = 'cart_drawer_tab_location',
             
             HOMEPAGE_SHOW_CONTENT                   = 'homepage_show_content_toggle',
             SINGLE_POST_SHOW_NAVIGATION             = 'show_single_post_navigation',
@@ -333,6 +334,7 @@ interface BUILDR_DEFAULTS {
             WOO_SLIDE_CART_TOGGLE                   = true,
             WOO_SLIDE_CART_TAB_COLOR                = '#000000',
             WOO_SLIDE_CART_TAB_ICON                 = 'fa-shopping-cart',
+            WOO_SLIDE_CART_TAB_POSITION             = 'bottom',
 
             HOMEPAGE_SHOW_CONTENT                   = true,
             SINGLE_POST_SHOW_NAVIGATION             = true,
