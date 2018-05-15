@@ -890,27 +890,6 @@ function buildr_wp_head_styles() { ?>
         
         <?php endif; ?>
             
-        /* ---------------------------------------------------------------------
-         * Slide-In Cart
-         * ------------------------------------------------------------------ */
-            
-        <?php if ( get_theme_mod( BUILDR_OPTIONS::WOO_SLIDE_CART_TAB_POSITION, BUILDR_DEFAULTS::WOO_SLIDE_CART_TAB_POSITION ) == 'top' ) : ?>
-        
-            @media (min-width:992px) {
-        
-                div#cart-panel-trigger {
-                    top: <?php echo intval( get_theme_mod( BUILDR_OPTIONS::NAVBAR_INITIAL_HEIGHT, BUILDR_DEFAULTS::NAVBAR_INITIAL_HEIGHT ) + 12 ); ?>px;    
-                }
-
-                div#cart-panel-trigger.sticky-header {
-                    top: <?php echo intval( get_theme_mod( BUILDR_OPTIONS::NAVBAR_STICKY_HEIGHT, BUILDR_DEFAULTS::NAVBAR_STICKY_HEIGHT ) + 12 ); ?>px;
-                }
-            
-            }
-        
-        <?php endif; ?>
-            
-            
     </style>
 
 <?php
