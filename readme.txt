@@ -33,6 +33,9 @@ Buildr includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 1.0.9 - May 15 2018 =
+* Bug fix for cart location option
+
 = 1.0.8 - May 15 2018 =
 * Minor menu style fix
 
