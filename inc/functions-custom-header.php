@@ -22,6 +22,7 @@ function buildr_custom_header_setup() {
         'default-image'     => get_template_directory_uri() . '/assets/images/header-demo_1.jpg',
         'header-text'       => false,
         'flex-height'       => true,
+        'flex-width'        => true,
         'uploads'           => true,
         'width'             => 1200,
         'height'            => 700,
