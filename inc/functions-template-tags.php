@@ -147,18 +147,23 @@ endif;
  * @since 1.0.0
  * @return void
  */
-add_action( 'buildr_designer', 'buildr_render_designer', 10 );
-function buildr_render_designer() { ?>
-          
-    <span class="buildr_by">
-        <?php esc_html_e( 'Design by', 'buildr' ); ?>
-    </span>
-    <a href="https://smartcatdesign.net/" rel="designer" class="rel">
-        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/smartcat_logo_white.svg' ); ?>" alt="<?php echo esc_attr( get_bloginfo('name') ); ?>">
-    </a>
-    
-<?php }
 
+if ( !function_exists( 'buildr_pro\buildr_render_designer' ) ) :
+    
+    add_action( 'buildr_designer', 'buildr_render_designer', 10 );
+    function buildr_render_designer() { ?>
+
+        <span class="buildr_by">
+            <?php esc_html_e( 'Design by', 'buildr' ); ?>
+        </span>
+        <a href="https://smartcatdesign.net/" rel="designer" class="rel">
+            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/smartcat_logo_white.svg' ); ?>" alt="<?php echo esc_attr( get_bloginfo('name') ); ?>">
+        </a>
+
+    <?php }
+    
+endif;
+    
 /**
  * Render the HTML that opens the wrap of the Masonry Blog
  *
