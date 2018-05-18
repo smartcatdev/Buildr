@@ -1754,3 +1754,70 @@ nav.woocommerce-pagination > ul.page-numbers {
 .pagination-links .page-numbers.dots {
     background: none;
 }
+
+/* -----------------------------------------------------------------------------
+ * Author Template
+ * -------------------------------------------------------------------------- */
+div#author-banner {
+    height: 125px;
+}
+
+div#author-banner.has-banner {
+    height: 260px;
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.15);
+}
+
+header.author-meta-header {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+    height: 75px;
+    margin-bottom: 15px;
+}
+
+div#author-meta-wrap img.avatar {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    top: -75px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
+    border: 2px solid #fff;
+}
+
+div#author-meta-wrap .author-job-location-social .author-social {
+    margin-top: 15px;
+}
+
+div#author-meta-wrap .author-job-location-social .author-social a.social-link {
+    background: #aaaaaa;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    transition: .3s all ease-in-out;
+    -moz-transition: .3s all ease-in-out;
+    -webkit-transition: .3s all ease-in-out;
+}
+
+div#author-meta-wrap .author-job-location-social .author-social a.social-link:hover {
+    opacity: .8;
+}
+
+@media (max-width:767px) {
+    div#author-meta-wrap img.avatar {
+        left: 50%;
+        transform: translate(-50%,0%);
+    }
+    div#author-meta-wrap .author-nicename {
+        text-align: center;
+    }
+    div#author-meta-wrap .author-job-location-social {
+        text-align: center;
+    }
+}

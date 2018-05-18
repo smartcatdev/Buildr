@@ -17,6 +17,32 @@
     background-color: #f1f1f1;
 }
 
+#accordion-section-buildr_pro h3.accordion-section-title{
+    padding: 18px 14px;
+    background: #ed1558 !important;
+    border-left-color: #ed1558;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#accordion-section-buildr_pro:hover h3.accordion-section-title {
+    background: #ed1558 !important;
+    border-left-color: #ed1558 !important;
+    color: #fff !important;
+    
+}
+
+#accordion-section-buildr_pro h3.accordion-section-title .button.button-primary,
+#accordion-section-buildr_pro:hover h3.accordion-section-title .button.button-primary {
+    background: #fff;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    text-shadow: none;
+    color: #333;
+    text-transform: uppercase;
+}
+
 .control-section-companion-plugin .accordion-section-title .button {
     margin-top:  -4px;
     font-weight: 400;
