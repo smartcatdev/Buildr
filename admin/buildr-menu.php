@@ -20,6 +20,16 @@
                     '#page-templates'           => __( 'Page Templates', 'buildr' ),
                     '#theme-presets'            => __( 'Theme Presets', 'buildr' ),
                 ) ); ?>
+
+                <?php if ( !function_exists( '\buildr_pro\init' ) ) : ?>
+                    <li>
+                        <a href="<?php echo esc_url( admin_url( 'themes.php?page=buildr-theme-upgrade' ) ); ?>">
+                            <?php _e( 'Buildr Pro', 'buildr' ) ?>
+                        </a>
+                    </li>
+                <?php endif; ?>
+                
+
                 
             </ul>
 
