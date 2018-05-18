@@ -18,7 +18,7 @@ get_header(); ?>
     
     <main id="main" class="site-main">
 
-        <div id="author-banner" class="<?php echo false ? 'has-banner' : ''; ?>" style="">
+        <div id="author-banner" class="<?php echo get_user_meta( $authordata->ID, 'author_banner', true ) ? 'has-banner' : ''; ?>" style="background-image: url(<?php echo esc_url( get_user_meta( $authordata->ID, 'author_banner', true ) ); ?>);">
         </div>
         
         <div id="author-meta-wrap" class="container">
