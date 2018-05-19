@@ -97,6 +97,8 @@ interface BUILDR_OPTIONS {
             NAVBAR_BRANDING_SPACE_TOP_MBL           = 'navbar_banner_logo_top_spacing_mbl',
             NAVBAR_BRANDING_SPACE_BOTTOM_MBL        = 'navbar_banner_logo_bottom_spacing_mbl',
             NAVBAR_FINAL_LINK_ACCENT                = 'navbar_final_link_accent',
+            NAVBAR_FINAL_LINK_ROUNDED               = 'navbar_final_link_rounded',
+            NAVBAR_FINAL_LINK_FILL                  = 'navbar_final_link_fill',
             
             NAVBAR_SHOW_SOCIAL                      = 'navbar_show_social',
             SOCIAL_URL_1                            = 'social_icon_1_url',
@@ -269,6 +271,8 @@ interface BUILDR_DEFAULTS {
             NAVBAR_BRANDING_SPACE_TOP_MBL           = 30,
             NAVBAR_BRANDING_SPACE_BOTTOM_MBL        = 15,
             NAVBAR_FINAL_LINK_ACCENT                = false,
+            NAVBAR_FINAL_LINK_ROUNDED               = true,
+            NAVBAR_FINAL_LINK_FILL                  = true,
             
             NAVBAR_SHOW_SOCIAL                      = false,
             SOCIAL_URL_1                            = '',
