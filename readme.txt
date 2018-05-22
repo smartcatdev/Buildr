@@ -33,6 +33,9 @@ Buildr includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 1.1.1
+* Fix for bug in Navbar CTA
+
 = 1.1.0
 * updates to theme and companion plugin adding new widgets
 
