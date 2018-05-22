@@ -1826,6 +1826,11 @@ div#author-meta-wrap .author-job-location-social .author-social a.social-link:ho
  * Left and Right Sidebars
  * -------------------------------------------------------------------------- */
 
+.buildr-landr-sidebar-wrap aside.widget table#wp-calendar th, 
+.buildr-landr-sidebar-wrap aside.widget table#wp-calendar td {
+    color: #373737;
+}
+
 @media (min-width:768px) {
     .buildr-landr-sidebar-wrap {
         margin-top: 100px;
@@ -1853,3 +1858,4 @@ div#author-meta-wrap .author-job-location-social .author-social a.social-link:ho
         margin-top: 15px;
     }    
 }
+
