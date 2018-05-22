@@ -328,6 +328,8 @@ function buildr_is_single_sidebar_active( $template = 'page' ) {
         
         // Blog Sidebar
         
+        return is_active_sidebar( 'sidebar-blog-side' );
+    
     endif;
     
 }
