@@ -307,3 +307,30 @@ function buildr_dismiss_companion() {
     exit();   
 }
 add_action( 'wp_ajax_buildr_dismiss_companion', 'buildr_dismiss_companion' );
+
+
+function buildr_is_single_sidebar_active( $template = 'page' ) {
+ 
+    if ( $template != 'post' && $template != 'page' && $template != 'blog' ) { return false; }
+    
+    // Which template is this check for?
+    if ( $template == 'post' || $template == 'page' ) :
+
+        // Page & Post Sidebar
+        
+        if ( get_post_meta( get_the_ID(), BUILDR_META::SIDEBAR_TEMPLATE, true ) != 'none' && is_active_sidebar( get_post_meta( get_the_ID(), BUILDR_META::SIDEBAR_TEMPLATE, true ) ) ) :
+            return true;                    
+        else : 
+            return false;
+        endif;
+        
+    else :
+        
+        // Blog Sidebar
+        
+        return is_active_sidebar( 'sidebar-blog-side' );
+    
+    endif;
+    
+}
+    

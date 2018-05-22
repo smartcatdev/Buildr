@@ -178,7 +178,7 @@ function buildr_render_masonry_wrap_open() { ?>
 
             <div class="row">
 
-                <div class="col-sm-12">
+                <div class="<?php echo buildr_is_single_sidebar_active( 'blog' ) ? 'col-sm-9 col-md-9 col-lg-9' : 'col-sm-12'; ?>">
 
                     <div class="masonry_card_blog">
 
@@ -203,6 +203,8 @@ function buildr_render_masonry_wrap_close() { ?>
                     </div>
 
                 </div>
+                
+                <?php buildr_output_side_sidebar( 'blog', 'right' ) ?>
 
             </div>
 
@@ -227,7 +229,7 @@ function buildr_render_mosaic_wrap_open() { ?>
 
             <div class="row">
 
-                <div class="col-sm-12">
+                <div class="<?php echo buildr_is_single_sidebar_active( 'blog' ) ? 'col-sm-9 col-md-9 col-lg-9' : 'col-sm-12'; ?>">
                     
                     <div class="mosaic-grid">
 
@@ -249,6 +251,8 @@ function buildr_render_mosaic_wrap_close() { ?>
                     </div>
 
                 </div>
+                
+                <?php buildr_output_side_sidebar( 'blog', 'right' ) ?>
 
             </div>
 
@@ -273,7 +277,7 @@ function buildr_render_standard_wrap_open() { ?>
 
             <div class="row">
 
-                <div class="col-sm-12">
+                <div class="<?php echo buildr_is_single_sidebar_active( 'blog' ) ? 'col-sm-9 col-md-9 col-lg-9' : 'col-sm-12'; ?>">
                     
                     <div class="standard-blog">
 
@@ -295,6 +299,8 @@ function buildr_render_standard_wrap_close() { ?>
                     </div>
 
                 </div>
+                
+                <?php buildr_output_side_sidebar( 'blog', 'right' ) ?>
 
             </div>
 
@@ -304,3 +310,62 @@ function buildr_render_standard_wrap_close() { ?>
 
 <?php }
 add_action( 'buildr_blog_standard_wrap_close', 'buildr_render_standard_wrap_close');        
+
+/**
+ * 
+ * Outputs a side-located sidebar if conditionally appropriate
+ * 
+ * @since 1.1.0
+ * @param type $template
+ * @param type $location
+ * @return HTML and sidebar content
+ */
+function buildr_output_side_sidebar( $template = 'single', $location = 'right' ) {
+    
+    // Return if the template argument is not for Single (Post/Page) or Blog (includes Archive pages)
+    if ( $template != 'single' && $template != 'blog' ) { return; }
+    
+    // Which template is this check for?
+    if ( $template == 'single' ) :
+
+        // Page & Post Sidebar
+        
+        if ( get_post_meta( get_the_ID(), BUILDR_META::SIDEBAR_TEMPLATE, true ) != 'none' && get_post_meta( get_the_ID(), BUILDR_META::SIDEBAR_LOCATION, true ) == 'sidebar-' . $location ) :
+
+            if ( is_active_sidebar( get_post_meta( get_the_ID(), BUILDR_META::SIDEBAR_TEMPLATE, true ) ) ) : ?>
+
+                <div class="col-sm-3 col-md-3 col-lg-3">
+
+                    <div class="buildr-landr-sidebar-wrap single <?php echo esc_attr( $location ); ?>">
+
+                        <?php dynamic_sidebar( get_post_meta( get_the_ID(), BUILDR_META::SIDEBAR_TEMPLATE, true ) ); ?>
+
+                    </div>
+
+                </div>
+
+            <?php endif;
+
+        endif;
+        
+    else :
+        
+        // Blog Sidebar
+        
+        if ( is_active_sidebar( 'sidebar-blog-side' ) ) : ?>
+
+            <div class="col-sm-3 col-md-3 col-lg-3">
+
+                <div class="buildr-landr-sidebar-wrap archive <?php echo esc_attr( $location ); ?>">
+
+                    <?php dynamic_sidebar( 'sidebar-blog-side' ); ?>
+
+                </div>
+
+            </div>
+
+        <?php endif;
+        
+    endif;
+
+}
