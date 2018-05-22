@@ -19,7 +19,7 @@ function buildr_scripts() {
 
     // Styles
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/lib/bootstrap/bootstrap.min.css', array(), BUILDR_VERSION );
-    wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/lib/font-awesome/fontawesome-all.min.css', array(), BUILDR_VERSION );
+    wp_enqueue_style( 'font-awesome-5', get_template_directory_uri() . '/assets/lib/font-awesome/fontawesome-all.min.css', array(), BUILDR_VERSION );
     wp_enqueue_style( 'animate', get_template_directory_uri() . '/assets/lib/animate/animate.css', array(), BUILDR_VERSION );
     wp_enqueue_style( 'buildr-util', get_template_directory_uri() . '/assets/css/util.css', array(), BUILDR_VERSION );
     wp_enqueue_style( 'buildr', get_template_directory_uri() . '/assets/css/buildr.css', array(), BUILDR_VERSION );
