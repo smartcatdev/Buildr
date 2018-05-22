@@ -28,7 +28,7 @@ get_header(); ?>
                 
                     <?php buildr_output_side_sidebar( 'single', 'left' ) ?>
                     
-                    <div class="<?php echo buildr_is_single_sidebar_active( 'post' ) ? 'col-sm-9 col-md-9 col-lg-9' : 'col-sm-10 col-md-10 col-lg-9'; ?>">
+                    <div class="<?php echo buildr_is_single_sidebar_active( 'post' ) ? 'has-side-sidebar ' . esc_attr( get_post_meta( get_the_ID(), BUILDR_META::SIDEBAR_LOCATION, true ) ) . ' col-sm-9 col-md-9 col-lg-9' : 'col-sm-10 col-md-10 col-lg-9'; ?>">
             
                         <?php
                         while ( have_posts() ) : the_post();

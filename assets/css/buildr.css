@@ -1835,6 +1835,15 @@ div#author-meta-wrap .author-job-location-social .author-social a.social-link:ho
     .buildr-landr-sidebar-wrap {
         margin-top: 100px;
     }    
+    body.blog .buildr-landr-sidebar-wrap,
+    body.archive .buildr-landr-sidebar-wrap,
+    body.search .buildr-landr-sidebar-wrap {
+        margin-top: 0;
+    }
+}
+
+.buildr-landr-sidebar-wrap > aside.widget:first-child h2.widget-title {
+    margin-top: 0;
 }
 
 .buildr-landr-sidebar-wrap h2.widget-title {
@@ -1859,3 +1868,17 @@ div#author-meta-wrap .author-job-location-social .author-social a.social-link:ho
     }    
 }
 
+@media (max-width:767px) {
+    .has-side-sidebar.sidebar-right > article {
+        padding-bottom: 50px !important;
+    }
+    .has-side-sidebar.sidebar-left > article {
+        padding-top: 15px !important;
+    }
+    .buildr-landr-sidebar-wrap.single.right {
+        margin-bottom: 100px;
+    }
+    .buildr-landr-sidebar-wrap.single.left {
+        margin-top: 100px;
+    }
+}
