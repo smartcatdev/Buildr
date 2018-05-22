@@ -129,7 +129,10 @@ function buildr_wp_head_styles() { ?>
         }
         
             
-        <?php if( get_theme_mod( BUILDR_OPTIONS::NAVBAR_FINAL_LINK_FILL, BUILDR_DEFAULTS::NAVBAR_FINAL_LINK_FILL ) ) : ?>
+        <?php if( 
+                get_theme_mod( BUILDR_OPTIONS::NAVBAR_FINAL_LINK_FILL, BUILDR_DEFAULTS::NAVBAR_FINAL_LINK_FILL ) 
+                && get_theme_mod( BUILDR_OPTIONS::NAVBAR_FINAL_LINK_ACCENT, BUILDR_DEFAULTS::NAVBAR_FINAL_LINK_ACCENT ) 
+                ) : ?>
             
             ul#slim-header-b > li:last-child > a,
             ul#slim-header-primary > li:last-child > a,
