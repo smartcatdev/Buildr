@@ -2,6 +2,8 @@
 
 require get_template_directory() . '/inc/constants.php';
 
+require get_template_directory() . '/inc/meta_constants.php';
+
 require get_template_directory() . '/inc/functions-custom-header.php';
 
 require get_template_directory() . '/inc/functions-fonts.php';
@@ -13,6 +15,8 @@ require get_template_directory() . '/inc/functions-menus.php';
 require get_template_directory() . '/inc/functions-general.php';
 
 require get_template_directory() . '/inc/functions-helpers.php';
+
+require get_template_directory() . '/inc/functions-metabox.php';
 
 require get_template_directory() . '/inc/functions-template-tags.php';
 

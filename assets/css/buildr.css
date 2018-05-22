@@ -1821,3 +1821,35 @@ div#author-meta-wrap .author-job-location-social .author-social a.social-link:ho
         text-align: center;
     }
 }
+
+/* -----------------------------------------------------------------------------
+ * Left and Right Sidebars
+ * -------------------------------------------------------------------------- */
+
+@media (min-width:768px) {
+    .buildr-landr-sidebar-wrap {
+        margin-top: 100px;
+    }    
+}
+
+.buildr-landr-sidebar-wrap h2.widget-title {
+    color: #373737;
+    border-bottom-color: #eee;
+}
+
+@media (max-width:1199px) and (min-width:768px) {
+    .buildr-landr-sidebar-wrap ul.product_list_widget .product-wrap {
+        display: block;
+    }
+    .buildr-landr-sidebar-wrap ul.product_list_widget .product-wrap > a img {
+        max-width: 100%;
+        float: none;
+    }
+
+    .buildr-landr-sidebar-wrap ul.product_list_widget .product-wrap > .product-title,
+    .buildr-landr-sidebar-wrap ul.product_list_widget .product-wrap > .quantity {
+        font-size: 14px;
+        padding: 0;
+        margin-top: 15px;
+    }    
+}
