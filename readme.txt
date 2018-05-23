@@ -5,7 +5,7 @@ Tags: two-columns, three-columns, four-columns, right-sidebar, grid-layout, flex
 
 Requires at least: 4.9
 Tested up to: 4.9.5
-Stable tag: 1.0.9
+Stable tag: 1.2.0
 Requires PHP: 5.3
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -32,6 +32,9 @@ Build a professional site for yourself, for one client, or for all your clients 
 Buildr includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+
+= 1.2.0
+* Added 3 sidebar options for Page & Post templates, allowing user to set the sidebar location to left or right
 
 = 1.1.1
 * Fix for bug in Navbar CTA
