@@ -164,7 +164,8 @@ function buildr_wp_head_styles() { ?>
         
         button, 
         input[type="submit"],
-        a.button {
+        a.button,
+        .edd_masonry_wrap .edd-product .product-heading {
             border-color: <?php echo esc_attr( $theme_colors['primary'] ); ?>;
         }
         

@@ -733,6 +733,7 @@ header#masthead.header-style-split .navbar-social.expanded .navbar-icon {
     }
 }
 
+.edd_masonry_wrap .edd-product,
 .masonry-card-blog .blog_item_wrap {
     padding: 0 15px;
     margin-bottom: 30px;
@@ -741,6 +742,7 @@ header#masthead.header-style-split .navbar-social.expanded .navbar-icon {
     box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
 }
 
+.edd_masonry_wrap .edd-product img,
 .masonry-card-blog .blog_item_wrap img {
     width: 100%;
 }
@@ -1881,4 +1883,91 @@ div#author-meta-wrap .author-job-location-social .author-social a.social-link:ho
     .buildr-landr-sidebar-wrap.single.left {
         margin-top: 100px;
     }
+}
+
+/* -----------------------------------------------------------------------------
+ * EDD Store Archive Page
+ * -------------------------------------------------------------------------- */
+.edd_masonry_wrap .edd-product,
+.edd_masonry_wrap .grid_sizer {
+    width: 50% !important;
+}
+
+@media (max-width:767px) {
+    .edd_masonry_wrap .edd-product,
+    .edd_masonry_wrap .grid_sizer {
+        width: 100% !important;
+    }
+}
+
+.edd_masonry_wrap .edd-product img {
+    height: auto;
+    width: 100%;
+}
+
+.edd_masonry_wrap .edd-product .product-title {
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: .125em;
+    margin-bottom: 0;
+}
+
+.edd_masonry_wrap .edd-product .product-title a {
+    color: #333333;
+}
+
+.edd_masonry_wrap .edd-product .product-heading {
+    border-left: 10px solid;
+    padding-left: 15px;
+    margin-bottom: 15px;
+}
+
+.edd_masonry_wrap .edd-product .product-price {
+    margin: 5px 0 0 0;
+    font-size: 22px;
+}
+
+.edd_masonry_wrap .edd-product {
+    margin-bottom: 30px;
+}
+
+.edd_masonry_wrap .edd-product a.button {
+    width: 100%;
+    text-align: center;
+}
+
+.edd_masonry_wrap .edd-product .edd-product-icon {
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+    font-size: 60px;
+    color: #fff;
+    background: #141414;
+}
+
+.edd_masonry_wrap .edd-product hr {
+    margin-bottom: 10px;
+}
+
+.edd_masonry_wrap .edd-product .edd-excerpt {
+    margin-bottom: 15px;
+}
+
+.edd_masonry_wrap .edd-product form a.button {
+    margin-bottom: 2.5px;
+}
+
+.edd_masonry_wrap .edd-product form a.button.edd_go_to_checkout {
+    margin-bottom: 7.5px;
+}
+
+.edd_masonry_wrap .edd-product .product-buttons span.edd-cart-added-alert {
+    position: relative;
+    text-align: center;
+    color: #333;
+    background: #e3e3e3;
+    border-radius: 4px;
+    padding: 2.5px 0;
+    margin-bottom: 5px;
+    margin-top: -2.5px;
 }

@@ -6,16 +6,31 @@
     $(document).ready(function() {
 
         function doMasonry() {
-
-            var $card_blog = $( ".masonry_card_blog" ).imagesLoaded(function () {
-                $card_blog.masonry({
-                    itemSelector: '.blog_item_wrap',
-                    columnWidth: '.grid_sizer',
-                    percentPosition: true,
-                    transitionDuration: '.5s'
+                
+            // Blog ------------------------------------------------------------
+            if ( $('.masonry_card_blog').length ) {
+                var $card_blog = $( ".masonry_card_blog" ).imagesLoaded(function () {
+                    $card_blog.masonry({
+                        itemSelector: '.blog_item_wrap',
+                        columnWidth: '.grid_sizer',
+                        percentPosition: true,
+                        transitionDuration: '.5s'
+                    });
                 });
-            });
-
+            }
+                
+            // EDD Store -------------------------------------------------------
+            if ( $('.edd_masonry_wrap').length ) {
+                var $card_blog = $( ".edd_masonry_wrap" ).imagesLoaded(function () {
+                    $card_blog.masonry({
+                        itemSelector: '.edd-product',
+                        columnWidth: '.grid_sizer',
+                        percentPosition: true,
+                        transitionDuration: '.5s'
+                    });
+                });
+            }
+            
         }
 
         // Initialize Masonry Card Blog

@@ -170,7 +170,9 @@ interface BUILDR_OPTIONS {
             SINGLE_POST_SHOW_NAVIGATION             = 'show_single_post_navigation',
             EASE_SCROLL_TOGGLE                      = 'ease_scroll_toggle',
     
-            COMPANION_NOTICE_DISMISSED              = 'show_companion_notice';
+            COMPANION_NOTICE_DISMISSED              = 'show_companion_notice',
+            
+            EDD_LAYOUT_STYLE                        = 'edd_store_layout_style';
 
 }
 
@@ -344,6 +346,8 @@ interface BUILDR_DEFAULTS {
             SINGLE_POST_SHOW_NAVIGATION             = true,
             EASE_SCROLL_TOGGLE                      = true,
     
-            COMPANION_NOTICE_DISMISSED              = false;
+            COMPANION_NOTICE_DISMISSED              = false,
+            
+            EDD_LAYOUT_STYLE                        = 'edd_masonry';
     
 }
