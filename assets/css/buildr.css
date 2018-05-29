@@ -10,6 +10,7 @@
     }
 }
 
+body.admin-bar header#masthead.header-style-vertical,
 body.admin-bar #cart-panel {
     top: 32px !important;
 }
@@ -19,6 +20,7 @@ body.admin-bar div#cart-panel-trigger {
 }
 
 @media (max-width:782px) {
+    body.admin-bar header#masthead.header-style-vertical,
     body.admin-bar #cart-panel {
         top: 46px !important;
     }                        

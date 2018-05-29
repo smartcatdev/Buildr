@@ -34,6 +34,6 @@
             
             <?php if ( class_exists('WooCommerce') && get_theme_mod( BUILDR_OPTIONS::WOO_SLIDE_CART_TOGGLE, BUILDR_DEFAULTS::WOO_SLIDE_CART_TOGGLE ) ) { get_template_part( 'template-parts/cart-slide_in' ); } ?>
             
-            <div id="content" class="site-content">
+            <div id="content" class="site-content <?php echo esc_attr( 'navbar-template-' . get_theme_mod( BUILDR_OPTIONS::NAVBAR_STYLE, BUILDR_DEFAULTS::NAVBAR_STYLE ) ); ?>">
 
                 <?php do_action( 'buildr_custom_header' ); ?>
