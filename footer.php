@@ -14,6 +14,10 @@
 	</div><!-- #content -->
 
 	<?php get_template_part( 'template-parts/footer', 'slim' ); ?>
+        
+        <?php if ( get_theme_mod( BUILDR_OPTIONS::NAVBAR_STYLE, BUILDR_DEFAULTS::NAVBAR_STYLE ) == 'vertical' ) : ?>
+            </div>
+        <?php endif; ?>
 
 </div><!-- #page -->
 

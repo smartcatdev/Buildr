@@ -232,6 +232,7 @@ header img.custom-logo {
 }
 
 ul#mobile-menu li a,
+ul.vertical-header-menu li a,
 ul.slim-header-menu > li a {
     color: #fff;
     text-transform: uppercase;
@@ -271,7 +272,8 @@ ul.slim-header-menu > li:not(.menu-item-has-children) > a:hover:before {
 }
 
 div#slim-header ul#mobile-menu,
-div#banner-header ul#mobile-menu {
+div#banner-header ul#mobile-menu,
+#vertical-header-wrap ul#mobile-menu {
     padding: 15px 0 0 0;
     margin: 0;
     list-style: none;
@@ -282,7 +284,8 @@ div#banner-header ul#mobile-menu {
 }
 
 div#slim-header ul#mobile-menu:before,
-div#banner-header ul#mobile-menu:before {
+div#banner-header ul#mobile-menu:before,
+#vertical-header-wrap ul#mobile-menu:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -291,14 +294,14 @@ div#banner-header ul#mobile-menu:before {
     top: 0;
     left: 0;
     margin: 0;
-/*    background-color: #e5f075;*/
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
 }
 
 div#slim-header ul#mobile-menu.expanded:before,
-div#banner-header ul#mobile-menu.expanded:before {
+div#banner-header ul#mobile-menu.expanded:before,
+#vertical-header-wrap ul#mobile-menu.expanded:before {
     visibility: visible;
     opacity: 1;
     -webkit-transform: scaleX(1);
@@ -306,7 +309,8 @@ div#banner-header ul#mobile-menu.expanded:before {
 }
 
 div#slim-header ul#mobile-menu li,
-div#banner-header ul#mobile-menu li {
+div#banner-header ul#mobile-menu li,
+#vertical-header-wrap ul#mobile-menu li {
     opacity: 0;
 }
 
