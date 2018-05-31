@@ -33,11 +33,7 @@
             <?php get_template_part( 'template-parts/navbar', get_theme_mod( BUILDR_OPTIONS::NAVBAR_STYLE, BUILDR_DEFAULTS::NAVBAR_STYLE ) ); ?>
             
             <?php if ( class_exists('WooCommerce') && get_theme_mod( BUILDR_OPTIONS::WOO_SLIDE_CART_TOGGLE, BUILDR_DEFAULTS::WOO_SLIDE_CART_TOGGLE ) ) { get_template_part( 'template-parts/cart-slide_in' ); } ?>
-
-            <?php if ( get_theme_mod( BUILDR_OPTIONS::NAVBAR_STYLE, BUILDR_DEFAULTS::NAVBAR_STYLE ) == 'vertical' ) : ?>
-                <div id="vertical-navbar-push">
-            <?php endif; ?>
-            
+    
             <div id="content" class="site-content">
 
                 <?php do_action( 'buildr_custom_header' ); ?>

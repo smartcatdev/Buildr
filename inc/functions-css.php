@@ -307,6 +307,14 @@ function buildr_wp_head_styles() { ?>
             color: <?php echo esc_attr( $theme_colors['footer_fg'] ); ?>;
         }
         
+        footer span.buildr_by {
+            border-color: <?php echo esc_attr( $theme_colors['footer_fg'] ); ?> !important;
+        }
+        
+        #footer-branding-wrap svg path {
+            fill: <?php echo esc_attr( $theme_colors['footer_fg'] ); ?>;
+        }
+        
         /* ----- Slide-in Cart Tab ------------------------------------------ */
         
         div#cart-panel-trigger {
