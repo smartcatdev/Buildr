@@ -78,6 +78,7 @@ function buildr_get_icons( $subset = null ) {
         'fa-pinterest-p'    => __( 'Pinterest', 'buildr' ),
         'fa-playstation'    => __( 'PlayStation', 'buildr' ),
         'fa-reddit-alien'   => __( 'Reddit', 'buildr' ),
+        'fas fa-rss'        => __( 'RSS', 'buildr' ),
         'fa-slack-hash'     => __( 'Slack', 'buildr' ),
         'fa-snapchat-ghost' => __( 'Snapchat', 'buildr' ),
         'fa-soundcloud'     => __( 'SoundCloud', 'buildr' ),
