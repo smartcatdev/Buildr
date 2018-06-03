@@ -1971,3 +1971,107 @@ div#author-meta-wrap .author-job-location-social .author-social a.social-link:ho
     margin-bottom: 5px;
     margin-top: -2.5px;
 }
+
+/* -----------------------------------------------------------------------------
+ * EDD Single Product Page
+ * -------------------------------------------------------------------------- */
+
+div#buildr-edd-header {
+    background: #fafafa;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+}
+
+div#buildr-edd-header article {
+    padding: 50px 0;
+}
+
+div#edd-header-wrap-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+div#edd-header-wrap-blurb {
+    width: 65%;
+}
+
+div#edd-header-wrap-gallery {
+    width: 35%;
+}
+
+div#buildr-edd-body {
+    padding: 50px 0;
+}
+
+span.product-category {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: .125em;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    display: block;
+}
+
+div#buildr-edd-header h1.product_title {
+    font-size: 48px;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+div#buildr-edd-header .price {
+    font-size: 42px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+div#buildr-edd-header .edd-buttons {
+    margin-top: 30px;
+}
+
+div#edd-header-wrap-blurb, 
+div#edd-header-wrap-gallery {
+    padding: 30px 0;
+}
+
+div#edd-gallery-wrap .edd-gallery-slide img {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.15);
+}
+
+div#edd-gallery-wrap .edd-gallery-slide {
+    padding: 15px;
+}
+
+div#edd-gallery-wrap .slick-arrow {
+    top: 50%;
+    position: absolute;
+    transform: translate(0%,-50%) rotate(-90deg);
+    background: none;
+    border: none;
+    left: -15px;
+    z-index: 9999;
+    width: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+
+div#edd-gallery-wrap .slick-arrow svg {
+    fill: #141414;
+}
+
+div#edd-gallery-wrap .slick-arrow.slick-next {
+    right: -15px;
+    left: unset;
+    transform: translate(0%,-50%) rotate(90deg);
+}
+
+div#edd-gallery-wrap .slick-arrow:hover {
+    opacity: .75;
+}
