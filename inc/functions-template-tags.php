@@ -420,3 +420,49 @@ function buildr_render_edd_masonry_wrap_close() { ?>
 
 <?php }
 add_action( 'buildr_edd_masonry_wrap_close', 'buildr_render_edd_masonry_wrap_close');
+
+function buildr_output_edd_product_gallery( $gallery = null, $location = 'desktop' ) {
+    
+    if ( empty( $gallery ) ) : ?>
+    
+        <?php if ( has_post_thumbnail() ) : ?>
+    
+            <div id="edd-header-wrap-gallery" class="<?php echo esc_attr( $location ); ?>">
+                <img class="solo-image" src="<?php echo esc_url( get_the_post_thumbnail_url() ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
+            </div>
+            
+        <?php endif; ?>
+            
+    <?php else : ?>
+            
+        <?php if ( is_array( $gallery )  ) : ?>
+            
+            <div id="edd-header-wrap-gallery" class="<?php echo esc_attr( $location ); ?>">
+
+                <div id="edd-gallery-wrap">
+
+                    <?php foreach ( $gallery as $gallery_item ) : ?>
+                        <div class="edd-gallery-slide">
+                        
+                            <div class="inner">
+                                <img src="<?php echo esc_url( $gallery_item ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
+                            </div>
+                            
+                        </div>
+                    <?php endforeach; ?>
+
+                </div> 
+
+            </div>
+            
+        <?php else : ?>
+            
+            <div id="edd-header-wrap-gallery" class="<?php echo esc_attr( $location ); ?>">
+                <img class="solo-image" src="<?php echo esc_url( $gallery ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
+            </div>
+            
+        <?php endif; ?>
+            
+    <?php endif; ?>
+            
+<?php }

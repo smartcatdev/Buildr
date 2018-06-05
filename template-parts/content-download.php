@@ -6,6 +6,9 @@
  *
  * @package Buildr
  */
+
+$edd_gallery = get_post_meta( get_the_ID(), BUILDR_META::EDD_GALLERY, true );
+
 ?>
 
 <div id="buildr-edd-header">
@@ -36,7 +39,9 @@
                             
                             <?php if ( function_exists( 'edd_price' ) ) : ?>
                             
-                                <div class="price">
+                                <?php $sale_price = get_post_meta( get_the_ID(), 'edd_sale_price', true ); ?>
+                                
+                                <div class="price <?php echo isset( $sale_price ) && !empty( $sale_price ) && ! edd_has_variable_prices( get_the_ID() ) ? 'on-sale' : ''; ?> ">
                                     <?php if ( edd_has_variable_prices( get_the_ID() ) ) :
                                         echo edd_price_range( get_the_ID() );
                                     else :
@@ -51,31 +56,41 @@
                             <div class="edd-buttons">
                             
                                 <div class="product-buttons">
-                                    <?php if ( ! edd_has_variable_prices( get_the_ID() ) ) : ?>
-                                        <?php echo edd_get_purchase_link( get_the_ID(), 'Add to Cart', 'button' ); ?>
-                                    <?php else : ?>
-                                        <?php edd_append_purchase_link( get_the_ID() ); ?>
-                                    <?php endif; ?>                                                
+                                    
+                                    <?php echo edd_get_purchase_link( array(
+                                        'download_id'       => get_the_ID(),
+                                        'price'             => false,
+                                        'direct'            => false,
+                                        'class'             => 'primary',
+                                    ) ); ?>
+                                    
+                                    <?php if ( get_post_meta( get_the_ID(), BUILDR_META::EDD_SECOND_BUTTON_LABEL, true ) && get_post_meta( get_the_ID(), BUILDR_META::EDD_SECOND_BUTTON_URL, true ) ) : ?>
+                                    
+                                        <a class="button secondary" href="<?php echo esc_url( get_post_meta( get_the_ID(), BUILDR_META::EDD_SECOND_BUTTON_URL, true ) ); ?>" <?php echo get_post_meta( get_the_ID(), BUILDR_META::EDD_SECOND_BUTTON_TARGET, true ) != 'same' ? ' target="_BLANK" ' : ''; ?>>
+                                            <?php echo esc_html( get_post_meta( get_the_ID(), BUILDR_META::EDD_SECOND_BUTTON_LABEL, true ) ); ?>
+                                        </a>
+                                    
+                                    <?php endif; ?>
+                                    
                                 </div>
+                                
+                                <div class="clear"></div>
 
                             </div>
-
-                        </div>
-
-                        <div id="edd-header-wrap-gallery">
-
-                            <div id="edd-gallery-wrap">
-                                
-                                <div class="edd-gallery-slide">
-                                    <img src="<?php echo get_the_post_thumbnail_url( get_the_ID() ); ?>" alt="">    
-                                </div>
-                                <div class="edd-gallery-slide">
-                                    <img src="<?php echo get_the_post_thumbnail_url( get_the_ID() ); ?>" alt="">
-                                </div>
-                                
-                            </div> 
                             
                         </div>
+                        
+                        <?php if ( get_post_meta( get_the_ID(), BUILDR_META::EDD_VIDEO_ID, true ) ) : ?>
+                        
+                            <iframe class="edd-product-video" id="ytplayer" type="text/html" width="640" height="360"
+                            src="https://www.youtube.com/embed/<?php echo esc_attr( get_post_meta( get_the_ID(), BUILDR_META::EDD_VIDEO_ID, true ) ); ?>?autoplay=<?php echo get_post_meta( get_the_ID(), BUILDR_META::EDD_VIDEO_AUTOPLAY, true ) == 'autoplay' ? 1 : 0; ?>"
+                            frameborder="0"></iframe>
+                        
+                        <?php else : ?>
+
+                            <?php buildr_output_edd_product_gallery( $edd_gallery ); ?>
+                        
+                        <?php endif; ?>
                         
                     </div>
 
@@ -97,7 +112,7 @@
                 
             <div class="col-sm-12">
                 
-                <ul class="nav nav-pills">
+                <ul id="edd-tab-nav" class="nav nav-pills">
                     
                     <li class="active">
                         <a data-toggle="pill" href="#description">
@@ -121,7 +136,7 @@
                     
                     <div id="description" class="tab-pane fade in active">
                         <div class="tab-inner">
-                            <?php echo strip_tags( get_the_content() ); ?>
+                            <?php echo get_the_content(); ?>
                         </div>
                     </div>
                     

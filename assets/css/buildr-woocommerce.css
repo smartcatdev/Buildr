@@ -432,7 +432,7 @@ table.shop_attributes th {
 @media (max-width: 991px) {
     
     div#buildr-woocommerce-wrap.single {
-        margin-top: 15px;
+/*        margin-top: 15px;*/
     }
     
     div#related-products-wrap {

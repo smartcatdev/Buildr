@@ -12,9 +12,24 @@ function buildr_load_admin_css( $hook ) {
     
     // Enqueue fonts and css only on this page
     if( 'appearance_page_buildr-theme-info' == $hook ) {
-        wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/lib/font-awesome/fontawesome-all.min.css' );
-        wp_enqueue_style( 'buildr-admin-fonts', '//fonts.googleapis.com/css?family=Lato:300,700,900' );
-        wp_enqueue_style( 'buildr-admin-css', get_template_directory_uri() . '/assets/admin/css/docs.css' );
+        wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/lib/font-awesome/fontawesome-all.min.css', array(), BUILDR_VERSION );
+        wp_enqueue_style( 'buildr-admin-fonts', '//fonts.googleapis.com/css?family=Lato:300,700,900', array(), BUILDR_VERSION );
+        wp_enqueue_style( 'buildr-admin-css', get_template_directory_uri() . '/assets/admin/css/docs.css', array(), BUILDR_VERSION );
+    }
+    
+    // Uploader JS & CSS
+    if ( in_array( $hook, array( 'post.php', 'post-new.php') ) ) {
+        
+        $screen = get_current_screen();
+
+        if( is_object( $screen ) && 'download' == $screen->post_type ) {
+
+            wp_enqueue_style( 'buildr-media-uploader', get_template_directory_uri() . '/assets/admin/css/uploader.css', array(), BUILDR_VERSION );
+            wp_enqueue_script( 'buildr-media-uploader', get_template_directory_uri() . '/assets/lib/wp-media-uploader/wp_media_uploader.js', array( 'jquery' ), BUILDR_VERSION );
+            wp_enqueue_script( 'buildr-admin-script', get_template_directory_uri() . '/assets/admin/js/admin.js', array( 'jquery', 'jquery-ui-sortable', 'buildr-media-uploader' ), BUILDR_VERSION );
+            
+        }
+        
     }
     
 }

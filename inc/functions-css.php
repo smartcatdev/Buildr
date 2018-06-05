@@ -36,7 +36,11 @@ function buildr_wp_head_styles() { ?>
         ul.product_list_widget .product-wrap .product-title,
         .woocommerce-tabs.wc-tabs-wrapper ul.tabs li,
         .woocommerce table.variations .label,
-        table.shop_attributes th {
+        table.shop_attributes th,
+        .nav-pills > li > a,
+        .edd-table td.edd_purchase_details a,
+        table.edd-table td a.edd_download_file_link,
+        form.edd_form .edd-submit {
             font-family: <?php echo esc_attr( get_theme_mod( BUILDR_OPTIONS::FONT_PRIMARY, BUILDR_DEFAULTS::FONT_PRIMARY ) ); ?>;
         }
 
@@ -124,11 +128,17 @@ function buildr_wp_head_styles() { ?>
         .buildr-pagination-links .page-numbers:hover,
         nav.navigation.post-navigation .nav-links a:hover,
         #wpadminbar .buildr-toolbar-link a.ab-item,
-        #wpadminbar .buildr-toolbar-link a.ab-item:hover{
+        #wpadminbar .buildr-toolbar-link a.ab-item:hover,
+        .edd-table td.edd_purchase_details a,
+        .edd-table td.edd_purchase_details a:focus,
+        table.edd-table td a.edd_download_file_link,
+        table.edd-table td a.edd_download_file_link:focus,
+        form.edd_form .edd-submit.button,
+        form.edd_form .edd-submit.button:hover,
+        form.edd_form .edd-submit.button:focus {
             background-color: <?php echo esc_attr( $theme_colors['primary'] ); ?>;
         }
         
-            
         <?php if( 
                 get_theme_mod( BUILDR_OPTIONS::NAVBAR_FINAL_LINK_FILL, BUILDR_DEFAULTS::NAVBAR_FINAL_LINK_FILL ) 
                 && get_theme_mod( BUILDR_OPTIONS::NAVBAR_FINAL_LINK_ACCENT, BUILDR_DEFAULTS::NAVBAR_FINAL_LINK_ACCENT ) 
@@ -154,7 +164,8 @@ function buildr_wp_head_styles() { ?>
         div#slim-header a:hover,
         div#banner-header a:hover,
         ul.slim-header-menu > li.menu-item-has-children > ul.sub-menu li a:hover,
-        .woocommerce p.stars:hover a:before {
+        .woocommerce p.stars:hover a:before,
+        div#buildr-edd-header .price.on-sale {
             color: <?php echo esc_attr( $theme_colors['primary'] ); ?>;
         }
 
@@ -165,7 +176,10 @@ function buildr_wp_head_styles() { ?>
         button, 
         input[type="submit"],
         a.button,
-        .edd_masonry_wrap .edd-product .product-heading {
+        .edd_masonry_wrap .edd-product .product-heading,
+        .edd-table td.edd_purchase_details a,
+        table.edd-table td a.edd_download_file_link,
+        form.edd_form .edd-submit.button {
             border-color: <?php echo esc_attr( $theme_colors['primary'] ); ?>;
         }
         
