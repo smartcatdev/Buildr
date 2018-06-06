@@ -369,3 +369,100 @@ function buildr_output_side_sidebar( $template = 'single', $location = 'right' )
     endif;
 
 }
+
+/**
+ * Render the HTML that opens the wrap of the Masonry EDD Store
+ *
+ * @since 1.3.0
+ * @return void
+ */
+function buildr_render_edd_masonry_wrap_open() { ?>
+    
+    <div class="edd-store-masonry">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="<?php echo buildr_is_single_sidebar_active( 'blog' ) ? 'col-sm-9 col-md-9 col-lg-9' : 'col-sm-12'; ?>">
+
+                    <div class="edd_masonry_wrap">
+
+                        <div class="grid_sizer"></div>
+                        <div class="grid_spaced"></div>
+
+<?php }
+add_action( 'buildr_edd_masonry_wrap_open', 'buildr_render_edd_masonry_wrap_open');               
+    
+/**
+ * Render the HTML that closes the wrap of the Masonry Blog
+ *
+ * @since 1.3.0
+ * @return void
+ */
+function buildr_render_edd_masonry_wrap_close() { ?>
+                        
+                    </div>
+                    
+                    <div class="buildr-pagination-links">
+                        <?php the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
+                    </div>
+
+                </div>
+                
+                <?php buildr_output_side_sidebar( 'blog', 'right' ) ?>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<?php }
+add_action( 'buildr_edd_masonry_wrap_close', 'buildr_render_edd_masonry_wrap_close');
+
+function buildr_output_edd_product_gallery( $gallery = null, $location = 'desktop' ) {
+    
+    if ( empty( $gallery ) ) : ?>
+    
+        <?php if ( has_post_thumbnail() ) : ?>
+    
+            <div id="edd-header-wrap-gallery" class="<?php echo esc_attr( $location ); ?>">
+                <img class="solo-image" src="<?php echo esc_url( get_the_post_thumbnail_url() ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
+            </div>
+            
+        <?php endif; ?>
+            
+    <?php else : ?>
+            
+        <?php if ( is_array( $gallery )  ) : ?>
+            
+            <div id="edd-header-wrap-gallery" class="<?php echo esc_attr( $location ); ?>">
+
+                <div id="edd-gallery-wrap">
+
+                    <?php foreach ( $gallery as $gallery_item ) : ?>
+                        <div class="edd-gallery-slide">
+                        
+                            <div class="inner">
+                                <img src="<?php echo esc_url( $gallery_item ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
+                            </div>
+                            
+                        </div>
+                    <?php endforeach; ?>
+
+                </div> 
+
+            </div>
+            
+        <?php else : ?>
+            
+            <div id="edd-header-wrap-gallery" class="<?php echo esc_attr( $location ); ?>">
+                <img class="solo-image" src="<?php echo esc_url( $gallery ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
+            </div>
+            
+        <?php endif; ?>
+            
+    <?php endif; ?>
+            
+<?php }
