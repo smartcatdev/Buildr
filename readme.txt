@@ -36,6 +36,7 @@ Buildr includes support for Infinite Scroll in Jetpack.
 = 1.3.0
 * Added integration with Easy Digital Downloads
 * Added RSS icon to the social icons list
+* Updated Preset 1
 
 = 1.2.1
 * Fix for image max width and height on single posts
