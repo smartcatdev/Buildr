@@ -384,7 +384,7 @@ function buildr_render_edd_masonry_wrap_open() { ?>
 
             <div class="row">
 
-                <div class="<?php echo buildr_is_single_sidebar_active( 'blog' ) ? 'col-sm-9 col-md-9 col-lg-9' : 'col-sm-12'; ?>">
+                <div class="<?php echo is_active_sidebar( 'sidebar-shop' ) ? 'col-sm-9 col-md-9 col-lg-9' : 'col-sm-12'; ?>">
 
                     <div class="edd_masonry_wrap">
 
@@ -410,7 +410,19 @@ function buildr_render_edd_masonry_wrap_close() { ?>
 
                 </div>
                 
-                <?php buildr_output_side_sidebar( 'blog', 'right' ) ?>
+                <?php if ( is_active_sidebar( 'sidebar-shop' ) ) : ?>
+
+                    <div class="col-sm-3 col-md-3 col-lg-3">
+
+                        <div class="buildr-landr-sidebar-wrap edd-shop">
+
+                            <?php dynamic_sidebar( 'sidebar-shop' ); ?>
+
+                        </div>
+
+                    </div>
+
+                <?php endif; ?>
 
             </div>
 
