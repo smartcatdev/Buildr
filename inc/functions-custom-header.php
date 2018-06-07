@@ -59,12 +59,14 @@ function buildr_render_custom_header() {
     if ( has_header_image() ) :
         
         if ( 
-            ( is_singular('post')       && get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_SHOW_ON_POSTS, BUILDR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_POSTS ) ) ||
+            ( is_singular( 'post' )       && get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_SHOW_ON_POSTS, BUILDR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_POSTS ) ) ||
             ( is_page()         && !is_front_page() && get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_SHOW_ON_PAGES, BUILDR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_PAGES ) ) ||
             ( is_front_page()   && !is_home() && get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_SHOW_ON_FRONT, BUILDR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_FRONT ) ) ||
             ( is_home()         && get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_SHOW_ON_BLOG, BUILDR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_BLOG ) ) ||
-            ( is_archive()      && !is_author() && ( !class_exists('woocommerce') || ( class_exists( 'woocommerce' ) && !is_shop() ) ) && get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_SHOW_ON_ARCHIVE, BUILDR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_ARCHIVE ) ) ||
-            ( class_exists( 'woocommerce' ) && is_shop() && get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_SHOW_ON_SHOP, BUILDR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_SHOP ) )
+            ( is_archive()      && !is_author() && !is_post_type_archive( 'download' ) && ( !class_exists('woocommerce') || ( class_exists( 'woocommerce' ) && !is_shop() ) ) && get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_SHOW_ON_ARCHIVE, BUILDR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_ARCHIVE ) ) ||
+            ( class_exists( 'woocommerce' ) && is_shop() && get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_SHOW_ON_SHOP, BUILDR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_SHOP ) ) ||
+            ( is_post_type_archive( 'download' ) && get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_SHOW_ON_SHOP, BUILDR_DEFAULTS::CUSTOM_HEADER_SHOW_ON_SHOP ) )
+                
         ) :
         
             get_template_part( 'template-parts/custom-header', get_theme_mod( BUILDR_OPTIONS::CUSTOM_HEADER_STYLE_TOGGLE, BUILDR_DEFAULTS::CUSTOM_HEADER_STYLE_TOGGLE ) );

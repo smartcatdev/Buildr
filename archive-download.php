@@ -15,23 +15,19 @@ get_header();
     
     <main id="main" class="site-main">
 
+        <?php if ( is_active_sidebar( 'sidebar-shop-above') ) : ?>
+
+            <div class="sidebar-wrap shop above">
+
+                <?php dynamic_sidebar('sidebar-shop-above'); ?>
+
+            </div>
+
+        <?php endif; ?>
+        
         <div class="padded-content-wrap">
         
             <?php if ( have_posts() ) : ?>
-
-                <div class="container">
-
-                    <div class="row">
-
-                        <div class="col-sm-12">
-
-                            <header class="page-header"></header><!-- .page-header -->
-
-                        </div>
-
-                    </div>
-
-                </div>
 
                 <?php 
                 switch ( get_theme_mod( BUILDR_OPTIONS::EDD_LAYOUT_STYLE, BUILDR_DEFAULTS::EDD_LAYOUT_STYLE ) ) :
@@ -87,6 +83,16 @@ get_header();
             <?php endif; ?>
             
         </div>
+        
+        <?php if ( is_active_sidebar( 'sidebar-shop-below') ) : ?>
+
+            <div class="sidebar-wrap shop below">
+
+                <?php dynamic_sidebar('sidebar-shop-below'); ?>
+
+            </div>
+
+        <?php endif; ?>
 
     </main><!-- #main -->
     

@@ -221,7 +221,7 @@ if ( !function_exists( 'woocommerce_output_content_wrapper' ) ) {
             
             <main id="main" class="site-main" role="main">
             
-                <?php if ( is_active_sidebar( 'sidebar-shop-above') ) : ?>
+                <?php if ( is_active_sidebar( 'sidebar-shop-above') && is_shop() ) : ?>
 
                     <div class="sidebar-wrap shop above">
 
@@ -310,7 +310,7 @@ if ( !function_exists( 'woocommerce_output_content_wrapper_end' ) ) {
                     
                 </div><!-- #buildr-woocommerce-wrap -->
                               
-                <?php if ( is_active_sidebar( 'sidebar-shop-below') ) : ?>
+                <?php if ( is_active_sidebar( 'sidebar-shop-below') && is_shop() ) : ?>
 
                     <div class="sidebar-wrap shop below">
 
