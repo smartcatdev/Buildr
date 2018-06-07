@@ -1246,13 +1246,20 @@ footer .footer-copyright {
 footer span.buildr_by {
     border-left: thin solid white;
     padding-left: 15px;
+    display: inline-block !important;
+}
+
+footer a.rel {
+    display: inline-block !important;
 }
 
 footer a.rel img {
-    height: 1.15em;
-    width: auto;
+    height: 1.15em !important;
+    width: auto !important;
     margin-top: -.175em;
     margin-left: 0.3em;
+    display: inline-block !important;
+    font-size: 14px !important;
 }
 
 /* -----------------------------------------------------------------------------
