@@ -1,6 +1,7 @@
 <?php
 
 new Buildr_Left_Right_Sidebar_Meta_Box;
+
 class Buildr_Left_Right_Sidebar_Meta_Box {
 
     public function __construct() {
