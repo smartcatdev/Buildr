@@ -4,8 +4,8 @@ Contributors: smartcat
 Tags: two-columns, three-columns, four-columns, right-sidebar, grid-layout, flexible-header, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, e-commerce, blog, entertainment
 
 Requires at least: 4.9
-Tested up to: 4.9.5
-Stable tag: 1.3.0
+Tested up to: 4.9.6
+Stable tag: 1.3.1
 Requires PHP: 5.3
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -32,6 +32,10 @@ Build a professional site for yourself, for one client, or for all your clients 
 Buildr includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+
+= 1.3.1
+* Updated screenshot
+* Updated defaults
 
 = 1.3.0
 * Added integration with Easy Digital Downloads
