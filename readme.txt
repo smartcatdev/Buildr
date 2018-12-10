@@ -33,6 +33,9 @@ Buildr includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 1.3.2
+* Improvements for EDD and Woo
+
 = 1.3.1
 * Updated screenshot
 * Updated defaults
